@@ -1,0 +1,457 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="XR SDK 网格子系统 - Unity 手册">
+<title>XR SDK 网格子系统 - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/acquire_release.png">
+<meta name="description" content="网格子系统从外部提供程序中提取网格数据并将其转换为 UnityEngine.Mesh。它还可以生成可选的 UnityEngine.MeshCollider 而不会导致任何主线程停顿。">
+<meta property="og:description" content="网格子系统从外部提供程序中提取网格数据并将其转换为 UnityEngine.Mesh。它还可以生成可选的 UnityEngine.MeshCollider 而不会导致任何主线程停顿。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'xrsdk-meshing';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/xrsdk-meshing.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/xrsdk-meshing.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/xrsdk-meshing.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/xrsdk-meshing.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/xrsdk-meshing.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/xrsdk-meshing.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/xrsdk-meshing.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/xrsdk-meshing.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/xrsdk-meshing.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/xrsdk-meshing.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/xrsdk-meshing.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/xrsdk-meshing.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/xrsdk-meshing.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/xrsdk-meshing.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/xrsdk-meshing.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/xrsdk-meshing.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/xrsdk-meshing.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/xrsdk-meshing.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/xrsdk-meshing.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/xrsdk-meshing.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/xrsdk-meshing.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/xrsdk-meshing.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/xrsdk-meshing.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/xrsdk-meshing.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/xrsdk-meshing.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/xrsdk-meshing.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/xrsdk-meshing.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/xrsdk-meshing.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/xrsdk-meshing.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/xrsdk-meshing.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/xrsdk-meshing.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/xrsdk-meshing.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/xrsdk-meshing.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/xrsdk-meshing.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/xrsdk-meshing.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/xrsdk-meshing.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/xrsdk-meshing.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/xrsdk-meshing.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/xrsdk-meshing.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/xrsdk-meshing.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/xrsdk-meshing.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/xrsdk-meshing.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/xrsdk-meshing.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/xrsdk-meshing.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/xrsdk-meshing.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/xrsdk-meshing.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/xrsdk-meshing.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/xrsdk-meshing.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/xrsdk-meshing.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/xrsdk-meshing.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/xrsdk-meshing.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/xrsdk-meshing.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/xrsdk-meshing.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/xrsdk-meshing.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/xrsdk-meshing.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/xrsdk-meshing.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/xrsdk-meshing.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/xrsdk-meshing.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="XR.html">XR</a></li>
+<li><a href="xr-sdk.html">Unity XR SDK</a></li>
+<li>Subsystems</li>
+<li>XR SDK 网格子系统</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="xrsdk-display.html"></a></span><div class="tip">XR SDK 显示子系统</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="xrsdk-pre-init-interface.html"></a></span><div class="tip">XR SDK PreInit 接口</div>
+</div>
+</div></div>
+<h1>XR SDK 网格子系统</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>网格子系统从外部提供程序中提取网格数据并将其转换为 <a href="../ScriptReference/Mesh.html">UnityEngine.Mesh</a>。它还可以生成可选的 <a href="../ScriptReference/MeshCollider.html">UnityEngine.MeshCollider</a> 而不会导致任何主线程停顿。</p>
+
+<p>网格子系统的主要用例是展示以程序方式生成的网格（通常来自空间映射算法，如从深度摄像机生成的网格）。对网格大小或更新频率没有限制。</p>
+
+<p>网格生成在后台线程上异步进行，因此从外部提供程序中提取数据不会阻止主线程（例如烘焙网格碰撞体）。</p>
+
+<h2>控制流量</h2>
+
+<p>网格子系统有两个基本查询：</p>
+
+<ul>
+<li>获取所有被跟踪网格的状态（例如，New、Changed、Unchanged、Removed）。</li>
+<li>生成特定网格。网格使用 <a href="../ScriptReference/XR.MeshId.html">MeshId</a> 标识符进行标识。</li>
+</ul>
+
+<h3>获取网格信息</h3>
+
+<p>C# 用户可以从 <code>XRMeshSubsystem</code> 实例方法获取网格信息：</p>
+
+<pre><code class="csharp">public bool TryGetMeshInfos(List&lt;MeshInfo&gt; meshInfosOut);
+</code></pre>
+
+<p>这直接映射到对 <code>UnityXRMeshProvider::GetMeshInfos</code> 的 C 调用，并且通常每一帧调用一次以获取被跟踪网格的当前列表。</p>
+
+<p>下面的 C 实现可以使用提供的 <code>allocator</code> 对象分配 <code>UnityXRMeshInfo</code> 数组，它随后应填写该数组：</p>
+
+<pre><code class="c">UnitySubsystemErrorCode(UNITY_INTERFACE_API * GetMeshInfos)(
+        UnitySubsystemHandle handle, void* pluginData, UnityXRMeshInfoAllocator * allocator);
+</code></pre>
+
+<p>分配的内存归 Unity 所有（通常使用堆栈分配器，因此分配非常快）：</p>
+
+<pre><code class="c">typedef struct UnityXRMeshInfo
+{
+    UnityXRMeshId meshId;
+    bool updated;
+    int priorityHint;
+} UnityXRMeshInfo;
+</code></pre>
+
+<p>如果自上次调用 <a href="../ScriptReference/XR.XRMeshSubsystem.TryGetMeshInfos.html">TryGetMeshInfos</a> 以来没有任何更改，则您可以返回 false 以避免在每一帧都填写数组。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>字段</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>meshId</strong></td>
+	<td style="text-align:left;">128 位唯一标识符。提供程序会生成这些值，可以是指向网格数据的指针，但您需要能够通过其 ID 生成特定网格。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>updated</strong></td>
+	<td style="text-align:left;">Unity 需要的唯一状态是网格自上次生成以来是否已更新。确定网格是添加还是移除的操作是自动进行；报告 Unity 不知道的网格的存在会展示为 Added，而未报告以前报告过的网格会将网格标记为 Removed。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>priorityHint</strong></td>
+	<td style="text-align:left;">C# 会解释此值，不过您可能想（举例而言）提供一个 C# 组件，以基于它对要生成的网格确定优先级。Unity 不使用此值。</td>
+</tr>
+</tbody>
+</table>
+
+<p>在 C# 中，<a href="../ScriptReference/XR.XRMeshSubsystem.TryGetMeshInfos.html">TryGetMeshInfos</a> 会填充一个 <code>List&lt;MeshInfo&gt;</code>，其中包括<a href="../ScriptReference/XR.MeshChangeState.html">网格状态</a>：</p>
+
+<pre><code class="csharp">public enum MeshChangeState
+{
+    Added,
+    Updated,
+    Removed,
+    Unchanged
+}
+</code></pre>
+
+<p>基于网格更改状态和优先级提示值，一个 C# 组件随后可以决定接下来要生成的网格。</p>
+
+<h3>网格生成</h3>
+
+<p>在 C# 中，可以使用 <a href="../ScriptReference/XR.XRMeshSubsystem.GenerateMeshAsync.html">XRMeshSubsystem</a> 实例方法异步生成特定网格：</p>
+
+<pre><code class="csharp">public extern void GenerateMeshAsync(
+    MeshId meshId,
+    Mesh mesh,
+    MeshCollider meshCollider,
+    MeshVertexAttributes attributes,
+    Action&lt;MeshGenerationResult&gt; onMeshGenerationComplete);
+</code></pre>
+
+<p>这会将网格加入队列以进行生成。您可以根据需要将任意数量的网格加入队列，但您可能要将同时生成的网格数量限制为一次几个。</p>
+
+<p>Unity 始终调用提供的 <code>onMeshGenerationComplete</code> 委托，即使发生错误也是如此。</p>
+
+<p>网格分两个阶段生成，遵循获取和释放模型：</p>
+
+<figure>
+<img src="../uploads/Main/acquire_release.png" alt="">
+</figure>
+
+<pre><code class="c">UnitySubsystemErrorCode(UNITY_INTERFACE_API * AcquireMesh)(
+    UnitySubsystemHandle handle,
+    void* pluginData,
+    const UnityXRMeshId * meshId,
+    UnityXRMeshDataAllocator * allocator);
+</code></pre>
+
+<p><code>AcquireMesh</code> 在后台线程上进行调用，因此您可以在此方法中进行任意数量的处理，包括计算密集型工作（例如生成网格本身）。此函数可以立即返回或跨越多个帧。</p>
+
+<p>如果向 <code>GenerateMeshAsync</code> 提供 <code>MeshCollider</code>，则 Unity 也会计算 MeshCollider 的加速结构（上图中的“Bake Physics”）。这对于大型网格而言可能十分耗时，因此它也会在工作线程上发生。</p>
+
+<p>最后，当数据准备就绪时，Unity 会在主线程上将其写入 <code>UnityEngine.Mesh</code> 和/或 <code>UnityEngine.MeshCollider</code>。之后，Unity 会调用 <code>ReleaseMesh</code>（也在主线程上）：</p>
+
+<pre><code class="c">UnitySubsystemErrorCode(UNITY_INTERFACE_API * ReleaseMesh)(
+    UnitySubsystemHandle handle,
+    void* pluginData,
+    const UnityXRMeshId * meshId,
+    const UnityXRMeshDescriptor * mesh,
+    void* userData);
+</code></pre>
+
+<p>因为 <code>ReleaseMesh</code> 是在主线程上进行调用，所以它应该快速返回。通常，这用于释放在 <code>AcquireMesh</code> 期间分配的资源。</p>
+
+<h3>内存管理</h3>
+
+<p><code>AcquireMesh</code> 提供两种向 Unity 提供网格数据的方法：Unity 管理和提供程序管理。</p>
+
+<h4>Unity 管理的内存</h4>
+
+<p>要让 Unity 可以管理内存，请使用：</p>
+
+<pre><code class="c">UnityXRMeshDescriptor* (UNITY_INTERFACE_API * MeshDataAllocator_AllocateMesh)(
+    UnityXRMeshDataAllocator * allocator,
+    size_t vertexCount,
+    size_t indexCount,
+    UnityXRIndexFormat indexFormat,
+    UnityXRMeshVertexAttributeFlags attributes,
+    UnityXRMeshTopology topology);
+</code></pre>
+
+<p>这会基于这些“属性”和从 C# 请求的顶点属性的交集，返回带有缓冲区指针的结构。提供程序随后应该将适当的数据复制到缓冲区。</p>
+
+<p>使用此范式时，不必释放内存，因为 Unity 会在调用 <code>ReleaseMesh</code> 后回收内存。</p>
+
+<h4>提供程序管理的内存</h4>
+
+<p>您可以将内存指向自己的数据，而不是让 Unity 管理内存。数据必须保持有效，直到调用 <code>ReleaseMesh</code>。</p>
+
+<p>使用 <code>MeshDataAllocator_SetMesh</code> 可提供您自己的 <code>UnityXRMeshDescriptor</code>，其非 null 指针指向有效数据：</p>
+
+<pre><code class="c">void(UNITY_INTERFACE_API * MeshDataAllocator_SetMesh)(
+    UnityXRMeshDataAllocator * allocator, const UnityXRMeshDescriptor * meshDescriptor);
+</code></pre>
+
+<h4>用户数据</h4>
+
+<p><code>AcquireMesh</code> 实现可以调用：</p>
+
+<pre><code class="c">void(UNITY_INTERFACE_API * MeshDataAllocator_SetUserData)(
+    UnityXRMeshDataAllocator * allocator, void* userData);
+</code></pre>
+
+<p>Unity 会将 <code>userData</code> 指针传递回给 <code>ReleaseMesh</code> 实现。这在您使用提供程序管理的内存时特别有用。</p>
+
+<h2>示例 C# 组件</h2>
+
+<pre><code class="csharp">void Update()
+{
+    if (s_MeshSubsystem.TryGetMeshInfos(s_MeshInfos))
+    {
+        foreach (var meshInfo in s_MeshInfos)
+        {
+            switch (meshInfo.ChangeState)
+            {
+                case MeshChangeState.Added:
+                case MeshChangeState.Updated:
+                    AddToQueueIfNecessary(meshInfo);
+                    break;
+
+                case MeshChangeState.Removed:
+                    RaiseMeshRemoved(meshInfo.MeshId);
+
+                    // 从处理队列中移除
+                    m_MeshesNeedingGeneration.Remove(meshInfo.MeshId);
+
+                    // 销毁游戏对象
+                    GameObject meshGameObject;
+                    if (meshIdToGameObjectMap.TryGetValue(meshInfo.MeshId, out meshGameObject))
+                    {
+                        Destroy(meshGameObject);
+                        meshIdToGameObjectMap.Remove(meshInfo.MeshId);
+                    }
+
+                    break;
+
+                default:
+                    break;
+            }
+        }
+    }
+
+    // ...
+
+    while (m_MeshesBeingGenerated.Count &lt; meshQueueSize &amp;&amp; m_MeshesNeedingGeneration.Count &gt; 0)
+    {
+        // 获取要生成的下一个网格。无法基于网格的
+        // priorityHint、它是新的还是已更新等
+        var meshId = GetNextMeshToGenerate();
+
+        // 收集生成请求所需的 Unity 对象
+        var meshGameObject = GetOrCreateGameObjectForMesh(meshId);
+        var meshCollider = meshGameObject.GetComponent&lt;MeshCollider&gt;();
+        var mesh = meshGameObject.GetComponent&lt;MeshFilter&gt;().mesh;
+        var meshAttributes = shouldComputeNormals ?MeshVertexAttributes.Normals : MeshVertexAttributes.None;
+
+        // 请求生成
+        s_MeshSubsystem.GenerateMeshAsync(meshId, mesh, meshCollider, meshAttributes, OnMeshGenerated);
+
+        // 更新内部状态
+        m_MeshesBeingGenerated.Add(meshId, m_MeshesNeedingGeneration[meshId]);
+        m_MeshesNeedingGeneration.Remove(meshId);
+    }
+}
+
+void OnMeshGenerated(MeshGenerationResult result)
+{
+    if (result.Status != MeshGenerationStatus.Success)
+    {
+        // 处理错误、重新生成等
+    }
+
+    m_MeshesBeingGenerated.Remove(result.MeshId);
+}
+</code></pre>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="xrsdk-display.html"></a></span><div class="tip">XR SDK 显示子系统</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="xrsdk-pre-init-interface.html"></a></span><div class="tip">XR SDK PreInit 接口</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,696 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="程序集定义 - Unity 手册">
+<title>程序集定义 - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/ScriptCompilation.png">
+<meta name="description" content="程序集定义和程序集引用是可创建用于将脚本组织为程序集的资源。">
+<meta property="og:description" content="程序集定义和程序集引用是可创建用于将脚本组织为程序集的资源。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'ScriptCompilationAssemblyDefinitionFiles';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/ScriptCompilationAssemblyDefinitionFiles.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/ScriptCompilationAssemblyDefinitionFiles.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/ScriptCompilationAssemblyDefinitionFiles.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/ScriptCompilationAssemblyDefinitionFiles.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/ScriptCompilationAssemblyDefinitionFiles.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/ScriptCompilationAssemblyDefinitionFiles.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/ScriptCompilationAssemblyDefinitionFiles.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/ScriptCompilationAssemblyDefinitionFiles.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/ScriptCompilationAssemblyDefinitionFiles.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/ScriptCompilationAssemblyDefinitionFiles.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/ScriptCompilationAssemblyDefinitionFiles.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/ScriptCompilationAssemblyDefinitionFiles.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/ScriptCompilationAssemblyDefinitionFiles.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="ScriptingSection.html">脚本</a></li>
+<li><a href="unity-architecture.html">Unity 架构</a></li>
+<li><a href="script-compilation.html">脚本编译</a></li>
+<li>程序集定义</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="CustomScriptingSymbols.html"></a></span><div class="tip">Custom scripting symbols</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-AssemblyDefinitionImporter.html"></a></span><div class="tip">程序集定义 (Assembly Definition) 属性</div>
+</div>
+</div></div>
+<h1>程序集定义</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>程序集定义和程序集引用是可创建用于将脚本组织为程序集的资源。</p>
+
+<p>程序集是 C# 代码库，其中包含由脚本定义的已编译类和结构并且还定义了对其他程序集的引用。有关 C# 中的程序集的一般信息，请参阅 [.NET 中的程序集]。</p>
+
+<p>默认情况下，Unity 几乎将所有游戏脚本都编译到<em>预定义</em> 程序集 <em>Assembly-CSharp.dll</em> 中。（Unity 还会创建[一些较小的专用预定义程序集]。）</p>
+
+<p>这种安排对于小型项目而言可以接受，但是在向项目添加更多代码时会有一些缺点：</p>
+
+<ul>
+<li>每次更改一个脚本时，Unity 都必须重新编译所有其他脚本，从而增加迭代代码更改的整体编译时间。</li>
+<li>任何脚本都可以直接访问任何其他脚本中定义的类型，这样可能更加难以重构和改进代码。</li>
+<li>所有脚本都针对所有平台进行编译。</li>
+</ul>
+
+<p>通过定义程序集，可以组织代码以促进模块化和可重用性。为项目定义的程序集中的脚本不再添加到默认程序集中，并且只能访问指定的其他程序集中的脚本。</p>
+
+<figure>
+<img src="../uploads/Main/ScriptCompilation.png" alt="">
+</figure>
+
+<p>上图演示了如何将项目中的代码拆分为多个程序集。因为 <em>Main</em> 引用 <em>Stuff</em> 并且不进行反向引用，所以知道对 <em>Main</em> 中的代码进行的任何更改都不会影响 <em>Stuff</em> 中的代码。同样，因为 <em>Library</em> 不依赖于任何其他程序集，所以可以更轻松地在其他项目中重用 <em>Library</em> 中的代码。</p>
+
+<p>本部分将讨论如何创建和设置程序集定义和程序集引用资源以便为项目定义程序集：</p>
+
+<ul>
+<li>[定义程序集]</li>
+<li>[引用和依赖项]</li>
+<li>[创建程序集定义资源]</li>
+<li>[创建程序集定义引用资源]</li>
+<li>[创建特定于平台的程序集]</li>
+<li>[为编辑器代码创建程序集]</li>
+<li>[创建测试程序集]</li>
+<li>[引用另一个程序集]</li>
+<li>[引用预编译的插件程序集]</li>
+<li>[有条件地构建程序集]</li>
+<li>[基于项目包定义符号]</li>
+<li>[查找脚本所属的程序集]</li>
+<li>[特殊文件夹]</li>
+<li>[在生成脚本中获取程序集信息]</li>
+</ul>
+
+<p>另请参阅：</p>
+
+<ul>
+<li>[程序集定义属性]</li>
+<li>[程序集定义引用属性]</li>
+<li>[程序集定义文件格式]</li>
+</ul>
+
+<p><a name="defining-assemblies"></a></p>
+
+<h2>定义程序集</h2>
+
+<p>要将项目代码组织成程序集，请为每个所需程序集创建一个文件夹，并将应属于每个程序集的脚本移动到相关文件夹中。然后[创建程序集定义资源]以指定程序集属性。</p>
+
+<p>Unity 会获取包含程序集定义资源的文件夹中的所有脚本，并使用该资源定义的名称和其他设置将它们编译为程序集。Unity 还包含同一程序集中的任何子文件夹中的脚本，除非子文件夹具有自己的程序集定义或程序集引用资源。</p>
+
+<p>要包含来自现有程序集中一个非子文件夹的脚本，请在该非子文件夹中创建一个程序集引用资源，并将它设置为引用定义目标程序集的程序集定义资源。例如，可以将来自项目中所有 Editor 文件夹的脚本合并到它们自己的程序集中，无论这些文件夹位于何处。</p>
+
+<p>Unity 会按照由其依赖项确定的顺序编译程序集；无法指定进行编译的顺序。</p>
+
+<p><a name="reference-and-assemblies"></a></p>
+
+<h2>引用和依赖项</h2>
+
+<p>当一种类型（如类或结构）使用另一种类型时，第一种类型<em>依赖于</em> 第二种类型。当 Unity 编译脚本时，它还必须可以访问该脚本所依赖的任何类型或其他代码。同样，当已编译的代码运行时，它必须可以访问其依赖项的已编译版本。如果两种类型处于不同的程序集中，则包含依赖类型的程序集必须声明对包含它所依赖类型的程序集的<em>引用</em>。</p>
+
+<p>可以使用程序集定义的选项控制项目中使用的程序集之间的引用。程序集定义设置包括：</p>
+
+<ul>
+<li>
+<a href="class-AssemblyDefinitionImporter.html#general">Auto Referenced</a> – 预定义程序集是否引用相应程序集</li>
+<li>
+<a href="class-AssemblyDefinitionReferenceImporter.html">Assembly Definition References</a> – 对使用程序集定义创建的其他项目程序集的引用</li>
+<li>
+<a href="class-AssemblyDefinitionImporter.html#general">Override References</a> + <a href="#reference-another-assembly">Assembly References</a> – 对预编译（插件）程序集的引用</li>
+<li>
+<a href="class-AssemblyDefinitionImporter.html#general">No Engine References</a> – 对 UnityEngine 程序集的引用</li>
+</ul>
+
+<p>__注意：__使用程序集定义创建的程序集中的类不能使用预定义程序集中定义的类型。</p>
+
+<p><a name="default-references"></a></p>
+
+<h3>默认引用</h3>
+
+<p>默认情况下，预定义程序集会引用所有其他程序集，包括使用程序集定义创建的程序集 (1) 以及作为插件添加到项目中的预编译程序集 (2)。此外，使用程序集定义资源创建的程序集会自动引用所有预编译程序集 (3)：</p>
+
+<figure>
+<img src="../uploads/Main/AssemblyDependencies.png" alt="">
+</figure>
+
+<p>在默认设置中，预定义程序集中的类可以使用项目中任何其他程序集定义的所有类型。同样，使用程序集定义资源创建的程序集可以使用在任何预编译（插件）程序集中定义的所有类型。</p>
+
+<p>可以通过在程序集定义资源的 Inspector 中关闭 [Auto Referenced 选项]来防止预定义程序集引用某个程序集。关闭自动引用意味着在更改程序集中的代码时不会重新编译预定义程序集，但也意味着预定义程序集无法直接使用此程序集中的代码。请参阅[程序集定义 (Assembly Definition) 属性]。</p>
+
+<p>同样，可以通过在插件资源的 <a href="PluginInspector.html">Plugin Inspector</a> 中关闭 [Auto Referenced 属性]来防止自动引用插件程序集。这会影响预定义程序集以及使用程序集定义创建的程序集。请参阅 <a href="PluginInspector.html">Plugin Inspector</a> 以了解更多信息。</p>
+
+<p>关闭__插件__的 <strong>Auto Referenced</strong> 时，可以在 Inspector 中为程序集定义资源显式引用它。请启用该资源的 <a href="class-AssemblyDefinitionImporter.html#general">Override References</a> 选项，然后添加对__插件__的引用。请参阅[程序集定义 (Assembly Definition) 属性]。</p>
+
+<p>__注意：__无法声明预编译程序集的显式引用。预定义程序集只能使用自动引用的程序集中的代码。</p>
+
+<p><a name="cyclical-references"></a></p>
+
+<h3>循环引用</h3>
+
+<p>当一个程序集引用第二个程序集，而第二个程序集又引用第一个程序集时，便存在循环程序集引用。程序集之间的这类循环引用是不允许的，会报告为错误并显示消息“Assembly with cyclic references detected”。</p>
+
+<p>通常，程序集之间的这类循环引用是由于程序集中定义的类中的循环引用而发生的。虽然同一程序集中的类之间的循环引用在技术上没有什么无效之处，但不允许不同程序集中的类之间进行循环引用。如果遇到循环引用错误，则必须重构代码以移除循环引用或将相互引用的类置于同一程序集中。</p>
+
+<p><a name="create-asmdef"></a></p>
+
+<h2>创建程序集定义资源</h2>
+
+<p>要创建程序集定义资源，请执行以下操作：</p>
+
+<ol>
+<li>在 <strong>Project</strong> 窗口中，找到包含要包括在程序集中的脚本的文件夹。</li>
+<li>在该文件夹中创建程序集定义资源（菜单：__Assets__ &gt; <strong>Create</strong> &gt; __Assembly Definition__）。</li>
+<li>为资源分配名称。默认情况下，程序集文件使用分配给资源的名称，不过可以在 <strong>Inspector</strong> 窗口中更改名称。</li>
+</ol>
+
+<p>Unity 会重新编译项目中的脚本以创建新程序集。完成后，便可以为新程序集定义更改设置。</p>
+
+<p>包含程序集定义的文件夹中的脚本（包括任何子文件夹中的脚本（除非这些文件夹包含其自己的程序集定义或引用资源））会编译到新程序集中并从它们以前的程序集中移除。</p>
+
+<p><a name="create-asmref"></a></p>
+
+<h2>创建程序集定义引用资源</h2>
+
+<p>要创建程序集定义引用资源，请执行以下操作：</p>
+
+<ol>
+<li><p>在 <strong>Project</strong> 窗口中，找到包含要包括在引用程序集中的脚本的文件夹。</p></li>
+<li><p>在该文件夹中创建程序集引用资源（菜单：__Assets__ &gt; <strong>Create</strong> &gt; __Assembly Definition Reference__）。</p></li>
+<li>
+<p>为资源分配名称。</p>
+
+<p>Unity 会重新编译项目中的脚本以创建新程序集。完成后，便可以为新程序集定义引用更改设置。</p>
+</li>
+<li>
+<p>选择新的程序集定义引用资源以在 <strong>Inspector</strong> 中查看其属性。</p>
+
+<figure>
+<img src="../uploads/Main/asmdef-2.png" alt="">
+</figure>
+</li>
+<li><p>设置 Assembly Definition 属性以引用目标程序集定义资源。</p></li>
+<li><p>单击 <strong>Apply</strong>。</p></li>
+</ol>
+
+<p>包含程序集定义引用资源的文件夹中的脚本（包括任何子文件夹中的脚本（除非这些文件夹包含其自己的程序集定义或引用资源））会编译到引用程序集中并从它们以前的程序集中移除。</p>
+
+<p><a name="create-platform-specific"></a></p>
+
+<h2>创建特定于平台的程序集</h2>
+
+<p>要为特定平台创建程序集，请执行以下操作：</p>
+
+<ol>
+<li><p>[创建程序集定义资源]。</p></li>
+<li>
+<p>选择新的程序集定义引用资源以在 <strong>Inspector</strong> 中查看其属性。</p>
+
+<figure>
+<img src="../uploads/Main/asmdef-3.png" alt="">
+</figure>
+</li>
+<li><p>选中 <strong>Any Platform</strong> 选项并选择要排除的特定平台。或者，可以取消选中 Any Platform 并选择要包含的特定平台。</p></li>
+<li><p>单击 <strong>Apply</strong>。</p></li>
+</ol>
+
+<p>为平台构建项目时，会根据选定平台包含（或排除）程序集。</p>
+
+<p><a name="create-editor-assembly"></a></p>
+
+<h2>为编辑器代码创建程序集</h2>
+
+<p>通过编辑器程序集可以将编辑器脚本置于项目中的任何位置，而不仅仅是置于名为 <em>Editor</em> 的顶层文件夹中。</p>
+
+<p>要在项目中创建包含编辑器代码的程序集，请执行以下操作：</p>
+
+<ol>
+<li>在包含编辑器脚本的文件夹中[创建特定于平台的程序集]。</li>
+<li>仅包含编辑器平台。</li>
+<li>如果有包含编辑器脚本的其他文件夹，则在这些文件夹中[创建程序集定义引用资源]并将它们设置为引用此程序集定义。</li>
+</ol>
+
+<p><a name="create-test-assembly"></a></p>
+
+<h2>创建测试程序集</h2>
+
+<p>通过测试程序集可以编写测试并使用 Unity TestRunner 运行它们，同时还使测试代码与应用程序附带的代码分开。Unity 提供 TestRunner 作为 [Test Framework 包]的一部分。请参阅 [Test Framework 文档]以了解有关安装 Test Framework 包和创建测试程序集的说明。</p>
+
+<p><a name="reference-another-assembly"></a></p>
+
+<h2>引用另一个程序集</h2>
+
+<p>要使用属于另一个程序集一部分的 C# 类型和函数，必须在程序集定义资源中创建对该程序集的引用。</p>
+
+<p>要创建程序集引用，请执行以下操作：</p>
+
+<ol>
+<li><p>选择需要引用的程序集的程序集定义以在 <strong>Inspector</strong> 中查看其属性。</p></li>
+<li>
+<p>在 <strong>Assembly Definition References</strong> 部分中，单击 <strong>+</strong> 按钮以添加新引用。</p>
+
+<figure>
+<img src="../uploads/Main/asmdef-4.png" alt="">
+</figure>
+</li>
+<li><p>将程序集定义资源分配给引用列表中新创建的字段。</p></li>
+</ol>
+
+<p>通过启用 <strong>Use GUIDs</strong> 选项可以更改引用程序集定义资源的文件名，而无需更新其他程序集定义中的引用以反映新名称。（请注意，如果删除了资源文件的元数据文件，或者将文件移到 Unity 编辑器之外，而没有同时随它们移动元数据文件，则必须重置 GUID。）</p>
+
+<p><a name="reference-precompiled-assembly"></a></p>
+
+<h2>引用预编译的插件程序集</h2>
+
+<p>默认情况下，项目中使用程序集定义创建的所有程序集都会自动引用所有预编译程序集。这些自动引用意味着在更新任何一个预编译程序集时，Unity 都必须重新编译所有程序集，即使未使用程序集中的代码也是如此。要避免这种额外开销，可以覆盖自动引用并指定仅引用程序集实际使用的预编译库：</p>
+
+<ol>
+<li><p>选择需要引用的程序集的程序集定义以在 <strong>Inspector</strong> 中查看其属性。</p></li>
+<li>
+<p>在 <strong>General</strong> 部分中，启用 <strong>Override References</strong> 选项。</p>
+
+<figure>
+<img src="../uploads/Main/asmdef-5.png" alt="">
+</figure>
+
+<p>选中 <strong>Override References</strong> 后，__Inspector__ 的 <strong>Assembly References</strong> 部分会成为可用状态。</p>
+</li>
+<li><p>在 <strong>Assembly References</strong> 部分中，单击 <strong>+</strong> 按钮以添加新引用。</p></li>
+<li>
+<p>使用空字段中的下拉列表分配对预编译程序集的引用。该列表会显示项目中适用于当前在项目 <a href="BuildSettings.html">Build Settings</a> 中设置的平台的所有预编译程序集。（可在 <a href="PluginInspector.html">Plugin Inspector</a> 中为预编译程序集设置平台兼容性。）</p>
+
+<figure>
+<img src="../uploads/Main/asmdef-6.png" alt="">
+</figure>
+</li>
+<li><p>单击 <strong>Apply</strong>。</p></li>
+<li><p>为构建项目时针对的每个平台重复操作。</p></li>
+</ol>
+
+<p><a name="conditional-assembly"></a></p>
+
+<h2>有条件地包含一个程序集</h2>
+
+<p>可以使用预处理器符号控制程序集是否进行了编译并包含在游戏或应用程序的构建中（包括编辑器中的运行模式）。可以在程序集定义选项中通过 <strong>Define Constraints</strong> 列表指定必须为要使用的程序集定义的符号：</p>
+
+<ol>
+<li><p>选择程序集的程序集定义以在 <strong>Inspector</strong> 中查看其属性。</p></li>
+<li>
+<p>在 <strong>Define Constraints</strong> 部分中，单击 <strong>+</strong> 按钮以将新符号添加到约束列表中。</p>
+
+<figure>
+<img src="../uploads/Main/asmdef-7.png" alt="">
+</figure>
+</li>
+<li>
+<p>输入符号名称。</p>
+
+<p>可以通过在名称前放置感叹号来“否定”符号。例如，约束 <code>!UNITY_WEBGL</code> 会在未定义 UNITY_WEBGL 时包含程序集。</p>
+</li>
+<li><p>单击 <strong>Apply</strong>。</p></li>
+</ol>
+
+<p>可以使用以下符号作为约束：</p>
+
+<ul>
+<li>
+<a href="class-PlayerSettingsStandalone.html#Configuration">Scripting Define Symbols</a> 设置中定义的符号，可以在 <strong>Project Settings</strong> 的 <strong>Player</strong> 部分中找到这些符号。请注意，__Scripting Define Symbols__ 适用于当前在项目 <a href="BuildSettings.html">Build Settings</a> 中设置的平台。要为多个平台定义一个符号，必须切换到每个平台并单独修改 <strong>Scripting Define Symbols</strong> 字段。</li>
+<li>Unity 定义的符号。请参阅[依赖于平台的编译]。</li>
+<li>使用程序集定义资源的 <a href="#define-symbols">Version Defines</a> 部分定义的符号。</li>
+</ul>
+
+<p>在确定是否满足约束时，不会考虑脚本中定义的符号。</p>
+
+<p>有关其他信息，请参阅 <a href="#define-constraints">Define Constraints</a>。</p>
+
+<p><a name="define-symbols"></a></p>
+
+<h2>Defining symbols based on Unity and project package versions</h2>
+
+<p>If you need to compile different code in an assembly according to whether a project uses specific versions of Unity or of a package, you can add entries to the <strong>Version Defines</strong> list. This list specifies rules for when a symbol should be defined. For version numbers, you can specify a logical expression that evaluates to a specific version or a range of versions.</p>
+
+<p>要有条件地定义符号，请执行以下操作：</p>
+
+<ol>
+<li><p>Select the Assembly Definition asset for the assembly to view its properties in the <strong>Inspector</strong>.</p></li>
+<li><p>在 <strong>Version Defines</strong> 部分中，单击 <strong>+</strong> 按钮以将条目添加到列表中。</p></li>
+<li>
+<p>设置属性：</p>
+
+<ul>
+<li>
+<strong>Resource</strong>: choose <strong>Unity</strong> or the package or module that must be installed in order for this symbol to be defined</li>
+<li>__Define__：符号名称</li>
+<li>__Expression__：计算结果为特定版本或版本范围的表达式。有关规则，请参阅[版本定义表达式]。</li>
+</ul>
+
+<p>The <strong>Expression outcome</strong> shows which versions the expression evaluates to. If the outcome displays, <strong>Invalid</strong>, then expression syntax is incorrect.</p>
+
+<p>The following example defines the symbol, USE_TIMELINE_1_3, if the project uses Timeline 1.3 and defines, USE_NEW_APIS, if the project is opened in Unity 2021.2.0a7, or later:</p>
+
+<figure>
+<img src="../uploads/Main/asmdef-8.png" alt="">
+</figure>
+</li>
+<li><p>单击 <strong>Apply</strong>。</p></li>
+</ol>
+
+<p>在程序集定义中定义的符号仅在为该定义创建的程序集中的脚本范围内。</p>
+
+<p>Note that you can use the symbols defined using the <strong>Version Defines</strong> list as <strong>Define Constraints</strong>. Thus you could specify that an assembly should only be used when specific versions of a given package are also installed in the project.</p>
+
+<p><a name="version-define-expressions"></a></p>
+
+<h3>Version Define expressions</h3>
+
+<p>You can use expressions to specify an exact version or a range of versions. A <strong>Version Define</strong> expression uses mathematical range notation. </p>
+
+<p>A square bracket, “[]” designates that the range includes the endpoint:</p>
+
+<blockquote>
+<p><code>[1.3,3.4.1]</code> 计算为 <code>1.3.0 &lt;= x &lt;= 3.4.1</code></p>
+</blockquote>
+
+<p>圆括号“()”指定范围不包括端点：</p>
+
+<blockquote>
+<p><code>(1.3.0,3.4)</code> 计算为 <code>1.3.0 &lt; x &lt; 3.4.0</code></p>
+</blockquote>
+
+<p>可以在单一表达式中混合两种范围类型：</p>
+
+<blockquote>
+<p><code>[1.1,3.4)</code> 计算为 <code>1.1.0 &lt;= x &lt; 3.4.0</code></p>
+
+<p><code>(0.2.4,5.6.2-preview.2]</code> 计算为 <code>0.2.4 &lt; x &lt;= 5.6.2.-preview.2</code></p>
+</blockquote>
+
+<p>可以在方括号中使用单一版本指示符来指定确切版本：</p>
+
+<blockquote>
+<p><code>[2.4.5]</code> 计算为 <code>x = 2.4.5</code></p>
+</blockquote>
+
+<p>作为快捷方式，可以输入不带范围括号的单一版本指示表达式包含该版本或更高版本：</p>
+
+<blockquote>
+<p><code>2.1.0-preview.7</code> 计算为 <code>x &gt;= 2.1.0-preview.7</code></p>
+</blockquote>
+
+<p><strong>Note:</strong> No spaces are allowed in an expression. No wildcard characters are supported.</p>
+
+<h3>Unity version numbers</h3>
+
+<p>Current versions of Unity (and all versions that support Assembly Definitions) use a version designator with three parts: MAJOR.MINOR.REVISION, for example, <code>2017.4.25f1</code>, <code>2018.4.29f1</code>, and <code>2019.4.7f1</code>.</p>
+
+<ul>
+<li>The MAJOR version is the target release year, such as 2017 or 2021.</li>
+<li>The MINOR version is the target release quarter, such as 1, 2, 3, or 4.</li>
+<li>The REVISION designator has three parts of its own, with the format: RRzNN, where:
+
+<ul>
+<li>RR is a one or two digit revision number</li>
+<li>z is a letter designating the release type:
+
+<ul>
+<li>a = alpha release</li>
+<li>b = beta release</li>
+<li>f = a normal public release</li>
+<li>c = China release version (equivalent to f)</li>
+<li>p = patch release</li>
+<li>x = experimental release</li>
+</ul>
+</li>
+<li>NN is one or two digit incremental number</li>
+</ul>
+</li>
+</ul>
+
+<p>Release type designators are compared as follows: </p>
+
+<blockquote>
+<p><code>a &lt; b &lt; f = c &lt; p &lt; x</code></p>
+</blockquote>
+
+<p>In other words, an alpha release is considered earlier than a beta, which is earlier than a normal (f) or China (c) release. A patch release is always later than a normal or China release with the same revision number and an experimental release is later than any other release type. Note that experimental releases do not use an incremental number at the end.</p>
+
+<p>Unity version numbers are allowed to have a suffix after the REVISION component, such as <code>2019.3.0f11-Sunflower</code>. Any suffixes are ignored for the purpose of comparing versions.</p>
+
+<p>As an example, the following expression includes any 2017 or 2018 version of Unity, but not any version in 2019 or later:</p>
+
+<pre><code>[2017,2019)
+</code></pre>
+
+<h3>Package and module version numbers</h3>
+
+<p>Package and module version designators have four parts, following the <a href="https://semver.org/">Semantic Versioning</a> format: MAJOR.MINOR.PATCH-LABEL. The first three parts are always numbers, but the label is a string. Unity packages in preview use the string, <code>preview</code> or <code>preview.n</code>, where <code>n &gt; 0</code>.
+See <a href="upm-semver.html">Package Versioning</a> for more information about package version numbers.</p>
+
+<p>For example, the following expression includes all versions of a package with MAJOR.MINOR versions between 3.2 and 6.1 (inclusive):</p>
+
+<pre><code>[3.2,6.1]
+</code></pre>
+
+<p><a name="find-assembly"></a></p>
+
+<h2>查找脚本所属的程序集</h2>
+
+<p>要确定一个 C# 脚本编译到哪个程序集中，请执行以下操作：</p>
+
+<ol>
+<li><p>在 Unity <strong>Project</strong> 窗口中选择 C# 脚本文件以在 <strong>Inspector</strong> 窗口中查看其属性。</p></li>
+<li>
+<p>程序集文件名和程序集定义（如果存在）会显示在 <strong>Inspector</strong> 的 <strong>Assembly Information</strong> 部分中。</p>
+
+<figure>
+<img src="../uploads/Main/asmdef-9.png" alt="">
+</figure>
+</li>
+</ol>
+
+<p>在此示例中，选定脚本会编译到库文件 Unity.Timeline.Editor.dll 中，该文件由 Unity.Timeline.Editor 程序集定义资源进行定义。</p>
+
+<p><a name="special-folders"></a></p>
+
+<h2>特殊文件夹</h2>
+
+<p>Unity 对具有某些特殊名称的文件夹中的脚本进行处理的方式不同于其他文件夹中的脚本。但是，在这些文件夹之一中或上级的一个文件夹中创建程序集定义资源时，该文件夹将失去特殊处理。在使用 Editor 文件夹时可能会注意到该变化，这些文件夹可能分散在整个项目中（取决于代码的组织方式以及所用的 <a href="AssetStorePackages.html">Asset Store 包</a>）。</p>
+
+<p>Unity 通常都会将名为 Editor 的文件夹中的所有脚本编译到预定义的 Assembly-CSharp-Editor 程序集中（无论这些脚本位于何处）。但是，如果在下级有一个 Editor 文件夹的文件夹中创建程序集定义资源，则 Unity 不再将这些编辑器脚本放入预定义编辑器程序集中。实际上，这些脚本会进入通过程序集定义创建的新程序集中（脚本可能不属于该程序集）。要管理 Editor 文件夹，可以在每个 Editor 文件夹中创建程序集定义或引用资源，以将这些脚本放置在一个或多个编辑器程序集中。请参阅[为编辑器代码创建程序集]。</p>
+
+<p><a name="set-assembly-attributes"></a></p>
+
+<h2>设置程序集属性</h2>
+
+<p>可以使用程序集属性 (Attribute) 为程序集设置元数据属性 (Property)。按照惯例，程序集属性语句通常置于名为 AssemblyInfo.cs 的文件中。</p>
+
+<p>例如，以下程序集属性指定了一些 [.NET 程序集元数据值]、一个 <a href="https://docs.microsoft.com/en-us/dotnet/api/system.runtime.compilerservices.internalsvisibletoattribute?view=netcore-2.0">InternalsVisibleTo</a> 属性（对于测试可能十分有用）以及 Unity 定义的 [Preserve 属性]（影响构建项目时如何从程序集中移除未使用的代码）：</p>
+
+<pre><code class="csharp">[assembly: System.Reflection.AssemblyCompany("Bee Corp.")]
+[assembly: System.Reflection.AssemblyTitle("Bee's Assembly")]
+[assembly: System.Reflection.AssemblyCopyright("Copyright 2020.")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("UnitTestAssembly")]
+[assembly: UnityEngine.Scripting.Preserve]
+</code></pre>
+
+<p><a name="get-assembly-info"></a></p>
+
+<h2>在生成脚本中获取程序集信息</h2>
+
+<p>使用 UnityEditor.Compilation 命名空间中的 CompilationPipeline 类可检索 Unity 为项目构建的所有程序集（包括基于程序集定义资源创建的程序集）的相关信息。</p>
+
+<p>例如，以下脚本使用 CompilationPipeline 类列出项目中的所有当前播放器程序集：</p>
+
+<pre><code class="csharp">using UnityEditor;
+using UnityEditor.Compilation;
+public static class AssemblyLister
+{
+    [MenuItem("Tools/List Player Assemblies in Console")]
+    public static void PrintAssemblyNames()
+    {
+        UnityEngine.Debug.Log("== Player Assemblies ==");
+        Assembly[] playerAssemblies =
+            CompilationPipeline.GetAssemblies(AssembliesType.Player);
+
+        foreach (var assembly in playerAssemblies)
+        {
+            UnityEngine.Debug.Log(assembly.name);
+        }
+    }
+}
+</code></pre>
+<!-- Start_links -->
+<!-- End_links -->
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="CustomScriptingSymbols.html"></a></span><div class="tip">Custom scripting symbols</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-AssemblyDefinitionImporter.html"></a></span><div class="tip">程序集定义 (Assembly Definition) 属性</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

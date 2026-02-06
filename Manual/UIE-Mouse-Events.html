@@ -1,0 +1,584 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="鼠标事件 - Unity 手册">
+<title>鼠标事件 - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="当您使用鼠标与 UI 交互时会发生鼠标事件。触控、笔或其他指针设备会生成其他事件，而不是鼠标事件。
+在鼠标事件 API 和本文档中，术语&amp;#8220;鼠标&amp;#8221;仅指物理鼠标或模拟物理鼠标的虚拟鼠标。">
+<meta property="og:description" content="当您使用鼠标与 UI 交互时会发生鼠标事件。触控、笔或其他指针设备会生成其他事件，而不是鼠标事件。
+在鼠标事件 API 和本文档中，术语&amp;#8220;鼠标&amp;#8221;仅指物理鼠标或模拟物理鼠标的虚拟鼠标。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'UIE-Mouse-Events';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/UIE-Mouse-Events.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/UIE-Mouse-Events.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/UIE-Mouse-Events.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/UIE-Mouse-Events.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/UIE-Mouse-Events.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/UIE-Mouse-Events.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIE-Mouse-Events.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIE-Mouse-Events.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIE-Mouse-Events.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIE-Mouse-Events.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-Mouse-Events.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-Mouse-Events.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-Mouse-Events.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-Mouse-Events.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-Mouse-Events.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-Mouse-Events.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-Mouse-Events.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-Mouse-Events.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-Mouse-Events.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-Mouse-Events.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-Mouse-Events.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-Mouse-Events.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-Mouse-Events.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-Mouse-Events.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-Mouse-Events.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-Mouse-Events.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-Mouse-Events.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-Mouse-Events.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-Mouse-Events.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-Mouse-Events.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/UIE-Mouse-Events.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/UIE-Mouse-Events.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/UIE-Mouse-Events.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/UIE-Mouse-Events.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIE-Mouse-Events.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIE-Mouse-Events.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIE-Mouse-Events.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIE-Mouse-Events.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-Mouse-Events.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-Mouse-Events.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-Mouse-Events.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-Mouse-Events.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-Mouse-Events.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-Mouse-Events.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-Mouse-Events.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-Mouse-Events.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-Mouse-Events.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-Mouse-Events.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-Mouse-Events.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-Mouse-Events.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-Mouse-Events.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-Mouse-Events.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-Mouse-Events.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-Mouse-Events.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-Mouse-Events.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-Mouse-Events.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-Mouse-Events.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-Mouse-Events.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UIToolkits.html">Create user interfaces (UI)</a></li>
+<li><a href="UIElements.html">UI 工具包</a></li>
+<li><a href="UIE-Events.html">Control behavior with events</a></li>
+<li><a href="UIE-Events-Reference.html">事件参考</a></li>
+<li>鼠标事件</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-Keyboard-Events.html"></a></span><div class="tip">键盘事件</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-Navigation-Events.html"></a></span><div class="tip">Navigation events</div>
+</div>
+</div></div>
+<h1>鼠标事件</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>当您使用鼠标与 UI 交互时会发生鼠标事件。触控、笔或其他指针设备会生成其他事件，而不是鼠标事件。
+在鼠标事件 API 和本文档中，术语“鼠标”仅指物理鼠标或模拟物理鼠标的虚拟鼠标。</p>
+
+<p>鼠标事件总是以相应的 <code>PointerEvent</code> 开始。</p>
+
+<p>所有鼠标事件的基类是 <a href="../ScriptReference/UIElements.MouseEventBase_1.html">MouseEventBase</a>。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>事件</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+	<th style="text-align:left;"><strong>涓滴</strong></th>
+	<th style="text-align:left;"><strong>冒泡</strong></th>
+	<th style="text-align:left;"><strong>可取消</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.MouseDownEvent.html">MouseDownEvent</a></td>
+	<td style="text-align:left;">当用户按下鼠标键时发送。</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.MouseUpEvent.html">MouseUpEvent</a></td>
+	<td style="text-align:left;">当用户释放鼠标键时发送。</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.MouseMoveEvent.html">MouseMoveEvent</a></td>
+	<td style="text-align:left;">当用户移动鼠标时发送。</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.WheelEvent.html">WheelEvent</a></td>
+	<td style="text-align:left;">当用户激活鼠标滚轮时发送。</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.MouseEnterWindowEvent.html">MouseEnterWindowEvent</a></td>
+	<td style="text-align:left;">当鼠标进入某个窗口时发送。</td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.MouseLeaveWindowEvent.html">MouseLeaveWindowEvent</a></td>
+	<td style="text-align:left;">当鼠标离开某个窗口时发送。</td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.MouseEnterEvent.html">MouseEnterEvent</a></td>
+	<td style="text-align:left;">当鼠标进入某一元素或其后代之一时发送。</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.MouseLeaveEvent.html">MouseLeaveEvent</a></td>
+	<td style="text-align:left;">当鼠标离开某一元素或其后代之一时发送。</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.MouseOverEvent.html">MouseOverEvent</a></td>
+	<td style="text-align:left;">当鼠标进入某一元素时发送。</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.MouseOutEvent.html">MouseOutEvent</a></td>
+	<td style="text-align:left;">当鼠标离开某一元素时发送。</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<a href="../ScriptReference/UIElements.ContextClickEvent.html">ContextClickEvent</a>（已弃用）</td>
+	<td style="text-align:left;">用户按下并松开第三个鼠标键时发送。此事件用于向后兼容 IMGUI。</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+</tbody>
+</table>
+
+<h2>独特的属性</h2>
+
+<p><strong><code>button</code></strong>：<code>button</code> 属性返回一个整数，该整数标识被按下以触发事件的鼠标键。下表列出了整数和关联的鼠标键：</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>整数</strong></th>
+	<th style="text-align:left;"><strong>按钮</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">0</td>
+	<td style="text-align:left;">左键</td>
+</tr>
+<tr>
+	<td style="text-align:left;">1</td>
+	<td style="text-align:left;">右键</td>
+</tr>
+<tr>
+	<td style="text-align:left;">2</td>
+	<td style="text-align:left;">中键</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong><code>pressedButtons</code></strong>：<code>pressedButton</code> 属性返回一个整数，用于标识当前按下的鼠标键组合。</p>
+
+<p>该数字是单个鼠标键的整数值的总和（见下表）。例如，同时按住鼠标右键和鼠标中键将导致 pressedButton 的值为 6。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>整数</strong></th>
+	<th style="text-align:left;"><strong>按钮</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">1</td>
+	<td style="text-align:left;">左键</td>
+</tr>
+<tr>
+	<td style="text-align:left;">2</td>
+	<td style="text-align:left;">右键</td>
+</tr>
+<tr>
+	<td style="text-align:left;">4</td>
+	<td style="text-align:left;">中键</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong><code>modifiers</code></strong>：<code>modifiers</code> 属性返回在键盘事件期间按下的修改键。修改键的一些示例是 <code>Shift</code>、<code>Ctrl</code> 或 <code>Alt</code> 键。</p>
+
+<p>有关更多信息，请参阅 MDN 文档的<a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values#modifier_keys">“修改键”部分</a>。</p>
+
+<p><strong><code>mousePosition</code></strong>：<code>mousePosition</code> 属性返回面板内的鼠标位置，也称为屏幕坐标系。有关面板坐标的更多信息，请参阅<a href="UIE-VisualTree.html">视觉树页面</a>。</p>
+
+<p><strong><code>localMousePosition</code></strong>：<code>localMousePosition</code> 属性返回相对于目标视觉元素的坐标。</p>
+
+<p><strong><code>mouseDelta</code></strong>：上一个鼠标事件与当前鼠标事件之间指针位置的差异。</p>
+
+<h2>事件列表</h2>
+
+<p>以下列表提供了该事件系列中每个事件的名称、描述和目标。有关事件的更多信息，请参阅 <a href="../ScriptReference/UIElements.MouseEventBase_1.html">UI 工具包 API</a>。</p>
+
+<h3>MouseDownEvent</h3>
+
+<p>当光标位于视觉元素内时按下鼠标键时发送 <a href="../ScriptReference/UIElements.MouseDownEvent.html">MouseDownEvent</a>。</p>
+
+<p><strong><code>target</code></strong>：接收鼠标捕获的视觉元素。否则是光标下最上层的可选元素。</p>
+
+<h3>MouseUpEvent</h3>
+
+<p>当光标位于视觉元素内时释放鼠标键时触发 <a href="../ScriptReference/UIElements.MouseUpEvent.html">MouseUpEvent</a>。<code>MouseUpEvent</code> 是 <code>MouseDownEvent</code> 的互补事件。</p>
+
+<p><strong><code>target</code></strong>：接收鼠标捕获的视觉元素。否则是光标下最上层的可选元素。</p>
+
+<h3>MouseMoveEvent</h3>
+
+<p>当光标热点在视觉元素内移动时发送 <a href="../ScriptReference/UIElements.MouseMoveEvent.html">MouseMoveEvent</a>。</p>
+
+<p><strong><code>target</code></strong>：接收鼠标捕获的视觉元素。否则是光标下最上层的可选元素。</p>
+
+<h3>WheelEvent</h3>
+
+<p>按下鼠标滚轮时发送 <a href="../ScriptReference/UIElements.WheelEvent.html">WheelEvent</a>。</p>
+
+<p><strong><code>target</code></strong>：接收鼠标捕获的视觉元素。否则是光标下最上层的可选元素。</p>
+
+<h3>MouseEnterWindowEvent</h3>
+
+<p>当光标移动到编辑器窗口时触发 <a href="../ScriptReference/UIElements.MouseEnterWindowEvent.html">MouseEnterWindowEvent</a>。当您进入 Game 视图窗口时，运行时面板不会收到此事件。</p>
+
+<p><strong><code>target</code></strong>：接收鼠标捕获的视觉元素。否则是光标下最上层的可选元素。</p>
+
+<h3>MouseLeaveWindowEvent</h3>
+
+<p>当光标退出编辑器窗口的空间时触发 <a href="../ScriptReference/UIElements.MouseLeaveWindowEvent.html">MouseLeaveWindowEvent</a>。<code>MouseLeaveWindowEvent</code> 与 <code>MouseEnterWindowEvent</code> 相对应。</p>
+
+<p><strong><code>target</code></strong>：接收鼠标捕获的视觉元素。否则它返回 null，因为光标不在元素上。</p>
+
+<h3>MouseEnterEvent</h3>
+
+<p>当光标移动到视觉元素或其后代之一时发送 <a href="../ScriptReference/UIElements.MouseEnterEvent.html">MouseEnterEvent</a>。</p>
+
+<p><strong><code>target</code></strong>：鼠标光标下的视觉元素或其后代之一。</p>
+
+<h3>MouseLeaveEvent</h3>
+
+<p>当光标移动到视觉元素之外时触发 <a href="../ScriptReference/UIElements.MouseLeaveEvent.html">MouseLeaveEvent</a>。此事件与 <code>MouseOutEvent</code> 的不同之处在于，此事件将发送到鼠标退出的每个元素。此事件不会传播。</p>
+
+<p><strong><code>target</code></strong>：鼠标光标退出的视觉元素（或其后代之一）。</p>
+
+<h3>MouseOverEvent</h3>
+
+<p>当光标进入一个元素时发送 <a href="../ScriptReference/UIElements.MouseOverEvent.html">MouseOverEvent</a>。此事件与 <code>MouseEnterEvent</code> 不同，因为此事件仅发送到鼠标进入的元素。</p>
+
+<p><strong><code>target</code></strong>：位于鼠标光标下的视觉元素。</p>
+
+<h3>MouseOutEvent</h3>
+
+<p>当指针设备将光标移动到视觉元素的边界之外时触发 <a href="../ScriptReference/UIElements.MouseOutEvent.html">MouseOutEvent</a>。</p>
+
+<p><code>MouseOutEvent</code> 与 <code>MouseLeaveEvent</code> 的不同之处在于 <code>MouseOutEvent</code> 在离开视觉元素到任何其他元素时发送，而 <code>MouseLeaveEvent</code> 在从视觉元素转换到后代元素时不发送。</p>
+
+<p><strong><code>target</code></strong>：鼠标光标退出的视觉元素。</p>
+
+<h3>ContextualMenuPopulateEvent</h3>
+
+<p>当需要使用菜单项填充上下文菜单时由 <code>ContextualMenuManager</code> 发送的事件。</p>
+
+<p><strong><code>target</code></strong>：要构建上下文菜单的视觉元素。</p>
+
+<h3>ContextClickEvent（已弃用）</h3>
+
+<p>用户按下并松开第三个鼠标键时发送的事件。此事件仅用于向后兼容 IMGUI。</p>
+
+<h2>示例</h2>
+
+<h3>编辑器窗口示例</h3>
+
+<p>下面的代码示例创建一个带有三个按钮的编辑器窗口，当鼠标移到一个元素上或按下鼠标上的按键时，将消息打印到控制台。</p>
+
+<p>此代码示例重点演示 <code>MouseDownEvent</code> 和 <code>MouseEnterEvent</code> 的事件触发，以及如何使用事件参数。</p>
+
+<p>要查看示例运行效果，请执行以下操作：</p>
+
+<ol>
+<li>Create a new C# script called <code>MouseEventTestWindow.cs</code>.</li>
+<li>将该示例复制到 C# 脚本。</li>
+<li>在 <strong>Window &gt; UI Toolkit &gt; Mouse Event Test Window</strong> 下打开下面的示例。</li>
+</ol>
+
+<pre><code class="lang-csharp">using UnityEditor;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+// Open this in the Editor via the menu Window &gt; UI ToolKit &gt; Mouse Event Test Window
+public class MouseEventTestWindow : EditorWindow
+{
+    [MenuItem("Window/UI Toolkit/Mouse Event Test Window")]
+    public static void ShowExample()
+    {
+        MouseEventTestWindow wnd = GetWindow&lt;MouseEventTestWindow&gt;();
+        wnd.titleContent = new GUIContent("Mouse Event Test Window");
+    }
+    public void CreateGUI()
+    {
+        // Add a few buttons
+        for (int i = 0; i &lt; 3; i++)
+        {
+            Button newElement = new Button { name = $"Button {i}", text = $"Button {i}" };
+            newElement.style.flexGrow = 1;
+            rootVisualElement.Add(newElement);
+        }
+        // Register mouse event callbacks
+        rootVisualElement.RegisterCallback&lt;MouseDownEvent&gt;(OnMouseDown, TrickleDown.TrickleDown);
+        rootVisualElement.RegisterCallback&lt;MouseEnterEvent&gt;(OnMouseEnter, TrickleDown.TrickleDown);
+    }
+
+    private void OnMouseDown(MouseDownEvent evt)
+    {
+        bool leftMouseButtonPressed = 0 != (evt.pressedButtons &amp; (1 &lt;&lt; (int)MouseButton.LeftMouse));
+        bool rightMouseButtonPressed = 0 != (evt.pressedButtons &amp; (1 &lt;&lt; (int)MouseButton.RightMouse));
+        bool middleMouseButtonPressed = 0 != (evt.pressedButtons &amp; (1 &lt;&lt; (int)MouseButton.MiddleMouse));
+        Debug.Log($"Mouse Down event. Triggered by {(MouseButton)evt.button}.");
+        Debug.Log($"Pressed buttons: Left button: {leftMouseButtonPressed} Right button: {rightMouseButtonPressed} Middle button: {middleMouseButtonPressed}");
+    }
+
+    private void OnMouseEnter(MouseEnterEvent evt)
+    {
+        VisualElement targetElement = (VisualElement)evt.target;
+        Debug.Log($"Mouse is now over element '{targetElement.name}'");
+    }
+}
+</code></pre>
+
+<h3>运行时示例</h3>
+
+<p>以下代码示例在按下任何鼠标键时将消息打印到控制台，显示哪个按键触发了事件，以及当前按下了哪些按键。</p>
+
+<p>此代码示例重点演示了向 <code>MouseDownEvent</code> 注册回调以及如何使用事件参数。
+要查看示例的效果，请执行以下操作：</p>
+
+<ol>
+<li>创建一个具有有效 UIDocument 的游戏对象。</li>
+<li>在 <strong>Assets &gt; Scripts</strong> 下，创建一个 C# 脚本，名为 MouseEventTestRuntime。</li>
+<li>将该示例复制到 C# 脚本。</li>
+<li>将 MouseEventTestRuntime 脚本附加到带有 UIDocument 的游戏对象。</li>
+<li>进入运行模式。</li>
+<li>将鼠标移到 Game 视图上，按下或按住鼠标上的按键。</li>
+</ol>
+
+<pre><code class="lang-csharp">
+using UnityEngine;
+using UnityEngine.UIElements;
+
+public class MouseEventTestRuntime : MonoBehaviour
+{
+    void Start()
+    {
+        var root = GetComponent&lt;UIDocument&gt;().rootVisualElement;
+        var newLabel = new Label("Move the mouse or press buttons to see the log output");
+        newLabel.style.flexGrow = 1;
+        root.Add(newLabel);
+        root.RegisterCallback&lt;MouseDownEvent&gt;(OnMouseDown, TrickleDown.TrickleDown);
+    }
+
+    private void OnMouseDown(MouseDownEvent evt)
+    {
+        bool leftMouseButtonPressed = 0 != (evt.pressedButtons &amp; (1 &lt;&lt; (int)MouseButton.LeftMouse));
+        bool rightMouseButtonPressed = 0 != (evt.pressedButtons &amp; (1 &lt;&lt; (int)MouseButton.RightMouse));
+        bool middleMouseButtonPressed = 0 != (evt.pressedButtons &amp; (1 &lt;&lt; (int)MouseButton.MiddleMouse));
+
+        VisualElement targetElement = (VisualElement)evt.target;
+        Debug.Log($"Mouse Down event.Triggered by {(MouseButton)evt.button} over element '{targetElement.name}'");
+        Debug.Log($"Pressed buttons: Left button: {leftMouseButtonPressed} Right button: {rightMouseButtonPressed} Middle button: {middleMouseButtonPressed}");
+    }
+}
+
+</code></pre>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-Keyboard-Events.html"></a></span><div class="tip">键盘事件</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-Navigation-Events.html"></a></span><div class="tip">Navigation events</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

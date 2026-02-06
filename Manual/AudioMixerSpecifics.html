@@ -1,0 +1,402 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Specifics on the Audio Mixer window - Unity 手册">
+<title>Specifics on the Audio Mixer window - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/AudioMixerCreate.png">
+<meta name="description" content="The Mixers panel displays a complete list of all Audio Mixers in the project. Select the Audio Mixers in the Mixers panel to quickly switch between them. You can also route one Audio Mixer into the AudioGroup of another Audio Mixer from this panel.">
+<meta property="og:description" content="The Mixers panel displays a complete list of all Audio Mixers in the project. Select the Audio Mixers in the Mixers panel to quickly switch between them. You can also route one Audio Mixer into the AudioGroup of another Audio Mixer from this panel.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'AudioMixerSpecifics';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/AudioMixerSpecifics.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/AudioMixerSpecifics.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/AudioMixerSpecifics.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/AudioMixerSpecifics.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/AudioMixerSpecifics.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/AudioMixerSpecifics.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/AudioMixerSpecifics.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/AudioMixerSpecifics.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/AudioMixerSpecifics.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/AudioMixerSpecifics.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/AudioMixerSpecifics.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/AudioMixerSpecifics.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/AudioMixerSpecifics.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/AudioMixerSpecifics.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/AudioMixerSpecifics.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/AudioMixerSpecifics.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/AudioMixerSpecifics.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/AudioMixerSpecifics.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/AudioMixerSpecifics.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/AudioMixerSpecifics.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/AudioMixerSpecifics.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/AudioMixerSpecifics.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/AudioMixerSpecifics.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/AudioMixerSpecifics.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/AudioMixerSpecifics.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/AudioMixerSpecifics.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/AudioMixerSpecifics.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/AudioMixerSpecifics.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/AudioMixerSpecifics.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/AudioMixerSpecifics.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/AudioMixerSpecifics.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/AudioMixerSpecifics.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/AudioMixerSpecifics.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/AudioMixerSpecifics.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/AudioMixerSpecifics.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/AudioMixerSpecifics.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/AudioMixerSpecifics.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/AudioMixerSpecifics.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/AudioMixerSpecifics.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/AudioMixerSpecifics.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/AudioMixerSpecifics.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/AudioMixerSpecifics.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/AudioMixerSpecifics.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/AudioMixerSpecifics.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/AudioMixerSpecifics.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/AudioMixerSpecifics.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/AudioMixerSpecifics.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/AudioMixerSpecifics.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/AudioMixerSpecifics.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/AudioMixerSpecifics.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/AudioMixerSpecifics.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/AudioMixerSpecifics.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/AudioMixerSpecifics.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/AudioMixerSpecifics.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/AudioMixerSpecifics.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/AudioMixerSpecifics.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/AudioMixerSpecifics.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/AudioMixerSpecifics.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Audio.html">Audio</a></li>
+<li><a href="AudioMixer.html">混音器</a></li>
+<li>Specifics on the Audio Mixer window</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="AudioMixerOverview.html"></a></span><div class="tip">An overview of the concepts and Audio Mixer</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="AudioMixerInspectors.html"></a></span><div class="tip">AudioGroup Inspector</div>
+</div>
+</div></div>
+<h1>Specifics on the Audio Mixer window</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<h2>Mixers panel</h2>
+
+<p>The Mixers panel displays a complete list of all Audio Mixers in the project. Select the Audio Mixers in the Mixers panel to quickly switch between them. You can also route one Audio Mixer into the AudioGroup of another Audio Mixer from this panel. </p>
+
+<p>Select <strong>+</strong> in the top right of the panel to create a new Audio Mixer in the project.</p>
+
+<figure>
+<img src="../uploads/Main/AudioMixerCreate.png" alt="">
+</figure>
+
+<h3>Route Audio Mixers into other Audio Mixers</h3>
+
+<p>Unity supports the use of multiple Audio Mixers within a scene at once. By default, each Audio Mixer outputs the audio signal directly to the AudioListener.</p>
+
+<p>You can choose to route the audio output of an Audio Mixer into an AudioGroup of another Audio Mixer. This allows for flexible and dynamic routing hierarchies at game runtime.</p>
+
+<p>You can route an Audio Mixer into another AudioGroup through either of the following methods:</p>
+
+<ul>
+<li>From the Mixers panel in the Editor.</li>
+<li>Dynamically at runtime through the <a href="../ScriptReference/Audio.AudioMixer.html">AudioMixer API</a>.</li>
+</ul>
+
+<p>To change the output of an Audio Mixer within the Editor:</p>
+
+<ol>
+<li>Select an Audio Mixer within the Mixers panel.</li>
+<li>Drag the Audio Mixer over the top of another Audio Mixer.</li>
+<li>In the dialog that appears, select the AudioGroup of the Audio Mixer you want to route into.</li>
+<li>The panel displays the parenting relationship of the Audio Mixers. It also displays the target AudioGroup next to the Audio Mixer’s name.</li>
+</ol>
+
+<figure>
+<img src="../uploads/Main/AudioMixerRouting.png" alt="">
+</figure>
+
+<h2>Hierarchy panel</h2>
+
+<p>The Hierarchy view is where you define the sound categories of an Audio Mixer and the mixing structure. You can define your own custom categories that AudioSources can connect to and play through.</p>
+
+<figure>
+<img src="../uploads/Main/AudioMixerHierarchyPanel.png" alt="">
+</figure>
+
+<h3>Add and configure AudioGroups within the Hierarchy</h3>
+
+<p>You can add and modify the topology of an Audio Mixer within the AudioGroup Hierarchy panel.</p>
+
+<p>To add a new AudioGroup to the hierarchy, do either of the following:</p>
+
+<ul>
+<li>Right-click on an existing AudioGroup (there must be at least one in an Audio Mixer), and select <strong>Add child group</strong> or <strong>Add sibling group</strong>.</li>
+<li>Select an AudioGroup to add a child to, and select <strong>+</strong> in the top right of the panel. This adds a new group to the Audio Mixer under the selected one.</li>
+</ul>
+
+<p>To change the topology of an Audio Mixer:</p>
+
+<ol>
+<li>Select an AudioGroup in the panel.</li>
+<li>Drag it over the top of another AudioGroup.</li>
+</ol>
+
+<p>This parents the target AudioGroup above the one selected.</p>
+
+<p>To delete an AudioGroup (including its children), do either of the following:</p>
+
+<ul>
+<li>Select the group you want to delete, and press the Delete key.</li>
+<li>Right-click the group you want to delete, and select <strong>Remove Group (and children)</strong>.</li>
+</ul>
+
+<p>To duplicate an AudioGroup and make it a sibling:</p>
+
+<ol>
+<li>Right-click the AudioGroup you want to duplicate.</li>
+<li>Select <strong>Duplicate Group (and children)</strong>.</li>
+</ol>
+
+<p>This duplicates the group and child groups exactly, including effects contained within the groups.</p>
+
+<p>To rename an AudioGroup:</p>
+
+<ol>
+<li>Right-click the group.</li>
+<li>Select <strong>Rename</strong>.</li>
+</ol>
+
+<h2>AudioGroup view</h2>
+
+<figure>
+<img src="../uploads/Main/AudioMixerAudioGroupView.png" alt="">
+</figure>
+
+<p>The AudioGroup view displays a flat arrangement of the AudioGroups in the Audio Mixer. This arrangement is organized horizontally within the view. The current view selection dictates the groups shown in the AudioGroup view.</p>
+
+<p>Each AudioGroup within the view is represented as a vertical “strip”. The layout and look and feel of the strip is common to Digital Audio Workstations and other audio editing packages. This layout facilitates the transition of audio engineers from a music and video background, and is a parallel for audio hardware integration.</p>
+
+<p>The strip is made up of a title bar, followed by a vertical VU meter, which represents the current audio levels through that AudioGroup. Beside the VU meter is a volume selector that allows you to input the AudioGroups attenuation along the same scale as the VU meter, which is represented in dB levels.</p>
+
+<p>Below the VU meter are three buttons with the following functionality:</p>
+
+<ul>
+<li>
+<strong>Solo</strong> - This toggle switches between hearing the entire mix or only the AudioSources that play into children of the AudioGroup being Soloed.</li>
+<li>
+<strong>Mute</strong> - This toggle includes the current AudioGroup in the audible mix or excludes it from being heard in the global mix.</li>
+<li>
+<strong>Bypass</strong> - This toggle bypasses or enables all the effects in the AudioGroup.</li>
+</ul>
+
+<p>The AudioGroup also contains a list of DSP Effect Units and the Attenuation Units in the AudioGroup. The attenuation can be applied anywhere in the Effect Unit chain in an AudioGroup and allows you to decide exactly where you apply the volume adjustment. This is useful for non-linear effects and Send and Receive Units.</p>
+
+<p>Each Effect Unit slot displays the name of the Effect unit that is being applied. The circle on the left side of the effect is a toggle to enable or bypass that individual effect. If you right-click the effect and select <strong>Allow Wet Mixing</strong>, the colored bar on the bottom of the screen becomes active. This colored bar denotes the amount of wet signal that passes through the effect. </p>
+
+<p>To refine the order of effects, drag an effect up and down the audiogroup. You can also drag effects across AudioGroups to move the effect to another AudioGroup.</p>
+
+<p>To add new Effect Units, right-click on an existing effect to add it before or after it, or select <strong>Add..</strong> at the bottom of the strip.</p>
+
+<h2>Snapshot panel</h2>
+
+<p>In the Snapshot panel, you can create, switch between, and tweak different Snapshots in the Audio Mixer. There is always at least one snapshot active. Selection of a snapshot within the Snapshot panel indicates that further edits of the Audio Mixer are edits to that snapshot.</p>
+
+<p>Snapshots defined in the Snapshot panel also display as sub-assets of the Audio Mixer. This allows you to access the snapshots elsewhere in the editor and within scripts.</p>
+
+<figure>
+<img src="../uploads/Main/AudioMixerSnapshotPanel1.png" alt="">
+</figure>
+
+<figure>
+<img src="../uploads/Main/AudioMixerSnapshotPanel2.png" alt="">
+</figure>
+
+<p>You can also define a Start Snapshot. A Start Snapshot has a star icon to its right on the snapshot list. The Start Snapshot is the snapshot that the Audio Mixer initializes to when it loads. For example, when the scene starts.</p>
+
+<p>To create a new Snapshot:</p>
+
+<ol>
+<li>Select the <strong>+</strong> at the top right of the panel.</li>
+<li>Enter a name for the new snapshot.</li>
+</ol>
+
+<p>To define a different Start Snapshot:</p>
+
+<ol>
+<li>Right-click a Snapshot.</li>
+<li>Select <strong>Set as Start Snapshot</strong>.</li>
+</ol>
+
+<h2>Views panel</h2>
+
+<p>Views allow you to create groups of visible AudioGroups in the Audio Mixer. With views, you can create perspectives of interest into the Audio Mixer, instead of always being presented with the full hierarchy. Views are only for workflow optimization and don’t affect runtime setup or performance.</p>
+
+<p>Like the Snapshot panel, there is always one view selected and shown in the AudioGroup View. By default, all AudioGroups are visible in the default view. The eye icons in the Hierarchy panel control what is contained in a view.</p>
+
+<p>To add a new view to the list of views;</p>
+
+<ol>
+<li>Select the <strong>+</strong> at the top right of the Views panel.</li>
+<li>Enter a name for the new view.</li>
+</ol>
+
+<p>To change the current view, select one from the list of views in the Views panel.</p>
+
+<p>To remove a view:</p>
+
+<ol>
+<li>Right-click on the view you want to remove.</li>
+<li>Select <strong>Delete</strong>.</li>
+</ol>
+
+<p>To duplicate a view with all of the current view settings:</p>
+
+<ol>
+<li>Right-click on the view you want to duplicate.</li>
+<li>Select <strong>Duplicate</strong>.</li>
+</ol>
+
+<h3>The eye icon of an AudioGroup</h3>
+
+<p>Each AudioGroup in the Hierarchy panel has a small eye icon to the left of the group. This icon serves two purposes:</p>
+
+<ul>
+<li>Select the eye icon to toggle this AudioGroup’s visibility in the currently selected View.</li>
+<li>Right-click on the eye icon to select from a range of colors to tag this AudioGroup with. Select a color other than <strong>No Colour</strong> to create a small color tag to the left of the eye icon and a color tag under the AudioGroup’s name in the AudioGroup view. These color indicators visually group different concepts and collections of AudioGroups in the Audio Mixer.</li>
+</ul>
+<!-- area:authoring -->
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="AudioMixerOverview.html"></a></span><div class="tip">An overview of the concepts and Audio Mixer</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="AudioMixerInspectors.html"></a></span><div class="tip">AudioGroup Inspector</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="FrameTimingManager - Unity 手册">
+<title>FrameTimingManager - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/frame-timing-manager-deferred-rendering-diagram.png">
+<meta name="description" content="The FrameTimingManager is an API that captures detailed timing data about performance during individual frames in an application. You can use this data to assess those frames to understand why your application doesn&amp;#8217;t meet performance targets.">
+<meta property="og:description" content="The FrameTimingManager is an API that captures detailed timing data about performance during individual frames in an application. You can use this data to assess those frames to understand why your application doesn&amp;#8217;t meet performance targets.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'frame-timing-manager';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/frame-timing-manager.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/frame-timing-manager.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/frame-timing-manager.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/frame-timing-manager.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/frame-timing-manager.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/frame-timing-manager.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/frame-timing-manager.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/frame-timing-manager.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/frame-timing-manager.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/frame-timing-manager.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/frame-timing-manager.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/frame-timing-manager.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/frame-timing-manager.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/frame-timing-manager.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/frame-timing-manager.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/frame-timing-manager.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/frame-timing-manager.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/frame-timing-manager.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/frame-timing-manager.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/frame-timing-manager.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/frame-timing-manager.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/frame-timing-manager.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/frame-timing-manager.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/frame-timing-manager.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/frame-timing-manager.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/frame-timing-manager.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/frame-timing-manager.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/frame-timing-manager.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/frame-timing-manager.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/frame-timing-manager.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/frame-timing-manager.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/frame-timing-manager.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/frame-timing-manager.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/frame-timing-manager.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/frame-timing-manager.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/frame-timing-manager.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/frame-timing-manager.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/frame-timing-manager.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/frame-timing-manager.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/frame-timing-manager.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/frame-timing-manager.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/frame-timing-manager.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/frame-timing-manager.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/frame-timing-manager.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/frame-timing-manager.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/frame-timing-manager.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/frame-timing-manager.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/frame-timing-manager.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/frame-timing-manager.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/frame-timing-manager.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/frame-timing-manager.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/frame-timing-manager.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/frame-timing-manager.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/frame-timing-manager.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/frame-timing-manager.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/frame-timing-manager.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/frame-timing-manager.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/frame-timing-manager.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="CamerasOverview.html">摄像机</a></li>
+<li><a href="DynamicResolution.html">动态分辨率</a></li>
+<li>FrameTimingManager</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="DynamicResolution.html"></a></span><div class="tip">动态分辨率</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="deep-learning-super-sampling.html"></a></span><div class="tip">Deep learning super sampling</div>
+</div>
+</div></div>
+<h1>FrameTimingManager</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>The FrameTimingManager is an API that captures detailed timing data about performance during individual frames in an application. You can use this data to assess those frames to understand why your application doesn’t meet performance targets.</p>
+
+<p>Use the FrameTimingManager if:</p>
+
+<ul>
+<li>You need to debug at a frame-by-frame level.</li>
+<li>You want to use the <a href="DynamicResolution.html">Dynamic Resolution</a> feature.</li>
+<li>You want to use the <a href="https://docs.unity.cn/Packages/com.unity.mobile.adaptiveperformance@0.1/manual/index.html">Adaptive Performance</a> package.</li>
+</ul>
+
+<p>Frame timings don’t replace data from the <a href="Profiler.html">Profiler</a>; after you profile your application at a high level, use the FrameTimingManager to investigate specific details. The FrameTimingManager decreases performance when it records data, so it can’t produce an accurate measurement of how your application performs.</p>
+
+<h2>How to enable the FrameTimingManager</h2>
+
+<p><strong>Tip</strong>: FrameTimingManager is always active for Development Player builds.</p>
+
+<p>To enable the FrameTimingManage for Release builds and in the Unity Editor:</p>
+
+<ol>
+<li>Go to <strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Player</strong>.</li>
+<li>In <strong>Other Settings</strong>, navigate to the <strong>Rendering</strong> heading.</li>
+<li>Enable the <strong>Frame Timing Stats</strong> property.</li>
+</ol>
+
+<p>If you use the OpenGL platform, you also need to enable the <strong>OpenGL: Profiler GPU Recorders</strong> property to measure GPU usage. To do this:</p>
+
+<ol>
+<li>Go to <strong>Edit</strong> &gt; <strong>Project</strong> &gt; <strong>Settings</strong> &gt; <strong>Player</strong>.</li>
+<li>In <strong>Other Settings</strong>, navigate to the <strong>Rendering</strong> heading.</li>
+<li>Enable the <strong>OpenGL: Profiler GPU</strong> property.</li>
+</ol>
+
+<p>Note: In Unity versions 2021.2 and earlier, the <strong>OpenGL Profiler GPU Recorder</strong> disables the <strong>Frame Timing Stats</strong> property, so you can’t use them together.</p>
+
+<h2>How to use the FrameTimingManager</h2>
+
+<p>To access data that the FrameTimingManager records, use one of the following methods:</p>
+
+<ul>
+<li>
+<a href="#ViewFrameTimeDataCustomProfilerModule">View frame time data in a Custom Profiler module</a>.</li>
+<li>
+<a href="#RetrieveTimestampDataFrameTimingManagerAPI">Retrieve timestamp data from the FrameTimingManager C# API</a>.</li>
+<li><a href="#RecordFrameTimeDataProfilerCounters">Record data through specific profiler counters.</a></li>
+</ul>
+
+<p><a name="ViewFrameTimeDataCustomProfilerModule"></a></p>
+
+<h3>View frame time data with a Custom Profiler module</h3>
+
+<p>To view frame timing data in a Custom Profiler module:</p>
+
+<ol>
+<li>Create a custom profiler module according to the instructions on <a href="profiler-module-editor.html">Creating a custom profiler module</a>.</li>
+<li>In the <strong>Profiler Module Editor </strong>window, select your custom module.</li>
+<li>In the <strong>Available Counters</strong> panel, select <strong>Unity</strong>.</li>
+<li>Select <strong>Render</strong> to open the submenu that contains profiler counters related to memory usage, which includes those that the <strong>FrameTimingStats</strong> property enables. You can then click on the relevant counters in the submenu to add them to your custom module.</li>
+</ol>
+
+<p>The following table describes the purpose of each of the counters that become available when you enable <strong>Frame Timing Stats</strong>:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Measurement</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>CPU Total Frame Time (ms)</strong></td>
+	<td style="text-align:left;">The total CPU frame time, in milliseconds. Unity calculates this as the time between the ends of two frames, including any overheads or time spent waiting in between frames.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>CPU Main Thread Frame Time (ms)</strong></td>
+	<td style="text-align:left;">The time between the start of the frame and the time when the Main Thread finished the work it performed during that frame, in milliseconds.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>CPU Main Thread Present Wait Time (ms)</strong></td>
+	<td style="text-align:left;">The CPU time spent waiting for Present() during the frame.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>CPU Render Thread Frame Time (ms)</strong></td>
+	<td style="text-align:left;">The time between the start of the work on the Render Thread and when Unity calls the Present() function, in milliseconds.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>GPU Frame Time (ms)</strong></td>
+	<td style="text-align:left;">The time difference between the beginning and the end of the GPU rendering a single frame, in milliseconds.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="RetrieveTimestampDataFrameTimingManagerAPI"></a></p>
+
+<h3>Retrieve timestamp data from the FrameTimingManager C# API</h3>
+
+<p>Use the FrameTimingManager API to access timestamp information. In each variable, the FrameTimingManager records the time a specific event happens during a frame.</p>
+
+<p>The following table shows the values available through the API, in the order that Unity executes them during a frame:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>frameStartTimestamp</strong></td>
+	<td style="text-align:left;">The CPU clock time when the frame begins.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>firstSubmitTimestamp</strong></td>
+	<td style="text-align:left;">The CPU clock time when Unity submits the first job to the GPU during this frame.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>cpuTimePresentCalled</strong></td>
+	<td style="text-align:left;">The CPU clock time when Unity calls the Present() function for the current frame.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>cpuTimeFrameComplete</strong></td>
+	<td style="text-align:left;">The CPU clock time when the GPU finishes rendering the frame and interrupts the CPU.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="RecordFrameTimeDataProfilerCounters"></a></p>
+
+<h3>Record data with specific profiler counters</h3>
+
+<p>You can read FrameTimingManager values using the ProfilerRecorder API instead of the FrameTimingManager C# API. The benefit of this is that when you use the ProfilerRecorder API, the FrameTimingManager only records values when you attach a recorder to a specific counter. This behavior enables you to control which counters collect data and so, reduce the impact that the FrameTimingManager has on performance. </p>
+
+<p>The following example shows how to track only the CPU Main Thread Frame Time variable with the ProfilerRecordAPI:</p>
+
+<pre><code class="csharp">
+using Unity.Profiling;
+
+using UnityEngine;
+
+public class ExampleScript : MonoBehaviour
+
+{
+
+    string statsText;
+
+    ProfilerRecorder mainThreadTimeRecorder;
+
+    void OnEnable()
+
+    {
+        mainThreadTimeRecorder = ProfilerRecorder.StartNew(ProfilerCategory.Internal, "CPU Main Thread Frame Time");
+    }
+
+    void OnDisable()
+
+    {
+        mainThreadTimeRecorder.Dispose();
+    }
+
+    void Update()
+
+    {
+
+        var frameTime = mainThreadTimeRecorder.LastValue;
+
+        // Your code logic here
+
+    }
+}
+
+</code></pre>
+
+<h2>How the FrameTimingManager works</h2>
+
+<p>The FrameTimingManager provides results with a set delay of four frames. This is because timing results aren’t immediately available at the end of each frame, so the FrameTimingManager waits to get CPU and GPU data for the frame.</p>
+
+<p>The delay doesn’t guarantee accurate timing results, because the GPU may not have any available resources to return the results, or might fail to return them correctly.</p>
+
+<p>The FrameTimingManger changes how it produces a FrameTimeComplete timestamp under some circumstances:</p>
+
+<ul>
+<li>If the GPU supports GPU timestamps, the GPU provides a FrameTimeComplete timestamp.</li>
+<li>If the GPU doesn’t support GPU timestamps and returns GPU Time, the FrameTimingManager calculates a value for gpuFrameTime. The value is the sum of the reported GPU Time and the FirstSubmitTimestamp values.</li>
+<li>If the GPU doesn’t support GPU timestamps and doesn’t return GPU Time,the FrameTimingManager sets the value of PresentTimestamp as the value of FrameTimeComplete.</li>
+</ul>
+
+<h3>Possible inaccuracy with tile-based deferred rendering GPUs</h3>
+
+<p>For GPUs that use tile-based deferred rendering architecture, such as Metal GPUs in Apple devices, the reported GPU Time might be larger than the reported frame time.</p>
+
+<p>This can happen when the GPU is under heavy load, or when the GPU pipeline is full. In these cases, the GPU might defer execution of some rendering phases. Because the FrameTimingManager measures the time between the beginning and end of the frame rendering, any gaps between phases increase the reported GPU time.</p>
+
+<p>In the example below, no GPU resources are available, because the GPU passes a job from the Vertex queue to the Fragment queue. The GPU’s graphics API therefore defers the execution of the next phase. When this happens, the GPU time measurement includes phase work time and any gap in between. The result is that the FrameTimingManager reports a higher GPU time measurement than expected.</p>
+
+<figure>
+<img src="../uploads/Main/frame-timing-manager-deferred-rendering-diagram.png" alt="Diagram showing how the discrepancy in reported GPU time can happen in the Metal API">
+<figcaption>Diagram showing how the discrepancy in reported GPU time can happen in the Metal API</figcaption>
+</figure>
+
+<h2>Platform support</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+	<th style="text-align:left;"><strong>Supported</strong></th>
+	<th style="text-align:left;"><strong>注释</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Windows</strong></td>
+	<td style="text-align:left;">DirectX 11</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">DirectX 12</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">OpenGL</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Vulkan</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>macOS</strong></td>
+	<td style="text-align:left;">Metal</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Might report a larger GPU time measurement than the total frame time due to the behavior of tile-based deferred rendering GPUs.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Linux</strong></td>
+	<td style="text-align:left;">OpenGL</td>
+	<td style="text-align:left;">部分支持</td>
+	<td style="text-align:left;">Doesn’t support the GPU time measurement.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Vulkan</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Android</strong></td>
+	<td style="text-align:left;">OpenGL ES</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Vulkan</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>iOS</strong></td>
+	<td style="text-align:left;">Metal</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Might report a larger GPU time measurement than the total frame time due to the behavior of tile-based deferred rendering GPUs.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>tvOS</strong></td>
+	<td style="text-align:left;">Metal</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Might report a larger GPU time measurement than the total frame time due to the behavior of tile-based deferred rendering GPUs.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>WebGL</strong></td>
+	<td style="text-align:left;">WebGL</td>
+	<td style="text-align:left;">部分支持</td>
+	<td style="text-align:left;">Doesn’t support the GPU time measurement.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>其他资源</h2>
+
+<ul>
+<li><a href="DynamicResolution.html">Dynamic resolution</a></li>
+<li><a href="../ScriptReference/FrameTiming.html">FrameTiming API</a></li>
+<li><a href="../ScriptReference/FrameTimingManager.html">FrameTimingManager API</a></li>
+<li><a href="Profiler.html">Profiler overview</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="DynamicResolution.html"></a></span><div class="tip">动态分辨率</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="deep-learning-super-sampling.html"></a></span><div class="tip">Deep learning super sampling</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

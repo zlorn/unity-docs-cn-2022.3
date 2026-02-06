@@ -1,0 +1,260 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Specular mode: Specular Property - Unity 手册">
+<title>Specular mode: Specular Property - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/StandardShaderSpecularMode.png">
+<meta name="description" content="The Specular Property is only visible when using the Specular setup, as shown in the Shader field in the image above. Specular effects are essentially the direct reflections of light sources in your Scene, which typically show up as bright highlights and shine on the surface of objects (although specular highlights can be subtle or diffuse too).">
+<meta property="og:description" content="The Specular Property is only visible when using the Specular setup, as shown in the Shader field in the image above. Specular effects are essentially the direct reflections of light sources in your Scene, which typically show up as bright highlights and shine on the surface of objects (although specular highlights can be subtle or diffuse too).">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'StandardShaderMaterialParameterSpecular';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/StandardShaderMaterialParameterSpecular.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/StandardShaderMaterialParameterSpecular.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/StandardShaderMaterialParameterSpecular.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/StandardShaderMaterialParameterSpecular.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/StandardShaderMaterialParameterSpecular.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/StandardShaderMaterialParameterSpecular.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/StandardShaderMaterialParameterSpecular.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/StandardShaderMaterialParameterSpecular.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/StandardShaderMaterialParameterSpecular.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/StandardShaderMaterialParameterSpecular.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/StandardShaderMaterialParameterSpecular.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/StandardShaderMaterialParameterSpecular.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/StandardShaderMaterialParameterSpecular.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/StandardShaderMaterialParameterSpecular.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/StandardShaderMaterialParameterSpecular.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/StandardShaderMaterialParameterSpecular.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/StandardShaderMaterialParameterSpecular.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/StandardShaderMaterialParameterSpecular.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/StandardShaderMaterialParameterSpecular.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/StandardShaderMaterialParameterSpecular.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/StandardShaderMaterialParameterSpecular.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/StandardShaderMaterialParameterSpecular.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/StandardShaderMaterialParameterSpecular.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/StandardShaderMaterialParameterSpecular.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/StandardShaderMaterialParameterSpecular.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/StandardShaderMaterialParameterSpecular.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/StandardShaderMaterialParameterSpecular.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/StandardShaderMaterialParameterSpecular.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/StandardShaderMaterialParameterSpecular.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/StandardShaderMaterialParameterSpecular.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/StandardShaderMaterialParameterSpecular.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/StandardShaderMaterialParameterSpecular.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/StandardShaderMaterialParameterSpecular.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/StandardShaderMaterialParameterSpecular.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/StandardShaderMaterialParameterSpecular.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/StandardShaderMaterialParameterSpecular.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/StandardShaderMaterialParameterSpecular.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/StandardShaderMaterialParameterSpecular.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/StandardShaderMaterialParameterSpecular.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/StandardShaderMaterialParameterSpecular.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/StandardShaderMaterialParameterSpecular.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/StandardShaderMaterialParameterSpecular.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/StandardShaderMaterialParameterSpecular.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/StandardShaderMaterialParameterSpecular.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/StandardShaderMaterialParameterSpecular.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/StandardShaderMaterialParameterSpecular.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/StandardShaderMaterialParameterSpecular.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/StandardShaderMaterialParameterSpecular.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/StandardShaderMaterialParameterSpecular.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/StandardShaderMaterialParameterSpecular.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/StandardShaderMaterialParameterSpecular.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/StandardShaderMaterialParameterSpecular.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/StandardShaderMaterialParameterSpecular.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/StandardShaderMaterialParameterSpecular.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/StandardShaderMaterialParameterSpecular.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/StandardShaderMaterialParameterSpecular.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/StandardShaderMaterialParameterSpecular.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/StandardShaderMaterialParameterSpecular.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="Shaders.html">着色器</a></li>
+<li><a href="shader-built-in.html">内置着色器</a></li>
+<li><a href="shader-StandardShader.html">标准着色器</a></li>
+<li><a href="StandardShaderMaterialParameters.html">Standard Shader Material Inspector reference</a></li>
+<li>Specular mode: Specular Property</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="StandardShaderMaterialParameterAlbedoColor.html"></a></span><div class="tip">Albedo Color and Transparency</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="StandardShaderMaterialParameterMetallic.html"></a></span><div class="tip">Metallic mode: Metallic Property</div>
+</div>
+</div></div>
+<h1>Specular mode: Specular Property</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<figure>
+<img src="../uploads/Main/StandardShaderSpecularMode.png" alt="">
+</figure>
+
+<h3>Specular Property</h3>
+
+<p>The <strong>Specular</strong> Property is only visible when using the <strong>Specular setup</strong>, as shown in the <strong>Shader</strong> field in the image above. Specular effects are essentially the direct reflections of light sources in your Scene, which typically show up as bright highlights and shine on the surface of objects (although specular highlights can be subtle or diffuse too).</p>
+
+<figure>
+<img src="../uploads/Main/StandardShaderParameterSpecularSmoothness.png" alt="">
+</figure>
+
+<p>Both the <strong>Specular setup</strong> and <strong>Metallic setup</strong> produce specular highlights, so the choice of which to use is more a matter of setup and your artistic preference. In the <strong>Specular setup</strong> you have direct control over the brightness and tint colour of specular highlights, while in the <strong>Metallic setup</strong> you control other Properties and the intensity and colour of the specular highlights emerge as a natural result of the other Property settings.</p>
+
+<p>When working in Specular mode, the RGB colour in the <strong>Specular</strong> Property controls the strength and colour tint of the specular reflectivity. This includes shine from light sources and reflections from the environment. The <a href="StandardShaderMaterialParameterSmoothness.html">Smoothness</a> Property controls the clarity of the specular effect. With a low <strong>Smoothness</strong> value, even strong specular reflections appear blurred and diffuse. With a high <strong>Smoothness</strong> value, specular reflections are crisper and clearer.</p>
+
+<figure>
+<img src="../uploads/Main/StandardShaderReflectivityGraduationTable.svg" alt="一组从 0 到 1 的镜面反射平滑度值">
+<figcaption>一组从 0 到 1 的镜面反射平滑度值</figcaption>
+</figure>
+
+<p>You might want to vary the <strong>Specular</strong> values across the surface of your material - for example, if your Texture contains a character’s coat that has some shiny buttons. You would want the buttons to have a higher specular value than the fabric of the clothes. To achieve this, assign a Texture map instead of using a single slider value. This allows greater control over the the strength and colour of the specular light reflections across the surface of the material, according to the pixel colours of your specular map.</p>
+
+<p>When a Texture is assigned to the <strong>Specular</strong> Property, both the <strong>Specular</strong> Property and <strong>Smoothness</strong> slider disappear. Instead, the specular levels for the material are controlled by the values in the <strong>Red</strong>, <strong>Green</strong> and <strong>Blue</strong> channels of the Texture itself, and the <a href="StandardShaderMaterialParameterSmoothness.html">Smoothness</a> levels for the material are controlled by the Alpha channel of the same Texture. This provides a single Texture which defines areas as being rough or smooth, and have varying levels and colors of specularity. This is very useful when working Texture maps that cover many areas of a model with varying requirements; for example, a single character Texture map often includes multiple surface requirements such as leather shoes, fabric of the clothes, skin for the hands and face, and metal buckles.</p>
+
+<figure>
+<img src="../uploads/Main/StandardShaderSpecularCol1000kgWeight.jpg" alt="一个 1000 千克秤砣的示例，它具有来自方向光的强烈镜面反射。">
+<figcaption>一个 1000 千克秤砣的示例，它具有来自方向光的强烈镜面反射。</figcaption>
+</figure>
+
+<p>Here, the specular reflection and smoothness are defined by a colour and the <strong>Smoothness</strong> slider. No Texture has been assigned, so the specular and smoothness level is constant across the whole surface. This is not always desirable, particularly in the case where your Albedo Texture maps to a variety of different areas on your model (also known as a Texture atlas).</p>
+
+<figure>
+<img src="../uploads/Main/StandardShaderSpecularMap1000kgWeight.jpg" alt="相同的模型，但分配了镜面反射贴图，而不是使用常量值。">
+<figcaption>相同的模型，但分配了镜面反射贴图，而不是使用常量值。</figcaption>
+</figure>
+
+<p>此处，纹理贴图控制着镜面反射和平滑度。这种情况下允许镜面反射在模型的表面上变化。请注意，边缘具有比中心位置更高的镜面反射效果，表面对光线有一些微妙的颜色响应，并且字母内部的区域不再有镜面高光。右图是用于控制镜面反射颜色和强度的 RGB 通道以及用于控制平滑度的 Alpha 通道。</p>
+
+<p><strong>注意</strong>：黑色镜面反射颜色 (0,0,0) 将使镜面反射效果无效。</p>
+<!-- area:graphics -->
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="StandardShaderMaterialParameterAlbedoColor.html"></a></span><div class="tip">Albedo Color and Transparency</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="StandardShaderMaterialParameterMetallic.html"></a></span><div class="tip">Metallic mode: Metallic Property</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

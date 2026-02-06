@@ -1,0 +1,883 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Frame Debugger event information - Unity 手册">
+<title>Frame Debugger event information - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/frame-debugger-window-event-information.png">
+<meta name="description" content="The Event Information Panel in the Frame Debugger window displays information about the event such as geometry details and the shader used for a draw call.">
+<meta property="og:description" content="The Event Information Panel in the Frame Debugger window displays information about the event such as geometry details and the shader used for a draw call.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'frame-debugger-window-event-information';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/frame-debugger-window-event-information.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/frame-debugger-window-event-information.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/frame-debugger-window-event-information.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/frame-debugger-window-event-information.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/frame-debugger-window-event-information.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/frame-debugger-window-event-information.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/frame-debugger-window-event-information.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/frame-debugger-window-event-information.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/frame-debugger-window-event-information.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/frame-debugger-window-event-information.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/frame-debugger-window-event-information.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/frame-debugger-window-event-information.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/frame-debugger-window-event-information.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/frame-debugger-window-event-information.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/frame-debugger-window-event-information.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/frame-debugger-window-event-information.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/frame-debugger-window-event-information.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/frame-debugger-window-event-information.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/frame-debugger-window-event-information.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/frame-debugger-window-event-information.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/frame-debugger-window-event-information.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/frame-debugger-window-event-information.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/frame-debugger-window-event-information.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/frame-debugger-window-event-information.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/frame-debugger-window-event-information.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/frame-debugger-window-event-information.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/frame-debugger-window-event-information.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/frame-debugger-window-event-information.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/frame-debugger-window-event-information.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/frame-debugger-window-event-information.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/frame-debugger-window-event-information.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/frame-debugger-window-event-information.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/frame-debugger-window-event-information.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/frame-debugger-window-event-information.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/frame-debugger-window-event-information.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/frame-debugger-window-event-information.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/frame-debugger-window-event-information.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/frame-debugger-window-event-information.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/frame-debugger-window-event-information.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/frame-debugger-window-event-information.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/frame-debugger-window-event-information.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/frame-debugger-window-event-information.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/frame-debugger-window-event-information.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/frame-debugger-window-event-information.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/frame-debugger-window-event-information.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/frame-debugger-window-event-information.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/frame-debugger-window-event-information.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/frame-debugger-window-event-information.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/frame-debugger-window-event-information.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/frame-debugger-window-event-information.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/frame-debugger-window-event-information.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/frame-debugger-window-event-information.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/frame-debugger-window-event-information.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/frame-debugger-window-event-information.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/frame-debugger-window-event-information.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/frame-debugger-window-event-information.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/frame-debugger-window-event-information.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/frame-debugger-window-event-information.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="graphics-performance-profiling.html">Graphics performance and profiling</a></li>
+<li><a href="FrameDebugger.html">Debug frames in Unity</a></li>
+<li>Frame Debugger event information</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="frame-debugger-window-event-hierarchy.html"></a></span><div class="tip">Frame Debugger Event Hierarchy</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="CreatingEnvironments.html"></a></span><div class="tip">World building</div>
+</div>
+</div></div>
+<h1>Frame Debugger event information</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>The Event Information Panel in the <a href="frame-debugger-window.html">Frame Debugger window</a> displays information about the event such as geometry details and the shader used for a draw call.</p>
+
+<figure>
+<img src="../uploads/Main/frame-debugger-window-event-information.png" alt="The event information panel">
+<figcaption>The event information panel</figcaption>
+</figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Label</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><img src="../uploads/Main/label-a.png" alt=""></td>
+	<td style="text-align:left;">
+<strong>Render target selector</strong>: When rendering into multiple render targets (such as multiple <a href="class-RenderTexture.html">RenderTextures</a> or when also rendering to depth), this specifies which render target to display in the Game view. This is useful for example to view individual render targets in a G-buffer.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><img src="../uploads/Main/label-b.png" alt=""></td>
+	<td style="text-align:left;">
+<strong>Color channel selector</strong>: Specifies which color channels of the render target to display.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><img src="../uploads/Main/label-c.png" alt=""></td>
+	<td style="text-align:left;">
+<strong>Levels</strong>: Controls the black and white intensity. Use this to isolate areas of the Game view based on light intensity.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><img src="../uploads/Main/label-d.png" alt=""></td>
+	<td style="text-align:left;">
+<strong>Output / Mesh Preview</strong>: Displays a preview of the selected event output as well as the mesh geometry in the event. For more information, see <a href="#preview">Preview</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><img src="../uploads/Main/label-e.png" alt=""></td>
+	<td style="text-align:left;">
+<strong>Event properties</strong>: Contains further information about the selected event. For more information, see <a href="#event-properties">Event properties</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="preview"></a></p>
+
+<h2>Preview</h2>
+
+<p>The preview section consists of two tabs:</p>
+
+<ul>
+<li>The <strong>Output</strong> tab displays a preview of the selected event output.</li>
+<li>The <strong>Mesh Preview</strong> tab displays the mesh geometry Unity rendered in the event.</li>
+</ul>
+
+<figure>
+<img src="../uploads/Main/frame-debugger-mesh-preview.png" alt="The mesh preview tab displaying the power jigsaw mesh from the URP sample scene.">
+<figcaption>The mesh preview tab displaying the power jigsaw mesh from the URP sample scene.</figcaption>
+</figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Label</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><img src="../uploads/Main/label-a.png" alt=""></td>
+	<td style="text-align:left;">
+<strong>Preview</strong>: A preview of the mesh geometry Unity rendered during the event.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><img src="../uploads/Main/label-b.png" alt=""></td>
+	<td style="text-align:left;">
+<strong>Mesh name</strong>: The name of the mesh asset in the preview. Click on the mesh name to take see the mesh asset in the Project window. If the geometry was procedural and there is no mesh asset associated, this is empty (Unity displays <strong>-</strong>).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><img src="../uploads/Main/label-c.png" alt=""></td>
+	<td style="text-align:left;">
+<strong>Preview mode</strong>: Specifies how the preview renders the mesh. The options are:<br>• <strong>Shaded</strong>: Renders the mesh using its material and a basic light.<br>• <strong>UV Checker</strong>: Applies a checkerboard texture to the mesh to visualize how the mesh’s UV map applies textures..<br>• <strong>UV Layout</strong>: Displays how the vertices of the mesh are organized in the unwrapped UV map. This view disables the Wireframe toggle.<br>• <strong>Vertex Color</strong>: Visualizes any vertex colors that the vertices in this mesh have. If no vertices have a vertex color, this option is unavailable.<br>• <strong>Normals</strong>: Visualizes the relative directions of the normals in the mesh with color.<br>• <strong>Tangents</strong>: Visualizes the tangent data in the mesh with color.<br>• <strong>Blendshapes</strong>: Visualizes blend shape deformations on the mesh. If the mesh has no blend shapes, this option is unavailable.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><img src="../uploads/Main/label-d.png" alt=""></td>
+	<td style="text-align:left;">
+<strong>Wireframe toggle</strong>: Toggles the mesh wireframe on and off. When enabled, the preview displays the mesh vertices and edges.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="event-properties"></a></p>
+
+<h2>Event properties</h2>
+
+<p>The event properties section contains properties and values for the selected event. It has a <strong>Details</strong> fold-out section that contains information about the event itself and then a fold-out section for each type of shader property. If the fold-out section is grayed-out, it means that the shader in the event didn’t contain any properties of that type. For more information on the information that each section displays, see:</p>
+
+<ul>
+<li><a href="#details">Details</a></li>
+<li><a href="#keywords">Keywords</a></li>
+<li><a href="#textures">Textures</a></li>
+<li><a href="#ints">Ints</a></li>
+<li><a href="#floats">Floats</a></li>
+<li><a href="#vectors">Vectors</a></li>
+<li><a href="#matrices">Matrices</a></li>
+<li><a href="#buffers">Buffers</a></li>
+<li><a href="#constant-buffers">Constant Buffers</a></li>
+</ul>
+
+<p><strong>Note</strong>: When using OpenGL and GLSL shaders, this panel displays all shader properties as being part of the vertex stage.</p>
+
+<p><a name="details"></a></p>
+
+<h3>详细信息</h3>
+
+<p>The <strong>Details</strong> section displays information about the rendering event, such as the number of draw calls as well as the meshes that Unity rendered and the shader it used to render them.</p>
+
+<figure>
+<img src="../uploads/Main/frame-debugger-event-information-details.png" alt="The Details section of the Event Information Panel">
+<figcaption>The Details section of the Event Information Panel</figcaption>
+</figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>RenderTarget</strong></td>
+	<td style="text-align:left;">The name of the render target</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Size</strong></td>
+	<td style="text-align:left;">The size of the render target.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>格式</strong></td>
+	<td style="text-align:left;">The <a href="../ScriptReference/TextureFormat.html">TextureFormat</a> for the render target.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Color Actions</strong></td>
+	<td style="text-align:left;">Shows which actions to perform on the color target when:<br>• The GPU first loads the color target. For more information, see <a href="../ScriptReference/Rendering.RenderBufferLoadAction.html">RenderBufferLoadAction</a>.<br>• The GPU finishes rendering to the color target. For more information, see <a href="../ScriptReference/Rendering.RenderBufferStoreAction.html">RenderBufferStoreAction</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Depth Actions</strong></td>
+	<td style="text-align:left;">Shows which actions to perform on the depth target when:<br>• The GPU first loads the depth target. For more information, see <a href="../ScriptReference/Rendering.RenderBufferLoadAction.html">RenderBufferLoadAction</a>.<br>• The GPU finishes rendering to the depth target. For more information, see <a href="../ScriptReference/Rendering.RenderBufferStoreAction.html">RenderBufferStoreAction</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Memoryless</strong></td>
+	<td style="text-align:left;">The render texture <a href="../ScriptReference/RenderTextureMemoryless.html">memoryless mode</a> mode. For more information, see <a href="../ScriptReference/RenderTextureDescriptor-memoryless.html">memoryless</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>ColorMask</strong></td>
+	<td style="text-align:left;">The color channel mask used for the render target. For more information, see <a href="SL-ColorMask.html">ColorMask</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Blend Color</strong></td>
+	<td style="text-align:left;">The <a href="SL-Blend.html">color blending</a> method Unity used during the selected event.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Blend Alpha</strong></td>
+	<td style="text-align:left;">The <a href="SL-Blend.html">alpha blending</a> method Unity used during the selected event.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>BlendOp Color</strong></td>
+	<td style="text-align:left;">The <a href="SL-BlendOp.html">color blending operation</a> Blend Color used.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>BlendOp Alpha</strong></td>
+	<td style="text-align:left;">The <a href="SL-BlendOp.html">alpha blending operation</a> Blend Alpha used.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Draw Calls</strong></td>
+	<td style="text-align:left;">The number of draw calls Unity processed during the selected event.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Vertices</strong></td>
+	<td style="text-align:left;">The number of vertices Unity processed during the select event.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Indices</strong></td>
+	<td style="text-align:left;">The number of indices Unity processed during the select event.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Clear Color</strong></td>
+	<td style="text-align:left;">The color Unity used to clear the render target during the selected event. If Unity didn’t clear the render target, the display doesn’t show a color here.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Clear Depth</strong></td>
+	<td style="text-align:left;">The color Unity used to clear the depth buffer during the selected event. If Unity didn’t clear the depth buffer, the display doesn’t show a color here.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Clear Stencil</strong></td>
+	<td style="text-align:left;">The color Unity used to clear the stencil buffer during the selected event. If Unity didn’t clear the stencil buffer, the display doesn’t show a color here.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Batch cause</strong></td>
+	<td style="text-align:left;">The reason why the SRP Batcher was unable to batch the selected rendering event with the previous rendering event. <br>This is only relevant if your application uses the <a href="SRPBatcher.html">SRP Batcher</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>网格 (Meshes)</strong></td>
+	<td style="text-align:left;">The list of meshes that Unity rendered during the selected event.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Pass</strong></td>
+	<td style="text-align:left;">The <a href="SL-Pass.html">shader Pass</a> Unity used.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>LightMode</strong></td>
+	<td style="text-align:left;">The LightMode <a href="SL-PassTags.html">pass tag</a> Unity used during the selected event.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Used Shader</strong></td>
+	<td style="text-align:left;">The <a href="Shaders.html">shader asset</a> Unity used during the selected event. This can sometimes be different than the original shader, for example when the original shader uses a <a href="SL-Fallback.html">fallback shader</a> or <a href="SL-UsePass.html">USEPASS</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Original Shader</strong></td>
+	<td style="text-align:left;">The original shader Unity used with the pass.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>ZClip</strong></td>
+	<td style="text-align:left;">The shader’s <a href="SL-ZClip.html">depth clip</a> mode.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>ZTest</strong></td>
+	<td style="text-align:left;">The shader’s <a href="SL-ZTest.html">depth test</a> mode.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>ZWrite</strong></td>
+	<td style="text-align:left;">The shader’s <a href="SL-ZWrite.html">depth clip</a> mode.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Cull</strong></td>
+	<td style="text-align:left;">The shader’s <a href="SL-Cull.html">cull</a> mode.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Conservative</strong></td>
+	<td style="text-align:left;">Indicates whether the shader used <a href="SL-Conservative.html">conservative rasterization</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Offset</strong></td>
+	<td style="text-align:left;">The <a href="SL-Offset.html">depth bias</a> on the GPU that Unity used during the selected event.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>模板</strong></td>
+	<td style="text-align:left;">Indicates whether Stencil is enabled in the selected event. For more information, see <a href="SL-Stencil.html">Stencil</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Stencil Ref</strong></td>
+	<td style="text-align:left;">The stencil reference value.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Stencil ReadMask</strong></td>
+	<td style="text-align:left;">The stencil <a href="SL-Stencil.html">readmask</a> value Unity used to perform the stencil test.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Stencil WriteMask</strong></td>
+	<td style="text-align:left;">The stencil <a href="SL-Stencil.html">writemask</a> value Unity used to write to the stencil buffer.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Stencil Comp</strong></td>
+	<td style="text-align:left;">The operation that the GPU performed for the stencil test for all pixels.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Stencil Pass</strong></td>
+	<td style="text-align:left;">The operation that the GPU performed on the stencil buffer for pixels that passed both the stencil test and the depth test.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Stencil Fail</strong></td>
+	<td style="text-align:left;">The operation that the GPU performed on the stencil buffer for pixels that failed the stencil test.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Stencil ZFail</strong></td>
+	<td style="text-align:left;">The operation that the GPU performed on the stencil buffer for pixels that passed the stencil test but failed the depth test.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="keywords"></a></p>
+
+<h3>关键字</h3>
+
+<p>This section displays information about the enabled <a href="shader-keywords.html">shader keywords</a> Unity used in the rendering event.</p>
+
+<figure>
+<img src="../uploads/Main/frame-debugger-event-information-keywords.png" alt="The Keywords section of the Event Information Panel">
+<figcaption>The Keywords section of the Event Information Panel</figcaption>
+</figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>名称</strong></td>
+	<td style="text-align:left;">The name of the shader keyword.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Stage</strong></td>
+	<td style="text-align:left;">The shader stage that Unity used the shader keyword in. The possible values are:<br>• <strong>vs</strong>: Vertex Shader<br>• <strong>fs</strong>: Fragment Shader<br>• <strong>gs</strong>: Geometry Shader<br>• <strong>hs</strong>: Hull Shader<br>• <strong>ds</strong>: Domain Shader</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Scope</strong></td>
+	<td style="text-align:left;">Indicates whether the scope of the keyword is global or local. For more information, see <a href="shader-keywords.html#declaring-keywords-scope">Declaring keywords</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Dynamic</strong></td>
+	<td style="text-align:left;">Indicates whether the keyword is dynamic or not. For more information, see <a href="SL-MultipleProgramVariants.html">Declaring and using shader keywords in HLSL</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="textures"></a> </p>
+
+<h3>纹理</h3>
+
+<p>The <strong>Texture</strong> section displays information about the named <a href="../ScriptReference/Material.SetTexture.html">textures</a> Unity used during the rendering event.</p>
+
+<figure>
+<img src="../uploads/Main/frame-debugger-event-information-textures.png" alt="The Textures section of the Event Information Panel">
+<figcaption>The Textures section of the Event Information Panel</figcaption>
+</figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>名称</strong></td>
+	<td style="text-align:left;">The property name for the texture.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Stage</strong></td>
+	<td style="text-align:left;">The shader stage that Unity used the texture in. The possible values are:<br>• <strong>vs</strong>: Vertex Shader<br>• <strong>fs</strong>: Fragment Shader<br>• <strong>gs</strong>: Geometry Shader<br>• <strong>hs</strong>: Hull Shader<br>• <strong>ds</strong>: Domain Shader</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Size</strong></td>
+	<td style="text-align:left;">The size of the texture. This is the width and height for 2D textures and width, height, and depth for 3D textures,</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Sampler Type</strong></td>
+	<td style="text-align:left;">Indicates type of a Texture (such as 2D Texture, cubemap, or 3D volume texture).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Color Format</strong></td>
+	<td style="text-align:left;">The color format that the texture uses. For more information on RenderTexture formats, see <a href="../ScriptReference/Experimental.Rendering.GraphicsFormat.html">GraphicsFormat</a>. For more information on formats for other texture types, see <a href="../ScriptReference/TextureFormat.html">TextureFormat</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Depth Stencil Format</strong></td>
+	<td style="text-align:left;">The depth stencil format for the RenderTexture. For more information, see <a href="../ScriptReference/RenderTexture-depthStencilFormat.html">RenderTexture.depthStencilFormat</a>. <br><strong>Note</strong>: If the texture isn’t a RenderTexture, Unity doesn’t display a <a href="../ScriptReference/Experimental.Rendering.GraphicsFormat.html">graphics format</a> here.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Texture</strong></td>
+	<td style="text-align:left;">The texture name.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="ints"></a></p>
+
+<h3>Ints</h3>
+
+<p>The <strong>Ints</strong> section displays information about the named <a href="../ScriptReference/Material.SetInt.html">int</a> values Unity used during the rendering event.</p>
+
+<figure>
+<img src="../uploads/Main/frame-debugger-event-information-ints.png" alt="The Ints section of the Event Information Panel">
+<figcaption>The Ints section of the Event Information Panel</figcaption>
+</figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>名称</strong></td>
+	<td style="text-align:left;">The name of the int property in the shader.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Stage</strong></td>
+	<td style="text-align:left;">The shader stage that Unity used the int property in. The possible values are:<br>• <strong>vs</strong>: Vertex Shader<br>• <strong>fs</strong>: Fragment Shader<br>• <strong>gs</strong>: Geometry Shader<br>• <strong>hs</strong>: Hull Shader<br>• <strong>ds</strong>: Domain Shader</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>值</strong></td>
+	<td style="text-align:left;">The value of the int property.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="floats"></a></p>
+
+<h3>Floats</h3>
+
+<p>The <strong>Floats</strong> section displays information about the named <a href="../ScriptReference/Material.SetFloat.html">float</a> values Unity used during the rendering event.</p>
+
+<figure>
+<img src="../uploads/Main/frame-debugger-event-information-floats.png" alt="The Floats section of the Event Information Panel">
+<figcaption>The Floats section of the Event Information Panel</figcaption>
+</figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>名称</strong></td>
+	<td style="text-align:left;">The name of the float property in the shader.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Stage</strong></td>
+	<td style="text-align:left;">The shader stage that Unity used the float property in. The possible values are:<br>• <strong>vs</strong>: Vertex Shader<br>• <strong>fs</strong>: Fragment Shader<br>• <strong>gs</strong>: Geometry Shader<br>• <strong>hs</strong>: Hull Shader<br>• <strong>ds</strong>: Domain Shader</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>值</strong></td>
+	<td style="text-align:left;">The value of the float property.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="vectors"></a></p>
+
+<h3>Vectors</h3>
+
+<figure>
+<img src="../uploads/Main/frame-debugger-event-information-vectors.png" alt="The Vectors section of the Event Information Panel">
+<figcaption>The Vectors section of the Event Information Panel</figcaption>
+</figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>名称</strong></td>
+	<td style="text-align:left;">The name of the vector property in the shader.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Stage</strong></td>
+	<td style="text-align:left;">The shader stage that Unity used the vector property in. The possible values are:<br>• <strong>vs</strong>: Vertex Shader<br>• <strong>fs</strong>: Fragment Shader<br>• <strong>gs</strong>: Geometry Shader<br>• <strong>hs</strong>: Hull Shader<br>• <strong>ds</strong>: Domain Shader</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Value(R)</strong></td>
+	<td style="text-align:left;">The R component of the vector.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Value(G)</strong></td>
+	<td style="text-align:left;">The G component of the vector.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Value(B)</strong></td>
+	<td style="text-align:left;">The B component of the vector.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Value(A)</strong></td>
+	<td style="text-align:left;">The A component of the vector.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="matrices"></a></p>
+
+<h3>Matrices</h3>
+
+<p>The <strong>Matrices</strong> section displays information about the named <a href="../ScriptReference/Material.SetMatrix.html">matrix</a> values Unity used during the rendering event.</p>
+
+<figure>
+<img src="../uploads/Main/frame-debugger-event-information-matrices.png" alt="The Matrices section of the Event Information Panel">
+<figcaption>The Matrices section of the Event Information Panel</figcaption>
+</figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>名称</strong></td>
+	<td style="text-align:left;">The name of the matrix property in the shader.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Stage</strong></td>
+	<td style="text-align:left;">The shader stage that Unity used the matrix property in. The possible values are:<br>• <strong>vs</strong>: Vertex Shader<br>• <strong>fs</strong>: Fragment Shader<br>• <strong>gs</strong>: Geometry Shader<br>• <strong>hs</strong>: Hull Shader<br>• <strong>ds</strong>: Domain Shader</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Column 0</strong></td>
+	<td style="text-align:left;">The values in the first column of the matrix.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Column 1</strong></td>
+	<td style="text-align:left;">The values in the second column of the matrix.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Column 2</strong></td>
+	<td style="text-align:left;">The values in the third column of the matrix.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Column 3</strong></td>
+	<td style="text-align:left;">The values in the fourth column of the matrix.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="buffers"></a></p>
+
+<h3>Buffers</h3>
+
+<p>The <strong>Buffers</strong> section displays information about the named <a href="../ScriptReference/Material.SetBuffer.html"> buffers</a> Unity used during the rendering event.</p>
+
+<figure>
+<img src="../uploads/Main/frame-debugger-event-information-buffers.png" alt="The Buffers section of the Event Information Panel">
+<figcaption>The Buffers section of the Event Information Panel</figcaption>
+</figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>名称</strong></td>
+	<td style="text-align:left;">The name of the buffer in the shader.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Stage</strong></td>
+	<td style="text-align:left;">The shader stage that Unity used the buffer in. The possible values are:<br>• <strong>vs</strong>: Vertex Shader<br>• <strong>fs</strong>: Fragment Shader<br>• <strong>gs</strong>: Geometry Shader<br>• <strong>hs</strong>: Hull Shader<br>• <strong>ds</strong>: Domain Shader</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="constant-buffers"></a></p>
+
+<h3>Constant Buffers</h3>
+
+<p>This <strong>Constant Buffers</strong> section displays information about the named <a href="../ScriptReference/Material.SetConstantBuffer.html">constant buffers</a> Unity used during the rendering event.</p>
+
+<figure>
+<img src="../uploads/Main/frame-debugger-event-information-constant-buffers.png" alt="The Constant Buffers section of the Event Information Panel">
+<figcaption>The Constant Buffers section of the Event Information Panel</figcaption>
+</figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>名称</strong></td>
+	<td style="text-align:left;">The name of the constant buffer in the shader.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Stage</strong></td>
+	<td style="text-align:left;">The shader stage that Unity used the constant buffer in. The possible values are:<br>• <strong>vs</strong>: Vertex Shader<br>• <strong>fs</strong>: Fragment Shader<br>• <strong>gs</strong>: Geometry Shader<br>• <strong>hs</strong>: Hull Shader<br>• <strong>ds</strong>: Domain Shader</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Share event information</h2>
+
+<p>To help you share information for a particular event, the Frame Debugger window can copy the information in the user interface to the clipboard. It can copy information for a single property, for all the properties in a properties section, or for an entire event. This means you don’t need to take one or multiple screenshots to share the results of a frame capture. </p>
+
+<p>To copy a single property and its values to the clipboard, right-click the property and select <strong>Copy Property</strong>.</p>
+
+<figure>
+<img src="../uploads/Main/frame-debugger-event-information-copy-property.png" alt="The Copy Property option.">
+<figcaption>The Copy Property option.</figcaption>
+</figure>
+
+<p>To copy all the properties and their values from a properties section, right-click the properties section header and select <strong>Copy</strong> <strong>All &lt;property type&gt; Properties</strong>.</p>
+
+<p>To copy all the information from the rendering event, right-click the event header and select <strong>Copy</strong> <strong>Event Info</strong>.</p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="frame-debugger-window-event-hierarchy.html"></a></span><div class="tip">Frame Debugger Event Hierarchy</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="CreatingEnvironments.html"></a></span><div class="tip">World building</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

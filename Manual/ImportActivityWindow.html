@@ -1,0 +1,395 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Import Activity window - Unity 手册">
+<title>Import Activity window - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/ImportActivityLayout.png">
+<meta name="description" content="The Import Activity window provides you with information about what happens when Unity imports your assets. You can use this information to identify which assets in your project were imported recently, how long each asset took to import, and why it was imported (or re-imported).">
+<meta property="og:description" content="The Import Activity window provides you with information about what happens when Unity imports your assets. You can use this information to identify which assets in your project were imported recently, how long each asset took to import, and why it was imported (or re-imported).">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'ImportActivityWindow';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/ImportActivityWindow.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/ImportActivityWindow.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/ImportActivityWindow.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/ImportActivityWindow.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/ImportActivityWindow.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/ImportActivityWindow.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/ImportActivityWindow.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/ImportActivityWindow.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/ImportActivityWindow.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/ImportActivityWindow.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/ImportActivityWindow.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/ImportActivityWindow.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/ImportActivityWindow.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/ImportActivityWindow.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/ImportActivityWindow.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/ImportActivityWindow.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/ImportActivityWindow.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/ImportActivityWindow.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/ImportActivityWindow.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/ImportActivityWindow.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/ImportActivityWindow.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/ImportActivityWindow.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/ImportActivityWindow.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/ImportActivityWindow.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/ImportActivityWindow.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/ImportActivityWindow.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/ImportActivityWindow.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/ImportActivityWindow.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/ImportActivityWindow.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/ImportActivityWindow.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/ImportActivityWindow.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/ImportActivityWindow.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/ImportActivityWindow.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/ImportActivityWindow.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/ImportActivityWindow.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/ImportActivityWindow.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/ImportActivityWindow.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/ImportActivityWindow.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/ImportActivityWindow.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/ImportActivityWindow.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/ImportActivityWindow.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/ImportActivityWindow.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/ImportActivityWindow.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/ImportActivityWindow.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/ImportActivityWindow.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/ImportActivityWindow.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/ImportActivityWindow.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/ImportActivityWindow.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/ImportActivityWindow.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/ImportActivityWindow.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/ImportActivityWindow.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/ImportActivityWindow.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/ImportActivityWindow.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/ImportActivityWindow.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/ImportActivityWindow.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/ImportActivityWindow.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/ImportActivityWindow.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/ImportActivityWindow.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="AssetWorkflow.html">资源工作流程</a></li>
+<li>Import Activity window</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SpecialFolders.html"></a></span><div class="tip">Special folder names</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="Presets.html"></a></span><div class="tip">预设</div>
+</div>
+</div></div>
+<h1>Import Activity window</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<h2>概述</h2>
+
+<p>The Import Activity window provides you with information about what happens when Unity imports your assets. You can use this information to identify which assets in your project were imported recently, how long each asset took to import, and why it was imported (or re-imported).</p>
+
+<p>This information allows you to analyse your project’s import activity, and make decisions about how to improve the time Unity takes to import your assets, or how to avoid unnecessary imports altogether. The Import Activity window therefore acts like a profiler for the import process.</p>
+
+<h2>Accessing the Import Activity window</h2>
+
+<p>To open the Import Activity window, go to <strong>Window &gt; Analysis &gt; Import Activity Window</strong>. </p>
+
+<p>You can also open the Import Activity window directly from an asset, which causes the window to immediately display the import details for the selected asset. This is useful if you already know which asset’s import data you want to analyse. There are two ways to do this:</p>
+
+<ul>
+<li><p>Right-click an asset in the Project window and, from the context menu, select <strong>View in Import Activity Window</strong>.</p></li>
+<li><p>View an asset in the Inspector, right-click the Inspector’s tab, and, from the context menu, select <strong>Open in Import Activity Window</strong>.</p></li>
+</ul>
+
+<h2>Layout</h2>
+
+<p>The Import Activity window has three sections: the <strong>toolbar </strong>at the top, the <strong>asset list</strong> on the left, and the <strong>information </strong>section on the right.</p>
+
+<figure>
+<img src="../uploads/Main/ImportActivityLayout.png" alt="The layout of the import activity window">
+<figcaption>The layout of the import activity window</figcaption>
+</figure>
+
+<h2>工具栏</h2>
+
+<figure>
+<img src="../uploads/Main/ImportActivityToolbar.png" alt="">
+</figure>
+
+<p>The toolbar at the top of the window has the following three features:</p>
+
+<ol>
+<li>
+<strong>Show overview</strong> button</li>
+<li>
+<strong>Options</strong> menu</li>
+<li>Search field</li>
+</ol>
+
+<h3>Show Overview button</h3>
+
+<p>When you click the <strong>Show Overview</strong> button, the information section on the right displays overview information, which includes general information about your asset imports. See Overview information, below.</p>
+
+<h3>Options menu</h3>
+
+<p>The <strong>Options</strong> dropdown allows you to adjust the information shown in the asset list. The following options are available:</p>
+
+<h4>Use relative timestamps</h4>
+
+<p>Controls whether the last import time is shown in relative format (eg. “a few seconds ago”), or absolute format, in the form: <strong>Day-Month-Year Hour:Minute:Second</strong></p>
+
+<h4>Show previous imports</h4>
+
+<p>Controls whether previous imports are shown, or only the most recent import. Showing previous imports allows you to see how many revisions of an asset are currently being kept in the Library folder. This list is generally cleared when Artifact Garbage Collection runs, when you restart the Editor.</p>
+
+<p>When you enable this option, a second vertical list view appears alongside the asset list, showing all the currently stored import results for the selected asset.</p>
+
+<figure>
+<img src="../uploads/Main/ImportActivityPreviousImports.png" alt="The previous imports list, showing three import results for the selected asset.">
+<figcaption>The <strong>previous imports</strong> list, showing three import results for the selected asset.</figcaption>
+</figure>
+
+<p>If you want to keep import results from previous Editor sessions to aid with debugging or analysis, you can turn off Artifact Garbage Collection by going to <strong>Project Settings &gt; Editor &gt; Remove unused Artifacts on Restart</strong>. You can also control this setting via script by using <code>EditorUserSettings.artifactGarbageCollection</code>.</p>
+
+<h4>Include PreviewImporter</h4>
+
+<p>Controls whether to include artifacts generated by the preview window. These are hidden by default, because they are not usually useful when examining your asset imports.</p>
+
+<h3>Search field</h3>
+
+<p>The search field on the right side of the toolbar allows you to quickly filter the <strong>asset list</strong> by name to find the specific assets you are interested in.</p>
+
+<h2>Asset list</h2>
+
+<p>The left-hand section of the window shows the list of all assets in your project. The columns are:</p>
+
+<ul>
+<li><p><strong>Asset</strong>: The asset name </p></li>
+<li><p><strong>Last Import</strong>: When the asset was last imported </p></li>
+<li><p><strong>Duration</strong>: The amount of time the Last Import took, in milliseconds. </p></li>
+</ul>
+
+<p>To change the sort order of the list, click on the column headings.</p>
+
+<figure>
+<img src="../uploads/Main/ImportActivityAssetList.png" alt="image alt text">
+<figcaption>image alt text</figcaption>
+</figure>
+
+<p><em>The asset list, with results shown sorted by longest duration first.</em></p>
+
+<h2>Information panel</h2>
+
+<p>The right-hand section of the window is the information panel, and has two modes:</p>
+
+<ul>
+<li><p>Overview information appears when there is no asset selected. </p></li>
+<li><p>Asset information appears when you select an asset from the list on the left, or if you open the window directly via an asset as described above.</p></li>
+</ul>
+
+<h3>Overview information</h3>
+
+<p>The Overview information displays a list of the assets with the most dependencies, and assets with the longest import duration. It is useful for quickly identifying which assets may be most significantly slowing down your import process. Assets with more dependencies are more likely to be regularly re-imported, because an asset is re-imported whenever any of its dependencies are modified.</p>
+
+<p>When you open the Import Activity window from the main menu, it displays the Overview information by default. If you are viewing asset information and you want to return to the Overview information, select the <strong>Show overview</strong> button in the toolbar .</p>
+
+<figure>
+<img src="../uploads/Main/ImportActivityOverview.png" alt="The Import Activity window displaying the Overview on the right side, and the Show Overview button in the top-left of the window.">
+<figcaption>The Import Activity window displaying the Overview on the right side, and the <strong><em>Show Overview</em></strong> button in the top-left of the window.</figcaption>
+</figure>
+
+<h3>Asset information</h3>
+
+<figure>
+<img src="../uploads/Main/ImportActivityAssetInfo.png" alt="The asset information panel showing the information relating to a texture asset.">
+<figcaption>The asset information panel showing the information relating to a texture asset.</figcaption>
+</figure>
+
+<p>When you select an asset from the asset list, the information panel displays the asset information. This includes the following details about the asset and its most recent import. </p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Title</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Asset</strong></td>
+	<td style="text-align:left;">The name of the currently selected asset. You can click this field to locate the asset in the Project window.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>GUID</strong></td>
+	<td style="text-align:left;">The unique GUID assigned to the asset. You can use this to track its references across your project.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Asset Size</strong></td>
+	<td style="text-align:left;">The size of the source file of the asset.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>路径</strong></td>
+	<td style="text-align:left;">The file path of the asset, relative to the project’s root folder.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Editor Revision</strong></td>
+	<td style="text-align:left;">The version of the Editor that created this artifact.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Timestamp</strong></td>
+	<td style="text-align:left;">The time at which the Artifact file was created. This matches the timestamp value of the file in the <code>Library</code> folder.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Duration</strong></td>
+	<td style="text-align:left;">The time Unity took to import this asset in the most recent import, in milliseconds.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Reason for Import</strong></td>
+	<td style="text-align:left;">A description of the change (or changes) in your project which caused this asset’s most recent import, and details about the associated dependency type.<br><br>The Reason for Import field has its own search bar, which allows you to search its text. This is useful in situations where an asset has many reasons for import (for example, a compute shader can have many dependencies that are modified when you switch platforms).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Produced Files / Artifacts</strong></td>
+	<td style="text-align:left;">The list of files present in the <code>Library</code> folder that Unity produced when it last imported this asset. Usually there is just one artifact per asset, although sometimes there can be multiple. For example, when Unity generates a preview of an asset.<br><br>During a typical usage of the Editor, Unity might generate many versions of an asset’s import result (an artifact). For this reason, each artifact has an artifact ID for reference. This is different to the asset’s GUID.<br><br>The currently selected revision is referred to as the current revision, which is selected by default when an asset in the Asset List is selected.<br><br>Generally revisions are in chronological order with the current revision as the newest. However, if you undo an operation in Unity which changes an asset’s artifact, the current revision reverts back to a previously cached artifact and therefore would not be the most recently listed artifact.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>依赖关系</strong></td>
+	<td style="text-align:left;">A list of Editor and project-specific variables which control the state of an asset, which, if changed, trigger the re-import of the asset.<br><br>Dependencies are how the asset database tracks the state of an asset. This means that if an asset dependency changes, the import result will be different and a new revision of an artifact will be generated.<br><br>Understanding your asset’s dependency types and what can cause them to change can help you get the most out of Unity’s asset database system, speed up your workflow, and avoid unnecessary import time.<br><br>This field has its own search bar, which allows you to search the text contained in the Dependencies field.</td>
+</tr>
+</tbody>
+</table>
+
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SpecialFolders.html"></a></span><div class="tip">Special folder names</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="Presets.html"></a></span><div class="tip">预设</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

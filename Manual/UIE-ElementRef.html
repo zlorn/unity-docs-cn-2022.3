@@ -1,0 +1,937 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="UXML 元素参考 - Unity 手册">
+<title>UXML 元素参考 - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="以下表格概括了 UnityEngine.UIElements and UnityEditor.UIElements 命名空间中提供的 UXML 元素。">
+<meta property="og:description" content="以下表格概括了 UnityEngine.UIElements and UnityEditor.UIElements 命名空间中提供的 UXML 元素。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'UIE-ElementRef';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/UIE-ElementRef.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/UIE-ElementRef.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/UIE-ElementRef.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/UIE-ElementRef.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/UIE-ElementRef.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/UIE-ElementRef.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIE-ElementRef.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIE-ElementRef.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIE-ElementRef.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIE-ElementRef.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-ElementRef.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-ElementRef.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-ElementRef.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-ElementRef.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-ElementRef.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-ElementRef.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-ElementRef.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-ElementRef.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-ElementRef.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-ElementRef.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-ElementRef.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-ElementRef.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-ElementRef.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-ElementRef.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-ElementRef.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-ElementRef.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-ElementRef.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-ElementRef.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-ElementRef.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-ElementRef.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/UIE-ElementRef.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/UIE-ElementRef.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/UIE-ElementRef.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/UIE-ElementRef.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIE-ElementRef.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIE-ElementRef.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIE-ElementRef.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIE-ElementRef.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-ElementRef.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-ElementRef.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-ElementRef.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-ElementRef.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-ElementRef.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-ElementRef.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-ElementRef.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-ElementRef.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-ElementRef.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-ElementRef.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-ElementRef.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-ElementRef.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-ElementRef.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-ElementRef.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-ElementRef.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-ElementRef.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-ElementRef.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-ElementRef.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-ElementRef.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-ElementRef.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UIToolkits.html">Create user interfaces (UI)</a></li>
+<li><a href="UIElements.html">UI 工具包</a></li>
+<li><a href="UIE-structure-ui.html">Structure UI</a></li>
+<li>UXML 元素参考</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-encapsulate-uxml-with-logic.html"></a></span><div class="tip">Encapsulate UXML documents with logic</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-uxml-element-BindableElement.html"></a></span><div class="tip">UXML element BindableElement</div>
+</div>
+</div></div>
+<h1>UXML 元素参考</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>以下表格概括了 <code>UnityEngine.UIElements</code> and <code>UnityEditor.UIElements</code> 命名空间中提供的 UXML 元素。</p>
+
+<h2>基本元素</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Element</strong></th>
+	<th style="text-align:left;"><strong>命名空间</strong></th>
+	<th style="text-align:left;"><strong>允许的子元素</strong></th>
+	<th style="text-align:left;"><strong>C# class</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-BindableElement.html"><code>BindableElement</code></a></strong></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.BindableElement.html"><code>UnityEngine.UIElements.BindableElement</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-VisualElement.html"><code>VisualElement</code></a></strong></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.VisualElement.html"><code>UnityEngine.UIElements.VisualElement</code></a></td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="built-in-controls"></a></p>
+
+<h2>内置控件</h2>
+
+<p>下表是为 UI 工具包提供的所有内置控件的参考。</p>
+<div class="wide-table">
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Element</strong></th>
+	<th style="text-align:left;"><strong>Bindable</strong></th>
+	<th style="text-align:left;"><strong>数据类型</strong></th>
+	<th style="text-align:left;"><strong>命名空间</strong></th>
+	<th style="text-align:left;"><strong>允许的子元素</strong></th>
+	<th style="text-align:left;"><strong>C# class</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-BoundsField.html"><code>BoundsField</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><a href="../ScriptReference/Bounds.html"><code>UnityEngine.Bounds</code></a></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.BoundsField.html"><code>UnityEngine.UIElements.BoundsField</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-BoundsIntField.html"><code>BoundsIntField</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><a href="../ScriptReference/BoundsInt.html"><code>UnityEngine.BoundsInt</code></a></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.BoundsIntField.html"><code>UnityEngine.UIElements.BoundsIntField</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-Box.html"><code>Box</code></a></strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.Box.html"><code>UnityEngine.UIElements.Box</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-Button.html"><code>Button</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><code>string</code></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">无</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.Button.html"><code>UnityEngine.UIElements.Button</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-ColorField.html"><code>ColorField</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><a href="../ScriptReference/Color.html"><code>UnityEngine.Color</code></a></td>
+	<td style="text-align:left;"><code>UnityEditor.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.ColorField.html"><code>UnityEditor.UIElements.ColorField</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-CurveField.html"><code>CurveField</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><a href="../ScriptReference/AnimationCurve.html"><code>UnityEngine.AnimationCurve</code></a></td>
+	<td style="text-align:left;"><code>UnityEditor.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.CurveField.html"><code>UnityEditor.UIElements.CurveField</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-DoubleField.html"><code>DoubleField</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><code>double</code></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.DoubleField.html"><code>UnityEngine.UIElements.DoubleField</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-DropdownField.html"><code>DropdownField</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><code>string</code></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.DropdownField.html"><code>UnityEngine.UIElements.DropdownField</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-EnumField.html"><code>EnumField</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><code>Enum</code></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.EnumField.html"><code>UnityEngine.UIElements.EnumField</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-EnumFlagsField.html"><code>EnumFlagsField</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><code>Enum</code></td>
+	<td style="text-align:left;"><code>UnityEditor.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.EnumFlagsField.html"><code>UnityEditor.UIElements.EnumFlagsField</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-FloatField.html"><code>FloatField</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><code>float</code></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.FloatField.html"><code>UnityEngine.UIElements.FloatField</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-Foldout.html"><code>Foldout</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><code>bool</code></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.Foldout.html"><code>UnityEngine.UIElements.Foldout</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-GradientField.html"><code>GradientField</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><a href="../ScriptReference/Gradient.html"><code>UnityEngine.Gradient</code></a></td>
+	<td style="text-align:left;"><code>UnityEditor.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.GradientField.html"><code>UnityEditor.UIElements.GradientField</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-GroupBox.html"><code>GroupBox</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.GroupBox.html"><code>UnityEngine.UIElements.GroupBox</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-Hash128Field.html"><code>Hash128Field</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><a href="../ScriptReference/Hash128.html"><code>UnityEngine.Hash128</code></a></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.Hash128Field.html"><code>UnityEngine.UIElements.Hash128Field</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-HelpBox.html"><code>HelpBox</code></a></strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.HelpBox.html"><code>UnityEngine.UIElements.HelpBox</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-IMGUIContainer.html"><code>IMGUIContainer</code></a></strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">无</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.IMGUIContainer.html"><code>UnityEngine.UIElements.IMGUIContainer</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-Image.html"><code>Image</code></a></strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">无</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.Image.html"><code>UnityEngine.UIElements.Image</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-InspectorElement.html"><code>InspectorElement</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>UnityEditor.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.InspectorElement.html"><code>UnityEditor.UIElements.InspectorElement</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-IntegerField.html"><code>IntegerField</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><code>int</code></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.IntegerField.html"><code>UnityEngine.UIElements.IntegerField</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-Label.html"><code>Label</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><code>string</code></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">无</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.Label.html"><code>UnityEngine.UIElements.Label</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-LayerField.html"><code>LayerField</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><code>int</code></td>
+	<td style="text-align:left;"><code>UnityEditor.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.LayerField.html"><code>UnityEditor.UIElements.LayerField</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-LayerMaskField.html"><code>LayerMaskField</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><code>int</code></td>
+	<td style="text-align:left;"><code>UnityEditor.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.LayerMaskField.html"><code>UnityEditor.UIElements.LayerMaskField</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-ListView.html"><code>ListView</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><code>IList</code></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">无</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.ListView.html"><code>UnityEngine.UIElements.ListView</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-LongField.html"><code>LongField</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><code>long</code></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.LongField.html"><code>UnityEngine.UIElements.LongField</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-MaskField.html"><code>MaskField</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><code>int</code></td>
+	<td style="text-align:left;"><code>UnityEditor.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.MaskField.html"><code>UnityEditor.UIElements.MaskField</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-MinMaxSlider.html"><code>MinMaxSlider</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><a href="../ScriptReference/Vector2.html"><code>UnityEngine.Vector2</code></a></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.MinMaxSlider.html"><code>UnityEngine.UIElements.MinMaxSlider</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-MultiColumnListView.html"><code>MultiColumnListView</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">无</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.MultiColumnListView.html"><code>UnityEngine.UIElements.MultiColumnListView</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-MultiColumnTreeView.html"><code>MultiColumnTreeView</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">无</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.MultiColumnTreeView.html"><code>UnityEngine.UIElements.MultiColumnTreeView</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-ObjectField.html"><code>ObjectField</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><a href="../ScriptReference/Object.html"><code>UnityEngine.Object</code></a></td>
+	<td style="text-align:left;"><code>UnityEditor.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.ObjectField.html"><code>UnityEditor.UIElements.ObjectField</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-PopupWindow.html"><code>PopupWindow</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><code>string</code></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.PopupWindow.html"><code>UnityEngine.UIElements.PopupWindow</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-ProgressBar.html"><code>ProgressBar</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><code>float</code></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.ProgressBar.html"><code>UnityEngine.UIElements.ProgressBar</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-PropertyField.html"><code>PropertyField</code></a></strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>UnityEditor.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.PropertyField.html"><code>UnityEditor.UIElements.PropertyField</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-RadioButton.html"><code>RadioButton</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><code>bool</code></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.RadioButton.html"><code>UnityEngine.UIElements.RadioButton</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-RadioButtonGroup.html"><code>RadioButtonGroup</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><code>int</code></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.RadioButtonGroup.html"><code>UnityEngine.UIElements.RadioButtonGroup</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-RectField.html"><code>RectField</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><a href="../ScriptReference/Rect.html"><code>UnityEngine.Rect</code></a></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.RectField.html"><code>UnityEngine.UIElements.RectField</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-RectIntField.html"><code>RectIntField</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><a href="../ScriptReference/RectInt.html"><code>UnityEngine.RectInt</code></a></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.RectIntField.html"><code>UnityEngine.UIElements.RectIntField</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-RepeatButton.html"><code>RepeatButton</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><code>string</code></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">无</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.RepeatButton.html"><code>UnityEngine.UIElements.RepeatButton</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-ScrollView.html"><code>ScrollView</code></a></strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.ScrollView.html"><code>UnityEngine.UIElements.ScrollView</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-Scroller.html"><code>Scroller</code></a></strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">无</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.Scroller.html"><code>UnityEngine.UIElements.Scroller</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-Slider.html"><code>Slider</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><code>float</code></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.Slider.html"><code>UnityEngine.UIElements.Slider</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-SliderInt.html"><code>SliderInt</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><code>int</code></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.SliderInt.html"><code>UnityEngine.UIElements.SliderInt</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-TagField.html"><code>TagField</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><code>string</code></td>
+	<td style="text-align:left;"><code>UnityEditor.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.TagField.html"><code>UnityEditor.UIElements.TagField</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-TextElement.html"><code>TextElement</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><code>string</code></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">无</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.TextElement.html"><code>UnityEngine.UIElements.TextElement</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-TextField.html"><code>TextField</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><code>string</code></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.TextField.html"><code>UnityEngine.UIElements.TextField</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-Toggle.html"><code>Toggle</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><code>bool</code></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.Toggle.html"><code>UnityEngine.UIElements.Toggle</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-Toolbar.html"><code>Toolbar</code></a></strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>UnityEditor.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.Toolbar.html"><code>UnityEditor.UIElements.Toolbar</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-ToolbarBreadcrumbs.html"><code>ToolbarBreadcrumbs</code></a></strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>UnityEditor.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.ToolbarBreadcrumbs.html"><code>UnityEditor.UIElements.ToolbarBreadcrumbs</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-ToolbarButton.html"><code>ToolbarButton</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>UnityEditor.UIElements</code></td>
+	<td style="text-align:left;">无</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.ToolbarButton.html"><code>UnityEditor.UIElements.ToolbarButton</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-ToolbarMenu.html"><code>ToolbarMenu</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>UnityEditor.UIElements</code></td>
+	<td style="text-align:left;">无</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.ToolbarMenu.html"><code>UnityEditor.UIElements.ToolbarMenu</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-ToolbarPopupSearchField.html"><code>ToolbarPopupSearchField</code></a></strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>string</code></td>
+	<td style="text-align:left;"><code>UnityEditor.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.ToolbarPopupSearchField.html"><code>UnityEditor.UIElements.ToolbarPopupSearchField</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-ToolbarSearchField.html"><code>ToolbarSearchField</code></a></strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>string</code></td>
+	<td style="text-align:left;"><code>UnityEditor.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.ToolbarSearchField.html"><code>UnityEditor.UIElements.ToolbarSearchField</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-ToolbarSpacer.html"><code>ToolbarSpacer</code></a></strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>UnityEditor.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.ToolbarSpacer.html"><code>UnityEditor.UIElements.ToolbarSpacer</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-ToolbarToggle.html"><code>ToolbarToggle</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><code>bool</code></td>
+	<td style="text-align:left;"><code>UnityEditor.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.ToolbarToggle.html"><code>UnityEditor.UIElements.ToolbarToggle</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-TreeView.html"><code>TreeView</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">无</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.TreeView.html"><code>UnityEngine.UIElements.TreeView</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-TwoPaneSplitView.html"><code>TwoPaneSplitView</code></a></strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">无</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.TwoPaneSplitView.html"><code>UnityEngine.UIElements.TwoPaneSplitView</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-UnsignedIntegerField.html"><code>UnsignedIntegerField</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><a href="../ScriptReference/System.UInt32.html"><code>System.UInt32</code></a></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.UnsignedIntegerField.html"><code>UnityEngine.UIElements.UnsignedIntegerField</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-UnsignedLongField.html"><code>UnsignedLongField</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><a href="../ScriptReference/System.UInt64.html"><code>System.UInt64</code></a></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.UnsignedLongField.html"><code>UnityEngine.UIElements.UnsignedLongField</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-Vector2Field.html"><code>Vector2Field</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><a href="../ScriptReference/Vector2.html"><code>UnityEngine.Vector2</code></a></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.Vector2Field.html"><code>UnityEngine.UIElements.Vector2Field</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-Vector2IntField.html"><code>Vector2IntField</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><a href="../ScriptReference/Vector2Int.html"><code>UnityEngine.Vector2Int</code></a></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.Vector2IntField.html"><code>UnityEngine.UIElements.Vector2IntField</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-Vector3Field.html"><code>Vector3Field</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><a href="../ScriptReference/Vector3.html"><code>UnityEngine.Vector3</code></a></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.Vector3Field.html"><code>UnityEngine.UIElements.Vector3Field</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-Vector3IntField.html"><code>Vector3IntField</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><a href="../ScriptReference/Vector3Int.html"><code>UnityEngine.Vector3Int</code></a></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.Vector3IntField.html"><code>UnityEngine.UIElements.Vector3IntField</code></a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-Vector4Field.html"><code>Vector4Field</code></a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;"><a href="../ScriptReference/Vector4.html"><code>UnityEngine.Vector4</code></a></td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">任意数量的 <code>VisualElement</code>
+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.Vector4Field.html"><code>UnityEngine.UIElements.Vector4Field</code></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p><a name="templates"></a></p>
+
+<h2>模板</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Element</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+	<th style="text-align:left;"><strong>命名空间</strong></th>
+	<th style="text-align:left;"><strong>允许的子元素</strong></th>
+	<th style="text-align:left;"><strong>Attributes</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><code>Template</code></td>
+	<td style="text-align:left;">引用另一个可使用 <code>Instance</code> 元素进行实例化的 UXML 模板。</td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">无</td>
+	<td style="text-align:left;">
+<code>name</code>：此元素的唯一字符串标识符<br><code>path</code>：要加载的 UXML 文件的路径</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>Instance</code></td>
+	<td style="text-align:left;">
+<code>Template</code> 的实例</td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">无</td>
+	<td style="text-align:left;">
+<code>template</code>：要实例化的 <code>Template</code> 的 <code>name</code>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>TemplateContainer</code></td>
+	<td style="text-align:left;">模板容器。</td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">无</td>
+	<td style="text-align:left;">
+<code>BindableElement</code> 的所有属性<br><code>template</code>：此模板的字符串标识符</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="object"></a></p>
+
+<h2>UxmlObject attributes</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Element</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+	<th style="text-align:left;"><strong>命名空间</strong></th>
+	<th style="text-align:left;"><strong>允许的子元素</strong></th>
+	<th style="text-align:left;"><strong>Attributes</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><code>Columns</code></td>
+	<td style="text-align:left;">Contains descriptions of columns. Must be a child of a parent that supports it, such as <code>MultiColumnListView</code> or <code>MultiColumnTreeView</code>.</td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;"><code>Column</code></td>
+	<td style="text-align:left;">无</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>Column</code></td>
+	<td style="text-align:left;">Describes a column. Must be a child of <code>Columns</code>.</td>
+	<td style="text-align:left;"><code>UnityEngine.UIElements</code></td>
+	<td style="text-align:left;">无</td>
+	<td style="text-align:left;">
+<code>name</code>: The name of this column in code<br><code>title</code>: The name displayed in the header of this column<br><code>width</code>: The default width of this column in pixels</td>
+</tr>
+</tbody>
+</table>
+
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-encapsulate-uxml-with-logic.html"></a></span><div class="tip">Encapsulate UXML documents with logic</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-uxml-element-BindableElement.html"></a></span><div class="tip">UXML element BindableElement</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

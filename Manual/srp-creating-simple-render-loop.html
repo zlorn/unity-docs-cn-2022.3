@@ -1,0 +1,510 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="在自定义渲染管线中创建简单渲染循环 - Unity 手册">
+<title>在自定义渲染管线中创建简单渲染循环 - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="渲染循环是指在单一帧中发生的所有渲染操作的术语。本页面包含有关在基于 Unity 可编程渲染管线的自定义渲染管线中创建简单渲染循环的信息。">
+<meta property="og:description" content="渲染循环是指在单一帧中发生的所有渲染操作的术语。本页面包含有关在基于 Unity 可编程渲染管线的自定义渲染管线中创建简单渲染循环的信息。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'srp-creating-simple-render-loop';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/srp-creating-simple-render-loop.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/srp-creating-simple-render-loop.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/srp-creating-simple-render-loop.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/srp-creating-simple-render-loop.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/srp-creating-simple-render-loop.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/srp-creating-simple-render-loop.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/srp-creating-simple-render-loop.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/srp-creating-simple-render-loop.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/srp-creating-simple-render-loop.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/srp-creating-simple-render-loop.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/srp-creating-simple-render-loop.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/srp-creating-simple-render-loop.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/srp-creating-simple-render-loop.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/srp-creating-simple-render-loop.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/srp-creating-simple-render-loop.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/srp-creating-simple-render-loop.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/srp-creating-simple-render-loop.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/srp-creating-simple-render-loop.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/srp-creating-simple-render-loop.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/srp-creating-simple-render-loop.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/srp-creating-simple-render-loop.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/srp-creating-simple-render-loop.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/srp-creating-simple-render-loop.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/srp-creating-simple-render-loop.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/srp-creating-simple-render-loop.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/srp-creating-simple-render-loop.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/srp-creating-simple-render-loop.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/srp-creating-simple-render-loop.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/srp-creating-simple-render-loop.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/srp-creating-simple-render-loop.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/srp-creating-simple-render-loop.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/srp-creating-simple-render-loop.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/srp-creating-simple-render-loop.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/srp-creating-simple-render-loop.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/srp-creating-simple-render-loop.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/srp-creating-simple-render-loop.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/srp-creating-simple-render-loop.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/srp-creating-simple-render-loop.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/srp-creating-simple-render-loop.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/srp-creating-simple-render-loop.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/srp-creating-simple-render-loop.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/srp-creating-simple-render-loop.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/srp-creating-simple-render-loop.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/srp-creating-simple-render-loop.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/srp-creating-simple-render-loop.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/srp-creating-simple-render-loop.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/srp-creating-simple-render-loop.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/srp-creating-simple-render-loop.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/srp-creating-simple-render-loop.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/srp-creating-simple-render-loop.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/srp-creating-simple-render-loop.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/srp-creating-simple-render-loop.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/srp-creating-simple-render-loop.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/srp-creating-simple-render-loop.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/srp-creating-simple-render-loop.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/srp-creating-simple-render-loop.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/srp-creating-simple-render-loop.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/srp-creating-simple-render-loop.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="render-pipelines.html">渲染管线</a></li>
+<li><a href="srp-custom.html">创建自定义渲染管线</a></li>
+<li>在自定义渲染管线中创建简单渲染循环</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="srp-creating-render-pipeline-asset-and-render-pipeline-instance.html"></a></span><div class="tip">在自定义渲染管线中创建渲染管线资源和渲染管线实例</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="CamerasOverview.html"></a></span><div class="tip">摄像机</div>
+</div>
+</div></div>
+<h1>在自定义渲染管线中创建简单渲染循环</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>渲染循环是指在单一帧中发生的所有渲染操作的术语。本页面包含有关在基于 Unity 可编程渲染管线的自定义渲染管线中创建简单渲染循环的信息。</p>
+
+<p>本页面上的代码示例演示使用可编程渲染管线的基本原则。可以使用此信息构建自己的自定义可编程渲染管线，或了解 Unity 的预构建可编程渲染管线如何工作。</p>
+
+<h2>准备项目</h2>
+
+<p>开始为渲染循环编写代码之前，必须准备好项目。</p>
+
+<p>步骤如下所示：</p>
+
+<ol>
+<li>
+<a href="#creating-unity-shader">创建与 SRP 兼容的着色器</a>。</li>
+<li>
+<a href="#creating-gameobject">创建一个或多个要渲染的游戏对象</a>。</li>
+<li>
+<a href="#creating-srp">创建自定义 SRP 的基本结构</a>。</li>
+<li>
+<em>可选：</em>如果计划扩展简单自定义 SRP 以添加更复杂的功能，请安装 SRP Core 包。SRP Core 包中包含 SRP Core 着色器库（可以用于使着色器与 SRP Batcher 兼容）以及用于常见操作的实用程序函数。有关更多信息，请参阅 <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.core@latest">SRP Core 包文档</a>。</li>
+</ol>
+
+<p><a name="creating-unity-shader"></a></p>
+
+<h3>创建与 SRP 兼容的着色器</h3>
+
+<p>在可编程渲染管线中，使用 <code>LightMode</code> 通道标签确定如何绘制几何体。有关通道标签的更多信息，请参阅 <a href="SL-PassTags.html">ShaderLab：向通道分配标签</a>。</p>
+
+<p>此任务演示如何创建非常简单的无光照 Shader 对象，其 LightMode 通道标签值为 <code>ExampleLightModeTag</code>。</p>
+
+<ol>
+<li>在项目中创建一个新着色器资源。有关创建着色器资源的说明，请参阅<a href="class-Shader.html">着色器资源</a>。</li>
+<li>在 Project 视图中，双击着色器资源以在文本编辑器中打开着色器源代码。</li>
+<li>将现有代码替换为以下内容：</li>
+</ol>
+
+<pre><code>// 这定义一个与自定义可编程渲染管线兼容的简单无光照 Shader 对象。
+// 它应用硬编码颜色，并演示 LightMode 通道标签的使用。
+// 它不与 SRP Batcher 兼容。
+
+Shader "Examples/SimpleUnlitColor"
+{
+    SubShader
+    {
+        Pass
+        {
+            // LightMode 通道标签的值必须与 ScriptableRenderContext.DrawRenderers 中的 ShaderTagId 匹配
+            Tags { "LightMode" = "ExampleLightModeTag"}
+
+            HLSLPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+
+    float4x4 unity_MatrixVP;
+            float4x4 unity_ObjectToWorld;
+
+            struct Attributes
+            {
+                float4 positionOS   : POSITION;
+            };
+
+            struct Varyings
+            {
+                float4 positionCS : SV_POSITION;
+            };
+
+            Varyings vert (Attributes IN)
+            {
+                Varyings OUT;
+                float4 worldPos = mul(unity_ObjectToWorld, IN.positionOS);
+                OUT.positionCS = mul(unity_MatrixVP, worldPos);
+                return OUT;
+            }
+
+            float4 frag (Varyings IN) : SV_TARGET
+            {
+                return float4(0.5,1,0.5,1);
+            }
+            ENDHLSL
+        }
+    }
+}
+</code></pre>
+
+<p><a name="creating-gameobject"></a></p>
+
+<h3>创建要渲染的游戏对象</h3>
+
+<p>要测试渲染循环是否可正常工作，必须创建要渲染的内容。此任务演示如何在场景中放置使用在上一个任务中创建的 SRP 兼容着色器的游戏对象。</p>
+
+<ol>
+<li>在 Unity 项目中创建一个新材质资源。有关说明，请参阅<a href="class-Material.html">材质</a>。</li>
+<li>将着色器资源分配给材质资源。有关说明，请参阅<a href="class-Material.html">材质</a>。</li>
+<li>在场景中创建一个立方体。有关说明，请参阅<a href="PrimitiveObjects.html">原始对象</a>。</li>
+<li>将材质分配给它。有关说明，请参阅<a href="class-Material.html">材质</a>。</li>
+</ol>
+
+<p><a name="creating-srp"></a></p>
+
+<h3>创建自定义 SRP 的基本结构</h3>
+
+<p>准备的最后阶段是创建自定义 SRP 所需的基本源文件，并告知 Unity 开始使用自定义 SRP 进行渲染。</p>
+
+<ol>
+<li>按照<a href="srp-creating-render-pipeline-asset-and-render-pipeline-instance.html">创建渲染管线实例和渲染管线资源</a>中的说明，创建一个继承自 <code>RenderPipeline</code> 的类和一个兼容渲染管线资源。</li>
+<li>Set the active Render Pipeline Asset, following the instructions in <a href="srp-setting-render-pipeline-asset.html">How to get, set, and configure the active render pipeline</a>. Unity will begin rendering using the custom SRP immediately, which means that your Scene view and Game view will be blank until you add code to your custom SRP.</li>
+</ol>
+
+<h2>创建渲染循环</h2>
+
+<p>在简单渲染循环中，基本操作有：</p>
+
+<ul>
+<li>
+<a href="#clearing">清除渲染目标</a>，这意味着移除在最后一帧期间绘制的几何体。</li>
+<li>
+<a href="#culling">剔除</a>，这意味着过滤掉对摄像机不可见的几何体。</li>
+<li>
+<a href="#drawing">绘制</a>，这意味着向 GPU 告知要绘制的几何体以及如何进行绘制。</li>
+</ul>
+
+<p><a name="clearing"></a></p>
+
+<h3>清除渲染目标</h3>
+
+<p>清除意味着移除在最后一帧期间绘制的内容。渲染目标通常是屏幕；但是，也可以渲染到纹理以创建“画中画”效果。这些示例演示如何渲染到屏幕，这是 Unity 的默认行为。</p>
+
+<p>要清除可编程渲染管线中的渲染目标，请执行以下操作：</p>
+
+<ol>
+<li>使用 <code>Clear</code> 命令配置 <code>CommandBuffer</code>。</li>
+<li>将 <code>CommandBuffer</code> 添加到 <code>ScriptableRenderContext</code> 上的命令队列；为此，请调用 <a href="../ScriptReference/Rendering.ScriptableRenderContext.ExecuteCommandBuffer.html">ScriptableRenderContext.ExecuteCommandBuffer</a>。</li>
+<li>指示图形 API 执行 <code>ScriptableRenderContext</code> 上的命令队列；为此，请调用 <a href="../ScriptReference/Rendering.ScriptableRenderContext.Submit.html">ScriptableRenderContext.Submit</a>。</li>
+</ol>
+
+<p>与所有可编程渲染管线操作一样，使用 <a href="../ScriptReference/Rendering.RenderPipeline.Render.html">RenderPipeline.Render</a> 方法作为此代码的入口点。此示例代码演示如何执行此操作：</p>
+
+<pre><code class="c#">/* 
+这是自定义可编程渲染管线的简化示例。
+它演示基本渲染循环的工作方式。
+它演示最清晰的工作流程，而不是最高效的运行时性能。
+*/
+
+using UnityEngine;
+using UnityEngine.Rendering;
+
+public class ExampleRenderPipeline : RenderPipeline {
+    public ExampleRenderPipeline() {
+    }
+
+    protected override void Render (ScriptableRenderContext context, Camera[] cameras) {
+        // 创建并调度命令以清除当前渲染目标
+        var cmd = new CommandBuffer();
+        cmd.ClearRenderTarget(true, true, Color.black);
+        context.ExecuteCommandBuffer(cmd);
+        cmd.Release();
+
+        // 指示图形 API 执行所有调度的命令
+        context.Submit();
+    }
+}
+</code></pre>
+
+<p><a name="culling"></a></p>
+
+<h3>剔除</h3>
+
+<p>剔除是过滤掉对摄像机不可见的几何体的过程。</p>
+
+<p>要在可编程渲染管线中进行剔除，请执行以下操作：</p>
+
+<ol>
+<li>使用有关摄像机的数据填充 <a href="../ScriptReference/Rendering.ScriptableCullingParameters.html">ScriptableCullingParameters</a> 结构；为此，请调用 <a href="../ScriptReference/Camera.TryGetCullingParameters.html">Camera.TryGetCullingParameters</a>。</li>
+<li>可选：手动更新 <code>ScriptableCullingParameters</code> 结构的值。</li>
+<li>调用 <a href="../ScriptReference/Rendering.ScriptableRenderContext.Cull.html">ScriptableRenderContext.Cull</a>，并将结果存储在一个 <code>CullingResults</code> 结构中。</li>
+</ol>
+
+<p>此示例代码扩展了上面的示例，演示如何清除渲染目标，然后执行剔除操作：</p>
+
+<pre><code class="c#">/* 
+这是自定义可编程渲染管线的简化示例。
+它演示基本渲染循环的工作方式。
+它演示最清晰的工作流程，而不是最高效的运行时性能。
+*/
+
+using UnityEngine;
+using UnityEngine.Rendering;
+
+public class ExampleRenderPipeline : RenderPipeline {
+    public ExampleRenderPipeline() {
+    }
+
+    protected override void Render (ScriptableRenderContext context, Camera[] cameras) {
+        // 创建并调度命令以清除当前渲染目标
+        var cmd = new CommandBuffer();
+        cmd.ClearRenderTarget(true, true, Color.black);
+        context.ExecuteCommandBuffer(cmd);
+        cmd.Release();
+
+        // 遍历所有摄像机
+        foreach (Camera camera in cameras)
+        {
+            // 从当前摄像机获取剔除参数
+            camera.TryGetCullingParameters(out var cullingParameters);
+
+            // 使用剔除参数执行剔除操作，并存储结果
+            var cullingResults = context.Cull(ref cullingParameters);
+        }
+
+        // 指示图形 API 执行所有调度的命令
+        context.Submit();
+    }
+}
+</code></pre>
+
+<p><a name="drawing"></a></p>
+
+<h3>绘制</h3>
+
+<p>绘制是指示图形 API 使用给定设置绘制一组给定几何体的过程。</p>
+
+<p>要在 SRP 中进行绘制，请执行以下操作：</p>
+
+<ol>
+<li>如上所述执行剔除操作，并将结果存储在 <code>CullingResults</code> 结构中。</li>
+<li>创建和配置 <a href="../ScriptReference/Rendering.FilteringSettings.html">FilteringSettings</a> 结构，它描述如何过滤剔除结果。</li>
+<li>Create and configure a <a href="../ScriptReference/Rendering.DrawingSettings.html">DrawingSettings</a> struct, which describes which geometry to draw and how to draw it.</li>
+<li>
+<em>可选</em>：默认情况下，Unity 基于 Shader 对象设置渲染状态。如果要覆盖即将绘制的部分或所有几何体的渲染状态，可以使用 <a href="../ScriptReference/Rendering.RenderStateBlock.html">RenderStateBlock</a> 结构执行此操作。</li>
+<li>调用 <a href="../ScriptReference/Rendering.ScriptableRenderContext.DrawRenderers.html">ScriptableRenderContext.DrawRenderers</a>，并将创建的结构作为参数进行传递。Unity 根据设置绘制过滤后的几何体集。</li>
+</ol>
+
+<p>此示例代码基于上面的示例进行构建，演示如何清除渲染目标，执行剔除操作，然后绘制生成的几何体：</p>
+
+<pre><code class="c#">/* 
+这是自定义可编程渲染管线的简化示例。
+它演示基本渲染循环的工作方式。
+它演示最清晰的工作流程，而不是最高效的运行时性能。
+*/
+
+using UnityEngine;
+using UnityEngine.Rendering;
+
+public class ExampleRenderPipeline : RenderPipeline {
+    public ExampleRenderPipeline() {
+    }
+
+    protected override void Render (ScriptableRenderContext context, Camera[] cameras) {
+        // 创建并调度命令以清除当前渲染目标
+        var cmd = new CommandBuffer();
+        cmd.ClearRenderTarget(true, true, Color.black);
+        context.ExecuteCommandBuffer(cmd);
+        cmd.Release();
+
+        // 遍历所有摄像机
+        foreach (Camera camera in cameras)
+        {
+            // 从当前摄像机获取剔除参数
+            camera.TryGetCullingParameters(out var cullingParameters);
+
+            // 使用剔除参数执行剔除操作，并存储结果
+            var cullingResults = context.Cull(ref cullingParameters);
+
+            // 基于当前摄像机，更新内置着色器变量的值
+            context.SetupCameraProperties(camera);
+
+            // 基于 LightMode 通道标签值，向 Unity 告知要绘制的几何体
+            ShaderTagId shaderTagId = new ShaderTagId("ExampleLightModeTag");
+
+            // 基于当前摄像机，向 Unity 告知如何对几何体进行排序
+            var sortingSettings = new SortingSettings(camera);
+
+            // 创建描述要绘制的几何体以及绘制方式的 DrawingSettings 结构
+            DrawingSettings drawingSettings = new DrawingSettings(shaderTagId, sortingSettings);
+
+            // 告知 Unity 如何过滤剔除结果，以进一步指定要绘制的几何体
+            // 使用 FilteringSettings.defaultValue 可指定不进行过滤
+            FilteringSettings filteringSettings = FilteringSettings.defaultValue;
+        
+            // 基于定义的设置，调度命令绘制几何体
+            context.DrawRenderers(cullingResults, ref drawingSettings, ref filteringSettings);
+
+            // 在需要时调度命令绘制天空盒
+            if (camera.clearFlags == CameraClearFlags.Skybox &amp;&amp; RenderSettings.skybox != null)
+            {
+                context.DrawSkybox(camera);
+            }
+
+            // 指示图形 API 执行所有调度的命令
+            context.Submit();
+        }
+    }
+}
+</code></pre>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="srp-creating-render-pipeline-asset-and-render-pipeline-instance.html"></a></span><div class="tip">在自定义渲染管线中创建渲染管线资源和渲染管线实例</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="CamerasOverview.html"></a></span><div class="tip">摄像机</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

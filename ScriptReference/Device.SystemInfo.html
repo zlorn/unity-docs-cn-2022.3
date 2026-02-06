@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-cn">
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:title" content="Device.SystemInfo - Unity 脚本 API" />
+    <title>Device.SystemInfo - Unity 脚本 API</title>
+    <meta name="description" content="访问特定于平台的系统和硬件信息。" />
+    <meta property="og:description" content="访问特定于平台的系统和硬件信息。" />
+    <meta name="author" content="Unity Technologies" />
+    <link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico" />
+    <link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png" />
+    <meta name="msapplication-TileColor" content="#222c37" />
+    <meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png" />
+    <script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true">
+    </script>
+    <script type="text/javascript">function OptanonWrapper() {}</script>
+    <script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script>
+    <script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script>
+    <script>
+      var docs_type = 'ScriptReference';
+      var lang = 'cn';
+      var page = 'Device.SystemInfo';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script>
+    <script type="text/javascript" src="../StaticFiles/js/jquery.js">
+    </script>
+    <script type="text/javascript" src="../StaticFiles/js/core.js">
+    </script>
+    <script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js">
+    </script>
+    <script type="text/javascript" src="docdata/toc.js">
+    </script>
+    <script type="text/javascript" src="">
+    </script>
+    <script type="text/javascript" src="../StaticFiles/js/custom.js">
+    </script>
+    <script src="/StaticFilesConfig/feedback/feedback.js">
+    </script>
+    <link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css" />
+    <link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css" />
+    <link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/ScriptReference/Device.SystemInfo.html" />
+    <link rel="alternate" href="https://docs.unity3d.com/en/2022.3/ScriptReference/Device.SystemInfo.html" hreflang="en" />
+    <link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/ScriptReference/Device.SystemInfo.html" hreflang="zh" />
+    <link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/ScriptReference/Device.SystemInfo.html" hreflang="ja" />
+    <link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/ScriptReference/Device.SystemInfo.html" hreflang="ko" />
+    <link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Device.SystemInfo.html" hreflang="x-default" />
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <div id="header" class="header">
+        <div class="content">
+          <div class="spacer">
+            <div class="menu">
+              <div id="nav-open" for="nav-input">
+                <span>
+                </span>
+              </div>
+              <div class="logo">
+                <a href="./index.html">
+                </a>
+              </div>
+              <div class="search-form">
+                <form action="30_search.html" method="get" class="apisearch">
+                  <input type="text" name="q" placeholder="搜索脚本..." autosave="Unity Reference" results="5" class="sbox field" id="q">
+                  </input>
+                  <input type="submit" class="submit">
+                  </input>
+                </form>
+              </div>
+              <ul class="menu-items">
+                <li class="menu-item">
+                  <a href="../Manual/index.html" class="">手册</a>
+                </li>
+                <li class="menu-item">
+                  <a href="../ScriptReference/index.html" class="selected">脚本 API</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="more">
+            <div class="filler">
+            </div>
+            <ul>
+              <li>
+                <a href="https://unity3d.com/">
+                unity3d.com
+              </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="toolbar">
+        <div class="content">
+          <div class="version-switcher">
+            <div class="current toggle" data-target=".version-list">
+              <div class="version-number">
+                <div class="d-inline-block">
+          Version:
+          <b>2022.3</b></div>
+                <div class="d-inline-block arrow">
+                </div>
+              </div>
+            </div>
+            <div class="version-list" style="display:none;">
+              <ul class="versions">
+                <li class="supported">
+                  <a class="docs_version_url_2023.2" href="/cn/2023.2/ScriptReference/Device.SystemInfo.html">2023.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2023.1" href="/cn/2023.1/ScriptReference/Device.SystemInfo.html">2023.1</a>
+                </li>
+                <li class="supported">
+                  <a class="docs_version_url_2022.3" href="/cn/2022.3/ScriptReference/Device.SystemInfo.html">2022.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2022.2" href="/cn/2022.2/ScriptReference/Device.SystemInfo.html">2022.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2022.1" href="/cn/2022.1/ScriptReference/Device.SystemInfo.html">2022.1</a>
+                </li>
+                <li class="supported">
+                  <a class="docs_version_url_2021.3" href="/cn/2021.3/ScriptReference/Device.SystemInfo.html">2021.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2021.2" href="/cn/2021.2/ScriptReference/Device.SystemInfo.html">2021.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2021.1" href="/cn/2021.1/ScriptReference/Device.SystemInfo.html">2021.1</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2020.3" href="/cn/2020.3/ScriptReference/Device.SystemInfo.html">2020.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2020.2" href="/cn/2020.2/ScriptReference/Device.SystemInfo.html">2020.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2020.1" href="/cn/2020.1/ScriptReference/Device.SystemInfo.html">2020.1</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2019.4" href="/cn/2019.4/ScriptReference/Device.SystemInfo.html">2019.4</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2019.3" href="/cn/2019.3/ScriptReference/Device.SystemInfo.html">2019.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2019.2" href="/cn/2019.2/ScriptReference/Device.SystemInfo.html">2019.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2019.1" href="/cn/2019.1/ScriptReference/Device.SystemInfo.html">2019.1</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2018.4" href="/cn/2018.4/ScriptReference/Device.SystemInfo.html">2018.4</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2018.3" href="/cn/2018.3/ScriptReference/Device.SystemInfo.html">2018.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2018.2" href="/cn/2018.2/ScriptReference/Device.SystemInfo.html">2018.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2018.1" href="/cn/2018.1/ScriptReference/Device.SystemInfo.html">2018.1</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2017.4" href="/cn/2017.4/ScriptReference/Device.SystemInfo.html">2017.4</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2017.3" href="/cn/2017.3/ScriptReference/Device.SystemInfo.html">2017.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2017.2" href="/cn/2017.2/ScriptReference/Device.SystemInfo.html">2017.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2017.1" href="/cn/2017.1/ScriptReference/Device.SystemInfo.html">2017.1</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_560" href="/cn/560/ScriptReference/Device.SystemInfo.html">5.6</a>
+                </li>
+                <div class="versionsWithThisPage" style="display:none;">
+                  <li>
+                    <p>包含此页的版本：</p>
+                  </li>
+                </div>
+                <div class="versionsWithoutThisPage" style="display:none;">
+                  <li>
+                    <p>不含此页的版本：</p>
+                  </li>
+                </div>
+              </ul>
+              <ul class="description">
+                <li>
+                  <div class="supported-box">
+                  </div>受支持</li>
+                <li>
+                  <div class="legacy-box">
+                  </div>旧版</li>
+              </ul>
+            </div>
+          </div>
+          <ul class="nav-menu-items">
+            <li class="menu-item">
+              <a href="../Manual/index.html" class="">手册</a>
+            </li>
+            <li class="menu-item">
+              <a href="../ScriptReference/index.html" class="selected">脚本 API</a>
+            </li>
+          </ul>
+          <div class="lang-switcher">
+            <div class="current toggle" data-target=".lang-list">
+              <div class="lbl">语言:
+        <span class="b">中文</span></div>
+              <div class="arrow">
+              </div>
+            </div>
+            <div class="lang-list" style="display:none;">
+              <ul>
+                <li>
+                  <a data-lang="en" href="/2022.3/Documentation/ScriptReference/Device.SystemInfo.html">English</a>
+                </li>
+                <li>
+                  <a data-lang="cn" href="/cn/2022.3/ScriptReference/Device.SystemInfo.html">中文</a>
+                </li>
+                <li>
+                  <a data-lang="ja" href="/ja/2022.3/ScriptReference/Device.SystemInfo.html">日本語</a>
+                </li>
+                <li>
+                  <a data-lang="kr" href="/kr/2022.3/ScriptReference/Device.SystemInfo.html">한국어</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="master-wrapper" class="master-wrapper clear">
+      <div id="sidebar" class="sidebar hidden">
+        <div class="sidebar-wrap">
+          <div class="content">
+            <div class="sidebar-menu">
+              <div class="toc">
+                <h2>脚本 API</h2>
+                <div class="version-switcher">
+                  <div class="current toggle" data-target=".version-list">
+                    <div class="version-number">
+                      <div class="d-inline-block">
+          Version:
+          <b>2022.3</b></div>
+                      <div class="d-inline-block arrow">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="version-list" style="display:none;">
+                    <ul class="versions">
+                      <li class="supported">
+                        <a class="docs_version_url_2023.2" href="/cn/2023.2/ScriptReference/Device.SystemInfo.html">2023.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2023.1" href="/cn/2023.1/ScriptReference/Device.SystemInfo.html">2023.1</a>
+                      </li>
+                      <li class="supported">
+                        <a class="docs_version_url_2022.3" href="/cn/2022.3/ScriptReference/Device.SystemInfo.html">2022.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2022.2" href="/cn/2022.2/ScriptReference/Device.SystemInfo.html">2022.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2022.1" href="/cn/2022.1/ScriptReference/Device.SystemInfo.html">2022.1</a>
+                      </li>
+                      <li class="supported">
+                        <a class="docs_version_url_2021.3" href="/cn/2021.3/ScriptReference/Device.SystemInfo.html">2021.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2021.2" href="/cn/2021.2/ScriptReference/Device.SystemInfo.html">2021.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2021.1" href="/cn/2021.1/ScriptReference/Device.SystemInfo.html">2021.1</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2020.3" href="/cn/2020.3/ScriptReference/Device.SystemInfo.html">2020.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2020.2" href="/cn/2020.2/ScriptReference/Device.SystemInfo.html">2020.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2020.1" href="/cn/2020.1/ScriptReference/Device.SystemInfo.html">2020.1</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2019.4" href="/cn/2019.4/ScriptReference/Device.SystemInfo.html">2019.4</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2019.3" href="/cn/2019.3/ScriptReference/Device.SystemInfo.html">2019.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2019.2" href="/cn/2019.2/ScriptReference/Device.SystemInfo.html">2019.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2019.1" href="/cn/2019.1/ScriptReference/Device.SystemInfo.html">2019.1</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2018.4" href="/cn/2018.4/ScriptReference/Device.SystemInfo.html">2018.4</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2018.3" href="/cn/2018.3/ScriptReference/Device.SystemInfo.html">2018.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2018.2" href="/cn/2018.2/ScriptReference/Device.SystemInfo.html">2018.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2018.1" href="/cn/2018.1/ScriptReference/Device.SystemInfo.html">2018.1</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2017.4" href="/cn/2017.4/ScriptReference/Device.SystemInfo.html">2017.4</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2017.3" href="/cn/2017.3/ScriptReference/Device.SystemInfo.html">2017.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2017.2" href="/cn/2017.2/ScriptReference/Device.SystemInfo.html">2017.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2017.1" href="/cn/2017.1/ScriptReference/Device.SystemInfo.html">2017.1</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_560" href="/cn/560/ScriptReference/Device.SystemInfo.html">5.6</a>
+                      </li>
+                      <div class="versionsWithThisPage" style="display:none;">
+                        <li>
+                          <p>包含此页的版本：</p>
+                        </li>
+                      </div>
+                      <div class="versionsWithoutThisPage" style="display:none;">
+                        <li>
+                          <p>不含此页的版本：</p>
+                        </li>
+                      </div>
+                    </ul>
+                    <ul class="description">
+                      <li>
+                        <div class="supported-box">
+                        </div>受支持</li>
+                      <li>
+                        <div class="legacy-box">
+                        </div>旧版</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="clear">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="content-wrap" class="content-wrap opened-sidebar">
+        <div class="content-block">
+          <div class="content">
+            <div class="section">
+              <div class="mb20 clear" id="">
+                <h1 class="heading inherit">SystemInfo</h1>
+                <div class="clear">
+                </div>
+                <p class="cl mb0 left mr10">class in UnityEngine.Device</p>
+                <div class="clear">
+                </div>
+                <a href="" class="switch-link gray-btn sbtn left hide">切换到手册</a>
+                <div class="clear">
+                </div>
+              </div>
+              <div class="subsection">
+                <div class="signature">
+                  <div class="signature-CS sig-block">
+                    <span style="color:red;">
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="subsection">
+                <h2>描述</h2>
+                <p>访问特定于平台的系统和硬件信息。</p>
+              </div>
+              <div class="subsection">
+                <p>
+        此类与 <a href="SystemInfo.html">SystemInfo</a> 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。将它与设备模拟器结合使用以测试编辑器中特定于平台的行为。在编辑器之外，此类的行为与 <a href="SystemInfo.html">SystemInfo</a> 类完全相同。Unity 在构建过程中剥离了所有模拟功能。如果您直接使用 Unity 编辑器（例如，创建自定义编辑器工具）并且不需要使用任何模拟值，请使用原始 <a href="SystemInfo.html">SystemInfo</a> 类。
+      </p>
+              </div>
+              <div class="subsection">
+                <h2>静态变量</h2>
+                <table class="list">
+      <tr><td class="lbl"><a href="Device.SystemInfo-batteryLevel.html">batteryLevel</a></td><td class="desc">这与 SystemInfo.batteryLevel 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-batteryStatus.html">batteryStatus</a></td><td class="desc">这与 SystemInfo.batteryStatus 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-computeSubGroupSize.html">computeSubGroupSize</a></td><td class="desc">This has the same functionality as SystemInfo.computeSubGroupSize and also mimics platform-specific behavior in the Unity Editor.</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-constantBufferOffsetAlignment.html">constantBufferOffsetAlignment</a></td><td class="desc">这与 SystemInfo.constantBufferOffsetAlignment 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-copyTextureSupport.html">copyTextureSupport</a></td><td class="desc">这与 SystemInfo.copyTextureSupport 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-deviceModel.html">deviceModel</a></td><td class="desc">这与 SystemInfo.deviceModel 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-deviceName.html">deviceName</a></td><td class="desc">这与 SystemInfo.deviceName 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-deviceType.html">deviceType</a></td><td class="desc">这与 SystemInfo.deviceType 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-deviceUniqueIdentifier.html">deviceUniqueIdentifier</a></td><td class="desc">这与 SystemInfo.deviceUniqueIdentifier 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-foveatedRenderingCaps.html">foveatedRenderingCaps</a></td><td class="desc">This has the same functionality as SystemInfo.foveatedRenderingCaps and also mimics platform-specific behavior in the Unity Editor.</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-graphicsDeviceID.html">graphicsDeviceID</a></td><td class="desc">这与 SystemInfo.graphicsDeviceID 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-graphicsDeviceName.html">graphicsDeviceName</a></td><td class="desc">这与 SystemInfo.graphicsDeviceName 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-graphicsDeviceType.html">graphicsDeviceType</a></td><td class="desc">这与 SystemInfo.graphicsDeviceType 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-graphicsDeviceVendor.html">graphicsDeviceVendor</a></td><td class="desc">这与 SystemInfo.graphicsDeviceVendor 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-graphicsDeviceVendorID.html">graphicsDeviceVendorID</a></td><td class="desc">这与 SystemInfo.graphicsDeviceVendorID 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-graphicsDeviceVersion.html">graphicsDeviceVersion</a></td><td class="desc">这与 SystemInfo.graphicsDeviceVersion 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-graphicsMemorySize.html">graphicsMemorySize</a></td><td class="desc">这与 SystemInfo.graphicsMemorySize 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-graphicsMultiThreaded.html">graphicsMultiThreaded</a></td><td class="desc">这与 SystemInfo.graphicsMultiThreaded 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-graphicsShaderLevel.html">graphicsShaderLevel</a></td><td class="desc">这与 SystemInfo.graphicsShaderLevel 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-graphicsUVStartsAtTop.html">graphicsUVStartsAtTop</a></td><td class="desc">这与 SystemInfo.graphicsUVStartsAtTop 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-hasDynamicUniformArrayIndexingInFragmentShaders.html">hasDynamicUniformArrayIndexingInFragmentShaders</a></td><td class="desc">这与 SystemInfo.hasDynamicUniformArrayIndexingInFragmentShaders 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-hasHiddenSurfaceRemovalOnGPU.html">hasHiddenSurfaceRemovalOnGPU</a></td><td class="desc">这与 SystemInfo.hasHiddenSurfaceRemovalOnGPU 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-hasMipMaxLevel.html">hasMipMaxLevel</a></td><td class="desc">这与 SystemInfo.hasMipMaxLevel 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-hdrDisplaySupportFlags.html">hdrDisplaySupportFlags</a></td><td class="desc">这与 SystemInfo.hdrDisplaySupportFlags 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-maxComputeBufferInputsCompute.html">maxComputeBufferInputsCompute</a></td><td class="desc">这与 SystemInfo.maxComputeBufferInputsCompute 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-maxComputeBufferInputsDomain.html">maxComputeBufferInputsDomain</a></td><td class="desc">这与 SystemInfo.maxComputeBufferInputsDomain 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-maxComputeBufferInputsFragment.html">maxComputeBufferInputsFragment</a></td><td class="desc">这与 SystemInfo.maxComputeBufferInputsFragment 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-maxComputeBufferInputsGeometry.html">maxComputeBufferInputsGeometry</a></td><td class="desc">这与 SystemInfo.maxComputeBufferInputsGeometry 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-maxComputeBufferInputsHull.html">maxComputeBufferInputsHull</a></td><td class="desc">这与 SystemInfo.maxComputeBufferInputsHull 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-maxComputeBufferInputsVertex.html">maxComputeBufferInputsVertex</a></td><td class="desc">这与 SystemInfo.maxComputeBufferInputsVertex 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-maxComputeWorkGroupSize.html">maxComputeWorkGroupSize</a></td><td class="desc">这与 SystemInfo.maxComputeWorkGroupSize 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-maxComputeWorkGroupSizeX.html">maxComputeWorkGroupSizeX</a></td><td class="desc">这与 SystemInfo.maxComputeWorkGroupSizeX 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-maxComputeWorkGroupSizeY.html">maxComputeWorkGroupSizeY</a></td><td class="desc">这与 SystemInfo.maxComputeWorkGroupSizeY 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-maxComputeWorkGroupSizeZ.html">maxComputeWorkGroupSizeZ</a></td><td class="desc">这与 SystemInfo.maxComputeWorkGroupSizeZ 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-maxConstantBufferSize.html">maxConstantBufferSize</a></td><td class="desc">This property mimics platform-specific behavior caused by SystemInfo.maxConstantBufferSize. Use this property for platform-specific testing in the Unity Editor.</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-maxCubemapSize.html">maxCubemapSize</a></td><td class="desc">这与 SystemInfo.maxCubemapSize 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-maxGraphicsBufferSize.html">maxGraphicsBufferSize</a></td><td class="desc">图形缓冲区的最大大小（GraphicsBuffer、ComputeBuffer、顶点/索引缓冲区等），以字节为单位（只读）。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-maxTexture3DSize.html">maxTexture3DSize</a></td><td class="desc">This has the same functionality as SystemInfo.maxTexture3DSize and also mimics platform-specific behavior in the Unity Editor.</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-maxTextureArraySlices.html">maxTextureArraySlices</a></td><td class="desc">This has the same functionality as SystemInfo.maxTextureArraySlices and also mimics platform-specific behavior in the Unity Editor.</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-maxTextureSize.html">maxTextureSize</a></td><td class="desc">这与 SystemInfo.maxTextureSize 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-npotSupport.html">npotSupport</a></td><td class="desc">这与 SystemInfo.npotSupport 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-operatingSystem.html">operatingSystem</a></td><td class="desc">这与 SystemInfo.operatingSystem 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-operatingSystemFamily.html">operatingSystemFamily</a></td><td class="desc">这与 SystemInfo.operatingSystemFamily 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-processorCount.html">processorCount</a></td><td class="desc">这与 SystemInfo.processorCount 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-processorFrequency.html">processorFrequency</a></td><td class="desc">这与 SystemInfo.processorFrequency 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-processorType.html">processorType</a></td><td class="desc">这与 SystemInfo.processorType 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-renderingThreadingMode.html">renderingThreadingMode</a></td><td class="desc">这与 SystemInfo.renderingThreadingMode 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportedRandomWriteTargetCount.html">supportedRandomWriteTargetCount</a></td><td class="desc">这与 SystemInfo.supportedRandomWriteTargetCount 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportedRenderTargetCount.html">supportedRenderTargetCount</a></td><td class="desc">这与 SystemInfo.supportedRenderTargetCount 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supports2DArrayTextures.html">supports2DArrayTextures</a></td><td class="desc">这与 SystemInfo.supports2DArrayTextures 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supports32bitsIndexBuffer.html">supports32bitsIndexBuffer</a></td><td class="desc">这与 SystemInfo.supports32bitsIndexBuffer 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supports3DRenderTextures.html">supports3DRenderTextures</a></td><td class="desc">这与 SystemInfo.supports3DRenderTextures 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supports3DTextures.html">supports3DTextures</a></td><td class="desc">这与 SystemInfo.supports3DTextures 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsAccelerometer.html">supportsAccelerometer</a></td><td class="desc">这与 SystemInfo.supportsAccelerometer 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsAsyncCompute.html">supportsAsyncCompute</a></td><td class="desc">这与 SystemInfo.supportsAsyncCompute 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsAsyncGPUReadback.html">supportsAsyncGPUReadback</a></td><td class="desc">这与 SystemInfo.supportsAsyncGPUReadback 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsAudio.html">supportsAudio</a></td><td class="desc">这与 SystemInfo.supportsAudio 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsCompressed3DTextures.html">supportsCompressed3DTextures</a></td><td class="desc">这与 SystemInfo.supportsCompressed3DTextures 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsComputeShaders.html">supportsComputeShaders</a></td><td class="desc">这与 SystemInfo.supportsComputeShaders 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsConservativeRaster.html">supportsConservativeRaster</a></td><td class="desc">这与 SystemInfo.supportsConservativeRaster 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsCubemapArrayTextures.html">supportsCubemapArrayTextures</a></td><td class="desc">这与 SystemInfo.supportsCubemapArrayTextures 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsGeometryShaders.html">supportsGeometryShaders</a></td><td class="desc">这与 SystemInfo.supportsGeometryShaders 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsGpuRecorder.html">supportsGpuRecorder</a></td><td class="desc">这与 SystemInfo.supportsGpuRecorder 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsGraphicsFence.html">supportsGraphicsFence</a></td><td class="desc">这与 SystemInfo.supportsGraphicsFence 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsGyroscope.html">supportsGyroscope</a></td><td class="desc">这与 SystemInfo.supportsGyroscope 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsHardwareQuadTopology.html">supportsHardwareQuadTopology</a></td><td class="desc">这与 SystemInfo.supportsHardwareQuadTopology 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsIndirectArgumentsBuffer.html">supportsIndirectArgumentsBuffer</a></td><td class="desc">This property has the same functionality as SystemInfo.supportsIndirectArgumentsBuffer and also mimics platform-specific behavior in the Unity Editor.</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsInstancing.html">supportsInstancing</a></td><td class="desc">这与 SystemInfo.supportsInstancing 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsLocationService.html">supportsLocationService</a></td><td class="desc">这与 SystemInfo.supportsLocationService 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsMipStreaming.html">supportsMipStreaming</a></td><td class="desc">这与 SystemInfo.supportsMipStreaming 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsMotionVectors.html">supportsMotionVectors</a></td><td class="desc">这与 SystemInfo.supportsMotionVectors 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsMultisampleAutoResolve.html">supportsMultisampleAutoResolve</a></td><td class="desc">这与 SystemInfo.supportsMultisampleAutoResolve 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsMultisampled2DArrayTextures.html">supportsMultisampled2DArrayTextures</a></td><td class="desc">这与 SystemInfo.supportsMultisampled2DArrayTextures 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsMultisampledTextures.html">supportsMultisampledTextures</a></td><td class="desc">这与 SystemInfo.supportsMultisampledTextures 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsMultisampleResolveDepth.html">supportsMultisampleResolveDepth</a></td><td class="desc">此属性与 SystemInfo.supportsMultisampleResolveDepth 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsMultisampleResolveStencil.html">supportsMultisampleResolveStencil</a></td><td class="desc">This property has the same functionality as SystemInfo.supportsMultisampleResolveStencil and also mimics platform-specific behavior in the Unity Editor.</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsMultiview.html">supportsMultiview</a></td><td class="desc">这与 SystemInfo.supportsMultiview 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsRawShadowDepthSampling.html">supportsRawShadowDepthSampling</a></td><td class="desc">这与 SystemInfo.supportsRawShadowDepthSampling 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsRayTracing.html">supportsRayTracing</a></td><td class="desc">这与 SystemInfo.supportsRayTracing 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsRenderTargetArrayIndexFromVertexShader.html">supportsRenderTargetArrayIndexFromVertexShader</a></td><td class="desc">这与 SystemInfo.supportsRenderTargetArrayIndexFromVertexShader 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsSeparatedRenderTargetsBlend.html">supportsSeparatedRenderTargetsBlend</a></td><td class="desc">这与 SystemInfo.supportsSeparatedRenderTargetsBlend 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsSetConstantBuffer.html">supportsSetConstantBuffer</a></td><td class="desc">这与 SystemInfo.supportsSetConstantBuffer 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsShadows.html">supportsShadows</a></td><td class="desc">这与 SystemInfo.supportsShadows 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsSparseTextures.html">supportsSparseTextures</a></td><td class="desc">这与 SystemInfo.supportsSparseTextures 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsStoreAndResolveAction.html">supportsStoreAndResolveAction</a></td><td class="desc">此属性与 SystemInfo.supportsStoreAndResolveAction 具有相同的功能，并且还在 Unity 编辑器中显示特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsTessellationShaders.html">supportsTessellationShaders</a></td><td class="desc">这与 SystemInfo.supportsTessellationShaders 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsTextureWrapMirrorOnce.html">supportsTextureWrapMirrorOnce</a></td><td class="desc">这与 SystemInfo.supportsTextureWrapMirrorOnce 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-supportsVibration.html">supportsVibration</a></td><td class="desc">这与 SystemInfo.supportsVibration 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-systemMemorySize.html">systemMemorySize</a></td><td class="desc">这与 SystemInfo.systemMemorySize 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-unsupportedIdentifier.html">unsupportedIdentifier</a></td><td class="desc">这与 SystemInfo.unsupportedIdentifier 具有相同的功能。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-usesLoadStoreActions.html">usesLoadStoreActions</a></td><td class="desc">这与 SystemInfo.usesLoadStoreActions 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo-usesReversedZBuffer.html">usesReversedZBuffer</a></td><td class="desc">这与 SystemInfo.usesReversedZBuffer 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+    </table>
+              </div>
+              <div class="subsection">
+                <h2>静态函数</h2>
+                <table class="list">
+      <tr><td class="lbl"><a href="Device.SystemInfo.GetCompatibleFormat.html">GetCompatibleFormat</a></td><td class="desc">这与 SystemInfo.GetCompatibleFormat 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo.GetGraphicsFormat.html">GetGraphicsFormat</a></td><td class="desc">这与 SystemInfo.GetGraphicsFormat 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo.GetRenderTextureSupportedMSAASampleCount.html">GetRenderTextureSupportedMSAASampleCount</a></td><td class="desc">这与 SystemInfo.GetRenderTextureSupportedMSAASampleCount 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo.IsFormatSupported.html">IsFormatSupported</a></td><td class="desc">这与 SystemInfo.IsFormatSupported 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo.SupportsBlendingOnRenderTextureFormat.html">SupportsBlendingOnRenderTextureFormat</a></td><td class="desc">这与 SystemInfo.SupportsBlendingOnRenderTextureFormat 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo.SupportsRandomWriteOnRenderTextureFormat.html">SupportsRandomWriteOnRenderTextureFormat</a></td><td class="desc">这与 SystemInfo.SupportsRandomWriteOnRenderTextureFormat 具有相同的功能。目前，设备模拟器不支持该方法的模拟。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo.SupportsRenderTextureFormat.html">SupportsRenderTextureFormat</a></td><td class="desc">这与 SystemInfo.SupportsRenderTextureFormat 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo.SupportsTextureFormat.html">SupportsTextureFormat</a></td><td class="desc">这与 SystemInfo.SupportsTextureFormat 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+      <tr><td class="lbl"><a href="Device.SystemInfo.SupportsVertexAttributeFormat.html">SupportsVertexAttributeFormat</a></td><td class="desc">这与 SystemInfo.SupportsVertexAttributeFormat 具有相同的功能，并且还模仿 Unity 编辑器中特定于平台的行为。</td></tr>
+    </table>
+              </div>
+            </div>
+            <div class="section">
+              <div id="_content">
+              </div>
+            </div>
+            <div class="footer-wrapper">
+              <div class="footer clear">
+                <div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+                <div class="menu">
+                  <a href="https://learn.unity.com/">教程</a>
+                  <a href="https://answers.unity3d.com">社区答案</a>
+                  <a href="https://support.unity3d.com/hc/en-us">知识库</a>
+                  <a href="https://forum.unity3d.com">论坛</a>
+                  <a href="https://unity3d.com/asset-store">Asset Store</a>
+                  <a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a>
+                  <a href="https://unity.com/legal">法律条款</a>
+                  <a href="https://unity.com/legal/privacy-policy">隐私政策</a>
+                  <a href="https://unity.com/legal/cookie-policy">Cookie</a>
+                  <a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a>
+                  <div id="ot-sdk-btn-container">
+                    <a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

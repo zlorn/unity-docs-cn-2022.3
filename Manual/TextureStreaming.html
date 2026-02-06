@@ -1,0 +1,436 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="The Mipmap Streaming system - Unity 手册">
+<title>The Mipmap Streaming system - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/TextureStreaming_image_0.png">
+<meta name="description" content="The Mipmap Streaming system gives you control over how Unity loads mipmaps.">
+<meta property="og:description" content="The Mipmap Streaming system gives you control over how Unity loads mipmaps.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'TextureStreaming';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/TextureStreaming.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/TextureStreaming.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/TextureStreaming.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/TextureStreaming.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/TextureStreaming.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/TextureStreaming.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/TextureStreaming.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/TextureStreaming.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/TextureStreaming.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/TextureStreaming.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/TextureStreaming.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/TextureStreaming.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/TextureStreaming.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/TextureStreaming.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/TextureStreaming.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/TextureStreaming.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/TextureStreaming.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/TextureStreaming.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/TextureStreaming.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/TextureStreaming.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/TextureStreaming.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/TextureStreaming.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/TextureStreaming.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/TextureStreaming.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/TextureStreaming.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/TextureStreaming.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/TextureStreaming.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/TextureStreaming.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/TextureStreaming.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/TextureStreaming.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/TextureStreaming.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/TextureStreaming.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/TextureStreaming.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/TextureStreaming.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/TextureStreaming.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/TextureStreaming.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/TextureStreaming.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/TextureStreaming.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/TextureStreaming.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/TextureStreaming.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/TextureStreaming.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/TextureStreaming.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/TextureStreaming.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/TextureStreaming.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/TextureStreaming.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/TextureStreaming.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/TextureStreaming.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/TextureStreaming.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/TextureStreaming.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/TextureStreaming.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/TextureStreaming.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/TextureStreaming.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/TextureStreaming.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/TextureStreaming.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/TextureStreaming.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/TextureStreaming.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/TextureStreaming.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/TextureStreaming.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="Textures.html">纹理</a></li>
+<li><a href="texture-mipmaps.html">Mipmaps</a></li>
+<li>The Mipmap Streaming system</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="texture-mipmaps-introduction.html"></a></span><div class="tip">Mipmaps introduction</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="TextureStreaming-API.html"></a></span><div class="tip">The Mipmap Streaming system API</div>
+</div>
+</div></div>
+<h1>The Mipmap Streaming system</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>The Mipmap Streaming system gives you control over how Unity loads <a href="texture-mipmaps.html">mipmaps</a>.</p>
+
+<p>本页包含以下信息：</p>
+
+<ul>
+<li><a href="#overview">概述</a></li>
+<li>
+<a href="#getting-started">Getting started</a>
+
+<ul>
+<li><a href="#enabling-system">Enabling Mipmap Streaming</a></li>
+<li><a href="#enabling-textures">Making textures work with the Mipmap Streaming system</a></li>
+<li><a href="#lightmaps">Making lightmaps work with the Mipmap Streaming system</a></li>
+</ul>
+</li>
+<li>
+<a href="#configuring">Configuring Mipmap Streaming</a>
+
+<ul>
+<li><a href="#memory-budget">Setting the memory budget</a></li>
+<li><a href="#cameras">Configuring Cameras</a></li>
+<li><a href="#editor-streaming">Configuring Editor streaming settings</a></li>
+</ul>
+</li>
+<li><a href="#Debugging">调试</a></li>
+<li><a href="#calculate-mip-level">How Unity calculates the required mip level</a></li>
+<li><a href="#limitations">Limitations</a></li>
+</ul>
+
+<p>For information about using the API to extend the functionality of this system, see <a href="TextureStreaming-API.html">Mipmap Streaming system API</a>.</p>
+
+<p><a name="overview"></a></p>
+
+<h2>概述</h2>
+
+<p>This system forces Unity to only load the mip levels needed to render the current Camera position, instead of loading all of them by default. It trades a small amount of CPU resources to save a potentially large amount of GPU memory.</p>
+
+<p>You can set a total memory limit for all textures in an application, and the system automatically reduces mip levels to stay within this budget. </p>
+
+<p>In Unity’s <a href="https://assetstore.unity.com/packages/essentials/tutorial-projects/viking-village-29140">Viking Village</a> demo project, the Mipmap Streaming system saves 25–30% of texture memory, depending on Camera location.</p>
+
+<figure>
+<img src="../uploads/Main/TextureStreaming_image_0.png" alt="">
+</figure>
+
+<p><a name="getting-started"></a></p>
+
+<h2>准备开始</h2>
+
+<p><a name="enabling-system"></a></p>
+
+<h3>Enabling Mipmap Streaming</h3>
+
+<p>To enable Mipmap Streaming, go to Unity’s Quality Settings (<strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Quality</strong>) and enable the <strong>Texture Streaming</strong> checkbox.</p>
+
+<p>When you enable this setting, the Quality settings window reveals the settings specific to the Mipmap Streaming system. For details on each setting, see documentation on <a href="class-QualitySettings.html">Quality Settings</a>.</p>
+
+<figure>
+<img src="../uploads/Main/TextureStreaming_image_1.png" alt="">
+</figure>
+
+<p>By default, this enables Mipmap Streaming for all Cameras in your project.</p>
+
+<p><a name="enabling-textures"></a></p>
+
+<h3>Making textures work with the Mipmap Streaming system</h3>
+
+<p>Now you can set up Mipmap Streaming on individual textures. Select a texture asset, navigate to the Inspector window and view the Texture Import settings. Open the <strong>Advanced</strong> settings, and enable the <strong>Mip Streaming</strong> checkbox. </p>
+
+<p>If you’re developing for Android, you also need to open the <a href="BuildSettings.html">Build Settings</a> and set the <strong>Compression Method</strong> to <strong>LZ4</strong> or <strong>LZ4HC</strong>. Unity requires one of these compression methods for <a href="LoadingTextureandMeshData.html">asynchronous Texture loading</a>, which the Mipmap Streaming system relies upon.</p>
+
+<p>Unity loads mips at the highest resolution possible while observing the memory budget. You can configure the priority of a texture with the <strong>Mip Streaming</strong> &gt; <strong>Priority</strong> setting in the Texture Import Settings. </p>
+
+<p>Unity uses this setting to determine:</p>
+
+<ul>
+<li>Which textures to prioritize when assigning resources.</li>
+<li>As a mip bias value when choosing a mip level that fits in the memory budget. For example, with a priority of 2, the mipmap streaming system tries to use a mipmap two mip levels higher than Textures with a priority of 0.</li>
+</ul>
+
+<p>Positive numbers give higher priority. Valid values range from –128 to 127.</p>
+
+<p><a name="lightmaps"></a></p>
+
+<h3>Streaming Lightmaps</h3>
+
+<p>You can use the Mipmap Streaming system to stream mip levels for lightmaps.</p>
+
+<p>You can edit the Mip Map Streaming settings of the lightmap assets in the same way that you can any other texture, but they reset to their default values when Unity regenerates the lightmaps. To solve this, you can tell Unity to apply these values when it generates the lightmaps. The <a href="class-PlayerSettings.html">Player Settings</a> (<strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Player</strong>) provide two controls to set streaming and priority for generated lightmaps: <strong>Lightmap Streaming Enabled</strong> and <strong>Streaming Priority</strong>.</p>
+
+<p>Enabling Mip Map Streaming and configuring priority work in the same way for lightmaps as for <a href="#enabling-textures">regular textures</a>.</p>
+
+<p><a name="configuring"></a></p>
+
+<h2>Configuring Mipmap Streaming</h2>
+
+<p>You can configure default settings in the Unity Editor, and then use the <a href="TextureStreaming-API.html">Mipmap Streaming API</a> to override these settings if required.</p>
+
+<p><a name="memory-budget"></a></p>
+
+<h3>Setting the memory budget</h3>
+
+<p>The <strong>Memory Budget</strong> property determines the maximum amount of memory Unity uses for textures. If your memory budget is too small, Unity lowers the resolution of textures in your scene. This can cause textures to pop or load slowly. However, the memory budget should be as small as possible to allow memory for other resources. </p>
+
+<p>Set the memory budget in the <a href="class-QualitySettings.html">Quality Settings</a> window, with the <strong>Texture Streaming</strong> &gt; <strong>Memory Budget</strong> property.</p>
+
+<p>When the memory budget is full, Unity discards mipmaps it’s not using, to make room for those it needs to use. You can control how many unused mipmaps it discards with the <strong>Max Level Reduction</strong>.</p>
+
+<p>This value is also the mipmap level that the Mipmap Streaming system initially loads at startup. For example, when this is set to 2, Unity skips the two highest mipmaps on first load.</p>
+
+<p>Set this value in the <a href="class-QualitySettings.html">Quality Settings</a> window, with the <strong>Texture Streaming</strong> &gt; <strong>Max Level Reduction</strong> property.</p>
+
+<p><strong>Note:</strong> Unity prioritises the <strong>Max Level Reduction</strong> value over the memory budget. It never discards more mipmaps than the <strong>Max Level Reduction</strong> value, even if this causes the textures memory to exceed the budget.</p>
+
+<p>The memory budget includes textures that do not use Mipmap Streaming. For example, if your budget is 100MB and you have 90MB of textures that don’t use Mipmap Streaming, Unity tries to fit all the streaming mipmaps in the remaining 10MB. If it can’t, it loads them at a lower resolution. Unity always loads textures that don’t use Mipmap Streaming at full resolution, even if that exceeds the budget.</p>
+
+<p>要确定您的内存预算的合理数量：</p>
+
+<ol>
+<li>在项目运行时查看 <a href="../ScriptReference/Texture-desiredTextureMemory.html">Texture.desiredTextureMemory</a> 值。</li>
+<li>将 <strong>Memory Budget</strong> 值设置为略高于<a href="../ScriptReference/Texture-desiredTextureMemory.html">Texture.desiredTextureMemory</a> 的值。</li>
+</ol>
+
+<p>这确保有足够的纹理内存可用于场景中资源最密集的区域，并防止纹理下降到较低的分辨率。如果您有额外的可用内存，可以设置更大的内存预算，以便 Unity 可以将场景中不可见的纹理数据保留在串流缓存中。</p>
+
+<p><a name="cameras"></a></p>
+
+<h3>Configuring Cameras</h3>
+
+<p>By default, when you enable the Mipmap Streaming system, Unity enables it for all cameras. You can disable this setting if you like.</p>
+
+<p>Control whether Unity enables mipmap Streaming for all Cameras in the <a href="class-QualitySettings.html">Quality Settings</a> window, with the <strong>Texture Streaming</strong> &gt; <strong>Add All Cameras</strong> property.</p>
+
+<p>If you want to exclude a specific Camera, add a <a href="class-StreamingController.html">Streaming Controller</a> component to that Camera and then disable it.</p>
+
+<p>If you disable <strong>Add All Cameras</strong>, then you must enable mipmap Streaming per-Camera. To do this, add a <a href="class-StreamingController.html">Streaming Controller</a> component to the same GameObject as the Camera component.</p>
+
+<p>This component also allows you to adjust the mip bias setting per-Camera.</p>
+
+<figure>
+<img src="../uploads/Main/StreamingController.png" alt="Streaming Controller 组件">
+<figcaption>Streaming Controller 组件</figcaption>
+</figure>
+
+<p><a name="editor-streaming"></a></p>
+
+<h3>Configuring Editor streaming settings</h3>
+
+<figure>
+<img src="../uploads/Main/EditorTextureStreamingSettings.png" alt="The streaming settings found in Edit &gt; Project Settings &gt; Editor">
+<figcaption>The streaming settings found in <strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Editor</strong></figcaption>
+</figure>
+
+<p>Mipmap Streaming (also known as texture streaming) in the Editor is enabled by default, but only takes effect if you have enabled <strong>Texture Streaming</strong> in <a href="class-QualitySettings.html">Quality Settings</a>, and have enabled <strong>Mipmap Streaming</strong> on one or more of your <a href="class-TextureImporter.html">texture asset’s import settings</a>.</p>
+
+<p>You can control whether Unity uses Mipmap Streaming in the Editor in both Play Mode and Edit Mode independently. To do this, go to <strong>Project Settings</strong> &gt; <strong>Editor</strong> &gt; <strong>Streaming Settings</strong>.</p>
+
+<p>If you enable Mipmap Streaming in the Editor for one mode but not the other, entering and exiting Play mode takes slightly longer. Enabling Mipmap Streaming for both modes prevents Unity from unloading and reloading mipmap data, and increases the speed of entering and exiting Play Mode.</p>
+
+<p>The “Load texture data on demand” setting enables further optimizations in the Editor for textures which have mip-map streaming enabled, which:</p>
+
+<ul>
+<li>Asynchronously loads texture data to memory from disk</li>
+<li>Only loads the mip-map levels required by current camera views</li>
+<li>Attempts to work within the Texture Streaming Memory Budget for the current Quality setting</li>
+</ul>
+
+<p>These optimizations avoid some stalls, make loading slightly faster, and reduce the amount of CPU memory used. However, this setting can cause mip-mapped textures to temporarily appear at a lower resolution than they should while a higher resolution version is loaded in. This feature incurs some overhead on the CPU, so you might want to leave this disabled if your textures all fit in memory at once, or you don’t have any textures set up to stream.</p>
+
+<p><a name="Debugging"></a></p>
+
+<h2>调试 Mipmap 串流</h2>
+
+<p>Unity 具有内置的 Mipmap 串流调试视图模式。要访问此模式，请单击 <a href="ViewModes.html">Scene 视图控制下拉选单</a>，然后选择 <strong>Texture Streaming</strong>。根据游戏对象在 Mipmap 串流系统中的状态，此视图模式将其显示为以下颜色：</p>
+
+<ul>
+<li>
+<strong>绿色</strong>表示由于 Mipmap 串流系统而降低了 Mipmap 的纹理。</li>
+<li>
+<strong>红色</strong>表示由于 Mipmap 串流系统没有足够资源来加载全部 Mipmap 而减少了 Mipmap 的纹理。</li>
+<li>
+<strong>蓝色</strong>表示未设置为串流的纹理，或者在没有渲染器计算 Mip 级别的情况下的纹理。</li>
+</ul>
+
+<p>您还可以使用<a href="TextureStreaming-API.html#DebuggingAPI">调试 API</a> 编写您自己的自定义调试工具。</p>
+
+<p><strong>Important</strong> : When the main texture is set using the <a href="../ScriptReference/Material-mainTexture.html">MainTexture</a> attribute, it is not visible in the game view when you use the texture streaming <a href="TextureStreaming-API.html#DebuggingAPI">debugging view mode</a> or a custom debug tool.</p>
+
+<p><a name="calculate-mip-level"></a></p>
+
+<h2>How Unity calculates the required mip level</h2>
+
+<p>For textures that use Mipmap Streaming, Unity calculates the correct mip level using one of the following methods: </p>
+
+<ul>
+<li>If you assign the texture to a material that is used by a Unity Renderer componennt, Unity calculates the mip level automatically.</li>
+<li>Otherwise, you must request mip levels manually using <a href="../ScriptReference/Texture2D-requestedMipmapLevel.html">Texture2D.requestedMipmapLevel</a>.</li>
+</ul>
+
+<p>If you don’t do this, Unity can’t calculate the correct mip level, and it loads the texture using low-quality mips. These can appear blurry.</p>
+
+<p><strong>Note:</strong> The following systems don’t use standard Renderer components. This means you must manually set the requested mips for these systems:</p>
+
+<ul>
+<li>Decal projector textures.</li>
+<li>Reflection probe textures: Lower resolution mips are a lookup table for roughness. Therefore, if Unity uses a lower mipmap level, it renders materials using the wrong roughness.</li>
+<li>Shaders that use UV texture coordinates in a channel other than <a href="../ScriptReference/Mesh-uv.html">Mesh.uv</a> (also called UV0), or change texture coordinates in the shader. The only exceptions are changes to scale and translation (see below).</li>
+</ul>
+
+<p><a name="limitations"></a></p>
+
+<h2>限制</h2>
+
+<ul>
+<li>Unity does not support Mipmap Streaming on Terrain textures. This is because Terrain Textures need to be available at full resolution at all times to allow Unity to tile and blend the textures.</li>
+<li>When a Renderer component is active, its mesh requires valid UV distribution metrics to calculate the desired mip level. Unity calculates distribution metrics automatically as part of the mesh importing process.<br><br>If you create a mesh from code, Unity does not calculate distribution metrics automatically and therefore it loads the wrong mip levels. To manually trigger the UV distribution metric calculation use <a href="../ScriptReference/Mesh.RecalculateUVDistributionMetrics.html">Mesh.RecalculateUVDistributionMetrics</a>.</li>
+<li>When Unity renders a streamed Texture directly with an API (such as <a href="../ScriptReference/Graphics.DrawMeshNow.html">Graphics.DrawMeshNow</a>) the system has no renderer bounds or other information to calculate the mip level. This means you need to set the Texture mip level manually or disable Mipmap Streaming on this Texture. See <a href="../ScriptReference/Texture2D-requestedMipmapLevel.html">Texture2D.requestedMipmapLevel</a> for more details on how to manually set which mip level Unity loads.</li>
+<li>When Unity calculates the miplevel for a texture it looks for the scale and translation of that texture in a <code>_ST</code> value with the same name as the texture flagged in your shader. For example, if you reference your textures are in the shader using <code>_MainTex</code>, Unity will look for <code>_MainTex_ST</code>.</li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="texture-mipmaps-introduction.html"></a></span><div class="tip">Mipmaps introduction</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="TextureStreaming-API.html"></a></span><div class="tip">The Mipmap Streaming system API</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

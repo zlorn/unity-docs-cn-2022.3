@@ -1,0 +1,756 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Articulation Body component reference - Unity 手册">
+<title>Articulation Body component reference - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/articulation-body-properties-root.png">
+<meta name="description" content="通过接合体可以使用分层组织的游戏对象构建物理接合，例如机器人手臂或运动链。它们可帮助在针对工业应用程序的模拟环境中获得逼真的物理行为。">
+<meta property="og:description" content="通过接合体可以使用分层组织的游戏对象构建物理接合，例如机器人手臂或运动链。它们可帮助在针对工业应用程序的模拟环境中获得逼真的物理行为。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'class-ArticulationBody';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/class-ArticulationBody.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/class-ArticulationBody.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/class-ArticulationBody.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/class-ArticulationBody.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/class-ArticulationBody.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/class-ArticulationBody.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/class-ArticulationBody.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/class-ArticulationBody.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/class-ArticulationBody.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/class-ArticulationBody.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/class-ArticulationBody.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/class-ArticulationBody.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/class-ArticulationBody.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/class-ArticulationBody.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/class-ArticulationBody.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/class-ArticulationBody.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/class-ArticulationBody.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/class-ArticulationBody.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/class-ArticulationBody.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/class-ArticulationBody.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/class-ArticulationBody.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/class-ArticulationBody.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/class-ArticulationBody.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/class-ArticulationBody.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/class-ArticulationBody.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/class-ArticulationBody.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/class-ArticulationBody.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/class-ArticulationBody.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/class-ArticulationBody.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/class-ArticulationBody.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/class-ArticulationBody.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/class-ArticulationBody.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/class-ArticulationBody.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/class-ArticulationBody.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/class-ArticulationBody.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/class-ArticulationBody.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/class-ArticulationBody.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/class-ArticulationBody.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/class-ArticulationBody.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/class-ArticulationBody.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/class-ArticulationBody.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/class-ArticulationBody.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/class-ArticulationBody.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/class-ArticulationBody.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/class-ArticulationBody.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/class-ArticulationBody.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/class-ArticulationBody.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/class-ArticulationBody.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/class-ArticulationBody.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/class-ArticulationBody.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/class-ArticulationBody.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/class-ArticulationBody.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/class-ArticulationBody.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/class-ArticulationBody.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/class-ArticulationBody.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/class-ArticulationBody.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/class-ArticulationBody.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/class-ArticulationBody.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="PhysicsSection.html">物理系统</a></li>
+<li><a href="PhysicsOverview.html">Built-in 3D Physics</a></li>
+<li><a href="articulations-section.html">Articulations</a></li>
+<li>Articulation Body component reference</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="physics-articulations.html"></a></span><div class="tip">Introduction to physics articulations</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ragdoll-physics-section.html"></a></span><div class="tip">Ragdoll physics</div>
+</div>
+</div></div>
+<h1>Articulation Body component reference</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>通过接合体可以使用分层组织的游戏对象构建<a href="physics-articulations.html">物理接合</a>，例如机器人手臂或运动链。它们可帮助在针对工业应用程序的模拟环境中获得逼真的物理行为。</p>
+
+<h2>属性</h2>
+
+<p>接合体可用于在单一组件中定义属性，而这些属性在经典配置中会通过<a href="RigidbodiesOverview.html">刚体</a>和<a href="Joints.html">常规关节</a>以类似方法进行定义。也就是说，这些属性取决于层级视图中的游戏对象位置：</p>
+
+<ul>
+<li>对于接合的根游戏对象，只能设置物理体属性：</li>
+</ul>
+
+<p><img src="../uploads/Main/articulation-body-properties-root.png" alt=""></p>
+
+<ul>
+<li>对于接合内的任何子游戏对象，可以设置物理体属性以及将此游戏对象链接到其父游戏对象的关节的类型和属性：</li>
+</ul>
+
+<p><img src="../uploads/Main/articulation-body-properties-child.png" alt=""></p>
+
+<p>接合体属性分为以下主要类别：</p>
+
+<ul>
+<li><p><a href="#physical-body-properties">物理体属性</a></p></li>
+<li><p><a href="#joint-anchor-properties">关节锚点属性</a></p></li>
+<li><p><a href="#joint-type-selection-and-joint-properties">关节类型选择和属性</a></p></li>
+<li><p><a href="#joint-drive-properties">关节驱动属性</a></p></li>
+</ul>
+
+<p><a name="physical-body-properties"></a></p>
+
+<h3>物理体属性</h3>
+
+<p>定义接合体响应物理环境的方式。</p>
+
+<figure>
+<img src="../uploads/Main/articulation-body-properties-physical-body.png" alt="">
+</figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">属性</th>
+	<th style="text-align:left;">功能</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Mass</strong></td>
+	<td style="text-align:left;">接合体的质量（默认为千克）。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Immovable</strong></td>
+	<td style="text-align:left;">使用此属性可定义此接合体是否可移动。只能为根接合体设置此属性。例如，此属性可用于使机器人双手的基体不可移动。物理引擎将它与所有其他约束分开解决，保证不会违反它。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Use Gravity</strong></td>
+	<td style="text-align:left;">使用此属性可使重力影响或不影响此接合体。</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="joint-anchor-properties"></a></p>
+
+<h3>关节锚点属性</h3>
+
+<p>为接合体及其父接合体定义<a href="#joint-anchors">关节锚点</a>的坐标。</p>
+
+<figure>
+<img src="../uploads/Main/articulation-body-properties-joint-anchor.png" alt="">
+</figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">属性</th>
+	<th style="text-align:left;">功能</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Compute Parent Anchor</strong></td>
+	<td style="text-align:left;">启用此属性可使父相关锚点与当前接合体的锚点匹配。如果禁用此属性，则可以为 <strong>Parent Anchor Position</strong> 和 <strong>Parent Anchor Rotation</strong> 单独设置值。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Anchor Position</strong></td>
+	<td style="text-align:left;">锚点相对于当前接合体的位置坐标。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Anchor Rotation</strong></td>
+	<td style="text-align:left;">锚点相对于当前接合体的旋转坐标。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Parent Anchor Position</strong></td>
+	<td style="text-align:left;">父锚点相对于父接合体的位置坐标。仅当禁用 <strong>Compute Parent Anchor</strong> 时，此属性才会出现。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Parent Anchor Rotation</strong></td>
+	<td style="text-align:left;">父锚点相对于父接合体的旋转坐标。仅当禁用 <strong>Compute Parent Anchor</strong> 时，此属性才会出现。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Snap Anchor to closest contact</strong></td>
+	<td style="text-align:left;">计算此接合体表面上最接近父接合体质心的点，并将锚点设置到它。如果启用了 <strong>Compute Parent Anchor</strong>，则 Unity 也会相应地更新父锚点。</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="joint-type-selection-and-joint-properties"></a></p>
+
+<h3>关节类型选择和关节属性</h3>
+
+<p>选择将当前接合体链接到其父接合体的关节类型，并定义其通用和特定属性。</p>
+
+<figure>
+<img src="../uploads/Main/articulation-body-properties-joint-type.png" alt="">
+</figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">属性</th>
+	<th style="text-align:left;"></th>
+	<th style="text-align:left;">功能</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Articulation Joint Type</strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">将此接合体连接到其父接合体的关节类型。<strong>注意：</strong>所有类型的关节都共有此表介绍的属性，其中一些类型具有特定的附加属性。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Fixed</td>
+	<td style="text-align:left;">在物理体之间设置刚性、牢不可破和不可拉伸的链接。除了此表中介绍的属性外，固定结合关节没有附加属性。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Prismatic</td>
+	<td style="text-align:left;">阻止除了沿特定轴滑动之外的所有运动。另请参阅<a href="#prismatic-joint-additional-properties">棱形关节附加属性</a>。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Revolute</td>
+	<td style="text-align:left;">允许绕特定轴旋转（如铰链）。另请参阅<a href="#revolute-joint-additional-properties">旋转关节附加属性</a>。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Spherical</td>
+	<td style="text-align:left;">解剖关节，允许两次摆动和一次扭转。另请参阅<a href="#spherical-joint-additional-properties">球形关节附加属性</a>。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Linear Damping</strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">控制线性减速的系数。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Angular Damping</strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">控制旋转减速的系数。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Joint Friction</strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">控制关节中由摩擦引起的能量损失的系数。</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="prismatic-joint-additional-properties"></a></p>
+
+<h4>棱形关节附加属性</h4>
+
+<figure>
+<img src="../uploads/Main/articulation-body-properties-joint-prismatic.png" alt="">
+</figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">属性</th>
+	<th style="text-align:left;"></th>
+	<th style="text-align:left;">功能</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Axis</strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">指定棱形关节允许相对于父锚点沿之运动的轴。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Motion</strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">指定沿该轴的运动限制类型。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Free</td>
+	<td style="text-align:left;">允许接合体沿着父锚点的所选<strong>轴</strong>自由移动。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">受限</td>
+	<td style="text-align:left;">按照在 <strong>Drive</strong> 属性中指定的 <strong>Lower Limit</strong> 和 <strong>Upper Limit</strong>，限制结合体沿父锚点的所选<strong>轴</strong>的移动。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>X Drive</strong>、<strong>Y Drive</strong> 或 <strong>Z Drive</strong>
+</td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">按照父锚点的所选<strong>轴</strong>，附加到关节的<a href="#joint-drive-properties">线性驱动属性</a>。<strong>主要：</strong>此处只有一个 Drive 部分。其标题会根据轴选择自动调整。</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="revolute-joint-additional-properties"></a></p>
+
+<h4>旋转关节附加属性</h4>
+
+<figure>
+<img src="../uploads/Main/articulation-body-properties-joint-revolute.png" alt="">
+</figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">属性</th>
+	<th style="text-align:left;"></th>
+	<th style="text-align:left;">功能</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Motion</strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">指定围绕父锚点 X 轴的旋转限制类型。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Free</td>
+	<td style="text-align:left;">允许接合体围绕父锚点 X 轴自由旋转。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">受限</td>
+	<td style="text-align:left;">按照在 <strong>X Drive</strong> 属性中指定的 <strong>Lower Limit</strong> 和 <strong>Upper Limit</strong>，限制结合体围绕父锚点 X 轴的旋转。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>X Drive</strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">围绕父锚点 X 轴，附加到关节的<a href="#joint-drive-properties">旋转驱动属性</a>。</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="spherical-joint-additional-properties"></a></p>
+
+<h4>球形关节附加属性</h4>
+
+<figure>
+<img src="../uploads/Main/articulation-body-properties-joint-spherical.png" alt="">
+</figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">属性</th>
+	<th style="text-align:left;"></th>
+	<th style="text-align:left;">功能</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Swing Y</strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">指定围绕 Y 轴的旋转限制类型。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Free</td>
+	<td style="text-align:left;">允许接合体围绕父锚点 Y 轴自由旋转。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">受限</td>
+	<td style="text-align:left;">按照在 <strong>Y Drive</strong> 属性中指定的 <strong>Lower Limit</strong> 和 <strong>Upper Limit</strong>，限制结合体围绕父锚点 Y 轴的旋转。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Locked</td>
+	<td style="text-align:left;">完全锁定接合体围绕父锚点 Y 轴的旋转。<strong>注意：</strong>不能同时锁定两个以上的自由度。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Swing Z</strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">指定围绕 Z 轴的旋转限制类型。所有 3 个轴的选项都相同。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Twist</strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">指定围绕 X 轴的旋转限制类型。所有 3 个轴的选项都相同。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>Y Drive</strong>、<strong>Z Drive</strong> 和 <strong>X Drive</strong>
+</td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">分别围绕父锚点 Y、Z 和 X 轴，附加到关节的<a href="#joint-drive-properties">旋转驱动属性</a>。<strong>注意：</strong>每个驱动都有一个单独的细分部分。如果锁定某个轴，则 Inspector 不会显示其驱动属性。</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="joint-drive-properties"></a></p>
+
+<h3>关节驱动属性</h3>
+
+<p>设置有关特定轴的<a href="#joint-degrees-of-freedom-and-limits">关节限制</a>，
+以及此轴的<a href="#joint-drive-effect">关节驱动效果</a>
+参数。</p>
+
+<figure>
+<img src="../uploads/Main/articulation-body-properties-joint-drive.png" alt="">
+</figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">属性</th>
+	<th style="text-align:left;">功能</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Lower Limit</strong></td>
+	<td style="text-align:left;">关节阻止接合体的移动或旋转的下限，具体取决于关节类型。仅当将相关 <strong>Motion</strong>、<strong>Swing</strong> 或 <strong>Twist</strong> 属性设置为 <strong>Limited</strong> 时，才能定义此属性。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Upper Limit</strong></td>
+	<td style="text-align:left;">关节阻止接合体移动或旋转的上限，具体取决于关节类型。仅当将相关 <strong>Motion</strong>、<strong>Swing</strong> 或 <strong>Twist</strong> 属性设置为 <strong>Limited</strong> 时，才能定义此属性。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Stiffness</strong></td>
+	<td style="text-align:left;">将关节吸引到目标的弹簧的刚度。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Damping</strong></td>
+	<td style="text-align:left;">将关节吸引到目标的弹簧的阻尼。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Force limit</strong></td>
+	<td style="text-align:left;">此驱动可以产生的力或扭矩的最大量。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Target</strong></td>
+	<td style="text-align:left;">此驱动旨在达到的目标值。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Target velocity</strong></td>
+	<td style="text-align:left;">此驱动旨在达到的目标速度。</td>
+</tr>
+</tbody>
+</table>
+
+<h2>配置接合关节</h2>
+
+<p><a name="joint-drive-effect"></a></p>
+
+<h3>关节驱动效果</h3>
+
+<p>任何驱动都是隐式 1D 弹簧，旨在通过应用由以下公式计算的效果（力或扭矩）使当前驱动参数达到目标：</p>
+
+<p><strong>效果 = 刚度 * (drivePosition - targetPosition) - 阻尼 * (driveVelocity - targetVelocity)</strong></p>
+
+<p>附加到线性自由度的驱动会产生力。附加到旋转自由度的驱动会产生扭矩。可以通过<a href="#joint-drive-properties">关节驱动属性</a>设置此公式的每个参数，以便为关节中涉及的任何轴微调所需效果。</p>
+
+<p>请注意，效果公式由两个独立的项组成，可以平衡甚至抵消它们。例如：</p>
+
+<ul>
+<li><p>如果将刚度设置为零，则会获得只是旨在达到特定速度的驱动。</p></li>
+<li><p>如果将阻尼设置为零，则会获得旨在达到特定位置而不尝试达到任何特定速度的驱动。在这种情况下，达到目标后，驱动不会尝试最终停止。</p></li>
+</ul>
+
+<p><a name="joint-anchors"></a></p>
+
+<h2>关节锚点</h2>
+
+<p>每个关节有两个锚点：</p>
+
+<ul>
+<li><p><strong>锚点</strong>，相对于当前接合体</p></li>
+<li><p><strong>父锚点</strong>，相对于父接合体</p></li>
+</ul>
+
+<p>默认情况下，Unity 会自动计算父锚点以匹配锚点的姿势。但是，可以禁用 <strong>Compute Parent Anchor</strong> 属性以手动设置父锚点：</p>
+
+<figure>
+<img src="../uploads/Main/articulation-body-properties-joint-anchors.png" alt="">
+</figure>
+
+<p>当前，Unity 编辑器使用缩放变换组件工具显示锚点，以将它们与游戏对象变换组件工具区分开来：</p>
+
+<figure>
+<img src="../uploads/Main/articulation-body-joint-anchor-tools.png" alt="">
+</figure>
+
+<p>若要更改锚点的位置，可以使用 Inspector 并编辑<a href="#joint-anchor-properties">关节锚点属性</a>，或者在 Scene 视图中直接移动和旋转其变换组件工具。</p>
+
+<p><strong>注意：</strong>创建新的接合体时，Unity 会将锚点定位在各自体的局部零点处。但是，如果所连接体附加了碰撞体，则局部零不是锚点的理想默认位置，因为关节可能会尝试使各个体相互推动。<strong>Snap Anchor to closest contact</strong> 按钮可帮助设置更合理的锚点默认位置，适用于许多接合。</p>
+
+<p><a name="joint-degrees-of-freedom-and-limits"></a></p>
+
+<h3>关节自由度和限制</h3>
+
+<p><strong>注意：</strong>当前，Scene 视图可用于可视化关节限制，但不能以图形方式操作它们。</p>
+
+<h4>固定关节</h4>
+
+<p>固定关节没有自由度，因此 Scene 视图不显示任何特定标记。</p>
+
+<h4>棱形关节</h4>
+
+<p>棱形关节实际上是相对于父锚点沿着指定轴移动的滑动条。此轴只能是基础轴（X、Y 或 Z），但是仍然可以<a href="#joint-anchors">旋转父锚点</a>以在世界空间中获得不同的轴方向。</p>
+
+<p>可以设置棱形关节以进行自由或有限的移动。为此，请使用 Inspector 并编辑<a href="#prismatic-joint-additional-properties">棱形关节特定属性</a>。</p>
+
+<p><strong>注意：</strong>不能锁定棱形关节，否则这会只移除其自由度并使其成为退化关节。</p>
+
+<p>将棱形关节从 <strong>Motion</strong> 设置为 <strong>Limited</strong> 时，Scene 视图会显示标记以表示移动限制：</p>
+
+<ul>
+<li><p>红色小标记代表下限。</p></li>
+<li><p>绿色小标记代表上限。</p></li>
+<li><p>白色虚线表示限制之间的允许移动。</p></li>
+</ul>
+
+<p>若要操作关节限制，必须使用 Inspector 并在<a href="#joint-drive-properties">关节驱动属性</a>中编辑其值。</p>
+
+<p><img src="../uploads/Main/articulation-body-joint-prismatic-limited.png" alt="">
+<br><em>有限棱形关节的示例。</em></p>
+
+<p><strong>注意：</strong>将棱形关节 <strong>Motion</strong> 设置为 <strong>Free</strong> 时，Scene 视图不显示任何特定标记。</p>
+
+<p><a name="revolute-joint"></a></p>
+
+<h4>旋转关节</h4>
+
+<p>旋转关节本质上是具有围绕父锚点 X 轴的单一旋转自由度的铰链。仍可以<a href="#joint-anchors">旋转父锚点</a>以在世界空间中获得不同的轴方向。</p>
+
+<p>可以设置旋转关节以进行自由或有限的旋转。为此，请使用 Inspector 并编辑<a href="#revolute-joint-additional-properties">旋转关节特定属性</a>。</p>
+
+<p><strong>注意：</strong>不能锁定旋转关节，否则这会只移除其自由度并使其成为退化关节。</p>
+
+<p>将旋转关节 <strong>Motion</strong> 设置为 <strong>Free</strong> 时，Scene 视图会显示红色圆盘以表示围绕 X 轴所允许的自由旋转。</p>
+
+<p><img src="../uploads/Main/articulation-body-joint-revolute-free.png" alt="">
+<br><em>自由旋转关节的示例。</em></p>
+
+<p>将旋转关节从 <strong>Motion</strong> 设置为 <strong>Limited</strong> 时，Scene 视图会显示标记以表示旋转限制：</p>
+
+<ul>
+<li><p>红色小标记代表下限。</p></li>
+<li><p>绿色小标记代表上限。</p></li>
+<li><p>红色扇形表示限制之间允许的旋转角度。</p></li>
+<li><p>父锚点 Z 轴用作两个限制角度的参考（零）。</p></li>
+</ul>
+
+<p>若要操作关节限制，必须使用 Inspector 并在<a href="#joint-drive-properties">关节驱动属性</a>中编辑其值。</p>
+
+<p><img src="../uploads/Main/articulation-body-joint-revolute-limited.png" alt="">
+<br><em>有限旋转关节的示例。</em></p>
+
+<h4>球形关节</h4>
+
+<p>球形关节是最适合模拟人形角色肢体的解剖关节。</p>
+
+<p>此关节类型最多可以具有三个旋转自由度。可以将所有这些属性设置为自由、有限或锁定。为此，请使用 Inspector 并编辑<a href="#revolute-joint-additional-properties">旋转关节特定属性</a>。</p>
+
+<p><strong>注意：</strong>不能同时锁定球形关节的所有旋转，否则这会移除其所有自由度并使其成为退化关节。此外，不应锁定两个摆动轴来模拟旋转关节，因为模拟的发生方式与旋转关节不同，并且成本更高。</p>
+
+<p>与<a href="#revolute-joint">旋转关节</a>一样：</p>
+
+<ul>
+<li><p>Scene 视图显示带有彩色圆盘的自由旋转和带有彩色扇形的有限旋转。每种颜色（红色、绿色、蓝色）表示围绕具有此颜色的轴（分别为：X、Y、Z）的旋转。</p></li>
+<li><p>红色和绿色小标记分别表示下限和上限。</p></li>
+</ul>
+
+<p><img src="../uploads/Main/articulation-body-joint-spherical-free.png" alt="">
+<br><em>自由球形关节的示例。</em></p>
+
+<p><img src="../uploads/Main/articulation-body-joint-spherical-limited.png" alt="">
+<br><em>摆动有限的球形关节示例。</em></p>
+<!-- area:authoring -->
+
+<p><span class="search-words">ArticulationBody</span></p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="physics-articulations.html"></a></span><div class="tip">Introduction to physics articulations</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ragdoll-physics-section.html"></a></span><div class="tip">Ragdoll physics</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

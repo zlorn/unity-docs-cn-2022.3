@@ -1,0 +1,431 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Gradle templates - Unity 手册">
+<title>Gradle templates - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/android-player-settings-tab.png">
+<meta name="description" content="Gradle templates configure how to build an Android application using Gradle. Each Gradle template represents a single Gradle project. Gradle projects can include, and depend on, other Gradle projects.">
+<meta property="og:description" content="Gradle templates configure how to build an Android application using Gradle. Each Gradle template represents a single Gradle project. Gradle projects can include, and depend on, other Gradle projects.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'gradle-templates';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/gradle-templates.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/gradle-templates.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/gradle-templates.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/gradle-templates.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/gradle-templates.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/gradle-templates.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/gradle-templates.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/gradle-templates.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/gradle-templates.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/gradle-templates.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/gradle-templates.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/gradle-templates.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/gradle-templates.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/gradle-templates.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/gradle-templates.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/gradle-templates.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/gradle-templates.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/gradle-templates.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/gradle-templates.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/gradle-templates.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/gradle-templates.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/gradle-templates.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/gradle-templates.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/gradle-templates.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/gradle-templates.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/gradle-templates.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/gradle-templates.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/gradle-templates.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/gradle-templates.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/gradle-templates.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/gradle-templates.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/gradle-templates.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/gradle-templates.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/gradle-templates.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/gradle-templates.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/gradle-templates.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/gradle-templates.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/gradle-templates.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/gradle-templates.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/gradle-templates.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/gradle-templates.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/gradle-templates.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/gradle-templates.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/gradle-templates.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/gradle-templates.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/gradle-templates.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/gradle-templates.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/gradle-templates.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/gradle-templates.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/gradle-templates.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/gradle-templates.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/gradle-templates.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/gradle-templates.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/gradle-templates.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/gradle-templates.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/gradle-templates.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/gradle-templates.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/gradle-templates.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="PlatformSpecific.html">平台开发</a></li>
+<li><a href="android.html">Android</a></li>
+<li><a href="android-building-and-delivering.html">Building and delivering for Android</a></li>
+<li>Gradle templates</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="android-building-and-delivering.html"></a></span><div class="tip">Building and delivering for Android</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="overriding-android-manifest.html"></a></span><div class="tip">Override the Android App Manifest</div>
+</div>
+</div></div>
+<h1>Gradle templates</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Gradle templates configure how to build an Android application using <a href="android-gradle-overview.html">Gradle</a>. Each Gradle template represents a single Gradle project. Gradle projects can include, and depend on, other Gradle projects.</p>
+
+<h2>Gradle template files</h2>
+
+<p>Gradle 模板包含以下文件：</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">File</th>
+	<th style="text-align:left;">所在地</th>
+	<th style="text-align:left;">包含</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><code>baseProjectTemplate.gradle</code></td>
+	<td style="text-align:left;">在导出的项目中，<code>root/build.gradle</code> 文件夹</td>
+	<td style="text-align:left;">Configuration information that affects all modules in the final Gradle project. It specifies which Android Gradle Plugin version to use and locations of java plugins. The locations are a combination of online repositories and java plugins inside of this project.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>launcherTemplate.gradle</code></td>
+	<td style="text-align:left;">In the exported project, <code>root/launcher/build.gradle</code> folder</td>
+	<td style="text-align:left;">Instructions on how to build the Android application. This includes bundling, signing, and whether to split the apk. It depends on the unityLibrary project and outputs either an .apk file or an app bundle.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>mainTemplate.gradle</code></td>
+	<td style="text-align:left;">在导出的项目中，<code>root/unityLibrary/build.gradle</code> 文件夹</td>
+	<td style="text-align:left;">Instructions on how to build Unity as a Library. This outputs an .aar file. You can override the Unity template with a custom template in the Unity Editor. Refer to the Providing a custom Gradle build template section on this page for more details.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>libTemplate.gradle</code></td>
+	<td style="text-align:left;">因情况而异</td>
+	<td style="text-align:left;">If an <a href="AndroidAARPlugins.html">Android Library Project</a> plug-in doesn’t include a <code>build.gradle</code> file, Unity uses the <code>libTemplate.gradle</code> file as a template to generate one. After Unity generates the <code>build.gradle</code> file, or if one already exists in the plug-in’s directory, Unity copies the plug-in into the Gradle project.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>settingsTemplate.gradle</code></td>
+	<td style="text-align:left;">In the exported project, <code>root/settings.gradle</code> file</td>
+	<td style="text-align:left;">Specifies the names of modules that the Gradle build system should include when it builds the project. You can override the Unity template with a custom template in the Unity Editor. Refer to the Providing a custom Gradle build template section on this page for more details.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>gradleTemplate.properties</code></td>
+	<td style="text-align:left;">In the exported project, <code>root/gradle.properties</code> file</td>
+	<td style="text-align:left;">Configures the Gradle build system and specifies properties such as the size of the <a href="https://www.ibm.com/docs/en/integration-bus/10.0?topic=development-jvm-heap-sizing">Java virtual machine (JVM) heap</a>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="customizing-a-gradle-build"></a></p>
+
+<h2>Using a custom Gradle template</h2>
+
+<p>To have more control over the Gradle project files that Unity produces, you can override Unity’s default Gradle template files. To do this:</p>
+
+<ol>
+<li>Go to <strong>Edit</strong> &gt; <strong>Project Settings</strong> to open the Project Settings window.</li>
+<li>Select the <strong>Player</strong> tab, then open <a href="class-PlayerSettingsAndroid.html">Android Player Settings</a>:<br><img src="../uploads/Main/android-player-settings-tab.png" alt="">
+</li>
+<li>In the <strong>Publishing Settings</strong> section, enable the checkbox that corresponds to the Gradle project file type you want to create a custom template for. This creates a Gradle project template file and displays the path to the file.</li>
+<li>Modify the template file to control the format and contents of the final Gradle project file.</li>
+</ol>
+
+<h3>模板变量</h3>
+
+<p>You can use the following variables in custom Gradle template files:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>可变</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>DEPS</strong></td>
+	<td style="text-align:left;">The list of project dependencies. This is the list of libraries that the project uses.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>APIVERSION</strong></td>
+	<td style="text-align:left;">The API version to build for. Unity sets the and <strong>TARGETSDKVERSION</strong> to the same value (<strong>Target API Level</strong> in the <a href="class-PlayerSettingsAndroid.html">Android Player Settings</a>).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>MINSDKVERSION</strong></td>
+	<td style="text-align:left;">The minimum API version that supports the application.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>BUILDTOOLS</strong></td>
+	<td style="text-align:left;">The SDK build tools to use.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>TARGETSDKVERSION</strong></td>
+	<td style="text-align:left;">The API version to target. Unity sets the and <strong>APIVERSION</strong> to the same value (<strong>Target API Level</strong> in the <a href="class-PlayerSettingsAndroid.html">Android Player Settings</a>).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>APPLICATIONID</strong></td>
+	<td style="text-align:left;">Android Application ID. For example, com.mycompany.myapp.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>MINIFY_DEBUG</strong></td>
+	<td style="text-align:left;">Indicates whether to minify debug builds.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>PROGUARD_DEBUG</strong></td>
+	<td style="text-align:left;">Indicates whether to use ProGuard for minification in debug builds.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>MINIFY_RELEASE</strong></td>
+	<td style="text-align:left;">Indicates whether to minify release builds.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>PROGUARD_RELEASE</strong></td>
+	<td style="text-align:left;">Indicates whether to use ProGuard for minification in release builds.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>USER_PROGUARD</strong></td>
+	<td style="text-align:left;">Specifies a custom ProGuard file to use for minification.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>SIGN</strong></td>
+	<td style="text-align:left;">Complete the signingConfigs section if this build is signed.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>SIGNCONFIG</strong></td>
+	<td style="text-align:left;">Indicates whether the build is signed. If this property is set to <code>signingConfig.release</code>, the build is signed.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>DIR_GRADLEPROJECT</strong></td>
+	<td style="text-align:left;">Unity 创建 Gradle 项目的目录。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>DIR_UNITYPROJECT</strong></td>
+	<td style="text-align:left;">The directory of your Unity project.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>PLAY_ASSET_PACKS</strong></td>
+	<td style="text-align:left;">Specifies the <a href="play-asset-delivery.html">asset packs</a> to include in your application.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Custom <code>settingsTemplate.gradle</code> files can also contain the following variables:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>可变</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>INCLUDES</strong></td>
+	<td style="text-align:left;">The list of Android Library plug-ins to include in the Gradle project.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Custom <code>gradleTemplate.properties</code> files can also contain the following variables:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>可变</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>JVM_HEAP_SIZE</strong></td>
+	<td style="text-align:left;">The maximum size of the <a href="https://www.ibm.com/docs/en/integration-bus/10.0?topic=development-jvm-heap-sizing">Java virtual machine (JVM) heap</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>STREAMING_ASSETS</strong></td>
+	<td style="text-align:left;">The list of files in the <a href="StreamingAssets.html">Steaming Assets</a> folder that Gradle shouldn’t compress.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>ADDITIONAL_PROPERTIES</strong></td>
+	<td style="text-align:left;">Contains additional properties for the application. This includes: <br>• The Gradle template version.<br>• The path to the Unity project.<br>• If the application uses the <a href="android-BuildProcess.html#publishing-format">Android App Bundle</a> publishing format, a flag that indicates to keep native libraries compressed.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Modifying the exported Gradle project using C#</h2>
+
+<p>To modify the Gradle project after Unity assembles it, create a class that inherits from <a href="../ScriptReference/Android.IPostGenerateGradleAndroidProject.html">IPostGenerateGradleAndroidProject</a> and override the <a href="../ScriptReference/Android.IPostGenerateGradleAndroidProject.OnPostGenerateGradleAndroidProject.html">OnPostGenerateGradleAndroidProject</a> function. This function receives the path to the unityLibrary module as a parameter and you can use it to reach the application’s manifest and resources through C# scripting.</p>
+
+<p><strong>Warning</strong>: Unity now uses an incremental build pipeline which means Unity reuses the same Gradle project for consecutive builds. This means that any modifications you do using this API accumulate since Unity no longer creates a new Gradle project for every build. For example, if you use this API to add an additional file to the Gradle project, the first build works as expected, but during the second build the file already exists. A second example is if you use this API to add a permission to a particular file. Each successive build adds another entry for the permission. It is crucial to make sure that modifications you want to make aren’t already present in the build.</p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="android-building-and-delivering.html"></a></span><div class="tip">Building and delivering for Android</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="overriding-android-manifest.html"></a></span><div class="tip">Override the Android App Manifest</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

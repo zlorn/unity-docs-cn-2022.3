@@ -1,0 +1,487 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Get started with UI Toolkit - Unity 手册">
+<title>Get started with UI Toolkit - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/UIBuilder/CustomEditorWithUIControls1.png">
+<meta name="description" content="Want to create your first UI with UI Toolkit? Use this basic UI Toolkit workflow example to get started.">
+<meta property="og:description" content="Want to create your first UI with UI Toolkit? Use this basic UI Toolkit workflow example to get started.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'UIE-simple-ui-toolkit-workflow';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/UIE-simple-ui-toolkit-workflow.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/UIE-simple-ui-toolkit-workflow.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/UIE-simple-ui-toolkit-workflow.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/UIE-simple-ui-toolkit-workflow.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/UIE-simple-ui-toolkit-workflow.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/UIE-simple-ui-toolkit-workflow.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIE-simple-ui-toolkit-workflow.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIE-simple-ui-toolkit-workflow.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIE-simple-ui-toolkit-workflow.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIE-simple-ui-toolkit-workflow.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-simple-ui-toolkit-workflow.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-simple-ui-toolkit-workflow.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-simple-ui-toolkit-workflow.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-simple-ui-toolkit-workflow.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-simple-ui-toolkit-workflow.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-simple-ui-toolkit-workflow.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-simple-ui-toolkit-workflow.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-simple-ui-toolkit-workflow.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-simple-ui-toolkit-workflow.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-simple-ui-toolkit-workflow.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-simple-ui-toolkit-workflow.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-simple-ui-toolkit-workflow.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-simple-ui-toolkit-workflow.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-simple-ui-toolkit-workflow.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-simple-ui-toolkit-workflow.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-simple-ui-toolkit-workflow.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-simple-ui-toolkit-workflow.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-simple-ui-toolkit-workflow.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-simple-ui-toolkit-workflow.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-simple-ui-toolkit-workflow.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/UIE-simple-ui-toolkit-workflow.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/UIE-simple-ui-toolkit-workflow.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/UIE-simple-ui-toolkit-workflow.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/UIE-simple-ui-toolkit-workflow.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIE-simple-ui-toolkit-workflow.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIE-simple-ui-toolkit-workflow.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIE-simple-ui-toolkit-workflow.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIE-simple-ui-toolkit-workflow.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-simple-ui-toolkit-workflow.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-simple-ui-toolkit-workflow.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-simple-ui-toolkit-workflow.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-simple-ui-toolkit-workflow.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-simple-ui-toolkit-workflow.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-simple-ui-toolkit-workflow.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-simple-ui-toolkit-workflow.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-simple-ui-toolkit-workflow.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-simple-ui-toolkit-workflow.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-simple-ui-toolkit-workflow.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-simple-ui-toolkit-workflow.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-simple-ui-toolkit-workflow.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-simple-ui-toolkit-workflow.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-simple-ui-toolkit-workflow.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-simple-ui-toolkit-workflow.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-simple-ui-toolkit-workflow.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-simple-ui-toolkit-workflow.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-simple-ui-toolkit-workflow.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-simple-ui-toolkit-workflow.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-simple-ui-toolkit-workflow.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UIToolkits.html">Create user interfaces (UI)</a></li>
+<li><a href="UIElements.html">UI 工具包</a></li>
+<li>Get started with UI Toolkit</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIElements.html"></a></span><div class="tip">UI 工具包</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIBuilder.html"></a></span><div class="tip">UI Builder</div>
+</div>
+</div></div>
+<h1>Get started with UI Toolkit</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Want to create your first UI with UI Toolkit? Use this basic UI Toolkit workflow example to get started.</p>
+
+<p><strong>Note</strong>: For demonstration purpose, this guide describes how to add UI controls for the Editor UI. However, the instructions on adding UI controls to a UI Document also apply to runtime UI. For more information, see <a href="UIE-get-started-with-runtime-ui.html">Get started with runtime UI</a>.</p>
+
+<p>If you perform a specific task often, you can use UI Toolkit to create a dedicated UI for it. For example you can create a custom Editor window. The example demonstrates how to create a custom Editor window and add UI controls into your custom Editor window with <a href="UIBuilder.html">UI Builder</a>, <a href="UIE-UXML.html">UXML</a>, and C# script.</p>
+
+<p>You can find the completed files that this example creates in this <a href="https://github.com/Unity-Technologies/ui-toolkit-manual-code-examples/tree/master/simple-ui-toolkit-workflow">GitHub repository</a>.</p>
+
+<h2>Create a custom Editor window</h2>
+
+<ol>
+<li>Create a project in Unity Editor with any template.</li>
+<li>In the Project window, right-click in the <code>Assets</code> folder, and then select <strong>Create</strong> &gt; <strong>UI Toolkit</strong> &gt; <strong>Editor Window</strong>.</li>
+<li>In <strong>UI Toolkit Editor Window Creator</strong>, enter <code>MyCustomEditor</code>.</li>
+<li>Clear the <strong>USS</strong> checkbox.</li>
+<li>Click <strong>Confirm</strong>.</li>
+</ol>
+
+<p>This creates a custom Editor window with two labels. You can open the Editor window from the menu (<strong>Window</strong> &gt; <strong>UI Toolkit</strong> &gt; <strong>MyCustomEditor</strong>). You can find the source files for it in the <code>Assets/Editor</code> folder.</p>
+
+<h2>向窗口添加 UI 控件</h2>
+
+<p>You can add UI controls into your window in the following ways:</p>
+
+<ul>
+<li><a href="#use-ui-builder">Use the UI Builder to visually add the UI controls</a></li>
+<li><a href="#use-uxml">Use an XML-like text file (UXML) to add the UI controls</a></li>
+<li><a href="#use-c#-script">Use C# script to add the UI controls</a></li>
+</ul>
+
+<p>You can use any of these methods individually, or combine. The following examples create three sets of labels, buttons, and toggles with a combination of these methods.</p>
+
+<h3>
+<a name="use-ui-builder"></a>Use UI Builder to add UI controls</h3>
+
+<p>To visually add UI controls to your window, use <a href="UIBuilder.html">UI Builder</a>. The following steps add a button and a toggle into your custom Editor window in addition to the default label.</p>
+
+<ol>
+<li>In the <code>Editor</code> folder, double-click <code>MyCustomEditor.uxml</code> to open the UI Builder.</li>
+<li>In the UI Builder, drag <strong>Button</strong> and <strong>Toggle</strong> from <strong>Library</strong> &gt; <strong>Controls</strong> into the <strong>Hierarchy</strong> or the window preview in the <strong>Viewport</strong>.</li>
+<li>In the Hierarchy window, select <strong>Label</strong>.</li>
+<li>In the Inspector window, change the default text to <code>These controls were created in UI Builder</code> in the <strong>Text</strong> field.</li>
+<li>In the Hierarchy window, select <strong>Button</strong>.</li>
+<li>In the Inspector window, enter <code>This is button1</code> in the <strong>Text</strong> field.</li>
+<li>Enter <code>button1</code> in the <strong>Name</strong> field.</li>
+<li>In the Hierarchy window, select <strong>Toggle</strong>.</li>
+<li>In the Inspector window, enter <code>Number?</code> in the <strong>Label</strong> field.</li>
+<li>Enter <code>toggle1</code> in the <strong>Name</strong> field.</li>
+<li>
+<a href="UIB-interface-overview.html#open-and-save-ui-documents-uxml">Save</a> and close the UI Builder window.</li>
+<li>Close your custom Editor window if you haven’t done so.</li>
+<li>Select <strong>Window</strong> &gt; <strong>UI Toolkit</strong> &gt; <strong>MyCustomEditor</strong> to re-open your custom Editor window to see the button and the toggle you just added.</li>
+</ol>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/CustomEditorWithUIControls1.png" alt="Custom Editor Window with one set UI Controls">
+<figcaption>Custom Editor Window with one set UI Controls</figcaption>
+</figure>
+
+<h3>
+<a name="use-uxml"></a>Use UXML to add UI controls</h3>
+
+<p>If you prefer to define your UI in a text file, you can edit the <a href="UIE-UXML.html">UXML</a> to add the UI controls. The following steps add another set of label, button, and toggle into your window.</p>
+
+<ol>
+<li><p>In the <code>Editor</code> folder, click <strong>Assets</strong> &gt; <strong>Create</strong> &gt; <strong>UI Toolkit</strong> &gt; <strong>UI Document</strong> to create a UXML file called <code>MyCustomEditor_UXML.uxml</code>.</p></li>
+<li><p>Click the arrow on <code>MyCustomEditor_UXML.uxml</code> in the Project window.</p></li>
+<li><p>Double-click <code>inlineStyle</code> to open <code>MyCustomEditor_UXML.uxml</code> in a text editor.</p></li>
+<li>
+<p>Replace the contents of <code>MyCustomEditor_UXML.uxml</code> with the following:</p>
+
+<pre><code class="lang-xml">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;engine:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:engine="UnityEngine.UIElements"
+    xmlns:editor="UnityEditor.UIElements"
+    xsi:noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd"
+&gt;
+    &lt;engine:Label text="These controls were created with UXML." /&gt;
+    &lt;engine:Button text="This is button2" name="button2"/&gt;
+    &lt;engine:Toggle label="Number?" name="toggle2"/&gt;
+&lt;/engine:UXML&gt;
+</code></pre>
+</li>
+<li><p>Open <code>MyCustomEditor.cs</code>.</p></li>
+<li>
+<p>Add a private <code>VisualTreeAsset</code> field called <code>m_UXMLTree</code> to the <code>MyCustomEditor</code> class. Put the attribute <code>[SerializeField]</code> above it:</p>
+
+<pre><code class="lang-cs">[SerializeField]
+private VisualTreeAsset m_UXMLTree;
+</code></pre>
+</li>
+<li>
+<p>Add the following code to the end of <code>CreateGUI()</code>.</p>
+
+<pre><code class="lang-cs">root.Add(m_UXMLTree.Instantiate());
+</code></pre>
+</li>
+<li><p>In the Project window, select <code>MyCustomEditor.cs</code>. </p></li>
+<li><p>Drag <code>MyCustomEditor_UXML.uxml</code> from the Project window into the <strong>UXML Tree</strong> field in the <strong>Inspector</strong>. This assigns your UXML to the visual tree.</p></li>
+<li><p>Select <strong>Window</strong> &gt; <strong>UI Toolkit</strong> &gt; <strong>MyCustomEditor</strong>. This opens your custom Editor window with three labels, two buttons, and two toggles.</p></li>
+</ol>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/CustomEditorWithUIControls2.png" alt="Custom Editor Window with two sets UI Controls">
+<figcaption>Custom Editor Window with two sets UI Controls</figcaption>
+</figure>
+
+<h3>
+<a name="use-c#-script"></a>Use C# script to add UI controls</h3>
+
+<p>If you prefer coding, you can add UI Controls to your window with a C# script. The following steps add another set of label, button, and toggle into your window.</p>
+
+<ol>
+<li><p>Open <code>MyCustomEditor.cs</code>. </p></li>
+<li>
+<p>Unity uses <code>UnityEngine.UIElements</code> for basic UI controls like label, button, and toggle. To work with UI controls, you must add the following declaration if it’s not already present.</p>
+
+<pre><code class="lang-cs">using UnityEngine.UIElements;
+</code></pre>
+</li>
+<li><p>Change the text of the existing label from <code>"Hello World! From C#"</code> to <code>"These controls were created using C# code."</code>.</p></li>
+<li>
+<p>The <a href="../ScriptReference/EditorWindow.html">EditorWindow</a> class has a property called <code>rootVisualElement</code>. To add the UI controls to your window, first instantiate the element class with some attributes, and then use the <code>Add</code> methods of the <code>rootVisualElement</code>. </p>
+
+<p>Your finished <code>CreateGUI()</code> method should look like the following:</p>
+
+<pre><code class="lang-cs">public void CreateGUI()
+{
+    // Each editor window contains a root VisualElement object
+    VisualElement root = rootVisualElement;
+
+    // VisualElements objects can contain other VisualElements following a tree hierarchy.
+    Label label = new Label("These controls were created using C# code.");
+    root.Add(label);
+
+    Button button = new Button();
+    button.name = "button3";
+    button.text = "This is button3.";
+    root.Add(button);
+
+    Toggle toggle = new Toggle();
+    toggle.name = "toggle3";
+    toggle.label = "Number?";
+    root.Add(toggle);
+
+    // Import UXML
+    var visualTree = AssetDatabase.LoadAssetAtPath&lt;VisualTreeAsset&gt;("Assets/Editor/MyCustomEditor.uxml");
+    VisualElement labelFromUXML = visualTree.Instantiate();
+    root.Add(labelFromUXML);
+}
+</code></pre>
+</li>
+<li><p>Close your custom Editor window if you haven’t done so.</p></li>
+<li><p>Select <strong>Window</strong> &gt; <strong>UI Toolkit</strong> &gt; <strong>MyCustomEditor</strong> to re-open your custom Editor window to see three labels, three buttons, and three toggles.</p></li>
+</ol>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/CustomEditorWithUIControls.png" alt="Custom Editor Window with three Controls">
+<figcaption>Custom Editor Window with three Controls</figcaption>
+</figure>
+
+<h2>
+<a name="define-the-behavior"></a>Define the behavior of your UI controls</h2>
+
+<p>You can set up event handlers for your UI controls so that when you click the button, and select or clear the toggle, your UI controls perform some tasks. </p>
+
+<p>In this example, set up event handlers that:</p>
+
+<ul>
+<li>When a button is clicked, the Editor Console displays a message.</li>
+<li>When a toggle is selected, the Console shows how many times the buttons have been clicked.</li>
+</ul>
+
+<p>Your finished <code>MyCustomEditor.cs</code> looks like the following:</p>
+
+<pre><code class="lang-csharp">using UnityEditor;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+public class MyCustomEditor : EditorWindow
+{
+    [MenuItem("Window/UI Toolkit/MyCustomEditor")]
+    public static void ShowExample()
+    {
+        MyCustomEditor wnd = GetWindow&lt;MyCustomEditor&gt;();
+        wnd.titleContent = new GUIContent("MyCustomEditor");
+    }
+
+    [SerializeField]
+    private VisualTreeAsset m_UXMLTree;
+
+    private int m_ClickCount = 0;
+
+    private const string m_ButtonPrefix = "button";
+
+    public void CreateGUI()
+    {
+        // Each editor window contains a root VisualElement object
+        VisualElement root = rootVisualElement;
+
+        // VisualElements objects can contain other VisualElement following a tree hierarchy.
+        Label label = new Label("These controls were created using C# code.");
+        root.Add(label);
+
+        Button button = new Button();
+        button.name = "button3";
+        button.text = "This is button3.";
+        root.Add(button);
+
+        Toggle toggle = new Toggle();
+        toggle.name = "toggle3";
+        toggle.label = "Number?";
+        root.Add(toggle);
+
+        // Import UXML
+        var visualTree = AssetDatabase.LoadAssetAtPath&lt;VisualTreeAsset&gt;("Assets/Editor/MyCustomEditor.uxml");
+        VisualElement labelFromUXML = visualTree.Instantiate();
+        root.Add(labelFromUXML);
+
+        root.Add(m_UXMLTree.Instantiate());
+
+        //Call the event handler
+        SetupButtonHandler();
+    }
+
+    //Functions as the event handlers for your button click and number counts 
+    private void SetupButtonHandler()
+    {
+        VisualElement root = rootVisualElement;
+
+        var buttons = root.Query&lt;Button&gt;();
+        buttons.ForEach(RegisterHandler);
+    }
+
+    private void RegisterHandler(Button button)
+    {
+        button.RegisterCallback&lt;ClickEvent&gt;(PrintClickMessage);
+    }
+
+    private void PrintClickMessage(ClickEvent evt)
+    {
+        VisualElement root = rootVisualElement;
+
+        ++m_ClickCount;
+
+        //Because of the names we gave the buttons and toggles, we can use the
+        //button name to find the toggle name.
+        Button button = evt.currentTarget as Button;
+        string buttonNumber = button.name.Substring(m_ButtonPrefix.Length);
+        string toggleName = "toggle" + buttonNumber;
+        Toggle toggle = root.Q&lt;Toggle&gt;(toggleName);
+
+        Debug.Log("Button was clicked!" +
+            (toggle.value ? " Count: " + m_ClickCount : ""));
+    }
+}
+</code></pre>
+
+<p>To try the example, select <strong>Window</strong> &gt; <strong>UI Toolkit</strong> &gt; <strong>MyCustomEditor</strong>. </p>
+
+<h2>其他资源</h2>
+
+<ul>
+<li><a href="UIE-UXML.html">UXML</a></li>
+<li><a href="UIE-VisualTree.html">Visual Tree</a></li>
+<li><a href="UIE-uxml-element-Label.html">Label</a></li>
+<li><a href="UIE-uxml-element-Button.html">Button</a></li>
+<li><a href="UIE-uxml-element-Toggle.html">Toggle</a></li>
+<li><a href="UIE-HowTo-CreateEditorWindow.html">Create a custom Editor window</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIElements.html"></a></span><div class="tip">UI 工具包</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIBuilder.html"></a></span><div class="tip">UI Builder</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

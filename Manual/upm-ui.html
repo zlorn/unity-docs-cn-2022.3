@@ -1,0 +1,362 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Package Manager 窗口 - Unity 手册">
+<title>Package Manager 窗口 - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/upm-ui.png">
+<meta name="description" content="Use the Unity Package Manager (in Unity’s top menu: Window &gt; Package Manager) to view which packages and feature sets are available for installation or already installed in your project. You can also use this window to see which package versions are available, and install, remove, disable, or update packages and feature sets for each project.">
+<meta property="og:description" content="Use the Unity Package Manager (in Unity’s top menu: Window &gt; Package Manager) to view which packages and feature sets are available for installation or already installed in your project. You can also use this window to see which package versions are available, and install, remove, disable, or update packages and feature sets for each project.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'upm-ui';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/upm-ui.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/upm-ui.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/upm-ui.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/upm-ui.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/upm-ui.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/upm-ui.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/upm-ui.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/upm-ui.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/upm-ui.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/upm-ui.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/upm-ui.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/upm-ui.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/upm-ui.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/upm-ui.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/upm-ui.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/upm-ui.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/upm-ui.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/upm-ui.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/upm-ui.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/upm-ui.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/upm-ui.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/upm-ui.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/upm-ui.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/upm-ui.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/upm-ui.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/upm-ui.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/upm-ui.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/upm-ui.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/upm-ui.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/upm-ui.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/upm-ui.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/upm-ui.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/upm-ui.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/upm-ui.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/upm-ui.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/upm-ui.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/upm-ui.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/upm-ui.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/upm-ui.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/upm-ui.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/upm-ui.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/upm-ui.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/upm-ui.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/upm-ui.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/upm-ui.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/upm-ui.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/upm-ui.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/upm-ui.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/upm-ui.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/upm-ui.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/upm-ui.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/upm-ui.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/upm-ui.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/upm-ui.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/upm-ui.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/upm-ui.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/upm-ui.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/upm-ui.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="PackagesList.html">Packages and feature sets</a></li>
+<li><a href="Packages.html">Unity 的 Package Manager</a></li>
+<li>Package Manager 窗口</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="upm-config-cache-as.html"></a></span><div class="tip">Customize the Asset Store cache location</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="upm-ui-access.html"></a></span><div class="tip">Access the Package Manager window</div>
+</div>
+</div></div>
+<h1>Package Manager 窗口</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Use the Unity Package Manager (in Unity’s top menu: <strong>Window</strong> &gt; <strong>Package Manager</strong>) to view which <a href="Packages.html">packages</a> and <a href="FeatureSets.html">feature sets</a> are available for installation or already installed in your project. You can also use this window to see <a href="upm-ui-find.html#VersionList">which package versions are available</a>, and <a href="upm-ui-actions.html">install</a>, <a href="upm-ui-remove.html">remove</a>, <a href="upm-ui-disable.html">disable</a>, or <a href="upm-ui-update.html">update</a> packages and <a href="fs-install.html">feature sets</a> for each project.</p>
+
+<figure>
+<img src="../uploads/Main/upm-ui.png" alt="The Package Manager window">
+<figcaption>The Package Manager window</figcaption>
+</figure>
+
+<p>Package Manager 窗口显示以下内容：</p>
+
+<p><strong>(A)</strong> The experimental package indicator, which warns you if your project contains <a href="pack-exp.html">experimental packages</a>.</p>
+
+<p><strong>(B)</strong> The <strong>add</strong> <img src="../uploads/Main/iconAdd.png" alt=""> button, which you can click to <a href="upm-ui-actions.html">install a package</a> directly into your project by entering a git URL, a local path, or a package name.</p>
+
+<p><strong>(C)</strong> The <a href="upm-ui-filter.html">Packages</a> menu, which you can use to change what appears in the list (context).</p>
+
+<p><strong>(D)</strong> The <a href="upm-ui-sort.html">Sort</a> menu, which you can use to sort the list of packages and feature sets by name or date.</p>
+
+<p><strong>(E)</strong> The <strong>Filters</strong> menu and the <strong>Clear Filters</strong> button display on all lists except the Built-in list. <a href="upm-ui-filter2.html">Filtering</a> allows you to narrow down which packages appear in the list.</p>
+
+<figure>
+<img src="../uploads/Main/upm-ui-asset-filters.png" alt="The Filters menu and the Clear Filters button">
+<figcaption>The <strong>Filters</strong> menu and the <strong>Clear Filters</strong> button</figcaption>
+</figure>
+
+<p><strong>(F)</strong> The <strong>Advanced</strong> menu <img src="../uploads/Main/iconSettings.png" alt="">, which you can use to access the project settings for the Package Manager and more. See <a href="#Advanced">Advanced settings</a> for details.</p>
+
+<p><strong>(G)</strong> The <a href="upm-ui-search.html">search box</a>, which you can use to look for packages and feature sets by name.</p>
+
+<p><strong>(H)</strong> The <a href="upm-ui-list.html">list view</a>, which displays packages that match the filter and search parameters you specify. The <strong>All</strong> tab lists all packages that meet your filter and search criteria, while the <strong>Services</strong> tab filters the list further to display <a href="UnityServices.html">services</a>.</p>
+
+<p><strong>(I)</strong> The detail view, which displays information specific to the <a href="fs-details.html">feature set</a> or <a href="upm-ui-details.html">package</a> selected in the list. </p>
+
+<p><strong>(J)</strong> The package details tabs, which display further information about the selected feature set or package. The tabs are dynamic, based on the selected item. For information about these tabs, see <a href="upm-ui-details.html">Details view</a>.</p>
+
+<p><strong>(K)</strong> Buttons to perform any of the following actions at the project level:</p>
+
+<ul>
+<li><a href="fs-install.html">Install or remove feature sets</a></li>
+<li>
+<a href="upm-ui-install.html">Install</a>, <a href="upm-ui-update.html">update</a>, or <a href="upm-ui-remove.html">remove</a> packages</li>
+<li>
+<a href="upm-ui-import.html">Download and import</a>, or <a href="upm-ui-update2.html">update</a> Asset Store packages</li>
+<li>
+<a href="upm-ui-disable.html">Disable or enable</a> built-in packages</li>
+</ul>
+
+<p><strong>(L)</strong> The <a href="#StatusBar">status bar</a>, which displays information when the Package Manager loads packages and feature sets. This information includes errors and warning messages, the number of Asset Store packages available, and a link to load more Asset Store packages.</p>
+
+<p><strong>(M)</strong> The <strong>Refresh list</strong> <img src="../uploads/Main/iconReload.png" alt=""> lets you refresh the list of packages displayed. In the My Assets context, <strong>Refresh list</strong> is a menu, which contains a <strong>Check for updates</strong> option, so you can check for updates to all packages on your computer; not just the ones that are visible in the My Assets context.</p>
+
+<p><a name="Advanced"></a></p>
+
+<h2>Advanced 设置</h2>
+
+<p>The advanced settings <img src="../uploads/Main/iconSettings.png" alt=""> menu allows you to perform these actions:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>菜单项</strong></th>
+	<th style="text-align:left;"><strong>操作结果</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Project Settings</strong></td>
+	<td style="text-align:left;">Select this item to open the <a href="class-PackageManager.html">Package Manager project settings</a>, where you can:<br><br>- Add, edit, and remove <a href="upm-scoped.html">scoped registries</a> in your project. <br>- List <a href="pack-preview.html">pre-release packages</a> when browsing the Unity Registry.<br>- See which packages the Package Manager installed as dependencies of another installed package (<a href="upm-dependencies.html">indirect dependencies</a>).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Manual resolve</strong></td>
+	<td style="text-align:left;">Select this item to force the Package Manager to resolve the project’s packages. If needed, it reinstalls altered or missing packages and removes extraneous packages.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Preferences</strong></td>
+	<td style="text-align:left;">Select this item to view and set <a href="Preferences.html">Preferences</a> for the Unity Editor and related windows and tools.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Reset Packages to defaults</strong></td>
+	<td style="text-align:left;">Select this item to return to Package Manager default settings. <br><br><strong>Warning</strong>: This removes all customization from your project manifest file. Use this action only as a last resort when you can’t figure out what’s wrong with your project manifest file.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="StatusBar"></a></p>
+
+<h2>状态栏</h2>
+
+<p>Package Manager 在 Package Manager 窗口左下角的状态栏中显示消息。</p>
+
+<p>通常，您可能会看到四种状态消息：</p>
+
+<ul>
+<li>
+<p>The first time you open the Package Manager window in a new project, the <strong>Refreshing packages and features</strong> message appears briefly:</p>
+
+<figure>
+<img src="../uploads/Main/upm-ui-loading.png" alt="Refreshing packages and features message">
+<figcaption>Refreshing packages and features message</figcaption>
+</figure>
+
+<p>This message also appears when you click <strong>Refresh list</strong> <img src="../uploads/Main/iconReload.png" alt=""></p>
+</li>
+<li>
+<p>When the <strong>My Assets</strong> context is active, the load bar appears above the date. It displays the number of Asset Store packages and a <strong>Load</strong> link:</p>
+
+<figure>
+<img src="../uploads/Main/upm-ui-assets-loadbar.png" alt="On the left, the load bar displays the number of Asset Store packages loaded and the total number available. Click Load to load more packages.">
+<figcaption>On the left, the load bar displays the number of Asset Store packages loaded and the total number available. Click <strong>Load</strong> to load more packages.</figcaption>
+</figure>
+</li>
+<li>
+<p>Most of the time the status bar displays the date and time of when the Package Manager window last refreshed its information. However, if the Package Manager <a href="https://docs.unity3d.com/Manual/upm-errors.html">detects a problem</a>, such as a network issue, the Package Manager displays an error in the status bar:</p>
+
+<figure>
+<img src="../uploads/Main/upm-ui-errors.png" alt="Network error message">
+<figcaption>Network error message</figcaption>
+</figure>
+</li>
+<li>
+<p>If your network connection is working, but you aren’t signed into your <a href="https://id.unity.com/">Unity account</a>, the Package Manager doesn’t display any Asset Store packages. When you try to use the <strong>My Assets</strong> context, the Package Manager displays an error in the status bar:</p>
+
+<figure>
+<img src="../uploads/Main/upm-ui-unityid.png" alt="Logged out of Unity account">
+<figcaption>Logged out of Unity account</figcaption>
+</figure>
+
+<p>In the list view, click <strong>Sign in</strong> to sign in to your Unity account through the <a href="https://docs.unity3d.com/hub/manual/index.html">Unity Hub</a>.</p>
+</li>
+</ul>
+
+<p>有关如何解决这些错误以及其他错误的信息，请参阅<a href="upm-errors.html">错误消息</a>。
+<br></p>
+
+<h2>其他资源</h2>
+
+<ul>
+<li><a href="Packages.html">Unity’s Package Manager</a></li>
+<li><a href="PackagesList.html">Packages and feature sets</a></li>
+<li><a href="upm-docs.html">Finding package documentation</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="upm-config-cache-as.html"></a></span><div class="tip">Customize the Asset Store cache location</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="upm-ui-access.html"></a></span><div class="tip">Access the Package Manager window</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

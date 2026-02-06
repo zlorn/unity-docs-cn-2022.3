@@ -1,0 +1,328 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="预设 - Unity 手册">
+<title>预设 - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/PresetAssets.png">
+<meta name="description" content="预设是可用于将相同属性设置跨多个组件、资源或项目设置窗口保存和应用的资源。您还可以使用预设在预设管理器中指定新组件的默认设置和资源的默认导入设置。
+预设管理器支持您添加到 Unity 编辑器的任何导入器、组件或脚本化对象。">
+<meta property="og:description" content="预设是可用于将相同属性设置跨多个组件、资源或项目设置窗口保存和应用的资源。您还可以使用预设在预设管理器中指定新组件的默认设置和资源的默认导入设置。
+预设管理器支持您添加到 Unity 编辑器的任何导入器、组件或脚本化对象。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'Presets';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/Presets.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/Presets.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/Presets.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/Presets.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/Presets.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/Presets.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/Presets.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/Presets.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/Presets.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/Presets.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/Presets.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/Presets.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/Presets.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/Presets.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/Presets.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/Presets.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/Presets.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/Presets.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/Presets.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/Presets.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/Presets.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/Presets.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/Presets.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/Presets.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/Presets.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/Presets.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/Presets.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/Presets.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/Presets.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/Presets.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/Presets.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/Presets.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/Presets.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/Presets.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/Presets.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/Presets.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/Presets.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/Presets.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/Presets.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/Presets.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/Presets.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/Presets.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/Presets.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/Presets.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/Presets.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/Presets.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/Presets.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/Presets.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/Presets.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/Presets.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/Presets.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/Presets.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/Presets.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/Presets.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/Presets.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/Presets.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/Presets.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/Presets.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="AssetWorkflow.html">资源工作流程</a></li>
+<li>预设</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="ImportActivityWindow.html"></a></span><div class="tip">Import Activity window</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SupportingPresets.html"></a></span><div class="tip">Supporting presets</div>
+</div>
+</div></div>
+<h1>预设</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>预设是可用于将相同属性设置跨多个组件、资源或<a href="comp-ManagerGroup.html">项目设置</a>窗口保存和应用的资源。您还可以使用预设在<a href="class-PresetManager.html">预设管理器</a>中指定新组件的默认设置和资源的默认<a href="ImportingAssets.html">导入设置</a>。
+预设管理器支持您添加到 Unity 编辑器的任何导入器、组件或脚本化对象。</p>
+
+<p>You can only apply Presets in the Editor. Presets have no effect at runtime. You can use scripting to <a href="SupportingPresets.html">support presets</a> in your own Monobehaviour, ScriptableObject or ScriptedImporter classes.</p>
+
+<h2>保存和应用预设</h2>
+
+<p>预设允许您将组件、资源或 Project Settings 窗口的属性配置保存为预设资源。然后，您可以使用此预设资源将相同的设置应用到不同的组件、资源或 Project Settings 窗口。</p>
+
+<p>例如，您可以编辑刚体组件的属性，将这些设置保存到一个预设资源，然后将该预设资源应用到其他游戏对象中的刚体组件。游戏对象中的其他组件不受影响；预设仅将其设置应用于刚体组件。</p>
+
+<p>可将预设存储在项目的 <code>Assets</code> 文件夹中。使用 <a href="ProjectView.html">Project</a> 窗口可查看并选择要在 <strong>Inspector</strong> 中编辑的预设。</p>
+
+<figure>
+<img src="../uploads/Main/PresetAssets.png" alt="Project 窗口中的预设资源示例，这些资源放置在 Presets 子文件夹中">
+<figcaption><strong>Project</strong> 窗口中的预设资源示例，这些资源放置在 <em>Presets</em> 子文件夹中</figcaption>
+</figure>
+
+<h2>将属性设置保存到预设</h2>
+
+<p>要将属性设置保存到预设资源，请按照以下说明进行操作。您可以在编辑模式或运行模式下保存属性设置。</p>
+
+<ol>
+<li><p>选择要重用设置的游戏对象、资源导入设置或 Project Settings 窗口。选择后会出现在 <strong>Inspector</strong> 窗口。</p></li>
+<li><p>在 <strong>Inspector</strong> 窗口中，根据需要配置属性以保存它们。</p></li>
+<li><p>单击 <strong>Inspector</strong> 窗口右上角的预设选择器（滑动条图标）。<br><img src="../uploads/Main/preset-icon.png" alt=""></p></li>
+<li><p>在 Select Preset 窗口中，单击 <strong>Save current to</strong>。<br><img src="../uploads/Main/presets-select-preset-window.png" alt=""><br>显示一个 File Save 对话框。</p></li>
+<li><p>选择新预设的位置，输入其名称，然后单击 <strong>Save</strong>。</p></li>
+</ol>
+
+<h2>应用预设中的设置</h2>
+
+<p>有两种方法可以应用预设：<strong>Select Preset</strong> 窗口，或对于组件预设，您还可以将预设从 <strong>Project</strong> 窗口拖放到包含该组件的游戏对象上。</p>
+
+<p><strong>注意：</strong>应用预设会将属性从预设复制到该项。此过程不会将预设链接到该项。对预设所做的更改不会影响先前已应用预设的项。</p>
+
+<p>通过 <strong>Select Preset</strong> 窗口应用预设：</p>
+
+<ol>
+<li><p>对于您想要应用预设的游戏对象或资源，选择它们使其出现在 <strong>Inspector</strong> 窗口中。对于要应用预设的项目设置，请在 <strong>Project Settings</strong> 窗口中将其打开。</p></li>
+<li><p>在 <strong>Inspector</strong> 中，单击预设选择器（滑动条图标）。</p></li>
+<li>
+<p>在 <strong>Select Preset</strong> 窗口中，搜索并选择要应用的预设。</p>
+
+<p>Unity 将此预设应用到组件、资源或 Project Settings 窗口。</p>
+</li>
+<li><p>关闭 <strong>Select Preset</strong> 窗口。</p></li>
+</ol>
+
+<p>如果您通过拖放操作应用组件预设，Unity 的行为取决于您的游戏对象的状态：</p>
+
+<ul>
+<li>如果您将预设放在 Hierarchy 窗口中的现有游戏对象上，Unity 会添加一个新组件并从预设中复制属性。</li>
+<li>如果您将预设放在 Hierarchy 窗口中的空白区域上，Unity 会创建一个新的空游戏对象，并添加一个具有复制自预设的属性的组件。</li>
+<li>如果您将 Inspector 窗口上的预设拖放到现有组件的标题上，Unity 将从该预设复制属性。</li>
+<li>如果您将预设拖放到 Inspector 窗口中的空白区域上，Unity 会添加一个新组件并从预设中复制属性。</li>
+</ul>
+
+<h3>应用部分预设</h3>
+
+<p>您可以选择仅应用预设中的某些属性并排除其他属性。为此需要执行以下操作：</p>
+
+<ol>
+<li><p>在 <strong>Project</strong> 窗口中选择您的预设。</p></li>
+<li><p>在 <strong>Inspector</strong> 中, 右键单击一个属性并选择 <strong>Exclude Property</strong>。该窗口在排除的属性旁边显示一条红色水平线。<br>
+<img src="../uploads/Main/preset-exclude-property.png" alt=""></p></li>
+<li><p>将该预设应用到目标组件、资源或项目设置。</p></li>
+</ol>
+
+<p><strong>注意：</strong>要全选或清除预设中的所有复选框，请选择 <strong>More items</strong> 菜单 (<strong>⋮</strong>) 或右键单击预设名称，然后选择 <strong>Include all properties</strong> 或 <strong>Exclude all properties</strong>。如果需要，您仍然可以调整各个属性。</p>
+
+<p>您还可以对预设使用排除选项，然后将其设置为组件和资源导入器的默认配置。有关如何执行此操作的更多详细信息，请参阅<a href="class-PresetManager.html">预设管理器</a>。</p>
+
+<h2>编辑预设</h2>
+
+<p>要编辑预设资源，请从 <strong>Project</strong> 窗口进行选择，然后在 <strong>Inspector</strong> 窗口中查看。</p>
+
+<p><strong>注意：</strong>当您更改预设中的属性时，您的更改不会影响您已应用该预设的项目。例如，如果将刚体组件的预设应用于游戏对象，然后编辑该预设，则刚体组件中的设置不会更改。</p>
+
+<figure>
+<img src="../uploads/Main/preset-edit-preset.png" alt="在 Inspector 窗口中编辑预设">
+<figcaption>在 Inspector 窗口中编辑预设</figcaption>
+</figure>
+
+<h2>按文件夹使用预设来导入资源</h2>
+
+<p>您可以在 <em>Project</em> 窗口中使用<a href="DefaultPresetsByFolder.html">脚本</a>根据资源的位置将预设应用于该资源。</p>
+
+<h2>导出预设资源</h2>
+
+<p>预设可用于简化团队的工作流程。甚至可以使用预设来指定 <a href="comp-ManagerGroup.html">Project Settings</a> 窗口（包括 <strong>Preset</strong> 设置本身）的设置。可使用此功能配置某个项目，然后<a href="AssetPackagesCreate.html">将其导出</a>作为自定义资源包。团队成员可将此资源包<a href="AssetPackagesImport.html">导入</a>其项目中。</p>
+
+<ol>
+<li>在 Project 窗口中，选择要导出的预设。</li>
+<li>在 Unity 菜单中，转到 <strong>Assets &gt; Export Package</strong>，或在 Project 窗口内右键单击并选择 <strong>Export Package</strong>。<br>
+<strong>Exporting package</strong> 窗口显示要导出的项目。</li>
+<li>如果您的预设包含对要包含在包中的资源的引用，请启用 <strong>Include dependencies</strong>。</li>
+<li>单击 <strong>Export</strong>。</li>
+<li>选择要存储包的位置，输入文件名，然后单击 <strong>Save</strong>。Unity 将包保存为 .unitypackage 文件。</li>
+</ol>
+
+<h2>对动画状态节点的过渡使用预设</h2>
+
+<p>可保存和应用<a href="class-State.html">动画状态</a>节点的预设。但是，预设中的<a href="class-Transition.html">过渡</a>将在预设以及应用预设的节点之间共享。例如，可将预设应用于 <a href="AnimatorWindow.html">Animator 窗口</a>中的两个不同节点。在 Inspector 窗口中，编辑第一个节点中某个过渡的设置。所做的更改也会显示在另一个节点中和预设中。</p>
+
+<hr>
+
+<p><span class="page-edit"> 2017–03–27页面已发布</span></p>
+
+<p><span class="page-history">新功能，添加于 <a href="https://docs.unity3d.com/2018.1/Documentation/Manual/30_search.html?q=newin20181">2018.1 </a> <span class="search-words">NewIn20181</span></span>
+<!-- area:authoring --></p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="ImportActivityWindow.html"></a></span><div class="tip">Import Activity window</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SupportingPresets.html"></a></span><div class="tip">Supporting presets</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

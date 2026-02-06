@@ -1,0 +1,1057 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Adding a device - Unity 手册">
+<title>Adding a device - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/device-simulator-overlay-iphone8.png">
+<meta name="description" content="To add a new device to the Device Simulator, you create a device definition and a device overlay.">
+<meta property="og:description" content="To add a new device to the Device Simulator, you create a device definition and a device overlay.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'device-simulator-adding-a-device';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/device-simulator-adding-a-device.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/device-simulator-adding-a-device.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/device-simulator-adding-a-device.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/device-simulator-adding-a-device.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/device-simulator-adding-a-device.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/device-simulator-adding-a-device.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/device-simulator-adding-a-device.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/device-simulator-adding-a-device.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/device-simulator-adding-a-device.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/device-simulator-adding-a-device.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/device-simulator-adding-a-device.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/device-simulator-adding-a-device.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/device-simulator-adding-a-device.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/device-simulator-adding-a-device.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/device-simulator-adding-a-device.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/device-simulator-adding-a-device.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/device-simulator-adding-a-device.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/device-simulator-adding-a-device.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/device-simulator-adding-a-device.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/device-simulator-adding-a-device.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/device-simulator-adding-a-device.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/device-simulator-adding-a-device.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/device-simulator-adding-a-device.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/device-simulator-adding-a-device.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/device-simulator-adding-a-device.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/device-simulator-adding-a-device.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/device-simulator-adding-a-device.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/device-simulator-adding-a-device.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/device-simulator-adding-a-device.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/device-simulator-adding-a-device.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/device-simulator-adding-a-device.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/device-simulator-adding-a-device.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/device-simulator-adding-a-device.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/device-simulator-adding-a-device.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/device-simulator-adding-a-device.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/device-simulator-adding-a-device.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/device-simulator-adding-a-device.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/device-simulator-adding-a-device.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/device-simulator-adding-a-device.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/device-simulator-adding-a-device.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/device-simulator-adding-a-device.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/device-simulator-adding-a-device.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/device-simulator-adding-a-device.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/device-simulator-adding-a-device.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/device-simulator-adding-a-device.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/device-simulator-adding-a-device.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/device-simulator-adding-a-device.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/device-simulator-adding-a-device.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/device-simulator-adding-a-device.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/device-simulator-adding-a-device.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/device-simulator-adding-a-device.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/device-simulator-adding-a-device.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/device-simulator-adding-a-device.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/device-simulator-adding-a-device.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/device-simulator-adding-a-device.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/device-simulator-adding-a-device.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/device-simulator-adding-a-device.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/device-simulator-adding-a-device.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UnityOverview.html">在 Unity 中操作</a></li>
+<li><a href="UsingTheEditor.html">Unity 的界面</a></li>
+<li><a href="device-simulator.html">Device Simulator</a></li>
+<li>Adding a device</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="device-simulator-simulated-classes.html"></a></span><div class="tip">Simulated classes</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="device-simulator-plugins.html"></a></span><div class="tip">Extending the device simulator</div>
+</div>
+</div></div>
+<h1>Adding a device</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>To add a new device to the Device Simulator, you create a device definition and a device overlay.</p>
+
+<p>A device definition is a text file with the <code>.device</code> extension in your Unity project. It contains JSON that describes the properties of a device.</p>
+
+<p>A device overlay is an image that contains the border of the device screen, together with notches, punchouts, and any other additions to the screen rectangle. You can optionally use it with a device definition to visualize how hardware elements obstruct the device screen, and to determine when touch inputs fail as a result.</p>
+
+<h2>Creating a device definition</h2>
+
+<p>A device definition is a JSON file that represents the device. It has both required properties and some optional properties. If a device definition file contains any errors, the errors appear in the Inspector when you select the file.</p>
+
+<h3>Schema</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>Required</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>friendlyName</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">The name to display in the UI for this device.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>version</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Indicates the version of the device definition file. Currently, the version is <code>1</code>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>screens</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">A list of objects that each describe a screen to simulate the device for. This must contain at least one screen. For information about the schema of each screen object, see <a href="#screen">screen</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>systemInfo</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">An object that describes the capabilities of the device. The values in this object map to <a href="../ScriptReference/SystemInfo.html">SystemInfo</a>. For information about the schema of the systemInfo object, see <a href="#systeminfo">systemInfo</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="screen"></a></p>
+
+<h4>screen</h4>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>Required</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>width</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">The width, in pixels, of the screen.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>height</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">The height, in pixels, of the screen.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>navigationBarHeight</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">The height, in pixels, of the on-screen Android navigation bar that appears on some devices when not in fullscreen.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>dpi</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">The dpi of the screen.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>orientations</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">A list of objects that each describe an orientation the screen can simulate. If you don’t set a value for this property, the screen supports all orientations. For information about the schema of each orientation object, see <a href="#orientation">orientation</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>presentation</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">An object that describes the device overlay. For information about the schema of this object, see <a href="#presentation">presentation</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="orientation"></a></p>
+
+<h4>orientation</h4>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>Required</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>orientation</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">The screen orientation. The value of this property is a number that maps to the <a href="../ScriptReference/ScreenOrientation.html">ScreenOrientation</a> enum.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>safeArea</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">A <a href="../ScriptReference/Rect.html">Rect</a> that determines the safe area of the screen. If you don’t set a value for this property, the simulator assumes the entire screen is safe.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>cutouts</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">A list of <a href="../ScriptReference/Rect.html">Rect</a>s that specify areas of the screen that aren’t functional for displaying content.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="presentation"></a></p>
+
+<h4>presentation</h4>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>Required</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>overlayPath</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">A relative path from the device definition file to an image to use as the device overlay.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>borderSize</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">The distance, in pixels, from the overlay to where the screen begins.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="systeminfo"></a></p>
+
+<h4>systeminfo</h4>
+
+<p>The properties in this object describe the capabilities and system information of the device. Since they describe the system information, many of them map to properties in <a href="../ScriptReference/Device.SystemInfo.html">SystemInfo</a>.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>Required</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>deviceModel</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-deviceModel.html">Device.SystemInfo.deviceModel</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>deviceType</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-deviceType.html">Device.SystemInfo.deviceType</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>operatingSystem</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-operatingSystem.html">Device.SystemInfo.operatingSystem</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>operatingSystemFamily</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-operatingSystemFamily.html">Device.SystemInfo.operatingSystemFamily</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>processorCount</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-processorCount.html">Device.SystemInfo.processorCount</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>processorFrequency</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-processorFrequency.html">Device.SystemInfo.processorFrequency</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>processorType</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-processorType.html">Device.SystemInfo.processorType</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supportsAccelerometer</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supportsAccelerometer.html">Device.SystemInfo.supportsAccelerometer</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supportsAudio</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supportsAudio.html">Device.SystemInfo.supportsAudio</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supportsGyroscope</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supportsGyroscope.html">Device.SystemInfo.supportsGyroscope</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supportsLocationService</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supportsLocationService.html">Device.SystemInfo.supportsLocationService</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supportsVibration</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supportsVibration.html">Device.SystemInfo.supportsVibration</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>systemMemorySize</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-systemMemorySize.html">Device.SystemInfo.systemMemorySize</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>unsupportedIdentifier</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-unsupportedIdentifier.html">Device.SystemInfo.unsupportedIdentifier</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>graphicsDependentData</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">A list of objects that each describe graphics APIs that the device supports. For information about the schema of each object, see <a href="#graphicsdependentdata">graphicsDependentData</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="graphicsdependentdata"></a></p>
+
+<h4>graphicsDependentData</h4>
+
+<p>The properties in the object describe a graphics API that the device supports.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>Required</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>graphicsDeviceType</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-graphicsDeviceType.html">Device.SystemInfo.graphicsDeviceType</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>graphicsMemorySize</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-graphicsMemorySize.html">Device.SystemInfo.graphicsMemorySize</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>graphicsDeviceName</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-graphicsDeviceName.html">Device.SystemInfo.graphicsDeviceName</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>graphicsDeviceVendor</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-graphicsDeviceVendor.html">Device.SystemInfo.graphicsDeviceVendor</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>graphicsDeviceID</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-graphicsDeviceID.html">Device.SystemInfo.graphicsDeviceID</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>graphicsDeviceVendorID</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-graphicsDeviceVendorID.html">Device.SystemInfo.graphicsDeviceVendorID</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>graphicsUVStartsAtTop</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-graphicsUVStartsAtTop.html">Device.SystemInfo.graphicsUVStartsAtTop</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>graphicsDeviceVersion</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-graphicsDeviceVersion.html">Device.SystemInfo.graphicsDeviceVersion</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>graphicsShaderLevel</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-graphicsShaderLevel.html">Device.SystemInfo.graphicsShaderLevel</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>graphicsMultiThreaded</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-graphicsMultiThreaded.html">Device.SystemInfo.graphicsMultiThreaded</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>renderingThreadingMode</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-renderingThreadingMode.html">Device.SystemInfo.renderingThreadingMode</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>hasHiddenSurfaceRemovalOnGPU</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-hasHiddenSurfaceRemovalOnGPU.html">Device.SystemInfo.hasHiddenSurfaceRemovalOnGPU</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>hasDynamicUniformArrayIndexingInFragmentShaders</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-hasDynamicUniformArrayIndexingInFragmentShaders.html">Device.SystemInfo.hasDynamicUniformArrayIndexingInFragmentShaders</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supportsShadows</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supportsShadows.html">Device.SystemInfo.supportsShadows</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supportsRawShadowDepthSampling</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supportsRawShadowDepthSampling.html">Device.SystemInfo.supportsRawShadowDepthSampling</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supportsMotionVectors</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supportsMotionVectors.html">Device.SystemInfo.supportsMotionVectors</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supports3DTextures</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supports3DTextures.html">Device.SystemInfo.supports3DTextures</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supports2DArrayTextures</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supports2DArrayTextures.html">Device.SystemInfo.supports2DArrayTextures</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supports3DRenderTextures</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supports3DRenderTextures.html">Device.SystemInfo.supports3DRenderTextures</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supportsCubemapArrayTextures</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supportsCubemapArrayTextures.html">Device.SystemInfo.supportsCubemapArrayTextures</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>copyTextureSupport</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-copyTextureSupport.html">Device.SystemInfo.copyTextureSupport</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supportsComputeShaders</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supportsComputeShaders.html">Device.SystemInfo.supportsComputeShaders</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supportsGeometryShaders</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supportsGeometryShaders.html">Device.SystemInfo.supportsGeometryShaders</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supportsTessellationShaders</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supportsTessellationShaders.html">Device.SystemInfo.supportsTessellationShaders</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supportsInstancing</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supportsInstancing.html">Device.SystemInfo.supportsInstancing</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supportsHardwareQuadTopology</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supportsHardwareQuadTopology.html">Device.SystemInfo.supportsHardwareQuadTopology</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supports32bitsIndexBuffer</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supports32bitsIndexBuffer.html">Device.SystemInfo.supports32bitsIndexBuffer</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supportsSparseTextures</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supportsSparseTextures.html">Device.SystemInfo.supportsSparseTextures</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supportedRenderTargetCount</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supportedRenderTargetCount.html">Device.SystemInfo.supportedRenderTargetCount</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supportsSeparatedRenderTargetsBlend</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supportsSeparatedRenderTargetsBlend.html">Device.SystemInfo.supportsSeparatedRenderTargetsBlend</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supportedRandomWriteTargetCount</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supportedRandomWriteTargetCount.html">Device.SystemInfo.supportedRandomWriteTargetCount</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supportsMultisampledTextures</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supportsMultisampledTextures.html">Device.SystemInfo.supportsMultisampledTextures</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supportsMultisampleAutoResolve</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supportsMultisampleAutoResolve.html">Device.SystemInfo.supportsMultisampleAutoResolve</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supportsTextureWrapMirrorOnce</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supportsTextureWrapMirrorOnce.html">Device.SystemInfo.supportsTextureWrapMirrorOnce</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>usesReversedZBuffer</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-usesReversedZBuffer.html">Device.SystemInfo.usesReversedZBuffer</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>npotSupport</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-npotSupport.html">Device.SystemInfo.npotSupport</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>maxTextureSize</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-maxTextureSize.html">Device.SystemInfo.maxTextureSize</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>maxCubemapSize</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-maxCubemapSize.html">Device.SystemInfo.maxCubemapSize</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>maxComputeBufferInputsVertex</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-maxComputeBufferInputsVertex.html">Device.SystemInfo.maxComputeBufferInputsVertex</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>maxComputeBufferInputsFragment</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-maxComputeBufferInputsFragment.html">Device.SystemInfo.maxComputeBufferInputsFragment</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>maxComputeBufferInputsGeometry</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-maxComputeBufferInputsGeometry.html">Device.SystemInfo.maxComputeBufferInputsGeometry</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>maxComputeBufferInputsDomain</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-maxComputeBufferInputsDomain.html">Device.SystemInfo.maxComputeBufferInputsDomain</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>maxComputeBufferInputsHull</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-maxComputeBufferInputsHull.html">Device.SystemInfo.maxComputeBufferInputsHull</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>maxComputeBufferInputsCompute</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-maxComputeBufferInputsCompute.html">Device.SystemInfo.maxComputeBufferInputsCompute</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>maxComputeWorkGroupSize</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-maxComputeWorkGroupSize.html">Device.SystemInfo.maxComputeWorkGroupSize</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>maxComputeWorkGroupSizeX</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-maxComputeWorkGroupSizeX.html">Device.SystemInfo.maxComputeWorkGroupSizeX</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>maxComputeWorkGroupSizeY</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-maxComputeWorkGroupSizeY.html">Device.SystemInfo.maxComputeWorkGroupSizeY</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>maxComputeWorkGroupSizeZ</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-maxComputeWorkGroupSizeZ.html">Device.SystemInfo.maxComputeWorkGroupSizeZ</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supportsAsyncCompute</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supportsAsyncCompute.html">Device.SystemInfo.supportsAsyncCompute</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supportsGraphicsFence</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supportsGraphicsFence.html">Device.SystemInfo.supportsGraphicsFence</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supportsAsyncGPUReadback</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supportsAsyncGPUReadback.html">Device.SystemInfo.supportsAsyncGPUReadback</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supportsRayTracing</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supportsRayTracing.html">Device.SystemInfo.supportsRayTracing</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supportsSetConstantBuffer</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supportsSetConstantBuffer.html">Device.SystemInfo.supportsSetConstantBuffer</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>hasMipMaxLevel</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-hasMipMaxLevel.html">Device.SystemInfo.hasMipMaxLevel</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>supportsMipStreaming</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-supportsMipStreaming.html">Device.SystemInfo.supportsMipStreaming</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>usesLoadStoreActions</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">See <a href="../ScriptReference/Device.SystemInfo-usesLoadStoreActions.html">Device.SystemInfo.usesLoadStoreActions</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<h4>Minimal device definition</h4>
+
+<p>The following device definition contains every required property and no optional properties. This is the minimum device definition you can have.</p>
+
+<p><strong>Note</strong>: This device definition doesn’t provide orientation data, so the simulator assumes the device supports all orientations and that the safe area covers the entire screen.</p>
+
+<pre><code class="lang-json">{
+    "friendlyName": "Minimal Device",
+    "version": 1,
+    "screens": [
+        {
+            "width": 1080,
+            "height": 1920,
+            "dpi": 450.0
+        }
+    ],
+    "systemInfo": {
+        "operatingSystem": "Android"
+    }
+}
+</code></pre>
+
+<h4>Complete device definition</h4>
+
+<p>The following device definition contains every required and optional property.</p>
+
+<pre><code class="lang-json">{
+    "friendlyName": "Apple iPhone XR",
+    "version": 1,
+    "screens": [
+        {
+            "width": 828,
+            "height": 1792,
+            "navigationBarHeight": 0,
+            "dpi": 326.0,
+            "orientations": [
+                {
+                    "orientation": 1,
+                    "safeArea": {
+                        "serializedVersion": "2",
+                        "x": 0.0,
+                        "y": 68.0,
+                        "width": 828.0,
+                        "height": 1636.0
+                    },
+                    "cutouts": [
+                        {
+                            "serializedVersion": "2",
+                            "x": 184.0,
+                            "y": 1726.0,
+                            "width": 460.0,
+                            "height": 66.0
+                        }
+                    ]
+                },
+                {
+                    "orientation": 3,
+                    "safeArea": {
+                        "serializedVersion": "2",
+                        "x": 88.0,
+                        "y": 42.0,
+                        "width": 1616.0,
+                        "height": 786.0
+                    },
+                    "cutouts": [
+                        {
+                            "serializedVersion": "2",
+                            "x": 0.0,
+                            "y": 184.0,
+                            "width": 66.0,
+                            "height": 460.0
+                        }
+                    ]
+                },
+                {
+                    "orientation": 4,
+                    "safeArea": {
+                        "serializedVersion": "2",
+                        "x": 88.0,
+                        "y": 42.0,
+                        "width": 1616.0,
+                        "height": 786.0
+                    },
+                    "cutouts": [
+                        {
+                            "serializedVersion": "2",
+                            "x": 1726.0,
+                            "y": 184.0,
+                            "width": 66.0,
+                            "height": 460.0
+                        }
+                    ]
+                }
+            ],
+            "presentation": {
+                "overlayPath": "Apple iPhone 11_Overlay.png",
+                "borderSize": {
+                    "x": 51.0,
+                    "y": 51.0,
+                    "z": 51.0,
+                    "w": 51.0
+                }
+            }
+        }
+    ],
+    "systemInfo": {
+        "deviceModel": "iPhone11,8",
+        "deviceType": 1,
+        "operatingSystem": "iOS 12.0",
+        "operatingSystemFamily": 0,
+        "processorCount": 6,
+        "processorFrequency": 0,
+        "processorType": "arm64e",
+        "supportsAccelerometer": true,
+        "supportsAudio": true,
+        "supportsGyroscope": true,
+        "supportsLocationService": true,
+        "supportsVibration": true,
+        "systemMemorySize": 2813,
+        "unsupportedIdentifier": "n/a",
+        "graphicsDependentData": [
+            {
+                "graphicsDeviceType": 16,
+                "graphicsMemorySize": 1024,
+                "graphicsDeviceName": "Apple A12 GPU",
+                "graphicsDeviceVendor": "Apple",
+                "graphicsDeviceID": 0,
+                "graphicsDeviceVendorID": 0,
+                "graphicsUVStartsAtTop": true,
+                "graphicsDeviceVersion": "Metal",
+                "graphicsShaderLevel": 50,
+                "graphicsMultiThreaded": true,
+                "renderingThreadingMode": 0,
+                "hasHiddenSurfaceRemovalOnGPU": true,
+                "hasDynamicUniformArrayIndexingInFragmentShaders": true,
+                "supportsShadows": true,
+                "supportsRawShadowDepthSampling": true,
+                "supportsMotionVectors": true,
+                "supports3DTextures": true,
+                "supports2DArrayTextures": true,
+                "supports3DRenderTextures": true,
+                "supportsCubemapArrayTextures": true,
+                "copyTextureSupport": 31,
+                "supportsComputeShaders": true,
+                "supportsGeometryShaders": false,
+                "supportsTessellationShaders": true,
+                "supportsInstancing": true,
+                "supportsHardwareQuadTopology": false,
+                "supports32bitsIndexBuffer": true,
+                "supportsSparseTextures": false,
+                "supportedRenderTargetCount": 8,
+                "supportsSeparatedRenderTargetsBlend": true,
+                "supportedRandomWriteTargetCount": 8,
+                "supportsMultisampledTextures": 1,
+                "supportsMultisampleAutoResolve": false,
+                "supportsTextureWrapMirrorOnce": 0,
+                "usesReversedZBuffer": true,
+                "npotSupport": 2,
+                "maxTextureSize": 16384,
+                "maxCubemapSize": 16384,
+                "maxComputeBufferInputsVertex": 8,
+                "maxComputeBufferInputsFragment": 8,
+                "maxComputeBufferInputsGeometry": 0,
+                "maxComputeBufferInputsDomain": 8,
+                "maxComputeBufferInputsHull": 8,
+                "maxComputeBufferInputsCompute": 8,
+                "maxComputeWorkGroupSize": 1024,
+                "maxComputeWorkGroupSizeX": 1024,
+                "maxComputeWorkGroupSizeY": 1024,
+                "maxComputeWorkGroupSizeZ": 1024,
+                "supportsAsyncCompute": false,
+                "supportsGraphicsFence": true,
+                "supportsAsyncGPUReadback": true,
+                "supportsRayTracing": false,
+                "supportsSetConstantBuffer": true,
+                "hasMipMaxLevel": true,
+                "supportsMipStreaming": true,
+                "usesLoadStoreActions": true,
+                "supportedTextureFormats": [1, 2, 3, 4, 5],
+                "supportedRenderTextureFormats": [1, 2, 3, 4, 5],
+                "ldrGraphicsFormat": 59,
+                "hdrGraphicsFormat": 74
+            }
+        ]
+    }
+}
+</code></pre>
+
+<h2>Creating a device overlay</h2>
+
+<p>A device overlay is an image that contains the border of the device screen and other features such as notches, punchouts, and any other additions to the screen rectangle. You can optionally use it with a device definition to visualize how hardware elements obstruct the device screen, and to determine when touch inputs fail as a result.</p>
+
+<p>The Device Simulator interprets transparent pixels as areas of the screen you can tap, and opaque pixels of any other color as areas that the hardware obstructs. The texture itself can be any shape.</p>
+
+<p>The following examples show device overlays for two iPhone models.</p>
+
+<p><strong>Note</strong>: To mimic what you see when you use a device overlay, these examples display Unity’s default skybox in the area of the screen where you can tab. In a real device overlay, these pixels should be transparent.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Apple iPhone 8 Overlay</th>
+	<th style="text-align:left;">Apple iPhone XS Overlay</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><img src="../uploads/Main/device-simulator-overlay-iphone8.png" alt=""></td>
+	<td style="text-align:left;"><img src="../uploads/Main/device-simulator-overlay-iphonexs.png" alt=""></td>
+</tr>
+</tbody>
+</table>
+
+<h3>Using a device overlay</h3>
+
+<p>After you create a device overlay texture, to use it with a device definition you must first import the device overlay texture file into your project.</p>
+
+<p><strong>Note</strong>: When the Device Simulator loads a device overlay texture, it attempts to enable <strong>Read/Write</strong> for it. If this isn’t possible, the Device Simulator displays the texture but can’t use the texture to mask input. This means that if you click on notches and other areas of the screen that the device overlay should mask, the Device Simulator detects input. To ensure this doesn’t happen, when you import the device overlay texture, enable <strong>Read/Write</strong> in the Texture Import Settings window.</p>
+
+<p>When the device overlay texture is in your project, open the device definition file and, in the object that defines a screen the device supports, add the <a href="#presentation">presentation</a> property. Here, set the path to the image file (<code>overlayPath</code>) and the size of the borders (<code>borderSize</code>). For an example of how to do this, see the following device definition file:</p>
+
+<pre><code class="lang-json">{
+    "friendlyName": "Minimal Device with Overlay",
+    "version": 1,
+    "screens": [
+        {
+            "width": 1080,
+            "height": 1920,
+            "dpi": 450.0,
+            "presentation": {
+                "overlayPath": "Overlays/MinimalDeviceOverlay.png",
+                "borderSize": {
+                    "x": 51.0,
+                    "y": 51.0,
+                    "z": 51.0,
+                    "w": 130.0
+                }
+            }
+        }
+    ],
+    "systemInfo": {
+        "operatingSystem": "Android"
+    }
+}
+</code></pre>
+
+<p><strong>Note</strong>: The path to the device overlay texture file can be relative to the device definition file, or relative to the directory that contains the <strong>Assets</strong> or <strong>Packages</strong> directory in your Unity project. For example, if the device definition file is in the <strong>Assets/Devices</strong> directory and the device overlay file is in the <strong>Assets/Devices/Overlays</strong> directory, the following file paths are both valid:</p>
+
+<ul>
+<li>Relative to the device definition file: <strong>Overlays/MinimalDeviceOverlay.png</strong>
+</li>
+<li>Relative to the directory that contains the <strong>Assets</strong> directory: <strong>Assets/Devices/Overlays/MinimalDeviceOverlay.png</strong>
+</li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="device-simulator-simulated-classes.html"></a></span><div class="tip">Simulated classes</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="device-simulator-plugins.html"></a></span><div class="tip">Extending the device simulator</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

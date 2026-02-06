@@ -1,0 +1,544 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="编辑属性 - Unity 手册">
+<title>编辑属性 - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/PropertiesExample.png">
+<meta name="description" content="属性是用于游戏对象组件和资源的设置和选项。可在 Inspector 窗口中编辑属性。">
+<meta property="og:description" content="属性是用于游戏对象组件和资源的设置和选项。可在 Inspector 窗口中编辑属性。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'EditingValueProperties';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/EditingValueProperties.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/EditingValueProperties.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/EditingValueProperties.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/EditingValueProperties.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/EditingValueProperties.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/EditingValueProperties.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/EditingValueProperties.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/EditingValueProperties.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/EditingValueProperties.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/EditingValueProperties.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/EditingValueProperties.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/EditingValueProperties.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/EditingValueProperties.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/EditingValueProperties.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/EditingValueProperties.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/EditingValueProperties.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/EditingValueProperties.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/EditingValueProperties.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/EditingValueProperties.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/EditingValueProperties.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/EditingValueProperties.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/EditingValueProperties.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/EditingValueProperties.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/EditingValueProperties.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/EditingValueProperties.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/EditingValueProperties.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/EditingValueProperties.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/EditingValueProperties.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/EditingValueProperties.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/EditingValueProperties.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/EditingValueProperties.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/EditingValueProperties.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/EditingValueProperties.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/EditingValueProperties.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/EditingValueProperties.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/EditingValueProperties.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/EditingValueProperties.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/EditingValueProperties.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/EditingValueProperties.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/EditingValueProperties.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/EditingValueProperties.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/EditingValueProperties.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/EditingValueProperties.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/EditingValueProperties.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/EditingValueProperties.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/EditingValueProperties.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/EditingValueProperties.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/EditingValueProperties.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/EditingValueProperties.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/EditingValueProperties.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/EditingValueProperties.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/EditingValueProperties.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/EditingValueProperties.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/EditingValueProperties.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/EditingValueProperties.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/EditingValueProperties.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/EditingValueProperties.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/EditingValueProperties.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UnityOverview.html">在 Unity 中操作</a></li>
+<li><a href="UsingTheEditor.html">Unity 的界面</a></li>
+<li>编辑属性</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="InspectorFocused.html"></a></span><div class="tip">专属 Inspector</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="Toolbar.html"></a></span><div class="tip">工具栏</div>
+</div>
+</div></div>
+<h1>编辑属性</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>属性是用于游戏对象组件和资源的设置和选项。可在 <a href="UsingTheInspector.html">Inspector 窗口</a>中编辑属性。</p>
+
+<figure>
+<img src="../uploads/Main/PropertiesExample.png" alt="光源组件显示了各种值和引用属性">
+<figcaption>光源组件显示了各种值和引用属性</figcaption>
+</figure>
+
+<p>属性分为以下主要类别：</p>
+
+<ul>
+<li>
+<strong>引用：</strong>到其他游戏对象和资源的链接。</li>
+<li>
+<strong>值：</strong>数字、颜色、开/关设置、文本等。</li>
+</ul>
+
+<h2>引用</h2>
+
+<p>引用属性将场景中的兼容项目资源或游戏对象作为输入。例如，<a href="class-MeshFilter.html">Mesh Filter</a> 组件在项目中某处引用 <a href="class-Mesh.html">Mesh</a> 资源。</p>
+
+<p>创建组件时，其引用属性并未分配。</p>
+
+<figure>
+<img src="../uploads/Main/RefPropUnassigned.png" alt="">
+</figure>
+
+<p>可通过将对象和资源<a href="#ref-assign-dnd">拖放</a>到引用属性字段，或是使用 <a href="#ref-assign-objectpicker">Object Picker 窗口</a>，将引用分配给属性。</p>
+
+<p>一些引用属性接受特定类型的组件（例如，<a href="class-Transform.html">转换组件</a>）。将游戏对象分配给这些属性时，Unity 会在游戏对象上找到所需类型的第一个组件，并将它分配给引用属性。如果游戏对象没有任何具有正确类型的组件，则无法将游戏对象分配给属性。</p>
+
+<p><a name="ref-assign-dnd"></a></p>
+
+<h3>通过拖放分配引用</h3>
+
+<p>要将引用分配给属性，请将兼容游戏对象或资源拖放到 Inspector 中的属性字段上。</p>
+
+<figure>
+<img src="../uploads/Main/inspector-refprop-dragdrop.png" alt="">
+</figure>
+
+<p><a name="ref-assign-objectpicker"></a></p>
+
+<h3>使用 Object Picker 窗口分配引用</h3>
+
+<p>使用 Object Picker 窗口查找并选择要分配的引用对象。</p>
+
+<figure>
+<img src="../uploads/Main/inspector-refprop-picker.png" alt="">
+</figure>
+
+<ol>
+<li>单击 Inspector 中属性右侧的小圆圈图标，以打开 Object Picker 窗口。</li>
+<li>找到要引用的对象或资源，然后双击以将它分配给属性。</li>
+</ol>
+
+<h2>值</h2>
+
+<p>可以使用简单控件编辑大多数值属性。例如：</p>
+
+<p><strong>字段</strong>，可以在其中输入文本和数值。</p>
+
+<figure>
+<img src="../uploads/Main/inspector-property-numeric.png" alt="">
+</figure>
+
+<p>可以直接在属性字段中键入数值，或单击并拖动属性标签以增大或减小值。</p>
+
+<figure>
+<img src="../uploads/Main/inspector-property-numeric-drag.png" alt="">
+</figure>
+
+<p>某些属性还具有用于调整数值的<strong>滑动条</strong>。</p>
+
+<figure>
+<img src="../uploads/Main/inspector-property-slider.png" alt="">
+</figure>
+
+<p><strong>复选框</strong>，可以在其中打开和关闭属性。</p>
+
+<figure>
+<img src="../uploads/Main/inspector-property-checkbox.png" alt="">
+</figure>
+
+<p><strong>下拉列表</strong>和<strong>弹出窗口</strong>，可以在其中选择多个可能值之一。</p>
+
+<figure>
+<img src="../uploads/Main/inspector-property-popup.png" alt="">
+</figure>
+
+<p><a name="numeric-expressions"></a></p>
+
+<h3>Numeric field expressions</h3>
+
+<p>Numeric field input controls also accept mathematical expressions, for example entering <code>2+3</code> into a field will
+result in value <code>5</code>. See <a href="../ScriptReference/ExpressionEvaluator.html">ExpressionEvaluator</a> C# class documentation for details on
+which expressions are supported.</p>
+
+<p>Numeric fields also support special functions that are useful when editing multiple selected objects at once:</p>
+
+<ul>
+<li>
+<code>L(a,b)</code> results in linear ramp between <code>a</code> and <code>b</code>. <br>
+ <img src="../uploads/Main/inspector-expr-L.png" alt=""> <br>
+ <em>Entering <code>L(-6,6)</code> into X coordinate distributes the ten selected capsules between –6 and 6.</em>
+</li>
+<li>
+<code>R(a,b)</code> results in a random value between <code>a</code> and <code>b</code>. <br>
+ <img src="../uploads/Main/inspector-expr-R.png" alt=""> <br>
+ <em>Entering <code>R(-2,2)</code> into Z coordinate sets the Z coordinate of the selected capsules to a random value between –2 and 2.</em>
+</li>
+<li>
+<code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code> expressions can be used to modify the current value, for example entering <code>*=2</code> makes all
+ the the field value twice as large. <br>
+ <img src="../uploads/Main/inspector-expr-assign.png" alt=""> <br>
+ <em>Entering <code>/=3</code> into Z coordinate makes all Z coordinates 3x smaller.</em>
+</li>
+</ul>
+
+<p>You can combine math expressions. For example, you could use the expression, <code>L(0,2*pi)</code>, which produces a
+linear distribution of values between 0 and 2pi radians, as the argument of a trigonometric function.
+To illustrate, the following example uses this linear ramp function as the argument to sine and cosine functions
+in order to distribute a set of selected objects in a circle: <br>
+<img src="../uploads/Main/inspector-expr-trig.png" alt=""> <br>
+<em>Entering <code>cos(L(0,2*pi))*5</code> into X and <code>sin(L(0,2*pi))*5</code> into Z coordinates places the ten selected capsules in a circle.</em></p>
+
+<p>When writing <a href="editor-CustomEditors.html">custom inspectors</a>, all <a href="../ScriptReference/EditorGUI.PropertyField.html">EditorGUI.PropertyField</a>
+and <a href="../ScriptReference/EditorGUILayout.PropertyField.html">EditorGUILayout.PropertyField</a> controls automatically get support for the
+numeric expressions.</p>
+
+<p>某些游戏对象和资源具有更复杂的属性，可以使用专门控件或专用编辑器对这些属性进行编辑。本节的其余部分介绍如何设置这些复杂属性。</p>
+
+<p><a name="color-values"></a></p>
+
+<h3>颜色值</h3>
+
+<p>Inspector 窗口将颜色属性显示为样本。</p>
+
+<figure>
+<img src="../uploads/Main/inspector-property-color.png" alt="">
+</figure>
+
+<p>单击任何样本可打开拾色器或 HDR 拾色器（具体取决于上下文）。例如，在<a href="shader-StandardShader.html">标准着色器</a>中编辑<strong>发射</strong>颜色属性时，Unity 会显示 HDR 拾色器窗口。</p>
+
+<figure>
+<img src="../uploads/Main/color-pickers.png" alt="Unity 拾色器窗口（左）和 HDR 拾色器（右）">
+<figcaption>Unity 拾色器窗口（左）和 HDR 拾色器（右）</figcaption>
+</figure>
+
+<p>还可以使用吸管工具从屏幕上的任何位置选取颜色值。</p>
+
+<figure>
+<img src="../uploads/Main/inspector-property-color-eyedropper.png" alt="">
+</figure>
+
+<p>要选取颜色，请单击颜色属性旁的吸管按钮，然后单击屏幕上的任何位置。Unity 会将颜色属性设置为单击的像素的颜色。</p>
+
+<p>可以将设置的颜色保存在可以在项目之间共享的可重用<a href="#swatch-libraries">样本库</a>中。</p>
+
+<p><a name="gradient-values"></a></p>
+
+<h3>渐变值</h3>
+
+<p>渐变是颜色渐进的视觉表示。它们可用于在空间或时间上将一种颜色逐渐混合到另一种颜色中。</p>
+
+<p>In Unity, gradient values are used by the <a href="PartSysColorOverLifeModule.html">particle system</a>, <a href="class-LineRenderer.html">line renderer</a>
+and a few other components. You can also have public <a href="../ScriptReference/Gradient.html">Gradient class</a> variables in your
+C# scripts, and the inspector will display a gradient editor for them.</p>
+
+<figure>
+<img src="../uploads/Main/inspector-gradient-editor.png" alt="粒子系统渐变编辑器">
+<figcaption>粒子系统渐变编辑器</figcaption>
+</figure>
+
+<p>The gradient editor shows the main colors, called <em>keys</em>, and all the intermediate shades between them in the gradient bar (1).</p>
+
+<p>Upward-pointing arrows along the bottom of the gradient bar represent color keys (2).</p>
+
+<ul>
+<li>Click a key to select it. Unity displays its color value in the <strong>Color field</strong>.
+
+<ul>
+<li>单击颜色样本 (3) 可使用标准<a href="#color-values">拾色器</a>编辑颜色。</li>
+<li>还可以使用吸管工具 (4) 从屏幕上的任何位置选取颜色值。单击吸管按钮，然后单击屏幕上的任何位置。Unity 会将颜色属性设置为单击的像素的颜色。</li>
+</ul>
+</li>
+<li>Click an empty area under the gradient bar to add a key.</li>
+<li>Click and drag a key to move it.</li>
+<li>To delete a key, select it and use the <strong>Ctrl/Cmd + Delete</strong> shortcut.</li>
+</ul>
+
+<p>Downward-pointing arrows above the gradient bar represent alpha keys (5) that control the gradient’s transparency at a given point. You add and edit alpha keys the same way you edit color keys. When you select an alpha key, the gradient editor displays an <strong>Alpha</strong> slider instead of the <strong>Color</strong> field.</p>
+
+<p>By default, a gradient has two keys set to 100% alpha, which makes the gradient fully opaque. You can edit a key to adjust the transparency, and add additional keys as needed.</p>
+
+<p>A gradient can use several different color interpolation modes:</p>
+
+<ul>
+<li>
+<em>Blend</em> mode linearly interpolates between the color keys.</li>
+<li>
+<em>Blend (Perceptual)</em> mode interpolates between the color keys using a perceptually uniform “<a href="https://bottosson.github.io/posts/oklab/">Oklab</a>” color space.</li>
+<li>
+<em>Fixed</em> mode does not interpolate the colors; the value of the color or alpha key is used until the next key.</li>
+</ul>
+
+<figure>
+<img src="../uploads/Main/GradientEditorModeBlend.png" alt="Blend gradient mode">
+<figcaption>Blend gradient mode</figcaption>
+</figure>
+
+<figure>
+<img src="../uploads/Main/GradientEditorModePerceptual.png" alt="Perceptual blend gradient mode">
+<figcaption>Perceptual blend gradient mode</figcaption>
+</figure>
+
+<figure>
+<img src="../uploads/Main/GradientEditorModeFixed.png" alt="Fixed gradient mode">
+<figcaption>Fixed gradient mode</figcaption>
+</figure>
+
+<p><a name="curves"></a></p>
+
+<h3>曲线</h3>
+
+<p>__曲线__是一个线形图，显示对输入变化值（在 x 轴上）的响应（在 y 轴上）。</p>
+
+<figure>
+<img src="../uploads/Main/CurveEditor.png" alt="Animation 窗口中的曲线编辑器">
+<figcaption>Animation 窗口中的曲线编辑器</figcaption>
+</figure>
+
+<p>Unity 在各种不同的上下文中使用曲线，尤其是在动画中。曲线编辑器具有许多不同的选项和工具。有关详细信息，请参阅<a href="EditingCurves.html">编辑曲线</a>。</p>
+
+<h3>条形滑动条</h3>
+
+<p>条形滑动条是一种专门控件，可用于以可视化方式分配特定资源。例如，<a href="class-LODGroup.html">LOD Group 组件</a>使用条形滑动条定义游戏对象 LOD 级别之间的过渡。</p>
+
+<figure>
+<img src="../uploads/Main/LODGroup-SpeedTreeModels.png" alt="LOD Group 选择条是一种条形滑动条控件">
+<figcaption>LOD Group 选择条是一种条形滑动条控件</figcaption>
+</figure>
+
+<p>可以通过拖动线段边缘来调整每个线段在选择条中的相对值。一些条形滑动条还具有可拖动的手柄。</p>
+
+<h3>数组</h3>
+
+<p>脚本将数组公开为公共变量时，Inspector 会显示一个控件，可用于编辑数组中的项数 (<strong>Size</strong>) 以及其中的值或引用。</p>
+
+<figure>
+<img src="../uploads/Main/ArrayInspector.png" alt="具有 Vector3 数组属性的脚本">
+<figcaption>具有 Vector3 数组属性的脚本</figcaption>
+</figure>
+
+<p>减小 <strong>Size</strong> 值时，Unity 会从数组末尾移除值。
+增大 <strong>Size</strong> 值时，Unity 会将当前的最后一个值复制到添加的所有新元素中。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">提示：</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">要设置值基本相同的数组，请添加第一个元素，然后更改大小以将其值复制到后续元素。</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="swatch-libraries"></a></p>
+
+<h2>创建样本库</h2>
+
+<p>使用样本库可重用、保存和共享颜色、渐变和动画曲线。可在<a href="#color-values">拾色器 (Color Picker)</a>、<a href="#gradient-values">渐变编辑器 (Gradient Editor)</a> 和<a href="#curves">曲线编辑器 (Curve Editor)</a> 中保存和选择样本。</p>
+
+<figure>
+<img src="../uploads/Main/PresetLibrary.png" alt="Unity 拾色器中的 Swatches 部分">
+<figcaption>Unity 拾色器中的 Swatches 部分</figcaption>
+</figure>
+
+<p>样本库是保存在文件中的样本集合。Swatches 部分一次显示一个样本库。</p>
+
+<p>要保存样本，请执行以下操作：</p>
+
+<ol>
+<li>打开拾色器、渐变编辑器或曲线编辑器。例如，在 <a href="Hierarchy.html">Hierarchy</a> 窗口中选择 <strong>Main Camera</strong>。</li>
+<li>在 <a href="UsingTheInspector.html">Inspector</a> 窗口中，单击 <strong>Background Color</strong>。</li>
+<li>在拾色器窗口中，根据喜好调整颜色、渐变或曲线。</li>
+<li>在 <strong>Swatches</strong> 中，单击轮廓框。</li>
+<li>如果视图处于 List 模式，则可以选择输入样本的名称。</li>
+</ol>
+
+<figure>
+<img src="../uploads/Main/SwatchSaving.png" alt="在 Grid 视图中保存颜色的示例">
+<figcaption>在 Grid 视图中保存颜色的示例</figcaption>
+</figure>
+
+<p>拖放样本可更改其顺序。右键单击样本可将其移动到顶部、对进行替换、重命名或删除。也可以通过按住 Alt/Option 并单击样本来将其删除。</p>
+
+<p>使用 <strong>Swatches</strong> 中的下拉菜单：</p>
+
+<ul>
+<li>选择 <strong>List</strong> 或 <strong>Grid</strong> 来更改视图。List 视图还显示样本的名称。</li>
+<li>选择一个样本库。</li>
+<li>选择 <strong>Create a Library</strong> 可创建新的样本库以及保存该样本库的位置。</li>
+<li>选择 <strong>Reveal Current Library Location</strong> 可在 Windows 资源管理器/Mac OS Finder 中查看当前库。</li>
+</ul>
+
+<p>默认情况下，Unity 将样本库保存在用户偏好设置中。也可以在项目中保存样本库。Unity 将项目样本库保存在 <em>Assets</em> 文件夹的 <em>Editor</em> 文件夹中。要在用户之间共享项目样本库，或将样本库包含在资源包中，请将它们添加到修订控制存储库中。</p>
+
+<p>要编辑项目样本库，请执行以下操作：</p>
+
+<ol>
+<li>在 <a href="ProjectView.html">Project</a> 窗口中选择样本库。</li>
+<li>在 <a href="UsingTheInspector.html">Inspector</a> 窗口中，单击 <strong>Edit</strong>。</li>
+</ol>
+
+<hr>
+
+<ul>
+<li><span class="page-history">在 Unity 2020.1 中重新组织了 Inspector 部分页面</span></li>
+</ul>
+<!-- area:authoring -->
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="InspectorFocused.html"></a></span><div class="tip">专属 Inspector</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="Toolbar.html"></a></span><div class="tip">工具栏</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

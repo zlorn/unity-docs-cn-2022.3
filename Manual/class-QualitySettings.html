@@ -1,0 +1,675 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Quality - Unity 手册">
+<title>Quality - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/quality-settings-panel.png">
+<meta name="description" content="Unity allows you to set the level of graphical quality it attempts to render. Generally speaking, quality comes at the expense of framerate and so it may be best not to aim for the highest quality on mobile devices or older hardware since it tends to have a detrimental effect on gameplay. Use the Quality settings (menu: Edit &gt; Project Settings, then select the Quality category) to select the Quality Level in the Editor for the chosen device. It is split into two main areas: the Quality matrix appears at the top; and below it, the settings for the active Quality Level appear.">
+<meta property="og:description" content="Unity allows you to set the level of graphical quality it attempts to render. Generally speaking, quality comes at the expense of framerate and so it may be best not to aim for the highest quality on mobile devices or older hardware since it tends to have a detrimental effect on gameplay. Use the Quality settings (menu: Edit &gt; Project Settings, then select the Quality category) to select the Quality Level in the Editor for the chosen device. It is split into two main areas: the Quality matrix appears at the top; and below it, the settings for the active Quality Level appear.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'class-QualitySettings';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/class-QualitySettings.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/class-QualitySettings.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/class-QualitySettings.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/class-QualitySettings.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/class-QualitySettings.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/class-QualitySettings.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/class-QualitySettings.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/class-QualitySettings.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/class-QualitySettings.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/class-QualitySettings.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/class-QualitySettings.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/class-QualitySettings.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/class-QualitySettings.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/class-QualitySettings.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/class-QualitySettings.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/class-QualitySettings.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/class-QualitySettings.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/class-QualitySettings.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/class-QualitySettings.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/class-QualitySettings.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/class-QualitySettings.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/class-QualitySettings.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/class-QualitySettings.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/class-QualitySettings.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/class-QualitySettings.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/class-QualitySettings.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/class-QualitySettings.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/class-QualitySettings.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/class-QualitySettings.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/class-QualitySettings.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/class-QualitySettings.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/class-QualitySettings.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/class-QualitySettings.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/class-QualitySettings.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/class-QualitySettings.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/class-QualitySettings.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/class-QualitySettings.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/class-QualitySettings.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/class-QualitySettings.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/class-QualitySettings.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/class-QualitySettings.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/class-QualitySettings.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/class-QualitySettings.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/class-QualitySettings.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/class-QualitySettings.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/class-QualitySettings.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/class-QualitySettings.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/class-QualitySettings.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/class-QualitySettings.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/class-QualitySettings.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/class-QualitySettings.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/class-QualitySettings.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/class-QualitySettings.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/class-QualitySettings.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/class-QualitySettings.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/class-QualitySettings.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/class-QualitySettings.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/class-QualitySettings.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UnityOverview.html">在 Unity 中操作</a></li>
+<li><a href="EditorFeatures.html">编辑器功能</a></li>
+<li><a href="comp-ManagerGroup.html">Project Settings</a></li>
+<li>Quality</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="class-PresetManager.html"></a></span><div class="tip">Preset Manager</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-MonoManager.html"></a></span><div class="tip">Script Execution Order 设置</div>
+</div>
+</div></div>
+<h1>Quality</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Unity allows you to set the level of graphical quality it attempts to render. Generally speaking, quality comes at the expense of framerate and so it may be best not to aim for the highest quality on mobile devices or older hardware since it tends to have a detrimental effect on gameplay. Use the <strong>Quality</strong> settings (menu: <strong>Edit &gt; Project Settings</strong>, then select the <strong>Quality</strong> category) to select the <strong>Quality Level</strong> in the Editor for the chosen device. It is split into two main areas: the Quality matrix appears at the top; and below it, the settings for the active <strong>Quality Level</strong> appear.</p>
+
+<p>Unity lets you assign a name to a given combination of quality options for easy reference. The rows of the matrix let you choose which of the different platforms each <strong>Quality Level</strong> applies to. The <strong>Default</strong> row at the bottom of the matrix is not a <strong>Quality Level</strong> in itself but rather sets the default <strong>Quality Level</strong> used for each platform (a green checkbox in a column denotes the level currently chosen for that platform). Unity comes with six <strong>Quality Levels</strong> pre-enabled but you can <a href="#define">add your own levels</a>.</p>
+
+<p><img src="../uploads/Main/quality-settings-panel.png" alt="Edit the settings for a specific Quality level"><br>
+A: The <strong>Quality Level</strong> you have defined in this project.<br>
+B: The currently active <strong>Quality Level</strong>.<br>
+C: The configuration of the current <strong>Quality Level</strong>. <br></p>
+
+<p>To delete an unwanted <strong>Quality Level</strong>, use the trashcan icon (the rightmost column).</p>
+
+<p>To select a <strong>Quality Level</strong> for editing, click on its name in the matrix.</p>
+
+<p><a name="define"></a>
+To define a new <strong>Quality Level</strong>, click the <strong>Add Quality Level</strong> button and type the name for the new level in the <strong>Name</strong> property box.</p>
+
+<p>然后，可选择以下部分中的哪些质量选项需要更新或设置：</p>
+
+<ul>
+<li><a href="#Rendering">Rendering</a></li>
+<li><a href="#Textures">Textures</a></li>
+<li><a href="#Particles">Particles</a></li>
+<li><a href="#Terrain">Terrain</a></li>
+<li><a href="#Shadows">Shadows</a></li>
+<li><a href="#AsyncAssetUpload">Async Asset Upload</a></li>
+<li><a href="#LevelOfDetail">Level of Detail</a></li>
+<li><a href="#Meshes">Meshes</a></li>
+</ul>
+
+<p><a name="Rendering"></a></p>
+
+<h2>Rendering</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Render Pipeline</strong></td>
+	<td style="text-align:left;">The Render Pipeline Asset to use for this <strong>Quality Level</strong>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Pixel Light Count</strong></td>
+	<td style="text-align:left;">设置 Unity 使用<a href="RenderTech-ForwardRendering.html">前向渲染</a>时的最大像素光照数。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>AntiAliasing</strong></td>
+	<td style="text-align:left;">Choose the level of Multi-Sample Anti-aliasing (MSAA) that the GPU performs. The options are <em>Disabled</em>, <em>2x Multi Sampling</em>, <em>4x Multi Sampling</em> and <em>8x Multi Sampling</em>.<br><br>Anti aliasing smooths the appearance of polygon edges. As the level of anti-aliasing increases, so does the smoothness and the performance cost on the GPU.<br><br>MSAA is compatible only with Forward rendering. For more information on other types of anti-aliasing and compatibility, see <a href="PostProcessingOverview.html">Post processing</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Realtime Reflection Probes</strong></td>
+	<td style="text-align:left;">启用此选项可在游戏过程中更新<a href="class-ReflectionProbe.html">反射探针</a>。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<a name="FixedDPIFactor"></a><strong>Resolution Scaling Fixed DPI Factor</strong>
+</td>
+	<td style="text-align:left;">将设备的屏幕分辨率降低到原始分辨率以下。有关更多详细信息，请参阅 <a href="class-PlayerSettingsAndroid.html#Scaling">Android Player</a> 设置和 <a href="class-PlayerSettingsiOS.html#Scaling">iOS Player</a> 设置。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>V Sync Count</strong></td>
+	<td style="text-align:left;">选择将渲染与垂直空白同步还是根本不同步。Unity 可将渲染与显示设备的刷新率同步来避免<a href="#tearing">撕裂</a>瑕疵。可用选项包括 <em>Every V Blank</em>、<em>Every Second V Blank</em> 和 <em>Don’t Sync</em>。</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="tearing"></a></p>
+
+<h3>撕裂</h3>
+
+<p>显示设备上的图片不会持续更新，而是定期更新，很大程度上就像 Unity 中的帧更新一样。但是，Unity 的更新不一定与显示器的更新同步，因此 Unity 有可能在显示器仍在渲染前一帧时发出新的帧。这会导致在屏幕上发生帧变化的位置处产生称为“撕裂”的视觉瑕疵。</p>
+
+<figure>
+<img src="../uploads/Main/Tearing.jpg" alt="模拟撕裂的示例。在放大的部分有清晰可见的图像偏移。">
+<figcaption>模拟撕裂的示例。在放大的部分有清晰可见的图像偏移。</figcaption>
+</figure>
+
+<p>可以使 Unity 仅在显示设备未更新的时间段（即所谓的“垂直空白”）切换帧。<strong>Quality</strong> 设置中的 <strong>V Sync Count</strong> 选项将帧开关与设备的垂直空白同步，还可以选择与每隔一个垂直空白同步。如果游戏需要多个设备更新来完成帧的渲染，后者可能会很有用。</p>
+
+<p><a name="Textures"></a></p>
+
+<h2>纹理</h2>
+
+<p><a name="mipmaplimit"></a></p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Global Mipmap Limit</strong></td>
+	<td style="text-align:left;">Choose the highest resolution mipmap level that Unity uses when it renders textures. Higher mipmap levels have lower resolutions, which means that they require less GPU memory and GPU processing time.<br>This property only affects textures with a <a href="class-TextureImporter.html#textureshape">texture shape</a> of 2D.<br><br> The options are: <ul>
+<li><strong>0: Full Resolution</strong></li> <li><strong>1: Half Resolution</strong></li>
+<li> <strong>2: Quarter Resolution</strong>
+</li>
+<li> <strong>3: Eighth Resolution</strong>
+</li>
+</ul> For more detailed information about what these resolutions mean, see <a href="texture-mipmaps-introduction.html">Mipmaps introduction</a>.<br>Textures that do not have mipmaps render at their full resolution, regardless of the option you choose.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Mipmap Limit Groups</strong></td>
+	<td style="text-align:left;">Use these groups to designate specific textures that should disregard the <a href="../ScriptReference/QualitySettings-globalTextureMipmapLimit.html">globalTextureMipmapLimit</a> or add a bias. This makes it possible to allocate more of your memory budget for important textures and less of it for less important textures.<br><br>This property only affects textures with a <a href="class-TextureImporter.html#textureshape">texture shape</a> of 2D.<br><br> The options are: <ul>
+<li><strong>Offset Global Mipmap Limit: –3</strong></li>
+<li><strong>Offset Global Mipmap Limit: –2</strong></li>
+<li> <strong>Offset Global Mipmap Limit: –1</strong>
+</li>
+<li><strong>Use Global Mipmap Limit</strong></li>
+<li><strong>Offset Global Mipmap Limit: +1</strong></li>
+<li><strong>Offset Global Mipmap Limit: +2</strong></li>
+<li><strong>Offset Global Mipmap Limit: +3</strong></li>
+<li><strong>Override Global Mipmap Limit: Full Resolution</strong></li>
+<li><strong>Override Global Mipmap Limit: Half Resolution</strong></li>
+<li><strong>Override Global Mipmap Limit: Quarter Resolution</strong></li>
+<li><strong>Override Global Mipmap Limit: Eighth Resolution</strong></li>
+</ul> The Offsets bias the Mipmap Limit value for the applicable group of textures. For example, if the <strong>Global Texture Mipmap Limit</strong> is <strong>Half Resolution</strong> and you select <strong>Offset Global Mipmap Limit: –1</strong>, then the new Mipmap Limit for the applicable group of textures is <strong>Full Resolution</strong>. <br> <br>The Overrides replace the <strong>Global Mipmap Limit</strong> for the applicable group of textures. For example, if the <strong>Global Texture Mipmap Limit</strong> is <strong>Half Resolution</strong> and you select <strong>Override Global Mipmap Limit: Full Resolution</strong>, then the new Mipmap Limit for the applicable group of textures is <strong>Full Resolution</strong>.<br><br><strong>Note:</strong> If you delete or rename a Mipmap Limit Group, this triggers a dialog box that provides you with the option to re-import the textures in that group. Undo does not revert these import changes.<br>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Anisotropic Textures</strong></td>
+	<td style="text-align:left;">选择 Unity 是否以及如何使用各向异性纹理。选项包括 <em>Disabled</em>、<em>Per Texture</em> 和 _Forced On_（即始终启用）。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<a name="texStream"></a><strong>Texture Streaming</strong><br>
+</td>
+	<td style="text-align:left;">Enable this checkbox to use <a href="TextureStreaming.html">Mipmap Streaming</a>. If you are not planning to use the Mipmap Streaming system, disable this feature to avoid any overhead.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">  Add All Cameras</td>
+	<td style="text-align:left;">Enable this checkbox to make Unity calculate <a href="TextureStreaming.html">Mipmap Streaming</a> for all active Cameras in the Project. This is enabled by default. <br><br>For more information, see <a href="TextureStreaming.html#cameras">Mipmap Streaming system: Configuring Cameras</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">  Memory Budget</td>
+	<td style="text-align:left;">Set the total amount of memory you want to assign to all loaded textures (in MB) when using the <a href="TextureStreaming.html">Mipmap Streaming system</a>. This is set to 512 MB by default. For more information, see <a href="TextureStreaming.html#memory-budget">Mipmpap Streaming system: Setting the memory budget</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">  Renderers Per Frame</td>
+	<td style="text-align:left;">This controls the CPU processing overhead for the <a href="TextureStreaming.html">Mipmap Streaming system</a> for the main thread and associated jobs. This is 512 by default (that is, processing 512 Mesh renderers per frame). Lower values reduce processing time, but increase delays to Unity loading the mipmaps.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">  Max Level Reduction</td>
+	<td style="text-align:left;">Set the maximum number of mipmaps that the <a href="TextureStreaming.html">Mipmap Streaming system</a> can discard if the Mipmap Streaming system reaches the <strong>Memory Budget</strong>. This is set to 2 by default (which means that the system discards no more than two mipmaps). <br><br>This value is also the mipmap level that the Mipmap Streaming system initially loads at startup. For example, when this is set to 2, Unity skips the two highest mipmaps on first load.<br><br>For more information, see <a href="TextureStreaming.html#memory-budget">Mipmpap Streaming system: Setting the memory budget</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">  Max IO Requests</td>
+	<td style="text-align:left;">Set the maximum number of texture file in/out (IO) requests from the <a href="TextureStreaming.html">MipMap Streaming system</a> that are active at any one time. This is set to 1024 by default. This default is set high enough to prevent any IO cap beyond what is already active due to the <a href="https://blogs.unity3d.com/2018/10/08/optimizing-loading-performance-understanding-the-async-upload-pipeline/">Async Upload pipeline</a> or file system itself.<br><br>If the Scene Texture content changes significantly and rapidly, the system might attempt to load more Texture mipmaps than the file IO can keep up with. Lowering this value reduces the IO bandwidth that the Mipmap Streaming system generates. The result is a more rapid response to changing mipmap requirements.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="Particles"></a></p>
+
+<h2>Particles</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Soft Particles</strong></td>
+	<td style="text-align:left;">Indicates whether to fade particles as they approach the edges of opaque GameObject. For more information, see <a href="#SoftParticles">Soft particles</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Particle Raycast Budget</strong></td>
+	<td style="text-align:left;">设置用于模拟粒子系统碰撞的最大射线投射数（质量设置为 <em>Medium</em> 或 _Low_）。请参阅<a href="class-ParticleSystem.html">粒子系统碰撞模块</a>。</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="SoftParticles"></a></p>
+
+<h3>Soft particles</h3>
+
+<p>Soft particles fade out near intersections with other Scene geometry. This looks much nicer, but is more resource intensive to process and only works on platforms that support <a href="SL-CameraDepthTexture.html">depth textures</a>. Furthermore, you have to use the <a href="RenderTech-DeferredShading.html">Deferred Shading</a> rendering path, or make the camera render <a href="SL-CameraDepthTexture.html">depth textures</a> from scripts.</p>
+
+<figure>
+<img src="../uploads/Main/SoftParticlesOff.jpg" alt="没有软粒子 - 与场景的可见交叉。">
+<figcaption>没有软粒子 - 与场景的可见交叉。</figcaption>
+</figure>
+
+<figure>
+<img src="../uploads/Main/SoftParticlesOn.jpg" alt="使用软粒子 - 交叉位置平滑淡出。">
+<figcaption>使用软粒子 - 交叉位置平滑淡出。</figcaption>
+</figure>
+
+<p><a name="Terrain"></a></p>
+
+<h2>Terrain</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Billboards Face Camera Position</strong></td>
+	<td style="text-align:left;">启用此选项可在渲染时强制公告牌面向摄像机而不是摄像机平面。这种情况下会产生更好、更逼真的图像，但渲染成本更高。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Use Legacy Details Distribution</strong></td>
+	<td style="text-align:left;">Enable this option to use the previously supported scattering algorithm that often resulted in overlapping details. Included for backward compatibility with Terrains authored in Unity 2022.1 and earlier.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Terrain Setting Overrides</strong></td>
+	<td style="text-align:left;">Various override settings that, when enabled, override the value of all active terrains (except those with the “Ignore Quality Settings” setting enabled). For more information about these settings, see <a href="terrain-OtherSettings.html">Terrain Settings</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">  Pixel Error</td>
+	<td style="text-align:left;">Value set to Terrain Pixel Error. See <a href="terrain-OtherSettings.html">Terrain Settings</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">  Base Map Dist.</td>
+	<td style="text-align:left;">Value set to Terrain Basemap Distance. See <a href="terrain-OtherSettings.html">Terrain Settings</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">  Detail Density Scale</td>
+	<td style="text-align:left;">Value set to Terrain Density Scale. See <a href="terrain-OtherSettings.html">Terrain Settings</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">  Detail Distance</td>
+	<td style="text-align:left;">Value set to Terrain Detail Distance. See <a href="terrain-OtherSettings.html">Terrain Settings</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">  Tree Distance</td>
+	<td style="text-align:left;">Value set to Terrain Tree Distance. See <a href="terrain-OtherSettings.html">Terrain Settings</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">  Billboard Start</td>
+	<td style="text-align:left;">Value set to Terrain Billboard Start. See <a href="terrain-OtherSettings.html">Terrain Settings</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">  Fade Length</td>
+	<td style="text-align:left;">Value set to Terrain Fade Length. See <a href="terrain-OtherSettings.html">Terrain Settings</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">  Max Mesh Trees</td>
+	<td style="text-align:left;">Value set to Terrain Max Mesh Trees. See <a href="terrain-OtherSettings.html">Terrain Settings</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="Shadows"></a></p>
+
+<h2>Shadows</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Shadowmask Mode</strong></td>
+	<td style="text-align:left;">使用 <a href="LightMode-Mixed-Shadowmask.html">Shadowmask</a> 混合光照模式时选择阴影遮罩行为。使用 Lighting 窗口（菜单：__Window__ &gt; <strong>Rendering</strong> &gt; <strong>Lighting__）可在场景中设置此属性。 |
+||</strong>Distance Shadowmask__</td>
+	<td style="text-align:left;">Unity 对于 <strong>Shadow Distance</strong> 范围内的值使用实时阴影，超过此距离则使用烘焙阴影。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Shadowmask</strong></td>
+	<td style="text-align:left;">投射阴影的静态游戏对象总是投射烘焙阴影。</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Shadows</strong></td>
+	<td style="text-align:left;">选择要使用的阴影类型。可用选项包括 <em>Hard and Soft Shadows</em>、<em>Hard Shadows Only</em> 和 <em>Disable Shadows</em>。</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Shadow Resolution</strong></td>
+	<td style="text-align:left;">选择渲染阴影的分辨率。可用选项包括 <em>Low Resolution</em>、<em>Medium Resolution</em>、<em>High Resolution</em> 和 <em>Very High Resolution</em>。分辨率越高，处理开销越大。</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Shadow Projection</strong></td>
+	<td style="text-align:left;">选择投射方向光的阴影时使用的方法。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Close Fit</strong></td>
+	<td style="text-align:left;">渲染更高分辨率的阴影，但如果摄像机移动，它们有时会略微抖动。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Stable Fit</strong></td>
+	<td style="text-align:left;">渲染较低分辨率的阴影，但它们不会因摄像机移动而抖动。</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Shadow Distance</strong></td>
+	<td style="text-align:left;">输入可以看到阴影的相对于摄像机的最大距离。Unity 不会渲染超出此距离的阴影。</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Shadow Near Plane Offset</strong></td>
+	<td style="text-align:left;">输入阴影近平面偏移（用于解决大三角形由于阴影平坠而扭曲的问题）。</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Shadow Cascades</strong></td>
+	<td style="text-align:left;">选择要使用的阴影级联数量。可用选项包括 <em>No Cascades</em>、<em>Two Cascades</em> 或 <em>Four Cascades</em>。级联数量越高，提供的质量越高，但代价是处理开销增大（有关更多详细信息，请参阅<a href="shadow-cascades.html">阴影级联 (Shadow Cascades)</a>）。</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Cascade splits</strong></td>
+	<td style="text-align:left;">通过向左或向右移动每个级联之间的垂直线来调整级联阴影分割。<br>根据 <strong>Shadow Cascades</strong> 设置的值，可以看到两种或四种不同的颜色。如果 <strong>Shadow Cascades</strong> 设置为 _No Cascades_，则会隐藏整个控件。</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="AsyncAssetUpload"></a></p>
+
+<h2>Async Asset Upload</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Time Slice</strong></td>
+	<td style="text-align:left;">设置 Unity 将缓冲的纹理和网格数据上传到 GPU 时花费的 CPU 时间量（以毫秒/帧为单位）。请参阅 <a href="LoadingTextureandMeshData.html">LoadingTextureandMeshData</a>。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Buffer Size</strong></td>
+	<td style="text-align:left;">设置 Unity 用于将纹理和网格数据串流到 GPU 的异步上传缓冲区大小（以 MB 为单位）。请参阅 <a href="LoadingTextureandMeshData.html">LoadingTextureandMeshData</a>。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Persistent Buffer</strong></td>
+	<td style="text-align:left;">Indicates whether the upload buffer should persist even when there is nothing left to upload.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="LevelOfDetail"></a></p>
+
+<h2>细节级别 (Level of Detail)</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">
+<a name="LODBias"></a><strong>Lod Bias</strong>
+</td>
+	<td style="text-align:left;">设置细节级别 (LOD) 偏差。<br>根据对象在屏幕上的大小选择 LOD 级别。当大小在两个 LOD 级别之间时，可以偏向于两个可用模型中细节级别更低或更高者。此属性设置为 0 到 +无穷大之间的值。设置为 0 到 1 之间时，表示倾向于更少细节。超过 1 的设置表示倾向于更多细节。例如，将 LOD Bias 设置为 2 并使其在 50％ 距离处变化，LOD 实际上仅基于 25％ 变化。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Maximum LOD Level</strong></td>
+	<td style="text-align:left;">设置游戏使用的最高 LOD。请参阅<a href="#maxLOD">最大 LOD 级别</a>以了解更多信息。</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="maxLOD"></a></p>
+
+<h3>最大 LOD 级别</h3>
+
+<p>Unity 在构建中不会使用 LOD 低于 MaximumLOD 级别的模型，而是将其忽略（这样可以节省存储和内存空间）。Unity 使用与目标平台 <strong>Quality</strong> 设置相关联的所有 MaximumLOD 值中的最小 LOD 值。如果包含 LOD 级别，则该 LODGroup 中的模型将包含在构建中，并始终在运行时为该 LODGroup 加载，无论使用何种 Quality 设置均是如此。例如，如果在任何 Quality 设置中使用 LOD 级别 0，则所有 LOD 级别都会包含在构建中，并且所有引用的模型都会在运行时加载。</p>
+
+<p><a name="Meshes"></a></p>
+
+<h2>Meshes</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">
+<a name="BlendWeights"></a><strong>Skin Weights</strong>
+</td>
+	<td style="text-align:left;">选择在动画期间可以影响给定顶点的骨骼数量。可用选项包括 <em>1 Bone</em>、<em>2 Bones</em>、<em>4 Bones</em> 和 <em>Unlimited</em>。</td>
+</tr>
+</tbody>
+</table>
+
+<p><br> </p>
+
+<hr>
+
+<ul>
+<li><span class="page-history">Terrain Quality Setting Overrides added in 2022.2</span></li>
+</ul>
+<!-- area:graphics -->
+
+<p><span class="search-words">QualitySettings</span></p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="class-PresetManager.html"></a></span><div class="tip">Preset Manager</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-MonoManager.html"></a></span><div class="tip">Script Execution Order 设置</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

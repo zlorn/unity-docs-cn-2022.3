@@ -1,0 +1,371 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="瓦片地图 2D 碰撞体 (Tilemap Collider 2D) - Unity 手册">
+<title>瓦片地图 2D 碰撞体 (Tilemap Collider 2D) - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/tilemap-collider-2d-properties.png">
+<meta name="description" content="The Tilemap Collider 2D component generates Collider shapes for Tiles on a Tilemap component on the same GameObject. When you add or remove Tiles on the Tilemap component, the Tilemap Collider 2D updates the Collider shapes during LateUpdate. It batches multiple Tile changes together to ensure minimal impact on performance.">
+<meta property="og:description" content="The Tilemap Collider 2D component generates Collider shapes for Tiles on a Tilemap component on the same GameObject. When you add or remove Tiles on the Tilemap component, the Tilemap Collider 2D updates the Collider shapes during LateUpdate. It batches multiple Tile changes together to ensure minimal impact on performance.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'class-TilemapCollider2D';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/class-TilemapCollider2D.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/class-TilemapCollider2D.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/class-TilemapCollider2D.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/class-TilemapCollider2D.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/class-TilemapCollider2D.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/class-TilemapCollider2D.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/class-TilemapCollider2D.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/class-TilemapCollider2D.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/class-TilemapCollider2D.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/class-TilemapCollider2D.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/class-TilemapCollider2D.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/class-TilemapCollider2D.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/class-TilemapCollider2D.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/class-TilemapCollider2D.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/class-TilemapCollider2D.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/class-TilemapCollider2D.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/class-TilemapCollider2D.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/class-TilemapCollider2D.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/class-TilemapCollider2D.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/class-TilemapCollider2D.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/class-TilemapCollider2D.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/class-TilemapCollider2D.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/class-TilemapCollider2D.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/class-TilemapCollider2D.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/class-TilemapCollider2D.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/class-TilemapCollider2D.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/class-TilemapCollider2D.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/class-TilemapCollider2D.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/class-TilemapCollider2D.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/class-TilemapCollider2D.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/class-TilemapCollider2D.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/class-TilemapCollider2D.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/class-TilemapCollider2D.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/class-TilemapCollider2D.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/class-TilemapCollider2D.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/class-TilemapCollider2D.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/class-TilemapCollider2D.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/class-TilemapCollider2D.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/class-TilemapCollider2D.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/class-TilemapCollider2D.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/class-TilemapCollider2D.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/class-TilemapCollider2D.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/class-TilemapCollider2D.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/class-TilemapCollider2D.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/class-TilemapCollider2D.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/class-TilemapCollider2D.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/class-TilemapCollider2D.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/class-TilemapCollider2D.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/class-TilemapCollider2D.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/class-TilemapCollider2D.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/class-TilemapCollider2D.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/class-TilemapCollider2D.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/class-TilemapCollider2D.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/class-TilemapCollider2D.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/class-TilemapCollider2D.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/class-TilemapCollider2D.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/class-TilemapCollider2D.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/class-TilemapCollider2D.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Unity2D.html">2D game development</a></li>
+<li><a href="Tilemap.html">Create Tilemaps</a></li>
+<li><a href="Tilemap-workflow.html">瓦片地图工作流程</a></li>
+<li>瓦片地图 2D 碰撞体 (Tilemap Collider 2D)</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="TilemapPainting-SelectionTool.html"></a></span><div class="tip">选择工具</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="Tilemap-Hexagonal.html"></a></span><div class="tip">六边形瓦片地图</div>
+</div>
+</div></div>
+<h1>瓦片地图 2D 碰撞体 (Tilemap Collider 2D)</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>The <strong>Tilemap Collider 2D</strong> component generates <strong>Collider</strong> shapes for <a href="Tilemap-TileAsset.html">Tiles</a> on a <a href="class-Tilemap.html">Tilemap</a> component on the same GameObject. When you add or remove Tiles on the Tilemap component, the Tilemap Collider 2D updates the Collider shapes during <code>LateUpdate</code>. It batches multiple Tile changes together to ensure minimal impact on performance.</p>
+
+<h2>Tilemap Collider 2D 属性</h2>
+
+<figure>
+<img src="../uploads/Main/tilemap-collider-2d-properties.png" alt="Tilemap Collider 2D window">
+<figcaption>Tilemap Collider 2D window</figcaption>
+</figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">属性</th>
+	<th style="text-align:left;">功能</th>
+	<th style="text-align:left;"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Max Tile Change Count</strong></td>
+	<td style="text-align:left;" colspan="2">Set the maximum number of Tile changes (such as adding/removing Tiles to the Tilemap) to accumulate before doing a full Collider rebuild instead of an incremental rebuild.<br><br><strong>Note:</strong> A high number of accumulated changes can cause the incremental rebuild of the <strong>Tilemap Collider 2D</strong> to be slower than a full rebuild. Decrease this value to resolve this issue.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Extrusion Factor</strong></td>
+	<td style="text-align:left;" colspan="2">Set the amount (in Unity world space units) to extrude the Collider shape of each Tile. This minimizes the gaps between the Collider shapes of neighboring Tiles and brings them to within the minimum <strong>Vertex Distance</strong> set in the <strong>Composite Collider 2D</strong>, which can then compose the Tile Colliders together. <br><br><strong>Note:</strong> This property isn’t available by default. It becomes available when you enable <a href="#composite">Used by Composite</a>, and attach a <a href="class-CompositeCollider2D.html">Composite Collider 2D</a> to the same GameObject.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Material</strong></td>
+	<td style="text-align:left;" colspan="2">Select the <a href="class-PhysicsMaterial2D.html">Physics Material 2D</a> that determines properties of collisions, such as friction and bounce.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Is Trigger</strong></td>
+	<td style="text-align:left;" colspan="2">Enable this if you want this Collider 2D to behave as a trigger. The physics system ignores this Collider when this is enabled.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Used by Effector</strong></td>
+	<td style="text-align:left;" colspan="2">Enable this if you want the Collider 2D to be used by an attached <a href="Effectors2D.html">Effector 2D</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>Used by Composite</strong><a name="composite"></a>
+</td>
+	<td style="text-align:left;" colspan="2">Enable this to use this Collider with an attached Composite Collider 2D.<br><br>When you enable <strong>Used by Composite</strong>, all properties except <strong>Offset</strong> will no longer be available in the Tilemap Collider 2D component and the attached Composite Collider 2D component controls the Collider properties instead.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Offset</strong></td>
+	<td style="text-align:left;" colspan="2">Set the local offset values of the Collider 2D geometry.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Layer Overrides</strong></td>
+	<td style="text-align:left;" colspan="2">Expand for the Layer override settings.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Layer Override Priority</strong></td>
+	<td style="text-align:left;">Assign the decision priority that this Collider2D uses when resolving conflicting decisions on whether a contact between itself and another Collision2D should happen or not. Refer to its <a href="../ScriptReference/Collider2D-layerOverridePriority.html">API</a> page for more information.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Include Layers</strong></td>
+	<td style="text-align:left;">Select the additional Layers that this Collider 2D should include when deciding if a contact with another Collider2D should happen or not. Refer to its <a href="../ScriptReference/Collider2D-includeLayers.html">API</a> documentation for more information.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Exclude Layers</strong></td>
+	<td style="text-align:left;">Select the additional Layers that this Collider 2D should exclude when deciding if a contact with another Collider2D should happen or not. Refer to its <a href="../ScriptReference/Collider2D-excludeLayers.html">API</a> documentation for more information.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Force Send Layers</strong></td>
+	<td style="text-align:left;">Select the Layers that this Collider 2D is allowed to send forces to during a Collision contact with another Collider2D. Refer to its <a href="../ScriptReference/Collider2D-forceSendLayers.html">API</a> documentation for more information.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Force Receive Layers</strong></td>
+	<td style="text-align:left;">Select the Layers that this Collider 2D can receive forces from during a Collision contact with another Collider2D. Refer to its <a href="../ScriptReference/Collider2D-forceReceiveLayers.html">API</a> documentation for more information.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Contract Capture Layers</strong></td>
+	<td style="text-align:left;">Select the Layers of other Collider 2D, involved in contacts with this Collider2D, that will be captured. Refer to its <a href="../ScriptReference/Collider2D-contactCaptureLayers.html">API</a> documentation for more information.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Callback Layers</strong></td>
+	<td style="text-align:left;">Select the Layers that this Collider 2D, during a contact with another Collider2D, will report collision or trigger callbacks for. Refer to its <a href="../ScriptReference/Collider2D-callbackLayers.html">API</a> documentation for more information.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Collider Type’s effect on Collider generation</h2>
+
+<p>The Collider shapes generated for each Tile in the Tilemap depend on the desired Collider type set in the <a href="Tilemap-TileAsset.html">Tile Asset’s</a> properties. The component’s shape generation behavior corresponds to the Collider Types in the following ways:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">碰撞体类型</th>
+	<th style="text-align:left;">功能</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>无</strong></td>
+	<td style="text-align:left;">Tilemap Collider 2D 组件不会为此瓦片生成任何碰撞体形状。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Sprite</strong></td>
+	<td style="text-align:left;">The Tilemap Collider 2D component generates a Collider shape based on the Sprite assigned to the Tile. The Collider shape is based on the <a href="CustomPhysicsShape.html">Custom Physics Shape</a> set for the Sprite.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Grid</strong></td>
+	<td style="text-align:left;">Tilemap Collider 2D 组件基于网格单元格的形状（由 Grid 组件的选定单元格布局 (Cell Layout) 确定）生成碰撞体形状。</td>
+</tr>
+</tbody>
+</table>
+
+<h2>瓦片地图和复合碰撞体</h2>
+
+<p>You can use the Tilemap Collider 2D component together with the <a href="class-CompositeCollider2D.html">Composite Collider 2D</a> component. When you add both components to the same Tilemap, Unity composites the Collider shapes of neighboring Tiles together. This smoothens the corners and edges between Collider shapes in neighboring Tiles.</p>
+
+<p>将这两个组件一起使用会减少物理更新中涉及的单个碰撞体形状的数量，从而减少所需的计算量，并将对性能的影响降至最低。</p>
+
+<h2>脚本 API 提示</h2>
+
+<p>If you require immediate changes to happen to the Collider, use <a href="../ScriptReference/Tilemaps.TilemapCollider2D.ProcessTilemapChanges.html">Tilemaps.TilemapCollider2D.ProcessTilemapChanges</a> to process them immediately. You can use <a href="../ScriptReference/Tilemaps.TilemapCollider2D-hasTilemapChanges.html">Tilemaps.TilemapCollider2D-hasTilemapChanges</a> to check if any processing is required.</p>
+
+<h2>其他资源</h2>
+
+<ul>
+<li><a href="Physics2DReference.html">Physics 2D Reference</a></li>
+<li><a href="Collider2D.html">Collider 2D</a></li>
+</ul>
+
+<hr>
+
+<p><em><span class="page-history">在 Unity 2020.1 中添加了新的属性</span>
+</em> <span class="page-history">在 <a href="https://docs.unity3d.com/2017.2/Documentation/Manual/30_search.html?q=newin20172">2017.2</a> 版中添加了瓦片地图 <span class="search-words">NewIn20172</span></span></p>
+<!-- area:authoring -->
+
+<p><span class="search-words">TilemapCollider2D</span></p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="TilemapPainting-SelectionTool.html"></a></span><div class="tip">选择工具</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="Tilemap-Hexagonal.html"></a></span><div class="tip">六边形瓦片地图</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

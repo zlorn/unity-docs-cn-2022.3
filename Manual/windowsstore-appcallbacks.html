@@ -1,0 +1,436 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="AppCallbacks class reference - Unity 手册">
+<title>AppCallbacks class reference - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="You can use the AppCallbacks class to connect your main application to the Unity engine.">
+<meta property="og:description" content="You can use the AppCallbacks class to connect your main application to the Unity engine.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'windowsstore-appcallbacks';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/windowsstore-appcallbacks.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/windowsstore-appcallbacks.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/windowsstore-appcallbacks.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/windowsstore-appcallbacks.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/windowsstore-appcallbacks.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/windowsstore-appcallbacks.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/windowsstore-appcallbacks.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/windowsstore-appcallbacks.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/windowsstore-appcallbacks.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/windowsstore-appcallbacks.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/windowsstore-appcallbacks.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/windowsstore-appcallbacks.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/windowsstore-appcallbacks.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/windowsstore-appcallbacks.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/windowsstore-appcallbacks.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/windowsstore-appcallbacks.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/windowsstore-appcallbacks.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/windowsstore-appcallbacks.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/windowsstore-appcallbacks.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/windowsstore-appcallbacks.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/windowsstore-appcallbacks.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/windowsstore-appcallbacks.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/windowsstore-appcallbacks.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/windowsstore-appcallbacks.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/windowsstore-appcallbacks.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/windowsstore-appcallbacks.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/windowsstore-appcallbacks.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/windowsstore-appcallbacks.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/windowsstore-appcallbacks.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/windowsstore-appcallbacks.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/windowsstore-appcallbacks.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/windowsstore-appcallbacks.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/windowsstore-appcallbacks.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/windowsstore-appcallbacks.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/windowsstore-appcallbacks.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/windowsstore-appcallbacks.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/windowsstore-appcallbacks.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/windowsstore-appcallbacks.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/windowsstore-appcallbacks.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/windowsstore-appcallbacks.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/windowsstore-appcallbacks.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/windowsstore-appcallbacks.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/windowsstore-appcallbacks.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/windowsstore-appcallbacks.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/windowsstore-appcallbacks.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/windowsstore-appcallbacks.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/windowsstore-appcallbacks.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/windowsstore-appcallbacks.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/windowsstore-appcallbacks.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/windowsstore-appcallbacks.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/windowsstore-appcallbacks.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/windowsstore-appcallbacks.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/windowsstore-appcallbacks.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/windowsstore-appcallbacks.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/windowsstore-appcallbacks.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/windowsstore-appcallbacks.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/windowsstore-appcallbacks.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/windowsstore-appcallbacks.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="PlatformSpecific.html">平台开发</a></li>
+<li><a href="WindowsStore.html">Universal Windows Platform</a></li>
+<li><a href="uwp-developing.html">Develop for Universal Windows Platform</a></li>
+<li>AppCallbacks class reference</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="windowsstore-scripts.html"></a></span><div class="tip">WinRT API in C# scripts for UWP</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="windowsstore-commandlinearguments.html"></a></span><div class="tip">Command line arguments for UWP</div>
+</div>
+</div></div>
+<h1>AppCallbacks class reference</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>You can use the <code>AppCallbacks</code> class to connect your main application to the Unity engine.</p>
+
+<h2>Example: How to use the <code>AppCallbacks</code> class</h2>
+
+<h3>
+<code>App.xaml.cpp</code> file</h3>
+
+<pre><code>App::App()
+{
+    InitializeComponent();
+    SetupOrientation();
+    m_AppCallbacks = ref new AppCallbacks();
+}
+
+void App::OnLaunched(LaunchActivatedEventArgs^ e)
+{
+    m_SplashScreen = e-&gt;SplashScreen;
+    InitializeUnity(e-&gt;Arguments);
+}
+
+void App::InitializeUnity(String^ args)
+{
+    ApplicationView::GetForCurrentView()-&gt;SuppressSystemOverlays = true;
+
+    m_AppCallbacks-&gt;SetAppArguments(args);
+    auto rootFrame = safe_cast&lt;Frame^&gt;(Window::Current-&gt;Content);
+
+    // 当窗口已包含内容时，请勿重复初始化应用程序，
+    // 仅确保窗口处于活动状态
+    if (rootFrame == nullptr &amp;&amp; !m_AppCallbacks-&gt;IsInitialized())
+    {
+        rootFrame = ref new Frame();
+        Window::Current-&gt;Content = rootFrame;
+# if !UNITY_HOLOGRAPHIC
+        Window::Current-&gt;Activate();
+# endif
+
+        rootFrame-&gt;Navigate(TypeName(MainPage::typeid ));
+    }
+
+    Window::Current-&gt;Activate();
+}
+</code></pre>
+
+<h3>
+<code>MainPage.xaml.cpp</code> file</h3>
+
+<pre><code>MainPage::MainPage()
+{
+    m_SplashScreenRemovalEventToken.Value = 0;
+    m_OnResizeRegistrationToken.Value = 0;
+
+    InitializeComponent();
+    NavigationCacheMode = ::NavigationCacheMode::Required;
+
+    auto appCallbacks = AppCallbacks::Instance;
+
+    bool isWindowsHolographic = false;
+
+#if UNITY_HOLOGRAPHIC
+    // If application was exported as Holographic check if the device actually supports it
+    // Otherwise, we treat this as a normal XAML application
+    isWindowsHolographic = AppCallbacks::IsMixedRealitySupported();
+#endif
+
+    if (isWindowsHolographic)
+    {
+        appCallbacks-&gt;InitializeViewManager(Window::Current-&gt;CoreWindow);
+    }
+    else
+    {
+        m_SplashScreenRemovalEventToken = appCallbacks-&gt;RenderingStarted += ref new RenderingStartedHandler(this, &amp;MainPage::RemoveSplashScreen);
+
+        appCallbacks-&gt;SetSwapChainPanel(m_DXSwapChainPanel);
+        // Subscribes to all needed system events
+        appCallbacks-&gt;SetCoreWindowEvents(Window::Current-&gt;CoreWindow);
+
+        // This is the main initialization function for Unity
+        // Initializes engine graphics, DirectX, and gamepad and joystick input
+        // Loads IL2CPP and all engine subsystems except graphics
+        appCallbacks-&gt;InitializeD3DXAML();
+        // At this point, when Unity finishes loading the first level, it enters the main loop.
+
+        m_SplashScreen = safe_cast&lt;App^&gt;(App::Current)-&gt;GetSplashScreen();
+
+        auto dispatcher = CoreWindow::GetForCurrentThread()-&gt;Dispatcher;
+        ThreadPool::RunAsync(ref new WorkItemHandler([this, dispatcher](IAsyncAction^)
+        {
+            GetSplashBackgroundColor(dispatcher);
+        }));
+
+        OnResize();
+
+        m_OnResizeRegistrationToken = Window::Current-&gt;SizeChanged += ref new WindowSizeChangedEventHandler([this](Object^, WindowSizeChangedEventArgs^)
+        {
+            OnResize();
+        });
+    }
+}
+</code></pre>
+
+<h2>Create an app thread</h2>
+
+<p>Unity doesn’t run your app on the UI thread because the UI could become unresponsive when loading large apps. For more information on UI threads, refer to Microsoft documentation on <a href="https://learn.microsoft.com/en-gb/windows/uwp/debug-test-perf/keep-the-ui-thread-responsive">Keeping the UI thread responsive</a>.</p>
+
+<p>When you create the <code>AppCallbacks</code> class using <code>m_AppCallbacks = ref new AppCallbacks();</code>, Unity creates a new thread called <code>App Thread</code>. Unity creates this new thread due to a Microsoft restriction: if your application doesn’t become responsive after 5 seconds, you’ll fail to pass the Windows App Certification Kit tests. For more information, refer to Microsoft documentation on the <a href="https://learn.microsoft.com/en-us/windows/uwp/debug-test-perf/windows-app-certification-kit">Windows App Certification Kit</a>.</p>
+
+<p><strong>Note:</strong> Code located in the <code>App.xaml.cpp</code> and <code>MainPage.xaml.cpp</code> files always runs on the UI thread, unless called from the <code>InvokeOnAppThread</code> function.</p>
+
+<h2>命令行参数</h2>
+
+<p>You can pass custom command line arguments as string arrays into the AppCallbacks constructor. For more information, refer to <a href="https://docs.unity3d.com/2023.1/Documentation/Manual/windowsstore-commandlinearguments.html">UWP Command line arguments</a>.</p>
+
+<h2>AppCallbacks functions</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><code>appCallbacks-&gt;InitializeD3DXAML();</code></td>
+	<td style="text-align:left;">Initializes your DirectX 11 device and loads the first level.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>appCallbacks-&gt;SetCoreWindowEvents(Window::Current-&gt;CoreWindow);</code></td>
+	<td style="text-align:left;">Sets the core window for Unity. Unity subscribes to the following system events:<br> - VisibilityChanged<br>- Closed<br>- PointerCursor<br>- SizeChanged<br>- Activated<br>- CharacterReceived<br>- PointerPressed<br>- PointerReleased<br>- PointerMoved<br>- PointerCaptureLost<br>- PointerWheelChanged <br>- AcceleratorKeyActivated <br>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>appCallbacks-&gt;SetSwapChainPanel(m_DXSwapChainPanel);</code></td>
+	<td style="text-align:left;">Passes a XAML control to Unity which is used as a render target for DirectX 11.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>void GetSwapChainPanel()</code></td>
+	<td style="text-align:left;">Returns the SwapChainPanel object, which you can set via the SetSwapChainPanel method.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>void Initialized()</code></td>
+	<td style="text-align:left;">Returns whether the engine is initialized enough to run the main game loop.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>void InitializeD3DWindow()</code></td>
+	<td style="text-align:left;">Initializes engine graphics, DirectX, and gamepad and joystick input for D3D applications.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>void Instance()</code></td>
+	<td style="text-align:left;">Retrieves a singleton instance of a previously created AppCallbacks object.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>void InvokeOnAppThread(AppCallbackItem item, bool waitUntilDone)</code></td>
+	<td style="text-align:left;">Invokes a delegate on the application thread. This function is useful when you want to execute your script function from a UI thread.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>void InvokeOnUIThread(AppCallbackItem item, bool waitUntilDone)</code></td>
+	<td style="text-align:left;">Invokes a delegate on the UI thread. This function is useful when you want to invoke an XAML-specific API from your scripts.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>bool IsInitialized()</code></td>
+	<td style="text-align:left;">Returns true when the first level of your application is fully loaded.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>void RenderingStarted()</code></td>
+	<td style="text-align:left;">Starts after Unity renders its first frame.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>void Run()</code></td>
+	<td style="text-align:left;">Enables D3D applications to enter the main loop.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>bool RunningOnAppThread()</code></td>
+	<td style="text-align:left;">Returns true if you’re currently running in an application thread.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>bool RunningOnUIThread()</code></td>
+	<td style="text-align:left;">Returns true if you’re currently running in a UI thread.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<code>void SetAppArguments(string arg)</code> / <code>string GetAppArguments()</code>
+</td>
+	<td style="text-align:left;">Sets your application arguments, which you can then access from <a href="../ScriptReference/WSA.Application-arguments.html">UnityEngine.WSA.Application.arguments</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>void SetCoreApplicationViewEvents()</code></td>
+	<td style="text-align:left;">Subscribes to the CoreApplicationView::Activated event and loads the IL2CPP scripting backend and all engine subsystems except graphics.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>bool UnityGetInput()</code></td>
+	<td style="text-align:left;">Returns true if Unity processes incoming input.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>void UnitySetInput(bool enabled)</code></td>
+	<td style="text-align:left;">Enables or disables input processing.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>bool UnityPause(int pause)</code></td>
+	<td style="text-align:left;">Pauses Unity if you pass 1 and unpauses if you pass 0. This function is useful if you want to temporarily freeze your game.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>其他资源</h2>
+
+<ul>
+<li><a href="https://learn.microsoft.com/en-gb/windows/uwp/debug-test-perf/keep-the-ui-thread-responsive">Microsoft documentation on Keeping the UI thread responsive</a></li>
+<li><a href="windowsstore-commandlinearguments.html">UWP Command line arguments</a></li>
+<li><a href="PlayerCommandLineArguments.html">Command line arguments</a></li>
+</ul>
+<!-- area:platforms -->
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="windowsstore-scripts.html"></a></span><div class="tip">WinRT API in C# scripts for UWP</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="windowsstore-commandlinearguments.html"></a></span><div class="tip">Command line arguments for UWP</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

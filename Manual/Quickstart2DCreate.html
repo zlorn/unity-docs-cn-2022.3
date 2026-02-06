@@ -1,0 +1,614 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Creating a 2D game - Unity 手册">
+<title>Creating a 2D game - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/quickstart-sprite-2d.png">
+<meta name="description" content="Before you create a 2D game, you need to decide on a game perspective and an art style.">
+<meta property="og:description" content="Before you create a 2D game, you need to decide on a game perspective and an art style.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'Quickstart2DCreate';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/Quickstart2DCreate.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/Quickstart2DCreate.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/Quickstart2DCreate.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/Quickstart2DCreate.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/Quickstart2DCreate.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/Quickstart2DCreate.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/Quickstart2DCreate.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/Quickstart2DCreate.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/Quickstart2DCreate.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/Quickstart2DCreate.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/Quickstart2DCreate.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/Quickstart2DCreate.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/Quickstart2DCreate.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/Quickstart2DCreate.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/Quickstart2DCreate.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/Quickstart2DCreate.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/Quickstart2DCreate.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/Quickstart2DCreate.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/Quickstart2DCreate.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/Quickstart2DCreate.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/Quickstart2DCreate.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/Quickstart2DCreate.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/Quickstart2DCreate.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/Quickstart2DCreate.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/Quickstart2DCreate.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/Quickstart2DCreate.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/Quickstart2DCreate.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/Quickstart2DCreate.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/Quickstart2DCreate.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/Quickstart2DCreate.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/Quickstart2DCreate.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/Quickstart2DCreate.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/Quickstart2DCreate.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/Quickstart2DCreate.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/Quickstart2DCreate.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/Quickstart2DCreate.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/Quickstart2DCreate.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/Quickstart2DCreate.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/Quickstart2DCreate.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/Quickstart2DCreate.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/Quickstart2DCreate.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/Quickstart2DCreate.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/Quickstart2DCreate.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/Quickstart2DCreate.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/Quickstart2DCreate.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/Quickstart2DCreate.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/Quickstart2DCreate.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/Quickstart2DCreate.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/Quickstart2DCreate.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/Quickstart2DCreate.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/Quickstart2DCreate.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/Quickstart2DCreate.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/Quickstart2DCreate.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/Quickstart2DCreate.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/Quickstart2DCreate.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/Quickstart2DCreate.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/Quickstart2DCreate.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/Quickstart2DCreate.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Unity2D.html">2D game development</a></li>
+<li><a href="Quickstart2D.html">2D game development quickstart guide</a></li>
+<li>Creating a 2D game</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="Quickstart2DSetup.html"></a></span><div class="tip">Initial setup for 2D games</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="2DSorting.html"></a></span><div class="tip">2D 排序</div>
+</div>
+</div></div>
+<h1>Creating a 2D game</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Before you create a 2D game, you need to decide on a <a href="Quickstart2DPerspective.html">game perspective</a> and an <a href="Quickstart2DArt.html">art style</a>. </p>
+
+<p>To create a 2D game, <a href="Quickstart2DSetup.html">set up your Unity project</a> and then familiarize yourself with the relevant concepts in the following order:</p>
+
+<ol>
+<li><p><a href="#Fundamentals">Fundamentals</a></p></li>
+<li><p><a href="#Scripting">Scripting</a></p></li>
+<li><p><a href="#Sprites">Sprites</a></p></li>
+<li><p><a href="#Environment">Building in-game environments</a></p></li>
+<li><p><a href="#Animation">Character animation</a></p></li>
+<li><p><a href="#Graphics">Graphics</a> </p></li>
+<li><p><a href="#Physics">Physics 2D</a></p></li>
+<li><p><a href="#Audio">Audio</a></p></li>
+<li><p><a href="#UI">User interface</a></p></li>
+<li><p><a href="#Profiling">Profiling, optimizing and testing</a></p></li>
+<li><p><a href="#Publishing">Publishing</a></p></li>
+</ol>
+
+<p><a name="Fundamentals"></a></p>
+
+<h2>Fundamentals</h2>
+
+<p><a href="GameObjects.html">GameObjects</a> are fundamental objects in Unity that represent characters, props, scenery, and more. Every object in your game is a GameObject.</p>
+
+<p>GameObjects represent the items in your game; the space in which you place them to build your level is called a <a href="CreatingScenes.html">scene</a>. Scenes in Unity are always 3D; when you make a 2D game in Unity, you typically choose to ignore the third dimension (the z-axis) but you can also use it in special cases, for example when making 2.5D games.</p>
+
+<p>The behavior of GameObjects is defined by blocks of functionality called components. The following components are fundamental for 2D games: </p>
+
+<ul>
+<li><p><a href="class-Transform.html">Transform</a>: the Transform component determines the Position, Rotation, and Scale of each GameObject in the scene. Every GameObject has a Transform component.</p></li>
+<li><p><a href="class-SpriteRenderer.html">Sprite Renderer</a>: the Sprite Renderer component renders the Sprite and controls how it looks in a scene.</p></li>
+<li><p><a href="class-Camera.html">Cameras</a>: devices that capture and display the world to the player. Marking a Camera as <strong>Orthographic</strong> removes all perspective from the Camera’s view. This is mostly useful for making isometric or 2D games.</p></li>
+<li><p><a href="Collider2D.html">Collider 2D</a>: this component defines the shape of a 2D GameObject for the purposes of physical collisions. See <a href="class-Physics2DManager.html">2D Physics</a>. </p></li>
+</ul>
+
+<p>Components are UI representations of C# classes; you can use scripts to change and interact with components, or create new ones. See the <a href="#Scripting">Scripting</a> section for more details.</p>
+
+<p><a name="Scripting"></a></p>
+
+<h2>脚本</h2>
+
+<p>All 2D games need <a href="ScriptingSection.html">scripts</a>. Scripts respond to input from the player and arrange for events in the gameplay to happen when they should.</p>
+
+<p>For details on how to use scripts in Unity see <a href="ScriptingConcepts.html">Scripting Overview</a>. Also see the Unity Learn <a href="https://learn.unity.com/course/beginner-scripting">Beginner Scripting</a> course. </p>
+
+<p>Scripts are attached to GameObjects, and any script you create inherits from the <a href="../ScriptReference/MonoBehaviour.html">MonoBehaviour</a> class.</p>
+
+<p><a name="Sprites"></a></p>
+
+<h2>Sprites</h2>
+
+<p><a href="Sprites.html">Sprites</a> are 2D graphic objects. You use Sprites for all types of 2D games. For example, you can import an image of your main character as a Sprite. </p>
+
+<figure>
+<img src="../uploads/Main/quickstart-sprite-2d.png" alt="A character Sprite">
+<figcaption>A character Sprite</figcaption>
+</figure>
+
+<p>You can also use a collection of Sprites to build a character. This allows you greater control over the movement and animation of your characters. </p>
+
+<figure>
+<img src="../uploads/Main/quickstart-sprite-editor-2d.png" alt="Multiple Sprites that make up the parts of a character, displayed in the Sprite Editor">
+<figcaption>Multiple Sprites that make up the parts of a character, displayed in the Sprite Editor</figcaption>
+</figure>
+
+<h3>Importing and setting up Sprites</h3>
+
+<p>Import your Sprites with Unity’s recommended settings; see <a href="Sprites.html">Importing and Setting Up Sprites</a>. </p>
+
+<h3>Rendering Sprites</h3>
+
+<p>Use the <a href="class-SpriteRenderer.html">Sprite Renderer</a> component to render your Sprites. For example, you can use the Sprite Renderer to change the color and opacity of a Sprite. </p>
+
+<figure>
+<img src="../uploads/Main/quickstart-sprite-renderer-2d.png" alt="Adjusting the color of a Sprite with the Sprite Renderer">
+<figcaption>Adjusting the color of a Sprite with the Sprite Renderer</figcaption>
+</figure>
+
+<p>See the <a href="https://learn.unity.com/tutorial/introduction-to-the-sprite-renderer#">Introduction to the Sprite Renderer Learn tutorial</a>. Sorting SpritesBy organizing Sprites in layers, you can create an illusion of depth. You can sort Sprites according to many strategies. See <a href="Sprites.html">Sorting Sprites</a> for full details. For example, you might sort Sprites along the y-axis, so that Sprites that are higher up are sorted behind Sprites that are lower, to make the Sprites that are higher appear further away than the Sprites that are lower. </p>
+
+<figure>
+<img src="../uploads/Main/quickstart-sort-sprites-2d.png" alt="Sprites sorted along the y-axis">
+<figcaption>Sprites sorted along the y-axis</figcaption>
+</figure>
+
+<p>To set the overlay order of Sprites, use <a href="class-TagManager.html">Sorting Layers</a>. </p>
+
+<p>To group GameObjects with <a href="class-SpriteRenderer.html">Sprite Renderers</a>, and control the order in which they render their Sprites, use <a href="class-SortingGroup.html">Sorting Groups</a>.</p>
+
+<h3>Sprite Atlas</h3>
+
+<p>You can use a <a href="class-SpriteAtlas.html">Sprite Atlas</a> to consolidate several Textures into a single combined Texture. This optimizes your game and saves memory. For example, you can add all your Sprites associated with a particular character or purpose to a Sprite Atlas. </p>
+
+<figure>
+<img src="../uploads/Main/quickstart-sprite-atlas-2d.png" alt="A Sprite Atlas">
+<figcaption>A Sprite Atlas</figcaption>
+</figure>
+
+<p>See the <a href="https://learn.unity.com/tutorial/introduction-to-the-sprite-atlas">Introduction to the Sprite Atlas Learn tutorial</a>. </p>
+
+<p><a name="Environment"></a></p>
+
+<h2>Building in-game environments</h2>
+
+<p>Environment design refers to the process of building your game’s levels and environments. You can combine the environment design tools in this section in whichever way makes the most sense for your game; for example, you can make a top-down game using only 9-slice, or you can make a side on platformer with Tilemap and SpriteShape.</p>
+
+<p><a name="Slicing"></a></p>
+
+<h3>9-slicing</h3>
+
+<p>9-slicing is a 2D technique that allows you to reuse an image at various sizes without needing to prepare multiple assets. Unity can dynamically stretch and tile designated parts of a Sprite to allow one Sprite to serve as the border or background for UI elements of many sizes. See <a href="9SliceSprites.html">9-slicing sprites</a>.</p>
+
+<p>For example, you could use 9-slicing to stretch a Sprite to shape when you build a 2D level.</p>
+
+<figure>
+<img src="../uploads/Main/quickstart-9-slice-2d.png" alt="A 9-sliced Sprite, split into nine sections">
+<figcaption>A 9-sliced Sprite, split into nine sections</figcaption>
+</figure>
+
+<p>See the <a href="https://learn.unity.com/tutorial/using-9-slicing-for-scalable-sprites-2019-3">Using 9-Slicing for Scalable Sprites Learn tutorial</a>. </p>
+
+<p><a name="Tilemap"></a></p>
+
+<h3>Tilemap</h3>
+
+<p>The <a href="class-Tilemap.html">Tilemap</a> component is a system that stores and handles Tile assets for creating 2D levels. Use the <a href="class-Tilemap.html">2D Tilemap Editor</a> package (installed by default) to use Tilemaps. </p>
+
+<p>For example, you can use Tilemaps to paint levels using Tiles and brush tools and define rules for how Tiles behave. </p>
+
+<figure>
+<img src="../uploads/Main/quickstart-tilemap-2d.png" alt="The Tile Palette window, used to edit Tilemaps">
+<figcaption>The Tile Palette window, used to edit Tilemaps</figcaption>
+</figure>
+
+<p>See the <a href="https://learn.unity.com/tutorial/introduction-to-tilemaps">Introduction to Tilemaps Learn tutorial</a>. </p>
+
+<h4>2D Tilemap Extras</h4>
+
+<p>To add some extra Tilemap assets to your Project, install the <a href="https://docs.unity3d.com/Packages/com.unity.2d.tilemap.extras@1.6/manual/index.html">2D Tilemap Extras</a> package. This package contains reusable 2D and Tilemap Editor scripts that you can use for your own Projects. You can customize the behavior of the scripts to create new Brushes that suit different scenarios.</p>
+
+<p><a name="Isometric"></a></p>
+
+<h4>Isometric Tilemaps</h4>
+
+<p>For games with isometric perspective, you can create <a href="Tilemap-Isometric.html">Isometric Tilemaps</a>.</p>
+
+<h3>SpriteShape</h3>
+
+<p>In a similar way to a vector drawing tool, SpriteShape provides a more flexible way to create larger Sprites, such as organic-looking landscapes and paths. See the <a href="https://docs.unity3d.com/Packages/com.unity.2d.spriteshape@3.0/manual/SSProfile.html">Sprite Shape Profile</a>. </p>
+
+<figure>
+<img src="../uploads/Main/quickstart-spriteshape-path-2d.png" alt="A path created in SpriteShape">
+<figcaption>A path created in SpriteShape</figcaption>
+</figure>
+
+<p>See the <a href="https://learn.unity.com/tutorial/working-with-spriteshape">Working with SpriteShape tutorial</a>. </p>
+
+<p><a name="Animation"></a></p>
+
+<h2>Character animation</h2>
+
+<p>There are three different ways you can animate 2D characters: </p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">2D animation type</th>
+	<th style="text-align:left;">Used for</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">Frame-by-frame</td>
+	<td style="text-align:left;">Artistic reasons, if you want your game to have a classic animation art style. Frame-by-frame animation is relatively resource-intensive, both to make and to run.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Cutout</td>
+	<td style="text-align:left;">Smooth skeletal animation, when the characters don’t require realistic articulation.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Skeletal</td>
+	<td style="text-align:left;">Smooth skeletal animation where Sprites bend according to the bone structure. Use this when the characters need a more organic feel.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Frame-by-frame</h3>
+
+<p>Frame-by-frame animation is based on the traditional cel animation technique of drawing each moment of an animation as individual images, which are played in fast sequence, like flipping pages on a flipbook.</p>
+
+<p>To do frame-by-frame animation, follow the <a href="https://docs.unity3d.com/Packages/com.unity.2d.animation@2.2/manual/FFanimation.html">Frame-by-frame Animation workflow</a>. </p>
+
+<figure>
+<img src="../uploads/Main/quickstart-frame-by-frame-2d.png" alt="Frame-by-frame animation in the Sprite Editor">
+<figcaption>Frame-by-frame animation in the Sprite Editor</figcaption>
+</figure>
+
+<p>See the <a href="https://learn.unity.com/tutorial/introduction-to-sprite-animations">Introduction to Sprite Animations Learn tutorial</a>. </p>
+
+<h3>Cutout</h3>
+
+<p>In cutout animation, multiple Sprites make up the body of a character, and each piece moves to give the visual effect of the whole character moving. This animation style is similar to skeletal animation (see below), except that the Sprites don’t bend.</p>
+
+<figure>
+<img src="../uploads/Main/quickstart-cutout-2d.png" alt="Cutout animation in the Sprite Editor">
+<figcaption>Cutout animation in the Sprite Editor</figcaption>
+</figure>
+
+<h3>Skeletal</h3>
+
+<p>With skeletal animation, you map a Sprite or a group of Sprites onto an animation skeleton. You can create and define animation bones for characters and objects, that define how they should bend and move. This approach allows the bones to bend and deform the Sprites, for a more natural movement style. To use skeletal animation, you need to use the <a href="com.unity.2d.animation.html">2D Animation</a> package (installed by default). </p>
+
+<p>For a 2D Animation workflow, including a guide to working with the Bone Editor, see the <a href="https://docs.unity3d.com/Packages/com.unity.2d.animation@1.0/manual/index.html">2D Animation documentation</a>. </p>
+
+<figure>
+<img src="../uploads/Main/quickstart-skeletal-2d.png" alt="A character with bones in the Bone Editor">
+<figcaption>A character with bones in the Bone Editor</figcaption>
+</figure>
+
+<p><a name="Graphics"></a></p>
+
+<h2>图形</h2>
+
+<p>This section describes your graphics options when using Universal Render Pipeline (URP). </p>
+
+<h3>Lighting</h3>
+
+<p>Because you’re using URP with the 2D Renderer, you can use the Light 2D component to apply optimized 2D lighting to Sprites. For details, see <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@10.0/manual/Lights-2D-intro.html">Introduction to Lights 2D</a>. </p>
+
+<figure>
+<img src="../uploads/Main/quickstart-lighting-2d.png" alt="These two images show the same scene; in the image on the left, 2D Lights are disabled, and in the image on the right, 2D lights are enabled. With 2D Lights, you can use the same Sprites to create different weather conditions or moods.">
+<figcaption>These two images show the same scene; in the image on the left, 2D Lights are disabled, and in the image on the right, 2D lights are enabled. With 2D Lights, you can use the same Sprites to create different weather conditions or moods.</figcaption>
+</figure>
+
+<p>To set up lighting: </p>
+
+<ol>
+<li><p>Prepare your Sprites for lighting. For details, see <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@10.0/manual/PrepShader.html">Preparing Sprites for Lighting</a>. </p></li>
+<li><p>Set up normal map and mask Textures. 2D Lights can interact with normal map and mask Textures linked to Sprites to create advanced lighting effects, such as <a href="https://en.wikipedia.org/wiki/Normal_mapping">normal mapping</a>. See <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@10.0/manual/SecondaryTextures.html">Setting up normal map and mask Textures</a>. </p></li>
+<li><p>Create a 2D Light GameObject; see <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@10.0/manual/2DLightProperties.html">2D Lights Properties</a>. </p></li>
+<li><p>Configure the 2D Renderer Data asset; see <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@10.0/manual/2DRendererData_overview.html">Configuring the 2D Renderer Asset</a>. </p></li>
+<li><p>(Optional) if you want to apply 2D Light effects to a pixel art game, see <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@10.0/manual/2d-pixelperfect.html">2D Pixel Perfect</a>. </p></li>
+</ol>
+
+<p>See the <a href="https://learn.unity.com/tutorial/editing-lighting-in-the-lightweight-render-pipeline#">Lighting in URP Learn tutorial</a>. </p>
+
+<h3>Shadows</h3>
+
+<p>To define the shape and properties that a Light uses to determine the shadows it casts, use the <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@7.1/manual/2DShadows.html">Shadow Caster 2D component</a>. Increase the Light’s <strong>Shadow Intensity</strong> above zero. </p>
+
+<figure>
+<img src="../uploads/Main/quickstart-shadows-2d.png" alt="A shadow intensity of 0.5 in the Shadow Caster 2D component">
+<figcaption>A shadow intensity of 0.5 in the Shadow Caster 2D component</figcaption>
+</figure>
+
+<h3>Enhanced look and feel</h3>
+
+<p>Particle systems and post-processing are optional tools that you can use to add polish to your game. </p>
+
+<h4>Particle systems</h4>
+
+<p>You can use particle systems to create dynamic objects like fire, smoke or liquids, as an alternative to using a Sprite. Sprites are more suited to physical objects. See <a href="ParticleSystems.html">Particle systems</a>. </p>
+
+<figure>
+<img src="../uploads/Main/quickstart-particle-system-2d.png" alt="A fire effect, created with the Particle System and Shader Graph for 2D">
+<figcaption>A fire effect, created with the Particle System and Shader Graph for 2D</figcaption>
+</figure>
+
+<h4>Post-processing</h4>
+
+<p>You can use post-processing effects and full-screen effects to significantly improve the appearance of your game. For example, you can use these effects to simulate physical camera or film properties, or to create stylized visuals. </p>
+
+<p>URP has its own post-processing implementation. See <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@8.2/manual/integration-with-post-processing.html">Post-processing in the Universal Render Pipeline</a>. </p>
+
+<figure>
+<img src="../uploads/Main/quickstart-post-processing-2d.png" alt="The Lost Crypt demo uses the bloom and vignette post-processing effects">
+<figcaption>The Lost Crypt demo uses the bloom and vignette post-processing effects</figcaption>
+</figure>
+
+<p><a name="Physics"></a></p>
+
+<h2>Physics 2D</h2>
+
+<p>The Physics 2D settings define limits on the accuracy of the physical simulation in your 2D game. See <a href="class-Physics2DManager.html">2D Physics</a>. </p>
+
+<p>This <a href="https://www.youtube.com/watch?v=Xxbs9x2qB7Y&amp;feature=youtu.be">video</a> provides an overview of 2D physics features in Unity 2020.1.</p>
+
+<p>To learn how to use Unity’s 2D physics engine, see the <a href="https://learn.unity.com/tutorial/2d-physics">2D Physics Learn tutorial</a>.</p>
+
+<p>The following 2D physics tools are useful for 2D games.</p>
+
+<ul>
+<li><p><a href="#Rigidbody">Rigidbody 2D</a></p></li>
+<li><p><a href="#Collider">Collider 2D</a></p></li>
+<li><p><a href="#Triggers">Triggers</a></p></li>
+<li><p><a href="#Joints">2D Joints</a></p></li>
+<li><p><a href="#Effectors">2D Effectors</a></p></li>
+</ul>
+
+<h3>Rigidbody 2D<a name="Rigidbody"></a>
+</h3>
+
+<p>A Rigidbody 2D component places a GameObject under the control of the physics engine. See <a href="class-Rigidbody2D.html">Rigidbody 2D</a>. </p>
+
+<figure>
+<img src="../uploads/Main/quickstart-rigidbody-component-2d.png" alt="The Rigidbody 2D component">
+<figcaption>The Rigidbody 2D component</figcaption>
+</figure>
+
+<h3>Collider 2D<a name="Collider"></a>
+</h3>
+
+<p>Collider 2D components define the shape of a 2D GameObject for the purposes of physical collisions. You can also use Collider 2D components for input detection. For example, in mobile games you can use them to make Sprites selectable.</p>
+
+<p>The Collider 2D types that you can use with Rigidbody 2D are: </p>
+
+<ul>
+<li><p><a href="class-CircleCollider2D.html">Circle Collider 2D</a></p></li>
+<li><p><a href="class-BoxCollider2D.html">Box Collider 2D</a></p></li>
+<li><p><a href="class-PolygonCollider2D.html">Polygon Collider 2D</a></p></li>
+<li><p><a href="class-EdgeCollider2D.html">Edge Collider 2D</a></p></li>
+<li><p><a href="class-CapsuleCollider2D.html">Capsule Collider 2D</a></p></li>
+<li><p><a href="class-CompositeCollider2D.html">Composite Collider 2D</a></p></li>
+</ul>
+
+<figure>
+<img src="../uploads/Main/quickstart-circle-collider-component.png" alt="The Circle Collider 2D component">
+<figcaption>The Circle Collider 2D component</figcaption>
+</figure>
+
+<h3>Triggers<a name="Triggers"></a>
+</h3>
+
+<p>When you set a Collider 2D as a Trigger (by enabling its <strong>Is Trigger</strong> property), it no longer behaves as a physical object, and it can intersect with other Colliders without causing a collision. Instead, when a Collider enters its space, Unity calls the <code>OnTriggerEnter</code> function on the Trigger GameObject’s scripts. </p>
+
+<figure>
+<img src="../uploads/Main/quickstart-is-trigger-2d.png" alt="The Circle Collider 2D component with Is Trigger selected">
+<figcaption>The Circle Collider 2D component with <strong>Is Trigger</strong> selected</figcaption>
+</figure>
+
+<h3>2D Joints<a name="Joints"></a>
+</h3>
+
+<p>Joints attach GameObjects together. You can only attach 2D joints to GameObjects that have a Rigidbody 2D component attached, or to a fixed position in world space. See <a href="Joints2D.html">2D Joints</a>. </p>
+
+<h3>2D Effectors<a name="Effectors"></a>
+</h3>
+
+<p>Use Effector 2D <a href="UsingComponents.html">components</a> with <a href="Collider2D.html">Collider 2D</a> components to direct the forces of <a href="PhysicsSection.html">physics</a> in your scene when <a href="GameObjects.html">GameObject</a> Colliders come into contact with each other. See <a href="Effectors2D.html">2D Effectors</a>.</p>
+
+<p><a name="Audio"></a></p>
+
+<h2>Audio</h2>
+
+<p>You can add background music and sound effects to your game in Unity; see <a href="AudioOverview.html">Audio Overview</a>. Use third-party software to create your audio and import it into Unity with the recommended settings. </p>
+
+<p><a name="UI"></a></p>
+
+<h2>User interface</h2>
+
+<p>If you want to add a menu or help to your game, you need to set up a <a href="UIToolkits.html">user interface</a>. To set up a user interface, use <a href="https://docs.unity3d.com/Manual/UIToolkits.html">Unity UI</a>. </p>
+
+<p><a name="Profiling"></a></p>
+
+<h2>Profiling, optimizing and testing a build</h2>
+
+<h3>性能分析</h3>
+
+<p>Profiling allows you to see how resource-intensive the different parts of your game are. You should always profile your game on its target release platform; see <a href="profiler-profiling-applications.html">Profiling your application</a>. </p>
+
+<h3>Optimizing</h3>
+
+<p>After profiling, you can use the results to make performance improvements and optimizations. See <a href="BestPracticeUnderstandingPerformanceInUnity.html">Understanding optimization in Unity</a>.</p>
+
+<h3>Testing</h3>
+
+<p>Test your game and your code with the Unity Test Framework; see <a href="https://docs.unity3d.com/Packages/com.unity.test-framework@1.1/manual/index.html">Unity Test Framework</a>.</p>
+
+<figure>
+<img src="../uploads/Main/quickstart-testing-2d.png" alt="The Test Runner window">
+<figcaption>The Test Runner window</figcaption>
+</figure>
+
+<h2>Publishing<a name="Publishing"></a>
+</h2>
+
+<p>When you’ve finished your game, you’re ready to publish it. See <a href="PublishingBuilds.html">Publishing Builds</a>. </p>
+
+<figure>
+<img src="../uploads/Main/quickstart-build-settings.png" alt="The Build Settings window">
+<figcaption>The Build Settings window</figcaption>
+</figure>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="Quickstart2DSetup.html"></a></span><div class="tip">Initial setup for 2D games</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="2DSorting.html"></a></span><div class="tip">2D 排序</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

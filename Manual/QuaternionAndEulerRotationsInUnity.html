@@ -1,0 +1,270 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Rotation and orientation in Unity - Unity 手册">
+<title>Rotation and orientation in Unity - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/unity-axis-with-rotation.png">
+<meta name="description" content="Unity uses a left-handed coordinate system. In Unity, you can use both Euler angles and quaternions to represent rotations and orientation. These representations are equivalent but have different uses and limitations.">
+<meta property="og:description" content="Unity uses a left-handed coordinate system. In Unity, you can use both Euler angles and quaternions to represent rotations and orientation. These representations are equivalent but have different uses and limitations.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'QuaternionAndEulerRotationsInUnity';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/QuaternionAndEulerRotationsInUnity.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/QuaternionAndEulerRotationsInUnity.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/QuaternionAndEulerRotationsInUnity.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/QuaternionAndEulerRotationsInUnity.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/QuaternionAndEulerRotationsInUnity.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/QuaternionAndEulerRotationsInUnity.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/QuaternionAndEulerRotationsInUnity.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/QuaternionAndEulerRotationsInUnity.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/QuaternionAndEulerRotationsInUnity.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/QuaternionAndEulerRotationsInUnity.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/QuaternionAndEulerRotationsInUnity.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/QuaternionAndEulerRotationsInUnity.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/QuaternionAndEulerRotationsInUnity.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/QuaternionAndEulerRotationsInUnity.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/QuaternionAndEulerRotationsInUnity.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/QuaternionAndEulerRotationsInUnity.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/QuaternionAndEulerRotationsInUnity.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/QuaternionAndEulerRotationsInUnity.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/QuaternionAndEulerRotationsInUnity.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/QuaternionAndEulerRotationsInUnity.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/QuaternionAndEulerRotationsInUnity.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/QuaternionAndEulerRotationsInUnity.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/QuaternionAndEulerRotationsInUnity.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/QuaternionAndEulerRotationsInUnity.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/QuaternionAndEulerRotationsInUnity.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/QuaternionAndEulerRotationsInUnity.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/QuaternionAndEulerRotationsInUnity.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/QuaternionAndEulerRotationsInUnity.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/QuaternionAndEulerRotationsInUnity.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/QuaternionAndEulerRotationsInUnity.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/QuaternionAndEulerRotationsInUnity.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/QuaternionAndEulerRotationsInUnity.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/QuaternionAndEulerRotationsInUnity.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/QuaternionAndEulerRotationsInUnity.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/QuaternionAndEulerRotationsInUnity.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/QuaternionAndEulerRotationsInUnity.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/QuaternionAndEulerRotationsInUnity.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/QuaternionAndEulerRotationsInUnity.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/QuaternionAndEulerRotationsInUnity.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/QuaternionAndEulerRotationsInUnity.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/QuaternionAndEulerRotationsInUnity.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/QuaternionAndEulerRotationsInUnity.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/QuaternionAndEulerRotationsInUnity.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/QuaternionAndEulerRotationsInUnity.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/QuaternionAndEulerRotationsInUnity.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/QuaternionAndEulerRotationsInUnity.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/QuaternionAndEulerRotationsInUnity.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/QuaternionAndEulerRotationsInUnity.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/QuaternionAndEulerRotationsInUnity.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/QuaternionAndEulerRotationsInUnity.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/QuaternionAndEulerRotationsInUnity.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/QuaternionAndEulerRotationsInUnity.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/QuaternionAndEulerRotationsInUnity.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/QuaternionAndEulerRotationsInUnity.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/QuaternionAndEulerRotationsInUnity.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/QuaternionAndEulerRotationsInUnity.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/QuaternionAndEulerRotationsInUnity.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/QuaternionAndEulerRotationsInUnity.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UnityOverview.html">在 Unity 中操作</a></li>
+<li><a href="CreatingGameplay.html">Create Gameplay</a></li>
+<li>Rotation and orientation in Unity</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="class-ScaleConstraint.html"></a></span><div class="tip">缩放约束 (Scale Constraints)</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="Lights.html"></a></span><div class="tip">光源</div>
+</div>
+</div></div>
+<h1>Rotation and orientation in Unity</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Unity uses a left-handed coordinate system. In Unity, you can use both Euler angles and quaternions to represent rotations and orientation. These representations are equivalent but have different uses and limitations. </p>
+
+<p>Typically, you rotate objects in your scene using the Transform component, which displays orientation as a Euler angle. However, Unity stores rotations and orientations internally as quaternions, which can be useful for more complex motions that might otherwise lead to gimbal lock.</p>
+
+<h2>Left-handed coordinate system</h2>
+
+<figure>
+<img src="../uploads/Main/unity-axis-with-rotation.png" alt="The axes of Unitys left-handed coordinate system, showing that the direction of rotation from the positive x-axis to the positive y-axis is counterclockwise when looking along the positive z-axis.">
+<figcaption>The axes of Unity’s left-handed coordinate system, showing that the direction of rotation from the positive x-axis to the positive y-axis is counterclockwise when looking along the positive z-axis.</figcaption>
+</figure>
+
+<p>A coordinate system describes the position of objects in a three-dimensional space. Unity uses a left-handed coordinate system: the positive x-axis points to the right, the positive y-axis points up, and the positive z-axis points forward. Unity’s left-handed coordinate system means that the direction of rotation from the positive x-axis to the positive y-axis is counterclockwise when looking along the positive z-axis.</p>
+
+<h2>Euler angles</h2>
+
+<p>In the Transform coordinate, Unity displays rotation with the vector property <a href="https://docs.unity3d.com/ScriptReference/Transform-eulerAngles.html"><code>Transform.eulerAngles</code></a> X, Y, and Z. Unlike a normal vector, these values actually represent the angle (in degrees) of rotation about the X, Y, and Z axes. </p>
+
+<p>Euler angle rotations perform three separate rotations around the three axes. Unity performs the Euler rotations sequentially around the z-axis, the x-axis and then the y-axis. This method of rotation is extrinsic rotation; the original coordinate system doesn’t change while the rotations occur.</p>
+
+<p>To rotate a GameObject, you can enter angle values of how far you want each axis to rotate into the Transform component. To rotate your GameObjects with script, use <code>Transform.eulerAngles</code>. If you convert to Euler angles to do calculations and rotations, you risk problems with gimbal lock.</p>
+
+<h3>Gimbal lock</h3>
+
+<p>When an object in 3D space loses a degree of freedom and can only rotate within two dimensions, it’s called gimbal lock. Gimbal lock can occur with Euler angles if two axes become parallel.
+If you don’t convert the rotational values to Euler angles in your script, the use of quaternions should prevent gimbal lock. </p>
+
+<p>If you do have problems with gimbal lock, you can avoid Euler angles if you use <code>Transform.RotateAround</code> for rotations. You can also use <code>Quaternion.AngleAxis</code> on each axis and multiply them together (quaternion multiplication applies each rotation in turn).</p>
+
+<h2>Quaternions</h2>
+
+<p>Quaternions provide mathematical notation for unique representations of spatial orientation and rotation in 3D space. A quaternion uses four numbers to encode the direction and angle of rotation around unit axes in 3D. These four values are complex numbers rather than angles or degrees. You can look into the <a href="https://www.semanticscholar.org/paper/Quaternions%2C-Interpolation-and-Animation-Dam-Koch/89278a22076beb70c1e64a94c3f822eb1d6bfb13">mathematics of quaternions</a> for more information.</p>
+
+<p>Unity converts rotational values to quaternions to store them because quaternion rotations are efficient and stable to compute. The Unity Editor doesn’t display rotations as quaternions because a single quaternion can’t represent a rotation greater than 360 degrees about any axis.</p>
+
+<p>You can use quaternions directly if you use the <a href="class-Quaternion.html">Quaternion class</a>. If you use script for your rotations, you can use the Quaternion class and functions to create and change rotational values. You can apply values to your rotation as Euler angles but you need to store them as quaternions to avoid problems.</p>
+
+<h2>Convert between Euler angles and quaternions</h2>
+
+<p>To convert between quaternions and Euler angles to view and edit your rotations in your preferred way, you can use script:</p>
+
+<ul>
+<li>To convert from Euler angles to quaternions, you can use the <a href="https://docs.unity3d.com/ScriptReference/Quaternion.Euler.html"><code>Quaternion.Euler</code></a> function.</li>
+<li>To convert a quaternion to Euler angles, you can use the <a href="https://docs.unity3d.com/ScriptReference/Quaternion-eulerAngles.html"><code>Quaternion.eulerAngles</code></a> function.</li>
+</ul>
+
+<h2>其他资源</h2>
+
+<ul>
+<li><a href="AnimationRotate.html">Rotations in animations</a></li>
+<li><a href="class-Transform.html">变换组件</a></li>
+<li><a href="https://docs.unity3d.com/2021.2/Documentation/ScriptReference/Transform.Rotate.html"><code>Transform.rotate</code></a></li>
+<li><a href="class-Quaternion.html">Important Classes - Quaternions</a></li>
+<li><a href="https://docs.unity3d.com/2021.2/Documentation/ScriptReference/Quaternion.html"><code>Quaternion</code></a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="class-ScaleConstraint.html"></a></span><div class="tip">缩放约束 (Scale Constraints)</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="Lights.html"></a></span><div class="tip">光源</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

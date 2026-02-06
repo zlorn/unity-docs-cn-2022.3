@@ -1,0 +1,408 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Windows Build Settings - Unity 手册">
+<title>Windows Build Settings - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/windowsbuildsettings.png">
+<meta name="description" content="To create a build for Windows, go to Build Settings (menu: File &gt; Build Settings).
+In the Platform list, select Windows, then select Switch Platform.">
+<meta property="og:description" content="To create a build for Windows, go to Build Settings (menu: File &gt; Build Settings).
+In the Platform list, select Windows, then select Switch Platform.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'WindowsStandaloneBinaries';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/WindowsStandaloneBinaries.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/WindowsStandaloneBinaries.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/WindowsStandaloneBinaries.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/WindowsStandaloneBinaries.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/WindowsStandaloneBinaries.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/WindowsStandaloneBinaries.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/WindowsStandaloneBinaries.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/WindowsStandaloneBinaries.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/WindowsStandaloneBinaries.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/WindowsStandaloneBinaries.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/WindowsStandaloneBinaries.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/WindowsStandaloneBinaries.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/WindowsStandaloneBinaries.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/WindowsStandaloneBinaries.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/WindowsStandaloneBinaries.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/WindowsStandaloneBinaries.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/WindowsStandaloneBinaries.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/WindowsStandaloneBinaries.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/WindowsStandaloneBinaries.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/WindowsStandaloneBinaries.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/WindowsStandaloneBinaries.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/WindowsStandaloneBinaries.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/WindowsStandaloneBinaries.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/WindowsStandaloneBinaries.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/WindowsStandaloneBinaries.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/WindowsStandaloneBinaries.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/WindowsStandaloneBinaries.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/WindowsStandaloneBinaries.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/WindowsStandaloneBinaries.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/WindowsStandaloneBinaries.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/WindowsStandaloneBinaries.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/WindowsStandaloneBinaries.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/WindowsStandaloneBinaries.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/WindowsStandaloneBinaries.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/WindowsStandaloneBinaries.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/WindowsStandaloneBinaries.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/WindowsStandaloneBinaries.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/WindowsStandaloneBinaries.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/WindowsStandaloneBinaries.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/WindowsStandaloneBinaries.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/WindowsStandaloneBinaries.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/WindowsStandaloneBinaries.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/WindowsStandaloneBinaries.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/WindowsStandaloneBinaries.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/WindowsStandaloneBinaries.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/WindowsStandaloneBinaries.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/WindowsStandaloneBinaries.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/WindowsStandaloneBinaries.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/WindowsStandaloneBinaries.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/WindowsStandaloneBinaries.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/WindowsStandaloneBinaries.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/WindowsStandaloneBinaries.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/WindowsStandaloneBinaries.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/WindowsStandaloneBinaries.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/WindowsStandaloneBinaries.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/WindowsStandaloneBinaries.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/WindowsStandaloneBinaries.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/WindowsStandaloneBinaries.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="PlatformSpecific.html">平台开发</a></li>
+<li><a href="Windows.html">Windows</a></li>
+<li>Windows Build Settings</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="WindowsPlayerIL2CPPScriptingBackend.html"></a></span><div class="tip">Windows 播放器：IL2CPP 脚本后端</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="WindowsStore.html"></a></span><div class="tip">Universal Windows Platform</div>
+</div>
+</div></div>
+<h1>Windows Build Settings</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>To create a build for Windows, go to <strong>Build Settings</strong> (menu: <strong>File</strong> &gt; <strong>Build Settings</strong>).
+In the <strong>Platform</strong> list, select <strong>Windows</strong>, then select <strong>Switch Platform</strong>.</p>
+
+<figure>
+<img src="../uploads/Main/windowsbuildsettings.png" alt="Windows build settings in Unity">
+<figcaption>Windows build settings in Unity</figcaption>
+</figure>
+
+<p>请使用以下设置来配置 Unity 构建应用程序的方式。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>设置</strong></th>
+	<th style="text-align:left;"></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>目标平台</strong></td>
+	<td style="text-align:left;">Select <strong>Windows</strong> to build your app for the Windows platform.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Architecture</strong></td>
+	<td style="text-align:left;">Select the CPU to build for (only applies to Build And Run).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Intel 64-bit</strong></td>
+	<td style="text-align:left;">Intel/AMD 64-bit CPU architecture.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Intel 32-bit</strong></td>
+	<td style="text-align:left;">Intel 32-bit CPU architecture.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Copy PDB files</strong></td>
+	<td style="text-align:left;">Enable this setting to include Microsoft program database (PDB) files in the built Windows Player. PDB files contain debugging information for your application, but might increase the size of your Player. For more information, see <a href="WindowsDebugging.html">Windows debugging</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Create Visual Studio Solution</strong></td>
+	<td style="text-align:left;">Enable this setting to generate Visual Studio solution files for the project such that you can build the project from Microsoft Visual Studio directly.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Development Build</strong></td>
+	<td style="text-align:left;">Enable this setting to include scripting debug symbols and the Profiler in your build. When you enable this, Unity sets the <code>DEVELOPMENT_BUILD#define</code> for testing purposes. When you select <strong>Development Build</strong>, Autoconnect Profiler, Deep Profiling Support, Script Debugging, and Wait for Managed Debugger settings also become available.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Autoconnect Profiler</strong></td>
+	<td style="text-align:left;">Enable this setting to automatically connect the Unity Profiler to your build.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Deep Profiling Support</strong></td>
+	<td style="text-align:left;">Enable this setting to select <a href="ProfilerWindow.html#deep-profiling">Deep Profiling</a> in the Profiler. This makes the Profiler instrument every function call in your application and returns more detailed profiling data. When you enable Deep Profiling Support, it might slow down script execution.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Script debugging</strong></td>
+	<td style="text-align:left;">Enable this setting to allow your script code to be debugged. Not available on WebGL.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Wait for Managed Debugger</strong></td>
+	<td style="text-align:left;">Enable this setting to be prompted to attach a debugger before Unity executes any script code.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Compression Method (Not available on the WebGL platform)</strong></td>
+	<td style="text-align:left;">Compress the data in your application when you build your application. This includes <a href="AssetTypes.html">Assets</a>, <a href="CreatingScenes.html">Scenes</a>, <a href="class-PlayerSettings.html">Player</a> settings, and <a href="GICache.html">GI data</a>. Choose from the following methods:</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Default</strong></td>
+	<td style="text-align:left;">On Windows, Mac, Linux, and iOS, there is no compression by default. On Android, the default compression is ZIP, which provides better compression results than LZ4HC; however, data is slower to decompress.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>LZ4</strong></td>
+	<td style="text-align:left;">A fast compression format that’s useful for development builds. For more information, see <a href="../ScriptReference/BuildOptions.CompressWithLz4.html">BuildOptions.CompressWithLz4</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>LZ4HC</strong></td>
+	<td style="text-align:left;">A high compression variant of LZ4 that’s slower to build but produces better results for release builds. For more information, see <a href="../ScriptReference/BuildOptions.CompressWithLz4HC.html">BuildOptions.CompressWithLz4HC</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Asset Import Overrides <a name="importoverrides"></a>
+</h2>
+
+<p>Use Asset Import Overrides to locally override all texture import settings to speed up import and platform switch time. You must avoid shipping your final build with any import overrides, but you can use this setting during development to speed up iteration time, especially if assets such as low resolution textures are not of any concern.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>设置</strong></th>
+	<th style="text-align:left;"></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Max Texture Size</strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Override the maximum imported texture size. Unity imports textures in the lower of two values: this value, or the Max Size value specified in <a href="class-TextureImporter.html">Texture import settings</a>. <br><br> The time it takes to import a texture is roughly proportional to the amount of pixels it contains; therefore, reducing maximum allowed texture size can speed up the import times. As this setting might result in lower resolution textures, use it only for development purposes.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Texture Compression</strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Override the texture compression options set in <a href="class-TextureImporter.html">Texture import settings</a>. <br><br> This only affects textures imported into one of the <a href="texture-compression-formats.html">compressed texture formats</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><em>Force Fast Compressor</em></td>
+	<td style="text-align:left;">Use a faster yet lower quality texture compression mode for formats where this is applicable (BC7, BC6H, ASTC, ETC, ETC2). Typically, this results in more compression artifacts, but for many formats the compression itself is many times faster (2 to 20 times faster). <br><br> This setting also disables the <strong>Crunch</strong> texture compression format on any textures that have it. <br><br> The effect is the same as if all textures had their <strong>Compressor Quality</strong> set to <strong>Fast</strong> setting in their platform’s <a href="class-TextureImporter.html">Texture import settings</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><em>Force Uncompressed</em></td>
+	<td style="text-align:left;">Don’t compress the textures; use uncompressed formats instead. Note that while this is faster to import because it skips the whole texture compression process, the resulting textures take up more memory, game data size, and can impact rendering performance. <a href="class-TextureImporter.html">Texture import settings</a>. <br><br> This option has the same effect as all textures that have their <strong>Compression</strong> set to <strong>None</strong> in their platforms’ <a href="class-TextureImporter.html">Texture Import settings</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<p>You can also set Asset import override settings using <code>-overrideMaxTextureSize</code> and <code>-overrideTextureCompression</code> Editor <a href="CommandLineArguments.html">Command line arguments</a> to change any initial application import.</p>
+
+<h2>Building your Windows application</h2>
+
+<p>To build your application, select from one of the following options:</p>
+
+<ul>
+<li>
+<strong>Build</strong>: Compile your application. The default build is <a href="incremental-build-pipeline.html">incremental</a>, except for the first build, which is always a full non-incremental (clean) build. To force a <a href="incremental-build-pipeline.html#creating-non-incremental-builds">clean build</a> instead of an incremental build, select <strong>Clean Build</strong> from the dropdown menu.</li>
+</ul>
+
+<figure>
+<img src="../uploads/Main/clean-build.png" alt="">
+</figure>
+
+<ul>
+<li>
+<strong>Build and run</strong>: Compile your application and open it in your native platform. This option always uses the incremental build.</li>
+</ul>
+
+<h2>Windows Player build binaries</h2>
+
+<p>When you build a Unity title on the Windows platform, Unity produces the following files, where <code>ProjectName</code> is the name of your application:</p>
+
+<ul>
+<li>
+<code>ProjectName.exe</code> - The project executable file, i.e. your project application. This contains the program entry point which calls into the Unity engine when launched.</li>
+<li>
+<code>UnityPlayer.dll</code> - The DLL file that contains all the native Unity engine code. It’s signed with the Unity Technologies certificate, which lets you verify that no malicious entities have tampered with your engine.</li>
+<li>
+<code>*.pdb files</code> - Symbol files for debugging. Unity copies these to the build directory if you enable <strong>Copy PDB files</strong> in the Build Settings window.</li>
+<li>
+<code>WinPixEventRuntime.dll</code> - This DLL enables <a href="https://blogs.msdn.microsoft.com/pix/2017/01/17/introducing-pix-on-windows-beta/">Introducing PIX on Windows (beta)</a> support. Unity only creates this file if you enable the <strong>Development Build</strong> option in the Build Settings window.</li>
+<li>
+<code>ProjectName_Data folder</code> - This folder contains all the data needed to run your application.</li>
+</ul>
+
+<h2><strong>How to rebuild your application</strong></h2>
+
+<p>The path to the source code for <code>ProjectName.exe</code> is in the <code>WindowsPlayer</code> folder: <code>Editor\Data\PlaybackEngines\WindowsStandaloneSupport\Source\WindowsPlayer</code>.</p>
+
+<p>To modify your application, or ship the code which you built yourself (if you want to sign it, for example), you must rebuild it and place it in your built game directory.</p>
+
+<p>To build your application outside of Unity, you need <a href="https://www.visualstudio.com/">Visual Studio</a> 2019 or 2022 with Desktop development with C++ workload installed.</p>
+
+<hr>
+
+<ul>
+<li><p><span class="page-history">在 <a href="https://docs.unity3d.com/2017.2/Documentation/Manual/30_search.html?q=newin20172">2017.2</a> 版中更改了 Windows 独立平台播放器构建二进制文件 <span class="search-words">NewIn20172</span></span></p></li>
+<li><p><span class="page-history">在 2018.1 版中删除了独立平台播放器中的 Windows XP 支持</span></p></li>
+</ul>
+<!-- area:platforms -->
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="WindowsPlayerIL2CPPScriptingBackend.html"></a></span><div class="tip">Windows 播放器：IL2CPP 脚本后端</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="WindowsStore.html"></a></span><div class="tip">Universal Windows Platform</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

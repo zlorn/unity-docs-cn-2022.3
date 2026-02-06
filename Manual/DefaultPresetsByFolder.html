@@ -1,0 +1,443 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Applying default presets to Assets by folder - Unity 手册">
+<title>Applying default presets to Assets by folder - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/PresetsByFolder.png">
+<meta name="description" content="对于大项目，可使用多个预设来导入相同类型的资源。例如，对于纹理资源，可能具有用于导入默认纹理的预设以及用于光照贴图纹理的另一个预设。在项目的 Assets 文件夹中，已经为其中每种类型的纹理设置单独文件夹。">
+<meta property="og:description" content="对于大项目，可使用多个预设来导入相同类型的资源。例如，对于纹理资源，可能具有用于导入默认纹理的预设以及用于光照贴图纹理的另一个预设。在项目的 Assets 文件夹中，已经为其中每种类型的纹理设置单独文件夹。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'DefaultPresetsByFolder';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/DefaultPresetsByFolder.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/DefaultPresetsByFolder.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/DefaultPresetsByFolder.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/DefaultPresetsByFolder.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/DefaultPresetsByFolder.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/DefaultPresetsByFolder.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/DefaultPresetsByFolder.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/DefaultPresetsByFolder.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/DefaultPresetsByFolder.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/DefaultPresetsByFolder.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/DefaultPresetsByFolder.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/DefaultPresetsByFolder.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/DefaultPresetsByFolder.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/DefaultPresetsByFolder.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/DefaultPresetsByFolder.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/DefaultPresetsByFolder.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/DefaultPresetsByFolder.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/DefaultPresetsByFolder.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/DefaultPresetsByFolder.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/DefaultPresetsByFolder.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/DefaultPresetsByFolder.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/DefaultPresetsByFolder.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/DefaultPresetsByFolder.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/DefaultPresetsByFolder.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/DefaultPresetsByFolder.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/DefaultPresetsByFolder.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/DefaultPresetsByFolder.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/DefaultPresetsByFolder.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/DefaultPresetsByFolder.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/DefaultPresetsByFolder.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/DefaultPresetsByFolder.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/DefaultPresetsByFolder.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/DefaultPresetsByFolder.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/DefaultPresetsByFolder.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/DefaultPresetsByFolder.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/DefaultPresetsByFolder.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/DefaultPresetsByFolder.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/DefaultPresetsByFolder.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/DefaultPresetsByFolder.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/DefaultPresetsByFolder.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/DefaultPresetsByFolder.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/DefaultPresetsByFolder.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/DefaultPresetsByFolder.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/DefaultPresetsByFolder.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/DefaultPresetsByFolder.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/DefaultPresetsByFolder.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/DefaultPresetsByFolder.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/DefaultPresetsByFolder.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/DefaultPresetsByFolder.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/DefaultPresetsByFolder.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/DefaultPresetsByFolder.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/DefaultPresetsByFolder.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/DefaultPresetsByFolder.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/DefaultPresetsByFolder.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/DefaultPresetsByFolder.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/DefaultPresetsByFolder.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/DefaultPresetsByFolder.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/DefaultPresetsByFolder.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="AssetWorkflow.html">资源工作流程</a></li>
+<li><a href="Presets.html">预设</a></li>
+<li>Applying default presets to Assets by folder</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SupportingPresets.html"></a></span><div class="tip">Supporting presets</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="AssetBundlesIntro.html"></a></span><div class="tip">AssetBundle</div>
+</div>
+</div></div>
+<h1>Applying default presets to Assets by folder</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>对于大项目，可使用多个预设来导入相同类型的资源。例如，对于纹理资源，可能具有用于导入默认纹理的预设以及用于光照贴图纹理的另一个预设。在项目的 <em>Assets</em> 文件夹中，已经为其中每种类型的纹理设置单独文件夹。</p>
+
+<figure>
+<img src="../uploads/Main/PresetsByFolder.png" alt="TexturesDefault 和 TexturesLighting 文件夹各有一个预设">
+<figcaption><em>TexturesDefault</em> 和 <em>TexturesLighting</em> 文件夹各有一个预设</figcaption>
+</figure>
+
+<p>以下脚本根据添加资源的文件夹而应用预设。此脚本选择与资源位于同一文件夹中的预设。如果此文件夹中没有预设，则该脚本将搜索父文件夹。如果父文件夹中没有预设，Unity 将使用 <a href="class-PresetManager.html">Preset</a> 窗口指定的默认预设。</p>
+
+<p>为了使用此脚本，请在 Project 窗口中新建名为 <em>Editor</em> 的文件夹，在此文件夹中新建 C# 脚本，然后复制并粘贴以下脚本。</p>
+
+<pre><code>using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using UnityEditor;
+using UnityEditor.Experimental;
+using UnityEditor.Presets;
+using UnityEngine;
+namespace PresetsPerFolder
+{
+    /// &lt;summary&gt;
+   /// This sample class applies Presets automatically to Assets in the folder containing the Preset and any subfolders.
+   /// The code is divided into three parts that set up importer dependencies to make sure the importers of all Assets stay deterministic.
+   ///
+   /// OnPreprocessAsset:
+   /// This method goes from the root folder down to the Asset folder for each imported asset
+   /// and registers a CustomDependency to each folder in case a Preset is added/removed at a later time.
+   /// It then loads all Presets from that folder and tries to apply them to the Asset importer.
+   /// If it is applied, the method adds a direct dependency to each Preset so that the Asset can be re-imported when the Preset values are changed.
+   /// &lt;/summary&gt;
+    public class EnforcePresetPostProcessor : AssetPostprocessor
+    {
+        void OnPreprocessAsset()
+        {
+            // The  if(assetPath....)  line ensures that the asset path starts with "Assets/" so that the AssetPostprocessor is not applied to Assets in a package.
+            // The Asset extension cannot end with .cs to avoid triggering a code compilation every time a Preset is created or removed.
+            // The Asset extension cannot end with .preset so that Presets don't depend on themselves, which would cause an infinite import loop.
+            // There may be more exceptions to add here depending on your project.
+            if (assetPath.StartsWith("Assets/") &amp;&amp; !assetPath.EndsWith(".cs") &amp;&amp; !assetPath.EndsWith(".preset"))
+            {
+                var path = Path.GetDirectoryName(assetPath);
+                ApplyPresetsFromFolderRecursively(path);
+            }
+        }
+        void ApplyPresetsFromFolderRecursively(string folder)
+        {
+            // Apply Presets in order starting from the parent folder to the Asset so that the Preset closest to the Asset is applied last.
+            var parentFolder = Path.GetDirectoryName(folder);
+            if (!string.IsNullOrEmpty(parentFolder))
+                ApplyPresetsFromFolderRecursively(parentFolder);
+            // Add a dependency to the folder Preset custom key
+            // so whenever a Preset is added to or removed from this folder, the Asset is re-imported.
+            context.DependsOnCustomDependency($"PresetPostProcessor_{folder}");
+            // Find all Preset Assets in this folder. Use the System.Directory method instead of the AssetDatabase
+            // because the import may run in a separate process which prevents the AssetDatabase from performing a global search.
+            var presetPaths =
+                Directory.EnumerateFiles(folder, "*.preset", SearchOption.TopDirectoryOnly)
+                    .OrderBy(a =&gt; a);
+            foreach (var presetPath in presetPaths)
+            {
+                // Load the Preset and try to apply it to the importer.
+                var preset = AssetDatabase.LoadAssetAtPath&lt;Preset&gt;(presetPath);
+                // The script adds a Presets dependency to an Asset in two cases:
+                //1 If the Asset is imported before the Preset, the Preset will not load because it is not yet imported.
+                //Adding a dependency between the Asset and the Preset allows the Asset to be re-imported so that Unity loads
+                //the assigned Preset and can try to apply its values.
+                //2 If the Preset loads successfully, the ApplyTo method returns true if the Preset applies to this Asset's import settings.
+                //Adding the Preset as a dependency to the Asset ensures that any change in the Preset values will re-import the Asset using the new values.
+                if (preset == null || preset.ApplyTo(assetImporter))
+                {
+                    // Using DependsOnArtifact here because Presets are native assets and using DependsOnSourceAsset would not work.
+                    context.DependsOnArtifact(presetPath);
+                }
+            }
+        }
+        /// &lt;summary&gt;
+        /// This method with the didDomainReload argument will be called every time the project is being loaded or the code is compiled.
+        /// It is very important to set all of the hashes correctly at startup
+        /// because Unity does not apply the OnPostprocessAllAssets method to previously imported Presets
+        /// and the CustomDependencies are not saved between sessions and need to be rebuilt every time.
+        /// &lt;/summary&gt;
+        private static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets,
+            string[] movedFromAssetPaths, bool didDomainReload)
+        {
+            if (didDomainReload)
+            {
+                // AssetDatabase.FindAssets uses a glob filter to avoid importing all objects in the project.
+                // This glob search only looks for .preset files.
+                var allPaths = AssetDatabase.FindAssets("glob:\"**.preset\"")
+                    .Select(AssetDatabase.GUIDToAssetPath)
+                    .OrderBy(a =&gt; a)
+                    .ToList();
+                bool atLeastOnUpdate = false;
+                string previousPath = string.Empty;
+                Hash128 hash = new Hash128();
+                for (var index = 0; index &lt; allPaths.Count; index++)
+                {
+                    var path = allPaths[index];
+                    var folder = Path.GetDirectoryName(path);
+                    if (folder != previousPath)
+                    {
+                        // When a new folder is found, create a new CustomDependency with the Preset name and the Preset type.
+                        if (previousPath != string.Empty)
+                        {
+                            AssetDatabase.RegisterCustomDependency($"PresetPostProcessor_{previousPath}", hash);
+                            atLeastOnUpdate = true;
+                        }
+                        hash = new Hash128();
+                        previousPath = folder;
+                    }
+                    // Append both path and Preset type to make sure Assets get re-imported whenever a Preset type is changed.
+                    hash.Append(path);
+                    hash.Append(AssetDatabase.LoadAssetAtPath&lt;Preset&gt;(path).GetTargetFullTypeName());
+                }
+                // Register the last path.
+                if (previousPath != string.Empty)
+                {
+                    AssetDatabase.RegisterCustomDependency($"PresetPostProcessor_{previousPath}", hash);
+                    atLeastOnUpdate = true;
+                }
+                // Only trigger a Refresh if there is at least one dependency updated here.
+                if (atLeastOnUpdate)
+                    AssetDatabase.Refresh();
+            }
+        }
+    }
+    /// &lt;summary&gt;
+    /// InitPresetDependencies:
+    /// This method is called when the project is loaded. It finds every imported Preset in the project.
+    /// For each folder containing a Preset, create a CustomDependency from the folder name and a hash from the list of Preset names and types in the folder.
+    ///
+    /// OnAssetsModified:
+    /// Whenever a Preset is added, removed, or moved from a folder, the CustomDependency for this folder needs to be updated
+    /// so Assets that may depend on those Presets are reimported.
+    ///
+    /// TODO: Ideally each CustomDependency should also be dependent on the PresetType,
+    /// so Textures are not re-imported by adding a new FBXImporterPreset in a folder.
+    /// This makes the InitPresetDependencies and OnPostprocessAllAssets methods too complex for the purpose of this example.
+    /// Unity suggests having the CustomDependency follow the form "Preset_{presetType}_{folder}",
+    /// and the hash containing only Presets of the given presetType in that folder.
+    /// &lt;/summary&gt;
+    public class UpdateFolderPresetDependency : AssetsModifiedProcessor
+    {
+        /// &lt;summary&gt;
+        /// The OnAssetsModified method is called whenever an Asset has been changed in the project.
+        /// This methods determines if any Preset has been added, removed, or moved
+        /// and updates the CustomDependency related to the changed folder.
+        /// &lt;/summary&gt;
+        protected override void OnAssetsModified(string[] changedAssets, string[] addedAssets, string[] deletedAssets, AssetMoveInfo[] movedAssets)
+        {
+            HashSet&lt;string&gt; folders = new HashSet&lt;string&gt;();
+            foreach (var asset in changedAssets)
+            {
+                // A Preset has been changed, so the dependency for this folder must be updated in case the Preset type has been changed.
+                if (asset.EndsWith(".preset"))
+                {
+                    folders.Add(Path.GetDirectoryName(asset));
+                }
+            }
+            foreach (var asset in addedAssets)
+            {
+                // A new Preset has been added, so the dependency for this folder must be updated.
+                if (asset.EndsWith(".preset"))
+                {
+                    folders.Add(Path.GetDirectoryName(asset));
+                }
+            }
+            foreach (var asset in deletedAssets)
+            {
+                // A Preset has been removed, so the dependency for this folder must be updated.
+                if (asset.EndsWith(".preset"))
+                {
+                    folders.Add(Path.GetDirectoryName(asset));
+                }
+            }
+            foreach (var movedAsset in movedAssets)
+            {
+                // A Preset has been moved, so the dependency for the previous and new folder must be updated.
+                if (movedAsset.destinationAssetPath.EndsWith(".preset"))
+                {
+                    folders.Add(Path.GetDirectoryName(movedAsset.destinationAssetPath));
+                }
+                if (movedAsset.sourceAssetPath.EndsWith(".preset"))
+                {
+                    folders.Add(Path.GetDirectoryName(movedAsset.sourceAssetPath));
+                }
+            }
+            // Do not add a dependency update for no reason.
+            if (folders.Count != 0)
+            {
+                // The dependencies need to be updated outside of the AssetPostprocessor calls.
+                // Register the method to the next Editor update.
+                EditorApplication.delayCall += () =&gt;
+                {
+                    DelayedDependencyRegistration(folders);
+                };
+            }
+        }
+        /// &lt;summary&gt;
+        /// This method loads all Presets in each of the given folder paths
+        /// and updates the CustomDependency hash based on the Presets currently in that folder.
+        /// &lt;/summary&gt;
+        static void DelayedDependencyRegistration(HashSet&lt;string&gt; folders)
+        {
+            foreach (var folder in folders)
+            {
+                var presetPaths =
+                    AssetDatabase.FindAssets("glob:\"**.preset\"", new[] { folder })
+                        .Select(AssetDatabase.GUIDToAssetPath)
+                        .Where(presetPath =&gt; Path.GetDirectoryName(presetPath) == folder)
+                        .OrderBy(a =&gt; a);
+                Hash128 hash = new Hash128();
+                foreach (var presetPath in presetPaths)
+                {
+                    // Append both path and Preset type to make sure Assets get re-imported whenever a Preset type is changed.
+                    hash.Append(presetPath);
+                    hash.Append(AssetDatabase.LoadAssetAtPath&lt;Preset&gt;(presetPath).GetTargetFullTypeName());
+                }
+                AssetDatabase.RegisterCustomDependency($"PresetPostProcessor_{folder}", hash);
+            }
+            // Manually trigger a Refresh
+            // so that the AssetDatabase triggers a dependency check on the updated folder hash.
+            AssetDatabase.Refresh();
+        }
+    }
+}
+</code></pre>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SupportingPresets.html"></a></span><div class="tip">Supporting presets</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="AssetBundlesIntro.html"></a></span><div class="tip">AssetBundle</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

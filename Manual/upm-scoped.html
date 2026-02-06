@@ -1,0 +1,398 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Scoped registries - Unity 手册">
+<title>Scoped registries - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/class-PackageManager-scoped.png">
+<meta name="description" content="Scoped registries allow Unity to communicate the location of any custom package registry server to the Package Manager so that the user has access to several collections of packages at the same time. Here are some important concepts to help you understand this feature:">
+<meta property="og:description" content="Scoped registries allow Unity to communicate the location of any custom package registry server to the Package Manager so that the user has access to several collections of packages at the same time. Here are some important concepts to help you understand this feature:">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'upm-scoped';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/upm-scoped.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/upm-scoped.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/upm-scoped.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/upm-scoped.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/upm-scoped.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/upm-scoped.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/upm-scoped.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/upm-scoped.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/upm-scoped.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/upm-scoped.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/upm-scoped.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/upm-scoped.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/upm-scoped.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/upm-scoped.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/upm-scoped.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/upm-scoped.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/upm-scoped.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/upm-scoped.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/upm-scoped.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/upm-scoped.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/upm-scoped.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/upm-scoped.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/upm-scoped.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/upm-scoped.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/upm-scoped.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/upm-scoped.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/upm-scoped.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/upm-scoped.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/upm-scoped.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/upm-scoped.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/upm-scoped.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/upm-scoped.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/upm-scoped.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/upm-scoped.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/upm-scoped.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/upm-scoped.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/upm-scoped.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/upm-scoped.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/upm-scoped.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/upm-scoped.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/upm-scoped.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/upm-scoped.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/upm-scoped.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/upm-scoped.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/upm-scoped.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/upm-scoped.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/upm-scoped.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/upm-scoped.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/upm-scoped.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/upm-scoped.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/upm-scoped.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/upm-scoped.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/upm-scoped.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/upm-scoped.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/upm-scoped.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/upm-scoped.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/upm-scoped.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/upm-scoped.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="PackagesList.html">Packages and feature sets</a></li>
+<li><a href="Packages.html">Unity 的 Package Manager</a></li>
+<li>Scoped registries</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="upm-assets.html"></a></span><div class="tip">访问包资源</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="upm-conflicts.html"></a></span><div class="tip">解析和冲突</div>
+</div>
+</div></div>
+<h1>Scoped registries</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+<!-- This page has anchors that I've offset, so the page closer to the intended target  -->
+
+<p>Scoped registries allow Unity to communicate the location of any custom package registry server to the Package Manager so that the user has access to several collections of packages at the same time. Here are some important concepts to help you understand this feature:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>概念：</strong></th>
+	<th style="text-align:left;"><strong>描述：</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>包注册表服务器</strong></td>
+	<td style="text-align:left;">一个跟踪包并提供包存储位置的应用程序。在 Unity 的 Package Manager 窗口中，当您选择 <a href="upm-ui-filter.html">Unity Registry</a> 上下文时，所有在 Unity 注册表中注册的包都出现在<a href="upm-ui-list.html">列表视图</a>中。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Package Manager</strong></td>
+	<td style="text-align:left;">An application that tells the user what packages are available, and downloads and installs whatever package the user requests for their project. Unity has implemented its own version of a package manager, but there are several similar applications in other organizations.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>范围</strong></td>
+	<td style="text-align:left;">定义包名称或命名空间（以反向域格式），例如 <code>com.example.mycompany.animation</code> 或 <code>com.example</code>。当用户请求包时，Package Manager 从最匹配该范围的注册表中获取包。有关更多信息，请参阅下面的<a href="#managing">管理项目的范围注册表</a>。</td>
+</tr>
+</tbody>
+</table>
+
+<p><br>
+<a name="security"></a>
+The way you interact with scoped registries depends on your role:</p>
+
+<ul>
+<li>Package providers set up custom registry servers to host and distribute custom packages in addition to the <a href="upm-concepts.html#Registry">Unity registry</a>.</li>
+<li>Package consumers set up scoped registries for each project to access a custom package provider’s registry server.</li>
+</ul>
+
+<h2>Integrity and security of scoped registries</h2>
+
+<p>As a package provider, make sure any package registry servers you set up conform to Unity’s Terms of Service and <a href="https://unity.com/legal/terms-of-service/software/package-guidelines">Unity’s Package Guiding Principles &amp; Guidelines</a>. Unity provides access to the Package Manager to facilitate sharing knowledge and creations, but not as a marketplace for third-party products. </p>
+
+<p>As a package consumer, when you install a scoped registry, use the same level of caution that you use when installing any other third-party software:</p>
+
+<ul>
+<li>Install scoped registries only from trusted sources, since the packages in those registries can contain executable code.</li>
+<li>Beware of third-party registries that may be harmful or capture data without appropriate controls. Also beware of third parties misrepresenting themselves as Unity, or sanctioned or supported by Unity.</li>
+</ul>
+
+<p><a name="benefits"></a></p>
+
+<h2>Benefits of scoped registries</h2>
+
+<p>Scoped registries can help to:</p>
+
+<ul>
+<li>
+<p><strong>通过分发工具、库和其他资源来提供新的功能</strong>。</p>
+
+<p>As a provider, you can create your own registry to distribute tools and scripts (or other types of assets) with version numbers that indicate how mature the package is. Version numbers also indicate whether updates introduce breaking API changes or minor fixes, based on <a href="upm-semver.html">Semantic Versioning</a>. Your code can depend on code in other packages, because the Package Manager supports <a href="upm-dependencies.html">package dependencies</a>. </p>
+
+<p>As a consumer, your experience of browsing and installing third-party custom packages in the Package Manager is the same as browsing Unity’s packages.</p>
+</li>
+<li>
+<p><strong>扩展现有 Unity 包的功能</strong>。</p>
+
+<p>作为使用者，您可以获得无缝体验，其中自定义包可覆盖 Unity 包，而无需手动切换注册表或显式安装不同的包版本。这是因为您可以将包映射到特定的注册表，以便 Package Manager 从 Unity 注册表或自定义包注册表服务器获取。</p>
+</li>
+<li>
+<p><strong>在封闭网络环境中访问包</strong>。</p>
+
+<p>一些组织在封闭的网络中工作，这使得访问 Unity 自己的包注册表变得困难。在这些情况下，组织可以在其封闭网络内的服务器上设置自己的包注册表。然后，网络管理员可以定期与 Unity 的包注册表同步，以确保范围注册表具有最新的可用包集合。</p>
+</li>
+</ul>
+
+<p>If you are a package consumer, see <a href="#managing">Managing scoped registries for a project</a> for information about connecting to an existing custom package registry server in your Unity project. If you are a package producer, see <a href="cus-share.html">Sharing your package</a> for information about supported package registry servers, and to get links to information on how to set them up to use with scoped registries.</p>
+
+<p><strong>Note:</strong> If you are setting up a scoped registry that points to a package registry server with restricted access, you can configure Package Manager to pass your <code>npm</code> authentication token to the server. For more information, see <a href="upm-config-scoped.html">Scoped registry authentication</a>.</p>
+
+<h2>导入范围注册表</h2>
+
+<p>If you are working in a shared project, and another user adds a scoped registry to the project, Unity warns you that another user added a new scoped registry.</p>
+
+<figure>
+<img src="../uploads/Main/class-PackageManager-scoped.png" alt="如果您的项目的范围注册表发生更改，Unity 会向您发出警告">
+<figcaption>如果您的项目的范围注册表发生更改，Unity 会向您发出警告</figcaption>
+</figure>
+
+<p>When you click the <strong>Close</strong> button, the <a href="class-PackageManager.html">Package Manager</a> project settings window appears so you can <a href="class-PackageManager.html#scoped_add">add</a>, <a href="class-PackageManager.html#scoped_modify">modify</a>, or <a href="class-PackageManager.html#scoped_remove">remove</a> scoped registries for your project.</p>
+
+<p><a name="managing"></a>
+If you click the <strong>Read more</strong> button instead, Unity opens this page in your default web browser.</p>
+
+<p><strong>Tip:</strong> To access the Package Manager project settings window at any time, use the main menu in Unity (<strong>Edit &gt; Project Settings</strong>, then the <strong>Package Manager</strong> category) or select <strong>Advanced Project Settings</strong> from the <a href="upm-ui.html#Advanced">advanced settings</a> menu on the Package Manager window.</p>
+
+<h2>管理项目的范围注册表</h2>
+
+<p><a name="name"></a>
+To manage the scoped package registries in your project, you can either edit your <a href="upm-manifestPrj.html">project manifest</a> file directly or use the <a href="class-PackageManager.html">Package Manager</a> project settings window to let Unity modify the manifest for you.</p>
+
+<p><a name="url"></a>
+The project manifest uses a <a href="upm-manifestPrj.html#scopedRegistries">scopedRegistries</a> property, which contains an array of scoped registry configuration objects. Each object contains the following properties:</p>
+
+<p><a name="scopes"></a></p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>JSON 类型</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>name</strong></td>
+	<td style="text-align:left;">String</td>
+	<td style="text-align:left;">范围名称，在用户界面中显示。Package Manager 窗口在<a href="upm-ui-details.html">包详细信息视图</a>中显示此名称。<br><br>例如 <code>"name": "Tools"</code>。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>url</strong></td>
+	<td style="text-align:left;">String</td>
+	<td style="text-align:left;">与 npm 兼容的注册表服务器的 URL。<br><br>例如：<code>"url": "https://mycompany.example.com/tools-registry"</code><br><br><strong>注意</strong>：并非所有注册表提供程序都与 Unity 的 Package Manager 兼容。确保您要添加的包注册表服务器实现 <code>/-/v1/search</code> 或 <code>/-/all</code> 终端。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>scopes</strong></td>
+	<td style="text-align:left;">字符串数组</td>
+	<td style="text-align:left;">Array of scopes that you can map to a package name, either as an exact match on the package name, or as a namespace. Wildcards and other glob patterns aren’t supported.<br><br>For example, <code>"scopes": [ "com.example", "com.example.tools.physics" ]</code> <br><br><strong>Note</strong>: This configuration type assumes that packages follow the <a href="https://en.wikipedia.org/wiki/Reverse_domain_name_notation">Reverse domain name notation</a>. This ensures that <code>com.unity</code> is equivalent to any package name that matches the <code>com.unity</code> namespace, such as <code>com.unity.timeline</code> or <code>com.unity.2d.animation</code>.<br><br><strong>Warning:</strong> Unity doesn’t support npm’s scope notation.</td>
+</tr>
+</tbody>
+</table>
+
+<p>When the Package Manager decides which registry to fetch a package from, it compares the package <strong>name</strong> to the <strong>scopes</strong> values and finds the registry whose <strong>scopes</strong> value is the closest match.</p>
+
+<p>例如，在以下项目清单中，有两个范围注册表（“General” 和 “Tools”）：</p>
+
+<pre><code class="lang-json">{
+    "scopedRegistries": [
+        {
+            "name": "General",
+            "url": "https://example.com/registry",
+            "scopes": [
+                "com.example", "com.example.tools.physics"
+            ]
+        },
+        {
+            "name": "Tools",
+            "url": "https://mycompany.example.com/tools-registry",
+            "scopes": [
+                "com.example.mycompany.tools"
+            ]
+        }
+    ],
+    "dependencies": {
+        "com.unity.animation": "1.0.0",
+        "com.example.mycompany.tools.animation": "1.0.0",
+        "com.example.tools.physics": "1.0.0",
+        "com.example.animation": "1.0.0"
+    }
+}
+
+</code></pre>
+
+<p>When the Package Manager looks up the <code>com.example.animation</code> package, it finds that the <code>com.example</code> namespace is the closest match to its name, and fetches that package from the “General” registry.</p>
+
+<p>当 Package Manager 查找<code>com.example.tools.physics</code> 包时，“General” 注册表具有与包名称完全匹配的范围。</p>
+
+<p>When the Package Manager looks up the <code>com.example.mycompany.tools.animation</code> package, the Package Manager finds that the <code>com.example.mycompany.tools</code> namespace is the closest match to its name and fetches that package from the “Tools” registry. Even though it also matches the “General” scope, the <code>com.example</code> namespace isn’t as close a match.</p>
+
+<p>When the Package Manager looks up the <code>com.unity.animation</code> package, the Package Manager doesn’t find a match in any of the scoped registries, so it fetches the package from the default registry.</p>
+
+<p><br> </p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="upm-assets.html"></a></span><div class="tip">访问包资源</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="upm-conflicts.html"></a></span><div class="tip">解析和冲突</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

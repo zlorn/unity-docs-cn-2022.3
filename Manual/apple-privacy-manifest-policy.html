@@ -1,0 +1,425 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Apple’s privacy manifest policy requirements - Unity 手册">
+<title>Apple’s privacy manifest policy requirements - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="Apple is introducing a privacy policy for including privacy manifest files in new and updated applications targeted for iOS, iPadOS, tvOS, and visionOS platforms on the App Store.">
+<meta property="og:description" content="Apple is introducing a privacy policy for including privacy manifest files in new and updated applications targeted for iOS, iPadOS, tvOS, and visionOS platforms on the App Store.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'apple-privacy-manifest-policy';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/apple-privacy-manifest-policy.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/apple-privacy-manifest-policy.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/apple-privacy-manifest-policy.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/apple-privacy-manifest-policy.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/apple-privacy-manifest-policy.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/apple-privacy-manifest-policy.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/apple-privacy-manifest-policy.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/apple-privacy-manifest-policy.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/apple-privacy-manifest-policy.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/apple-privacy-manifest-policy.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/apple-privacy-manifest-policy.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/apple-privacy-manifest-policy.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/apple-privacy-manifest-policy.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/apple-privacy-manifest-policy.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/apple-privacy-manifest-policy.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/apple-privacy-manifest-policy.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/apple-privacy-manifest-policy.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/apple-privacy-manifest-policy.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/apple-privacy-manifest-policy.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/apple-privacy-manifest-policy.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/apple-privacy-manifest-policy.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/apple-privacy-manifest-policy.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/apple-privacy-manifest-policy.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/apple-privacy-manifest-policy.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/apple-privacy-manifest-policy.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/apple-privacy-manifest-policy.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/apple-privacy-manifest-policy.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/apple-privacy-manifest-policy.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/apple-privacy-manifest-policy.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/apple-privacy-manifest-policy.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/apple-privacy-manifest-policy.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/apple-privacy-manifest-policy.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/apple-privacy-manifest-policy.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/apple-privacy-manifest-policy.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/apple-privacy-manifest-policy.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/apple-privacy-manifest-policy.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/apple-privacy-manifest-policy.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/apple-privacy-manifest-policy.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/apple-privacy-manifest-policy.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/apple-privacy-manifest-policy.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/apple-privacy-manifest-policy.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/apple-privacy-manifest-policy.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/apple-privacy-manifest-policy.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/apple-privacy-manifest-policy.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/apple-privacy-manifest-policy.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/apple-privacy-manifest-policy.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/apple-privacy-manifest-policy.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/apple-privacy-manifest-policy.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/apple-privacy-manifest-policy.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/apple-privacy-manifest-policy.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/apple-privacy-manifest-policy.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/apple-privacy-manifest-policy.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/apple-privacy-manifest-policy.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/apple-privacy-manifest-policy.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/apple-privacy-manifest-policy.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/apple-privacy-manifest-policy.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/apple-privacy-manifest-policy.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/apple-privacy-manifest-policy.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="PlatformSpecific.html">平台开发</a></li>
+<li><a href="iphone.html">iOS</a></li>
+<li><a href="ios-building-and-delivering.html">Building and delivering for iOS</a></li>
+<li>Apple’s privacy manifest policy requirements</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="AppThinning.html"></a></span><div class="tip">应用程序精简</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="TroubleShootingIPhone.html"></a></span><div class="tip">在 iOS 设备上进行故障排除</div>
+</div>
+</div></div>
+<h1>Apple’s privacy manifest policy requirements</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Apple is introducing a privacy policy for including <a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files">privacy manifest files</a> in new and updated applications targeted for iOS, iPadOS, tvOS, and visionOS platforms on the App Store. </p>
+
+<p>The privacy manifest file (<code>PrivacyInfo.xcprivacy</code>) lists the <a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests">types of data</a> your Unity applications, or any third-party SDKs, packages, and plug-ins collect, and the reasons for using certain <a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api">Required Reason API</a> categories.</p>
+
+<p><strong>Important:</strong> If the use of the Required Reasons APIs by you or third-party SDKs isn’t declared in the privacy manifest, your application might be rejected by the App Store. For more information, visit Apple’s documentation on <a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api">Required Reasons APIs</a>.</p>
+
+<h2>Prepare your Unity applications for Apple’s privacy manifest policy</h2>
+
+<p>You must review your native code, C# code, and data collection and tracking practices to understand if Apple’s privacy manifest policy applies to you. Follow these guidelines to decide if you need to include a privacy manifest file in your product:</p>
+
+<ul>
+<li><p>If your application includes multiple third-party SDKs, packages, and plug-ins, then these third-party components (if applicable) must provision their own privacy manifest files separately. <strong>Note:</strong> It’s your responsibility however, to make sure that the owners of these third-party components include privacy manifest files. Unity isn’t responsible for any third-party privacy manifest, and their data collection and tracking practices.</p></li>
+<li><p>If your application includes Unity framework implementations of the <a href="#CSharpDotNetAPIs">C# .Net framework APIs</a> that call certain APIs listed in the Apple’s <a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api">Required Reasons API</a> categories, then you must assess your product for the API usage. For assessing what constitutes as part of data collection and tracking practices, refer to Apple’s documentation on <a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files">privacy manifest files</a>. <strong>Note:</strong> It’s your responsibility to assess your use of each of these APIs and declare the applicable reasons for using them.</p></li>
+</ul>
+
+<p>Depending on whether you’re using <a href="#UnityAppManifest">Unity to develop an application</a> or providing your <a href="#ThirdPartyManifest">SDKs, packages, and plug-ins</a> to use with Unity applications, the requirement for providing a privacy manifest file might differ.</p>
+
+<p><strong>Note:</strong> The above guidelines are provided for your convenience. It’s important that you review Apple’s documentation on <a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files">privacy manifest files</a> before creating a privacy manifest for your project. </p>
+
+<p><a name="UnityAppManifest"></a></p>
+
+<h2>Privacy manifest for Unity applications</h2>
+
+<p>If you’re developing an application using Unity, consider the following steps: </p>
+
+<ol>
+<li><p>Assess if your native application code uses any of the following APIs:</p></li>
+<li><p>APIs listed under the <a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api?language=objc">Required Reasons API</a> category.</p></li>
+<li><p>The <a href="#CSharpDotNetAPIs">C# .Net framework APIs</a> in Unity framework.</p></li>
+<li><p>If you meet one or both of the conditions from step 1, <a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files#4284009">create a privacy manifest file</a> in Xcode and save it in the <strong>Assets/Plugins</strong> folder of your project.</p></li>
+<li>
+<p>In the privacy manifest file, declare the approved reasons for using the Required Reason APIs or C# .Net framework APIs, as applicable.</p>
+
+<p><strong>Important</strong>: If you don’t declare the reasons for the use of APIs, your application might be rejected by the App Store.</p>
+</li>
+<li><p>Verify if your native application code collects any type of data <a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests#4250555">categorized by Apple</a> and declare those data types in the privacy manifest file as applicable.
+Any third-party SDKs, packages, and plug-ins used in your application must include their own separate manifest files to declare data collection and the use of any <a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api">Required Reasons APIs</a> with approved reasons. </p></li>
+</ol>
+
+<p><strong>注意：</strong></p>
+
+<ul>
+<li><p>It’s your responsibility to check the accuracy of the privacy manifest within the Unity framework and if any third-party components included in your Unity project require any declarations in you privacy manifest. It’s recommended that you search these third-party components for any references to a privacy manifest declaration.</p></li>
+<li>If you’re developing an application using Unity as a library, check if your native application code collects any of the following information outside of the Unity project:
+
+<ul>
+<li><a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests">Data collection</a></li>
+<li>
+<a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api">Required Reasons APIs</a>
+If it does, then you must declare their usage in the your privacy manifest file.</li>
+</ul>
+</li>
+</ul>
+
+<p><a name="ThirdPartyManifest"></a></p>
+
+<h2>Privacy manifest for third-party SDKs, packages, and plug-ins</h2>
+
+<p>If you’re a plug-in, package, or SDK owner, and you provide a service or package to be included within a Unity project as a .framework, follow these steps: </p>
+
+<ol>
+<li>Assess if your native code or native library includes any of the following categories of information:
+
+<ul>
+<li>Any type of data <a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests#4250555">categorized by Apple</a>
+</li>
+<li>Any APIs listed under <a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api">Required Reasons API</a> categories</li>
+</ul>
+</li>
+<li>Declare the types of data being collected and the approved reasons for using the Required Reasons APIs in the privacy manifest file of your framework (if applicable).</li>
+</ol>
+
+<p>If your product isn’t used as a .framework within a Unity project, then consider delivering it as a .framework. If you’re unable to do so, then follow these steps:</p>
+
+<ol>
+<li>Assess if your native code or native library uses the following APIs:
+
+<ul>
+<li>Any APIs listed under <a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api">Required Reasons API</a> categories.</li>
+<li>Any <a href="#CSharpDotNetAPIs">C# .Net framework APIs</a> in Unity framework.</li>
+</ul>
+</li>
+<li>If one or both of the API categories are used, then <a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files#4284009">create a privacy manifest</a> file in Xcode and save it in your source code. Make sure to select the iOS platform in the plug-in Inspector window.</li>
+<li>In the privacy manifest file, declare the use of Required Reason APIs or C# .Net framework APIs, as applicable with approved reasons.</li>
+<li>Verify if your native code or native library collects any type of data <a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests#4250555">categorized by Apple</a> and declare those data types in the privacy manifest file as applicable.</li>
+</ol>
+
+<p><a name="CSharpDotNetAPIs"></a></p>
+
+<h2>C# .Net framework APIs in Unity</h2>
+
+<p>The following table provides a list of C# .Net APIs that call the Required Reasons API category named <a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api#4278393">File timestamp API</a>. If your application, SDK, package, or plug-in code calls any of the APIs from this list, declare the reasons for their use in your privacy manifest file following the guidelines specified in Apple’s documentation on <a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api">Required reason API</a>.</p>
+
+<p><strong>Note</strong>: The following list is verified only for Unity versions 2021.3 LTS and later.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>File APIs</strong></th>
+	<th style="text-align:left;"><strong>Directory APIs</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.fileinfo?view=net-8.0#properties">fileInfo.CreationTime;</a></td>
+	<td style="text-align:left;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo?view=net-8.0#properties">directoryInfo.CreationTime;</a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.fileinfo?view=net-8.0#properties">fileInfo.LastAccessTime;</a></td>
+	<td style="text-align:left;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo?view=net-8.0#properties">directoryInfo.LastAccessTime;</a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.fileinfo?view=net-8.0#properties">fileInfo.LastWriteTime;</a></td>
+	<td style="text-align:left;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo?view=net-8.0#properties">directoryInfo.LastWriteTime;</a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.fileinfo?view=net-8.0#properties">fileInfo.CreationTimeUtc;</a></td>
+	<td style="text-align:left;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo?view=net-8.0#properties">directoryInfo.CreationTimeUtc;</a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.fileinfo?view=net-8.0#properties">fileInfo.LastAccessTimeUtc;</a></td>
+	<td style="text-align:left;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo?view=net-8.0#properties">directoryInfo.LastAccessTimeUtc;</a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.fileinfo?view=net-8.0#properties">fileInfo.LastWriteTimeUtc;</a></td>
+	<td style="text-align:left;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo?view=net-8.0#properties">directoryInfo.LastWriteTimeUtc;</a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.file.getcreationtime?view=net-8.0">File.GetCreationTime(filePath);</a></td>
+	<td style="text-align:left;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.directory.getcreationtime?view=net-8.0">Directory.GetCreationTime(filePath);</a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.file.getlastaccesstime?view=net-8.0">File.GetLastAccessTime(filePath);</a></td>
+	<td style="text-align:left;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.directory.getlastaccesstime?view=net-8.0">Directory.GetLastAccessTime(filePath);</a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.file.getlastwritetime?view=net-8.0">File.GetLastWriteTime(filePath);</a></td>
+	<td style="text-align:left;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.directory.getlastwritetime?view=net-8.0">Directory.GetLastWriteTime(filePath);</a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.file.getcreationtimeutc?view=net-8.0">File.GetCreationTimeUtc(filePath);</a></td>
+	<td style="text-align:left;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.directory.getcreationtimeutc?view=net-7.0">Directory.GetCreationTimeUtc(filePath);</a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.file.getlastaccesstimeutc?view=net-8.0">File.GetLastAccessTimeUtc(filePath);</a></td>
+	<td style="text-align:left;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.directory.getlastaccesstimeutc?view=net-7.0">Directory.GetLastAccessTimeUtc(filePath);</a></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.file.getlastwritetimeutc?view=net-8.0">File.GetLastWriteTimeUtc(filePath);</a></td>
+	<td style="text-align:left;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.directory.getlastwritetimeutc?view=net-7.0">Directory.GetLastWriteTimeUtc(filePath);</a></td>
+</tr>
+</tbody>
+</table>
+
+<h2>Unity Engine privacy manifest</h2>
+
+<p>The following table provides a list of Unity Engine APIs that call the Required Reasons API categories:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>类别</strong></th>
+	<th style="text-align:left;"><strong>原因</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api#4278393">File timestamp APIs</a></td>
+	<td style="text-align:left;">0A2A.1</td>
+	<td style="text-align:left;">Used by C# timestamp APIs</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api#4278393">File timestamp APIs</a></td>
+	<td style="text-align:left;">C617.1</td>
+	<td style="text-align:left;">Used to check files</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api#4278401">User defaults APIs</a></td>
+	<td style="text-align:left;">CA92.1</td>
+	<td style="text-align:left;">Used for PlayerPrefs API</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api#4278394">System boot time APIs</a></td>
+	<td style="text-align:left;">35F9.1</td>
+	<td style="text-align:left;">Used to calculate time between various events</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api#4278397">Disk space APIs</a></td>
+	<td style="text-align:left;">E174.1</td>
+	<td style="text-align:left;">Used to check disk space for AssetBundles</td>
+</tr>
+</tbody>
+</table>
+
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="AppThinning.html"></a></span><div class="tip">应用程序精简</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="TroubleShootingIPhone.html"></a></span><div class="tip">在 iOS 设备上进行故障排除</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

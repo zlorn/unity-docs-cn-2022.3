@@ -1,0 +1,348 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Sprite Editor：Custom Outline - Unity 手册">
+<title>Sprite Editor：Custom Outline - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/2DCustomOutline_2020.2_01.png">
+<meta name="description" content="使用 Sprite Editor 的 Custom Outline 选项可编辑 Unity 渲染精灵纹理所在的网格的形状。Custom Outline 编辑器允许使用控制点来创建和定义精灵网格轮廓的形状。">
+<meta property="og:description" content="使用 Sprite Editor 的 Custom Outline 选项可编辑 Unity 渲染精灵纹理所在的网格的形状。Custom Outline 编辑器允许使用控制点来创建和定义精灵网格轮廓的形状。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'SpriteOutlineEditor';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/SpriteOutlineEditor.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/SpriteOutlineEditor.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/SpriteOutlineEditor.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/SpriteOutlineEditor.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/SpriteOutlineEditor.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/SpriteOutlineEditor.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/SpriteOutlineEditor.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/SpriteOutlineEditor.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/SpriteOutlineEditor.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/SpriteOutlineEditor.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/SpriteOutlineEditor.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/SpriteOutlineEditor.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/SpriteOutlineEditor.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/SpriteOutlineEditor.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/SpriteOutlineEditor.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/SpriteOutlineEditor.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/SpriteOutlineEditor.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/SpriteOutlineEditor.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/SpriteOutlineEditor.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/SpriteOutlineEditor.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/SpriteOutlineEditor.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/SpriteOutlineEditor.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/SpriteOutlineEditor.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/SpriteOutlineEditor.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/SpriteOutlineEditor.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/SpriteOutlineEditor.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/SpriteOutlineEditor.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/SpriteOutlineEditor.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/SpriteOutlineEditor.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/SpriteOutlineEditor.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/SpriteOutlineEditor.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/SpriteOutlineEditor.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/SpriteOutlineEditor.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/SpriteOutlineEditor.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/SpriteOutlineEditor.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/SpriteOutlineEditor.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/SpriteOutlineEditor.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/SpriteOutlineEditor.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/SpriteOutlineEditor.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/SpriteOutlineEditor.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/SpriteOutlineEditor.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/SpriteOutlineEditor.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/SpriteOutlineEditor.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/SpriteOutlineEditor.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/SpriteOutlineEditor.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/SpriteOutlineEditor.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/SpriteOutlineEditor.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/SpriteOutlineEditor.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/SpriteOutlineEditor.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/SpriteOutlineEditor.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/SpriteOutlineEditor.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/SpriteOutlineEditor.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/SpriteOutlineEditor.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/SpriteOutlineEditor.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/SpriteOutlineEditor.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/SpriteOutlineEditor.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/SpriteOutlineEditor.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/SpriteOutlineEditor.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Unity2D.html">2D game development</a></li>
+<li><a href="Sprites.html">Work with sprites</a></li>
+<li><a href="SpriteEditor.html">Sprite Editor</a></li>
+<li>Sprite Editor：Custom Outline</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="sprite-polygon-resizing.html"></a></span><div class="tip">Resize polygons</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="CustomPhysicsShape.html"></a></span><div class="tip">Sprite Editor：Custom Physics Shape</div>
+</div>
+</div></div>
+<h1>Sprite Editor：Custom Outline</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>使用 <a href="SpriteEditor.html">Sprite Editor</a> 的 <strong>Custom Outline</strong> 选项可编辑 Unity 渲染<a href="Sprites.html">精灵</a>纹理所在的<a href="class-Mesh.html">网格</a>的形状。Custom Outline 编辑器允许使用控制点来创建和定义精灵网格轮廓的形状。</p>
+
+<p>默认情况下，Unity 在矩形网格上渲染每个精灵。此网格可能包含纹理边框外部的透明区域，而渲染这些透明区域会对性能产生负面影响。使用 Custom Outline 编辑器定义与精灵纹理轮廓匹配的网格轮廓时，可以减小透明区域的大小，从而提高性能。</p>
+
+<p>To access the Custom Outline editor, select a Sprite and then in the Sprite’s Inspector window, select the <a href="SpriteEditor.html">Sprite Editor</a> button. In the Sprite Editor window, open the upper-left drop-down menu and select <strong>Custom Outline</strong> to open the Custom Outline editor.</p>
+
+<figure>
+<img src="../uploads/Main/2DCustomOutline_2020.2_01.png" alt="从 Sprite Editor 下拉选单中选择 Custom Outline">
+<figcaption>从 Sprite Editor 下拉选单中选择 <strong>Custom Outline</strong></figcaption>
+</figure>
+
+<h2>Custom Outline 编辑器</h2>
+
+<figure>
+<img src="../uploads/Main/2DCustomOutline_2020.2_02.png" alt="Editing a Sprite’s outline in the Custom Outline editor.">
+<figcaption>Editing a Sprite’s outline in the Custom Outline editor.</figcaption>
+</figure>
+
+<h3>Custom Outline 编辑器的属性</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">属性</th>
+	<th style="text-align:left;">功能</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Snap</strong></td>
+	<td style="text-align:left;">将控制点贴靠到最近的像素。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Outline Tolerance</strong></td>
+	<td style="text-align:left;">使用此滑动条可控制生成的轮廓贴合精灵纹理轮廓的紧密和精确程度。在最小值 (0) 时，Sprite Editor 会在精灵周围生成基本轮廓。在最大值 (1) 时，Sprite Editor 生成一个尽可能贴合精灵纹理的轮廓。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Generate</strong></td>
+	<td style="text-align:left;">当您单击此按钮时，Unity 会根据您设置的 <strong>Outline Tolerance</strong> 值自动创建一个轮廓。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Copy</strong></td>
+	<td style="text-align:left;">生成或设置自定义轮廓后，单击此 <strong>Copy</strong> 按钮复制自定义轮廓。离开 Custom Outline 模块或关闭 Sprite Editor 会从内存中删除复制的轮廓。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Paste</strong></td>
+	<td style="text-align:left;">使用此按钮将复制的轮廓粘贴到当前选定的精灵。如果您尚未使用 <strong>Copy</strong> 功能复制一个轮廓的功能，此按钮不可用。<strong>Paste</strong> 将自定义轮廓复制到另一个精灵，在 Custom Outline 编辑器窗口打开时，在 Project 窗口中选择该精灵。然后单击 <strong>Paste</strong> 按钮将复制的轮廓粘贴到新的精灵。当您粘贴轮廓时，如果轮廓中的某个点大于精灵的框架，Unity 会将该点限制到该精灵的框架内。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Paste All</strong></td>
+	<td style="text-align:left;">Use this button to paste a copied outline to all Sprites in the Sprite Editor window, regardless of selection. If you have not used the <strong>Copy</strong> function to copy an outline, this button is unavailable. Use this function to apply the same outline to multiple Sprites in the same Texture (such as when a Texture has its <a href="texture-type-sprite.html">Sprite Mode</a> set to ‘Multiple’). When you paste the outline, if a point in the outline exceeds the Sprite’s frame, Unity clamps the point to be inside that Sprite’s frame.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Revert</strong></td>
+	<td style="text-align:left;">撤消在编辑器窗口中所做的任何未保存的最近更改。要保存更改，请先单击 <strong>Apply</strong>。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Apply</strong></td>
+	<td style="text-align:left;">选择此按钮可保存在编辑器窗口中所做的所有更改。</td>
+</tr>
+</tbody>
+</table>
+
+<h2>使用 Custom Outline 编辑器</h2>
+
+<p>The Custom Outline editor allows you to to create or generate the Mesh of the Sprite. There are two ways to create a custom outline: have Unity automatically <a href="#generateOutline">generate</a> the shape, or <a href="CustomPhysicsShape.html">manually creating and editing</a> it in the editor window.</p>
+
+<h3>生成轮廓<a name="generateOutline"></a>
+</h3>
+
+<p>要让 Unity 自动生成轮廓，使其遵循原始精灵纹理的形状并考虑纹理中的透明区域，请单击 <strong>Generate</strong> 按钮。但是，您可以通过 **Outline Tolerance ** 滑动条来调整生成的轮廓与精灵纹理的紧密程度。</p>
+
+<figure>
+<img src="../uploads/Main/2DCustomOutline_2020.2_03.png" alt="Outline Tolerance 滑动条旁边的 Generate 按钮。">
+<figcaption><strong>Outline Tolerance</strong> 滑动条旁边的 <strong>Generate</strong> 按钮。</figcaption>
+</figure>
+
+<p>调整 <strong>Outline Tolerance</strong> 滑动条可细化 Unity 生成的网格的轮廓。增加该值会增加轮廓与精灵纹理形状的紧密程度。将滑动条保留为 0 会生成一个较为松散地遵循精灵纹理的网格。</p>
+
+<p><img src="../uploads/Main/2DCustomOutline_7.png" alt="左：使用较小的 Outline Tolerance 自动生成的网格轮廓。右：使用较大的 Outline Tolerance"> 自动生成的网格轮廓。</p>
+
+<h3>编辑自定义轮廓</h3>
+
+<p>您可以创建自己的自定义形状并通过两种方式对其进行编辑。第一种方式是自动<a href="#generateOutline">生成</a>一个轮廓，然后移动生成的轮廓的控制点以进一步细化其形状。或者，在 Custom Outline 编辑器窗口中的任何空间上单击并拖动，以创建具有四个控制点的矩形轮廓，然后通过移动控制点或添加和删除控制点开始细化轮廓。</p>
+
+<figure>
+<img src="../uploads/Main/2DCustomOutline_2.png" alt="您可以在同一纹理中创建多个轮廓。">
+<figcaption>您可以在同一纹理中创建多个轮廓。</figcaption>
+</figure>
+
+<p>在编辑器窗口中单击并拖动精灵纹理，可创建包含 4 个控制点的矩形轮廓。重复此步骤在精灵中创建多个网格轮廓。Unity 仅渲染网格轮廓中包含的区域。</p>
+
+<h4><strong>移动控制点</strong></h4>
+
+<p>要调整网格轮廓的形状，请单击并拖动其控制点。将鼠标悬停在控制点上时，控制点会变为蓝色，表示可以选择它。单击控制点并将其拖动到不同位置以调整网格轮廓的形状。您可以通过单击并拖动光标经过某个区域，以选择该区域内的所有控制点，从而一次选择多个控制点。之后您可以重新定位或一并<a href="#removePoint">移除</a>所有选定的控制点。</p>
+
+<figure>
+<img src="../uploads/Main/2DCustomOutline_3.png" alt="移动控制点以更改网格轮廓的形状。">
+<figcaption>移动控制点以更改网格轮廓的形状。</figcaption>
+</figure>
+
+<h4>添加/移除控制点<a name="removePoint"></a>
+</h4>
+
+<p>要添加控制点，请将光标置于轮廓边缘。沿着轮廓的边缘会出现控制点的预览。单击即可在该位置添加新控制点。要移除一个控制点，可选择该并按 <strong>Del/Command+Del 键</strong>。</p>
+
+<figure>
+<img src="../uploads/Main/2DCustomOutline_4.png" alt="向网格轮廓添加控制点">
+<figcaption>向网格轮廓添加控制点</figcaption>
+</figure>
+
+<h4>移动边缘</h4>
+
+<p>要移动两个控制点之间一个部分，请按住 <strong>Control/Ctrl</strong> 键选择轮廓的边缘而不是其控制点。要更改轮廓的形状，请单击并拖动突出显示的边缘以将它们移动到新位置。</p>
+
+<figure>
+<img src="../uploads/Main/2DCustomOutline_5.png" alt="移动两个控制点之间的一段网格轮廓">
+<figcaption>移动两个控制点之间的一段网格轮廓</figcaption>
+</figure>
+
+<hr>
+
+<p><em><span class="page-history">复制和粘贴编辑器窗口功能添加于 <a href="https://docs.unity3d.com/2020.1/Documentation/Manual/30_search.html?q=newin20201">2020.1</a><span class="search-words"> NewIn20201</span></span>
+</em> <span class="page-history">在 Unity 2017.3 版中将 <strong>Edit Outline</strong> 更名为 <strong>Custom Outline</strong>。</span></p>
+<!-- area:authoring -->
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="sprite-polygon-resizing.html"></a></span><div class="tip">Resize polygons</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="CustomPhysicsShape.html"></a></span><div class="tip">Sprite Editor：Custom Physics Shape</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

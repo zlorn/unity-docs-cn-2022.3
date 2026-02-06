@@ -1,0 +1,742 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Upgrading to Unity 2021 LTS - Unity 手册">
+<title>Upgrading to Unity 2021 LTS - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/upgrade211CodeCoverage.png">
+<meta name="description" content="Note: Follow the advice in this section in release order. For example, if you need to upgrade your project from 2020 to 2022, read the 2021 upgrade guides to see if there are any changes that you need to make before you read the 2022 upgrade guides.">
+<meta property="og:description" content="Note: Follow the advice in this section in release order. For example, if you need to upgrade your project from 2020 to 2022, read the 2021 upgrade guides to see if there are any changes that you need to make before you read the 2022 upgrade guides.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'UpgradeGuide2021LTS';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/UpgradeGuide2021LTS.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/UpgradeGuide2021LTS.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/UpgradeGuide2021LTS.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/UpgradeGuide2021LTS.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/UpgradeGuide2021LTS.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/UpgradeGuide2021LTS.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UpgradeGuide2021LTS.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UpgradeGuide2021LTS.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UpgradeGuide2021LTS.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UpgradeGuide2021LTS.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UpgradeGuide2021LTS.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UpgradeGuide2021LTS.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UpgradeGuide2021LTS.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UpgradeGuide2021LTS.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UpgradeGuide2021LTS.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UpgradeGuide2021LTS.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UpgradeGuide2021LTS.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UpgradeGuide2021LTS.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UpgradeGuide2021LTS.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UpgradeGuide2021LTS.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UpgradeGuide2021LTS.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UpgradeGuide2021LTS.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UpgradeGuide2021LTS.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UpgradeGuide2021LTS.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UpgradeGuide2021LTS.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UpgradeGuide2021LTS.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UpgradeGuide2021LTS.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UpgradeGuide2021LTS.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UpgradeGuide2021LTS.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UpgradeGuide2021LTS.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/UpgradeGuide2021LTS.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/UpgradeGuide2021LTS.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/UpgradeGuide2021LTS.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/UpgradeGuide2021LTS.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UpgradeGuide2021LTS.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UpgradeGuide2021LTS.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UpgradeGuide2021LTS.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UpgradeGuide2021LTS.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UpgradeGuide2021LTS.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UpgradeGuide2021LTS.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UpgradeGuide2021LTS.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UpgradeGuide2021LTS.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UpgradeGuide2021LTS.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UpgradeGuide2021LTS.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UpgradeGuide2021LTS.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UpgradeGuide2021LTS.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UpgradeGuide2021LTS.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UpgradeGuide2021LTS.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UpgradeGuide2021LTS.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UpgradeGuide2021LTS.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UpgradeGuide2021LTS.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UpgradeGuide2021LTS.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UpgradeGuide2021LTS.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UpgradeGuide2021LTS.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UpgradeGuide2021LTS.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UpgradeGuide2021LTS.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UpgradeGuide2021LTS.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UpgradeGuide2021LTS.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UnityOverview.html">在 Unity 中操作</a></li>
+<li><a href="UpgradeGuides.html">升级 Unity</a></li>
+<li>Upgrading to Unity 2021 LTS</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UpgradeGuide2022LTS.html"></a></span><div class="tip">Upgrading to Unity 2022 LTS</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UpgradeGuide2020LTS.html"></a></span><div class="tip">升级到 Unity 2020 LTS</div>
+</div>
+</div></div>
+<h1>Upgrading to Unity 2021 LTS</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p><strong>Note</strong>: Follow the advice in this section in release order. For example, if you need to upgrade your project from 2020 to 2022, read the 2021 upgrade guides to see if there are any changes that you need to make before you read the 2022 upgrade guides.</p>
+
+<p>This page lists changes in the Unity 2021 LTS version which might affect existing projects when you upgrade from a 2020 version to 2021 LTS.</p>
+
+<p><strong>Note</strong>: 2021LTS is also known as 2021.3.</p>
+
+<h3>Page Outline</h3>
+
+<ul>
+<li><a href="#Device">Device Simulator</a></li>
+<li><a href="#Lighting">Environment Lighting</a></li>
+<li><a href="#LightingProbe">Environment lighting: Ambient probe and skybox reflection probe are now automatically baked</a></li>
+<li><a href="#CodeCoverage">Enable Code Coverage preference</a></li>
+<li><a href="#Particles">Particle System Force Fields</a></li>
+<li><a href="#ParticleDelay">Particle System Start Delay + Rate over Distance emission</a></li>
+<li><a href="#Build">BuildReport - PackedAssets</a></li>
+<li><a href="#Terrain">Terrain APIs out of experimental (WIP)</a></li>
+<li><a href="#Texture">Texture2D.Resize renamed to Reinitialize</a></li>
+<li><a href="#Android">Android changes</a></li>
+<li><a href="#UI">UI Toolkit - Default scaleMode for Image changed</a></li>
+<li><a href="#Upgrade">Mono upgrade behavior changes</a></li>
+<li><a href="#Performance">Adaptive Performance</a></li>
+<li><a href="Render">RenderTexture DepthStencilFormat</a></li>
+<li><a href="#Graphics">Graphics formats DepthAuto, ShadowAuto and VideoAuto are deprecated</a></li>
+<li><a href="#WebGL">WebGL: Updated Emscripten to 2.0.19</a></li>
+<li><a href="#Lightmapper">Progressive GPU Lightmapper dropped support for CPU OpenCL devices</a></li>
+<li><a href="#Process">OnPostprocessAllAssets behavior changes</a></li>
+<li><a href="#BakeLighting">Mixed point and spot lights with no shadows bake direct light in subtractive lighting mode</a></li>
+<li><a href="#Shader">Shader keyword system improvements</a></li>
+<li><a href="#NET">Unity supports .NET Standard 2.1 APIs</a></li>
+<li><a href="#Windows">Windows XR plugin removed</a></li>
+</ul>
+
+<p><a name="Device"></a></p>
+
+<h2>Device Simulator</h2>
+
+<p>The <a href="https://docs.unity3d.com/Packages/com.unity.device-simulator@latest?subfolder=/manual/index.html">Device Simulator</a> is now part of the Editor and is accessible from the Game window.
+To set up the Device Simulator, add the <code>UnityEngine.Device</code> namespace to the Screen, Application, and SystemInfo classes:
+<code>UnityEngine.Device.Screen;</code>
+<code>UnityEngine.Device.Application;</code>
+<code>UnityEngine.Device.SystemInfo;</code></p>
+
+<p>To switch to <code>UnityEngine.Device</code>, add the following logic to each script you want to use with the simulator:
+<code>
+using Screen = UnityEngine.Device.Screen;
+using Application = UnityEngine.Device.Application;
+using SystemInfo = UnityEngine.Device.SystemInfo;
+</code>
+The new namespace <code>UnityEngine.Device</code> transitions smoothly from Simulator (when in Editor) to actual device API with a runtime build.</p>
+
+<p><a name="Lighting"></a></p>
+
+<h2>Environment Lighting</h2>
+
+<p>The Editor now automatically bakes the default <a href="skyboxes-using.html">skybox</a> probe and <a href="../ScriptReference/RenderSettings-ambientProbe.html">ambient probe</a> and retains that data until you manually bake the Scene. When you upgrade, Scenes with no ambient light contribution might visually change. To restore the original look of these Scenes, set the Environment lighting <a href="lighting-window.html#EnvironmentSection">intensity multiplier</a> to 0. Alternatively, set the skybox to black, bake the scene, then reset the skybox to your preferred sky color.</p>
+
+<p><a name="LightingProbe"></a></p>
+
+<h2>Environment lighting: Ambient probe and skybox reflection probe are now automatically baked</h2>
+
+<p>Unity’s Progressive <strong>Lightmapper</strong> now automatically generates the ambient probe and the skybox reflection probe for every scene by default. This means that a scene automatically receives environment lighting in accordance with the settings in the <strong>Environment</strong> tab in the <strong>Lighting</strong> settings panel. The Editor updates the ambient probe and skybox reflection probe every time the environment lighting changes, until you generate lighting. When you bake with the <strong>Generate Lighting</strong> control, the Editor stops updating the probes, and only updates them again at the next bake. When you enable the <strong>Auto Generate</strong> option, the Editor continues to update the probes every time the environment lighting changes. If you generate lighting and then delete this lighting data by removing the Lighting Data Asset from the project, the Editor automatically generates the ambient probe and skybox reflection probe again.</p>
+
+<p>There is one situation which requires action when you upgrade a project. This is when you don’t wish to have any Environment lighting contribution in a project which also:</p>
+
+<ul>
+<li>Doesn’t have a Lighting Data Asset.</li>
+<li>Doesn’t have <strong>Auto Generate</strong> enabled.</li>
+<li>Has an Environment contribution set to a color other than black.</li>
+</ul>
+
+<p>In this situation, navigate to <strong>Window</strong> &gt; <strong>Rendering</strong> &gt; <strong>Lighting Settings</strong> &gt; <strong>Environment</strong> and disable the environment contribution of the automatically generated ambient probe and skybox reflection probe by making one of the following changes:</p>
+
+<ul>
+<li>Option 1: Set the <strong>Intensity Multiplier</strong> to 0.</li>
+<li>Option 2: Use a black <strong>Skybox Material</strong>.</li>
+<li>Option 3: Use a black color in either <strong>Color</strong> or <strong>Gradient</strong> mode for the <strong>Source</strong>.</li>
+</ul>
+
+<p><a name="CodeCoverage"></a></p>
+
+<h2>Enable Code Coverage preference</h2>
+
+<p>The user interface for managing Code Coverage has moved from General Preferences to within the <a href="https://docs.unity3d.com/Packages/com.unity.testtools.codecoverage@latest">Code Coverage package</a>.</p>
+
+<figure>
+<img src="../uploads/Main/upgrade211CodeCoverage.png" alt="In Unity 2021 the Enable Code Coverage checkbox was moved in the Code Coverage window.">
+<figcaption>In Unity 2021 the Enable Code Coverage checkbox was moved in the Code Coverage window.</figcaption>
+</figure>
+
+<p>The Code Coverage package is available as a released package via the Package Manager for Unity 2019.3 and above. The latest version is 1.0.0.</p>
+
+<p>You can use one of the following methods to enable code coverage:</p>
+
+<ul>
+<li>
+<a href="https://docs.unity3d.com/Packages/com.unity.testtools.codecoverage@1.0/manual/InstallingCodeCoverage.html">Install</a> the Code Coverage package, open the <a href="https://docs.unity3d.com/Packages/com.unity.testtools.codecoverage@1.0/manual/CodeCoverageWindow.html">Code Coverage window</a> (<strong>Window</strong> &gt; <strong>Analysis</strong> &gt; <strong>Code Coverage</strong>) and select <a href="https://docs.unity3d.com/Packages/com.unity.testtools.codecoverage@1.0/manual/Quickstart.html#4-enable-code-coverage-sub1-minsub"><strong>Enable Code Coverage</strong></a>.</li>
+<li>Use the <a href="CommandLineArguments.html">Command line argument</a> <code>-enableCodeCoverage</code> in batchmode.</li>
+<li>Use the <a href="../ScriptReference/TestTools.Coverage-enabled.html"><code>Coverage.enabled</code></a> API. Example class:</li>
+</ul>
+
+<pre><code>// Create a new C# script called CodeCoverageMenuItem and place it
+// under the Editor folder.
+// This class creates a toggle menu item under Code Coverage &gt; Enable
+// Code Coverage. Use it to enable/disable Code Coverage.
+
+using UnityEditor;
+using UnityEngine.TestTools;
+
+class CodeCoverageMenuItem
+{
+    const string EnableCodeCoverageItemName = "Code Coverage/Enable Code Coverage";
+
+    [MenuItem(EnableCodeCoverageItemName, false)]
+    static void EnableCodeCoverage()
+    {
+        Coverage.enabled = !Coverage.enabled;
+    }
+
+    [MenuItem(EnableCodeCoverageItemName, true)]
+    static bool EnableCodeCoverageValidate()
+    {
+        Menu.SetChecked(EnableCodeCoverageItemName, Coverage.enabled);
+        return true;
+    }
+}
+</code></pre>
+
+<p><a name="Particles"></a></p>
+
+<h2>Particle System Force Fields</h2>
+
+<p>Previously, some Force Field properties behaved differently at different frame rates (or if using the Time Scale in the Time Manager settings)</p>
+
+<p>The Particle System now uses a reference frame rate of 30fps to serve as the basis for the simulation. If your app runs at a different frame rate, the following settings might behave differently compared to earlier versions of Unity:</p>
+
+<ul>
+<li>Gravity</li>
+<li>Rotation</li>
+<li>Vector Fields</li>
+</ul>
+
+<p>If these settings are affected, adjust the strengths of the affected areas to get the desired appearance.</p>
+
+<p><a name="ParticleDelay"></a></p>
+
+<h2>Particle System Start Delay + Rate over Distance emission</h2>
+
+<p>Previously, Rate over Distance emission ignored the Start Delay setting. Now, if the Start Delay setting is defined, it delays the start for the distance-based emission.</p>
+
+<p>If this field was previously set, you might need to adjust it.</p>
+
+<p><a name="Build"></a></p>
+
+<h2>BuildReport - PackedAssets</h2>
+
+<p>PackedAssets.file has been marked obsolete without a direct replacement. Previously this held an integer signifying a file id or index into BuildReport.files
+To look up BuildReport files now, use PackedAssets.shortPath.</p>
+
+<p><a name="Terrain"></a></p>
+
+<h2>Terrain APIs out of experimental (WIP)</h2>
+
+<p>The experimental Terrain APIs have been moved to non-experimental namespaces. There have also been some other minor changes to the Terrain API. If you used the experimental Terrain APIs, use the following APIs instead:</p>
+
+<ul>
+<li>
+<code>UnityEngine.TerrainTools</code>;</li>
+<li>
+<code>UnityEditor.TerrainTools</code>;</li>
+<li>
+<code>UnityEngine.TerrainUtils</code>;</li>
+</ul>
+
+<p>Here is the full list of API changes:</p>
+
+<ul>
+<li>In most cases, <code>UnityEngine.Experimental.TerrainAPI</code> and <code>UnityEditor.Experimental.TerrainAPI</code> are now <code>UnityEngine.TerrainTools</code> and <code>UnityEditor.TerrainTools</code>, respectively. Some runtime APIs have moved to a new <code>UnityEngine.TerrainUtils</code> namespace.</li>
+<li>The <code>GetDesc()</code> of the <code>TerrainPaintTool&lt;T&gt;</code> class was renamed to <code>GetDescription()</code>.</li>
+<li>The <code>TerrainUtility</code> class has moved from <code>UnityEngine.Experimental.TerrainAPI</code> to <code>UnityEngine.TerrainUtils</code>.</li>
+<li>The <code>TerrainUtility.TerrainMap</code> class is no longer an inner-class and belongs to the <code>UnityEngine.TerrainUtils</code> namespace.</li>
+<li>The <code>TerrainMap.TileCoord</code> structure is no longer in the <code>TerrainMap</code> class, has been renamed to <code>TerrainTileCoord</code>, and is now also part of the <code>UnityEngine.TerrainUtils</code> namespace.</li>
+<li>The <code>UnityEditor.Experimental.TerrainAPI.BrushPreviewMode</code> enum has been renamed to <code>TerrainBrushPreviewMode</code> and moved to the <code>UnityEditor.TerrainTools</code> namespace.</li>
+<li>The <code>TerrainPaintUtilityEditor.BuiltinPaintMaterialPasses</code> enum has moved from the <code>TerrainPaintUtilityEditor</code> class and into the <code>UnityEditor.TerrainTools</code> namespace. It has also been renamed to <code>TerrainBuiltinPaintMaterialPasses</code>.</li>
+<li>The three <code>ShowBrushGUI</code> functions in <code>IOnInspectorGUI</code> have been merged into one function with default parameter values instead of the different overloaded functions.</li>
+<li>
+<code>TerrainFilter</code> has been removed. Use <code>System.Predicate&lt;Terrain&gt;</code> instead.</li>
+</ul>
+
+<p><a name="Texture"></a></p>
+
+<h2>Texture2D.Resize renamed to Reinitialize</h2>
+
+<p><code>Texture2D.Resize</code> and its overloads have been renamed to <code>Texture2D.Reinitialize</code>.</p>
+
+<p>The API Updater should rename this automatically. If not, change any usage of <code>Texture2D.Resize</code> to <code>Texture2D.Reinitialize</code>.</p>
+
+<p><a name="Android"></a></p>
+
+<h2>Android changes</h2>
+
+<p>A large part of the Android build pipeline is now incremental and Unity removed the following features that were in the previous build pipeline:</p>
+
+<ul>
+<li>Unity no longer copies Gradle project assets located in <strong>Assets</strong>/<strong>Plugins</strong>/<strong>Android</strong>/<strong>[res, assets]</strong> to the Gradle project.
+
+<ul>
+<li>Previously you could place Gradle resources in this folder and Unity copied them into the Gradle project. You should now use <a href="AndroidAARPlugins.html">AAR or androidlib plug-ins</a> to pass additional Gradle resources to the application.</li>
+<li>If you place project assets in this folder, Unity shows a build error message.</li>
+</ul>
+</li>
+<li>Unity no longer ignores files inside the <strong>GENERATED BY UNITY. REMOVE THIS COMMENT TO PREVENT OVERWRITING WHEN EXPORTING AGAIN</strong> comment.
+
+<ul>
+<li>Previously Unity wouldn’t overwrite files if you removed this comment. If you didn’t remove the comment, Unity always regenerated build.gradle, manifest, and UnityPlayerActivity files.</li>
+<li>If you want your changes to persist using the new build pipeline, use templates.</li>
+</ul>
+</li>
+<li>When you export an Android project, Unity no longer creates a symbols zip package. The symbols are now available in the <strong>unityLibrary\symbols</strong> directory which you can zip. The reason for this change is that not all symbols files are available when you export a project; Gradle produces the <code>libil2cpp.so</code> symbols when it builds the application.</li>
+<li>Changed how Unity checks to see if an obb is compatible with an apk. Both the apk and obb now have unity_obb_guid file inside them and if the contents match between them, Unity treats them as being compatible.</li>
+<li>For custom build scripts that use <a href="../ScriptReference/BuildOptions.PatchPackage.html">PatchPackage</a>, note that <strong>Patch/Patch &amp; Run</strong> now works with all types of assets and doesn’t require a Script Only Build.</li>
+</ul>
+
+<p>The default <a href="gradle-templates.html">mainTemplate.gradle</a> file has changed. If you use a custom main template, you must regenerate it and reapply your changes on top. Otherwise, your application can experience performance regressions if it uses <a href="../ScriptReference/Resources.Load.html">Resources.Load</a>.</p>
+
+<p><a name="UI"></a></p>
+
+<h2>UI Toolkit - Default scaleMode for Image changed</h2>
+
+<p>Default Image.scaleMode was changed from ScaleAndCrop to ScaleToFit.</p>
+
+<p>The expected behavior for an image is to scale to the size of the element, so we changed the default value of Image.scaleMode to ScaleToFit.
+If you didn’t override the Image scale mode, some cropped images might shrink to fit the size of the element.
+If ScaleAndCrop was the expected mode for your images, you can override their style by adding the following value in your UXML file inline style: </p>
+
+<p><code>-unity-background-scale-mode: scale-and-crop;</code></p>
+
+<p>You can also create a style class with the override and apply it to images that require ScaleAndCrop.</p>
+
+<p><a name="Upgrade"></a></p>
+
+<h2>Mono upgrade behavior changes</h2>
+
+<p>The underlying C# runtime, Mono, has been upgraded in the latest version. This includes many fixes from the upstream version of Mono, and some notable changes in behavior.</p>
+
+<ul>
+<li>
+<code>Directory.GetFiles</code> is no longer guaranteed to return a sorted list.
+
+<ul>
+<li>Previously, this always returned an alphabetically sorted list of items. If your project needs items to be returned in the same order every time, sort the returned list. For example:
+var files = <code>Directory.GetFiles(dir).OrderBy(f =&gt; f)</code>;</li>
+</ul>
+</li>
+<li>
+<code>Object.GetHashCode</code> now returns a different value and shouldn’t be relied on as a deterministic hashing algorithm between operating systems.
+
+<ul>
+<li>In general, you shouldn’t use the result of <code>GetHashCode</code> outside of the current process, that is don’t serialize it or expect it to be the same the next time the code runs in a new process. Unity recommends using a deterministic hashing algorithm such as MD5.</li>
+</ul>
+</li>
+<li>Some bug fixes have resulted in new exceptions being thrown. Additionally, the content of some exception messages have changed.
+
+<ul>
+<li>This new behavior will be particularly noticeable in automated testing scenarios and may require changing the expected behavior if the tests are parsing the logs for specific exception messages.</li>
+</ul>
+</li>
+</ul>
+
+<p><a name="Performance"></a></p>
+
+<h2>Adaptive Performance</h2>
+
+<p>Version 3.0 of the Adaptive Performance package is now available. For information on how to upgrade to version 3.0, see the <a href="https://docs.unity3d.com/Packages/com.unity.adaptiveperformance@3.0/manual/upgrade-guides.html">Adaptive Performance upgrade guides</a>.</p>
+
+<p><a name="Render"></a></p>
+
+<h2>RenderTexture DepthStencilFormat</h2>
+
+<p>Previously, if you set the <a href="https://docs.unity3d.com/2021.2/Documentation/ScriptReference/RenderTexture-depth.html"><code>RenderTexture.depth</code></a> property to 32-bit, you could get D24_S8 depending on the platform. Now if you set it to 32-bit, you get D32_S8 with 32-bit for the depth component if that format is supported on the current platform. However, this doubles the memory usage for that depth buffer. </p>
+
+<p>The new <a href="https://docs.unity3d.com/2021.2/Documentation/ScriptReference/RenderTexture-depthStencilFormat.html"><code>RenderTexture.depthStencilFormat</code></a> property returns the format that the graphics API uses to create the resource in video memory. You can also use this property to request a specific format. However, not all platforms support all depth stencil formats. When you set the <code>DepthStencilFormat</code> property to an unsupported format, Unity automatically selects a compatible format that has the equal or greater amount of bits for the depth and stencil components. </p>
+
+<h3>Upgrading</h3>
+
+<p>The RenderTexture asset now serializes the depth stencil format that you selected. If you use an API that takes a number of bits instead of a format, these bits get mapped to a format and that format is serialized. RenderTexture assets from previous versions that had the depth set to more than 16-bits are automatically upgraded to use D24_S8. </p>
+
+<p>On some platforms (for example Windows) that use the DirectX graphics API, this results in a format with fewer depth bits because the graphics backend selects the D32_S8 format internally if you set bits&gt;16. To ensure consistent upgrades across all platforms, D24_S8 is used on all platforms for the automatic upgrader. However, this might introduce visual artifacts in the render output of your project if you have RenderTexture assets in your project. Review these assets and change the depth stencil format to D32_S8 when needed. The following issues might occur:</p>
+
+<ul>
+<li>The memory size might increase for the RenderTextures that you use. However, the memory reported is now correct.</li>
+<li>Now that setting the depth property to 32-bit gives you a 32-bit depth component, the memory usage increases. To avoid this, set the bits to 24 and use D24_S8 if that is supported on your platform.</li>
+<li>If a platform doesn’t support D24_S8, Unity falls back to the compatible format D32_S8 by default. To prevent this, in the Inspector window, disable the <a href="class-RenderTexture.html">Enable Compatible Format</a> property on an asset. If Unity doesn’t support the format D32_S8 and it can’t fall back, you see the error message: <strong>RenderTexture.Create failed: depth/stencil format unsupported. There is no compatible format on this platform or this fallback to a compatible format is disabled in the import inspector.</strong>. In most cases, to fix the issue you can turn on <strong>Enable Compatible Format</strong>.</li>
+</ul>
+
+<p><a name="Graphics"></a></p>
+
+<h2>Graphics formats DepthAuto, ShadowAuto and VideoAuto are deprecated</h2>
+
+<p>The following graphics formats have now been deprecated:</p>
+
+<ul>
+<li>DepthAuto</li>
+<li>ShadowAuto</li>
+<li>VideoAuto</li>
+</ul>
+
+<p>These <strong>Auto</strong> formats are unclear about the exact format that’s used and might vary by platform.</p>
+
+<p>The steps to remove the use of these deprecated formats depends on the format and use case.</p>
+
+<h3>For VideoAuto</h3>
+
+<p>To get the current platform’s automatic video format, use <code>SystemInfo.GetGraphicsFormat(DefaultFormat.Video)</code>.</p>
+
+<h3>For DepthAuto/ShadowAuto used to indicate a depth-only render texture.</h3>
+
+<p>The GraphicsFormat API often uses DepthAuto or ShadowAuto to create render textures with depth-only rendering, and no color buffer. Examples of this use case are:</p>
+
+<ul>
+<li><code>renderTextureDescriptor.graphicsFormat = GraphicsFormat.ShadowAuto</code></li>
+<li><code>RenderTexture.GetTemporary(width, height, bits, GraphicsFormat.ShadowAuto)</code></li>
+</ul>
+
+<p>To indicate depth-only (non-color) rendering, use GraphicsFormat.None as the new color format.
+<code>renderTextureDescriptor.graphicsFormat = GraphicsFormat.None;</code></p>
+
+<p>If you used ShadowAuto, set the shadowSamplingMode of your RenderTextureDescriptor to ShadowSamplingMode.CompareDepths to enable depth-compare sampling on the depth texture, and change the code to use an overload that takes a RenderTextureDescriptor.
+<code>renderTextureDescriptor.shadowSamplingMode = ShadowSamplingMode.CompareDepths;</code></p>
+
+<h3>For DepthAuto/ShadowAuto in other situations</h3>
+
+<p>In some situations the DepthAuto/ShadowAuto formats represented an automatically selected depth format appropriate for the current platform. To replace the deprecated values in this case, use <code>SystemInfo.GetGraphicsFormat(DefaultFormat.Depth/Shadow)</code></p>
+
+<p><a name="WebGL"></a></p>
+
+<h2>WebGL: Updated Emscripten to 2.0.19</h2>
+
+<p>The asm.js Linker target that was available for advanced users is no longer available.</p>
+
+<ul>
+<li>In Unity 2021.2, the underlying Emscripten compiler used by the WebGL platform was updated to version 2.0.19. This upgraded the native code object file format, and therefore requires recompiling all native code plugins (C/C++ code plugins) in a project. If you are using closed source 3rd-party plugins from Unity Asset Store, for example, remember to ask the author for an updated version for Unity 2021.2.</li>
+<li>The Emscripten runtime JavaScript function <code>Pointer_stringify()</code>is now deprecated. Instead, call the function <code>UTF8ToString()</code> to marshal a UTF8-encoded null-terminated C string from the WebAssembly heap to a JavaScript string.</li>
+</ul>
+
+<p><a name="Lightmapper"></a></p>
+
+<h2>Progressive GPU Lightmapper dropped support for CPU OpenCL devices</h2>
+
+<p>The Progressive GPU Lightmapper no longer supports CPU OpenCL devices. If no supported GPU is found but a CPU OpenCL device is detected, a warning message informs you that the device is skipped and falls back to the Progressive CPU Lightmapper. The Progressive CPU Lightmapper offers better performance for CPU-based computation of lightmaps.
+This change of behavior will happen automatically and lightmaps should be computed as expected.</p>
+
+<p><a name="Process"></a></p>
+
+<h2><a href="https://docs.unity3d.com/2021.2/Documentation/ScriptReference/AssetPostprocessor.OnPostprocessAllAssets.html">OnPostprocessAllAssets behavior changes</a></h2>
+
+<p>When Unity calls <code>InitializeOnLoad</code> methods during the asset import process, asset loading can fail. During asset import, the asset database is in an update state and Unity can’t determine which assets have already been imported. <code>InitializeOnLoad</code> methods can’t load assets that haven’t been imported.</p>
+
+<p>To improve the asset import process, the <code>OnPostprocessAllAssets</code> callback has been enhanced. In particular, the <code>OnPostprocessAllAssets</code> callback:</p>
+
+<ul>
+<li>Can perform initialization after a domain reload, when the asset database is guaranteed to be in a ready state.</li>
+<li>Contains the <code>didDomainReload</code> parameter, which is set to true if the domain has reloaded.</li>
+<li>Supports asset operations. This includes asset loading, which behaves in the same way as loading assets via a menu item.</li>
+<li>Has moved out of the asset database importing loop. Callback processing is postponed until asset import is complete.</li>
+</ul>
+
+<p>Move any domain-related initialization logic that requires asset operations to the <code>OnPostprocessAllAsset</code> callback; do not perform asset operations inside <code>InitializeOnLoad</code> methods.</p>
+
+<p>The following behavior change code examples show how asset operations were previously postponed.</p>
+
+<p>Example 1:</p>
+
+<pre><code>public class AssetPostprocessorTester1 : AssetPostprocessor
+{
+    static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
+    {
+        var assetPath = "Assets/hello.txt";
+
+        if (File.Exists(assetPath))
+        {
+            var txtObj = AssetDatabase.LoadAssetAtPath&lt;TextAsset&gt;("Assets/hello.txt");
+            AssetDatabase.DeleteAsset("Assets/hello.txt");
+
+            if (txtObj == null)
+                Debug.Log("New Behaviour: Asset object is unloaded");
+            else
+                Debug.Log("Old Behaviour: Asset is loaded for deleted asset!!");
+        }
+    }
+}
+</code></pre>
+
+<p>Example 2:</p>
+
+<pre><code> public class AssetPostprocessorTester2 : AssetPostprocessor
+{
+    static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
+    {
+        var assetPath = "Assets/SomeText.txt";
+        if (!File.Exists(assetPath))
+        {
+            File.WriteAllText(assetPath, "hello world");
+
+            AssetDatabase.ImportAsset(assetPath);
+            var txtObj = AssetDatabase.LoadAssetAtPath&lt;TextAsset&gt;(assetPath);
+
+            if (txtObj == null)
+                Debug.Log("Old Behaviour: Asset hasn't been imported yet");
+            else
+                Debug.Log("New Behaviour: Asset is imported and loaded");
+        }
+    }
+}
+</code></pre>
+
+<p>The following example has the new <code>OnPostprocessAllAssets</code> variant with the <code>didDomainReload</code> parameter:</p>
+
+<pre><code>static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths, bool didDomainReload)
+{
+    if (didDomainReload)
+        Debug.Log("Domain has been reloaded");
+    else
+        Debug.Log("Domain did not reload during import");
+}
+</code></pre>
+
+<p>All domain reloads are now processed inside the asset database.</p>
+
+<p><code>OnPostprocessAllAssets</code> now works better with asset operations, but any processing in this callback increases asset database refresh and domain reload time. <code>InitializeOnLoad</code> methods also add to domain reload time. It is best practice to minimize processing in these callbacks to improve Editor responsiveness between iterations. </p>
+
+<p><a name="BakeLighting"></a></p>
+
+<h2>Mixed point and spot lights with no shadows bake direct light in subtractive lighting mode</h2>
+
+<p><a href="LightMode-Mixed.html">Mixed mode</a> point and spot lights now consistently contribute baked direct light in Scenes using <a href="LightMode-Mixed-Subtractive.html">Subtractive lighting mode</a>, regardless of their <a href="class-Light.html">Shadow Type</a> setting. As a result, specular lighting for Static GameObjects may appear to be missing in affected Scenes. To resolve this issue, replace affected Mixed mode lights with <a href="LightMode-Realtime.html">Realtime mode Lights</a>. Alternatively, use <a href="LightMode-Mixed-BakedIndirect.html">Baked Indirect</a> or <a href="LightMode-Mixed-Shadowmask.html">Shadowmask</a> lighting mode(s) with Mixed lights.</p>
+
+<p><a name="Shader"></a></p>
+
+<h2>Shader keyword system improvements</h2>
+
+<p>The shader keyword system now allows up to 65534 local keywords per shader or compute shader and 2<sup>32</sup>–2 global keywords per project. All keywords you declare in a shader or compute shader are now local to this shader. Keywords you declare in a directive with the _local suffix aren’t affected by the state of global keywords.</p>
+
+<p>示例：</p>
+
+<p>A pass in a shader declares the following keywords:</p>
+
+<ul>
+<li><code>#pragma shader_feature FOO BAR</code></li>
+<li><code>#pragma shader_feature_local BOO BAZ</code></li>
+</ul>
+
+<p>When using this pass, keywords FOO and BAR are enabled if they’re enabled either globally or on the material. Keywords BOO and BAZ are only enabled if they’re enabled on the material.</p>
+
+<p><a name="NET"></a></p>
+
+<h2>Unity supports .NET Standard 2.1 APIs</h2>
+
+<p>Unity now supports many additional APIs in the .NET base class libraries, including all APIs in the .NET Standard 2.1 API. Your project might fail to compile if any of your code has conflicts with new APIs.</p>
+
+<p>To avoid errors when you upgrade projects created in previous versions of Unity, check and update your code to ensure that there are no conflicts with types and methods that are now available in .NET Standard 2.1.</p>
+
+<p>Sources of conflict include the following:</p>
+
+<ul>
+<li>ambiguous references</li>
+<li>extension methods</li>
+<li>precompiled assemblies</li>
+</ul>
+
+<h3>Resolve ambiguous references</h3>
+
+<p>If your code implements types or methods with a name that conflicts with types or methods that .NET Standard 2.1 adds, your code fails to compile. Name conflicts can lead to C# compiler errors due to ambiguous references.</p>
+
+<p>For example, if you add a type named <code>MyCompany.MyCode.Range</code> to your project’s code, this might conflict with the existing <code>System.Range</code> type. Code that contains both <code>using System;</code> and <code>using MyCompany;</code> statements fails to compile.</p>
+
+<p>To prevent errors, fully specify the namespace in the C# code for any types that have conflicting names.</p>
+
+<h3>Resolve conflicting extension methods</h3>
+
+<p>If your existing code has an extension method that .NET Standard 2.1 now implements on a type directly, you can choose to rename your extension methods or to use the methods implemented by the base class library.</p>
+
+<p>For example, code in your project might implement an extension method named <code>CopyTo</code> on the <code>ArraySegment</code> type. In .NET Standard 2.1, <code>ArraySegment</code> has a built-in <code>CopyTo</code> method. You can choose to rename your <code>CopyTo</code> extension method, or eliminate it entirely and use the built-in one.</p>
+
+<h3>Resolve conflicting assemblies</h3>
+
+<p>If your project uses precompiled assemblies (that is, managed plugins) that implement types and methods that are now part of the base class library, then remove these assemblies from your project and use the built-in implementations.</p>
+
+<p>For example, in previous versions of Unity, you needed to use the <code>System.Memory.dll</code> assembly from NuGet to access the <code>System.Span</code> value type. Now, .NET Standard 2.1 provides <code>System.Span</code> in the base class library. If you try to use the <code>System.Memory.dll</code> managed plugin in Unity 2021.2, the project fails to build.</p>
+
+<p><a name="Windows"></a></p>
+
+<h2>Windows XR plugin removed</h2>
+
+<p>Microsoft has deprecated the Windows XR plugin and now supports Windows Mixed Reality (WMR) features and devices through the OpenXR plugin.</p>
+
+<ul>
+<li>The Windows XR plugin has been removed as of Unity 2021.2.</li>
+<li>When you open an existing project in Unity 2021.2, the update process removes the Windows XR plugin, if present.</li>
+<li>To continue to use the project for Windows Mixed Reality, you must enable the Unity OpenXR plugin.</li>
+<li>Depending on which features you are using, you must also install Microsoft’s Mixed Reality OpenXR support plugin and possibly additional tools from the Microsoft Mixed Reality Toolkit.</li>
+</ul>
+
+<p>To upgrade to the Unity OpenXR plugin:</p>
+
+<ol>
+<li>Open the <strong>Project Settings</strong> window.</li>
+<li>In the <strong>XR Plug-in Management</strong> section, enable <strong>OpenXR</strong> in the <strong>Plug-in Providers</strong> list.
+If needed, Unity downloads and installs the OpenXR plugin.</li>
+</ol>
+
+<p>Once the OpenXR plugin is enabled, you can use the <strong>Mixed Reality Feature Tool</strong> provided by Microsoft to install the required supporting packages.</p>
+
+<p>To install or update WMR features, tools, and samples:</p>
+
+<ol>
+<li>Download and run the <a href="https://docs.microsoft.com/en-us/windows/mixed-reality/develop/unity/welcome-to-mr-feature-tool">Mixed Reality Feature Tool</a>.</li>
+<li>Choose the Unity Project to update and click Discover Features.</li>
+<li>Under Platform Support, select the Mixed Reality OpenXR Plugin.</li>
+<li>Select any additional features you wish to add.</li>
+<li>Click Get features.</li>
+<li>Click Import and then Approve to complete the process.</li>
+<li>Return to the XR Plug-in Management section of your Unity Project Settings and enable and configure the added features.</li>
+</ol>
+
+<p>For more information about setting up new and updated Unity projects to use Windows Mixed Reality, see <a href="https://docs.microsoft.com/en-us/windows/mixed-reality/develop/unity/xr-project-setup?tabs=openxr">Setting up your XR configuration</a> on Microsoft’s documentation site.</p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UpgradeGuide2022LTS.html"></a></span><div class="tip">Upgrading to Unity 2022 LTS</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UpgradeGuide2020LTS.html"></a></span><div class="tip">升级到 Unity 2020 LTS</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

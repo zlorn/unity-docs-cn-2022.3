@@ -1,0 +1,789 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Create your own overlay  - Unity 手册">
+<title>Create your own overlay  - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="You can create custom panel overlays and toolbar overlays for the Scene view window.">
+<meta property="og:description" content="You can create custom panel overlays and toolbar overlays for the Scene view window.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'overlays-custom';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/overlays-custom.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/overlays-custom.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/overlays-custom.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/overlays-custom.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/overlays-custom.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/overlays-custom.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/overlays-custom.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/overlays-custom.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/overlays-custom.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/overlays-custom.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/overlays-custom.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/overlays-custom.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/overlays-custom.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/overlays-custom.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/overlays-custom.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/overlays-custom.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/overlays-custom.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/overlays-custom.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/overlays-custom.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/overlays-custom.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/overlays-custom.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/overlays-custom.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/overlays-custom.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/overlays-custom.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/overlays-custom.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/overlays-custom.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/overlays-custom.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/overlays-custom.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/overlays-custom.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/overlays-custom.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/overlays-custom.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/overlays-custom.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/overlays-custom.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/overlays-custom.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/overlays-custom.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/overlays-custom.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/overlays-custom.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/overlays-custom.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/overlays-custom.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/overlays-custom.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/overlays-custom.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/overlays-custom.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/overlays-custom.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/overlays-custom.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/overlays-custom.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/overlays-custom.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/overlays-custom.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/overlays-custom.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/overlays-custom.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/overlays-custom.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/overlays-custom.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/overlays-custom.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/overlays-custom.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/overlays-custom.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/overlays-custom.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/overlays-custom.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/overlays-custom.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/overlays-custom.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UnityOverview.html">在 Unity 中操作</a></li>
+<li><a href="UsingTheEditor.html">Unity 的界面</a></li>
+<li><a href="UsingTheSceneView.html">Scene 视图</a></li>
+<li><a href="overlays.html">Overlays</a></li>
+<li>Create your own overlay </li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="manage-overlay-configurations.html"></a></span><div class="tip">Create and manage overlay configurations</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="PositioningGameObjects.html"></a></span><div class="tip">Position GameObjects</div>
+</div>
+</div></div>
+<h1>Create your own overlay</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>You can create custom panel overlays and toolbar overlays for the <strong>Scene view</strong> window.</p>
+
+<ul>
+<li><a href="#panel-overlays">Panel Overlays</a></li>
+<li><a href="#toolbar-overlays">Toolbar Overlays</a></li>
+</ul>
+
+<p><strong>Tip</strong>: For information about creating UIElements, refer to the <a href="https://docs.unity3d.com/Manual/UIElements.html">UI Elements Developer Guide</a>.</p>
+
+<h2>Understand EditorToolbarElement</h2>
+
+<p>A toolbar element can contain text, an icon, or a combination of both.</p>
+
+<p>Use <code>EditorToolbarElement(Identifier, EditorWindowType)</code> to register toolbar elements to use in <code>ToolbarOverlay</code> implementations.</p>
+
+<p>You can inherit from any <code>VisualElement</code> type and create styling yourself, but toolbar elements require specific styling. It is preferable to inherit from one of these predefined <code>EditorToolbar</code> types:</p>
+
+<ul>
+<li>
+<code>EditorToolbarButton</code>: Based on <code>UnityEditor.UIElements.ToolbarButton</code>
+</li>
+<li>
+<code>EditorToolbarToggle</code>: Based on <code>UnityEditor.UIElements.ToolbarToggle</code>
+</li>
+<li>
+<code>EditorToolbarDropdown</code>: Based on <code>EditorToolbarButton</code>
+</li>
+<li>
+<code>EditorToolbarDropdownToggle</code>: Based on <code>UnityEngine.UIElements.BaseField</code>
+</li>
+</ul>
+
+<p><strong>Tip:</strong> If a toolbar is docked horizontally or vertically, its text might not be visible or clipped. You can specify an icon for each toolbar to avoid text clipping.</p>
+
+<p><a name="panel-overlays"></a></p>
+
+<h2>Create a panel overlay</h2>
+
+<p>All overlays must inherit from the <a href="../ScriptReference/Overlays.Overlay.html">Overlay</a> base class and implement the <a href="Overlays.Overlay.CreatePanelContent">CreatePanelContent</a> method. This creates a basic panel that you can use and that you can add toolbar elements to.</p>
+
+<p>To create a panel overlay:</p>
+
+<ol>
+<li><p>Create a new <a href="CreatingAndUsingScripts.html">C# script</a> in the <a href="SpecialFolders.html">Editor folder</a> and name it.</p></li>
+<li><p>Open the script you created.</p></li>
+<li><p>Remove the default content from the script.</p></li>
+<li><p>Implement the <code>Overlay</code> class from the <code>UnityEditor.Overlays</code> namespace.</p></li>
+<li><p>Override the <a href="../ScriptReference/Overlays.Overlay.CreatePanelContent.html">CreatePanelContent</a> function and add your content to the visual element.</p></li>
+<li><p>Add the <a href="../ScriptReference/Overlays.OverlayAttribute.html">OverlayAttribute</a> attribute to the class.</p></li>
+<li>
+<p>In the <code>OverlayAttribute</code>, specify which type of window you want this overlay to be in:</p>
+
+<ul>
+<li>If you want the overlay to be available in all Editor windows, specify <code>EditorWindow</code> as the type.</li>
+<li>If you want the overlay to only be available in the Scene view, specify <code>SceneView</code> as the type.</li>
+</ul>
+</li>
+<li><p>In the <code>OverlayAttribute</code>, add a name, ID, and display name to the overlay. </p></li>
+<li><p>To add an icon that displays when your overlay is collapsed, add the <code>Icon</code> attribute to the <code>Overlay</code> class and specify an icon. If the overlay has no icon, then by default the system uses the first two letters of the overlay name or the first two initial letters of the first two words. </p></li>
+</ol>
+
+<h3>示例</h3>
+
+<pre><code class="lang-cs">using UnityEditor;
+using UnityEditor.Overlays;
+using UnityEngine.UIElements;
+[Overlay(typeof(SceneView), "Panel Overlay Example", true)]
+public class MyToolButtonOverlay : Overlay
+{
+    public override VisualElement CreatePanelContent()
+    {
+        var root = new VisualElement() { name = "My Toolbar Root" };
+        root.Add(new Label() { text = "Hello" });
+        return root;
+
+    }
+}
+</code></pre>
+
+<p><a name="toolbar-overlays"></a></p>
+
+<h2>Create a toolbar overlay</h2>
+
+<p>Toolbar overlays are containers that hold toolbar items and are composed of collections of <code>EditorToolbarElement</code>.</p>
+
+<p>Toolbar overlays have built-in horizontal, vertical, and panel layouts. <code>ToolbarOverlay</code> implements a parameterless constructor that passes the <code>EditorToolbarElementAttribute</code> ID. Unlike panel overlays, the contents are defined as standalone pieces that are collected to form a strip of elements.</p>
+
+<p>When you create toolbar overlays:</p>
+
+<ul>
+<li>Use <code>EditorToolbarElement(Identifier, EditorWindowType)</code> to register toolbar elements to use in the <code>ToolbarOverlay</code> implementation.</li>
+<li>Tag all overlays with <a href="../ScriptReference/Overlays.OverlayAttribute.html">OverlayAttribute</a>.</li>
+<li>Make sure that toolbar overlays inherit <code>ToolbarOverlay</code> and implement a parameterless constructor.</li>
+<li>Make sure that the contents of a toolbar are populated with string IDs, which are passed to the base constructor.</li>
+<li>Make sure that IDs are defined by <code>EditorToolbarElementAttribute</code>.</li>
+<li>Use the <code>Icon</code> attribute to add icon an icon to your overlay. The icon is visible when an overlay is collapsed. If the overlay does not have an icon, the first two letters of the overlay name (or the first two initial letters of the first two words) are shown when the overlay is collapsed.</li>
+</ul>
+
+<p>When you implement elements specific to <code>ToolbarOverlay</code> in an overlay:</p>
+
+<ul>
+<li>Use the <code>IAccessContainerWindow</code> interface for toolbars only. The element is not aware of its context. In the <code>DropdownToggleExample</code>, if you toggle the element it won’t do anything.</li>
+<li>Use <code>UIElement</code> styling for visuals. The toolbar element won’t have its styling in an overlay.</li>
+</ul>
+
+<p>To create a toolbar overlay:</p>
+
+<ol>
+<li>Create a new <a href="CreatingAndUsingScripts.html">C# script</a> in the <a href="SpecialFolders.html">Editor folder</a> and name it.</li>
+<li>Open the script you created.</li>
+<li>Remove the default content from the script.</li>
+<li>Add toolbar elements to the script.</li>
+<li>Add toolbar elements to the overlay constructor.</li>
+<li>Add the panel overlay and implement the toolbar elements.</li>
+</ol>
+
+<h3>示例</h3>
+
+<p>This example is of an overlay named <strong>Element Toolbars Example</strong> that demonstrates these toolbar elements:</p>
+
+<ul>
+<li><code>EditorToolbarButton</code></li>
+<li><code>EditorToolbarToggle</code></li>
+<li><code>EditorToolbarDropdown</code></li>
+<li><code>EditorToolbarDropdownToggle</code></li>
+</ul>
+
+<p>Each toolbar element is created as a standalone class and then added to the overlay panel.</p>
+
+<p>This overlay: </p>
+
+<ul>
+<li>Can be arranged as a panel, horizontally, and vertically.</li>
+<li>Has buttons that include text and tooltips.</li>
+<li>Has toolbar icons defined by the <code>Icon</code> attribute. This icon displays when the overlay is collapsed.</li>
+</ul>
+
+<pre><code class="lang-cs">    using System.Collections;
+    using System.Collections.Generic;
+    using System.Text;
+    using UnityEngine;
+    using UnityEditor.EditorTools;
+    using UnityEditor.Toolbars;
+    using UnityEditor.Overlays;
+    using UnityEngine.UIElements;
+    using UnityEditor;
+
+    // Use [EditorToolbarElement(Identifier, EditorWindowType)] to register toolbar elements for use in ToolbarOverlay implementation.
+
+    [EditorToolbarElement(id, typeof(SceneView))]
+    class DropdownExample : EditorToolbarDropdown
+    {
+        public const string id = "ExampleToolbar/Dropdown";
+
+        static string dropChoice = null;
+
+        public DropdownExample()
+        {
+            text = "Axis";
+            clicked += ShowDropdown;
+        }
+
+        void ShowDropdown()
+        {
+            var menu = new GenericMenu();
+            menu.AddItem(new GUIContent("X"), dropChoice == "X", () =&gt; { text = "X"; dropChoice = "X"; });
+            menu.AddItem(new GUIContent("Y"), dropChoice == "Y", () =&gt; { text = "Y"; dropChoice = "Y"; });
+            menu.AddItem(new GUIContent("Z"), dropChoice == "Z", () =&gt; { text = "Z"; dropChoice = "Z"; });
+            menu.ShowAsContext();
+        }
+    }
+    [EditorToolbarElement(id, typeof(SceneView))]
+    class ToggleExample : EditorToolbarToggle
+    {
+        public const string id = "ExampleToolbar/Toggle";
+        public ToggleExample()
+        {
+            text = "Toggle OFF";
+            this.RegisterValueChangedCallback(Test);
+        }
+
+        void Test(ChangeEvent&lt;bool&gt; evt)
+        {
+            if (evt.newValue)
+            {
+                Debug.Log("ON");
+                text = "Toggle ON";
+            }
+            else
+            {
+                Debug.Log("OFF");
+                text = "Toggle OFF";
+            }
+        }
+    }
+
+    [EditorToolbarElement(id, typeof(SceneView))]
+    class DropdownToggleExample : EditorToolbarDropdownToggle, IAccessContainerWindow
+    {
+        public const string id = "ExampleToolbar/DropdownToggle";
+
+        // This property is specified by IAccessContainerWindow and is used to access the Overlay's EditorWindow.
+
+        public EditorWindow containerWindow { get; set; }
+        static int colorIndex = 0;
+        static readonly Color[] colors = new Color[] { Color.red, Color.green, Color.cyan };
+        public DropdownToggleExample()
+        {
+            text = "Color Bar";
+            tooltip = "Display a color rectangle in the top left of the Scene view. Toggle on or off, and open the dropdown" +
+                      "to change the color.";
+
+        // When the dropdown is opened, ShowColorMenu is invoked and we can create a popup menu.
+
+            dropdownClicked += ShowColorMenu;
+
+        // Subscribe to the Scene view OnGUI callback so that we can draw our color swatch.
+
+            SceneView.duringSceneGui += DrawColorSwatch;
+        }
+
+        void DrawColorSwatch(SceneView view)
+        {
+
+         // Test that this callback is for the Scene View that we're interested in, and also check if the toggle is on
+        // or off (value).
+
+            if (view != containerWindow || !value)
+            {
+                return;
+            }
+
+            Handles.BeginGUI();
+            GUI.color = colors[colorIndex];
+            GUI.DrawTexture(new Rect(8, 8, 120, 24), Texture2D.whiteTexture);
+            GUI.color = Color.white;
+            Handles.EndGUI();
+        }
+
+        // When the dropdown button is clicked, this method will create a popup menu at the mouse cursor position.
+
+        void ShowColorMenu()
+        {
+            var menu = new GenericMenu();
+            menu.AddItem(new GUIContent("Red"), colorIndex == 0, () =&gt; colorIndex = 0);
+            menu.AddItem(new GUIContent("Green"), colorIndex == 1, () =&gt; colorIndex = 1);
+            menu.AddItem(new GUIContent("Blue"), colorIndex == 2, () =&gt; colorIndex = 2);
+            menu.ShowAsContext();
+        }
+    }
+
+    [EditorToolbarElement(id, typeof(SceneView))]
+    class CreateCube : EditorToolbarButton//, IAccessContainerWindow
+    {
+        // This ID is used to populate toolbar elements.
+
+        public const string id = "ExampleToolbar/Button";
+
+        // IAccessContainerWindow provides a way for toolbar elements to access the `EditorWindow` in which they exist.
+        // Here we use `containerWindow` to focus the camera on our newly instantiated objects after creation.
+        //public EditorWindow containerWindow { get; set; }
+
+        // Because this is a VisualElement, it is appropriate to place initialization logic in the constructor.
+        // In this method you can also register to any additional events as required. In this example there is a tooltip, an icon, and an action.
+
+        public CreateCube()
+        {
+
+    // A toolbar element can be either text, icon, or a combination of the two. Keep in mind that if a toolbar is
+        // docked horizontally the text will be clipped, so usually it's a good idea to specify an icon.
+
+            text = "Create Cube";
+            icon = AssetDatabase.LoadAssetAtPath&lt;Texture2D&gt;("Assets/CreateCubeIcon.png");
+            tooltip = "Instantiate a cube in the scene.";
+            clicked += OnClick;
+        }
+
+        // This method will be invoked when the `Create Cube` button is clicked.
+
+        void OnClick()
+        {
+            var newObj = GameObject.CreatePrimitive(PrimitiveType.Cube).transform;
+
+        // When writing editor tools don't forget to be a good citizen and implement Undo!
+
+            Undo.RegisterCreatedObjectUndo(newObj.gameObject, "Create Cube");
+
+        //if (containerWindow is SceneView view)
+        //    view.FrameSelected();
+
+        }
+
+    }
+
+    // All Overlays must be tagged with the OverlayAttribute
+
+    [Overlay(typeof(SceneView), "ElementToolbars Example")]
+
+        // IconAttribute provides a way to define an icon for when an Overlay is in collapsed form. If not provided, the name initials are used.
+
+    [Icon("Assets/unity.png")]
+
+    // Toolbar Overlays must inherit `ToolbarOverlay` and implement a parameter-less constructor. The contents of a toolbar are populated with string IDs, which are passed to the base constructor. IDs are defined by EditorToolbarElementAttribute.
+
+    public class EditorToolbarExample : ToolbarOverlay
+    {
+
+     // ToolbarOverlay implements a parameterless constructor, passing the EditorToolbarElementAttribute ID.
+    // This is the only code required to implement a toolbar Overlay. Unlike panel Overlays, the contents are defined
+    // as standalone pieces that will be collected to form a strip of elements.
+
+        EditorToolbarExample() : base(
+            CreateCube.id,
+            ToggleExample.id,
+            DropdownExample.id,
+            DropdownToggleExample.id
+            )
+        { }
+    }
+
+
+</code></pre>
+
+<h2>Toolbar elements implementations</h2>
+
+<p>The controls for toolbar elements are the same as their equivalent in UIToolkit, but they inherit some toolbar functionalities and specific styling.</p>
+
+<p>This section has examples of the following toolbar elements:</p>
+
+<ul>
+<li><a href="#editortoolbarbutton">EditorToolbarButton</a></li>
+<li><a href="#editortoolbartoggle">EditorToolbarToggle</a></li>
+<li><a href="#editortoolbardropdown">EditorToolbarDropdown</a></li>
+<li><a href="#editortoolbardropdowntoggle">EditorToolbarDropdownToggle</a></li>
+</ul>
+
+<p><a name="editortoolbarbutton"></a></p>
+
+<h3>EditorToolbarButton</h3>
+
+<p><code>EditorToolbarButton</code> is a standalone class that contains the logic of the element. This example creates a button that generates a cube when you click it:</p>
+
+<pre><code class="lang-cs">[EditorToolbarElement(id, typeof(SceneView))]
+class CreateCube : EditorToolbarButton
+{
+// This ID is used to populate toolbar elements.
+
+public const string id = "ExampleToolbar/Button";   
+
+// Because this is a VisualElement, it is appropriate to place initialization logic in the constructor.
+
+// In this method you can also register to any additional events as required. In this example there is a tooltip, an icon, and an action.
+
+    public CreateCube()
+       {
+
+// A toolbar element can be either text, icon, or a combination of the two. Keep in mind that if a toolbar is docked horizontally the text will be clipped, so it's a good idea to specify an icon.
+
+            text = "Create Cube";
+            icon = AssetDatabase.LoadAssetAtPath&lt;Texture2D&gt;("Assets/CreateCubeIcon.png");
+            tooltip = "Instantiate a cube in the scene.";
+            clicked += OnClick;
+}
+
+void OnClick()
+{
+    var newObj = GameObject.CreatePrimitive(PrimitiveType.Cube).transform;
+
+    // When writing editor tools, don't forget to be a good citizen and implement Undo.
+
+    Undo.RegisterCreatedObjectUndo(newObj.gameObject, "Create Cube");
+
+// Note: Using ObjectFactory class instead of GameObject(like in this example) will register the undo entry automatically removing the need to register manually.
+
+}
+}
+</code></pre>
+
+<p>Add the element’s ID to the Overlay constructor:</p>
+
+<pre><code class="lang-cs">[Overlay(typeof(SceneView), "ElementToolbar Example")]
+[Icon("Assets/unity.png")]
+public class EditorToolbarExample : ToolbarOverlay
+{
+    EditorToolbarExample() : base(CreateCube.id) { }
+
+}
+</code></pre>
+
+<p><a name="editortoolbartoggle"></a></p>
+
+<h3>EditorToolbarToggle</h3>
+
+<p>Create a standalone class that contains all the logic of the element. This example creates a toggle that prints its state in the console and updates its text in the element:</p>
+
+<pre><code class="lang-cs">[EditorToolbarElement(id, typeof(SceneView))]
+class ToggleExample : EditorToolbarToggle
+{
+    public const string id = "ExampleToolbar/Toggle";
+    public ToggleExample()
+    {
+        text = "Toggle OFF";
+
+    // Register the class to a callback for when the toggle’s state changes
+
+        this.RegisterValueChangedCallback(OnStateChange);
+    }
+
+    void OnStateChange(ChangeEvent&lt;bool&gt; evt)
+    {
+        if (evt.newValue)
+        {
+
+    // Put logic for when the state is ON here
+
+                Debug.Log("Toggle State -&gt; ON");
+        text = "Toggle ON";
+        }
+        else
+        {
+
+    // Put logic for when the state is OFF here
+
+                Debug.Log("Toggle State -&gt; OFF");
+        text = "Toggle OFF";
+        }
+    }
+}
+</code></pre>
+
+<p>Add the element’s ID to the Overlay constructor:</p>
+
+<pre><code class="lang-cs">[[Overlay(typeof(SceneView), "ElementToolbar Example")]
+[Icon("Assets/unity.png")]
+public class EditorToolbarExample : ToolbarOverlay
+{
+    EditorToolbarExample() : base(
+ToggleExample.id
+) { }
+
+}
+
+</code></pre>
+
+<p><a name="editortoolbardropdown"></a></p>
+
+<h3>EditorToolbarDropdown</h3>
+
+<p>Create a standalone class that contains all the logic of the element. Here is a simple example of a dropdown that adjusts its text with the drop-down selection.</p>
+
+<pre><code class="lang-cs">[EditorToolbarElement(id, typeof(SceneView))]
+class DropdownExample : EditorToolbarDropdown
+{
+    public const string id = "ExampleToolbar/Dropdown";
+
+    static string dropChoice = null;
+
+    public DropdownExample()
+    {
+        text = "Axis";
+        clicked += ShowDropdown;
+    }
+
+    void ShowDropdown()
+    {
+
+// A simple GenericMenu to populate the dropdown content
+
+        var menu = new GenericMenu();
+        menu.AddItem(new GUIContent("X"), dropChoice == "X", () =&gt; { text = "X"; dropChoice = "X"; });
+        menu.AddItem(new GUIContent("Y"), dropChoice == "Y", () =&gt; { text = "Y"; dropChoice = "Y"; });
+        menu.AddItem(new GUIContent("Z"), dropChoice == "Z", () =&gt; { text = "Z"; dropChoice = "Z"; });
+        menu.ShowAsContext();
+    }
+}
+</code></pre>
+
+<p>Add the element’s ID to the Overlay constructor:</p>
+
+<pre><code class="lang-cs">[Overlay(typeof(SceneView), "ElementToolbar Example")]
+[Icon("Assets/unity.png")]
+public class EditorToolbarExample : ToolbarOverlay
+{
+    EditorToolbarExample() : base(
+DropdownExample.id
+) { }
+
+}
+</code></pre>
+
+<p><a name="editortoolbardropdowntoggle"></a></p>
+
+<h3>EditorToolbarDropdownToggle</h3>
+
+<p>Create a standalone class that contains all the logic of the element. A dropdown toggle is a dropdown that can toggled like the Gizmo menu in the Scene view. This example creates a rectangle in the corner of the Scene view whos color you can choose from a dropdown in the overlay. </p>
+
+<pre><code class="lang-cs">[EditorToolbarElement(id, typeof(SceneView))]
+class DropdownToggleExample : EditorToolbarDropdownToggle, IAccessContainerWindow
+{
+    public const string id = "ExampleToolbar/DropdownToggle";
+
+
+    // This property is specified by IAccessContainerWindow and is used to access the Overlay's EditorWindow.
+
+    public EditorWindow containerWindow { get; set; }
+    static int colorIndex = 0;
+    static readonly Color[] colors = new Color[] { Color.red, Color.green, Color.cyan };
+    public DropdownToggleExample()
+    {
+        text = "Color Bar";
+        tooltip = "Display a color rectangle in the top left of the Scene view. Toggle on or off, and open the dropdown" +
+                "to change the color.";
+
+
+   // When the dropdown is opened, ShowColorMenu is invoked and you can create a pop-up menu.
+
+        dropdownClicked += ShowColorMenu;
+
+
+    // Subscribe to the Scene view OnGUI callback to draw a color swatch.
+
+        SceneView.duringSceneGui += DrawColorSwatch;
+    }
+
+
+    void DrawColorSwatch(SceneView view)
+    {
+
+        // Test that this callback is for the correct Scene view, and check if the toggle is on
+     // or off (value).
+
+        if (view != containerWindow || !value)
+        {
+            return;
+        }
+
+
+        Handles.BeginGUI();
+            GUI.color = colors[colorIndex];
+        GUI.DrawTexture(new Rect(8, 8, 120, 24), Texture2D.whiteTexture);
+        GUI.color = Color.white;
+        Handles.EndGUI();
+    }
+
+
+    // When the drop-down button is clicked, this method creates a pop-up menu at the mouse cursor position.
+
+    void ShowColorMenu()
+    {
+        var menu = new GenericMenu();
+        menu.AddItem(new GUIContent("Red"), colorIndex == 0, () =&gt; colorIndex = 0);
+        menu.AddItem(new GUIContent("Green"), colorIndex == 1, () =&gt; colorIndex = 1);
+        menu.AddItem(new GUIContent("Blue"), colorIndex == 2, () =&gt; colorIndex = 2);
+        menu.ShowAsContext();
+    }
+}
+</code></pre>
+
+<p>Add the element’s ID to the Overlay constructor:</p>
+
+<pre><code class="lang-cs">[Overlay(typeof(SceneView), "ElementToolbar Example")]
+[Icon("Assets/unity.png")]
+public class EditorToolbarExample : ToolbarOverlay
+{
+    EditorToolbarExample() : base(
+DropdownToggleExample.id
+) { }
+
+
+}
+</code></pre>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="manage-overlay-configurations.html"></a></span><div class="tip">Create and manage overlay configurations</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="PositioningGameObjects.html"></a></span><div class="tip">Position GameObjects</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Create a transition in a custom Editor window - Unity 手册">
+<title>Create a transition in a custom Editor window - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/transition-example.gif">
+<meta name="description" content="Version: 2022.1+">
+<meta property="og:description" content="Version: 2022.1+">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'UIE-transition-example';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/UIE-transition-example.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/UIE-transition-example.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/UIE-transition-example.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/UIE-transition-example.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/UIE-transition-example.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/UIE-transition-example.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIE-transition-example.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIE-transition-example.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIE-transition-example.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIE-transition-example.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-transition-example.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-transition-example.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-transition-example.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-transition-example.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-transition-example.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-transition-example.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-transition-example.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-transition-example.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-transition-example.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-transition-example.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-transition-example.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-transition-example.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-transition-example.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-transition-example.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-transition-example.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-transition-example.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-transition-example.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-transition-example.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-transition-example.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-transition-example.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/UIE-transition-example.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/UIE-transition-example.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/UIE-transition-example.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/UIE-transition-example.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIE-transition-example.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIE-transition-example.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIE-transition-example.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIE-transition-example.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-transition-example.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-transition-example.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-transition-example.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-transition-example.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-transition-example.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-transition-example.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-transition-example.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-transition-example.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-transition-example.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-transition-example.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-transition-example.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-transition-example.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-transition-example.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-transition-example.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-transition-example.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-transition-example.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-transition-example.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-transition-example.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-transition-example.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-transition-example.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UIToolkits.html">Create user interfaces (UI)</a></li>
+<li><a href="UIElements.html">UI 工具包</a></li>
+<li><a href="UIE-Events.html">Control behavior with events</a></li>
+<li><a href="UIE-event-examples.html">Event examples</a></li>
+<li>Create a transition in a custom Editor window</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-event-examples.html"></a></span><div class="tip">Event examples</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-create-drag-and-drop-ui.html"></a></span><div class="tip">Create a drag-and-drop UI inside a custom Editor window</div>
+</div>
+</div></div>
+<h1>Create a transition in a custom Editor window</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Version: 2022.1+</p>
+
+<p>This example demonstrates how to create simple transitions with the UI Builder and C# script.</p>
+
+<h2>Example overview</h2>
+
+<p>The example creates a custom Editor window with three labels that rotate and scale when you hover over them. The transition lasts for three seconds.</p>
+
+<figure>
+<img src="../uploads/Main/transition-example.gif" alt="">
+</figure>
+
+<p>You can find the completed files that this example creates in this <a href="https://github.com/Unity-Technologies/ui-toolkit-manual-code-examples/tree/master/create-a-transition">GitHub repository</a>.</p>
+
+<h2>先决条件</h2>
+
+<p>This guide is for developers familiar with the Unity Editor, UI Toolkit, and C# scripting. Before you start, get familiar with the following:</p>
+
+<ul>
+<li><a href="UIBuilder.html">UI Builder</a></li>
+<li><a href="UIE-USS.html">USS</a></li>
+<li><a href="UIE-USS-Selectors-Pseudo-Classes.html">Pseudo-classes</a></li>
+<li><a href="UIE-Events-Handling.html">Handle events</a></li>
+</ul>
+
+<h2>Create the Editor window files</h2>
+
+<p>Use the menu to create the Editor window files automatically.</p>
+
+<ol>
+<li><p>Create a Unity project with any template.</p></li>
+<li><p>Create a folder named <code>create-a-transition</code> to store the files for this example.</p></li>
+<li><p>In that folder, right-click in the Project window and select <strong>Create</strong> &gt; <strong>UI Toolkit</strong> &gt; <strong>Editor Window</strong>.</p></li>
+<li>
+<p>In the <strong>C#</strong> box, enter <code>TransitionExample</code>. This creates the following files:</p>
+
+<ul>
+<li><code>TransitionExample.cs</code></li>
+<li><code>TransitionExample.uss</code></li>
+<li><code>TransitionExample.uxml</code></li>
+</ul>
+</li>
+</ol>
+
+<h2>Create the transition in UI Builder</h2>
+
+<p>Create transitions for the second and the third labels in UI Builder. Set transform to resize and rotate the labels when a user hovers the labels and set the transition to last for three seconds. </p>
+
+<ol>
+<li><p>Open <code>TransitionExample.uxml</code> in the UI Builder.</p></li>
+<li><p>In the <strong>StyleSheets</strong> window, click <strong>Add new selector</strong> and enter <code>Label:hover</code> to add a hover style for the label.</p></li>
+<li><p>Press Enter and select <strong>Label:hover</strong> in the list of USS selectors.</p></li>
+<li>In the <strong>Transform</strong> section of the Inspector, do the following to scale and rotate the labels:
+
+<ul>
+<li>In the <strong>Scale</strong> row, change the <strong>X</strong> value to <code>1.1</code>.</li>
+<li>In the <strong>Rotate</strong> row, enter <code>10</code>.</li>
+</ul>
+</li>
+<li><p>In the <strong>StyleSheets</strong> window, click <strong>Add new selector</strong> and enter <code>Label</code> to add a style for the label. </p></li>
+<li><p>Press Enter and select <strong>Label</strong> in the list of USS selectors.</p></li>
+<li><p>In the <strong>Transition Animations</strong> section, enter <code>3</code> in the <strong>Duration</strong> row.
+ <strong>Note</strong>: Unity recommends that you set transitions on the label rather than the hover.</p></li>
+<li>
+<p>Save and close the UI Builder. Your <code>TransitionExample.uss</code> file looks like the following:</p>
+
+<pre><code class="lang-css">.custom-label {
+    font-size: 20px;
+    -unity-font-style: bold;
+    color: rgb(68, 138, 255);
+}
+    
+Label:hover {
+    scale: 1.1 1;
+    rotate: 10deg;
+}
+    
+Label {
+    transition-duration: 3s;
+}
+</code></pre>
+</li>
+<li><p>In Unity, select <strong>Window</strong> &gt; <strong>UI Toolkit</strong> &gt; <strong>Transition Example</strong>.</p></li>
+<li><p>Hover over the second and third labels. The labels rotate and increase in size over three seconds. </p></li>
+</ol>
+
+<h2>Create the transition in C#</h2>
+
+<p>In C#, create the same transition you did in the previous section for the first label.</p>
+
+<ol>
+<li><p>Open <code>TransitionExample.cs</code> in a text editor.</p></li>
+<li>
+<p>Replace the contents of <code>TransitionExample.cs</code> with the following:</p>
+
+<pre><code class="lang-cs">using UnityEditor;
+using UnityEngine;
+using UnityEngine.UIElements;
+using System.Collections.Generic;
+
+public class TransitionExample : EditorWindow
+{
+    [SerializeField]
+    VisualTreeAsset m_VisualTreeAsset;
+
+    [MenuItem("Window/UI Toolkit/TransitionExample")]
+    public static void ShowExample()
+    {
+        TransitionExample wnd = GetWindow&lt;TransitionExample&gt;();
+        wnd.titleContent = new GUIContent("Transition Example");
+    }
+
+    public void CreateGUI()
+    {
+        // Each editor window contains a root VisualElement object.
+        VisualElement root = rootVisualElement;
+
+        // VisualElements objects can contain other VisualElement following a tree hierarchy.
+        cSharpLabel = new Label("Hello World! From C#");
+        root.Add(cSharpLabel);
+
+        // Create transition on the new Label.
+        cSharpLabel.style.transitionDuration = new List&lt;TimeValue&gt;{ new TimeValue(3) };
+
+        // Record default rotate and scale values.
+        defaultRotate = cSharpLabel.resolvedStyle.rotate;
+        defaultScale = cSharpLabel.resolvedStyle.scale;
+
+        // Set up event handlers to simulate the use of the :hover pseudo-class.
+        cSharpLabel.RegisterCallback&lt;PointerOverEvent&gt;(OnPointerOver);
+        cSharpLabel.RegisterCallback&lt;PointerOutEvent&gt;(OnPointerOut);
+
+        // Instantiate UXML
+        VisualElement labelFromUXML = m_VisualTreeAsset.Instantiate();
+        root.Add(labelFromUXML);
+    }
+
+    // The Label created with C#.
+    VisualElement cSharpLabel;
+
+    // The default rotate and scale values for the new Label.
+    Rotate defaultRotate;
+    Scale defaultScale;
+
+    void OnPointerOver(PointerOverEvent evt)
+    {
+        SetHover(evt.currentTarget as VisualElement, true);
+    }
+
+    void OnPointerOut(PointerOutEvent evt)
+    {
+        SetHover(evt.currentTarget as VisualElement, false);
+    }
+
+    // When the user enters or exits the Label, set the rotate and scale.
+    void SetHover(VisualElement label, bool hover)
+    {
+        label.style.rotate = hover ? new(Angle.Degrees(10)) : defaultRotate;
+        label.style.scale = hover ? new Vector2(1.1f, 1) : defaultScale;
+    }
+
+    // Unregister all event callbacks.
+    void OnDisable()
+    {
+        cSharpLabel.UnregisterCallback&lt;PointerOverEvent&gt;(OnPointerOver);
+        cSharpLabel.UnregisterCallback&lt;PointerOutEvent&gt;(OnPointerOut);
+    }
+}
+</code></pre>
+</li>
+<li><p>In Unity, select <strong>Window</strong> &gt; <strong>UI Toolkit</strong> &gt; <strong>Transition Example</strong>.</p></li>
+<li><p>Hover over the first label. The label rotates and increases in size over three seconds.</p></li>
+</ol>
+
+<h2>其他资源</h2>
+
+<ul>
+<li><a href="UIE-Transitions.html">USS transition</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-event-examples.html"></a></span><div class="tip">Event examples</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-create-drag-and-drop-ui.html"></a></span><div class="tip">Create a drag-and-drop UI inside a custom Editor window</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

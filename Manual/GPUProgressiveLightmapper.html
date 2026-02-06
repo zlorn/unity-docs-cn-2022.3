@@ -1,0 +1,297 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="渐进 GPU 光照贴图 (Progressive GPU Lightmapper)（预览） - Unity 手册">
+<title>渐进 GPU 光照贴图 (Progressive GPU Lightmapper)（预览） - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="注意：这是一个预览功能，将来可能会更改。如果有使用此功能的场景，可能需要在以后的发行版中更新这些场景。在该功能尚未正式发布之前，请勿在大规模生产环境中依赖此功能。">
+<meta property="og:description" content="注意：这是一个预览功能，将来可能会更改。如果有使用此功能的场景，可能需要在以后的发行版中更新这些场景。在该功能尚未正式发布之前，请勿在大规模生产环境中依赖此功能。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'GPUProgressiveLightmapper';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/GPUProgressiveLightmapper.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/GPUProgressiveLightmapper.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/GPUProgressiveLightmapper.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/GPUProgressiveLightmapper.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/GPUProgressiveLightmapper.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/GPUProgressiveLightmapper.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/GPUProgressiveLightmapper.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/GPUProgressiveLightmapper.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/GPUProgressiveLightmapper.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/GPUProgressiveLightmapper.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/GPUProgressiveLightmapper.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/GPUProgressiveLightmapper.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/GPUProgressiveLightmapper.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/GPUProgressiveLightmapper.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/GPUProgressiveLightmapper.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/GPUProgressiveLightmapper.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/GPUProgressiveLightmapper.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/GPUProgressiveLightmapper.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/GPUProgressiveLightmapper.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/GPUProgressiveLightmapper.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/GPUProgressiveLightmapper.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/GPUProgressiveLightmapper.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/GPUProgressiveLightmapper.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/GPUProgressiveLightmapper.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/GPUProgressiveLightmapper.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/GPUProgressiveLightmapper.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/GPUProgressiveLightmapper.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/GPUProgressiveLightmapper.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/GPUProgressiveLightmapper.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/GPUProgressiveLightmapper.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/GPUProgressiveLightmapper.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/GPUProgressiveLightmapper.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/GPUProgressiveLightmapper.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/GPUProgressiveLightmapper.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/GPUProgressiveLightmapper.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/GPUProgressiveLightmapper.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/GPUProgressiveLightmapper.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/GPUProgressiveLightmapper.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/GPUProgressiveLightmapper.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/GPUProgressiveLightmapper.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/GPUProgressiveLightmapper.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/GPUProgressiveLightmapper.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/GPUProgressiveLightmapper.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/GPUProgressiveLightmapper.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/GPUProgressiveLightmapper.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/GPUProgressiveLightmapper.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/GPUProgressiveLightmapper.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/GPUProgressiveLightmapper.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/GPUProgressiveLightmapper.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/GPUProgressiveLightmapper.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/GPUProgressiveLightmapper.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/GPUProgressiveLightmapper.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/GPUProgressiveLightmapper.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/GPUProgressiveLightmapper.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/GPUProgressiveLightmapper.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/GPUProgressiveLightmapper.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/GPUProgressiveLightmapper.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/GPUProgressiveLightmapper.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="LightingOverview.html">光照</a></li>
+<li><a href="Lightmappers.html">光照贴图</a></li>
+<li><a href="progressive-lightmapper.html">渐进光照贴图程序</a></li>
+<li>渐进 GPU 光照贴图 (Progressive GPU Lightmapper)（预览）</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="progressive-lightmapper.html"></a></span><div class="tip">渐进光照贴图程序</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="GI-Enlighten.html"></a></span><div class="tip">Lightmapping using Enlighten Baked Global Illumination</div>
+</div>
+</div></div>
+<h1>渐进 GPU 光照贴图 (Progressive GPU Lightmapper)（预览）</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p><strong>注意：</strong>这是一个预览功能，将来可能会更改。如果有使用此功能的场景，可能需要在以后的发行版中更新这些场景。在该功能尚未正式发布之前，请勿在大规模生产环境中依赖此功能。</p>
+
+<p>The <strong>Progressive GPU Lightmapper</strong> is a backend for the <a href="progressive-lightmapper.html">Progressive Lightmapper</a> which uses your computer’s GPU and Dedicated Video Ram (VRAM) to generate baked <strong>lightmaps</strong> and <strong>Light Probes</strong>.</p>
+
+<h2>硬件和软件要求</h2>
+
+<p>为了使用渐进 GPU 光照贴图，您的计算机必须满足以下最低规格：</p>
+
+<ul>
+<li>至少一个支持 OpenCL 1.2 的 GPU</li>
+<li>At least 4GB of VRAM dedicated to that GPU</li>
+<li>一个支持 SSE4.1 指令的 CPU</li>
+</ul>
+
+<p>如果您正在烘焙的场景所需的 VRAM 多于指定 GPU 上可用 VRAM，则烘焙时间会显著增加。有关可帮助您减少烘焙场景所需时间的信息，请参阅性能。</p>
+
+<p>The Progressive GPU Lightmapper does not support CPU OpenCL devices.</p>
+
+<h2>性能</h2>
+
+<p>The Progressive GPU Lightmapper bakes faster than the Progressive CPU Lightmapper, unless lightmapper tiling is active.</p>
+
+<p>However, the specifications of the GPU you use to bake and the amount of VRAM dedicated to that GPU both influence your experience of the lightmapper’s performance.</p>
+
+<p>Other applications competing for GPU resources also have an impact on baking performance. Depending on your hardware vendor, reductions in the amount of VRAM available to Unity can slow down the bake, cause it to fail, or even result in the Progressive GPU Lightmapper falling back to the CPU if the GPU cannot meet minimum memory requirements. Closing other applications while you are working with this functionality can improve stability and performance.</p>
+
+<p>In order to achieve results of the same quality as the Progressive CPU Lightmapper, the Progressive GPU Lightmapper needs up to four times more indirect light samples. The Progressive CPU Lightmapper uses an approach called branched path tracing, which launches more light rays at each bounce. The branched path tracing approach is not suitable for GPUs.</p>
+
+<p>Unity provides a spreadsheet to help you determine how much memory the Progressive GPU Lightmapper needs to bake your scene. For more information see the <a href="../uploads/Examples/GPULightmapperMemoryTool.zip">Progressive GPU Lightmapper Memory Spreadsheet</a> .</p>
+
+<h2>Preventing baking speed slowdowns caused by lightmapper tiling</h2>
+
+<p>The Progressive GPU Lightmapper includes a feature called lightmapper tiling. Lightmapper tiling prevents the Progressive GPU Lightmapper from falling back to the Progressive CPU Lightmapper when Unity has used up its GPU memory allocation. Instead, Unity allocates some temporary memory on the CPU, then bakes your lighting in tiles that are sized to match the amount of GPU memory available. Lightmapper tiling is active only when Unity can’t access enough GPU memory to bake the entire lightmap. The Progressive CPU Lightmapper does not include a tiling feature.</p>
+
+<p>When lightmapper tiling is active, progressive updates cease in the Scene view and the baking process. However, the <strong>Progressive updates</strong> setting in the Lighting window does not visibly deactivate. Baking a scene when lightmapper tiling is active is slower than baking the same scene without tiling.</p>
+
+<p>It is not possible to disable tiling. However, you can reduce the likelihood of its activation by using the following strategies:</p>
+
+<ul>
+<li><p>Increase the amount of GPU memory available for Unity to use.</p></li>
+<li><p>Disable <a href="LightingBakedAmbientOcclusion.html">ambient occlusion</a>. Open the Lighting window (menu: <strong>Window &gt; Rendering &gt; Lighting</strong>). In the Lightmapping Settings interface, disable <strong>Ambient Occlusion</strong>.</p></li>
+<li><p>Bake only indirect light. Set all your light sources to <strong>Realtime</strong> or <strong>Mixed</strong>. Make sure that no light sources are set to <strong>Baked</strong>. If you use the mixed approach, set <strong>Lighting &gt; Mixed Lighting &gt; Lighting mode</strong> to <strong>Baked Indirect</strong>.</p></li>
+<li><p>Reduce the level of <a href="https://docs.unity3d.com/Manual/class-QualitySettings.html#antialias">anti-aliasing</a> in your project. Navigate to <strong>Project Settings</strong> &gt; <strong><a href="https://docs.unity3d.com/2021.2/Documentation/Manual/class-QualitySettings.html">Quality</a></strong> and choose an option that takes fewer samples. For example, you might switch from <strong>8x Multi Sampling</strong> to <strong>2x Multi Sampling</strong>.</p></li>
+<li><p>Reduce the quality of your lightmaps in your <a href="https://docs.unity3d.com/2021.2/Documentation/Manual/class-LightmapParameters.html">Lightmap Parameters Asset</a>. Open the <a href="https://docs.unity3d.com/Manual/lighting-window.html">Lighting window</a>, expand <strong>Lightmapping settings</strong>, and select a lower-resolution option for <strong>Lightmap parameters</strong>.</p></li>
+<li><p>Reduce your lightmap resolution.</p></li>
+<li><p>Use a CPU-based denoiser. To choose a denoiser, open the <a href="https://docs.unity3d.com/Manual/lighting-window.html">Lighting window</a>, expand <strong>Lightmapping settings</strong>, set <strong>Filtering</strong> to <strong>Advanced</strong> and then select the denoiser for each type of lightmap target (<strong>Direct</strong> and <strong>Indirect</strong>). Only <strong>OpenImageDenoise</strong> is CPU-based. <strong>RadeonPro</strong> and <strong>Optix</strong> are GPU-based, but <strong>RadeonPro</strong> uses a lot more GPU memory.</p></li>
+</ul>
+
+<h2>Platform-specific limitations</h2>
+
+<p>On macOS it is more difficult to determine how much memory is available. As a result, fallback to CPU is more likely on this platform and it is a best practice to follow instructions for optimizing your bake speed.</p>
+
+<h2>如何优化烘焙速度</h2>
+
+<p>有多种方法可以减少烘焙时间并避免烘焙超过指定给 GPU 用于烘焙的 VRAM 的情况。</p>
+
+<ul>
+<li><p>Close other GPU-accelerated applications.
+GPU-accelerated 2D image editing and 3D modelling software uses VRAM. Turn off accelerated graphics functionality or quit these applications.</p></li>
+<li><p>Switch to a CPU-based denoiser.
+GPU-based denoisers also use VRAM capacity. Switch to a CPU-based option, like <a href="https://www.openimagedenoise.org/">Intel Open Image</a>, which uses system RAM instead.</p></li>
+<li><p>Use Light Probes for smaller GameObjects.
+GameObjects such as debris or small props use up space in lightmaps but might not contribute significantly to the look of a scene. To optimize bake speed, <a href="https://docs.unity3d.com/2020.2/Documentation/Manual/class-MeshRenderer.html#Lighting">disable <strong>Contribute Global Illumination</strong> for these GameObjects’ Mesh Renderers</a> and light them with <a href="https://docs.unity3d.com/Manual/LightProbes.html">Light Probes</a> instead.</p></li>
+<li><p>Designate separate GPUs for rendering and baking.
+If your computer has more than one GPU, you can designate one for rendering and one for baking. See Configure GPU selection below.</p></li>
+<li><p>Use a lower number of <strong>Anti-aliasing samples</strong>.
+The default value for this setting in the <a href="https://docs.unity3d.com/2020.2/Documentation/Manual/class-LightmapParameters.html">Lightmap Parameters Asset</a> is 8. When you increase it, Unity uses more VRAM. When you are using a lightmap size of 4096 or above, this can quickly exceed the memory of many consumer GPUs.</p></li>
+</ul>
+
+<h2>Configure GPU selection <a name="configgpu"></a>
+</h2>
+
+<p>If you have at least two GPUs, you can specify one GPU for rendering the Scene and another for baking lighting. This might be desirable in cases where there is insufficient VRAM available for the default GPU to both render your scene and bake it using the Progressive GPU Lightmapper.
+<br>
+To change which GPU Unity uses for baking: <br>
+1. Open the <strong>Lighting</strong> window (menu: <strong>Window &gt; Rendering &gt; Lighting</strong>).<br>
+2. Navigate to the <strong>Workflow Settings</strong> section.<br>
+3. Use the <strong>GPU Baking Device</strong> drop-down menu to select a GPU.<br></p>
+<!-- area:graphics -->
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="progressive-lightmapper.html"></a></span><div class="tip">渐进光照贴图程序</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="GI-Enlighten.html"></a></span><div class="tip">Lightmapping using Enlighten Baked Global Illumination</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,479 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Targeting shader models and GPU features in HLSL - Unity 手册">
+<title>Targeting shader models and GPU features in HLSL - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="You can use #pragma directives to indicate that a shader requires certain GPU features. At runtime, Unity uses this information to determine whether a shader program is compatible with the current hardware.">
+<meta property="og:description" content="You can use #pragma directives to indicate that a shader requires certain GPU features. At runtime, Unity uses this information to determine whether a shader program is compatible with the current hardware.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'SL-ShaderCompileTargets';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/SL-ShaderCompileTargets.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/SL-ShaderCompileTargets.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/SL-ShaderCompileTargets.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/SL-ShaderCompileTargets.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/SL-ShaderCompileTargets.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/SL-ShaderCompileTargets.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/SL-ShaderCompileTargets.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/SL-ShaderCompileTargets.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/SL-ShaderCompileTargets.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/SL-ShaderCompileTargets.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/SL-ShaderCompileTargets.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/SL-ShaderCompileTargets.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/SL-ShaderCompileTargets.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/SL-ShaderCompileTargets.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/SL-ShaderCompileTargets.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/SL-ShaderCompileTargets.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/SL-ShaderCompileTargets.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/SL-ShaderCompileTargets.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/SL-ShaderCompileTargets.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/SL-ShaderCompileTargets.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/SL-ShaderCompileTargets.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/SL-ShaderCompileTargets.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/SL-ShaderCompileTargets.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/SL-ShaderCompileTargets.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/SL-ShaderCompileTargets.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/SL-ShaderCompileTargets.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/SL-ShaderCompileTargets.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/SL-ShaderCompileTargets.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/SL-ShaderCompileTargets.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/SL-ShaderCompileTargets.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/SL-ShaderCompileTargets.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/SL-ShaderCompileTargets.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/SL-ShaderCompileTargets.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/SL-ShaderCompileTargets.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/SL-ShaderCompileTargets.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/SL-ShaderCompileTargets.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/SL-ShaderCompileTargets.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/SL-ShaderCompileTargets.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/SL-ShaderCompileTargets.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/SL-ShaderCompileTargets.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/SL-ShaderCompileTargets.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/SL-ShaderCompileTargets.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/SL-ShaderCompileTargets.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/SL-ShaderCompileTargets.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/SL-ShaderCompileTargets.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/SL-ShaderCompileTargets.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/SL-ShaderCompileTargets.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/SL-ShaderCompileTargets.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/SL-ShaderCompileTargets.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/SL-ShaderCompileTargets.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/SL-ShaderCompileTargets.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/SL-ShaderCompileTargets.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/SL-ShaderCompileTargets.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/SL-ShaderCompileTargets.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/SL-ShaderCompileTargets.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/SL-ShaderCompileTargets.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/SL-ShaderCompileTargets.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/SL-ShaderCompileTargets.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="Shaders.html">着色器</a></li>
+<li><a href="shader-writing.html">编写着色器</a></li>
+<li><a href="SL-ShaderPrograms.html">Unity 中的 HLSL</a></li>
+<li><a href="shader-preprocessor-directives.html">Preprocessor directives in HLSL</a></li>
+<li>Targeting shader models and GPU features in HLSL</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SL-PragmaDirectives.html"></a></span><div class="tip">pragma directives in HLSL</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SL-ShaderCompilationAPIs.html"></a></span><div class="tip">Targeting graphics APIs and platforms in HLSL</div>
+</div>
+</div></div>
+<h1>Targeting shader models and GPU features in HLSL</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>You can use <a href="SL-PragmaDirectives.html"><code>#pragma</code> directives</a> to indicate that a shader requires certain GPU features. At runtime, Unity uses this information to determine whether a shader program is compatible with the current hardware.</p>
+
+<p>You can specify individual GPU features with the <code>#pragma require</code> directive, or specify a <strong>shader model</strong> with the <code>#pragma target</code> directive. A shader model is a shorthand for a group of GPU features; internally, it is the same as a <code>#pragma require</code> directive with the same list of features.</p>
+
+<p>It is important to correctly describe the GPU features that your shader requires. If your shader uses features that are not included in the list of requirements, this can result in either compile time errors, or in devices failing to support shaders at runtime. </p>
+
+<h2>Default behavior</h2>
+
+<p>By default, Unity compiles shaders with <code>#pragma require derivatives</code>, which corresponds to <code>#pragma target 2.5</code>.</p>
+
+<h2>Special requirements for shader stages</h2>
+
+<p>If your shader defines certain shader stages, Unity automatically adds items to the list of requirements.</p>
+
+<ul>
+<li>If a shader defines a geometry stage (with <code>#pragma geometry</code>), Unity automatically adds <code>geometry</code> to the list of requirements.</li>
+<li>If a shader defines a tessellation stage (with <code>#pragma hull</code> or <code>#pragma domain</code>), Unity automatically adds <code>tessellation</code> to the list of requirements.</li>
+</ul>
+
+<p>If the list of requirements (or the equivalent target value) does not already include these values, Unity displays a warning message when it compiles the shader, to indicate that it has added these requirements. To avoid seeing this warning message, explicitly add the requirements or use an appropriate target value in your code.</p>
+
+<h2>Specifying GPU features or a shader model</h2>
+
+<p>To specify required features, use the <code>#pragma require</code> directive, followed by a list of space-delimited values. For example:</p>
+
+<pre><code>#pragma require integers mrt8
+</code></pre>
+
+<p>You can also use the <code>#pragma require</code> directive followed by a colon and a list of space-delimited <a href="SL-MultipleProgramVariants.html">shader keywords</a>. This means that the requirement applies only to variants that are used when any of the given keywords are enabled.</p>
+
+<p>例如：</p>
+
+<pre><code>#pragma require integers mrt8 : EXAMPLE_KEYWORD OTHER_EXAMPLE_KEYWORD
+</code></pre>
+
+<p>You can use multiple <code>#pragma require</code> lines. In this example, the shader requires <code>integers</code> in all cases, and <code>mrt8</code> if EXAMPLE_KEYWORD is enabled.</p>
+
+<pre><code>#pragma require integers
+#pragma require integers mrt8 : EXAMPLE_KEYWORD
+</code></pre>
+
+<p>To specify a shader model, use <code>#pragma target</code> directive. For example:</p>
+
+<pre><code>#pragma target 4.0
+</code></pre>
+
+<p>You can also use the <code>#pragma target</code> directive followed by a list of space-delimited <a href="SL-MultipleProgramVariants.html">shader keywords</a>. This means that the requirement applies only to variants that are used when any of the given keywords are enabled.</p>
+
+<p>例如：</p>
+
+<pre><code>#pragma target 4.0 EXAMPLE_KEYWORD OTHER_EXAMPLE_KEYWORD
+</code></pre>
+
+<p><strong>Note:</strong> The syntax for specifying keywords for <code>#pragma require</code> and <code>#pragma target</code> is slightly different. When you specify keywords for <code>#pragma require</code>, you use a colon. When you specify keywords for <code>#pragma target</code>, you do not use a colon.</p>
+
+<p><a name="valid-target-values"></a></p>
+
+<h2>List of ‘#pragma target’ values</h2>
+
+<p>Here is the list of shader models that Unity uses, and the combination of <code>#pragma require</code> values that each corresponds to.</p>
+
+<p><strong>Note:</strong> Unity’s shader models are similar to DirectX shader models and OpenGL version requirements, but they do not correspond exactly. Read the descriptions carefully to ensure that you understand the differences.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>值</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+	<th style="text-align:left;"><strong>支持</strong></th>
+	<th style="text-align:left;"><strong>Equivalent <code>#pragma require</code> values</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><code>2.0</code></td>
+	<td style="text-align:left;">Equivalent to <a href="https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-sm2">DirectX shader model 2.0</a>.<br><br>Limited amount of arithmetic and texture instructions; 8 interpolators; no vertex texture sampling; no derivatives in fragment shaders; no explicit LOD texture sampling.</td>
+	<td style="text-align:left;">Works on all platforms supported by Unity.</td>
+	<td style="text-align:left;">无</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>2.5</code></td>
+	<td style="text-align:left;">Almost the same as 3.0, but with only 8 interpolators, and no explicit LOD texture sampling.</td>
+	<td style="text-align:left;">DirectX 11 feature level 9+<br>OpenGL 3.2+<br>OpenGL ES 2.0<br>Vulkan<br>Metal</td>
+	<td style="text-align:left;"><code>derivatives</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>3.0</code></td>
+	<td style="text-align:left;">Equivalent to <a href="https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-sm3">DirectX shader model 3.0</a>.<br><br>.</td>
+	<td style="text-align:left;">DirectX 11 feature level 10 +<br>OpenGL 3.2+<br>OpenGL ES 3.0+<br>Vulkan<br>Metal<br><br>Might work on some OpenGL ES 2.0 devices, depending on driver extensions and features.</td>
+	<td style="text-align:left;">Everything in <code>2.5</code>, plus:<br><code>interpolators10 samplelod fragcoord</code>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>3.5</code></td>
+	<td style="text-align:left;">Equivalent to <a href="https://en.wikipedia.org/wiki/OpenGL_ES#OpenGL_ES_3.0">OpenGL ES 3.0</a>.<br><br>
+</td>
+	<td style="text-align:left;">DirectX 11 feature level 10+<br>OpenGL 3.2+<br>OpenGL ES 3+<br>Vulkan<br>Metal</td>
+	<td style="text-align:left;">Everything in <code>3.0</code>, plus:<br><code>interpolators15 mrt4 integers 2darray instancing</code>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>4.0</code></td>
+	<td style="text-align:left;">Equivalent to <a href="https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-sm4">DirectX shader model 4.0</a>, but without the requirement to support 8 MRTs.</td>
+	<td style="text-align:left;">DirectX 11 feature level 10+<br>OpenGL 3.2+<br>OpenGL ES 3.1+AEP<br>Vulkan<br>Metal (if no geometry stage is defined)</td>
+	<td style="text-align:left;">Everything in <code>3.5</code>, plus:<br><code>geometry</code>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>4.5</code></td>
+	<td style="text-align:left;">Equivalent to <a href="https://en.wikipedia.org/wiki/OpenGL_ES#OpenGL_ES_3.1">OpenGL ES 3.1</a>.</td>
+	<td style="text-align:left;">DirectX 11 feature level 11+<br>OpenGL 4.3+<br>OpenGL ES 3.1<br>Vulkan<br>Metal</td>
+	<td style="text-align:left;">Everything in <code>3.5</code>, plus:<br><code>compute randomwrite msaatex</code>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>4.6</code></td>
+	<td style="text-align:left;">Equivalent to <a href="https://en.wikipedia.org/wiki/OpenGL#OpenGL_4.1">OpenGL 4.1</a>.<br><br>This is the highest OpenGL level supported on a Mac.</td>
+	<td style="text-align:left;">DirectX 11 feature level 11+<br>OpenGL 4.1+<br>OpenGL ES 3.1+AEP<br>Vulkan<br>Metal (if no geometry stage is defined, and no hull or domain stage is defined)</td>
+	<td style="text-align:left;">Everything in <code>4.0</code>, plus:<br><code>cubearray tesshw tessellation msaatex</code>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>5.0</code></td>
+	<td style="text-align:left;">Equivalent to <a href="https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/d3d11-graphics-reference-sm5">DirectX shader model 5.0</a>, but without the requirement to support 32 interpolators or cubemap arrays.</td>
+	<td style="text-align:left;">DirectX 11 feature level 11+<br>OpenGL 4.3+<br>OpenGL ES 3.1+AEP<br>Vulkan<br>Metal (if no geometry stage is defined, and no hull or domain stage is defined)</td>
+	<td style="text-align:left;">Everything in <code>4.0</code>, plus:<br><code>compute randomwrite msaatex tesshw tessellation</code>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>For information on shader model support for console platforms, see the platform-specific documentation.</p>
+
+<p><strong>注意：</strong></p>
+
+<ul>
+<li>In the DirectX definitions, shader model 4.0 includes <code>mrt8</code>, and shader model 5.0 includes <code>interpolators32</code> and <code>cubearray</code>. Unity does not include these, for broader compatibility. To require these features, use an explicit <code>#pragma require</code> directive.</li>
+<li>If you use a target that requires <code>geometry</code> but your shader does not define a geometry stage, Unity removes <code>geometry</code> from the list of requirements at compile time.</li>
+<li>If you use a target that requires <code>tessellation</code> but your shader does not define a hull or domain stage, Unity removes <code>tessellation</code> from the list of requirements at compile time.</li>
+</ul>
+
+<p><a name="valid-require-values"></a></p>
+
+<h2>List of ‘#pragma require’ values</h2>
+
+<p>Here are all the valid values for the <code>#pragma require</code> directive.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>值</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><code>interpolators10</code></td>
+	<td style="text-align:left;">At least 10 vertex-to-fragment interpolators (“varyings”) are available.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>interpolators15</code></td>
+	<td style="text-align:left;">At least 15 vertex-to-fragment interpolators (“varyings”) are available.<br><br><strong>Note:</strong> Internally, this also automatically adds <code>integers</code> to the list of requirements.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>interpolators32</code></td>
+	<td style="text-align:left;">At least 32 vertex-to-fragment interpolators (“varyings”) are available.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>integers</code></td>
+	<td style="text-align:left;">Integers are a supported data type, including bit/shift operations.<br><br><strong>Note:</strong> Internally, this also automatically adds <code>interpolators15</code> to the list of requirements.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>mrt4</code></td>
+	<td style="text-align:left;">At least 4 render targets are supported.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>mrt8</code></td>
+	<td style="text-align:left;">At least 8 render targets are supported.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>derivatives</code></td>
+	<td style="text-align:left;">Pixel shader derivative instructions (ddx/ddy) are supported.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>samplelod</code></td>
+	<td style="text-align:left;">Explicit texture LOD sampling (tex2Dlod / SampleLevel) is supported.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>fragcoord</code></td>
+	<td style="text-align:left;">Pixel location (XY on screen, ZW depth in clip space) input in pixel shader is supported.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>2darray</code></td>
+	<td style="text-align:left;">2D texture arrays are a supported data type.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>cubearray</code></td>
+	<td style="text-align:left;">Cubemap arrays are a supported data type.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>instancing</code></td>
+	<td style="text-align:left;">SV_InstanceID input system value is supported.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>geometry</code></td>
+	<td style="text-align:left;">Geometry shader stages are supported.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>compute</code></td>
+	<td style="text-align:left;">Compute shaders, structured buffers, and atomic operations are supported.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<code>randomwrite</code> or <code>uav</code>
+</td>
+	<td style="text-align:left;">“Random write” (UAV) textures are supported.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>tesshw</code></td>
+	<td style="text-align:left;">Hardware tessellation is supported, but not necessarily tessellation (hull/domain) shader stages. For example, Metal supports tessellation, but not hull or domain stages.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>tessellation</code></td>
+	<td style="text-align:left;">Tessellation (hull/domain) shader stages are supported.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>msaatex</code></td>
+	<td style="text-align:left;">The ability to access multi-sampled textures (Texture2DMS in HLSL) is supported.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>sparsetex</code></td>
+	<td style="text-align:left;">Sparse textures with residency info (“Tier2” support in DirectX terms; <code>CheckAccessFullyMapped</code> HLSL function).</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<code>framebufferfetch</code> or <code>fbfetch</code>
+</td>
+	<td style="text-align:left;">Framebuffer fetch (the ability to read input pixel color in the pixel shader) is supported.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>setrtarrayindexfromanyshader</code></td>
+	<td style="text-align:left;">Setting the render target array index from any shader stage (not just the geometry shader stage) is supported.</td>
+</tr>
+</tbody>
+</table>
+
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SL-PragmaDirectives.html"></a></span><div class="tip">pragma directives in HLSL</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SL-ShaderCompilationAPIs.html"></a></span><div class="tip">Targeting graphics APIs and platforms in HLSL</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

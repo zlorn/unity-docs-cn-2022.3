@@ -1,0 +1,361 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Position element with the layout engine - Unity 手册">
+<title>Position element with the layout engine - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/UIBuilder/FlexPropertiesInCanvas.png">
+<meta name="description" content="UI Toolkit includes a layout engine that positions elements based on layout and styling properties. The layout engine uses the layout principles of Yoga, which implements a subset of Flexbox, a HTML/CSS layout system. UI Toolkit properties match Yoga layout behavior. UI Toolkit supports most properties in Flexbox.">
+<meta property="og:description" content="UI Toolkit includes a layout engine that positions elements based on layout and styling properties. The layout engine uses the layout principles of Yoga, which implements a subset of Flexbox, a HTML/CSS layout system. UI Toolkit properties match Yoga layout behavior. UI Toolkit supports most properties in Flexbox.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'UIE-LayoutEngine';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/UIE-LayoutEngine.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/UIE-LayoutEngine.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/UIE-LayoutEngine.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/UIE-LayoutEngine.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/UIE-LayoutEngine.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/UIE-LayoutEngine.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIE-LayoutEngine.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIE-LayoutEngine.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIE-LayoutEngine.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIE-LayoutEngine.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-LayoutEngine.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-LayoutEngine.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-LayoutEngine.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-LayoutEngine.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-LayoutEngine.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-LayoutEngine.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-LayoutEngine.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-LayoutEngine.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-LayoutEngine.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-LayoutEngine.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-LayoutEngine.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-LayoutEngine.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-LayoutEngine.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-LayoutEngine.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-LayoutEngine.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-LayoutEngine.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-LayoutEngine.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-LayoutEngine.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-LayoutEngine.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-LayoutEngine.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/UIE-LayoutEngine.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/UIE-LayoutEngine.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/UIE-LayoutEngine.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/UIE-LayoutEngine.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIE-LayoutEngine.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIE-LayoutEngine.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIE-LayoutEngine.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIE-LayoutEngine.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-LayoutEngine.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-LayoutEngine.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-LayoutEngine.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-LayoutEngine.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-LayoutEngine.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-LayoutEngine.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-LayoutEngine.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-LayoutEngine.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-LayoutEngine.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-LayoutEngine.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-LayoutEngine.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-LayoutEngine.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-LayoutEngine.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-LayoutEngine.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-LayoutEngine.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-LayoutEngine.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-LayoutEngine.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-LayoutEngine.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-LayoutEngine.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-LayoutEngine.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UIToolkits.html">Create user interfaces (UI)</a></li>
+<li><a href="UIElements.html">UI 工具包</a></li>
+<li><a href="UIE-USS.html">Style UI</a></li>
+<li><a href="UIE-uss-properties.html">USS properties</a></li>
+<li>Position element with the layout engine</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-USS-SupportedProperties.html"></a></span><div class="tip">USS common properties</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-relative-absolute-positioning-example.html"></a></span><div class="tip">Relative and absolute positioning</div>
+</div>
+</div></div>
+<h1>Position element with the layout engine</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>UI Toolkit includes a layout engine that positions elements based on layout and styling properties. The layout engine uses the layout principles of <a href="https://yogalayout.com/">Yoga</a>, which implements a subset of <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Flexbox</a>, a HTML/CSS layout system. UI Toolkit properties match Yoga layout behavior. UI Toolkit supports most properties in Flexbox.</p>
+
+<p>By default, all elements are part of the layout. The layout has the following default behaviours:</p>
+
+<ul>
+<li>容器垂直分配其子项。</li>
+<li>容器矩形的位置包括其子矩形。其他布局属性可能限制此行为。</li>
+<li>A <code>VisualElement</code> with text uses the text size in its size calculations. This behavior can be limited by other layout properties.</li>
+</ul>
+
+<p>UI Toolkit includes built-in <a href="UIE-ElementRef.html#built-in-controls">controls</a> for standard UI components, such as a button, toggle, or text field. These built-in controls have styles that affect their layout.</p>
+
+<h2>Main style properties</h2>
+
+<p>The following are the main style properties:</p>
+
+<ul>
+<li>
+<strong>Flex &gt; Direction</strong> (<code>flex-direction</code> in USS): Defines the layout direction the <strong>main-axis</strong>. The default is <code>column</code> and that makes the <strong>main-axis</strong> run from top to bottom.</li>
+<li>
+<strong>Flex &gt; Grow</strong> (<code>flex-grow</code> in USS): Defines how an element should grow in the <strong>main-axis</strong>. It’s a ratio that’s shared with all other siblings of the same parent. This property is useful when trying make an element stretch to take up the entire size of its parents (minus any siblings). To do this, set the <strong>Flex &gt; Grow</strong> value to <code>1</code>. If you have two siblings with <code>flex-grow</code> set to <code>1</code>, they will each take 50% of the parent’s available size along the <strong>main-axis</strong>.</li>
+<li>
+<strong>Align &gt; Align Items</strong> (<code>align-items</code> in USS): Defines the alignment of elements in the <strong>cross-axis</strong>, or the perpendicular axis to the <strong>main-axis</strong>. For example, if you have two Buttons in a <code>VisualElement</code> that has <code>flex-direction: column</code> and <code>align-items: flex-end</code> set, the two Buttons will squish against the container’s right edge. The options for <code>align-items</code> have names like <code>flex-start</code> and <code>flex-end</code> because they depend on the value of <code>flex-direction</code>.</li>
+<li>
+<strong>Align &gt; Justify Content</strong> (<code>justify-content</code> in USS): Defines the alignment of elements in the <strong>main-axis</strong>. For example, if you have two Buttons in a <code>VisualElement</code> that has <code>flex-direction: column</code> and <code>justify-content: flex-end</code> set, the two Buttons squish against the container’s bottom edge. The options for <code>justify-content</code> are named like <code>flex-start</code> and <code>flex-end</code> because they depend on the value of <code>flex-direction</code>.</li>
+</ul>
+
+<p>For more information, refer to <a href="UIE-USS-SupportedProperties.html#flex-layout">Flex layout</a>.</p>
+
+<p>If the selected element has child elements, in UI Builder, you can use toggles in the header to toggle flex-related style properties in the <strong>Viewport</strong>. The image below shows the options available for the <code>#menu</code> element:</p>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/FlexPropertiesInCanvas.png" alt="FlexPropertiesInCanvas">
+<figcaption>FlexPropertiesInCanvas</figcaption>
+</figure>
+
+<p>You can use the style properties to create complex, dynamic layouts. Here’s an example of a layout that anchors a <code>Button</code> on the bottom-right edge of the screen:</p>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/BottomRightCornerButtonLayout.png" alt="BottomRightCornerButtonLayout">
+<figcaption>BottomRightCornerButtonLayout</figcaption>
+</figure>
+
+<p>The UXML for this layout, showing the inline styles set on each container <code>VisualElement</code>, is below:</p>
+
+<pre><code class="lang-xml">&lt;ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements"&gt;
+    &lt;ui:VisualElement name="screen-is-blue" style="flex-grow: 1; justify-content: flex-end; background-color: blue;"&gt;
+        &lt;ui:VisualElement name="toolbar-is-orange" style="align-items: flex-end; background-color: orange;"&gt;
+            &lt;ui:Button text="Button" display-tooltip-when-elided="true" /&gt;
+        &lt;/ui:VisualElement&gt;
+    &lt;/ui:VisualElement&gt;
+&lt;/ui:UXML&gt;
+</code></pre>
+
+<p>The containers are colored to reveal their shape. You can use nested <code>VisualElement</code> containers to achieve any dynamic layout without resorting to explicitly setting the position and size of each element. This keeps the layout dynamic and automatically adjusts to the larger container changing size, like the screen changing size.</p>
+
+<h2>Absolute position</h2>
+
+<p>UI Builder also supports the <strong>Position</strong> style properties. The <strong>Position &gt; Absolute</strong> mode makes an element invisible to the default Flexbox-based layout engine. It’s as if it no longer takes any space. <strong>Absolute</strong>-position elements appear on top of any siblings that are <strong>Relative</strong>-position.</p>
+
+<p>While using <strong>Absolute</strong> position, you can use the <strong>Position &gt; Left</strong>, <strong>Top</strong>, <strong>Right</strong>, <strong>Bottom</strong> style properties to offset and size the element from the respective edges of its parent. This doesn’t set absolute coordinates on the screen but sets offsets relative to the parent element. You can still use <strong>Relative</strong> mode to position the parent element. If you set both a <strong>Left</strong> offset and a <strong>Right</strong> offset, the <strong>Width</strong> style property of the element is ignored and the computed width will now come from the following formula:</p>
+
+<pre><code>element-computed-width = parent-width - left-offset - right-offset
+</code></pre>
+
+<p><strong>Left</strong>, <strong>Top</strong>, <strong>Right</strong>, <strong>Bottom</strong> can also be interpreted as anchors. For example, you can anchor a <code>Button</code> on the bottom-left of the screen:</p>
+
+<figure>
+<img src="../uploads/Main/uie-anchoring-example.png" alt="锚定示例">
+<figcaption>锚定示例</figcaption>
+</figure>
+
+<p>The UXML below displays the inline styles:</p>
+
+<pre><code class="lang-xml">&lt;ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False"&gt;
+    &lt;ui:VisualElement style="flex-grow: 1;"&gt;
+        &lt;ui:VisualElement style="position: absolute; left: 0; bottom: 0;" /&gt;
+    &lt;/ui:VisualElement&gt;
+&lt;/ui:UXML&gt;
+</code></pre>
+
+<p>With positioning, there is a difference between having <strong>Left</strong> set to <code>0</code> and having <strong>Left</strong> unset:</p>
+
+<ul>
+<li>
+<code>Left set to 0</code> means set an offset of 0.</li>
+<li>
+<code>Left unset</code> doesn’t set any offset and lets other style properties define the width or height of the element.</li>
+</ul>
+
+<p>You can also modify these offset style properties directly in the <strong>Canvas</strong> via additional resize handles on each edge and corner of the element’s blue selection border. It’s important to differentiate between what’s set and what’s unset, so the <strong>Canvas</strong> also includes “anchor” toggles as orange squares off each side of the element. The <strong>Canvas</strong> handles will adjust which style properties are set when resizing the element visually, depending on which “anchors” are set. For example, say you are resizing the element in the <strong>Canvas</strong> via its right-border handle:</p>
+
+<ul>
+<li>If you set both <strong>Left</strong> and <strong>Right</strong> properties, the handle will update the <strong>Right</strong> property.</li>
+<li>If you set <strong>Left</strong> but not <strong>Right</strong>, the handle will update the <strong>Width</strong> property.</li>
+</ul>
+
+<h2>Use both Relative and Absolute</h2>
+
+<p>It’s typically discouraged to use <strong>Absolute</strong> position mode because it bypasses the built-in layout engine in UI Toolkit. It might also lead to high-maintenance UI where changing the overall layout would require manually updating individual elements. However, one of the legitimate use cases for <strong>Absolute</strong> position mode is for overlays. It’s useful to overlay some complex UI on top of other complex UI, such as a popup or a dropdown. You can use <strong>Absolute</strong> position only for the overlay container itself while continuing to use <strong>Relative</strong> mode inside the overlay. Here’s an example of a simple centered popup:</p>
+
+<p><img src="../uploads/Main/UIBuilder/AbsolutePositionOverlayWithPopup.png" alt="AbsolutePositionOverlayWithPopup">
+And here’s the UXML for your reference:</p>
+
+<pre><code class="lang-xml">&lt;ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements"&gt;
+    &lt;ui:VisualElement name="complex-ui-screen"&gt;
+        &lt;ui:Toggle label="Toggle" /&gt;
+        &lt;ui:MinMaxSlider picking-mode="Ignore" label="Min/Max Slider" min-value="10" max-value="12" low-limit="-10" high-limit="40" /&gt;
+        &lt;ui:Label text="Label" /&gt;
+        &lt;ui:Button text="Button" /&gt;
+        &lt;ui:Button text="Button" /&gt;
+    &lt;/ui:VisualElement&gt;
+    &lt;ui:VisualElement name="overlay" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.71); align-items: center; justify-content: center;"&gt;
+        &lt;ui:VisualElement name="popup" style="background-color: rgba(70, 70, 70, 255);"&gt;
+            &lt;ui:Label text="Exit?" name="message" /&gt;
+            &lt;ui:Button text="Ok" name="ok-button" style="width: 108.3333px;" /&gt;
+        &lt;/ui:VisualElement&gt;
+    &lt;/ui:VisualElement&gt;
+&lt;/ui:UXML&gt;
+</code></pre>
+
+<p>The example above highlights the use of <strong>Absolute</strong> position. Set all <strong>Position &gt; Left</strong>, <strong>Top</strong>, <strong>Right</strong>, <strong>Bottom</strong> to <code>0</code>, so the position is <code>0</code> pixels away from the edges of the screen. This makes the <code>#overlay</code> element overlap the <code>#complex-ui-screen</code> container element. You can also set a semi-transparent background to the <code>#overlay</code> element to make the other UI appear darkened. Use <code>#overlay</code> to set <strong>Relative</strong> position to center our <code>#popup</code> container <code>VisualElement</code>.</p>
+
+<h2>最佳实践</h2>
+
+<p>下面列出了有关如何改进布局引擎性能的技巧：</p>
+
+<ul>
+<li><p>设置 <code>width</code> 和 <code>height</code> 来定义元素的大小。</p></li>
+<li><p>Use the <code>flexGrow</code> property (<a href="UIE-USS.html">USS</a>: <code>flex-grow: &lt;value&gt;;</code>) to assign a flexible size to an element. The value of the <code>flexGrow</code> property assigns a base weight to the size of an element when it’s determined by its siblings.</p></li>
+<li><p>Set the <code>flexDirection</code> property to <code>row</code> (<a href="UIE-USS.html">USS</a>: <code>flex-direction: row;</code>) to switch to a horizontal layout.</p></li>
+<li><p>使用相对定位根据元素的原始布局位置来偏移元素。</p></li>
+<li><p>将 <code>position</code> 属性设置为 <code>absolute</code> 以便相对于父位置矩形来放置某个元素。这不会影响其同级和父项的布局。</p></li>
+</ul>
+
+<h2>其他资源</h2>
+
+<ul>
+<li><a href="UIE-USS-Properties-Reference.html">USS properties reference</a></li>
+<li><a href="UIE-USS-SupportedProperties.html">USS common properties</a></li>
+<li><a href="UIE-USS.html">Style UI with USS</a></li>
+<li><a href="UIE-relative-absolute-positioning-example.html">Relative and absolute positioning C# example</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-USS-SupportedProperties.html"></a></span><div class="tip">USS common properties</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-relative-absolute-positioning-example.html"></a></span><div class="tip">Relative and absolute positioning</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

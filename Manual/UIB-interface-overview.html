@@ -1,0 +1,448 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="UI Builder interface overview - Unity 手册">
+<title>UI Builder interface overview - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/UIBuilder/UIBuilderAnnotatedMainWindow.png">
+<meta name="description" content="To open the UI Builder window:">
+<meta property="og:description" content="To open the UI Builder window:">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'UIB-interface-overview';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/UIB-interface-overview.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/UIB-interface-overview.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/UIB-interface-overview.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/UIB-interface-overview.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/UIB-interface-overview.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/UIB-interface-overview.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIB-interface-overview.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIB-interface-overview.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIB-interface-overview.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIB-interface-overview.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIB-interface-overview.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIB-interface-overview.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIB-interface-overview.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIB-interface-overview.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIB-interface-overview.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIB-interface-overview.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIB-interface-overview.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIB-interface-overview.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIB-interface-overview.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIB-interface-overview.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIB-interface-overview.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIB-interface-overview.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIB-interface-overview.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIB-interface-overview.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIB-interface-overview.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIB-interface-overview.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIB-interface-overview.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIB-interface-overview.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIB-interface-overview.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIB-interface-overview.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/UIB-interface-overview.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/UIB-interface-overview.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/UIB-interface-overview.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/UIB-interface-overview.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIB-interface-overview.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIB-interface-overview.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIB-interface-overview.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIB-interface-overview.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIB-interface-overview.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIB-interface-overview.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIB-interface-overview.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIB-interface-overview.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIB-interface-overview.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIB-interface-overview.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIB-interface-overview.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIB-interface-overview.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIB-interface-overview.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIB-interface-overview.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIB-interface-overview.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIB-interface-overview.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIB-interface-overview.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIB-interface-overview.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIB-interface-overview.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIB-interface-overview.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIB-interface-overview.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIB-interface-overview.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIB-interface-overview.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIB-interface-overview.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UIToolkits.html">Create user interfaces (UI)</a></li>
+<li><a href="UIElements.html">UI 工具包</a></li>
+<li><a href="UIBuilder.html">UI Builder</a></li>
+<li>UI Builder interface overview</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIBuilder.html"></a></span><div class="tip">UI Builder</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIB-getting-started.html"></a></span><div class="tip">Get started with UI Builder</div>
+</div>
+</div></div>
+<h1>UI Builder interface overview</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>To open the UI Builder window:</p>
+
+<ul>
+<li>Select <strong>Window</strong> &gt; <strong>UI Toolkit</strong> &gt; <strong>UI Builder</strong>. This opens a UXML document that has been previously loaded with UIBuilder.</li>
+<li>From the Project window, double-click a UXML file.</li>
+</ul>
+
+<p>The following image shows an example UI Builder window:</p>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/UIBuilderAnnotatedMainWindow.png" alt="UI Builder main window">
+<figcaption>UI Builder main window</figcaption>
+</figure>
+
+<p><a name="open-and-save-ui-documents-uxml"></a></p>
+
+<h1>Open and save UI Documents (UXML)</h1>
+
+<p>To open a UI Document in UI Builder:</p>
+
+<ul>
+<li>Use the <strong>File</strong> menu inside the UI Builder <strong>Viewport</strong> pane toolbar and select <strong>Open…</strong>.</li>
+<li>In the <strong>Project</strong> tab of the <strong>Library</strong> pane, right-click on the document and select <strong>Open in UI Builder</strong>.</li>
+</ul>
+
+<p>To open a UI Document (UXML) in your default text editor or IDE:</p>
+
+<ul>
+<li>Use the <strong>inlineStyle</strong> file icon.
+
+<ol>
+<li>Go to the <strong>Project</strong> window &gt; <strong>Assets</strong>.</li>
+<li>Click the arrow in the middle of the UXML file icon.</li>
+<li>Double-click the <strong>inlineStyle</strong> file icon.</li>
+</ol>
+</li>
+<li>Use the <strong>Open with IDE</strong> button.
+
+<ol>
+<li>In UI Builder, go to <strong>Library</strong> &gt; <strong>Project</strong> tab.</li>
+<li>Open the <strong>Assets</strong> folder.</li>
+<li>Right-click on the UI Document (UXML) and select <strong>Open with IDE</strong>.</li>
+</ol>
+</li>
+<li>Use the <strong>UXML Preview</strong> pane.
+
+<ol>
+<li>In UI Builder, make sure your UI Document (UXML) is currently loaded.</li>
+<li>Go to the <strong>UXML Preview</strong> pane.</li>
+<li>Select the top-right icon.</li>
+</ol>
+</li>
+</ul>
+
+<p>The currently opened and active UI Document (UXML) asset name is displayed in the <strong>Hierarchy</strong> pane as a root tree item, in the <strong>Canvas</strong> header inside the <strong>Viewport</strong>, and in the <strong>UXML Preview</strong> pane at the bottom of the <strong>Viewport</strong>. An asterisk (*) next to the name indicates unsaved changes.</p>
+
+<p>To save a UI Document (UXML):</p>
+
+<ul>
+<li>Use the <strong>File &gt; Save</strong> menu in the UI Builder’s <strong>Viewport</strong> pane toolbar.</li>
+<li>Use <strong>Ctrl/CMD + S</strong>. It also prompts you to save the Scene in the Editor.</li>
+</ul>
+
+<p><strong>Note</strong>: The Unity project-wide save doesn’t save the active UI Document (UXML) opened in the UI Builder.</p>
+
+<h2>StyleSheets</h2>
+
+<p>StyleSheets and the USS Selectors in UI Toolkit are used to share and apply styles across many elements and UI Documents (UXML).</p>
+
+<p>The <strong>StyleSheets</strong> pane <img src="../uploads/Main/UIBuilder/Numeral_1_half.png" alt="1"> is where you can:</p>
+
+<ul>
+<li>Add, reorder, or remove StyleSheets (USS) in the current UI Document (UXML).</li>
+<li>Create, reorder, copy, or remove USS Selectors within StyleSheets to share styles across different elements.</li>
+</ul>
+
+<h2>Hierarchy</h2>
+
+<p>The <strong>Hierarchy</strong> pane <img src="../uploads/Main/UIBuilder/Numeral_2_half.png" alt="2"> contains the tree view representing the element hierarchy of the current document. It’s a superset of the hierarchy you see in the UXML text representation of the UI Document (UXML). Besides the elements created directly from UXML, the <strong>Hierarchy</strong> pane also contains elements created dynamically that only exist in the runtime of the UI. For example, the <strong>Hierarchy</strong> pane includes elements that are part of a Template instance (a different document instanced inside the current document), whereas the UXML would just have a single <code>&lt;Instance&gt;</code> tag.</p>
+
+<p>You can use the <strong>Hierarchy</strong> pane to:</p>
+
+<ul>
+<li>Select elements for inspecting or editing.</li>
+<li>Cut, copy, delete, or reorder elements.</li>
+<li>Open instanced template documents as sub-documents for in-place (in context) editing.</li>
+<li>Check at once many elements’ style class lists, name attributes, and locally attached StyleSheets.</li>
+</ul>
+
+<p>Elements appear in the tree according to their <code>name</code> attributes. If an element’s <code>name</code> attribute isn’t set, it appears according to its C# type. You can double-click an element to quickly rename it.</p>
+
+<p>Click the <strong>⋮</strong> icon in the top right corner of the <strong>Hierarchy</strong> pane header to access a menu of display options.</p>
+
+<ul>
+<li>Select <strong>Type</strong> to force the <strong>Hierarchy</strong> to display each element’s C# type, regardless of whether it has a name.</li>
+<li>Select <strong>Class List</strong> to display each element’s style class list next to its <strong>Hierarchy</strong> entry.</li>
+<li>Select <strong>Attached StyleSheets</strong> to display any locally attached StyleSheets next to their element.</li>
+</ul>
+
+<h2>Library</h2>
+
+<p>The <strong>Library</strong> pane <img src="../uploads/Main/UIBuilder/Numeral_3_half.png" alt="3"> is similar to the <a href="ProjectView.html">Project window</a> in the Unity Editor. It lists available UI elements.</p>
+
+<ul>
+<li>The <strong>Standard</strong> tab lists the standard built-in elements that Unity provides. These elements include standard styling that works for all supported Unity Editor and runtime themes.</li>
+</ul>
+
+<p>You can change this view mode between tiles and tree view using the <strong>⋮</strong> icon in the top right corner of the <strong>Library</strong> window and choosing <strong>Tree View</strong>.</p>
+
+<ul>
+<li>The <strong>Project</strong> tab lists custom <code>.uxml</code> assets in the Project. It also lists any custom C# elements that inherit from <code>VisualElement</code> and have their <code>UxmlFactory</code> set up to be instantiable via UXML. To preview any element in the <strong>Library</strong>’s Project tab, hover over it. The preview appears to the right of the <strong>Library</strong> pane.</li>
+</ul>
+
+<p>To instantiate an element, do one of the following:</p>
+
+<ul>
+<li>Drag it into the <strong>Hierarchy</strong> pane.</li>
+<li>Drag the element onto the <strong>Canvas</strong> in the <strong>Viewport</strong>.</li>
+<li>Double-click the element. This adds the element as a sibling of the currently selected element. If nothing is selected, the element is added at the root of the UI Document (UXML).</li>
+</ul>
+
+<p>You can select elements in the <strong>Hierarchy</strong> window or in the <strong>Canvas</strong>. In the <strong>Hierarchy</strong>, hold down <strong>Ctrl/Cmd</strong> to select additional elements. In the <strong>Canvas</strong>, when an element is focused, you can click the element to select its parent element, which you can repeat to travel up the element hierarchy until it reverts back to the original element.</p>
+
+<h2>Viewport</h2>
+
+<p>The <strong>Viewport</strong> pane <img src="../uploads/Main/UIBuilder/Numeral_4_half.png" alt="4"> displays the output of a UI Document (UXML) on a floating resizable edit-time <strong>Canvas</strong>. The toolbar contains menus of UI Builder-specific commands, <strong>Viewport</strong> settings, <strong>Theme</strong> selector, and the <strong>Preview</strong> button. You can find additional UI Builder settings in the top-right corner of the <strong>Viewport</strong> under the <strong>⋮</strong> menu, including a shortcut to the UI Builder’s Settings in Unity’s <strong>Project Settings</strong>.</p>
+
+<h3>Navigate in the Viewport</h3>
+
+<p>Pan and zoom to navigate in the <strong>Viewport</strong>. The UI Builder saves each UI Document (UXML)’s current pan and zoom state, and restores them after the UI Builder window reloads, a domain reloads, or when you close and re-open the same UI Document (UXML).</p>
+
+<p>When you create and open a new document, the UI Builder resets the pan and zoom states.</p>
+
+<p>To pan, do one of the following:</p>
+
+<ul>
+<li>Middle-click and drag in the <strong>Viewport</strong>.</li>
+<li>Hold down <strong>Ctrl/Cmd</strong> + <strong>Alt</strong>/<strong>Option</strong> and click and drag in the <strong>Viewport</strong>.</li>
+</ul>
+
+<p>To zoom in and out, position the mouse pointer in the <strong>Viewport</strong> and do one of the following:</p>
+
+<ul>
+<li>Position the mouse pointer in the <strong>Viewport</strong>, and rotate the mouse wheel.</li>
+<li>Hold down <strong>Alt</strong>/<strong>Option</strong> and right-mouse drag. Drag right to zoom in, and left to zoom out.</li>
+</ul>
+
+<h3>Set up the Canvas</h3>
+
+<p>The <strong>Canvas</strong> is where you edit, preview, and interact with the UI Document (UXML) you are authoring. If you can’t see it, select the <strong>Fit Canvas</strong> button in the <strong>Viewport</strong> toolbar to bring it into view. The header of the <strong>Canvas</strong> displays the name of the currently loaded UI Document (UXML). An asterisk (*) next to the name indicates unsaved changes. </p>
+
+<p>To resize the <strong>Canvas</strong>:</p>
+
+<ul>
+<li>Inside the <strong>Viewport</strong>, drag the edges or corners.</li>
+<li>Select the <strong>Canvas</strong> header to display the Inspector window of the canvas, where you can enter the canvas’ width and height.</li>
+</ul>
+
+<p>To match the <strong>Canvas</strong> size to the size of the Unity Game window, select the <strong>Match Game View</strong> checkbox.</p>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/CanvasSizeSettings.png" alt="CanvasSizeSettings">
+<figcaption>CanvasSizeSettings</figcaption>
+</figure>
+
+<p>You can change the <strong>Canvas</strong> background to make it easier to edit the UI. To change the background, select the <strong>Canvas</strong> in the <strong>Inspector</strong> pane. You can set it to be a solid color, a specific texture (a mock-up from a UI Designer), or a live view from a <strong>Camera</strong> in an open Unity Scene:</p>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/CanvasBackgroundSettings.png" alt="CanvasBackgroundSettings">
+<figcaption>CanvasBackgroundSettings</figcaption>
+</figure>
+
+<p>Any settings related to the <strong>Canvas</strong>, like its size, aren’t saved as part of the UI Document (UXML) but stored in a separate settings file for the next time you open the same UI Document (UXML).</p>
+
+<h2>Code Previews</h2>
+
+<p>As you build your UI, UI Builder automatically generates the underlying UXML and USS text, and displays them in the <strong>UXML Preview</strong> and <strong>USS Preview</strong> panes <img src="../uploads/Main/UIBuilder/Numeral_5_half.png" alt="5">.</p>
+
+<p><a name="uibuilder-inspector"></a></p>
+
+<h2>Inspector</h2>
+
+<p>The UI Builder <strong>Inspector</strong> pane <img src="../uploads/Main/UIBuilder/Numeral_6_half.png" alt="6"> is similar to the Unity <a href="UsingTheInspector.html"><strong>Inspector</strong> window</a>. The <strong>Inspector</strong> displays slightly different content, depending on the object you have selected inside the UI Builder:</p>
+
+<ul>
+<li>Elements display an attribute section for per-element (UXML) attributes, a <strong>StyleSheets</strong> section to assign style classes and view applied styles from StyleSheets, and an <strong>Inlined Styles</strong> section to edit inline per-element style properties.</li>
+<li>USS Selectors display a <strong>Style Selector</strong> section to change the selector query string and a <strong>Styles</strong> section to edit style properties.</li>
+<li>Canvas displays a <strong>Canvas Size</strong> section to change the Canvas size, a <strong>Canvas Background</strong> section to change the edit-time canvas background, and a <strong>Document Settings</strong> section for per-document edit-time settings.</li>
+</ul>
+
+<p><a name="enable-editor-extension-authoring-for-ui-documents-uxml"></a></p>
+
+<h2>Enable Editor Extension Authoring for UI Documents (UXML)</h2>
+
+<p>By default, new UI Documents (UXML) created in the UI Builder have a setting saved within the UXML that marks them as runtime-only UI:</p>
+
+<pre><code class="lang-xml">&lt;ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False"&gt;
+</code></pre>
+
+<p>This means that, by default, the <strong>Library</strong> pane’s <strong>Standard</strong> tab only contains elements that work best at runtime.</p>
+
+<p>To create UI for the Unity Editor, like custom Editor Windows or custom Inspectors, you can enable <strong>Editor Extension Authoring</strong> to see additional <strong>Editor-Only</strong> controls in the <strong>Standard</strong> tab of the <strong>Library</strong> pane.</p>
+
+<p>To enable Editor Extension Authoring:</p>
+
+<ul>
+<li>Select the <strong>Canvas</strong> header to display the Inspector window of the canvas, where you select the <strong>Document Settings &gt; Editor Extension Authoring</strong> option:</li>
+</ul>
+
+<p><img src="../uploads/Main/UIBuilder/EditorExtensionAuthoringPanelSettings.png" alt="EditorExtensionAuthoringPanelSettings"></p>
+
+<ul>
+<li>In the menu on the <strong>Library</strong> pane, select <strong>Editor Extension Authoring</strong>.</li>
+</ul>
+
+<p><strong>Note</strong>: Unlike the other <strong>Canvas</strong> settings, this setting is saved in the <code>editor-extension-mode</code> attribute of the root element of the UI Document (UXML).</p>
+
+<p>To enable <strong>Editor Extension Authoring</strong> on any new UI Documents (UXML) by default:</p>
+
+<ol>
+<li>Go to <strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>UI Builder</strong>.</li>
+<li>Select <strong>Enable Editor Extension Authoring by Default</strong>.</li>
+</ol>
+
+<p>UI Documents (UXML) that you create outside of the UI Builder, for example, in a text editor or IDE, don’t have an Editor Extension Authoring attribute until you open them in the UI Builder. However, you can add the <code>editor-extension-mode</code> attribute manually in your UI Document (UXML) in a text editor or IDE at any moment. When you open an externally created UI Document (UXML) in the UI Builder for the first time, the Editor Extension Authoring attribute is set according to the default specified in the UI Builder project settings. </p>
+
+<h2>其他资源</h2>
+
+<ul>
+<li><a href="UIB-getting-started.html">Get started with UI Builder</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIBuilder.html"></a></span><div class="tip">UI Builder</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIB-getting-started.html"></a></span><div class="tip">Get started with UI Builder</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

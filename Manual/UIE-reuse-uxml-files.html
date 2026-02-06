@@ -1,0 +1,393 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Reuse UXML files - Unity 手册">
+<title>Reuse UXML files - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="You can create a UXML file as a template and reuse it in other UXML files.">
+<meta property="og:description" content="You can create a UXML file as a template and reuse it in other UXML files.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'UIE-reuse-uxml-files';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/UIE-reuse-uxml-files.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/UIE-reuse-uxml-files.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/UIE-reuse-uxml-files.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/UIE-reuse-uxml-files.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/UIE-reuse-uxml-files.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/UIE-reuse-uxml-files.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIE-reuse-uxml-files.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIE-reuse-uxml-files.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIE-reuse-uxml-files.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIE-reuse-uxml-files.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-reuse-uxml-files.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-reuse-uxml-files.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-reuse-uxml-files.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-reuse-uxml-files.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-reuse-uxml-files.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-reuse-uxml-files.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-reuse-uxml-files.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-reuse-uxml-files.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-reuse-uxml-files.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-reuse-uxml-files.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-reuse-uxml-files.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-reuse-uxml-files.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-reuse-uxml-files.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-reuse-uxml-files.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-reuse-uxml-files.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-reuse-uxml-files.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-reuse-uxml-files.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-reuse-uxml-files.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-reuse-uxml-files.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-reuse-uxml-files.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/UIE-reuse-uxml-files.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/UIE-reuse-uxml-files.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/UIE-reuse-uxml-files.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/UIE-reuse-uxml-files.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIE-reuse-uxml-files.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIE-reuse-uxml-files.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIE-reuse-uxml-files.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIE-reuse-uxml-files.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-reuse-uxml-files.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-reuse-uxml-files.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-reuse-uxml-files.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-reuse-uxml-files.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-reuse-uxml-files.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-reuse-uxml-files.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-reuse-uxml-files.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-reuse-uxml-files.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-reuse-uxml-files.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-reuse-uxml-files.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-reuse-uxml-files.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-reuse-uxml-files.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-reuse-uxml-files.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-reuse-uxml-files.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-reuse-uxml-files.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-reuse-uxml-files.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-reuse-uxml-files.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-reuse-uxml-files.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-reuse-uxml-files.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-reuse-uxml-files.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UIToolkits.html">Create user interfaces (UI)</a></li>
+<li><a href="UIElements.html">UI 工具包</a></li>
+<li><a href="UIE-structure-ui.html">Structure UI</a></li>
+<li><a href="UIE-UXML.html">Structure UI with UXML</a></li>
+<li>Reuse UXML files</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-add-style-to-uxml.html"></a></span><div class="tip">Add styles to UXML</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-reference-other-files-from-uxml.html"></a></span><div class="tip">Reference other files from UXML</div>
+</div>
+</div></div>
+<h1>Reuse UXML files</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>You can create a UXML file as a template and reuse it in other UXML files.</p>
+
+<h2>Import a UXML template</h2>
+
+<p>When you design a large user interface, you can create template UXML files that define parts of the UI, and use the <a href="UIE-ElementRef.html#templates"><code>&lt;Template&gt;</code> and <code>&lt;Instance&gt;</code></a> elements to import it into another UXML file. </p>
+
+<p>For example, if you have a portrait UI element that has an image, a name, and a label, you can create a UXML template file as <code>Assets/Portrait.uxml</code> with the following content:</p>
+
+<pre><code class="lang-xml">&lt;ui:UXML ...&gt;
+    &lt;ui:VisualElement class="portrait"&gt;
+        &lt;ui:Image name="portaitImage" style="--unity-image: url(\"a.png\")"/&gt;
+        &lt;ui:Label name="nameLabel" text="Name"/&gt;
+        &lt;ui:Label name="levelLabel" text="42"/&gt;
+    &lt;/ui:VisualElement&gt;
+&lt;/ui:UXML&gt;
+</code></pre>
+
+<p>You can then reuse the Portrait template like this:</p>
+
+<pre><code class="lang-xml">&lt;ui:UXML ...&gt;
+    &lt;ui:Template src="/Assets/Portrait.uxml" name="Portrait"/&gt;
+    &lt;ui:VisualElement name="players"&gt;
+        &lt;ui:Instance template="Portrait" name="player1"/&gt;
+        &lt;ui:Instance template="Portrait" name="player2"/&gt;
+    &lt;/ui:VisualElement&gt;
+&lt;/ui:UXML&gt;
+</code></pre>
+
+<p><a name="attribute-overrides"></a></p>
+
+<h2>Override UXML attributes</h2>
+
+<p>When you create instances of a UXML template, you can override the default attribute values of its elements. Attribute overrides allow you to instantiate the same template many times with different values for each instance.</p>
+
+<h3>Override an attribute</h3>
+
+<p>You can override attributes with the <code>UXML</code> tag. To override an attribute, specify the following:</p>
+
+<ul>
+<li>The <code>element-name</code> attribute of the element whose attributes you want to override</li>
+<li>要覆盖的属性的名称。</li>
+<li>新属性值</li>
+</ul>
+
+<p>For example, if you want to display the same set of information for each player in your game, you can create a UXML template, and use attribute overrides to create player-specific instances.</p>
+
+<p>First, create a template, such as <code>MyTemplate.uxml</code>, with the following content:</p>
+
+<pre><code class="lang-xml">&lt;UXML xmlns="Unityui.UIElements"&gt;
+    &lt;Label name="player-name-label" text="default name" /&gt;
+    &lt;Label name="player-score-label" text="default score" /&gt;
+&lt;/UXML&gt;
+</code></pre>
+
+<p>Then, instance it from another UXML file and override its attributes to display each player’s name and score:</p>
+
+<pre><code class="lang-xml">&lt;UXML xmlns="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements"&gt;
+    &lt;Template src="MyTemplate.uxml" name="MyTemplate" /&gt;
+    &lt;Instance name="player1" template="MyTemplate"&gt;
+        &lt;!-- Alice is the new value of the text attribute for the player-name-label --&gt;
+        &lt;AttributeOverrides element-name="player-name-label" text="Alice" /&gt; 
+        &lt;!-- 2 is the new value of the text attribute for the player-score-label --&gt;
+        &lt;AttributeOverrides element-name="player-score-label" text="2" /&gt;
+    &lt;/Instance&gt;
+    &lt;Instance name="player2" template="MyTemplate"&gt;
+        &lt;!-- Bob is the new value of the text attribute for the player-name-label --&gt;
+        &lt;AttributeOverrides element-name="player-name-label" text="Bob" /&gt;
+        &lt;!-- 1 is the new value of the text attribute for the player-score-label --&gt;
+        &lt;AttributeOverrides element-name="player-score-label" text="1" /&gt;
+    &lt;/Instance&gt;
+&lt;/UXML&gt;
+</code></pre>
+
+<h3>Override multiple attributes</h3>
+
+<p>您可以为每个覆盖指定多个属性。例如，以下语法查找名为 <code>player-name-label</code> 的实例中的任何元素，并且</p>
+
+<ul>
+<li>用新值 <code>Alice</code> 覆盖其 <code>text</code> 属性的默认值。</li>
+<li>用新值 <code>Tooltip 1</code> 覆盖其 <code>tooltip</code> 属性的默认值。</li>
+</ul>
+
+<pre><code class="lang-xml">&lt;AttributeOverrides element-name="player-name-label" text="Alice" tooltip="Tooltip 1" /&gt;
+</code></pre>
+
+<h3>Nest attribute overrides</h3>
+
+<p>属性覆盖通过元素层级结构中的嵌套模板传播。例如，如果模板 A 实例化模板 B，而模板 B 实例化模板 C，则模板 A 和模板 B 都可以覆盖模板 C 中的属性。</p>
+
+<p>When you override attributes in nested templates, the deepest override takes precedence. In the example above, if template A and template B both override the same attribute of template C, the override in template B determines what actually appears in the rendered UI.</p>
+
+<h3>Override template instance styles</h3>
+
+<p>If you’re creating instances of a UXML template, and an element in the template has an inline style defined with the <code>style</code> attribute, you can’t use <code>AttributeOverrides</code> to override that <code>style</code> attribute. However, you can use USS selectors in a USS style sheet to override the styling of your template instances.</p>
+
+<p>For example, if you have the following UXML template called <code>Hotkeys.uxml</code> that defines a <code>#Container</code> with two labels, and the <code>#Container</code> has an inline style that defines the flex row direction:</p>
+
+<pre><code class="lang-xml">&lt;ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False"&gt;
+    &lt;ui:VisualElement name="Container" style="flex-direction: row;"&gt;
+        &lt;ui:Label text="E" name="Hotkeys" /&gt;
+        &lt;ui:Label text="Talk" name="Action" /&gt;
+    &lt;/ui:VisualElement&gt;
+&lt;/ui:UXML&gt;
+</code></pre>
+
+<p>If you want to create two template instances with the second having a reversed flex row direction, you can’t use <code>AttributeOverides</code> to override the <code>style</code> attribute of the <code>#Container</code> element in your second instance.</p>
+
+<p>To override the style, do the following:</p>
+
+<ul>
+<li>Remove the style of the <code>#Container</code> in the above UXML template (<code>Hotkeys.uxml</code>).</li>
+<li>In your UXML instances file, name your two instances, such as <code>HotkeysXML</code> and <code>ReversedHotkeysXML</code>.</li>
+<li>Apply a USS style sheet, such as <code>ContextHotkeys.uss</code>, to your UXML instance file.</li>
+</ul>
+
+<pre><code class="lang-xml">&lt;ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements"&gt;
+    &lt;ui:Template name="HotkeysXML" src="HotkeysXML.uxml"/&gt;
+    &lt;Style src="ContextHotKeys.uss"/&gt;
+    &lt;ui:Instance template="HotkeysXML" name="HotkeysXML" /&gt;
+    &lt;ui:Instance template="HotkeysXML" name="ReversedHotkeysXML" /&gt;
+&lt;/ui:UXML&gt;
+</code></pre>
+
+<p>You can then create <code>ContextHotkeys.uss</code> to change the <code>#Container</code> style according to the template instance name:</p>
+
+<pre><code class="lang-css">#ReversedHotkeysXML &gt; #Container {
+    flex-direction: row-reverse;
+}
+ 
+#HotkeysXML &gt; #Container {
+    flex-direction: row;
+}
+</code></pre>
+
+<h3>限制</h3>
+
+<p>Attribute overrides have the following limitations:</p>
+
+<ul>
+<li>Attribute overrides find matching attributes according to the element name you specify. You can’t use <a href="UIE-USS-Selectors.html">USS Selectors</a> or <a href="UIE-UQuery.html">UQuery</a> to match elements.</li>
+<li>Although you can override an element’s <code>binding-path</code> attribute, data binding doesn’t work with attribute overrides.</li>
+<li>You can’t override an element’s <code>class</code>, <code>name</code>, or <code>style</code> attributes.</li>
+</ul>
+
+<h2>Specify where to nest child elements in a UXML template</h2>
+
+<p>You can use the <code>content-container</code> attribute of a visual element to specify where to nest child elements in a UXML template. For example, if you have the following UXML template file as <code>Assets/MyTemplate.uxml</code>:</p>
+
+<pre><code class="lang-xml">&lt;ui:UXML xmlns:ui="UnityEngine.UIElements" ...&gt;
+    &lt;ui:Label text="Group Title" name="groupTitle" /&gt;
+    &lt;ui:VisualElement name="group-container" content-container="anyValue"&gt;
+         &lt;!--Add child elements here --&gt;
+    &lt;/ui:VisualElement&gt;
+    &lt;ui:VisualElement /&gt;
+&lt;/ui:UXML&gt;
+</code></pre>
+
+<p>You can then apply the template with nested child elements as this:</p>
+
+<pre><code class="lang-xml">&lt;ui:UXML xmlns:ui="UnityEngine.UIElements" ...&gt;
+    &lt;ui:Template path="Assets/MyTemplate.uxml" name="my-template"/&gt;
+    &lt;ui:Instance template="my-template"&gt;
+        &lt;ui:Label text="Test"/&gt; &lt;!--This label element is instantiated inside the `group-container` element--&gt;
+    &lt;/ui:Instance&gt;
+&lt;/ui:UXML&gt;
+</code></pre>
+
+<p><strong>Note</strong>: You can provide any value to the <code>content-container</code> attribute.</p>
+
+<h2>其他资源</h2>
+
+<ul>
+<li><a href="UIE-ElementRef.html#templates">Templates</a></li>
+<li><a href="UIB-structuring-ui-templates.html">Use UXML instances as templates</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-add-style-to-uxml.html"></a></span><div class="tip">Add styles to UXML</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-reference-other-files-from-uxml.html"></a></span><div class="tip">Reference other files from UXML</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

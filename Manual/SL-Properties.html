@@ -1,0 +1,532 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="ShaderLab：定义材质属性 - Unity 手册">
+<title>ShaderLab：定义材质属性 - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="本页面包含有关在 ShaderLab 代码中使用 Properties 代码块为 Shader 对象定义材质属性的信息。">
+<meta property="og:description" content="本页面包含有关在 ShaderLab 代码中使用 Properties 代码块为 Shader 对象定义材质属性的信息。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'SL-Properties';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/SL-Properties.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/SL-Properties.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/SL-Properties.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/SL-Properties.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/SL-Properties.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/SL-Properties.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/SL-Properties.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/SL-Properties.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/SL-Properties.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/SL-Properties.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/SL-Properties.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/SL-Properties.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/SL-Properties.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/SL-Properties.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/SL-Properties.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/SL-Properties.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/SL-Properties.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/SL-Properties.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/SL-Properties.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/SL-Properties.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/SL-Properties.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/SL-Properties.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/SL-Properties.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/SL-Properties.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/SL-Properties.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/SL-Properties.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/SL-Properties.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/SL-Properties.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/SL-Properties.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/SL-Properties.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/SL-Properties.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/SL-Properties.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/SL-Properties.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/SL-Properties.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/SL-Properties.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/SL-Properties.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/SL-Properties.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/SL-Properties.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/SL-Properties.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/SL-Properties.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/SL-Properties.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/SL-Properties.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/SL-Properties.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/SL-Properties.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/SL-Properties.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/SL-Properties.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/SL-Properties.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/SL-Properties.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/SL-Properties.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/SL-Properties.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/SL-Properties.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/SL-Properties.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/SL-Properties.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/SL-Properties.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/SL-Properties.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/SL-Properties.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/SL-Properties.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/SL-Properties.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="Shaders.html">着色器</a></li>
+<li><a href="shader-writing.html">编写着色器</a></li>
+<li><a href="SL-Reference.html">ShaderLab</a></li>
+<li><a href="SL-Shader.html">ShaderLab：定义 Shader 对象</a></li>
+<li>ShaderLab：定义材质属性</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SL-Shader.html"></a></span><div class="tip">ShaderLab：定义 Shader 对象</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SL-Fallback.html"></a></span><div class="tip">ShaderLab：分配回退</div>
+</div>
+</div></div>
+<h1>ShaderLab：定义材质属性</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>本页面包含有关在 ShaderLab 代码中使用 <code>Properties</code> 代码块为 Shader 对象定义材质属性的信息。</p>
+
+<h2>概述</h2>
+
+<p>In your ShaderLab code, you can define <strong>material properties</strong>. A material property is a property that Unity stores as part of the material asset. This allows artists to create, edit, and share materials with different configurations.</p>
+
+<p>如果使用材质属性：</p>
+
+<ul>
+<li>可以通过对材质调用函数（例如 <a href="../ScriptReference/Material.SetFloat.html">Material.SetFloat</a>）来获取或设置 Shader 对象中的变量值。</li>
+<li>可以使用材质 Inspector 查看和编辑值。</li>
+<li>Unity 会将进行的更改保存为材质资源的一部分，因此它们可在会话之间持续存在。</li>
+</ul>
+
+<p>如果不使用材质属性：</p>
+
+<ul>
+<li>仍可以通过对材质调用函数来获取或设置 Shader 对象中的变量值。</li>
+<li>这些值没有可视化编辑器。</li>
+<li>更改不会在会话之间持续存在。</li>
+</ul>
+
+<p>通常_不_创建材质属性的唯一情况是如果要完全使用脚本设置着色器属性值（例如，如果在制作程序化内容）、如果无法将属性设为材质属性或者如果不希望在 Inspector 中编辑它们。</p>
+
+<h2>渲染管线兼容性</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能名称</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>通用渲染管线 (URP)</strong></th>
+	<th style="text-align:left;"><strong>高清渲染管线 (HDRP)</strong></th>
+	<th style="text-align:left;"><strong>自定义 SRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>ShaderLab：Properties 代码块</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是<br>在 HLSL 代码中，必须将每材质变量置于同一个 <code>CBUFFER</code> 中以实现 SRP Batcher 兼容性。</td>
+	<td style="text-align:left;">是<br>在 HLSL 代码中，必须将每材质变量置于同一个 <code>CBUFFER</code> 中以实现 SRP Batcher 兼容性。</td>
+	<td style="text-align:left;">是<br>在 HLSL 代码中，必须将每材质变量置于同一个 <code>CBUFFER</code> 中以实现 SRP Batcher 兼容性。</td>
+</tr>
+</tbody>
+</table>
+
+<h2>使用 Properties 代码块</h2>
+
+<p>要在 ShaderLab 中将材质属性分配给 Shader 对象，请在 <code>Shader</code> 代码块内放置一个 <code>Properties</code> 代码块。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>签名</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">
+<code>Properties</code><br><code>{</code><br>    <code>&lt;Material property declaration&gt;</code><br>    <code>&lt;Material property declaration&gt;</code><br><code>}</code>
+</td>
+	<td style="text-align:left;">将给定属性保存为材质资源的一部分，并在渲染期间使用存储在材质资源中的值。<br><code>Properties</code> 代码块可以包含任意数量的材质属性声明。</td>
+</tr>
+</tbody>
+</table>
+
+<h3>材质属性声明</h3>
+
+<p>所有材质属性声明都遵循以下基本格式：</p>
+
+<pre><code>[optional: attribute] name("display text in Inspector", type name) = default value
+</code></pre>
+
+<p>确切语法因类型而异。</p>
+
+<p>本节包含以下相关信息：</p>
+
+<ul>
+<li>
+<a href="#material-property-declaration-syntax-by-type">按类型划分的材质属性声明语法</a>。</li>
+<li><a href="#material-property-attributes">材质属性特性</a></li>
+</ul>
+
+<p><a name="material-property-declaration-syntax-by-type"></a></p>
+
+<h4>按类型划分的材质属性声明语法</h4>
+
+<p>类型名称和默认值的语法取决于属性的类型。</p>
+
+<p>在着色器代码中，通常所有属性名称都以下划线字符开头。本页面上的示例遵循此约定。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>类型</strong></th>
+	<th style="text-align:left;"><strong>示例语法</strong></th>
+	<th style="text-align:left;"><strong>注释</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>整数</strong></td>
+	<td style="text-align:left;"><code>_ExampleName ("Integer display name", Integer) = 1</code></td>
+	<td style="text-align:left;">This type is backed by a real integer (unlike the legacy <code>Int</code> type described below, which is backed by a float). Use this instead of Int when you want to use an integer.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>Int</strong>（旧版）</td>
+	<td style="text-align:left;"><code>_ExampleName ("Int display name", Int) = 1</code></td>
+	<td style="text-align:left;">
+<strong>Note:</strong> This legacy type is backed by a float, rather than an integer. It is supported for backwards compatibility reasons only. Use the <code>Integer</code> type instead.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Float</strong></td>
+	<td style="text-align:left;">
+<code>_ExampleName ("Float display name", Float) = 0.5</code><br><br><code>_ExampleName ("Float with range", Range(0.0, 1.0)) = 0.5</code>
+</td>
+	<td style="text-align:left;">范围滑动条的最大值和最小值包含在内。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Texture2D</strong></td>
+	<td style="text-align:left;">
+<code>_ExampleName ("Texture2D display name", 2D) = "" {}</code><br><br><code>_ExampleName ("Texture2D display name", 2D) = "red" {}</code>
+</td>
+	<td style="text-align:left;">将以下值置于默认值字符串中可使用 Unity 的内置纹理之一：“white”（RGBA：1,1,1,1）、“black”（RGBA：0,0,0,1）、“gray”（RGBA：0.5,0.5,0.5,1）、“bump”（RGBA：0.5,0.5,1,0.5）或“red”（RGBA：1,0,0,1）。<br><br>如果将该字符串留空或输入无效值，则它默认为 “gray”。<br><br><strong>注意：</strong>这些默认纹理在 Inspector 中不可见。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Texture2DArray</strong></td>
+	<td style="text-align:left;"><code>_ExampleName ("Texture2DArray display name", 2DArray) = "" {}</code></td>
+	<td style="text-align:left;">有关更多信息，请参阅<a href="class-Texture2DArray.html">纹理数组</a>。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Texture3D</strong></td>
+	<td style="text-align:left;"><code>_ExampleName ("Texture3D", 3D) = "" {}</code></td>
+	<td style="text-align:left;">默认值为 “gray”（RGBA：0.5,0.5,0.5,1）纹理。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Cubemap</strong></td>
+	<td style="text-align:left;"><code>_ExampleName ("Cubemap", Cube) = "" {}</code></td>
+	<td style="text-align:left;">默认值为 “gray”（RGBA：0.5,0.5,0.5,1）纹理。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>CubemapArray</strong></td>
+	<td style="text-align:left;"><code>_ExampleName ("CubemapArray", CubeArray) = "" {}</code></td>
+	<td style="text-align:left;">请参阅<a href="class-CubemapArray.html">立方体贴图数组</a>。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Color</strong></td>
+	<td style="text-align:left;"><code>_ExampleName("Example color", Color) = (.25, .5, .5, 1)</code></td>
+	<td style="text-align:left;">这会在着色器代码中映射到 float4。<br><br>材质 Inspector 会显示一个拾色器。如果更愿意将值作为四个单独的浮点数进行编辑，请使用 Vector 类型。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Vector</strong></td>
+	<td style="text-align:left;"><code>_ExampleName ("Example vector", Vector) = (.25, .5, .5, 1)</code></td>
+	<td style="text-align:left;">这会在着色器代码中映射到 float4。<br><br>材质 Inspector 会显示四个单独的浮点数字段。如果更愿意使用拾色器编辑值，请使用 Color 类型。</td>
+</tr>
+</tbody>
+</table>
+
+<h4>Reserved material property names</h4>
+
+<p>Unity has some reserved names for material properties. When you create a material property with one of these names, Unity performs predefined operations. Do not use these names unless you intend to use this functionality.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>名称</strong></th>
+	<th style="text-align:left;"><strong>示例语法</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">_TransparencyLM</td>
+	<td style="text-align:left;"><code>_TransparencyLM ("Transmissive Texture", 2D) = "white" {}</code></td>
+	<td style="text-align:left;">Enables custom RGB transparency during lightmapping.<br><br>For more information, see <a href="MetaPass.html">Lightmapping and shaders</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="material-property-attributes"></a></p>
+
+<h3>材质属性特性</h3>
+
+<p>材质属性声明可以具有一个可选特性，用于告知 Unity 如何处理它们。</p>
+
+<p>除了此处列出的特性外，可以使用相同语法向材质属性添加 <a href="../ScriptReference/MaterialPropertyDrawer.html">MaterialPropertyDrawer</a>。通过这些内容可以控制材质属性在 Inspector 窗口中的显示方式。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><code>[Gamma]</code></td>
+	<td style="text-align:left;">指示浮点数或矢量属性使用 sRGB 值，这意味着如果项目中的颜色空间需要，则它必须与其他 sRGB 值一起转换。有关更多信息，请参阅<a href="SL-PropertiesInPrograms.html">着色器程序中的属性</a>。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>[HDR]</code></td>
+	<td style="text-align:left;">指示纹理或颜色属性使用<a href="HDR.html">高动态范围 (HDR)</a> 值。<br><br>对于纹理属性，如果分配了 LDR 纹理，则 Unity 编辑器会显示警告。对于颜色属性，Unity 编辑器会使用 HDR 拾色器编辑此值。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>[HideInInspector]</code></td>
+	<td style="text-align:left;">告知 Unity 编辑器在 Inspector 中隐藏此属性。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>[MainTexture]</code></td>
+	<td style="text-align:left;">为材质设置主纹理，可以使用 <a href="../ScriptReference/Material-mainTexture.html">Material.mainTexture</a> 进行访问。<br><br>默认情况下，Unity 将具有属性名称 <code>_MainTex</code> 的纹理视为主纹理。如果纹理具有不同的属性名称，但希望 Unity 将它视为主纹理，请使用此特性。<br><br>如果多次使用此特性，则 Unity 会使用第一个属性并忽略后续属性。<br><br><strong>注意：</strong>使用此特性设置主纹理时，如果使用纹理串流调试视图模式或自定义调试工具，则该纹理在游戏视图中不可见。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>[MainColor]</code></td>
+	<td style="text-align:left;">为材质设置主色，可以使用 <a href="../ScriptReference/Material-color.html">Material.color</a> 进行访问。<br><br>默认情况下，Unity 将具有属性名称 <code>_Color</code> 的颜色视为主色。如果您的颜色具有其他属性 (property) 名称，但您希望 Unity 将这个颜色视为主色，请使用此属性 (attribute)。如果您多次使用此属性 (attribute)，则 Unity 会使用第一个属性 (property)，而忽略后续属性 (property)。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>[NoScaleOffset]</code></td>
+	<td style="text-align:left;">告知 Unity 编辑器隐藏此纹理属性的平铺和偏移字段。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>[Normal]</code></td>
+	<td style="text-align:left;">指示纹理属性需要法线贴图。<br><br>如果分配了不兼容的纹理，则 Unity 编辑器会显示警告。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>[PerRendererData]</code></td>
+	<td style="text-align:left;">指示纹理属性将来自每渲染器数据，形式为 <a href="../ScriptReference/MaterialPropertyBlock.html">MaterialPropertyBlock</a>。<br><br>材质 Inspector 会将这些属性显示为只读。</td>
+</tr>
+</tbody>
+</table>
+
+<h2>将材质属性与 C# 代码结合使用</h2>
+
+<p>材质属性在 C# 代码中通过 <a href="../ScriptReference/MaterialProperty.html">MaterialProperty</a> 类进行表示。</p>
+
+<p>要访问 HLSL 代码中定义的变量，可以调用 <a href="../ScriptReference/Material.GetFloat.html">Material.GetFloat</a>、<a href="../ScriptReference/Material.SetFloat.html">Material.SetFloat</a>。还有其他类似的方法；请参阅<a href="../ScriptReference/Material.html">材质 API 文档</a>以获取完整列表。使用这些 API 访问 HLSL 变量时，变量是否为材质属性并不重要。</p>
+
+<p>在 Unity 编辑器中，可以控制材质属性在 Inspector 窗口中的显示方式。为此，最简单的方法是使用 <a href="../ScriptReference/MaterialPropertyDrawer.html">MaterialPropertyDrawer</a>。对于更复杂的需求，可以使用 <a href="../ScriptReference/MaterialEditor.html">MaterialEditor</a>、<a href="../ScriptReference/MaterialProperty.html">MaterialProperty</a> 和 <a href="../ScriptReference/ShaderGUI.html">ShaderGUI</a> 类。有关为着色器创建自定义 GUI 的更多信息，请参阅 <a href="SL-CustomEditor.html">ShaderLab：分配自定义编辑器</a>。</p>
+
+<h2>在 ShaderLab 代码中使用材质属性设置变量</h2>
+
+<p>要在 ShaderLab 代码中通过材质属性设置变量的值，请在 ShaderLab 代码中将材质属性名称置于方括号中。</p>
+
+<p>此示例代码演示使用材质属性设置 ShaderLab <code>Offset</code> 命令的 <code>units</code> 值的语法。</p>
+
+<pre><code>Shader "Examples/MaterialPropertyShaderLab"
+{
+    Properties
+    {
+        // 在材质 Inspector 中更改此值以影响 Offset 命令的值
+        _OffsetUnitScale ("Offset unit scale", Integer) = 1
+    }
+    SubShader
+    {
+        // 此处是定义 SubShader 其余部分的代码
+
+        Pass
+        {
+            Offset 0, [_OffsetUnitScale]
+
+           // 此处是定义 Pass 其余部分的代码
+        }
+    }
+}
+</code></pre>
+
+<h2>在 HLSL 代码中使用材质属性设置变量</h2>
+
+<p>要使用材质属性在 HLSL 代码中设置变量的值，请为材质属性提供与着色器属性相同的名称。</p>
+
+<p>可以在以下文章中查看此技术，其中包括正常工作的代码示例：</p>
+
+<ul>
+<li><a href="SL-VertexFragmentShaderExamples.html">为内置渲染管线编写顶点和片元着色器</a></li>
+<li><a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest/index.html?subfolder=/manual/writing-custom-shaders-urp.html">为通用渲染管线编写自定义着色器</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SL-Shader.html"></a></span><div class="tip">ShaderLab：定义 Shader 对象</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SL-Fallback.html"></a></span><div class="tip">ShaderLab：分配回退</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

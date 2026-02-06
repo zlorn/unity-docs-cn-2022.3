@@ -1,0 +1,538 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="着色器语义 - Unity 手册">
+<title>着色器语义 - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/SL/SemanticsShowUVs.png">
+<meta name="description" content="编写 HLSL 着色器程序时，
+输入和输出变量需要通过语义来表明
+其&amp;#8220;意图&amp;#8221;。这是 HLSL 着色器语言中的
+标准概念；请参阅 MSDN 上的语义 (Semantics) 文档以了解更多详细信息。">
+<meta property="og:description" content="编写 HLSL 着色器程序时，
+输入和输出变量需要通过语义来表明
+其&amp;#8220;意图&amp;#8221;。这是 HLSL 着色器语言中的
+标准概念；请参阅 MSDN 上的语义 (Semantics) 文档以了解更多详细信息。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'SL-ShaderSemantics';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/SL-ShaderSemantics.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/SL-ShaderSemantics.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/SL-ShaderSemantics.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/SL-ShaderSemantics.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/SL-ShaderSemantics.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/SL-ShaderSemantics.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/SL-ShaderSemantics.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/SL-ShaderSemantics.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/SL-ShaderSemantics.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/SL-ShaderSemantics.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/SL-ShaderSemantics.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/SL-ShaderSemantics.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/SL-ShaderSemantics.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/SL-ShaderSemantics.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/SL-ShaderSemantics.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/SL-ShaderSemantics.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/SL-ShaderSemantics.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/SL-ShaderSemantics.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/SL-ShaderSemantics.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/SL-ShaderSemantics.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/SL-ShaderSemantics.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/SL-ShaderSemantics.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/SL-ShaderSemantics.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/SL-ShaderSemantics.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/SL-ShaderSemantics.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/SL-ShaderSemantics.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/SL-ShaderSemantics.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/SL-ShaderSemantics.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/SL-ShaderSemantics.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/SL-ShaderSemantics.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/SL-ShaderSemantics.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/SL-ShaderSemantics.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/SL-ShaderSemantics.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/SL-ShaderSemantics.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/SL-ShaderSemantics.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/SL-ShaderSemantics.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/SL-ShaderSemantics.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/SL-ShaderSemantics.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/SL-ShaderSemantics.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/SL-ShaderSemantics.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/SL-ShaderSemantics.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/SL-ShaderSemantics.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/SL-ShaderSemantics.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/SL-ShaderSemantics.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/SL-ShaderSemantics.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/SL-ShaderSemantics.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/SL-ShaderSemantics.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/SL-ShaderSemantics.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/SL-ShaderSemantics.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/SL-ShaderSemantics.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/SL-ShaderSemantics.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/SL-ShaderSemantics.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/SL-ShaderSemantics.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/SL-ShaderSemantics.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/SL-ShaderSemantics.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/SL-ShaderSemantics.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/SL-ShaderSemantics.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/SL-ShaderSemantics.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="Shaders.html">着色器</a></li>
+<li><a href="shader-writing.html">编写着色器</a></li>
+<li><a href="SL-ShaderPrograms.html">Unity 中的 HLSL</a></li>
+<li>着色器语义</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SL-MultipleProgramVariants.html"></a></span><div class="tip">Declaring and using shader keywords in HLSL</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SL-PropertiesInPrograms.html"></a></span><div class="tip">使用 Cg/HLSL 访问着色器属性</div>
+</div>
+</div></div>
+<h1>着色器语义</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>编写 HLSL <a href="SL-ShaderPrograms.html">着色器程序</a>时，
+输入和输出变量需要通过<strong>语义</strong>来表明
+其“意图”。这是 HLSL 着色器语言中的
+标准概念；请参阅 <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/bb509647.aspx">MSDN 上的语义 (Semantics) 文档</a>以了解更多详细信息。</p>
+
+<h2>顶点着色器输入语义</h2>
+
+<p>The main vertex shader function (indicated by the <code>#pragma vertex</code>
+directive) needs to have semantics on all the input parameters.
+These correspond to individual <a href="class-Mesh.html">Mesh</a> data elements, like vertex position, normal mesh, and texture coordinates.
+See <a href="SL-VertexProgramInputs.html">vertex program inputs</a> for more details.</p>
+
+<p>以下是一个简单的顶点着色器的示例，它采用顶点位置
+和纹理坐标作为输入。像素着色器
+将纹理坐标可视化为颜色。</p>
+
+<pre><code>Shader "Unlit/Show UVs"
+{
+    SubShader
+    {
+        Pass
+        {
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+
+            struct v2f {
+                float2 uv : TEXCOORD0;
+                float4 pos : SV_POSITION;
+            };
+
+            v2f vert (
+                float4 vertex : POSITION, // 顶点位置输入
+                float2 uv : TEXCOORD0 // 第一个纹理坐标输入
+                )
+            {
+                v2f o;
+                o.pos = UnityObjectToClipPos(vertex);
+                o.uv = uv;
+                return o;
+            }
+
+            fixed4 frag (v2f i) : SV_Target
+            {
+                return fixed4(i.uv, 0, 0);
+            }
+            ENDCG
+        }
+    }
+}
+</code></pre>
+
+<figure>
+<img src="../uploads/SL/SemanticsShowUVs.png" alt="">
+</figure>
+
+<p>Instead of spelling out all individual inputs one by one,
+it’s also possible to declare a structure of them, and indicate
+semantics on each individual member variable of the struct.</p>
+
+<h2>片元着色器输出语义</h2>
+
+<p>通常，片元（像素）着色器会输出颜色，并具有
+<code>SV_Target</code> 语义。上面示例中的片元着色器
+完全就是这样的：</p>
+
+<pre><code>fixed4 frag (v2f i) : SV_Target
+</code></pre>
+
+<p>函数 <code>frag</code> 的返回类型为 <code>fixed4</code>（低精度
+RGBA 颜色）。因为它只返回一个值，所以语义
+由函数自身指示<code>: SV_Target</code>。</p>
+
+<p>It’s also possible to return a structure with the outputs.
+The fragment shader above could be rewritten this way too, and it would
+do exactly the same:</p>
+
+<pre><code>struct fragOutput {
+    fixed4 color : SV_Target;
+};
+fragOutput frag (v2f i)
+{
+    fragOutput o;
+    o.color = fixed4(i.uv, 0, 0);
+    return o;
+}
+</code></pre>
+
+<p>从片元着色器返回结构对于不止返回单个颜色的
+着色器非常有用。片元着色器
+输出支持的其他语义如下。</p>
+
+<h4>SV_TargetN：多个渲染目标</h4>
+
+<p><code>SV_Target1</code>、<code>SV_Target2</code> 等等：这些是着色器写入的附加颜色。这在一次渲染到多个渲染目标（称为“多渲染目标”渲染技术，简称 MRT）时使用。<code>SV_Target0</code> 等同于 <code>SV_Target</code>。</p>
+
+<h4>SV_Depth：像素着色器深度输出</h4>
+
+<p>Usually the fragment shader doesn’t override the Z buffer value, and a default value is used from the regular triangle rasterization. However, for some effects it’s useful to output custom Z buffer depth values per pixel.</p>
+
+<p>Note that on many GPUs this turns off some depth buffer optimizations, so don’t override Z buffer value without a good reason. The cost incurred by <code>SV_Depth</code> varies depending on the GPU architecture, but overall it’s fairly similar to the cost of alpha testing (using the built-in <code>clip()</code> function in HLSL). Render shaders that modify depth after all regular opaque shaders (for example, by using the <code>AlphaTest</code> <a href="SL-SubShaderTags.html">rendering queue</a>.</p>
+
+<p>深度输出值必须为单个 <code>float</code>。</p>
+
+<h2>顶点着色器输出和片元着色器输入</h2>
+
+<p>顶点着色器需要输出顶点的最终裁剪空间位置，以便 GPU 知道屏幕上的栅格化位置以及深度。此输出需要具有 <code>SV_POSITION</code> 语义，并为 <code>float4</code> 类型。</p>
+
+<p>顶点着色器生成的所有其他输出（“插值器”或“变化”）都是您的特定着色器需要的。从顶点着色器输出的值将在渲染三角形的面上进行插值，并且每个像素的值将作为输入传递给片元着色器。</p>
+
+<p>Many modern GPUs don’t really care what semantics these variables have; however some old systems (most notably, shader model 2 GPUs) did have special rules about the semantics:</p>
+
+<ul>
+<li>
+<code>TEXCOORD0</code>、<code>TEXCOORD1</code> 等语义用于指示任意高精度数据，如纹理坐标和位置。</li>
+<li>顶点输出和片元输入的 <code>COLOR0</code> 和 <code>COLOR1</code> 语义用于低精度 0 到 1 范围的数据（如简单的颜色值）。</li>
+</ul>
+
+<p>为了获得最佳的跨平台支持，应将顶点输出和
+片元输入标记为 <code>TEXCOORDn</code> 语义。</p>
+
+<h4>插值器数量限制</h4>
+
+<p>对于总共可以使用多少个插值器变量将信息
+从顶点传递到片元着色器，存在一些限制。该限制
+取决于平台和 GPU，一般准则如下：</p>
+
+<ul>
+<li>
+<strong>Up to 8 interpolators</strong>: OpenGL ES 2.0 (Android), Direct3D 11 9.x level (Windows Phone). Since the interpolator count is limited, but each interpolator can be a 4-component vector, some shaders pack things together to stay within limits. For example, you can pass two texture coordinates in one <code>float4</code> variable (.xy for one coordinate, .zw
+ for the second coordinate).</li>
+<li>
+<strong>Up to 10 interpolators</strong>: Shader model 3.0 (<code>#pragma target 3.0</code>).</li>
+<li>
+<strong>最多 16 个插值器</strong>：OpenGL ES 3.0 (Android) 和 Metal (iOS)。</li>
+<li>
+<strong>最多 32 个插值器</strong>：Direct3D 10 着色器模型 4.0 (<code>#pragma target 4.0</code>)。</li>
+</ul>
+
+<p>Regardless of your particular target hardware, it’s generally a good idea to use as few interpolators as possible for performance reasons.</p>
+
+<h2>其他特殊语义</h2>
+
+<h4>屏幕空间像素位置：VPOS</h4>
+
+<p>片元着色器可以接收渲染为特殊 <code>VPOS</code> 语义的像素的位置。
+此功能仅从着色器模型 3.0 开始存在，因此着色器需要具有 <code>#pragma target 3.0</code> 编译指令。</p>
+
+<p>On different platforms the underlying type of the screen space position input varies, so for maximum portability use the <code>UNITY_VPOS_TYPE</code> type for it, which is <code>float4</code> on most platforms.</p>
+
+<p>Additionally, using the pixel position semantic makes it hard to have both the clip space position (SV_POSITION) and VPOS in the same vertex-to-fragment structure. Therefore, the vertex shader should output the clip space position as a separate “out” variable. See the example shader below:</p>
+
+<pre><code>Shader "Unlit/Screen Position"
+{
+    Properties
+    {
+        _MainTex ("Texture", 2D) = "white" {}
+    }
+    SubShader
+    {
+        Pass
+        {
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+            #pragma target 3.0
+
+            // 注意：此结构中没有 SV_POSITION
+            struct v2f {
+                float2 uv : TEXCOORD0;
+            };
+
+            v2f vert (
+                float4 vertex : POSITION, // 顶点位置输入
+                float2 uv : TEXCOORD0, // 纹理坐标输入
+                out float4 outpos : SV_POSITION // 裁剪空间位置输出
+                )
+            {
+                v2f o;
+                o.uv = uv;
+                outpos = UnityObjectToClipPos(vertex);
+                return o;
+            }
+
+            sampler2D _MainTex;
+
+            fixed4 frag (v2f i, UNITY_VPOS_TYPE screenPos : VPOS) : SV_Target
+            {
+                // screenPos.xy 将包含像素整数坐标。
+                // 使用它们来实现一个跳过渲染 4x4 像素块的
+                // 棋盘图案
+
+                // 棋盘图案中 4x4 像素块的 checker 值
+                // 为负
+                screenPos.xy = floor(screenPos.xy * 0.25) * 0.5;
+                float checker = -frac(screenPos.r + screenPos.g);
+
+                // 如果值为负，则 clip HLSL 指令停止渲染像素
+                clip(checker);
+
+                // 对于保留的像素，读取纹理并将其输出
+                fixed4 c = tex2D (_MainTex, i.uv);
+                return c;
+            }
+            ENDCG
+        }
+    }
+}
+</code></pre>
+
+<figure>
+<img src="../uploads/SL/SemanticsScreenPosition.png" alt="">
+</figure>
+
+<h4>面对方向：VFACE</h4>
+
+<p>片元着色器可以接收一种指示渲染表面是面向摄像机还是背对摄像机的变量。这在渲染应从两侧可见的几何体时非常有用 - 通常用于树叶和类似的薄型物体。<code>VFACE</code> 语义输入变量将包含表示正面三角形的正值，以及表示背面三角形的负值。</p>
+
+<p>此功能从着色器模型 3.0 开始才存在，因此着色器需要具有 <code>#pragma target 3.0</code> 编译指令。</p>
+
+<pre><code>Shader "Unlit/Face Orientation"
+{
+    Properties
+    {
+        _ColorFront ("Front Color", Color) = (1,0.7,0.7,1)
+        _ColorBack ("Back Color", Color) = (0.7,1,0.7,1)
+    }
+    SubShader
+    {
+        Pass
+        {
+            Cull Off // 关闭背面剔除
+
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+            #pragma target 3.0
+
+            float4 vert (float4 vertex : POSITION) : SV_POSITION
+            {
+                return UnityObjectToClipPos(vertex);
+            }
+
+            fixed4 _ColorFront;
+            fixed4 _ColorBack;
+
+            fixed4 frag (fixed facing : VFACE) : SV_Target
+            {
+                // 正面的 VFACE 输入为正，
+                // 背面的为负。根据这种情况
+                // 输出两种颜色中的一种。
+                return facing &gt; 0 ?_ColorFront : _ColorBack;
+            }
+            ENDCG
+        }
+    }
+}
+</code></pre>
+
+<p>The shader above uses the <a href="SL-Cull.html">Cull</a> state to disable back-face culling (by default back-facing triangles aren’t rendered at all). Here is the shader applied to a bunch of Quad meshes, rotated at different orientations:</p>
+
+<figure>
+<img src="../uploads/SL/SemanticsFaceOrientation.png" alt="">
+</figure>
+
+<h4>顶点 ID：SV_VertexID</h4>
+
+<p>顶点着色器可以接收具有“顶点编号”（为无符号整数）的变量。当您想要从纹理或 <a href="class-ComputeShader.html">ComputeBuffers</a> 中
+获取额外的每顶点数据时，这非常有用。</p>
+
+<p>此功能从 DX10（着色器模型 4.0）和 GLCore/OpenGL ES 3 开始才存在，因此着色器需要具有 <code>#pragma target 3.5</code> 编译指令。</p>
+
+<pre><code>Shader "Unlit/VertexID"
+{
+    SubShader
+    {
+        Pass
+        {
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+            #pragma target 3.5
+
+            struct v2f {
+    fixed4 color : TEXCOORD0;
+                float4 pos : SV_POSITION;
+            };
+
+            v2f vert (
+                float4 vertex : POSITION, // 顶点位置输入
+                uint vid : SV_VertexID // 顶点 ID，必须为 uint
+                )
+            {
+                v2f o;
+                o.pos = UnityObjectToClipPos(vertex);
+                // 基于顶点 ID 输出时髦颜色
+                float f = (float)vid;
+                o.color = half4(sin(f/10),sin(f/100),sin(f/1000),0) * 0.5 + 0.5;
+                return o;
+            }
+
+            fixed4 frag (v2f i) : SV_Target
+            {
+    return i.color;
+            }
+            ENDCG
+        }
+    }
+}
+</code></pre>
+
+<figure>
+<img src="../uploads/SL/SemanticsVertexID.png" alt="">
+</figure>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SL-MultipleProgramVariants.html"></a></span><div class="tip">Declaring and using shader keywords in HLSL</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SL-PropertiesInPrograms.html"></a></span><div class="tip">使用 Cg/HLSL 访问着色器属性</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

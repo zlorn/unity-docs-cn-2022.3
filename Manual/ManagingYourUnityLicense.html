@@ -1,0 +1,340 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Manage your license through the command line - Unity 手册">
+<title>Manage your license through the command line - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/hubPref.png">
+<meta name="description" content="To use Unity, you need an activated license. For Unity Plus and Pro licenses, you need to get a serial number; for a Unity Personal license, you don&amp;#8217;t need a serial number.">
+<meta property="og:description" content="To use Unity, you need an activated license. For Unity Plus and Pro licenses, you need to get a serial number; for a Unity Personal license, you don&amp;#8217;t need a serial number.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'ManagingYourUnityLicense';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/ManagingYourUnityLicense.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/ManagingYourUnityLicense.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/ManagingYourUnityLicense.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/ManagingYourUnityLicense.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/ManagingYourUnityLicense.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/ManagingYourUnityLicense.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/ManagingYourUnityLicense.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/ManagingYourUnityLicense.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/ManagingYourUnityLicense.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/ManagingYourUnityLicense.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/ManagingYourUnityLicense.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/ManagingYourUnityLicense.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/ManagingYourUnityLicense.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/ManagingYourUnityLicense.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/ManagingYourUnityLicense.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/ManagingYourUnityLicense.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/ManagingYourUnityLicense.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/ManagingYourUnityLicense.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/ManagingYourUnityLicense.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/ManagingYourUnityLicense.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/ManagingYourUnityLicense.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/ManagingYourUnityLicense.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/ManagingYourUnityLicense.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/ManagingYourUnityLicense.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/ManagingYourUnityLicense.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/ManagingYourUnityLicense.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/ManagingYourUnityLicense.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/ManagingYourUnityLicense.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/ManagingYourUnityLicense.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/ManagingYourUnityLicense.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/ManagingYourUnityLicense.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/ManagingYourUnityLicense.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/ManagingYourUnityLicense.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/ManagingYourUnityLicense.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/ManagingYourUnityLicense.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/ManagingYourUnityLicense.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/ManagingYourUnityLicense.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/ManagingYourUnityLicense.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/ManagingYourUnityLicense.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/ManagingYourUnityLicense.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/ManagingYourUnityLicense.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/ManagingYourUnityLicense.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/ManagingYourUnityLicense.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/ManagingYourUnityLicense.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/ManagingYourUnityLicense.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/ManagingYourUnityLicense.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/ManagingYourUnityLicense.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/ManagingYourUnityLicense.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/ManagingYourUnityLicense.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/ManagingYourUnityLicense.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/ManagingYourUnityLicense.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/ManagingYourUnityLicense.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/ManagingYourUnityLicense.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/ManagingYourUnityLicense.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/ManagingYourUnityLicense.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/ManagingYourUnityLicense.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/ManagingYourUnityLicense.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/ManagingYourUnityLicense.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UnityOverview.html">在 Unity 中操作</a></li>
+<li><a href="GettingStartedInstallingUnity.html">安装 Unity</a></li>
+<li><a href="LicensesAndActivation.html">许可证和激活</a></li>
+<li>Manage your license through the command line</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="LicenseActivationMethods.html"></a></span><div class="tip">License activation methods</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ManualActivationGuide.html"></a></span><div class="tip">Manual license activation</div>
+</div>
+</div></div>
+<h1>Manage your license through the command line</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>To use Unity, you need an activated license. For Unity Plus and Pro licenses, you need to get a serial number; for a Unity Personal license, you don’t need a serial number.</p>
+
+<p>The primary <a href="LicenseActivationMethods.html">license activation method</a> is the <a href="https://docs.unity3d.com/hub/manual/ManageLicense.html" target="_blank" rel="noopener noreferrer">Unity Hub</a>.</p>
+
+<p>The following information covers an alternate method for <a href="#license-activation-cli">activating a license</a> and <a href="#license-return-cli">returning a license</a> by using the command line. You might consider this method in situations such as:</p>
+
+<ul>
+<li>You have internet access, but you use Unity in headless mode (without a GUI) for automated tasks, such as builds and tests.</li>
+<li>You have internet access, but you’re unable or unwilling to install the Unity Hub.</li>
+</ul>
+
+<p>如果您不知道您的 Unity 许可证信息，请与许可证的<a href="OrgsManagingyourOrganization.html">所有者</a>联系。所有者可以通过 <a href="OrgsUnityOrganizations.html">Organization</a> 为您分配一个席位，或者您也可以联系 Unity 客户服务部。</p>
+
+<p><a name="license-activation-cli"></a></p>
+
+<h2>Activate a license from the command line</h2>
+
+<p>Before activating your Unity license by using the command line, make sure that the license file folder exists. See “where is my Unity license file stored” in <a href="ActivationFAQ.html#licensefilefolders">License troubleshooting
+</a>. Also make sure that you have write permission to this folder.</p>
+
+<p><strong>Note</strong>: The command line procedure only works for Plus and Pro licenses because Personal licenses do not have serial numbers associated with them. Use the Unity Hub to activate Personal licenses. If you have another OS, you can manage your license through the Hub.</p>
+
+<h3>macOS</h3>
+
+<p>Enter the following command into the Terminal to launch Unity and activate your license:</p>
+
+<pre><code class="lang-shell">&lt;unity-command-location&gt; -quit -batchmode -serial SB-XXXX-XXXX-XXXX-XXXX-XXXX -username 'name@example.com' -password 'XXXXXXXXXXXXX'
+</code></pre>
+
+<p>Replace <code>&lt;unity-command-location&gt;</code> with the <a href="https://docs.unity3d.com/hub/manual/AddEditor.html#locate-the-editor-application-file" target="_blank" rel="noopener noreferrer">full path to your Editor application</a>, concatenated with <code>/Contents/MacOS/Unity</code>. For example, if you installed a <code>2022.2.0b4</code> Editor to the default location, <code>&lt;unity-command-location&gt;</code> is:</p>
+
+<pre><code class="lang-shell">/Applications/Unity/Hub/Editor/2022.2.0b4/Unity.app/Contents/MacOS/Unity
+</code></pre>
+
+<p><br> </p>
+
+<h4>macOS example</h4>
+
+<pre><code class="lang-shell">/Applications/Unity/Hub/Editor/2022.2.0b4/Unity.app/Contents/MacOS/Unity -quit -batchmode -serial SB-XXXX-XXXX-XXXX-XXXX-XXXX -username 'name@example.com' -password 'XXXXXXXXXXXXX'
+</code></pre>
+
+<p><strong>提示</strong>：如果使用 Jenkins 之类的连续集成 (CI) 工具通过命令行激活时，请添加 <code>-nographics</code> 标志以防止 WindowServer 错误。</p>
+
+<h3>Windows</h3>
+
+<p>Enter the following command into the Command Prompt to launch Unity and activate your license:</p>
+
+<pre><code class="lang-powershell">"&lt;editor-installation-location&gt;" -batchmode -username name@example.com -password XXXXXXXXXXXXX -serial E3-XXXX-XXXX-XXXX-XXXX-XXXX -quit
+</code></pre>
+
+<p>Replace <code>&lt;editor-installation-location&gt;</code> with the <a href="https://docs.unity3d.com/hub/manual/AddEditor.html#locate-the-editor-application-file" target="_blank" rel="noopener noreferrer">full path to your Editor application</a>. For example, if you installed a <code>2022.2.0b4</code> Editor to the default location, <code>&lt;editor-installation-location&gt;</code> is:</p>
+
+<pre><code class="lang-shell">C:\Program Files\Unity\Hub\Editor\2022.2.0b4\Editor\Unity.exe
+</code></pre>
+
+<p><br> </p>
+
+<h4>Windows example</h4>
+
+<pre><code class="lang-powershell">"C:\Program Files\Unity\Hub\Editor\2022.2.0b4\Editor\Unity.exe" -batchmode -username name@example.com -password XXXXXXXXXXXXX -serial E3-XXXX-XXXX-XXXX-XXXX-XXXX -quit
+</code></pre>
+
+<p><br> </p>
+
+<h3>Next steps and troubleshooting</h3>
+
+<p>运行此命令后等待几秒钟，让 Unity 有足够的时间与许可证服务器进行通信。如果激活失败，您可以打开 <a href="LogFiles.html">Editor.log</a> 查看信息。对于任何激活错误，请检查<a href="ActivationFAQ.html">激活问题</a>为您的问题找到解决方案。</p>
+
+<p><a name="license-return-cli"></a></p>
+
+<h2>通过命令行退回许可证</h2>
+
+<h3>macOS</h3>
+
+<p>Enter the following command into the Terminal to return the license:</p>
+
+<pre><code class="lang-shell">&lt;unity-command-location&gt; -quit -batchmode -returnlicense -username 'name@example.com' -password 'XXXXXXXXXXXXX'
+</code></pre>
+
+<p>Replace <code>&lt;unity-command-location&gt;</code> with the <a href="https://docs.unity3d.com/hub/manual/AddEditor.html#locate-the-editor-application-file" target="_blank" rel="noopener noreferrer">full path to your Editor application</a>, concatenated with <code>/Contents/MacOS/Unity</code>. For example, if you installed a <code>2022.2.0b4</code> Editor to the default location, <code>&lt;unity-command-location&gt;</code> is:</p>
+
+<pre><code class="lang-shell">/Applications/Unity/Hub/Editor/2022.2.0b4/Unity.app/Contents/MacOS/Unity
+</code></pre>
+
+<p><br> </p>
+
+<h4>macOS example</h4>
+
+<pre><code class="lang-shell">/Applications/Unity/Hub/Editor/2022.2.0b4/Unity.app/Contents/MacOS/Unity -quit -batchmode -returnlicense -username 'name@example.com' -password 'XXXXXXXXXXXXX'
+</code></pre>
+
+<p><br> </p>
+
+<h3>Windows</h3>
+
+<p>Enter the following into the Command Prompt to return the license </p>
+
+<pre><code class="lang-powershell">"&lt;editor-installation-location&gt;" -quit -batchmode -returnlicense -username name@example.com -password XXXXXXXXXXXXX
+</code></pre>
+
+<p>Replace <code>&lt;editor-installation-location&gt;</code> with the <a href="https://docs.unity3d.com/hub/manual/AddEditor.html#locate-the-editor-application-file" target="_blank" rel="noopener noreferrer">full path to your Editor application</a>. For example, if you installed a <code>2022.2.0b4</code> Editor to the default location, <code>&lt;editor-installation-location&gt;</code> is:</p>
+
+<pre><code class="lang-shell">C:\Program Files\Unity\Hub\Editor\2022.2.0b4\Editor\Unity.exe
+</code></pre>
+
+<p><br> </p>
+
+<h4>Windows example</h4>
+
+<pre><code class="lang-powershell">"C:\Program Files\Unity\Hub\Editor\2022.2.0b4\Editor\Unity.exe" -quit -batchmode -returnlicense -username name@example.com -password XXXXXXXXXXXXX
+</code></pre>
+
+<p><br> </p>
+
+<h3>Next steps and troubleshooting</h3>
+
+<p>Wait a few seconds after running this command to give Unity enough time to communicate with the license server. You can use the Hub to confirm that you returned your license by opening the Preferences menu (<img src="../uploads/Main/hubPref.png" alt="">) and selecting <strong>Licenses</strong>. If you experience issues, see <a href="ActivationFAQ.html">Troubleshooting</a>.</p>
+
+<h2>其他资源</h2>
+
+<ul>
+<li><a href="LicenseActivationMethods.html">License activation methods</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="LicenseActivationMethods.html"></a></span><div class="tip">License activation methods</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ManualActivationGuide.html"></a></span><div class="tip">Manual license activation</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

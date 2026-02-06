@@ -1,0 +1,353 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Virtual Texturing Profiler 模块 - Unity 手册">
+<title>Virtual Texturing Profiler 模块 - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/profiler-virtual-texturing.png">
+<meta name="description" content="The Virtual Texturing Profiler module displays statistics about Streaming Virtual Texturing in your application. Virtual Texturing reduces the amount of GPU memory that your application uses, and the loading times of textures in your application if there are a lot of high resolution textures in a scene.">
+<meta property="og:description" content="The Virtual Texturing Profiler module displays statistics about Streaming Virtual Texturing in your application. Virtual Texturing reduces the amount of GPU memory that your application uses, and the loading times of textures in your application if there are a lot of high resolution textures in a scene.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'profiler-virtual-texturing-module';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/profiler-virtual-texturing-module.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/profiler-virtual-texturing-module.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/profiler-virtual-texturing-module.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/profiler-virtual-texturing-module.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/profiler-virtual-texturing-module.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/profiler-virtual-texturing-module.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/profiler-virtual-texturing-module.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/profiler-virtual-texturing-module.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/profiler-virtual-texturing-module.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/profiler-virtual-texturing-module.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/profiler-virtual-texturing-module.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/profiler-virtual-texturing-module.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/profiler-virtual-texturing-module.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/profiler-virtual-texturing-module.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/profiler-virtual-texturing-module.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/profiler-virtual-texturing-module.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/profiler-virtual-texturing-module.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/profiler-virtual-texturing-module.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/profiler-virtual-texturing-module.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/profiler-virtual-texturing-module.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/profiler-virtual-texturing-module.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/profiler-virtual-texturing-module.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/profiler-virtual-texturing-module.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/profiler-virtual-texturing-module.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/profiler-virtual-texturing-module.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/profiler-virtual-texturing-module.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/profiler-virtual-texturing-module.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/profiler-virtual-texturing-module.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/profiler-virtual-texturing-module.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/profiler-virtual-texturing-module.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/profiler-virtual-texturing-module.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/profiler-virtual-texturing-module.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/profiler-virtual-texturing-module.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/profiler-virtual-texturing-module.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/profiler-virtual-texturing-module.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/profiler-virtual-texturing-module.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/profiler-virtual-texturing-module.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/profiler-virtual-texturing-module.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/profiler-virtual-texturing-module.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/profiler-virtual-texturing-module.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/profiler-virtual-texturing-module.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/profiler-virtual-texturing-module.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/profiler-virtual-texturing-module.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/profiler-virtual-texturing-module.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/profiler-virtual-texturing-module.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/profiler-virtual-texturing-module.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/profiler-virtual-texturing-module.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/profiler-virtual-texturing-module.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/profiler-virtual-texturing-module.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/profiler-virtual-texturing-module.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/profiler-virtual-texturing-module.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/profiler-virtual-texturing-module.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/profiler-virtual-texturing-module.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/profiler-virtual-texturing-module.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/profiler-virtual-texturing-module.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/profiler-virtual-texturing-module.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/profiler-virtual-texturing-module.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/profiler-virtual-texturing-module.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UnityOverview.html">在 Unity 中操作</a></li>
+<li><a href="analysis.html">分析</a></li>
+<li><a href="Profiler.html">性能分析器概述</a></li>
+<li><a href="ProfilerWindow.html">Profiler 窗口</a></li>
+<li>Virtual Texturing Profiler 模块</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="profiler-video-profiler-module.html"></a></span><div class="tip">Video Profiler 模块</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="Profiler-customizing.html"></a></span><div class="tip">Customizing the Profiler</div>
+</div>
+</div></div>
+<h1>Virtual Texturing Profiler 模块</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>The Virtual Texturing Profiler module displays statistics about <a href="svt-streaming-virtual-texturing.html">Streaming Virtual Texturing</a> in your application. Virtual Texturing reduces the amount of GPU memory that your application uses, and the loading times of textures in your application if there are a lot of high resolution textures in a scene.</p>
+
+<p><strong>注意：</strong>要使用 Virtual Texturing Profiler 模块，必须在您的项目的 <strong>Player Settings</strong> 中启用 <strong>Virtual Texturing</strong> (<strong>Edit &gt; Project Settings &gt; Player &gt; Other Settings</strong>)。</p>
+
+<figure>
+<img src="../uploads/Main/profiler-virtual-texturing.png" alt="Virtual Texturing Profiler 模块">
+<figcaption>Virtual Texturing Profiler 模块</figcaption>
+</figure>
+
+<p>该图表显示有关应用程序运行时屏幕上的纹理图块的信息，以及纹理使用的内存量。当您选择 Virtual Texturing 模块时，Profiler 窗口的下方窗格会显示统计信息，例如虚拟纹理使用的缓存大小。</p>
+
+<p>Virtual Texturing Profiler 模块的图表分为四个类别：</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>图表</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Required Tiles</strong></td>
+	<td style="text-align:left;">The number of texture tiles that were visible on screen. These are the tiles that the shaders tried to sample to render the selected frame.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Max Cache Mip Bias</strong></td>
+	<td style="text-align:left;">The automatic mipmap bias applied to all textures with the same texture format. If this value isn’t zero, then the cache isn’t large enough to hold all the tiles of that format that are visible. The higher the mip bias, the lower the texture quality.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Max Cache Demand</strong></td>
+	<td style="text-align:left;">The highest cache demand of all GPU caches in the selected frame.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Missing Streaming Tiles</strong></td>
+	<td style="text-align:left;">The number of tiles that were visible on the screen but weren’t in video memory. Your application streams these tiles from the disk or copies them from main memory as soon as possible.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Missing Disk Data</strong></td>
+	<td style="text-align:left;">The remaining data (in bytes) that your application needed to read from the disk to satisfy the selected frame.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="markers"></a></p>
+
+<h2>模块详细信息面板</h2>
+
+<p>When you click on the Virtual Texturing Profiler module, the details pane in the lower half of the window displays further detailed statistics. These statistics are also available via the <a href="../ScriptReference/Unity.Profiling.ProfilerRecorder.html">ProfilerRecorder API</a> and in the <a href="profiler-module-editor.html">Profiler Module Editor</a> so you can add them to a <a href="Profiler-customizing.html">custom Profiler module</a>.</p>
+
+<p>详细信息窗格中的统计信息如下：</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>统计信息</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>System Statistics</strong></td>
+	<td style="text-align:left;">This section of the details pane displays information about your application’s texture tiles and the resources they used during the Profiler capture. These statistics are available for both player builds, and profiling Play mode in the Unity Editor.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Tiles required this frame</td>
+	<td style="text-align:left;">The number of texture tiles that were visible on screen. These are the tiles that the shaders tried to sample to render the selected frame. If all these tiles are in the GPU cache then Unity renders the frame with the highest possible texture quality for the cache size. <br><br>Unless the Scene was frozen, then some of the tiles weren’t in the GPU memory yet. In this case, the virtual texturing sample uses a lower quality sample from a higher mipmap that’s in memory, until the higher quality sample arrives in memory.<br><br>The cache mipmap bias affects the number of required tiles. If the mipmap bias isn’t zero for all caches then the number of required tiles is lower than the number required for the optimal texture quality.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Max Cache Mip Bias</td>
+	<td style="text-align:left;">The mip bias of the GPU cache with the highest mip bias. If this isn’t zero then at least one of the caches isn’t large enough to hold all the texture tiles to render the selected frame at the optimal texture quality.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Max Cache Demand</td>
+	<td style="text-align:left;">The highest cache demand of all GPU caches the selected frame represented as a percentage of the GPU. The GPU cache that has the highest demand might need to be larger to avoid mipmap biasing for this cache.<br><br>If the Max Cache Demand statistic is a low percentage then the caches might be too large for the render resolution and content. The main downside of this is that your application is using more GPU memory than it needs but this isn’t a problem if your application isn’t memory constrained.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Total CPU Cache Size</td>
+	<td style="text-align:left;">The amount of memory that Unity allocated to stored texture tiles after it loaded them from disk.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Total GPU Cache Size</td>
+	<td style="text-align:left;">The size of all GPU caches that the Virtual Texturing module allocated in the selected frame. Unity creates a GPU cache when a material that uses a texture of that texture format is rendered.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Atlases</td>
+	<td style="text-align:left;">虚拟纹理空间或图集的数量（最多 64 个）。Unity 将通过虚拟纹理流式传输的纹理作为图集发送到大型虚拟纹理空间中。此过程是自动和透明的。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Player Build Statistics</strong></td>
+	<td style="text-align:left;">This section of the details pane displays information about your application’s texture tiles that are only available when you profile a build of your application.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Missing Disk Data</td>
+	<td style="text-align:left;">The remaining data (in bytes) that the application needed to read from disk to satisfy the selected frame. There might be more disk read requests queued up from requests in previous frames that aren’t visible anymore. As such, this is the minimum amount of data that the application reads from disk if no new tiles become visible. The actual amount of data the application reads might be larger.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Missing Streaming Tiles</td>
+	<td style="text-align:left;">The number of tiles that were visible on the screen but weren’t in memory yet. These tiles were streamed from disk as soon as possible. This number might be higher if, for example, the camera moves. This statistic falls to zero if the scene and camera froze and no new tiles were visible.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Read From Disk</td>
+	<td style="text-align:left;">The number of bytes of disk read operations that Unity completed in the selected frame.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Per Cache Statistics</strong></td>
+	<td style="text-align:left;">Displays statistics about the cache. Only available when you profile a build of your application.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Cache Format</td>
+	<td style="text-align:left;">The <a href="../ScriptReference/Experimental.Rendering.GraphicsFormat.html">graphics formats</a> that the textures in your application used.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Demand</td>
+	<td style="text-align:left;">The amount of cache demand each <a href="../ScriptReference/Experimental.Rendering.GraphicsFormat.html">graphics format</a> used. <strong>Note:</strong> This statistic is not available in custom profilers</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Bias</td>
+	<td style="text-align:left;">The amount of mipmap bias cache each <a href="../ScriptReference/Experimental.Rendering.GraphicsFormat.html">graphics format</a> used. <strong>Note:</strong> This statistic is not available in custom profilers</td>
+</tr>
+</tbody>
+</table>
+
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="profiler-video-profiler-module.html"></a></span><div class="tip">Video Profiler 模块</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="Profiler-customizing.html"></a></span><div class="tip">Customizing the Profiler</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

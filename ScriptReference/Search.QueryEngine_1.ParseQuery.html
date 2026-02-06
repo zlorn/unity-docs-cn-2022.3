@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-cn">
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:title" content="Search.QueryEngine_1-ParseQuery - Unity 脚本 API" />
+    <title>Search.QueryEngine_1-ParseQuery - Unity 脚本 API</title>
+    <meta name="description" content="Parses a query string into a ParsedQuery operation. This ParsedQuery operation can then be used to filter any data set of type TData." />
+    <meta property="og:description" content="Parses a query string into a ParsedQuery operation. This ParsedQuery operation can then be used to filter any data set of type TData." />
+    <meta name="author" content="Unity Technologies" />
+    <link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico" />
+    <link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png" />
+    <meta name="msapplication-TileColor" content="#222c37" />
+    <meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png" />
+    <script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true">
+    </script>
+    <script type="text/javascript">function OptanonWrapper() {}</script>
+    <script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script>
+    <script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script>
+    <script>
+      var docs_type = 'ScriptReference';
+      var lang = 'cn';
+      var page = 'Search.QueryEngine_1-ParseQuery';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script>
+    <script type="text/javascript" src="../StaticFiles/js/jquery.js">
+    </script>
+    <script type="text/javascript" src="../StaticFiles/js/core.js">
+    </script>
+    <script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js">
+    </script>
+    <script type="text/javascript" src="docdata/toc.js">
+    </script>
+    <script type="text/javascript" src="">
+    </script>
+    <script type="text/javascript" src="../StaticFiles/js/custom.js">
+    </script>
+    <script src="/StaticFilesConfig/feedback/feedback.js">
+    </script>
+    <link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css" />
+    <link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css" />
+    <link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/ScriptReference/Search.QueryEngine_1-ParseQuery.html" />
+    <link rel="alternate" href="https://docs.unity3d.com/en/2022.3/ScriptReference/Search.QueryEngine_1-ParseQuery.html" hreflang="en" />
+    <link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/ScriptReference/Search.QueryEngine_1-ParseQuery.html" hreflang="zh" />
+    <link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/ScriptReference/Search.QueryEngine_1-ParseQuery.html" hreflang="ja" />
+    <link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/ScriptReference/Search.QueryEngine_1-ParseQuery.html" hreflang="ko" />
+    <link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Search.QueryEngine_1-ParseQuery.html" hreflang="x-default" />
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <div id="header" class="header">
+        <div class="content">
+          <div class="spacer">
+            <div class="menu">
+              <div id="nav-open" for="nav-input">
+                <span>
+                </span>
+              </div>
+              <div class="logo">
+                <a href="./index.html">
+                </a>
+              </div>
+              <div class="search-form">
+                <form action="30_search.html" method="get" class="apisearch">
+                  <input type="text" name="q" placeholder="搜索脚本..." autosave="Unity Reference" results="5" class="sbox field" id="q">
+                  </input>
+                  <input type="submit" class="submit">
+                  </input>
+                </form>
+              </div>
+              <ul class="menu-items">
+                <li class="menu-item">
+                  <a href="../Manual/index.html" class="">手册</a>
+                </li>
+                <li class="menu-item">
+                  <a href="../ScriptReference/index.html" class="selected">脚本 API</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="more">
+            <div class="filler">
+            </div>
+            <ul>
+              <li>
+                <a href="https://unity3d.com/">
+                unity3d.com
+              </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="toolbar">
+        <div class="content">
+          <div class="version-switcher">
+            <div class="current toggle" data-target=".version-list">
+              <div class="version-number">
+                <div class="d-inline-block">
+          Version:
+          <b>2022.3</b></div>
+                <div class="d-inline-block arrow">
+                </div>
+              </div>
+            </div>
+            <div class="version-list" style="display:none;">
+              <ul class="versions">
+                <li class="supported">
+                  <a class="docs_version_url_2023.2" href="/cn/2023.2/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2023.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2023.1" href="/cn/2023.1/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2023.1</a>
+                </li>
+                <li class="supported">
+                  <a class="docs_version_url_2022.3" href="/cn/2022.3/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2022.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2022.2" href="/cn/2022.2/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2022.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2022.1" href="/cn/2022.1/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2022.1</a>
+                </li>
+                <li class="supported">
+                  <a class="docs_version_url_2021.3" href="/cn/2021.3/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2021.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2021.2" href="/cn/2021.2/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2021.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2021.1" href="/cn/2021.1/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2021.1</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2020.3" href="/cn/2020.3/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2020.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2020.2" href="/cn/2020.2/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2020.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2020.1" href="/cn/2020.1/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2020.1</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2019.4" href="/cn/2019.4/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2019.4</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2019.3" href="/cn/2019.3/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2019.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2019.2" href="/cn/2019.2/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2019.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2019.1" href="/cn/2019.1/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2019.1</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2018.4" href="/cn/2018.4/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2018.4</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2018.3" href="/cn/2018.3/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2018.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2018.2" href="/cn/2018.2/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2018.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2018.1" href="/cn/2018.1/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2018.1</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2017.4" href="/cn/2017.4/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2017.4</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2017.3" href="/cn/2017.3/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2017.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2017.2" href="/cn/2017.2/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2017.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2017.1" href="/cn/2017.1/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2017.1</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_560" href="/cn/560/ScriptReference/Search.QueryEngine_1-ParseQuery.html">5.6</a>
+                </li>
+                <div class="versionsWithThisPage" style="display:none;">
+                  <li>
+                    <p>包含此页的版本：</p>
+                  </li>
+                </div>
+                <div class="versionsWithoutThisPage" style="display:none;">
+                  <li>
+                    <p>不含此页的版本：</p>
+                  </li>
+                </div>
+              </ul>
+              <ul class="description">
+                <li>
+                  <div class="supported-box">
+                  </div>受支持</li>
+                <li>
+                  <div class="legacy-box">
+                  </div>旧版</li>
+              </ul>
+            </div>
+          </div>
+          <ul class="nav-menu-items">
+            <li class="menu-item">
+              <a href="../Manual/index.html" class="">手册</a>
+            </li>
+            <li class="menu-item">
+              <a href="../ScriptReference/index.html" class="selected">脚本 API</a>
+            </li>
+          </ul>
+          <div class="lang-switcher">
+            <div class="current toggle" data-target=".lang-list">
+              <div class="lbl">语言:
+        <span class="b">中文</span></div>
+              <div class="arrow">
+              </div>
+            </div>
+            <div class="lang-list" style="display:none;">
+              <ul>
+                <li>
+                  <a data-lang="en" href="/2022.3/Documentation/ScriptReference/Search.QueryEngine_1-ParseQuery.html">English</a>
+                </li>
+                <li>
+                  <a data-lang="cn" href="/cn/2022.3/ScriptReference/Search.QueryEngine_1-ParseQuery.html">中文</a>
+                </li>
+                <li>
+                  <a data-lang="ja" href="/ja/2022.3/ScriptReference/Search.QueryEngine_1-ParseQuery.html">日本語</a>
+                </li>
+                <li>
+                  <a data-lang="kr" href="/kr/2022.3/ScriptReference/Search.QueryEngine_1-ParseQuery.html">한국어</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="master-wrapper" class="master-wrapper clear">
+      <div id="sidebar" class="sidebar hidden">
+        <div class="sidebar-wrap">
+          <div class="content">
+            <div class="sidebar-menu">
+              <div class="toc">
+                <h2>脚本 API</h2>
+                <div class="version-switcher">
+                  <div class="current toggle" data-target=".version-list">
+                    <div class="version-number">
+                      <div class="d-inline-block">
+          Version:
+          <b>2022.3</b></div>
+                      <div class="d-inline-block arrow">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="version-list" style="display:none;">
+                    <ul class="versions">
+                      <li class="supported">
+                        <a class="docs_version_url_2023.2" href="/cn/2023.2/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2023.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2023.1" href="/cn/2023.1/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2023.1</a>
+                      </li>
+                      <li class="supported">
+                        <a class="docs_version_url_2022.3" href="/cn/2022.3/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2022.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2022.2" href="/cn/2022.2/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2022.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2022.1" href="/cn/2022.1/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2022.1</a>
+                      </li>
+                      <li class="supported">
+                        <a class="docs_version_url_2021.3" href="/cn/2021.3/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2021.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2021.2" href="/cn/2021.2/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2021.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2021.1" href="/cn/2021.1/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2021.1</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2020.3" href="/cn/2020.3/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2020.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2020.2" href="/cn/2020.2/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2020.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2020.1" href="/cn/2020.1/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2020.1</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2019.4" href="/cn/2019.4/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2019.4</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2019.3" href="/cn/2019.3/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2019.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2019.2" href="/cn/2019.2/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2019.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2019.1" href="/cn/2019.1/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2019.1</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2018.4" href="/cn/2018.4/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2018.4</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2018.3" href="/cn/2018.3/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2018.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2018.2" href="/cn/2018.2/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2018.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2018.1" href="/cn/2018.1/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2018.1</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2017.4" href="/cn/2017.4/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2017.4</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2017.3" href="/cn/2017.3/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2017.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2017.2" href="/cn/2017.2/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2017.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2017.1" href="/cn/2017.1/ScriptReference/Search.QueryEngine_1-ParseQuery.html">2017.1</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_560" href="/cn/560/ScriptReference/Search.QueryEngine_1-ParseQuery.html">5.6</a>
+                      </li>
+                      <div class="versionsWithThisPage" style="display:none;">
+                        <li>
+                          <p>包含此页的版本：</p>
+                        </li>
+                      </div>
+                      <div class="versionsWithoutThisPage" style="display:none;">
+                        <li>
+                          <p>不含此页的版本：</p>
+                        </li>
+                      </div>
+                    </ul>
+                    <ul class="description">
+                      <li>
+                        <div class="supported-box">
+                        </div>受支持</li>
+                      <li>
+                        <div class="legacy-box">
+                        </div>旧版</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="clear">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="content-wrap" class="content-wrap opened-sidebar">
+        <div class="content-block">
+          <div class="content">
+            <div class="section">
+              <div class="mb20 clear" id="">
+                <h1 class="heading inherit">
+                  <a href="Search.QueryEngine_1.html">QueryEngine&lt;T0&gt;</a>.ParseQuery</h1>
+                <div class="clear">
+                </div>
+                <div class="clear">
+                </div>
+                <a href="" class="switch-link gray-btn sbtn left hide">切换到手册</a>
+                <div class="clear">
+                </div>
+              </div>
+              <div class="subsection">
+                <div class="signature">
+                  <div class="signature-CS sig-block">
+                    <span style="color:red;">
+                    </span>public ParsedQuery&lt;TData&gt; <span class="sig-kw">ParseQuery</span>
+        (string <span class="sig-kw">text</span>,
+    bool <span class="sig-kw">useFastYieldingQueryHandler</span>);
+      </div>
+                </div>
+              </div>
+              <div class="subsection">
+                <h2>参数</h2>
+                <table class="list">
+                  <tr>
+                    <td class="name lbl">text</td>
+                    <td class="desc">The query input string.</td>
+                  </tr>
+                  <tr>
+                    <td class="name lbl">useFastYieldingQueryHandler</td>
+                    <td class="desc">Set to true to get a query that yields null results for elements that don't pass the query, instead of only the elements that pass the query.</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="subsection">
+                <h2>返回</h2>
+                <p>
+                  <strong>ParsedQuery&lt;TData&gt;</strong>
+        ParsedQuery operation of type TData.
+      </p>
+              </div>
+              <div class="subsection">
+                <h2>描述</h2>
+                <p>Parses a query string into a ParsedQuery operation. This ParsedQuery operation can then be used to filter any data set of type TData.</p>
+              </div>
+              <div class="subsection">
+        <pre class="codeExampleCS">using System.Collections.Generic;
+using System.Linq;
+using <a href="UnityEditor.html">UnityEditor</a>;
+using UnityEditor.Search;
+using UnityEngine;
+
+static class Example_QueryEngine_ParseQuery
+{
+    static List&lt;MyObjectType&gt; s_Data;
+
+    [<a href="MenuItem.html">MenuItem</a>("Examples/<a href="Search.QueryEngine.html">QueryEngine</a>/ParseQuery")]
+    public static void RunExample()
+    {
+        // Set up the query engine
+        var queryEngine = new <a href="Search.QueryEngine.html">QueryEngine</a>&lt;MyObjectType&gt;();
+        queryEngine.AddFilter("id", myObj =&gt; myObj.id);
+        queryEngine.SetSearchDataCallback(myObj =&gt; new[] { myObj.id.ToString(), myObj.name });
+
+        s_Data = new List&lt;MyObjectType&gt;()
+        {
+            new MyObjectType { id = 0, name = "Test 1", position = new <a href="Vector2.html">Vector2</a>(0, 0), active = false },
+            new MyObjectType { id = 1, name = "Test 2", position = new <a href="Vector2.html">Vector2</a>(0, 1), active = true },
+            new MyObjectType { id = 2, name = "Test 3", position = new <a href="Vector2.html">Vector2</a>(1, 0), active = false },
+            new MyObjectType { id = 3, name = "Test 4", position = new <a href="Vector2.html">Vector2</a>(1.2f, 0), active = true },
+        };
+
+        // Call ParseQuery to get a query that can be applied on any data set that matches the <a href="Search.QueryEngine.html">QueryEngine</a>'s type
+        var query = queryEngine.ParseQuery("id&lt;2");
+
+        // You can test the validity of the query, and check for any parsing errors
+        if (!query.valid)
+        {
+            foreach (var queryError in query.errors)
+            {
+                <a href="Debug.LogError.html">Debug.LogError</a>($"Parsing error at ${queryError.index}: {queryError.reason}.");
+            }
+        }
+
+        // Use this query to filter a data set.
+        var filteredData = query.Apply(s_Data).ToList();
+
+        // FilteredData now contains only the elements that satisfy the query.
+        <a href="Debug.Assert.html">Debug.Assert</a>(filteredData.Count == 2, $"There should be 2 items in the filtered list but found {filteredData.Count} items.");
+        <a href="Debug.Assert.html">Debug.Assert</a>(filteredData.Contains(s_Data[0]), "Test 1 should be in the list as its id is &lt; 2.");
+        <a href="Debug.Assert.html">Debug.Assert</a>(filteredData.Contains(s_Data[1]), "Test 2 should be in the list as its id is &lt; 2.");
+    }
+
+    class MyObjectType
+    {
+        public int id { get; set; }
+        public string name { get; set; } = string.Empty;
+        public <a href="Vector2.html">Vector2</a> position { get; set; } = <a href="Vector2-zero.html">Vector2.zero</a>;
+        public bool active { get; set; }
+
+        public override string ToString()
+        {
+            return $"({id}, {name}, ({position.x}, {position.y}), {active})";
+        }
+    }
+}
+</pre>
+      </div>
+              <hr class="section" />
+              <div class="subsection">
+                <div class="signature">
+                  <div class="signature-CS sig-block">
+                    <span style="color:red;">
+                    </span>public ParsedQuery&lt;TData,TPayload&gt; <span class="sig-kw">ParseQuery</span>
+        (string <span class="sig-kw">text</span>,
+    IQueryHandlerFactory&lt;TData,TQueryHandler,TPayload&gt; <span class="sig-kw">queryHandlerFactory</span>);
+      </div>
+                </div>
+              </div>
+              <div class="subsection">
+                <h2>参数</h2>
+                <table class="list">
+                  <tr>
+                    <td class="name lbl">text</td>
+                    <td class="desc">The query input string.</td>
+                  </tr>
+                  <tr>
+                    <td class="name lbl">queryHandlerFactory</td>
+                    <td class="desc">A factory object that creates query handlers of type TQueryHandler. See <a href="Search.IQueryHandlerFactory_3.html">IQueryHandlerFactory</a>.</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="subsection">
+                <h2>返回</h2>
+                <p>
+                  <strong>ParsedQuery&lt;TData,TPayload&gt;</strong>
+        ParsedQuery operation of type TData and TPayload.
+      </p>
+              </div>
+              <div class="subsection">
+                <h2>描述</h2>
+                <p>Parses a query string into a ParsedQuery operation. This ParsedQuery operation can then be used to filter any data set of type TData.</p>
+              </div>
+              <div class="subsection">
+                <p>
+        This overload allows you to define your own query handler, which is a class that you can implement to do your own filtering based on the query graph.
+      </p>
+              </div>
+              <div class="subsection">
+        <pre class="codeExampleCS">using <a href="Rendering.VirtualTexturing.System.html">System</a>;
+using System.Collections.Generic;
+using System.Linq;
+using <a href="UnityEditor.html">UnityEditor</a>;
+using UnityEditor.Search;
+using UnityEngine;
+
+static class Example_QueryEngine_ParseQuery_WithHandler
+{
+    // Not a true database, this is only an example to show that you can use
+    // anything with ParseQuery to implement your own filtering.
+    static Database s_Database = new Database();
+
+    [<a href="MenuItem.html">MenuItem</a>("Examples/<a href="Search.QueryEngine.html">QueryEngine</a>/ParseQuery_WithHandler")]
+    public static void RunExample()
+    {
+        // Set up the query engine
+        var queryEngine = new <a href="Search.QueryEngine.html">QueryEngine</a>&lt;MyObjectType&gt;(new <a href="Search.QueryValidationOptions.html">QueryValidationOptions</a>(){validateFilters = false, skipUnknownFilters = false});
+
+        // Set up the query handler factory
+        var factory = new DefaultQueryHandlerFactory(queryEngine);
+
+        // Call ParseQuery to get a query that can be applied on any payload that matches the <a href="Search.QueryEngine.html">QueryEngine</a>'s type
+        var query = queryEngine.ParseQuery("id=2 or v&gt;50", factory);
+
+        // You can test the validity of the query, and check for any parsing errors
+        if (!query.valid)
+        {
+            foreach (var queryError in query.errors)
+            {
+                <a href="Debug.LogError.html">Debug.LogError</a>($"Parsing error at ${queryError.index}: {queryError.reason}.");
+            }
+        }
+
+        // Use this query to filter a payload.
+        var filteredData = query.Apply(s_Database).ToList();
+
+        // FilteredData now contains only the elements that satisfy the query.
+        <a href="Debug.Assert.html">Debug.Assert</a>(filteredData.Count == 2, $"There should be 2 items in the filtered list but found {filteredData.Count} items.");
+        <a href="Debug.Assert.html">Debug.Assert</a>(filteredData.Contains(s_Database.data.ElementAt(2)), "Test 3 should be in the list as its id is == 2.");
+        <a href="Debug.Assert.html">Debug.Assert</a>(filteredData.Contains(s_Database.data.ElementAt(3)), "Test 4 should be in the list as its value is &gt; 50.");
+    }
+
+    class MyObjectType
+    {
+        public int id { get; set; }
+        public string name { get; set; } = string.Empty;
+        public float value { get; set; } = 0.0f;
+
+        public override string ToString()
+        {
+            return $"({id}, {name}, {value})";
+        }
+    }
+
+    class Database
+    {
+        public IEnumerable&lt;MyObjectType&gt; data { get; private set; }
+
+        public Database()
+        {
+            data = new List&lt;MyObjectType&gt;()
+            {
+                new MyObjectType { id = 0, name = "Test 1", value = 42f },
+                new MyObjectType { id = 1, name = "Test 2", value = 12f },
+                new MyObjectType { id = 2, name = "Test 3", value = 0.1f },
+                new MyObjectType { id = 3, name = "Test 4", value = 100.0f }
+            };
+        }
+    }
+
+    class DefaultQueryHandlerFactory : IQueryHandlerFactory&lt;MyObjectType, DefaultHandler, Database&gt;
+    {
+        <a href="Search.QueryEngine.html">QueryEngine</a>&lt;MyObjectType&gt; m_Engine;
+
+        public DefaultQueryHandlerFactory(<a href="Search.QueryEngine.html">QueryEngine</a>&lt;MyObjectType&gt; engine)
+        {
+            m_Engine = engine;
+        }
+
+        public DefaultHandler Create(<a href="Search.QueryGraph.html">QueryGraph</a> graph, ICollection&lt;<a href="Search.QueryError.html">QueryError</a>&gt; errors)
+        {
+            ValidateGraph(graph.root, errors);
+            if (errors.Count &gt; 0)
+                return null;
+
+            var dataWalker = new DefaultHandler();
+            dataWalker.Initialize(m_Engine, graph, errors);
+            return dataWalker;
+        }
+
+        private static void ValidateGraph(<a href="Search.IQueryNode.html">IQueryNode</a> root, ICollection&lt;<a href="Search.QueryError.html">QueryError</a>&gt; errors)
+        {
+            if (root == null)
+                return;
+
+            ValidateNode(root, errors);
+            if (root.leaf || root.children == null)
+                return;
+
+            foreach (var child in root.children)
+            {
+                ValidateGraph(child, errors);
+            }
+        }
+
+        private static void ValidateNode(<a href="Search.IQueryNode.html">IQueryNode</a> node, ICollection&lt;<a href="Search.QueryError.html">QueryError</a>&gt; errors)
+        {
+            switch (node.type)
+            {
+                case <a href="Search.QueryNodeType.Aggregator.html">QueryNodeType.Aggregator</a>:
+                case <a href="Search.QueryNodeType.FilterIn.html">QueryNodeType.FilterIn</a>:
+                case <a href="Search.QueryNodeType.Intersection.html">QueryNodeType.Intersection</a>:
+                case <a href="Search.QueryNodeType.Union.html">QueryNodeType.Union</a>:
+                case <a href="Search.QueryNodeType.NestedQuery.html">QueryNodeType.NestedQuery</a>:
+                {
+                    errors.Add(new <a href="Search.QueryError.html">QueryError</a>(node.token.position, node.token.length, "Nested queries are not supported."));
+                    break;
+                }
+            }
+        }
+    }
+
+    class DefaultHandler : IQueryHandler&lt;MyObjectType, Database&gt;
+    {
+        <a href="Search.QueryGraph.html">QueryGraph</a> m_EvaluationGraph;
+
+        public void Initialize(<a href="Search.QueryEngine.html">QueryEngine</a>&lt;MyObjectType&gt; engine, <a href="Search.QueryGraph.html">QueryGraph</a> graph, ICollection&lt;<a href="Search.QueryError.html">QueryError</a>&gt; errors)
+        {
+            if (graph != null &amp;&amp; !graph.empty)
+                m_EvaluationGraph = graph;
+        }
+
+        public IEnumerable&lt;MyObjectType&gt; Eval(Database payload)
+        {
+            if (payload == null || m_EvaluationGraph == null)
+                return Enumerable.Empty&lt;MyObjectType&gt;();
+            return EvalNode(m_EvaluationGraph.root, payload.data);
+        }
+
+        public bool Eval(MyObjectType element)
+        {
+            if (m_EvaluationGraph.empty)
+                return true;
+
+            var filtered = EvalNode(m_EvaluationGraph.root, new []{element});
+            return filtered.Contains(element);
+        }
+
+        static IEnumerable&lt;MyObjectType&gt; EvalNode(<a href="Search.IQueryNode.html">IQueryNode</a> node, IEnumerable&lt;MyObjectType&gt; subset)
+        {
+            switch (node.type)
+            {
+                case <a href="Search.QueryNodeType.Where.html">QueryNodeType.Where</a>:
+                    return EvalNode(node.children[0], subset);
+                case <a href="Search.QueryNodeType.And.html">QueryNodeType.And</a>:
+                    return EvalNode(node.children[0], subset).Intersect(EvalNode(node.children[1], subset));
+                case <a href="Search.QueryNodeType.Or.html">QueryNodeType.Or</a>:
+                    return EvalNode(node.children[0], subset).Union(EvalNode(node.children[1], subset));
+                case <a href="Search.QueryNodeType.Search.html">QueryNodeType.Search</a>:
+                    if (node is not <a href="Search.ISearchNode.html">ISearchNode</a> searchNode)
+                        return Enumerable.Empty&lt;MyObjectType&gt;();
+                    return subset.Where(o =&gt;
+                    {
+                        var sd = GetSearchData(o);
+                        if (searchNode.exact)
+                            return sd.Any(d =&gt; d.Equals(searchNode.searchValue));
+                        return sd.Any(d =&gt; d.IndexOf(searchNode.searchValue) &gt;= 0);
+                    });
+                case <a href="Search.QueryNodeType.Filter.html">QueryNodeType.Filter</a>:
+                    if (node is not <a href="Search.IFilterNode.html">IFilterNode</a> filterNode)
+                        return Enumerable.Empty&lt;MyObjectType&gt;();
+                    switch (filterNode.filterId)
+                    {
+                        case "id":
+                            return subset.Where(o =&gt; CompareValues(o.id, int.Parse(filterNode.filterValue), filterNode.operatorId));
+                        case "n":
+                            return subset.Where(o =&gt; CompareValues(o.name, filterNode.filterValue, filterNode.operatorId));
+                        case "v":
+                            return subset.Where(o =&gt; CompareValues(o.value, float.Parse(filterNode.filterValue), filterNode.operatorId));
+                    }
+
+                    return Enumerable.Empty&lt;MyObjectType&gt;(); ;
+            }
+
+            return Enumerable.Empty&lt;MyObjectType&gt;(); ;
+        }
+
+        static IEnumerable&lt;string&gt; GetSearchData(MyObjectType o)
+        {
+            return new[] { o.id.ToString(), o.name };
+        }
+
+        static bool CompareValues&lt;T&gt;(T valueA, T valueB, string op)
+            where T : IComparable
+        {
+            switch (op)
+            {
+                case ":":
+                    return valueA.ToString().Contains(valueB.ToString());
+                case "=":
+                    return valueA.CompareTo(valueB) == 0;
+                case "!=":
+                    return valueA.CompareTo(valueB) != 0;
+                case "&gt;":
+                    return valueA.CompareTo(valueB) &gt; 0;
+                case "&lt;":
+                    return valueA.CompareTo(valueB) &lt; 0;
+                case "&gt;=":
+                    return valueA.CompareTo(valueB) &gt;= 0;
+                case "&lt;=":
+                    return valueA.CompareTo(valueB) &lt;= 0;
+            }
+
+            return false;
+        }
+    }
+}
+</pre>
+      </div>
+            </div>
+            <div class="section">
+              <div id="_content">
+              </div>
+            </div>
+            <div class="footer-wrapper">
+              <div class="footer clear">
+                <div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+                <div class="menu">
+                  <a href="https://learn.unity.com/">教程</a>
+                  <a href="https://answers.unity3d.com">社区答案</a>
+                  <a href="https://support.unity3d.com/hc/en-us">知识库</a>
+                  <a href="https://forum.unity3d.com">论坛</a>
+                  <a href="https://unity3d.com/asset-store">Asset Store</a>
+                  <a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a>
+                  <a href="https://unity.com/legal">法律条款</a>
+                  <a href="https://unity.com/legal/privacy-policy">隐私政策</a>
+                  <a href="https://unity.com/legal/cookie-policy">Cookie</a>
+                  <a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a>
+                  <div id="ot-sdk-btn-container">
+                    <a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

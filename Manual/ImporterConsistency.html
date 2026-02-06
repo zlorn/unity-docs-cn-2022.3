@@ -1,0 +1,320 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="导入器一致性 - Unity 手册">
+<title>导入器一致性 - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="资源导入器，包括您编写的任何脚本化导入器，应产生一致（确定性）的结果。这意味着它们应始终从相同的输入和依赖集产生相同的输出。">
+<meta property="og:description" content="资源导入器，包括您编写的任何脚本化导入器，应产生一致（确定性）的结果。这意味着它们应始终从相同的输入和依赖集产生相同的输出。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'ImporterConsistency';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/ImporterConsistency.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/ImporterConsistency.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/ImporterConsistency.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/ImporterConsistency.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/ImporterConsistency.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/ImporterConsistency.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/ImporterConsistency.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/ImporterConsistency.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/ImporterConsistency.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/ImporterConsistency.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/ImporterConsistency.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/ImporterConsistency.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/ImporterConsistency.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/ImporterConsistency.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/ImporterConsistency.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/ImporterConsistency.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/ImporterConsistency.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/ImporterConsistency.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/ImporterConsistency.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/ImporterConsistency.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/ImporterConsistency.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/ImporterConsistency.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/ImporterConsistency.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/ImporterConsistency.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/ImporterConsistency.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/ImporterConsistency.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/ImporterConsistency.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/ImporterConsistency.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/ImporterConsistency.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/ImporterConsistency.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/ImporterConsistency.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/ImporterConsistency.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/ImporterConsistency.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/ImporterConsistency.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/ImporterConsistency.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/ImporterConsistency.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/ImporterConsistency.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/ImporterConsistency.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/ImporterConsistency.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/ImporterConsistency.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/ImporterConsistency.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/ImporterConsistency.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/ImporterConsistency.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/ImporterConsistency.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/ImporterConsistency.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/ImporterConsistency.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/ImporterConsistency.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/ImporterConsistency.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/ImporterConsistency.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/ImporterConsistency.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/ImporterConsistency.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/ImporterConsistency.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/ImporterConsistency.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/ImporterConsistency.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/ImporterConsistency.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/ImporterConsistency.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/ImporterConsistency.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/ImporterConsistency.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="AssetWorkflow.html">资源工作流程</a></li>
+<li><a href="AssetTypes.html">支持的资源类型</a></li>
+<li>导入器一致性</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="ScriptedImporters.html"></a></span><div class="tip">脚本化导入器 (Scripted Importer)</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-TextAsset.html"></a></span><div class="tip">Text assets</div>
+</div>
+</div></div>
+<h1>导入器一致性</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>资源导入器，包括您编写的任何脚本化导入器，应产生一致（确定性）的结果。这意味着它们应始终从相同的输入和依赖集产生相同的输出。</p>
+
+<p>为了验证您的导入器是否如此，资源数据库提供了两种方法检查当前项目中资源的导入结果的一致性。检查一致性的两种方法是：</p>
+
+<ul>
+<li><p>在编辑器中手动重新导入一项或多项资源</p></li>
+<li><p>使用 <strong>-consistencyCheck</strong> 命令行参数打开编辑器。</p></li>
+</ul>
+
+<h2>手动重新导入一致性检查</h2>
+
+<p>手动重新导入资源会使 Unity 检查新的导入结果是否与之前缓存的导入结果匹配。</p>
+
+<p>要开始手动重新导入，请右键单击资源并从上下文菜单选择 <strong>Reimport</strong>。</p>
+
+<p>Unity 会检查导入结果的一致性。如果检测到不一致的结果，Unity 会在控制台窗口中打印警告，详细说明导致问题的导入器，例如：</p>
+
+<p><code>Importer(&lt;name of importer&gt;) generated inconsistent result for asset(guid:&lt;guid of the asset&gt;) "&lt;name of asset&gt;"</code></p>
+
+<p>当您重新导入根资源时，Unity 还会对子资源进行重新导入并执行一致性检查。</p>
+
+<h2>命令行一致性检查</h2>
+
+<p>进行一致性检查的第二种方法是使用 <strong>-consistencyCheck</strong> 命令行参数打开 Unity。这会对项目中的所有资源和导入器执行一致性检查。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">命令行参数</th>
+	<th style="text-align:left;">描述</th>
+	<th style="text-align:left;">示例：</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><code>-consistencyCheck</code></td>
+	<td style="text-align:left;">告诉编辑器在启动时执行一致性检查。默认情况下，它执行一个“本地”检查（见下文）。</td>
+	<td style="text-align:left;">-consistencyCheck</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>-consistencyCheckSourceMode string</code></td>
+	<td style="text-align:left;">设置一致性检查器在对资源导入进行检查时所参照的源。有两个可能的值：“local” 或 “cacheserver”。<br><br>“local” 意味着它强制在本地重新导入所有资源并检查导入结果是否与之前的导入不同。<br><br>“cacheserver” 意味着它向 cacheserver（缓存服务器）询问资源的元数据，并比较本地结果是否与 cacheserver 上的匹配。在这种情况下，不会重新导入所有资源。</td>
+	<td style="text-align:left;">
+<code>-consistencyCheckSourceMode local</code> <br>-consistencyCheckSourceMode cacheserver</td>
+</tr>
+</tbody>
+</table>
+
+<p>启动期间发现的任何不一致都会记录到控制台以及编辑器日志文件中。</p>
+
+<p>一致性检查器只检查可缓存的资源导入。因此，如果您禁用 ScriptedImporter 的缓存，则该导入的一致性检查也将被禁用。有关如何禁用脚本化导入器缓存的详细信息，请参阅 <a href="../ScriptReference/AssetImporters.ScriptedImporterAttribute.html">AssetImporters.ScriptedImporterAttribute</a>。</p>
+
+<p>要将缓存服务器用作验证源，请参阅 <a href="UnityAccelerator.html">Unity 加速器</a>文档。</p>
+
+<h3>编辑器日志</h3>
+
+<p>当检测到导入器不一致时，您可以在编辑器日志中找到有关该问题的更多信息。其中包括：</p>
+
+<ul>
+<li><p>哪个资源导致一致性检查失败</p></li>
+<li><p>该资源的 GUID</p></li>
+<li><p>资源导入结果的内容哈希</p></li>
+<li><p>它与资源的先前修订的比较结果</p></li>
+</ul>
+
+<p>以下是显示导入器不一致的编辑器日志示例：</p>
+
+<pre><code>ConsistencyChecker - guid: a1945cd7aab67441ba89015f97494624, dependenciesHash.value: fb8cfb407bba82d4daded6031688ba9b, artifactid: 07078a054d3f597b4c2cc47e8e4c0bde, producedFiles[0].extension: , producedFiles[0].contentHash: 8490a5ed35a4361d679e6055a386969e
+
+ConsistencyChecker - guid: a1945cd7aab67441ba89015f97494624, dependenciesHash.value: fb8cfb407bba82d4daded6031688ba9b, artifactid: 07078a054d3f597b4c2cc47e8e4c0bde, producedFiles[1].extension: .info, producedFiles[1].contentHash: 4bd9140e19d2e44782f1131172e514ba
+
+ConsistencyChecker - guid: a1945cd7aab67441ba89015f97494624, dependenciesHash.value: fb8cfb407bba82d4daded6031688ba9b, artifactid: 646d6432767729ea7d288c636183de97, producedFiles[0].extension: , producedFiles[0].contentHash: 5ca760170f85012ce16aa8c22e8d9ea1
+
+ConsistencyChecker - guid: a1945cd7aab67441ba89015f97494624, dependenciesHash.value: fb8cfb407bba82d4daded6031688ba9b, artifactid: 646d6432767729ea7d288c636183de97, producedFiles[1].extension: .info, producedFiles[1].contentHash: 4bd9140e19d2e44782f1131172e514ba
+
+Importer(ScriptedImporter:Assembly-CSharp::RandomImporter) generated inconsistent result for asset(guid:a1945cd7aab67441ba89015f97494624) "Assets/first.rand"
+</code></pre>
+
+<p>如果缓存服务器不可用，一致性检查器会在编辑器日志中打印警告。</p>
+
+<p>如果尚未为项目设置缓存服务器，则会打印以下消息。</p>
+
+<p><code>ConsistencyChecker - Cacheserver is not enabled</code></p>
+
+<p>如果 Unity 无法连接到缓存服务器，则会打印以下消息。</p>
+
+<p><code>ConsistencyChecker - Not connected to accelerator/cacheserver</code></p>
+
+<h2>调试</h2>
+
+<p>您可以使用‘binary2text’工具（位于 Unity 编辑器安装位置下的 Data/Tools 文件夹中）检查 library 文件夹的内容以查看导入器生成的准确结果。</p>
+
+<p>例如：</p>
+
+<p><code>./Data/Tools/binary2text ./myProject/Library/Artifacts/84/8490a5ed35a4361d679e6055a386969e output_file</code></p>
+
+<p>哈希值是资源的内容哈希。要查找所报告的不一致之处并查看检查期间生成的内容，请查看编辑器日志。</p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="ScriptedImporters.html"></a></span><div class="tip">脚本化导入器 (Scripted Importer)</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-TextAsset.html"></a></span><div class="tip">Text assets</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="How to get, set, and configure the active render pipeline - Unity 手册">
+<title>How to get, set, and configure the active render pipeline - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="This page contains information on how to get, set, and configure the render pipeline that Unity is currently using. The render pipeline that Unity is currently using is called the active render pipeline.">
+<meta property="og:description" content="This page contains information on how to get, set, and configure the render pipeline that Unity is currently using. The render pipeline that Unity is currently using is called the active render pipeline.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'srp-setting-render-pipeline-asset';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/srp-setting-render-pipeline-asset.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/srp-setting-render-pipeline-asset.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/srp-setting-render-pipeline-asset.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/srp-setting-render-pipeline-asset.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/srp-setting-render-pipeline-asset.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/srp-setting-render-pipeline-asset.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/srp-setting-render-pipeline-asset.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/srp-setting-render-pipeline-asset.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/srp-setting-render-pipeline-asset.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/srp-setting-render-pipeline-asset.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/srp-setting-render-pipeline-asset.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/srp-setting-render-pipeline-asset.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/srp-setting-render-pipeline-asset.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/srp-setting-render-pipeline-asset.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/srp-setting-render-pipeline-asset.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/srp-setting-render-pipeline-asset.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/srp-setting-render-pipeline-asset.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/srp-setting-render-pipeline-asset.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/srp-setting-render-pipeline-asset.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/srp-setting-render-pipeline-asset.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/srp-setting-render-pipeline-asset.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/srp-setting-render-pipeline-asset.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/srp-setting-render-pipeline-asset.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/srp-setting-render-pipeline-asset.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/srp-setting-render-pipeline-asset.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/srp-setting-render-pipeline-asset.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/srp-setting-render-pipeline-asset.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/srp-setting-render-pipeline-asset.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/srp-setting-render-pipeline-asset.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/srp-setting-render-pipeline-asset.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/srp-setting-render-pipeline-asset.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/srp-setting-render-pipeline-asset.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/srp-setting-render-pipeline-asset.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/srp-setting-render-pipeline-asset.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/srp-setting-render-pipeline-asset.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/srp-setting-render-pipeline-asset.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/srp-setting-render-pipeline-asset.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/srp-setting-render-pipeline-asset.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/srp-setting-render-pipeline-asset.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/srp-setting-render-pipeline-asset.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/srp-setting-render-pipeline-asset.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/srp-setting-render-pipeline-asset.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/srp-setting-render-pipeline-asset.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/srp-setting-render-pipeline-asset.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/srp-setting-render-pipeline-asset.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/srp-setting-render-pipeline-asset.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/srp-setting-render-pipeline-asset.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/srp-setting-render-pipeline-asset.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/srp-setting-render-pipeline-asset.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/srp-setting-render-pipeline-asset.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/srp-setting-render-pipeline-asset.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/srp-setting-render-pipeline-asset.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/srp-setting-render-pipeline-asset.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/srp-setting-render-pipeline-asset.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/srp-setting-render-pipeline-asset.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/srp-setting-render-pipeline-asset.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/srp-setting-render-pipeline-asset.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/srp-setting-render-pipeline-asset.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="render-pipelines.html">渲染管线</a></li>
+<li>How to get, set, and configure the active render pipeline</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="render-pipelines-feature-comparison.html"></a></span><div class="tip">Render pipeline feature comparison</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="BestPracticeLightingPipelines.html"></a></span><div class="tip">选择和配置渲染管线和光照解决方案</div>
+</div>
+</div></div>
+<h1>How to get, set, and configure the active render pipeline</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>This page contains information on how to get, set, and configure the render pipeline that Unity is currently using. The render pipeline that Unity is currently using is called the active render pipeline.</p>
+
+<h2>概述</h2>
+
+<p>To render content, Unity can either use the Built-in Render Pipeline or a render pipeline based on the <a href="ScriptableRenderPipeline.html">Scriptable Render Pipeline</a> (SRP), which includes the Universal Render Pipeline (URP) and the High Definition Render Pipeline (HDRP).</p>
+
+<p>To specify which Scriptable Render Pipeline Unity uses, you use Render Pipeline Assets. A Render Pipeline Asset tells Unity which SRP to use, and how to configure it. If you don’t specify a Render Pipeline Asset, Unity uses the Built-in Render Pipeline.</p>
+
+<p>You can create multiple Render Pipeline Assets that use the same render pipeline, but with different configurations; for example, you can use different Render Pipeline Assets for different hardware quality levels. For a general introduction to Render Pipeline Assets, see <a href="scriptable-render-pipeline-introduction.html">Scriptable Render Pipeline introduction</a>. For information on URP’s Render Pipeline Asset, see <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest/index.html?subfolder=/manual/universalrp-asset.html">The Universal Render Pipeline Asset</a>, and for HDRP’s Render Pipeline Asset, see <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest/index.html?subfolder=/manual/HDRP-Asset.html">The High Definition Render Pipeline Asset</a>.</p>
+
+<p>As soon as you change the active render pipeline in the Unity Editor or at runtime, Unity uses the new active render pipeline to render content. If you are in the Unity Editor, this includes the Game view, the Scene view, and previews for Materials in the Project panel and the Inspector.</p>
+
+<p>When you change the active render pipeline, you must ensure that the assets and code in your project are compatible with the new render pipeline; otherwise, you might experience errors or unintended visual effects.</p>
+
+<p><a name="determine-the-active-render-pipeline"></a></p>
+
+<h2>Determining the active render pipeline</h2>
+
+<p>Settings in both <a href="class-GraphicsSettings.html">Graphics Settings</a> and <a href="class-QualitySettings.html">Quality Settings</a> determine the active render pipeline. In Graphics Settings, you configure the render pipeline that Unity uses by default. In Quality Settings, you can override the default render pipeline for a given quality level.</p>
+
+<p>To get or set the default render pipeline, use Graphics Settings &gt; <strong>Scriptable Render Pipeline Setting</strong> (or its equivalent API, <a href="../ScriptReference/Rendering.GraphicsSettings-defaultRenderPipeline.html">GraphicsSettings.defaultRenderPipeline</a>). To get or set the render pipeline that overrides the default for a given quality level, Quality Settings &gt; <strong>Render Pipeline</strong> (or its equivalent API, <a href="../ScriptReference/QualitySettings-renderPipeline.html">QualitySettings.renderPipeline</a>).</p>
+
+<p>Unity determines the active render pipeline like this:</p>
+
+<ul>
+<li>If the current Quality Settings level &gt; <strong>Render Pipeline</strong> references a Render Pipeline Asset, Unity uses that value.</li>
+<li>Otherwise:
+
+<ul>
+<li>If Graphics Settings &gt; <strong>Scriptable Render Pipeline Setting</strong> references a Render Pipeline Asset, Unity uses that value.</li>
+<li>Otherwise, Unity uses the Built-in Render Pipeline.</li>
+</ul>
+</li>
+</ul>
+
+<p><a name="set-active-render-pipeline-editor"></a></p>
+
+<h2>How to get and set the active render pipeline in the Editor UI</h2>
+
+<h3>Getting the active render pipeline</h3>
+
+<p>To get the active render pipeline in the Editor UI, you must check both the Graphics Settings and Quality Settings windows. For information on how to use these values to determine the active render pipeline, see <a href="#determine-the-active-render-pipeline">Determining the active render pipeline</a>.</p>
+
+<h3>Activating the Built-in Render Pipeline</h3>
+
+<p>To set the active render pipeline to the Built-in Render Pipeline, remove any Render Pipeline Assets from Graphics Settings and Quality Settings.</p>
+
+<p>为此需要执行以下操作：</p>
+
+<ol>
+<li>Select <strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Quality</strong>.</li>
+<li>For each quality level, if a Render Pipeline Asset is assigned to the <strong>Render Pipeline</strong> field, unassign it.</li>
+<li>Select <strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Graphics</strong>.</li>
+<li>If a Render Pipeline Asset is assigned to the <strong>Scriptable Render Pipeline Setting</strong> field, unassign it.</li>
+</ol>
+
+<h3>Activating URP, HDRP, or a custom render pipeline based on SRP</h3>
+
+<p>To set the active render pipeline to one that is based on SRP, tell Unity which Render Pipeline Asset to use as the default active render pipeline, and optionally which Render Pipeline Assets to use for each quality level. </p>
+
+<p>为此需要执行以下操作：</p>
+
+<ol>
+<li>In your Project folder, locate the Render Pipeline Asset(s) that you want to use.</li>
+<li>Set the default render pipeline, which Unity uses when there is no override for a given quality level. If you do not set this, Unity uses the Built-in Render Pipeline when no override applies.
+
+<ol>
+<li>Select <strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Graphics</strong>.</li>
+<li>Drag the Render Pipeline Asset on to the <strong>Scriptable Render Pipeline Setting</strong> field.</li>
+</ol>
+</li>
+<li>
+<strong>Optional</strong>: Set override Render Pipeline Assets for different quality levels.
+
+<ol>
+<li>Select <strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Quality</strong>.</li>
+<li>Drag the Render Pipeline Asset on to the <strong>Render Pipeline</strong> field.</li>
+</ol>
+</li>
+</ol>
+
+<p><a name="get-set-active-render-pipeline-scripts"></a></p>
+
+<h2>How to get and set the active render pipeline in C# scripts</h2>
+
+<p>In C# scripts, you can get and set the active render pipeline and receive a callback when the active render pipeline changes. You can do this in Edit Mode or Play Mode in the Unity Editor, or at runtime in your application.</p>
+
+<p>要执行此操作，请使用以下 API：</p>
+
+<ul>
+<li>There are several ways to get the active render pipeline:
+
+<ul>
+<li>To get a reference to the Render Pipeline Asset that defines the active render pipeline, use <a href="../ScriptReference/Rendering.GraphicsSettings-currentRenderPipeline.html">GraphicsSettings.currentRenderPipeline</a>.</li>
+<li>To get a reference to the Render Pipeline Asset that defines the active render pipeline and to determine whether Unity is using the default value or an override value, get the values of <a href="../ScriptReference/Rendering.GraphicsSettings-defaultRenderPipeline.html">GraphicsSettings.defaultRenderPipeline</a> and <a href="../ScriptReference/QualitySettings-renderPipeline.html">QualitySettings.renderPipeline</a>. For information on how to use these values, see <a href="#determine-the-active-render-pipeline">Determining the active render pipeline</a> or the following code sample.</li>
+<li>To get the <a href="../ScriptReference/Rendering.RenderPipeline.html">RenderPipeline</a> instance for the active render pipeline, use <a href="../ScriptReference/Rendering.RenderPipelineManager-currentPipeline.html">RenderPipelineManager.currentPipeline</a>. <strong>Note:</strong> Unity updates this property only after it has rendered at least one frame with the active render pipeline.</li>
+</ul>
+</li>
+<li>To set the active render pipeline, set the values of <a href="../ScriptReference/Rendering.GraphicsSettings-defaultRenderPipeline.html">GraphicsSettings.defaultRenderPipeline</a> and <a href="../ScriptReference/QualitySettings-renderPipeline.html">QualitySettings.renderPipeline</a>. For information on how to use these values, see <a href="#determine-the-active-render-pipeline">Determining the active render pipeline</a> or the following code sample.</li>
+<li>To detect and execute code when the type of the active render pipeline changes, use <a href="../ScriptReference/Rendering.RenderPipelineManager-activeRenderPipelineTypeChanged.html">RenderPipelineManager.activeRenderPipelineTypeChanged</a>.</li>
+</ul>
+
+<p>The following example code shows how to use these APIs:</p>
+
+<pre><code>using UnityEngine;
+using UnityEngine.Rendering;
+ 
+public class ActiveRenderPipelineExample : MonoBehaviour
+{
+    // In the Inspector, assign a Render Pipeline Asset to each of these fields
+    public RenderPipelineAsset defaultRenderPipelineAsset;
+    public RenderPipelineAsset overrideRenderPipelineAsset;
+ 
+    void Start()
+    {
+        GraphicsSettings.defaultRenderPipeline = defaultRenderPipelineAsset;
+        QualitySettings.renderPipeline = overrideRenderPipelineAsset;
+
+        DisplayCurrentRenderPipeline();
+    }
+
+    void Update()
+    {
+        // When the user presses the left shift key, switch the default render pipeline
+        if (Input.GetKeyDown(KeyCode.LeftShift)) {
+            SwitchDefaultRenderPipeline();
+            DisplayCurrentRenderPipeline();
+        }
+        // When the user presses the right shift key, switch the override render pipeline
+        else if (Input.GetKeyDown(KeyCode.RightShift)) {
+            SwitchOverrideRenderPipeline();
+            DisplayCurrentRenderPipeline();
+        }
+    }
+
+    // Switch the default render pipeline between null,
+    // and the render pipeline defined in defaultRenderPipelineAsset
+    void SwitchDefaultRenderPipeline()
+    {
+        if (GraphicsSettings.defaultRenderPipeline == defaultRenderPipelineAsset)
+        {
+            GraphicsSettings.defaultRenderPipeline = null;
+        }
+        else
+        {
+            GraphicsSettings.defaultRenderPipeline = defaultRenderPipelineAsset;
+        }
+    }
+
+    // Switch the override render pipeline between null,
+    // and the render pipeline defined in overrideRenderPipelineAsset
+    void SwitchOverrideRenderPipeline()
+    {
+        if (QualitySettings.renderPipeline == overrideRenderPipelineAsset)
+        {
+            QualitySettings.renderPipeline = null;
+        }
+        else
+        {
+           QualitySettings.renderPipeline = overrideRenderPipelineAsset;
+        }
+    }
+
+    // Print the current render pipeline information to the console
+    void DisplayCurrentRenderPipeline()
+    {
+        // GraphicsSettings.defaultRenderPipeline determines the default render pipeline
+        // If it is null, the default is the Built-in Render Pipeline
+        if (GraphicsSettings.defaultRenderPipeline != null)
+        {
+            Debug.Log("The default render pipeline is defined by " + GraphicsSettings.defaultRenderPipeline.name);
+        }
+        else
+        {
+            Debug.Log("The default render pipeline is the Built-in Render Pipeline");
+        }
+
+        // QualitySettings.renderPipeline determines the override render pipeline for the current quality level
+        // If it is null, no override exists for the current quality level
+        if (QualitySettings.renderPipeline != null)
+        {
+            Debug.Log("The override render pipeline for the current quality level is defined by " + QualitySettings.renderPipeline.name);
+        }
+        else
+        {
+            Debug.Log("No override render pipeline exists for the current quality level");
+        }
+
+        // If an override render pipeline is defined, Unity uses that
+        // Otherwise, it falls back to the default value
+        if (QualitySettings.renderPipeline != null)
+        {
+            Debug.Log("The active render pipeline is the override render pipeline");
+        }
+        else
+        {
+            Debug.Log("The active render pipeline is the default render pipeline");
+        }
+
+        // To get a reference to the Render Pipeline Asset that defines the active render pipeline,
+        // without knowing if it is the default or an override, use GraphicsSettings.currentRenderPipeline
+        if (GraphicsSettings.currentRenderPipeline != null)
+        {
+            Debug.Log("The active render pipeline is defined by " +GraphicsSettings.currentRenderPipeline.name);
+        }
+        else
+        {
+            Debug.Log("The active render pipeline is the Built-in Render Pipeline");
+        }
+    }
+}
+</code></pre>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="render-pipelines-feature-comparison.html"></a></span><div class="tip">Render pipeline feature comparison</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="BestPracticeLightingPipelines.html"></a></span><div class="tip">选择和配置渲染管线和光照解决方案</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

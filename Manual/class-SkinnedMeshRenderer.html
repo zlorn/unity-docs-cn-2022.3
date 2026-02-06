@@ -1,0 +1,528 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Skinned Mesh Renderer component - Unity 手册">
+<title>Skinned Mesh Renderer component - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/skinned-mesh-renderer-inspector.png">
+<meta name="description" content="The Skinned Mesh Renderer component renders a deformable mesh. Deformable meshes include skinned meshes (meshes that have bones and bind poses), meshes that have blend shapes, and meshes that run cloth simulation.">
+<meta property="og:description" content="The Skinned Mesh Renderer component renders a deformable mesh. Deformable meshes include skinned meshes (meshes that have bones and bind poses), meshes that have blend shapes, and meshes that run cloth simulation.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'class-SkinnedMeshRenderer';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/class-SkinnedMeshRenderer.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/class-SkinnedMeshRenderer.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/class-SkinnedMeshRenderer.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/class-SkinnedMeshRenderer.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/class-SkinnedMeshRenderer.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/class-SkinnedMeshRenderer.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/class-SkinnedMeshRenderer.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/class-SkinnedMeshRenderer.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/class-SkinnedMeshRenderer.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/class-SkinnedMeshRenderer.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/class-SkinnedMeshRenderer.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/class-SkinnedMeshRenderer.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/class-SkinnedMeshRenderer.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/class-SkinnedMeshRenderer.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/class-SkinnedMeshRenderer.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/class-SkinnedMeshRenderer.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/class-SkinnedMeshRenderer.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/class-SkinnedMeshRenderer.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/class-SkinnedMeshRenderer.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/class-SkinnedMeshRenderer.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/class-SkinnedMeshRenderer.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/class-SkinnedMeshRenderer.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/class-SkinnedMeshRenderer.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/class-SkinnedMeshRenderer.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/class-SkinnedMeshRenderer.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/class-SkinnedMeshRenderer.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/class-SkinnedMeshRenderer.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/class-SkinnedMeshRenderer.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/class-SkinnedMeshRenderer.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/class-SkinnedMeshRenderer.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/class-SkinnedMeshRenderer.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/class-SkinnedMeshRenderer.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/class-SkinnedMeshRenderer.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/class-SkinnedMeshRenderer.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/class-SkinnedMeshRenderer.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/class-SkinnedMeshRenderer.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/class-SkinnedMeshRenderer.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/class-SkinnedMeshRenderer.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/class-SkinnedMeshRenderer.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/class-SkinnedMeshRenderer.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/class-SkinnedMeshRenderer.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/class-SkinnedMeshRenderer.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/class-SkinnedMeshRenderer.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/class-SkinnedMeshRenderer.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/class-SkinnedMeshRenderer.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/class-SkinnedMeshRenderer.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/class-SkinnedMeshRenderer.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/class-SkinnedMeshRenderer.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/class-SkinnedMeshRenderer.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/class-SkinnedMeshRenderer.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/class-SkinnedMeshRenderer.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/class-SkinnedMeshRenderer.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/class-SkinnedMeshRenderer.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/class-SkinnedMeshRenderer.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/class-SkinnedMeshRenderer.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/class-SkinnedMeshRenderer.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/class-SkinnedMeshRenderer.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/class-SkinnedMeshRenderer.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="mesh.html">网格</a></li>
+<li><a href="comp-MeshGroup.html">Mesh components</a></li>
+<li>Skinned Mesh Renderer component</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="class-MeshRenderer.html"></a></span><div class="tip">Mesh Renderer 组件</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-MeshFilter.html"></a></span><div class="tip">Mesh Filter 组件</div>
+</div>
+</div></div>
+<h1>Skinned Mesh Renderer component</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>The Skinned Mesh Renderer component renders a deformable mesh. Deformable meshes include skinned meshes (meshes that have bones and bind poses), meshes that have blend shapes, and meshes that run cloth simulation.</p>
+
+<p>To render a regular mesh, use a <a href="class-MeshRenderer.html">Mesh Renderer</a> and a <a href="class-MeshFilter.html">Mesh Filter</a> instead.</p>
+
+<p>When you add a deformable mesh or a model with a deformable mesh to a scene, Unity adds a Skinned Mesh Renderer component to the resulting GameObject.</p>
+
+<p>In C# code, the <a href="../ScriptReference/SkinnedMeshRenderer.html">SkinnedMeshRenderer</a> class represents a Skinned Mesh Renderer component. The <code>SkinnedMeshRenderer</code> class inherits much of its functionality from the <a href="../ScriptReference/Renderer.html">Renderer</a> class. As such, this component has a lot in common with other components that inherit from <code>Renderer</code>, such as <a href="class-LineRenderer.html">Line Renderer</a>, and <a href="class-TrailRenderer.html">Trail Renderer</a>.</p>
+
+<h2>Troubleshooting Skinned Mesh Renderer visibility</h2>
+
+<p>Unity uses the mesh’s bounds to determine whether to render it. If the entire bounding volume is outside the view of any active Camera, Unity does not render the mesh.</p>
+
+<p>In the case of a Skinned Mesh Renderer, its mesh bounds change as it deforms. Unity accounts for all animations present at import time when it calculates the maximum bounding volume, and uses this value to determine visibility; however, the following situations that occur after import might push vertices or bones outside of the maximum known bounds:</p>
+
+<ul>
+<li>附加动画</li>
+<li>Changing the positions of bones from a script at runtime</li>
+<li>Using vertex shaders that change vertex positions</li>
+<li>使用布娃娃</li>
+</ul>
+
+<p>If this happens, Unity might not correctly determine the visibility of the mesh, and might fail to show it when expected.</p>
+
+<p>In these cases, you can try either of the following solutions to fix the problem:</p>
+
+<ul>
+<li>Modify the bounds to match the maximum potential bounding volume of your mesh. Use this option if possible, because it is better for performance.</li>
+<li>Enable <strong>Update When Offscreen</strong>, so that Unity continues to calculate the mesh bounds at all times, even when the mesh is not visible. Use this option if performance is not a major concern, or if you can’t predict the size of your bounding volume (for example, if you use ragdolls).</li>
+</ul>
+
+<h2>Skinned Mesh Renderer Inspector reference</h2>
+
+<figure>
+<img src="../uploads/Main/skinned-mesh-renderer-inspector.png" alt="The Skinned Mesh Renderer component as it appears in the Inspector window.">
+<figcaption>The Skinned Mesh Renderer component as it appears in the Inspector window.</figcaption>
+</figure>
+
+<ul>
+<li>
+<a href="#properties">Properties</a><br>
+</li>
+<li>
+<a href="#materials">Materials</a><br>
+</li>
+<li>
+<a href="#Lighting">Lighting</a><br>
+</li>
+<li>
+<a href="#Probes">Probes</a><br>
+</li>
+<li><a href="#AdditionalSettings">Additional Settings</a></li>
+</ul>
+
+<p><a name="properties"></a></p>
+
+<h3>属性</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Bounds</strong></td>
+	<td style="text-align:left;">Sets the bounding volume that Unity uses to determine when the mesh is offscreen. Unity pre-calculates the bounds when importing the mesh and animations in the Model file, and displays the bounds as a wireframe around the Model in the Scene view.<br><br>If you set Update When Offscreen to True, Unity recalculates these bounds every frame and uses those calculated values to overwrite this property.<br><br>This property corresponds to the <a href="../ScriptReference/Mesh-bounds.html">Mesh.Bounds</a> API.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>BlendShapes</strong></td>
+	<td style="text-align:left;">Stores the weight values that Unity uses with the <a href="BlendShapes.html">blend shapes</a> defined in the mesh.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Quality</strong></td>
+	<td style="text-align:left;">Sets a runtime cap for the maximum number of bones that can affect a vertex. <br><br>When Unity imports a mesh, Unity can skin every vertex with a number of bones from one to 32. A higher number of influential bones improves results during movement. However, this also increases the computational resources required, and therefore might affect performance.<br><br>For performance reasons, it’s better to set the number of bones that affect a vertex on import, rather than using a runtime cap. To do this, use the Rig tab of the <a href="class-FBXImporter.html">Model Import Settings window</a> and adjust the Skin Weights setting.<br><br>In addition to using this setting to set a runtime cap per-component, you can also set a global limit for your project under Edit &gt; Project Settings &gt; Quality &gt; Other &gt; Skin Weights.<br><br>This property corresponds to the <a href="../ScriptReference/SkinnedMeshRenderer-quality.html">SkinnedMeshRenderer.quality</a> API.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Auto</strong></td>
+	<td style="text-align:left;">Use the global limit set in <strong>Quality Settings</strong> &gt; <strong>Skin Weights</strong>.<br><br><strong>Note:</strong> If you import a custom number of skin weights and you want to allow more than four bones of influence, you must choose this option and make sure you set <strong>Skin Weights</strong> to <strong>Unlimited</strong>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>1 Bone</strong></td>
+	<td style="text-align:left;">Use only one bone per vertex.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>2 Bones</strong></td>
+	<td style="text-align:left;">Use up to two bones per vertex.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>4 Bones</strong></td>
+	<td style="text-align:left;">Use up to four bones per vertex. To allow more than four bones to influence a single vertex, use the <strong>Auto</strong> setting.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Update When Offscreen</strong></td>
+	<td style="text-align:left;">Enable this option to calculate the bounding volume at every frame, even when the mesh is not visible by any Camera. Disable this option to stop skinning when the GameObject is off-screen and resume it when the GameObject is visible again.<br><br>This is disabled by default, for performance reasons.<br><br>This property corresponds to the <a href="../ScriptReference/SkinnedMeshRenderer-updateWhenOffscreen.html">SkinnedMeshRenderer.updateWhenOffscreen</a> API.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Mesh</strong></td>
+	<td style="text-align:left;">Set the mesh that this Renderer uses. The mesh should either contain a valid bind pose and skin weights, use blend shapes, or run cloth simulation. If the mesh does not use any of these techniques, consider using a Mesh Renderer and a Mesh Filter.<br><br>Corresponds to the <a href="../ScriptReference/SkinnedMeshRenderer-sharedMesh.html">SkinnedMeshRenderer.sharedMesh</a> property.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Root bone</strong></td>
+	<td style="text-align:left;">Set the transform that is the “root” of the skeleton. The bounds move along with this transform.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Rendering Layer Mask</strong></td>
+	<td style="text-align:left;">This property determines which rendering layer Unity assigns this renderer to. You can use this property to specify an additional rendering-specific layer mask. This filters the renderers based on the mask the renderer has.<br><br>This property corresponds to the <a href="../ScriptReference/Renderer-renderingLayerMask.html">Renderer.renderingLayerMask</a> API.<br><br>Unity only displays this property when you use a <a href="https://docs.unity3d.com/Manual/ScriptableRenderPipeline.html">Scriptable Render Pipeline</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Renderer Priority</strong></td>
+	<td style="text-align:left;">Sort renderers by priority. Lower values are rendered first and higher values are rendered last.<br><br>This property corresponds to the <a href="../ScriptReference/Renderer-rendererPriority.html">Renderer.rendererPriority</a> API.<br><br>Unity only displays this property when you use the High Definition Render Pipeline.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="materials"></a></p>
+
+<h3>材质</h3>
+
+<figure>
+<img src="../uploads/Main/mesh-renderer-inspector-materials.png" alt="Wireframe view of the meshes in Unity’s 2020.1 HDRP template example project">
+<figcaption>Wireframe view of the meshes in Unity’s 2020.1 HDRP template example project</figcaption>
+</figure>
+
+<p><strong>Materials</strong> 部分列出了此组件使用的所有<a href="class-Material.html">材质</a>。</p>
+<table>
+ <thead>
+ <tr>
+ <th><strong>属性</strong></th>
+ <th><strong>描述</strong></th>
+ </tr>
+ </thead>
+ <tbody> <tr>
+<td><strong>Size</strong></td>
+<td>The number of elements in the material list.<br><br>If you decrease the number of elements, Unity deletes the elements at the end of the list. If you increase the number of elements, Unity adds new elements to the end of the list. Unity populates new elements with the same material that the element at the end of the list uses.</td>
+</tr>
+<tr>
+<td><strong>Element</strong></td>
+<td>The materials in the list. You can assign a material asset to each element.<br><br>By default, Unity orders the list alphabetically based on the name of the materials. This list is reorderable, and Unity updates the number of the elements automatically as you change their order.</td>
+</tr> </tbody>
+</table>
+
+<p><strong>注意</strong>：如果材质多于子网格，则 Unity 会使用剩余的每个材质逐一渲染最后一个子网格，使一个材质加在下一个材质之上。如果材质不是完全不透明的，则可以将不同的材质分层并创建有趣的视觉效果。但是，完全不透明的材质会覆盖之前的层，因此 Unity 应用于最后一个子网格的任何其他不透明材质都会对性能产生负面影响，但不会带来任何好处。</p>
+
+<p><a name="Lighting"></a></p>
+
+<h2>光照</h2>
+
+<p><strong>Lighting</strong> 部分包含与光照相关的属性。</p>
+<table>
+ <thead>
+ <tr>
+ <th colspan="2"><strong>属性</strong></th>
+ <th><strong>描述</strong></th>
+ </tr>
+ </thead>
+ <tbody> <tr>
+<td colspan="2"><strong>Cast Shadows</strong></td>
+<td>Specify if and how this Renderer casts shadows when a suitable <a href="class-Light.html">Light</a> shines on it.<br><br>This property corresponds to the <a href="../ScriptReference/Renderer-shadowCastingMode.html">Renderer.shadowCastingMode</a> API.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>On</strong></td>
+<td>This Renderer casts a shadow when a shadow-casting Light shines on it.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Off</strong></td>
+<td>This Renderer does not cast shadows.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Two-sided</strong></td>
+<td>This Renderer casts two-sided shadows. This means that single-sided objects like a plane or a quad can cast shadows, even if the light source is behind the mesh.<br><br>For <a href="class-LightingSettings.html#MixedLighting">Baked Global Illumination</a> or Enlighten <a href="class-LightingSettings.html#RealtimeLighting">Realtime Global Illumination</a> to support two-sided shadows, the material must support <a href="https://docs.unity3d.com/Manual/class-Material.html">Double Sided Global Illumination</a>.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Shadows Only</strong></td>
+<td>This Renderer casts shadows, but the Renderer itself isn’t visible.</td>
+</tr>
+<tr>
+<td colspan="2"><strong>Receive Shadows</strong></td>
+<td>Specify if Unity displays shadows cast onto this Renderer.<br><br>This property only has an effect if you enable <a href="class-LightingSettings.html#MixedLighting">Baked Global Illumination</a> or Enlighten <a href="class-LightingSettings.html#RealtimeLighting">Realtime Global Illumination</a> for this scene.<br><br>This property corresponds to the <a href="../ScriptReference/Renderer-receiveShadows.html">Renderer.receiveShadows</a> API.</td>
+</tr> <tr>
+<td colspan="2"><strong>Contribute Global Illumination</strong></td>
+<td>Include this Renderer in global illumination calculations, which take place at bake time.<br><br>This property only has an effect if you enable <a href="class-LightingSettings.html#MixedLighting">Baked Global Illumination</a> or Enlighten <a href="class-LightingSettings.html#RealtimeLighting">Realtime Global Illumination</a> for this scene.<br><br>Enabling this property enables the Contribute GI flag in the GameObject’s <a href="StaticObjects.html">Static Editor Flags</a>. It corresponds to the <a href="../ScriptReference/StaticEditorFlags.ContributeGI.html">StaticEditorFlags.ContributeGI</a> API.</td>
+</tr>
+<tr>
+<td colspan="2"><strong>Receive Global Illumination</strong></td>
+<td>Whether Unity provides global illumination data to this Renderer from baked lightmaps, or from runtime Light Probes.<br><br>This property is only editable if you enable <strong>Contribute Global Illumination</strong>. It only has an effect if you enable <a href="class-LightingSettings.html#MixedLighting">Baked Global Illumination</a> or Enlighten <a href="class-LightingSettings.html#RealtimeLighting">Realtime Global Illumination</a> for this scene.<br><br>This property corresponds to the <a href="../ScriptReference/MeshRenderer-receiveGI.html">MeshRenderer.receiveGI</a> API.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Lightmaps</strong></td>
+<td>Unity provides global illumination data to this Renderer from lightmaps.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Light Probes</strong></td>
+<td>Unity provides global illumination data to this Renderer from <a href="LightProbes.html">Light Probes</a> in the scene.</td>
+</tr>
+<tr>
+<td colspan="2"><strong>Prioritize Illumination</strong></td>
+<td>Enable this property to always include this Renderer in Enlighten Realtime Global Illumination calculations. This ensures that the Renderer is affected by distant emissives, even those which are normally excluded from Global Illumination calculations for performance reasons.<br><br>This property is visible only if <strong>Contribute GI</strong> is enabled in the GameObject’s <a href="StaticObjects.html">Static Editor Flags</a>, your project uses the Built-in Render Pipeline, and Enlighten <a href="class-LightingSettings.html#RealtimeLighting">Realtime Global Illumination</a> is enabled in your scene.</td>
+</tr> </tbody>
+</table>
+
+<p><a name="Probes"></a></p>
+
+<h3>Probes</h3>
+
+<p><strong>Probes</strong> 部分包含与<a href="LightProbes.html">光照探针</a> 和<a href="class-ReflectionProbe.html">反射探针</a>有关的属性。</p>
+<table>
+ <thead>
+ <tr>
+ <th colspan="2"><strong>属性</strong></th>
+ <th><strong>描述</strong></th>
+ </tr>
+ </thead>
+ <tbody> <tr>
+<td colspan="2"><strong>Light Probes</strong></td>
+<td>Set how this Renderer receives light from the <a href="LightProbes.html">Light Probes</a> system.<br><br>This property corresponds to the <a href="../ScriptReference/Renderer-lightProbeUsage.html">Renderer.lightProbeUsage</a> API.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Off</strong></td>
+<td>The Renderer doesn’t use any interpolated Light Probes.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Blend Probes</strong></td>
+<td>The Renderer uses one interpolated Light Probe. This is the default value.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Use Proxy Volume</strong></td>
+<td>The Renderer uses a 3D grid of interpolated Light Probes.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Custom Provided</strong></td>
+<td>The Renderer extracts Light Probe shader uniform values from the <a href="../ScriptReference/MaterialPropertyBlock.html">MaterialPropertyBlock</a>.</td>
+</tr>
+<tr>
+<td colspan="2"><strong>Proxy Volume Override</strong></td>
+<td>Set a reference to another GameObject that has a Light Probe Proxy Volume component.<br><br>This property is only visible when <strong>Light Probes</strong> is set to <strong>Use Proxy Volume</strong>.</td>
+</tr>
+<tr>
+<td colspan="2"><strong>Reflection Probes</strong></td>
+<td>Set how the Renderer receives reflections from the <a href="class-ReflectionProbe.html">Reflection Probe</a> system.<br><br>This property corresponds to the <a href="../ScriptReference/Renderer-probeAnchor.html">Renderer.probeAnchor</a> API.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Off</strong></td>
+<td>Disables Reflection Probes. Unity uses a skybox for reflection.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Blend Probes</strong></td>
+<td>Enables Reflection Probes. Blending occurs only between Reflection Probes. This is useful in indoor environments where the character may transition between areas with different lighting settings.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Blend Probes and Skybox</strong></td>
+<td>Enables Reflection Probes. Blending occurs between Reflection Probes, or between Reflection Probes and the default reflection. This is useful for outdoor environments.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Simple</strong></td>
+<td>Enables Reflection Probes, but no blending occurs between Reflection Probes when there are two overlapping volumes.</td>
+</tr>
+<tr>
+<td colspan="2"><strong>Anchor Override</strong></td>
+<td>Set the Transform that Unity uses to determine the interpolation position when using the <a href="LightProbes.html">Light Probe</a> or <a href="class-ReflectionProbe.html">Reflection Probe</a> systems. By default, this is the centre of the bounding box of the Renderer’s geometry.<br><br>This property corresponds to the <a href="../ScriptReference/Renderer-probeAnchor.html">Renderer.probeAnchor</a> API.</td>
+</tr> </tbody>
+</table>
+
+<p><a name="AdditionalSettings"></a></p>
+
+<h3>Additional Settings</h3>
+
+<p><strong>Additional Settings</strong> 部分包含额外的属性。</p>
+<table>
+ <thead>
+ <tr>
+ <th colspan="2"><strong>Property</strong></th>
+ <th><strong>Description</strong></th>
+ </tr>
+ </thead>
+ <tbody> <tr>
+<td colspan="2"><strong>Skinned Motion Vectors</strong></td>
+<td>Enable this option to double-buffer the Mesh skinning data, so Unity can interpolate the skinned motion and place it into the motion vector Texture. This uses more GPU memory, but leads to more correct motion vectors.</td>
+</tr> <tr>
+<td colspan="2"><strong>Dynamic Occlusion</strong></td>
+<td>When <strong>Dynamic Occlusion</strong> is enabled, Unity’s <a href="OcclusionCulling.html">occlusion culling</a> system culls this Renderer when it is blocked from a Camera’s view by a Static Occluder. Otherwise, the system does not cull this Renderer when it is blocked from a Camera’s view by a Static Occluder.<br><br>Dynamic Occlusion is enabled by default. Disable it for effects such as drawing the outline of a character behind a wall.</td>
+</tr> </tbody>
+</table>
+
+<p><span class="search-words">SkinnedMeshRenderer</span></p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="class-MeshRenderer.html"></a></span><div class="tip">Mesh Renderer 组件</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-MeshFilter.html"></a></span><div class="tip">Mesh Filter 组件</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

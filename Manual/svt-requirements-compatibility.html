@@ -1,0 +1,319 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Streaming Virtual Texturing 要求和兼容性 - Unity 手册">
+<title>Streaming Virtual Texturing 要求和兼容性 - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="在高清渲染管线 (HDRP) 中，可以在您使用 Shader Graph 创建的着色器中使用 Streaming Virtual Texturing (SVT)。">
+<meta property="og:description" content="在高清渲染管线 (HDRP) 中，可以在您使用 Shader Graph 创建的着色器中使用 Streaming Virtual Texturing (SVT)。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'svt-requirements-compatibility';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/svt-requirements-compatibility.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/svt-requirements-compatibility.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/svt-requirements-compatibility.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/svt-requirements-compatibility.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/svt-requirements-compatibility.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/svt-requirements-compatibility.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/svt-requirements-compatibility.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/svt-requirements-compatibility.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/svt-requirements-compatibility.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/svt-requirements-compatibility.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/svt-requirements-compatibility.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/svt-requirements-compatibility.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/svt-requirements-compatibility.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/svt-requirements-compatibility.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/svt-requirements-compatibility.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/svt-requirements-compatibility.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/svt-requirements-compatibility.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/svt-requirements-compatibility.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/svt-requirements-compatibility.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/svt-requirements-compatibility.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/svt-requirements-compatibility.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/svt-requirements-compatibility.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/svt-requirements-compatibility.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/svt-requirements-compatibility.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/svt-requirements-compatibility.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/svt-requirements-compatibility.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/svt-requirements-compatibility.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/svt-requirements-compatibility.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/svt-requirements-compatibility.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/svt-requirements-compatibility.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/svt-requirements-compatibility.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/svt-requirements-compatibility.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/svt-requirements-compatibility.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/svt-requirements-compatibility.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/svt-requirements-compatibility.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/svt-requirements-compatibility.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/svt-requirements-compatibility.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/svt-requirements-compatibility.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/svt-requirements-compatibility.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/svt-requirements-compatibility.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/svt-requirements-compatibility.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/svt-requirements-compatibility.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/svt-requirements-compatibility.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/svt-requirements-compatibility.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/svt-requirements-compatibility.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/svt-requirements-compatibility.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/svt-requirements-compatibility.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/svt-requirements-compatibility.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/svt-requirements-compatibility.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/svt-requirements-compatibility.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/svt-requirements-compatibility.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/svt-requirements-compatibility.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/svt-requirements-compatibility.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/svt-requirements-compatibility.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/svt-requirements-compatibility.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/svt-requirements-compatibility.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/svt-requirements-compatibility.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/svt-requirements-compatibility.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="Textures.html">纹理</a></li>
+<li><a href="svt-streaming-virtual-texturing.html">Streaming Virtual Texturing</a></li>
+<li>Streaming Virtual Texturing 要求和兼容性</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="svt-streaming-virtual-texturing.html"></a></span><div class="tip">Streaming Virtual Texturing</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="svt-how-it-works.html"></a></span><div class="tip">Streaming Virtual Texturing 的工作原理</div>
+</div>
+</div></div>
+<h1>Streaming Virtual Texturing 要求和兼容性</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+<div class="message message-error mb20">This feature is experimental and not ready for production use. The feature and documentation might be changed or removed in the future.</div>
+
+<h2>渲染管线支持</h2>
+
+<p>在<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest/">高清渲染管线 (HDRP)</a> 中，可以在您使用 <a href="https://docs.unity3d.com/Packages/com.unity.shadergraph@latest">Shader Graph</a> 创建的着色器中使用 Streaming Virtual Texturing (SVT)。</p>
+
+<h2>系统要求</h2>
+
+<h3>GPU 要求</h3>
+
+<ul>
+<li>GPU 计算</li>
+<li>Texture2DArrays</li>
+<li>AsyncReadBack</li>
+</ul>
+
+<h3>支持的平台</h3>
+
+<ul>
+<li>Windows</li>
+<li>Mac</li>
+<li>Linux</li>
+</ul>
+
+<p>Some additional console platforms support this functionality. Consult the documentation for your target platform to determine if it supports Streaming Virtual Texturing.</p>
+
+<h3>支持的图形 API</h3>
+
+<ul>
+<li>DirectX 11</li>
+<li>DirectX 12</li>
+<li>Metal</li>
+<li>Vulkan</li>
+</ul>
+
+<h2>纹理兼容性</h2>
+
+<ul>
+<li><p>SVT 建立在 <a href="../ScriptReference/Texture2D.html">Texture2D</a> 上。SVT 纹理通过相同的导入器，这限制了最大纹理大小。SVT 不支持大于 16K x 16K 的纹理。它也不支持 UDIM 纹理或将平铺图像文件合并为一个大纹理。</p></li>
+<li>
+<p>SVT 不支持所有纹理图形格式。支持的格式如下：</p>
+
+<ul>
+<li><code>GraphicsFormat::kFormatRGBA_DXT1_SRGB</code></li>
+<li><code>GraphicsFormat::kFormatRGBA_DXT1_UNorm</code></li>
+<li><code>GraphicsFormat::kFormatRGBA_DXT3_SRGB</code></li>
+<li><code>GraphicsFormat::kFormatRGBA_DXT3_UNorm</code></li>
+<li><code>GraphicsFormat::kFormatR_BC4_UNorm</code></li>
+<li><code>GraphicsFormat::kFormatRG_BC5_UNorm</code></li>
+<li><code>GraphicsFormat::kFormatRGB_BC6H_SFloat</code></li>
+<li><code>GraphicsFormat::kFormatRGB_BC6H_UFloat</code></li>
+<li><code>GraphicsFormat::kFormatRGBA_BC7_SRGB</code></li>
+<li><code>GraphicsFormat::kFormatRGBA_BC7_UNorm</code></li>
+<li><code>GraphicsFormat::kFormatR8_SRGB</code></li>
+<li><code>GraphicsFormat::kFormatR8_UNorm</code></li>
+<li><code>GraphicsFormat::kFormatR8G8_SRGB</code></li>
+<li><code>GraphicsFormat::kFormatR8G8_UNorm</code></li>
+<li><code>GraphicsFormat::kFormatR8G8B8_SRGB</code></li>
+<li><code>GraphicsFormat::kFormatR8G8B8_UNorm</code></li>
+<li><code>GraphicsFormat::kFormatR8G8B8A8_SRGB</code></li>
+<li><code>GraphicsFormat::kFormatR8G8B8A8_UNorm</code></li>
+<li><code>GraphicsFormat::kFormatR16_SFloat</code></li>
+<li><code>GraphicsFormat::kFormatR16_UNorm</code></li>
+<li><code>GraphicsFormat::kFormatR16G16_SFloat</code></li>
+<li><code>GraphicsFormat::kFormatR16G16_UNorm</code></li>
+<li><code>GraphicsFormat::kFormatR16G16B16A16_SFloat</code></li>
+<li><code>GraphicsFormat::kFormatR16G16B16A16_UNorm</code></li>
+<li><code>GraphicsFormat::kFormatR32_SFloat</code></li>
+<li><code>GraphicsFormat::kFormatR32G32_SFloat</code></li>
+<li><code>GraphicsFormat::kFormatR32G32B32A32_SFloat</code></li>
+<li><code>GraphicsFormat::kFormatA2B10G10R10_UNormPack32</code></li>
+</ul>
+</li>
+<li>
+<p>SVT 不支持：</p>
+
+<ul>
+<li>镜像包裹模式。</li>
+<li>每轴钳制（例如，水平重复同时垂直钳制）。</li>
+<li>分辨率不是 2 的幂的纹理。</li>
+</ul>
+</li>
+<li><p>SVT 中的纹理没有小于平铺大小（128 x 128 像素）的 Mipmap。SVT 将采样钳制到此 mip，因此您可以在远处看到某些内容的锯齿。</p></li>
+<li><p>SVT 仅在播放器中支持三线性过滤，在编辑器中不支持。</p></li>
+<li><p>SVT 仅支持在播放器中从磁盘的串流，而在编辑器中不支持。</p></li>
+<li><p>最大各向异性过滤级别为 8。这是因为每个瓦片都有一个 8 像素的边框。</p></li>
+<li><p>不能在播放器中动态设置属于堆栈一部分的纹理。在播放器中，不能调用 <code>Material.SetTexture</code> 或 <code>Renderer.SetPropertyBlock</code> 来修改纹理堆栈。</p></li>
+</ul>
+
+<h2>Unity 功能兼容性</h2>
+
+<ul>
+<li>
+<p>SVT 不支持：</p>
+
+<ul>
+<li>AssetBundles，包括 Addressables 和 Live Link。</li>
+<li>可编程构建管线 (SBP) 和子场景。</li>
+<li>Crunch 压缩。</li>
+</ul>
+</li>
+<li><p>堆叠层的纵横比必须匹配。</p></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="svt-streaming-virtual-texturing.html"></a></span><div class="tip">Streaming Virtual Texturing</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="svt-how-it-works.html"></a></span><div class="tip">Streaming Virtual Texturing 的工作原理</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,3196 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Render pipeline feature comparison - Unity 手册">
+<title>Render pipeline feature comparison - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="This page contains information on feature support in the Built-in Render Pipeline, the Universal Render Pipeline (URP), and the High Definition Render Pipeline (HDRP). It also contains suggested alternatives for certain features.">
+<meta property="og:description" content="This page contains information on feature support in the Built-in Render Pipeline, the Universal Render Pipeline (URP), and the High Definition Render Pipeline (HDRP). It also contains suggested alternatives for certain features.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'render-pipelines-feature-comparison';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/render-pipelines-feature-comparison.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/render-pipelines-feature-comparison.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/render-pipelines-feature-comparison.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/render-pipelines-feature-comparison.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/render-pipelines-feature-comparison.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/render-pipelines-feature-comparison.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/render-pipelines-feature-comparison.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/render-pipelines-feature-comparison.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/render-pipelines-feature-comparison.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/render-pipelines-feature-comparison.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/render-pipelines-feature-comparison.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/render-pipelines-feature-comparison.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/render-pipelines-feature-comparison.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/render-pipelines-feature-comparison.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/render-pipelines-feature-comparison.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/render-pipelines-feature-comparison.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/render-pipelines-feature-comparison.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/render-pipelines-feature-comparison.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/render-pipelines-feature-comparison.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/render-pipelines-feature-comparison.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/render-pipelines-feature-comparison.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/render-pipelines-feature-comparison.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/render-pipelines-feature-comparison.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/render-pipelines-feature-comparison.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/render-pipelines-feature-comparison.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/render-pipelines-feature-comparison.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/render-pipelines-feature-comparison.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/render-pipelines-feature-comparison.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/render-pipelines-feature-comparison.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/render-pipelines-feature-comparison.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/render-pipelines-feature-comparison.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/render-pipelines-feature-comparison.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/render-pipelines-feature-comparison.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/render-pipelines-feature-comparison.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/render-pipelines-feature-comparison.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/render-pipelines-feature-comparison.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/render-pipelines-feature-comparison.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/render-pipelines-feature-comparison.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/render-pipelines-feature-comparison.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/render-pipelines-feature-comparison.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/render-pipelines-feature-comparison.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/render-pipelines-feature-comparison.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/render-pipelines-feature-comparison.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/render-pipelines-feature-comparison.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/render-pipelines-feature-comparison.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/render-pipelines-feature-comparison.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/render-pipelines-feature-comparison.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/render-pipelines-feature-comparison.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/render-pipelines-feature-comparison.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/render-pipelines-feature-comparison.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/render-pipelines-feature-comparison.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/render-pipelines-feature-comparison.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/render-pipelines-feature-comparison.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/render-pipelines-feature-comparison.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/render-pipelines-feature-comparison.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/render-pipelines-feature-comparison.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/render-pipelines-feature-comparison.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/render-pipelines-feature-comparison.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="render-pipelines.html">渲染管线</a></li>
+<li>Render pipeline feature comparison</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="render-pipelines-overview.html"></a></span><div class="tip">渲染管线简介</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="srp-setting-render-pipeline-asset.html"></a></span><div class="tip">How to get, set, and configure the active render pipeline</div>
+</div>
+</div></div>
+<h1>Render pipeline feature comparison</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+<!-- The contents of this page are auto-generated by a script. DO NOT edit the contents of this page by hand - your changes will be overwritten!
+
+For more information, contact the Graphics Docs team or see https://docs.google.com/spreadsheets/d/1G1r_MC6B3KW36hmOKe2BW72QfxZeNa4qMuRzF6BOmZE/edit#gid=680246509
+
+Data for Unity version: 2022.2
+
+Data last updated: 03/01/2023 -->
+
+<p>This page contains information on feature support in the Built-in Render Pipeline, the Universal Render Pipeline (URP), and the High Definition Render Pipeline (HDRP). It also contains suggested alternatives for certain features.</p>
+
+<p>For ease of reference, features are broken down into the following categories:</p>
+
+<ul>
+<li><a href="#platform-support">Platform Support</a></li>
+<li><a href="#lighting">Lighting</a></li>
+<li><a href="#color">Color</a></li>
+<li><a href="#camera">Camera</a></li>
+<li><a href="#shaders">Shaders</a></li>
+<li><a href="#world-building">World building</a></li>
+<li><a href="#visual-effects">Visual effects</a></li>
+<li><a href="#2d-and-ui">2D and UI</a></li>
+<li><a href="#xr">XR</a></li>
+<li><a href="#scripting">Scripting</a></li>
+<li><a href="#optimizations">Optimizations</a></li>
+<li><a href="#debug">Debug</a></li>
+</ul>
+
+<p><a name="platform-support"></a></p>
+
+<h2>Platform Support</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Windows</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>DirectX 11. DirectX 12.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>MacOS</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Linux</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>XBox One</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>XBox Series</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>PlayStation 4</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>PlayStation 5</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Stadia</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Nintendo Switch</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>iOS</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Android</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Desktop VR</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Mobile VR</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Hololens</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>WebGL</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="lighting"></a></p>
+
+<h2>光照</h2>
+
+<h3>Lights</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Directional</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Spot</strong></td>
+	<td style="text-align:left;">Yes<br><br>Supported shapes: Cone</td>
+	<td style="text-align:left;">Yes<br><br>Supported shapes: Cone</td>
+	<td style="text-align:left;">Yes<br><br>Supported shapes: Cone, Pyramid, Box</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Point</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Area</strong></td>
+	<td style="text-align:left;">Yes<br><br>Supported shapes: Rectangle (only with Enlighten Realtime Global Illumination), Disc (baked only)</td>
+	<td style="text-align:left;">Yes<br><br>Supported shapes: Rectangle (baked only), Disc (baked only)</td>
+	<td style="text-align:left;">Yes<br><br>Supported shapes: Rectangle (real-time and baked), Tube (real-time only), Disc (baked only)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Inner Spot angle</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Shading technique</strong></td>
+	<td style="text-align:left;">Yes<br><br>Multiple passes</td>
+	<td style="text-align:left;">Yes<br><br>Single pass only</td>
+	<td style="text-align:left;">Yes<br><br>Hybrid tile and cluster</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Culling Per Object</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Culling Per Tile</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Culling Per Layer</strong></td>
+	<td style="text-align:left;">Yes<br><br>Based on GameObject layers</td>
+	<td style="text-align:left;">Yes<br><br>Based on dedicated Rendering layers</td>
+	<td style="text-align:left;">Yes<br><br>Based on dedicated Light layers</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Multiple directional lights</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>Supports shadowing for one directional light at a time.</td>
+	<td style="text-align:left;">Yes<br><br>Supports shadowing for one directional light at a time. To simulate more, use Spot light with a Box shape.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Number of real-time lights per object</strong></td>
+	<td style="text-align:left;">Unlimited</td>
+	<td style="text-align:left;">In Deferred: unlimited.<br><br>In Forward: 4 for GLES2, 8 for all other graphics APIs.<br><br>In Forward+: unlimited. The per Camera limit applies.</td>
+	<td style="text-align:left;">Unlimited</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Number of real-time lights per Camera</strong></td>
+	<td style="text-align:left;">Unlimited</td>
+	<td style="text-align:left;">On mobile platforms: 32.<br><br>On OpenGL ES 3.0 and earlier: 16.<br><br>On other platforms: 256.</td>
+	<td style="text-align:left;">In Deferred: 63 per 8x8 pixel tile.<br><br>In Forward: 63 per 16x16 pixel cluster.<br><br>You can disable the cap for the deferred rendering path in Frame Settings &gt; Light Loop Debug &gt; Deferred Tile. This will affect performance.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Light attenuation type</strong></td>
+	<td style="text-align:left;">Yes<br><br>Legacy</td>
+	<td style="text-align:left;">Yes<br><br>InverseSquared</td>
+	<td style="text-align:left;">Yes<br><br>InverseSquared</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Vertex Lights</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>SH Lights</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Light Cookies</strong></td>
+	<td style="text-align:left;">Yes<br><br>Only shape, no color (Alpha channel).</td>
+	<td style="text-align:left;">Yes<br><br>Colored cookie (RGB)</td>
+	<td style="text-align:left;">Yes<br><br>Colored cookie (RGB)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>IES Lights</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Light Distance Fade</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Physical light units</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Light anchor tool</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Shadows</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Directional Light Shadows</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Multiple Directional Light Shadows</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Directional Light Cascade Shadows</strong></td>
+	<td style="text-align:left;">Yes<br><br>1, 2, or 4 cascades, control by percentage only.</td>
+	<td style="text-align:left;">Yes<br><br>1, 2, or 4 cascades. Control by percentage, or switch to meters.<br><br>Settings are in URP asset.</td>
+	<td style="text-align:left;">Yes<br><br>1 to 4 cascades. Control by percentage or distance. <br><br>Settings are in Volumes.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Shadow Cascade Blending</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Spot Light Shadows</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Point Light Shadows</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Area Light Shadows</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Only for rectangle shape</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Stable Fit Shadow Projection</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Close Fit Shadow Projection</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Shadow Lighting Pass</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Shadow Screen Space Pass</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>Mostly used for Raytracing.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Shadow bias</strong></td>
+	<td style="text-align:left;">Yes<br><br>Supported types: Constant clip space offset. Normal bias</td>
+	<td style="text-align:left;">Yes<br><br>Supported types: Offsets shadowmap texels in the light direction, Normal bias</td>
+	<td style="text-align:left;">Yes<br><br>Supported types: Slope bias, Normal bias</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>PCF filtering (Percentage Closer Filtering)</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>PCF Tent 5x5</td>
+	<td style="text-align:left;">Yes<br><br>For Point and Spot lights in “Low” (PCF 3x3 4 taps) and “Medium” (PCF 5x5 9 taps) quality settings, and for Directional lights in “Low” (PCF 5x5 9 taps) and “Medium” (PCF Tent 5x5 9 taps) quality settings.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>PCSS filtering (Percentage Closer Soft Shadows)</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>For Point and Spot lights, Directional lights and Area lights when in “High” quality in the HDRP settings for each kind of light.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>EVSM filtering (Exponential Variance Shadow Mapping)</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>For area lights only in all quality settings except “High”.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Shadow update modes</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Every frame, On Enable, On Demand. Each cascade can be updated independently using the API (RequestSubShadowMapRendering)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Resolution settings</strong></td>
+	<td style="text-align:left;">Yes<br><br>Configured in Quality Settings.</td>
+	<td style="text-align:left;">Yes<br><br>Configured in URP Lighting Settings.</td>
+	<td style="text-align:left;">Yes<br><br>Configure shadowmap resolution or budget per Light, and configure shadow atlas size in HDRP Asset.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Dynamic rescale</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Directional light shadow caching</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Punctual and Area lights shadow caching</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Dynamic Shadow Casters</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Static Shadow Casters</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Contact Shadows</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Micro Shadows</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Shadow Cascade Volume Controller</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Shadow Distance Fade</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>Configure in Shadows Volume.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Shadow Mask</strong></td>
+	<td style="text-align:left;">Yes<br><br>Configure per scene.</td>
+	<td style="text-align:left;">Yes<br><br>Configure per scene.</td>
+	<td style="text-align:left;">Yes<br><br>Configure per Light.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Distance Shadow Mask</strong></td>
+	<td style="text-align:left;">Yes<br><br>Configure per scene.</td>
+	<td style="text-align:left;">Yes<br><br>Forward Rendering Path only.</td>
+	<td style="text-align:left;">Yes<br><br>Configure per Light.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Transparent objects casting shadows</strong></td>
+	<td style="text-align:left;">Yes<br><br>Use the Transparent Cutout shaders for objects with “gaps” such as fences, vegetation, etc. or custom pixel-lit shaders using the Geometry render queue. Opacity can affect shadow intensity using dithering.</td>
+	<td style="text-align:left;">No<br><br>Alpha clipping only.</td>
+	<td style="text-align:left;">Yes<br><br>Raytracing only (incl support of colored shadows). For raster, alpha clipping only (use Alpha clipping &gt; Shadow threshold option).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Transparent objects receiving shadows</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Shadow tint</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Shadow tint or penumbra tint options</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Shadow matte</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Use Unlit master node and “Enable Shadow Matte”</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Shadow Layers</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Global Illumination</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Baked Global Illumination: Progressive CPU Lightmapper</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Baked Global Illumination: Progressive GPU Lightmapper</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Baked Global Illumination: Enlighten Lightmapper</strong></td>
+	<td style="text-align:left;">No<br><br>Deprecated</td>
+	<td style="text-align:left;">No<br><br>Deprecated</td>
+	<td style="text-align:left;">No<br><br>Deprecated</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Baked Global Illumination: Mixed Lighting modes</strong></td>
+	<td style="text-align:left;">Yes<br><br>Subtractive, Baked indirect, Shadow Mask, Distance Shadow mask</td>
+	<td style="text-align:left;">Yes<br><br>Subtractive, Baked indirect, Shadow mask</td>
+	<td style="text-align:left;">Yes<br><br>Baked indirect, Shadow Mask (per light setting), Distance Shadow mask (per light setting)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Baked Global Illumination: Double Sided GI</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Realtime Global Illumination: Pre-computed (Enlighten)</strong></td>
+	<td style="text-align:left;">Yes<br><br>Support ends after Unity 2024 LTS</td>
+	<td style="text-align:left;">Yes<br><br>Support ends after Unity 2024 LTS</td>
+	<td style="text-align:left;">Yes<br><br>Support ends after Unity 2024 LTS</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Realtime Global Illumination: Screen space GI</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Screen Space Reflections</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Planar Reflections</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Raytraced Reflections</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Screen Space Refractions</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Non directional lightmap</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Directional lightmap</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Light Probes</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Light Probes: Blending</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Light Probes: Custom provided</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Light Probes: Occlusion Probes</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Light Probes: Proxy volumes (LLPV)</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">No<br><br>Deprecated</td>
+	<td style="text-align:left;">是</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Adaptive Probe Volumes</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Probe Volumes: Per pixel lighting</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Experimental</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Probe Volumes: Blending</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Experimental</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Probe Volumes: Touchup volumes</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Experimental</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Reflection Probes</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Reflection Probes: Baked</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Reflection Probes: Real-time</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Reflection Probes: Real-time time sliced all faces at once</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Reflection Probes: Real-time time sliced individual faces</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Reflection Probes: On-demand API</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Reflection Probes: Proxy volumes</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Reflection Probes: Simple sampling</strong></td>
+	<td style="text-align:left;">Yes<br><br>Choose per-object how to sample reflection probes.</td>
+	<td style="text-align:left;">Yes<br><br>Choose in the URP asset whether URP always performs simple sampling from reflection probes, or if it blends.</td>
+	<td style="text-align:left;">No<br><br>See <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/Reflection-in-HDRP.html">Reflection Hierarchy</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Reflection Probes: Blend probes sampling</strong></td>
+	<td style="text-align:left;">Yes<br><br>Choose per-object how to sample reflection probes.<br><br>Blend up to 2 reflection probes.</td>
+	<td style="text-align:left;">Yes<br><br>Choose in the URP asset whether URP always performs simple sampling from reflection probes, or if it blends.<br><br>If blending is enabled, URP always blends sky + 1 local probe, or 2 probes if there is no sky.</td>
+	<td style="text-align:left;">Yes<br><br>No blending limit. All reflections including planar blend between each other.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Reflection Probes: Blend probes and skybox sampling</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>See <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/Reflection-in-HDRP.html">Reflection Hierarchy</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Reflection Probes: Distanced based roughness</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Reflection Probes: Box Projection</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Reflection Probes: Oriented Box Projection</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Reflection Probes: Sphere Projection</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Reflection Probes: Per probe resolution</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Raytracing</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Ray-traced Ambient Occlusion</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Preview.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Ray-traced Contact Shadows</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Preview.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Ray-traced Global Illumination</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Preview.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Ray-traced Reflections</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Preview.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Ray-traced Shadows</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Preview.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Ray-traced Recursive Rendering</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Preview.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>AxF (automotive material)</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Preview.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Terrain</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Preview. Heightmap only. No support for terrain details and terrain trees. For vegetation on terrain, we recommend using mixed rendering modes for ray traced GI and reflections which allow to support foliage/vegetation &amp; deformation, and for shadows using raster shadows.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>VFX Graph particles</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Windows</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Preview. Requires DX12, and platforms with hardware supporting RTX.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Linux</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>PS5</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Preview.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>XBox Series</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Preview.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Pathtracing</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Lit (Pathtracing support)</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Preview.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Hair (Pathtracing support)</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Preview.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Eye (Pathtracing support)</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Fabric (Pathtracing support)</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Preview.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>AxF (Pathtracing support)</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Preview.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Decals (Pathtracing support)</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Depth of field (Pathtracing support)</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Preview.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Exponential Fog (Pathtracing support)</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Preview.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Anisotropic fog (Pathtracing support)</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Preview.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Local Volumetric fog (Pathtracing support)</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>HDRI sampling</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Preview.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Denoiser</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Preview. NVidia Optix™ AI accelerated denoiser or<br>Intel® Open Image Denoise.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Recorder integration</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Preview.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Environment lighting</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Skybox</strong></td>
+	<td style="text-align:left;">Yes<br><br>Per project. Set in the Lighting window.</td>
+	<td style="text-align:left;">Yes<br><br>Per project. Set in the Lighting window.</td>
+	<td style="text-align:left;">Yes<br><br>Uses a single sky to bake global illumination, otherwise uses sky settings per Volume. You can <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/Creating-a-Custom-Sky.html">create your own sky</a> via script and Material.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Gradient</strong></td>
+	<td style="text-align:left;">Yes<br><br>Per project. Set in the Lighting window.</td>
+	<td style="text-align:left;">Yes<br><br>Per project. Set in the Lighting window.</td>
+	<td style="text-align:left;">Yes<br><br>Uses a single sky to bake global illumination, otherwise uses sky settings per Volume. You can <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/Creating-a-Custom-Sky.html">create your own sky</a> via script and Material.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Color</strong></td>
+	<td style="text-align:left;">Yes<br><br>Per project. Set in the Lighting window.</td>
+	<td style="text-align:left;">Yes<br><br>Per project. Set in the Lighting window.</td>
+	<td style="text-align:left;">Yes<br><br>Uses a single sky to bake global illumination, otherwise uses sky settings per Volume. You can <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/Creating-a-Custom-Sky.html">create your own sky</a> via script and Material.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Real-time Ambient Mode</strong></td>
+	<td style="text-align:left;">Yes<br><br>By script.</td>
+	<td style="text-align:left;">Yes<br><br>By script.</td>
+	<td style="text-align:left;">Yes<br><br>Uses a single sky to bake global illumination, otherwise uses sky settings per Volume. You can <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/Creating-a-Custom-Sky.html">create your own sky</a> via script and Material.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Baked Ambient Mode</strong></td>
+	<td style="text-align:left;">Yes<br><br>By default</td>
+	<td style="text-align:left;">Yes<br><br>By default</td>
+	<td style="text-align:left;">Yes<br><br>Configure in Visual Environment Volume.<br><br>Uses the environment stored in Lighting &gt; Environment settings.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Indirect Lighting Controller</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="color"></a></p>
+
+<h2>Color</h2>
+
+<h3>HDR</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>HDR rendering</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>HDR output</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>Use the HDROutputSettings API to configure HDR output options and HDRP’s tonemapping HDR options.<br>See HDRP HDR documentation for more information.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Color space</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Linear</strong></td>
+	<td style="text-align:left;">Yes<br><br>Requires OpenGLES3.0</td>
+	<td style="text-align:left;">Yes<br><br>Requires OpenGLES3.0</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Gamma</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="camera"></a></p>
+
+<h2>Camera</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Multi display</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Hardware Dynamic resolution</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>Limited platform support.</td>
+	<td style="text-align:left;">Yes<br><br>Limited platform support.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Software Dynamic resolution</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Nvidia Deep learning super sampling (DLSS)</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>AMD FidelityFX™ Super Resolution 1.0</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>TAA upsampler</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Mip bias</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Compositing multiple cameras</strong></td>
+	<td style="text-align:left;">Yes<br><br>Use multiple cameras</td>
+	<td style="text-align:left;">Yes<br><br>Use Camera stacking</td>
+	<td style="text-align:left;">Yes<br><br>Use HDRP Compositor</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Physical camera</strong></td>
+	<td style="text-align:left;">Yes<br><br>Affects field of view only</td>
+	<td style="text-align:left;">Yes<br><br>Affects field of view only</td>
+	<td style="text-align:left;">Yes<br><br>Affects field of view, exposure, bloom, and depth of field</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Multi-sample anti-aliasing (MSAA)</strong></td>
+	<td style="text-align:left;">Yes<br><br>Forward rendering path only</td>
+	<td style="text-align:left;">Yes<br><br>Forward rendering path only</td>
+	<td style="text-align:left;">Yes<br><br>Forward rendering path only</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Fast approximate anti-aliasing (FXAA)</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Subpixel morphological anti-aliasing (SMAA)</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Temporal anti-aliasing (TAA)</strong></td>
+	<td style="text-align:left;">Yes<br><br>Additional pass to render all object’s motion vectors. No support for transparents. 32-bits (float)</td>
+	<td style="text-align:left;">Yes<br><br>Additional pass to render all object’s motion vectors. No support for transparents. No custom motion vectors in ShaderGraph. Not compatible with Dynamic Resolution, MSAA or Camera Stacking. 16-bits (half).</td>
+	<td style="text-align:left;">Yes<br><br>Uses per-shader motion vectors and the stencil buffer to only render motion vectors where needed. Supports transparents. Allows custom motion vectors in shaders, for example using the ShaderGraph or Alembic packages. 32-bits (float).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Depth Texture</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Depth + Normal Texture</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>Only active when using SSAO</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Depth + Normal Texture (affected by decals)</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Except if MSAA is enabled.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Color Texture</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Motion Vectors</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="shaders"></a></p>
+
+<h2>Shaders</h2>
+
+<h3>Authoring worklfows</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Material Variants</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Shader Graph</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>ShaderLab</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>Hand-coded shaders are supported, but not recommended. Shader Graph is recommended (more easily upgradable).</td>
+	<td style="text-align:left;">Yes<br><br>Hand-coded shaders are supported, but not recommended. Shader Graph is recommended (more easily upgradable).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>ShaderLab Command: UsePass</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>ShaderLab Command: GrabPass</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">No<br><br>Alternative: Scene color node in ShaderGraph / create a Renderer Feature</td>
+	<td style="text-align:left;">No<br><br>Alternative: Scene color node in ShaderGraph / create a Custom Pass</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>表面着色器</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Diffusion Profiles</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Prebuilt shaders</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Camera-relative rendering</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Material type: Metallic / Standard</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Material type: Specular</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Surface Type and Blend Mode: Opaque</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Surface Type and Blend Mode: Faded (Alpha Blend)</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>Also supports premultiplied alpha.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Surface Type and Blend Mode: Transparent</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Surface Type and Blend Mode: Cutout</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Surface Type and Blend Mode: Additive</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Surface Type and Blend Mode: Multiply</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">No<br><br>Not compatible with half res transparent optimization and offscreen UI blending.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Surface Type and Blend Mode: Translucence</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Translucent Material Type in the Lit shaders</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Surface Type and Blend Mode: Iridescence</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Iridescent Material Type in the Lit shaders</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Surface Inputs: Albedo (Base Map)</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Surface Inputs: Specular</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>Base map when using Material Type Specular</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Surface Inputs: Metallic</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>Stored in the R channel of the Mask Map.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Surface Inputs: Ambient Occlusion</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>Stored in the G channel of the Mask Map.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Surface Inputs: Smoothness</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>Stored in the A channel of the Mask Map.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Surface Inputs: Normal Map</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Surface Inputs: Bent Normal Map</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Surface Inputs: Detail Map</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>Albedo stored in the R channel of the Detail Map. Smoothness stored in the B channel.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Surface Inputs: Detail Normal Map</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>Y axis stored in the G channel of the Detail Map. X axis stored in the A channel.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Surface Inputs: Heightmap</strong></td>
+	<td style="text-align:left;">Yes<br><br>Pixel displacement only.</td>
+	<td style="text-align:left;">Yes<br><br>Pixel displacement only.</td>
+	<td style="text-align:left;">Yes<br><br>Pixel or vertex displacement.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Surface Inputs: Detail Mask</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>Stored in the B channel of the Mask Map.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Surface Inputs: Emissive Map</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Surface Inputs: Transmission Mask</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Also available in Shader Graph.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Surface Inputs: Specular Occlusion</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Surface Inputs: Planar &amp; Triplanar mapping</strong></td>
+	<td style="text-align:left;">No<br><br>Alternative: Use ShaderGraph Triplanar node</td>
+	<td style="text-align:left;">No<br><br>Alternative: Use ShaderGraph Triplanar node</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Included Lighting models: ClearCoat</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Included Lighting models: SubSurface Scattering</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Included Lighting models: Anisotropy</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Included Lighting models: Irridescence</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Included Lighting models: Fabric</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Included Lighting models: Eye</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Eye caustics available in High quality mode.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Included Lighting models: Hair (Approximate)</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Based on Kajiya Kay parametrization</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Included Lighting models: Hair (Physical)</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Based on Marshner-Disney parametrization.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Add custom Lighting model as a plugin</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Pluggable Master Node (undocumented)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Features: Light Cookies</strong></td>
+	<td style="text-align:left;">Yes<br><br>Supports grayscale textures</td>
+	<td style="text-align:left;">Yes<br><br>Supports RGB textures</td>
+	<td style="text-align:left;">Yes<br><br>Supports RGB textures</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Features: Parallax Mapping</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Features: Light Distance Fade</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Features: Shadow Distance Fade</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>Configure in Shadows Volume.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Features: Shadow Cascade Blending</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Features: GPU Instancing</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Features: Double Sided GI</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Features: Two Sided</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Configure with the RenderFace property.</td>
+	<td style="text-align:left;">Yes<br><br>Configure with the Double Side toggle.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Features: Material sorting priority</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Features: Renderer sorting priority</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">No<br><br>Not exposed (use debug mode of the inspector).</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Features: GPU Tesselation</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Use the LitTesselation Shader.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Features: Specular Occlusion</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Use only the ambient occlusion map, or both bent and ambient occlusion maps.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Features: Geometric Specular Anti-Aliasing</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Features: Add precomputed velocity</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Requires per vertex velocity information (eg: Alembic, or using ShaderGraph custom velocity option)</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Shader Graph</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Full screen master node</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Custom post-processing</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Custom render texture</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Text Mesh Pro</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Decals</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Fog Volume</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Terrain</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="world-building"></a></p>
+
+<h2>World building</h2>
+
+<h3>Environment</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Terrain system: Physically Based Shader</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Terrain system: Simple Lit (Blinn-Phong) Shader</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Terrain system: Speed Tree Shader</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>SpeedTree 8 only.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Terrain system: Paint Trees</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Terrain system: Vegetation</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Terrain system: Terrain Details</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Terrain system: number of Terrain Layers</strong></td>
+	<td style="text-align:left;">Yes<br><br>Unlimited</td>
+	<td style="text-align:left;">Yes<br><br>With height-based blending: 4<br>With alpha blending: unlimited</td>
+	<td style="text-align:left;">Yes<br><br>8</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Terrain system: GPU Instanced Rendering</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Terrain system: Terrain Holes</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Water system: Physically Based Shader</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Water system: Compute based wave simulation</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Water system: CPU wave simulation for gameplay integration</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Water system: Support for decals (eg: Foam)</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Water system: Underwater Caustics</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Water system: Under water rendering</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Speedtree 8</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>Both Shader Graph and ShaderLab shaders available</td>
+	<td style="text-align:left;">Yes<br><br>Shader Graph shader only</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Wind Zone</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Sky</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Procedural Skybox</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">No<br><br>This sky type is deprecated, but you can still use if if you install the Procedural Sky Sample.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>6 sided Skybox</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>HDRI Sky supports cubemaps. Unity can build cubemaps from this type on import.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Cubemap</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>HDRI Sky supports cubemaps.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Panoramic</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>HDRI Sky supports cubemaps. Unity can build cubemaps from this type on import.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Physical Sky</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Gradient Sky</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Sky distortion</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Procedural or Flowmap</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Cloud layers</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Volumetrics</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Volumetric Clouds</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Linear Fog</strong></td>
+	<td style="text-align:left;">Yes<br><br>Configure in Graphics Settings.</td>
+	<td style="text-align:left;">Yes<br><br>Configure in Graphics Settings.</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Exponential Fog</strong></td>
+	<td style="text-align:left;">Yes<br><br>Configure in Graphics Settings.</td>
+	<td style="text-align:left;">Yes<br><br>Configure in Graphics Settings.</td>
+	<td style="text-align:left;">Yes<br><br>Configure with the Fog Override.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Exponential Squared</strong></td>
+	<td style="text-align:left;">Yes<br><br>Configure in Graphics Settings.</td>
+	<td style="text-align:left;">Yes<br><br>Configure in Graphics Settings.</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Local Volumetrics</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>3D Render texture for local volumetric fog</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Volumetric Material (use ShaderGraph for local volumetric fog)</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Fog Scattering &amp; Atmospheric scattering</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="visual-effects"></a></p>
+
+<h2>Visual effects</h2>
+
+<h3>Post-processing</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Feature support</strong></td>
+	<td style="text-align:left;">Yes<br><br>Uses separate package: Post-Processing V2</td>
+	<td style="text-align:left;">Yes<br><br>Uses integrated post-processing solution</td>
+	<td style="text-align:left;">Yes<br><br>Uses integrated post-processing solution</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Per-project default effects</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>A default volume can be applied to the project using HDRP default settings.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Ambient Occlusion</strong></td>
+	<td style="text-align:left;">Yes<br><br>Supported types: Multi-scale ambient occlusion</td>
+	<td style="text-align:left;">Yes<br><br>Supported types: Screen Space Ambient Occlusion (Depth or normal)</td>
+	<td style="text-align:left;">Yes<br><br>Supported types: Screen Space Ground Truth Ambient Occlusion (Normal + temporal, tinted multi bounced, specular occlusion), Ray-traced ambient occlusion</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Exposure</strong></td>
+	<td style="text-align:left;">Yes<br><br>Supported types: Fixed, Automatic</td>
+	<td style="text-align:left;">Yes<br><br>Supported types: Fixed</td>
+	<td style="text-align:left;">Yes<br><br>Supported types: Fixed, Automatic (Eye adaptation), Curve Mapping, Physical Camera settings and Histogram.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Bloom</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Chromatic Aberration</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Tonemapping (Neutral, ACES, Custom)</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>White balance</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Color Channel Mixer</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Color Adjustments</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Color Curves</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Lift, Gamma, Gain</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Shadows, Midtones, Highlights</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Split Toning</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Depth of Field</strong></td>
+	<td style="text-align:left;">Yes<br><br>Supported types: Bokeh</td>
+	<td style="text-align:left;">Yes<br><br>Supported types: Bokeh and Gaussian</td>
+	<td style="text-align:left;">Yes<br><br>Supported types: Bokeh</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Physical Depth of Field</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Film Grain</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Lens Distortion</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Camera Motion Blur</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Object Motion Blur</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Screen Space Reflections</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Screen Space Refractions</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Vignette</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Panini Projection</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Screen Space Lens Flares</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Custom post-processing</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>See Full Screen Pass Renderer Feature.</td>
+	<td style="text-align:left;">Yes<br><br>Either with script or ShaderGraph.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>CPU Particles (Shuriken)</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Feature support</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>GPU instancing is not supported. Distortion and flipbook blending can be done with Shader Graph. No standard particle shader available, but example particles ShaderGraph shaders can be found in the HDRP package samples.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Lit Particles</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Simple lit particles</strong></td>
+	<td style="text-align:left;">Yes<br><br>Uses Blinn Phong.</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Unlit particles</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Soft Particles</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>Available via Shader Graph. Examples available in the particles system shader samples in the HDRP package sample.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Distortion</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>Available via Shader Graph. Examples available in the particles system shader samples in the HDRP package sample.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Flipbook blending</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>Available via Shader Graph. Examples available in the particles system shader samples in the HDRP package sample.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Trail</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>GPU Instancing</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+</tbody>
+</table>
+
+<h3>GPU Particles (VFX Graph)</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Feature support</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Compute capable hardware only. OpenGL ES not supported.</td>
+	<td style="text-align:left;">Yes<br><br>Compute capable hardware only.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Supported Shader graph shaders</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>VFX Shader Graph, Lit, Unlit, 2D Sprite Lit, 2D Custom Lit</td>
+	<td style="text-align:left;">Yes<br><br>VFX Shader Graph, Lit, Unlit, Hair, Fabric (no support for tessellation, nor decal)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Renders with 2D</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>3D particles and support for sorting layers and sprites. No support for 2D Physics, 2D sprites emitters, nor 2D Lights</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Lit Particles</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Simple lit particles</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Unlit particles</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Soft Particles</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Distortion</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Flipbook blending</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Linear interpolation or flipbook motion vectors</td>
+	<td style="text-align:left;">Yes<br><br>Linear interpolation or flipbook motion vectors</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Trail</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Experimental</td>
+	<td style="text-align:left;">Yes<br><br>Experimental</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Half-resolution</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Decals</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>VFX Graph Forward decals (limited), no support for URP decals nor Shader Graph decals</td>
+	<td style="text-align:left;">Yes<br><br>VFX Forward decals (limited), HDRP Decals (no support for Shader Graph decals)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Camera Buffer</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Depth collision, Color buffer</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Instancing</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Skinned Mesh Sampling</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>6-way lighting</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Decals</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Decals</strong></td>
+	<td style="text-align:left;">No<br><br>Suggested alternative: Projector component.</td>
+	<td style="text-align:left;">Yes<br><br>Projector decals (Forward + DBuffer) or Screen Space Decals (Deferred), no decal layers, no emissive decals</td>
+	<td style="text-align:left;">Yes<br><br>Projector decals (Forward &amp; Deferred + DBuffer) or Mesh decals, support on transparents (Cluster decals), support decal layers, surface gradients, emissive decals</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Decal layers</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Other visual effects</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Projector component</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">No<br><br>Use the Decal Renderer Feature instead.</td>
+	<td style="text-align:left;">No<br><br>Use the Decal Projector instead.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Line Renderer component</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Trail Renderer component</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>You can also use VFX Graph to create a custom trail effect.</td>
+	<td style="text-align:left;">Yes<br><br>You can also use VFX Graph to create a custom trail effect.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Billboard Renderer component</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">No<br><br>Suggested alternative: Use VFX Graph.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Halo component</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">No<br><br>Suggested alternative: Use a Lens Flare (SRP) Data asset and a Lens Flare (SRP) component.</td>
+	<td style="text-align:left;">No<br><br>Suggested alternative: Use a Lens Flare (SRP) Data asset and a Lens Flare (SRP) component, or use a celestial body in a directional light.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Lens flares</strong></td>
+	<td style="text-align:left;">Yes<br><br>Use a Flare asset and either a Light component or a Lens Flare component.</td>
+	<td style="text-align:left;">Yes<br><br>Use a Lens Flare (SRP) Data asset and a Lens Flare (SRP) component.</td>
+	<td style="text-align:left;">Yes<br><br>Use a Lens Flare (SRP) Data asset and a Lens Flare (SRP) component.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="2d-and-ui"></a></p>
+
+<h2>2D and UI</h2>
+
+<h3>2D</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Sprite</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Tilemap</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Sprite Shape</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Pixel-Perfect</strong></td>
+	<td style="text-align:left;">Yes<br><br>Using the “2D Pixel Perfect” package.</td>
+	<td style="text-align:left;">Yes<br><br>Using the “2D Pixel Perfect” package.</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>2D Lights</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>2D Shadows</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>VFX Graph</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Supports 3D particles, sorting layers, ShaderGraph Sprite Lit and Custom Lit targets, Alpha Clipping with Shadergraph Sprite Lit, Unlit and Custom Lit targets.<br><br>Does not support 2D Physics, 2D sprites emitters, or 2D Lights.</td>
+	<td style="text-align:left;">否</td>
+</tr>
+</tbody>
+</table>
+
+<h3>UI</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Screen Space - Overlay</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Screen Space - Camera</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>World Space</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>Use the UI Camera stacking Custom pass for improved performance.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Text Mesh Pro</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="xr"></a></p>
+
+<h2>XR</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Multipass</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Single Pass (double-wide)</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">No<br><br>Deprecated</td>
+	<td style="text-align:left;">No<br><br>Deprecated</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Single Pass Instanced</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>Windows and PSVR only</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Multiview</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>AR Foundation</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="scripting"></a></p>
+
+<h2>脚本</h2>
+
+<h3>Render Pipeline Hooks</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Camera.RenderWithShader</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">No<br><br>Suggested alternative: ScriptableRenderPass</td>
+	<td style="text-align:left;">No<br><br>Suggested alternative: CustomPass with shader override</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Camera.AddCommandBuffer (Camera.Remove[All]CommandBuffer)</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">No<br><br>Alternative: Custom Passes</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Camera.Render</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Light.AddCommandBuffer (LightRemove[All]CommandBuffer)</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>OnPreCull</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">No<br><br>Suggested alternative: RenderPipelineManager.beginCameraRendering or ScriptableRenderPass</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>OnPreRender</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">No<br><br>Suggested alternative: RenderPipelineManager.beginCameraRendering or ScriptableRenderPass</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>OnPostRender</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>OnRenderImage</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">No<br><br>Suggested alternative: ScriptableRenderPass</td>
+	<td style="text-align:left;">No<br><br>Suggested alternative: Fullscreen CustomPass</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>OnRenderObject</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>RenderPipelineManager.endCameraRendering or<br>ScriptableRenderPass API</td>
+	<td style="text-align:left;">No<br><br>RenderPipelineManager.endCameraRendering or<br>Custom Pass</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>OnWillRenderObject</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>OnBecameVisible</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>OnBecameInvisible</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Camera Replacement Material</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">No<br><br>Suggested alternative: use Render Feature to replace materials per-Pass.</td>
+	<td style="text-align:left;">No<br><br>Suggested alternative: Custom Pass with material override</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RenderPipeline.BeginFrameRendering</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RenderPipeline.EndFrameRendering</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RenderPipeline.BeginCameraRendering</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RenderPIpeline.EndCameraRendering</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>UniversalRenderPipeline.RenderSingleCamera</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>ScriptableRenderPass</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>This is similar to the CustomPass feature in HDRP.</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Custom Renderers</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>CustomPass</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>This is similar to the ScriptableRenderPass feature in URP.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Custom Post Process Pass</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Arbitrary Output Variables (AOV) API</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Recording API</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="optimizations"></a></p>
+
+<h2>Optimizations</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Batching By Shader</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Batching By Material</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Batching by Material Property Blocks</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>Batched separately from the SRP Batcher</td>
+	<td style="text-align:left;">Yes<br><br>Batched separately from the SRP Batcher</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Dynamic batching (without SRP Batcher)</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Real-time batching with SRP Batcher</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Requires OpenGLES 3.1. On unsupported graphics APIs, falls back to Dynamic Batching.</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Dynamic Shadows Batching</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">No<br><br>Deprecated.</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>GPU Instancing</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>Disabled by default when SRP Batcher is enabled.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Render Graph</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Dynamic Render Pass Culling</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Disabled by default.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="debug"></a></p>
+
+<h2>Debug</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>URP</strong></th>
+	<th style="text-align:left;"><strong>HDRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Scene View Modes</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">Yes<br><br>Except mipmap view</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Volume Explorer</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Rendering debugger</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Runtime GPU profiler</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Probe volume debugger</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Experimental</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Color Monitors</strong></td>
+	<td style="text-align:left;">No<br><br>Use post processing stack v2</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">Yes<br><br>Waveform, Parade, Vectorscope</td>
+</tr>
+</tbody>
+</table>
+
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="render-pipelines-overview.html"></a></span><div class="tip">渲染管线简介</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="srp-setting-render-pipeline-asset.html"></a></span><div class="tip">How to get, set, and configure the active render pipeline</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

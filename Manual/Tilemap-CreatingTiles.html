@@ -1,0 +1,273 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="创建瓦片 - Unity 手册">
+<title>创建瓦片 - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/SpriteImporter_NS.png">
+<meta name="description" content="可使用两种方法在 Unity 中创建瓦片 (Tile) 资源；第一种方法是从 Assets 菜单直接创建瓦片资源。第二种方法是从一组精灵自动生成瓦片资源。">
+<meta property="og:description" content="可使用两种方法在 Unity 中创建瓦片 (Tile) 资源；第一种方法是从 Assets 菜单直接创建瓦片资源。第二种方法是从一组精灵自动生成瓦片资源。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'Tilemap-CreatingTiles';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/Tilemap-CreatingTiles.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/Tilemap-CreatingTiles.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/Tilemap-CreatingTiles.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/Tilemap-CreatingTiles.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/Tilemap-CreatingTiles.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/Tilemap-CreatingTiles.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/Tilemap-CreatingTiles.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/Tilemap-CreatingTiles.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/Tilemap-CreatingTiles.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/Tilemap-CreatingTiles.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/Tilemap-CreatingTiles.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/Tilemap-CreatingTiles.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/Tilemap-CreatingTiles.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/Tilemap-CreatingTiles.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/Tilemap-CreatingTiles.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/Tilemap-CreatingTiles.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/Tilemap-CreatingTiles.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/Tilemap-CreatingTiles.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/Tilemap-CreatingTiles.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/Tilemap-CreatingTiles.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/Tilemap-CreatingTiles.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/Tilemap-CreatingTiles.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/Tilemap-CreatingTiles.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/Tilemap-CreatingTiles.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/Tilemap-CreatingTiles.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/Tilemap-CreatingTiles.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/Tilemap-CreatingTiles.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/Tilemap-CreatingTiles.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/Tilemap-CreatingTiles.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/Tilemap-CreatingTiles.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/Tilemap-CreatingTiles.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/Tilemap-CreatingTiles.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/Tilemap-CreatingTiles.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/Tilemap-CreatingTiles.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/Tilemap-CreatingTiles.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/Tilemap-CreatingTiles.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/Tilemap-CreatingTiles.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/Tilemap-CreatingTiles.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/Tilemap-CreatingTiles.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/Tilemap-CreatingTiles.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/Tilemap-CreatingTiles.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/Tilemap-CreatingTiles.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/Tilemap-CreatingTiles.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/Tilemap-CreatingTiles.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/Tilemap-CreatingTiles.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/Tilemap-CreatingTiles.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/Tilemap-CreatingTiles.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/Tilemap-CreatingTiles.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/Tilemap-CreatingTiles.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/Tilemap-CreatingTiles.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/Tilemap-CreatingTiles.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/Tilemap-CreatingTiles.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/Tilemap-CreatingTiles.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/Tilemap-CreatingTiles.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/Tilemap-CreatingTiles.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/Tilemap-CreatingTiles.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/Tilemap-CreatingTiles.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/Tilemap-CreatingTiles.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Unity2D.html">2D game development</a></li>
+<li><a href="Tilemap.html">Create Tilemaps</a></li>
+<li><a href="Tilemap-workflow.html">瓦片地图工作流程</a></li>
+<li>创建瓦片</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="Tilemap-CreatingTilemaps.html"></a></span><div class="tip">创建瓦片地图 (Tilemap)</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="Tilemap-Palette.html"></a></span><div class="tip">Creating a Tile Palette</div>
+</div>
+</div></div>
+<h1>创建瓦片</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>可使用两种方法在 Unity 中创建<strong>瓦片 (Tile)</strong> 资源；第一种方法是从 <strong>Assets</strong> 菜单直接创建瓦片资源。第二种方法是从一组精灵自动生成瓦片资源。</p>
+
+<h2>为瓦片资源导入和准备精灵<a name="PrepTileSprites"></a>
+</h2>
+
+<p>通过将纹理放入 Assets 文件夹，即可将瓦片地图的各个瓦片或瓦片集<a href="Sprites.html">导入</a> Unity 项目。选择导入的图像可以在 Inspector 窗口中查看其<a href="class-TextureImporter.html">纹理导入器 (Texture Importer)</a> 设置。</p>
+
+<p><img src="../uploads/Main/SpriteImporter_NS.png" alt=""><br>精灵导入设置。</p>
+
+<p>When importing Sprites for use in a Tilemap, use the following recommended settings. For further information about each setting, refer to the documentation on <a href="texture-type-sprite.html">Texture Type: Sprite (2D and UI)</a>.</p>
+
+<ol>
+<li>
+<strong>Texture Type</strong> - 将此项设置为 <strong>Sprite (2D and UI)</strong>。瓦片地图不支持其他纹理类型。</li>
+<li>
+<strong>Sprite Mode</strong> - 如果纹理只包含一个精灵，将此项设置为 <strong>Single</strong>。如果纹理包含多个元素，例如包含多个瓦片纹理的瓦片集，则设置为 <strong>Multiple</strong>。
+<img src="../uploads/Main/Spritesheet_multiple.png" alt=""><br>在导入精灵图集时将 <strong>Sprite Mode</strong> 设置为 <strong>Multiple</strong>。</li>
+<li>
+<strong>Pixels Per Unit (PPU)</strong> - 此值是构成所选精灵的一个 Unity 单位的像素数。此设置决定了瓦片精灵在瓦片地图上渲染时的大小。建议将此值设置为单个瓦片精灵的宽度（以像素为单位），以便瓦片的宽度等于一个 Unity 单位。对于<a href="Tilemap-Hexagonal.html">六角形</a>和<a href="Tilemap-Isometric.html">等距</a>瓦片，在最宽处测量精灵的宽度。瓦片精灵的大小还受到瓦片地图的父级<a href="class-Grid.html">网格</a>的 <strong>Cell Size</strong> 属性的影响，因为 Cell Size（单元格大小）决定一个单元等于多少个 Unity 单位。<br>在下面的示例中，导入的精灵为 64x64。该<a href="Tilemap-CreatingTilemaps.html">默认瓦片地图</a>单元格大小为（XYZ: 1, 1, 0）Unity 单位。要使瓦片精灵恰好适合瓦片地图的一个单元，请将其 PPU 值设置为 64 以匹配其像素宽度。精灵的整个宽度则对应于一个 Unity 单位，它等于瓦片地图上单个单元的宽度（X 值：1）。<br>
+<img src="../uploads/Main/PPU_recTile_comparison.png" alt=""><br><strong>左：</strong>精灵设置为 64 PPU。<strong>中：</strong>同一精灵设置为 128 PPU。<strong>右：</strong>精灵设置为 32 PPU。<br>通过将原始 PPU 值 64 加倍到 128，精灵的宽度缩放为 0.5(64px/128) Unity 单位。而将 PPU 值减半为 32，精灵的宽度缩放为 2(64px/32) Unity 单位。精灵会分别显得更小或更大，但它们在瓦片地图上的单元位置保持不变。</li>
+<li>
+<strong>Sprite Editor Outlines</strong> - 导入精灵后，通过打开每个精灵的 <strong>Sprite Editor</strong> 并<a href="SpriteOutlineEditor.html">编辑</a><a href="SpriteOutlineEditor.html">它们的轮廓</a>即可优化轮廓。如果在将 <strong>Sprite Mode</strong> 设置为 <strong>Multiple</strong> 的条件下导入纹理并且纹理包含多个精灵，则应在 Sprite Editor 中编辑每个精灵的轮廓。</li>
+</ol>
+
+<h2>在瓦片面板中自动生成瓦片资源</h2>
+
+<p>通过将瓦片的单个精灵或精灵图集直接放入<strong>Tile Palette</strong> 窗口（如果该窗口未打开，请转到 <strong>Window &gt; 2D &gt; Tile Palette</strong>），可自动生成瓦片。</p>
+
+<p>首先，<a href="#PrepTileSprites">准备并导入</a>瓦片精灵，然后在 Tile Palette 窗口中打开 ‘New Palette’ 下拉选单。从列表中选择一个现有的瓦片面板，或选择 ‘Create New Palette’ 打开 <strong>Create New Palette</strong> 对话框。</p>
+
+<p><img src="../uploads/Main/Tilemap-CreatingTiles-3.png" alt=""><br>New Palette 下拉选单。</p>
+
+<p>选择瓦片面板的属性后（有关不同选项的更多信息，请参阅<a href="Tilemap-Palette.html">瓦片面板</a>文档），请选择 <strong>Create</strong> 在窗口中打开新的面板。</p>
+
+<p><img src="../uploads/Main/Tilemap-CreatePalette.png" alt=""><br>选择 ‘Create’ 创建一个新的瓦片面板。</p>
+
+<p>创建或加载瓦片面板后，请将 <strong>Assets</strong> 文件夹中的<strong>纹理</strong>或<strong>精灵</strong>直接拖放到 Tile Palette 窗口中。系统将提示输入新瓦片资源的保存位置。选择保存位置，新的瓦片资源就会在选择的文件夹中生成。生成的瓦片也会自动放置在瓦片面板上。</p>
+
+<p><img src="../uploads/Main/Tilemap-CreatingTiles-4.png" alt=""><br>瓦片资源来源：<a href="https://kenney.nl/assets/topdown-tanks-redux">Kenney</a></p>
+
+<h2>删除瓦片资源</h2>
+
+<p>当您删除瓦片资源时，它们将被替换为占位瓦片（由带有各种粉红色阴影的白色方块组成）。占位瓦片放置在已删除瓦片资源的原始位置的瓦片地图上。这有助于识别在项目中有意或无意删除的瓦片资源。</p>
+
+<p>Each deleted Tile Asset has a corresponding placeholder Tile with a unique shade of pink that differentiates the placeholders from each other. You can replace these placeholder Tiles with another Tile by using the <a href="Tilemap-Painting.html#FloodFillTool">Flood Fill tool</a> or remove them.</p>
+
+<p><img src="../uploads/Main/DeletedTileAssets.png" alt=""><br><strong>左：</strong>具有三种不同颜色瓦片资源的瓦片面板（以它们各自的颜色命名 - White、Red 和 Blue）。<strong>右：</strong>删除白色和蓝色瓦片资源后的瓦片面板。红色瓦片资源尚未删除。</p>
+
+<hr>
+
+<ul>
+<li><span class="page-history">占位瓦片替换已删除瓦片资源添加于 <a href="https://docs.unity3d.com/2020.2/Documentation/Manual/30_search.html?q=newin20202">2020.2</a><span class="search-words"> NewIn20202</span></span></li>
+<li><span class="page-history">页面内容和屏幕截图更新于 <a href="https://docs.unity3d.com/2020.1/Documentation/Manual/30_search.html?q=newin20201">2020.1</a><span class="search-words"> NewIn20201</span></span></li>
+<li><span class="page-history">在 <a href="https://docs.unity3d.com/2017.2/Documentation/Manual/30_search.html?q=newin20172">2017.2</a> 版中添加了瓦片地图 <span class="search-words">NewIn20172</span></span></li>
+</ul>
+<!-- area:authoring -->
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="Tilemap-CreatingTilemaps.html"></a></span><div class="tip">创建瓦片地图 (Tilemap)</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="Tilemap-Palette.html"></a></span><div class="tip">Creating a Tile Palette</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

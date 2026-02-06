@@ -1,0 +1,494 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="应用程序性能分析 - Unity 手册">
+<title>应用程序性能分析 - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/profiler-build-settings.png">
+<meta name="description" content="使用 Unity 性能分析器对应用程序进行性能分析时，可以通过三种主要方式记录数据：">
+<meta property="og:description" content="使用 Unity 性能分析器对应用程序进行性能分析时，可以通过三种主要方式记录数据：">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'profiler-profiling-applications';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/profiler-profiling-applications.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/profiler-profiling-applications.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/profiler-profiling-applications.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/profiler-profiling-applications.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/profiler-profiling-applications.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/profiler-profiling-applications.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/profiler-profiling-applications.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/profiler-profiling-applications.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/profiler-profiling-applications.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/profiler-profiling-applications.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/profiler-profiling-applications.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/profiler-profiling-applications.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/profiler-profiling-applications.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/profiler-profiling-applications.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/profiler-profiling-applications.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/profiler-profiling-applications.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/profiler-profiling-applications.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/profiler-profiling-applications.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/profiler-profiling-applications.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/profiler-profiling-applications.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/profiler-profiling-applications.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/profiler-profiling-applications.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/profiler-profiling-applications.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/profiler-profiling-applications.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/profiler-profiling-applications.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/profiler-profiling-applications.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/profiler-profiling-applications.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/profiler-profiling-applications.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/profiler-profiling-applications.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/profiler-profiling-applications.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/profiler-profiling-applications.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/profiler-profiling-applications.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/profiler-profiling-applications.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/profiler-profiling-applications.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/profiler-profiling-applications.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/profiler-profiling-applications.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/profiler-profiling-applications.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/profiler-profiling-applications.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/profiler-profiling-applications.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/profiler-profiling-applications.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/profiler-profiling-applications.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/profiler-profiling-applications.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/profiler-profiling-applications.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/profiler-profiling-applications.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/profiler-profiling-applications.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/profiler-profiling-applications.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/profiler-profiling-applications.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/profiler-profiling-applications.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/profiler-profiling-applications.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/profiler-profiling-applications.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/profiler-profiling-applications.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/profiler-profiling-applications.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/profiler-profiling-applications.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/profiler-profiling-applications.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/profiler-profiling-applications.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/profiler-profiling-applications.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/profiler-profiling-applications.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/profiler-profiling-applications.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UnityOverview.html">在 Unity 中操作</a></li>
+<li><a href="analysis.html">分析</a></li>
+<li><a href="Profiler.html">性能分析器概述</a></li>
+<li>应用程序性能分析</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="Profiler.html"></a></span><div class="tip">性能分析器概述</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="profiler-markers.html"></a></span><div class="tip">常见性能分析器标记</div>
+</div>
+</div></div>
+<h1>应用程序性能分析</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>使用 <a href="Profiler.html">Unity 性能分析器</a>对应用程序进行性能分析时，可以通过三种主要方式记录数据：</p>
+
+<ul>
+<li>在目标平台上的播放器中对应用程序进行性能分析</li>
+<li>在 Unity 编辑器中以运行模式对应用程序进行性能分析</li>
+<li>对 Unity 编辑器进行性能分析</li>
+</ul>
+
+<p>获得有关应用程序的准确时序的最佳方法是在打算发布它的终端平台上对它进行性能分析。这样可提供有关影响应用程序性能的因素的准确时序。</p>
+
+<p>但是，每次要改进其性能元素时都构建应用程序可能会非常耗时。因此，要快速评估应用程序的性能，可以直接在编辑器中以运行模式对它进行性能分析。在运行模式下进行性能分析不会准确反映应用程序在真实设备上表现出的性能，但它是一个有用的工具，可在终端平台上进行初始分析后快速检查进行的更改是否可提高应用程序的性能。</p>
+
+<p>Unity 编辑器可能会影响应用程序的性能，因为它在运行模式下运行时使用与应用程序相同的资源，因此还可以单独对编辑器进行性能分析以确定它使用的资源。如果应用程序仅设计为在运行模式下工作（例如用于电影制作），这会特别有用。</p>
+
+<h2>
+<a name="profiling-target-platform"></a> Profile your application on a target platform</h2>
+
+<p>要在目标发布平台上分析您的应用程序，请将目标设备连接到网络或通过线缆直接连接到计算机。还可以通过 IP 地址连接到设备。只能以<strong>开发版</strong>形式对应用程序进行性能分析。要进行此设置，请打开 <strong>Build Settings</strong>（菜单：<strong>File</strong> &gt; <strong>Build Settings</strong>），然后选择应用程序的目标平台。启用 <strong>Development Build</strong> 设置。启用此设置后，与性能分析器相关的以下两个设置将变为可用状态：<strong>Autoconnect to Profiler</strong> 和 <strong>Deep Profiling Support</strong>。</p>
+
+<figure>
+<img src="../uploads/Main/profiler-build-settings.png" alt="Build Settings 窗口，已启用性能分析选项">
+<figcaption>Build Settings 窗口，已启用性能分析选项</figcaption>
+</figure>
+
+<p>启用 <strong>Autoconnect Profiler</strong> 设置后，Unity 编辑器在构建过程中将自己的 IP 地址烘焙到已构建的播放器中。播放器启动时会尝试连接到位于所烘焙 IP 地址的编辑器中的性能分析器。</p>
+
+<p>如果还启用了 <strong>Deep Profiling Support</strong> 设置，Unity 会在构建的播放器启动时执行<a href="ProfilerWindow.html#deep-profiling">深度性能分析</a>，这意味着性能分析器会对代码的每个部分进行性能分析，而不仅仅是在 <a href="../ScriptReference/Unity.Profiling.ProfilerMarker.html">ProfilerMarker</a> 中显式包裹的代码时序。这对于获取有关应用程序启动时间的深度性能分析信息很有用，但是，这会为构建增加少量开销。</p>
+
+<h3>在 Profiler 窗口中连接到播放器</h3>
+
+<p>To use the Profiler to manually connect to a platform running your application, configure the settings in the <strong>Attach to Player</strong> drop-down. You can only do this if <strong>Autoconnect Profiler</strong> is disabled.</p>
+
+<p>For a platform to appear in the Attach to Player drop-down it must meet the following requirements:</p>
+
+<ul>
+<li>The platform is visible on your local network or directly connected to your local machine by cable.</li>
+<li>The platform is running a player that you built with the Development Build option enabled. For instructions on how to enable this setting for a platform, see <a href="#profiling-target-platform">Profile your application on a target platform</a>.</li>
+<li>The platform is running your Player.</li>
+</ul>
+
+<p>The <strong>Attach to Playe</strong>r drop-down displays all Unity Players that Unity detects through the network or by direct connection. You can identify these Players by <strong>Player Name</strong> and the <strong>Product Name</strong> that is running the Player (for example, “iPhonePlayer (My iPhone)”).</p>
+
+<p>You can also connect to a Player directly via its IP address. To do this, select the <strong>Attach to Player</strong> menu, and then select <strong>&lt;Enter IP&gt;</strong> in the dropdown. In the dialog box that appears, type the IP address and (optionally) the port of the Player you want to connect to.</p>
+
+<p>To collect profiling information on your application, select the Player from the dropdown menu, and then click <strong>Record</strong>.</p>
+
+<p>To continuously collect data while your application runs, enable the <strong>Run In Background</strong> setting in Player Settings (menu: <strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Player</strong> &gt; <strong>Resolution and Presentation</strong>). When you enable this setting, the Profiler collects data even when you leave your application running in the background. If you disable it, the Profiler only collects data when the application is running in an active window.</p>
+
+<p><a name="attach-to-player"></a></p>
+
+<h3>Using the Attach to Player search bar</h3>
+
+<p>The <strong>Attach to Player</strong> drop down includes a search bar that you can use to find information about your Player. You can search by <strong>Player Name</strong> or device category, for example <strong>Remote</strong>. When you search by category, the result displays all devices in that category.</p>
+
+<p>Select the name of a development Player to view it in the profiler.</p>
+
+<h3>Attach to Player properties</h3>
+
+<figure>
+<img src="../uploads/Main/attach-to-player.png" alt="">
+</figure>
+
+<p>Each column provides the following information about when it is available:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性：</strong></th>
+	<th style="text-align:left;"><strong>描述：</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Player Name</strong></td>
+	<td style="text-align:left;">The name of the device that is running your application.<br><br>To change this name, navigate to <strong>Edit</strong> &gt; <strong>Preferences</strong> &gt; <strong>Analysis</strong> &gt; <strong>Profiler</strong> and enter your desired name in the <strong>Custom Connection ID</strong> field.<br><br>You can also set a Player Name set when you launch a Player from the command line using the <code>-connection-id</code> argument.<br><br>For more information about the categories in this property, see <a href="#device-categories">Player name device categories</a>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Product Name</strong></td>
+	<td style="text-align:left;">This is the value of the field that you set in <strong>Project</strong> &gt; <strong>PlayerSettings</strong>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>IP</strong></td>
+	<td style="text-align:left;">The IP address of the Player.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Port</strong></td>
+	<td style="text-align:left;">The port of the Player.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>
+<a name="device-categories"></a> Player name device categories</h3>
+
+<p>The <strong>Player Name</strong> category includes the following categories that display information about particular device types:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性：</strong></th>
+	<th style="text-align:left;"><strong>描述：</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Play Mode</strong></td>
+	<td style="text-align:left;">Select this property to profile your application in Play Mode.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Edit Mode</strong></td>
+	<td style="text-align:left;">Select this property to profile the Unity Editor.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Local</strong></td>
+	<td style="text-align:left;">This list contains any device that is running on the local machine, in the Unity Editor or in a standalone player.<br><br>It also displays information for players that are physically connected to the host machine with a cable.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Remote</strong></td>
+	<td style="text-align:left;">This section displays information for devices running on the local network.<br><br>This section only appears when Unity finds a remote device running on the local network.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Connections without ID</strong></td>
+	<td style="text-align:left;">This section only appears when Unity finds a device running a player older than Unity 2021.2. <br> These players do not have <strong>Product Name</strong>, <strong>IP</strong>, or <strong>Port</strong> information.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Direct Connection</strong></td>
+	<td style="text-align:left;">Use this option to connect to a specific IP and port combination. This category displays the most recent IP you connected to.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>平台特定性能分析指南</h3>
+
+<p>将不同平台连接到 Unity 性能分析器时，它们会具有不同的行为方式。以下部分提供有关每个平台的一些常见行为的指导：</p>
+
+<p><a name="profiling-webgl"></a></p>
+
+<h4>WebGL</h4>
+
+<p>可以在 WebGL 中使用 Unity 性能分析器，但不能通过编辑器连接到使用 WebGL 构建的正在运行的播放器。这是因为 WebGL 使用 WebSocket 进行通信，所以不允许浏览器端的传入连接。要连接到运行的播放器，必须在 <strong>Build Settings</strong>（菜单：<strong>File</strong> &gt; <strong>Build Settings</strong>）中启用 <strong>Autoconnect Profiler</strong> 复选框。Unity 无法对 WebGL 的绘制调用进行性能分析。</p>
+
+<h4>移动设备上的性能分析</h4>
+
+<p>iOS 和 Android 设备均支持通过网络进行远程性能分析。如果使用了防火墙，请在防火墙的出站规则中开放端口 54998 至 55511。这些是 Unity 用于远程性能分析的端口。</p>
+
+<p>有时，在设置远程性能分析后，Unity 编辑器可能无法自动连接到设备。如果发生此情况，可以手动发起性能分析器连接。为此，请选择 Profiler 窗口中的 <strong>Attach to Player</strong> 下拉菜单，然后选择相应设备。</p>
+
+<p>也可以将目标设备直接插入计算机以避免网络或连接问题。</p>
+
+<p><a name="profiling-ios"></a></p>
+
+<h5>iOS 远程性能分析</h5>
+
+<p>要对 iOS 设备启用远程性能分析，请遵循以下步骤：</p>
+
+<ol>
+<li>将 iOS 设备连接到 WiFi 网络。性能分析器会使用本地 WiFi 网络将性能分析数据从设备发送到 Unity Editor。</li>
+<li>通过线缆将设备连接到计算机。打开 Build Settings（菜单：<strong>File</strong> &gt; <strong>Build Settings</strong>），选中 <strong>Development Build</strong> 和 <strong>Autoconnect Profiler</strong> 复选框，然后选择 <strong>Build &amp; Run</strong>。</li>
+<li>应用程序在设备上启动时，请在 Unity 编辑器中打开 Profiler 窗口（菜单：<strong>Window</strong> &gt; <strong>Analysis</strong> &gt; <strong>Profiler</strong>）。</li>
+</ol>
+
+<p><a name="profiling-android"></a></p>
+
+<h5>Android 远程性能分析</h5>
+
+<p>Android 设备支持两种远程性能分析方法：通过 WiFi 或通过 <a href="https://developer.android.com/studio/command-line/adb">Android Debug Bridge (adb)</a>。</p>
+
+<p>要进行 WiFi 性能分析，请遵循以下步骤：</p>
+
+<ol>
+<li>在 Android 设备上禁用移动数据。</li>
+<li>将 Android 设备连接到 WiFi 网络。性能分析器会使用本地 WiFi 网络将性能分析数据从设备发送到 Unity Editor。</li>
+<li>通过线缆将设备连接到计算机。打开 Build Settings（菜单：<strong>File</strong> &gt; <strong>Build Settings</strong>），选中 <strong>Development Build</strong> 和 <strong>Autoconnect Profiler</strong> 复选框，然后选择 <strong>Build &amp; Run</strong>。</li>
+<li>应用程序在设备上启动时，请在 Unity 编辑器中打开 Profiler 窗口（菜单：<strong>Window</strong> &gt; <strong>Analysis</strong> &gt; <strong>Profiler</strong>）。</li>
+</ol>
+
+<p><strong>注意</strong>：Android 设备和主机（运行 Unity 编辑器）必须位于同一子网上才能正常进行设备检测。</p>
+
+<p>要进行 Android Debug Bridge (adb) 性能分析，请遵循以下步骤：</p>
+
+<ol>
+<li>确保设备处于<strong>开发模式</strong>并启用 <strong>USB debugging</strong> 设置</li>
+<li>通过线缆将设备连接到计算机，并确保在 adb 设备列表中显示了该设备。</li>
+<li>打开 Build Settings（菜单：<strong>File</strong> &gt; <strong>Build Settings</strong>），选中 <strong>Development Build</strong> 复选框，然后选择 <strong>Build &amp; Run</strong>。</li>
+<li>应用程序在设备上启动时，请在 Unity 编辑器中打开 Profiler 窗口（菜单：<strong>Window</strong> &gt; <strong>Analysis</strong> &gt; <strong>Profiler</strong>）。</li>
+<li>从 <strong>Attach to Player</strong> 下拉菜单中，选择 <strong>AndroidProfiler(ADB@127.0.0.1:34999)</strong>。仅当所选目标为 Android 时，下拉菜单中才会显示该条目。</li>
+</ol>
+
+<p>选择 <strong>Build &amp; Run</strong> 时，Unity Editor 会自动为应用程序创建 adb 隧道。如果要对另一应用程序进行性能分析，或者重新启动 adb 服务器，则需要手动配置此隧道。为此，请打开终端窗口或命令提示符窗口，并输入以下内容：</p>
+
+<ul>
+<li>
+<p>通过 USB 线缆建立编辑器到 Android 的连接时需要</p>
+
+<p><code>adb forward tcp:34999 localabstract:Unity-{insert bundle identifier here}</code></p>
+</li>
+<li>
+<p>通过 USB 线缆建立 Android 到编辑器的连接时需要</p>
+
+<p><code>adb reverse tcp:34998 tcp:34999</code></p>
+</li>
+</ul>
+
+<p>要将深度性能分析用于 Android 构建，必须启用 <a href="class-PlayerSettingsAndroid.html">Android Player Settings</a> 中的 Mono Scripting Backend 设置（菜单：<strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Player</strong> &gt; <strong>Android</strong> &gt; <strong>Other Settings</strong>），然后输入以下内容以便通过 adb 命令来启动游戏：</p>
+
+<pre><code>~$ adb shell am start -n {insert bundle identifier here}/com.unity3d.player.UnityPlayerActivity -e 'unity' '-deepprofiling'
+</code></pre>
+
+<h3>Android ChromeOS remote profiling</h3>
+
+<p>Unity can’t automatically discover ChromeOS devices. To initiate a connection, connect to the device through Android Debug Bridge (adb) by its IP address and then select <code>&lt;Enter IP&gt;</code> from the <strong>Attach to Player</strong> drop-down menu and enter the device’s IP address. Once you have connected, you can profile your application as usual.</p>
+
+<h2>在 Unity 编辑器中进行性能分析</h2>
+
+<p>When you use the Profiler window to run and profile your application in the Editor, the results are only an approximation of your application’s behavior when the target platform runs it. This is because Play mode runs in the same process as the Editor, so you can’t fully isolate your application’s CPU, GPU, and memory usage from the Unity Editor’s usage. This skews the resulting profiling data.</p>
+
+<p>要获得更好的性能分析结果，应该始终在目标设备上对应用程序进行性能分析，并且仅在编辑器中进行性能分析以快速迭代在设备上已确定的问题。</p>
+
+<p>还可以在运行模式下进行性能分析或是对编辑器进行性能分析以确定与应用程序性能无关的问题，例如较长的加载时间或无响应的编辑器是否会减慢迭代时间，或者应用程序是否在运行模式下性能不佳。</p>
+
+<p>Whenever you profile in the Editor, you should make sure that you open Play mode in maximized view, and reduce the amount of open Editor windows. This ensures that other Editor windows don’t use up time on the render thread and GPU, and therefore affect the performance data. When Play mode is in a maximized view it runs your application at a resolution closer to that of your target device, which directly affects performance issues such as those related to fill rate.</p>
+
+<h3>在运行模式下进行性能分析</h3>
+
+<p>性能分析器的默认目标是运行模式，这会在编辑器运行运行模式时记录活动。运行模式性能分析可用于测试快速更改而无需重新构建播放器，但是不应用于替代验证应用程序目标平台和设备上的构建。这是因为运行模式在与编辑器相同的应用程序和主线程中运行，这意味着在运行模式下进行性能分析时，编辑器的系统（例如 UI、Inspector、Scene 视图渲染和资源管理）会影响应用程序的性能和内存性能分析测量。</p>
+
+<p>要在运行模式下有效地进行性能分析，应该定期构建应用程序并将它们部署到一系列目标设备（高规格和低规格设备），并在这些设备上对应用程序进行测试和性能分析。如果在这些设备上发现应用程序方面的性能问题，请缩小最需要关注的区域。</p>
+
+<p>随后可以在运行模式下对应用程序进行性能分析，并快速迭代对应用程序进行的任何更改。可以使用通过在目标设备上对应用程序进行性能分析而获得的信息来确定在运行模式下对应用程序进行性能分析后是否存在任何类似行为。随后可以更改应用程序，并再次在运行模式下进行性能分析以快速查看更改所产生的效果。一旦对更改感到满意，请再次构建应用程序并部署到目标设备以验证更改。</p>
+
+<h4>PlayerLoop 和 EditorLoop 样本</h4>
+
+<p>为了减少编辑器在运行运行模式时创建的性能分析数据中的噪声和误导性测量数量，CPU 和 GPU 性能分析器模块将其时序拆分为在 <strong>PlayerLoop</strong> 和 <strong>EditorLoop</strong> 中发生的时序。Unity 会向这些类型的性能分析器样本分配 <a href="profiler-markers.html">PlayerLoop 和 EditorLoop 标记</a>。</p>
+
+<p>当性能分析器以运行模式为目标时，它只收集发生在 PlayerLoop 内部发生的时序样本。</p>
+
+<p>在 <a href="ProfilerCPU.html#charts">CPU 性能分析器模块图表</a>中，Unity 将所有 EditorLoop 样本都分类为 <strong>Others</strong>。因此，EditorLoop 样本是该类别的最大贡献者。如果想了解编辑器在这段时间内的操作，并且还想获得有关 <strong>Others</strong> 类别的其他贡献者的更详细细分，请将性能分析器目标更改为编辑器。</p>
+
+<p><strong>Important:</strong> If you use <a href="ProfilerWindow.html#deep-profiling">Deep Profiling</a>, and target Play mode, it has a performance impact on every function call that happens in both PlayerLoop and EditorLoop. This is because Deep Profiling hooks into the beginning and end of any scripting method call on domain reload and it doesn’t detect which parts are never called from the PlayerLoop. The method calls that happen in the EditorLoop don’t incur the full overhead of creating a sample, but they still check if they should emit one, which causes a smaller but still present overhead.</p>
+
+<h3>对编辑器进行性能分析</h3>
+
+<p>将性能分析器的目标更改为<strong>编辑器</strong>时，之前隐藏在 EditorLoop 标记下的所有样本都会归类到其各自的类别中。这意味着 CPU 性能分析器模块详细信息面板及其图表中的信息会显著更改。</p>
+
+<p>要对编辑器的启动时间进行性能分析，请使用命令行选项 <code>-profiler-enable</code> 启动编辑器。</p>
+
+<p>要减少 Profiler 窗口对编辑器性能的影响，可以使用<a href="ProfilerWindow.html#standalone">独立性能分析器</a>（它会在自己的进程中打开 Profiler 窗口）。如果选择编辑器作为性能分析目标，或是<a href="ProfilerWindow.html#deep-profiling">对应用程序进行深度性能分析</a>，那么这会尤其有用，因为 Profiler 窗口本身通常使用可能会使性能数据出现偏差的资源。</p>
+
+<h2>对应用程序进行性能分析的最佳实践</h2>
+
+<p>对应用程序进行性能分析时，可以采取一些措施来确保性能分析会话之间的一致性，并确保 Unity 使用的进程不会影响性能分析数据：</p>
+
+<ul>
+<li>只添加与要调查到 Profiler 窗口的区域相关的<a href="ProfilerWindow.html#modules">性能分析器模块</a>。要向性能分析器添加和移除模块，请选择 Profiler 窗口左上角的下拉选单。</li>
+<li>避免使用深度性能分析，因为它会在使用时产生较高开销。如果要查看有关带有标记（如 GC.Alloc 或 JobFence.Complete）的样本的更多详细信息，请导航到 Profiler 窗口工具栏并启用 <a href="ProfilerWindow.html#controls">Call Stacks 设置</a>。这可提供样本的完整调用栈，其中会提供所需信息，而不会产生深度性能分析的开销。</li>
+<li>Disable the Live setting if you don’t need to see the Hierarchy or Timeline view updating as the Profiler collects data. Stop recording to see the data update to the window.</li>
+<li>使用 F9 快捷键启用或禁用性能分析器。可以使用此快捷键捕获性能数据，而无需打开 Profiler 窗口。如果打开了独立性能分析器，则使用此快捷键会在此窗口中开始记录。</li>
+</ul>
+
+<hr>
+
+<ul>
+<li><span class="page-history">在 <a href="https://docs.unity3d.com/Manual/30_search.html?q=newin20193">2019.3</a> 中添加了 Deep Profiling Support <span class="search-words">NewIn20193</span></span></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="Profiler.html"></a></span><div class="tip">性能分析器概述</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="profiler-markers.html"></a></span><div class="tip">常见性能分析器标记</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

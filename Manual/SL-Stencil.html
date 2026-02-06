@@ -1,0 +1,571 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="ShaderLab 命令：模板 - Unity 手册">
+<title>ShaderLab 命令：模板 - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="配置与 GPU 上的模板缓冲区相关的设置。">
+<meta property="og:description" content="配置与 GPU 上的模板缓冲区相关的设置。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'SL-Stencil';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/SL-Stencil.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/SL-Stencil.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/SL-Stencil.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/SL-Stencil.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/SL-Stencil.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/SL-Stencil.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/SL-Stencil.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/SL-Stencil.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/SL-Stencil.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/SL-Stencil.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/SL-Stencil.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/SL-Stencil.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/SL-Stencil.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/SL-Stencil.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/SL-Stencil.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/SL-Stencil.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/SL-Stencil.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/SL-Stencil.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/SL-Stencil.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/SL-Stencil.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/SL-Stencil.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/SL-Stencil.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/SL-Stencil.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/SL-Stencil.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/SL-Stencil.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/SL-Stencil.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/SL-Stencil.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/SL-Stencil.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/SL-Stencil.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/SL-Stencil.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/SL-Stencil.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/SL-Stencil.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/SL-Stencil.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/SL-Stencil.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/SL-Stencil.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/SL-Stencil.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/SL-Stencil.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/SL-Stencil.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/SL-Stencil.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/SL-Stencil.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/SL-Stencil.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/SL-Stencil.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/SL-Stencil.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/SL-Stencil.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/SL-Stencil.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/SL-Stencil.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/SL-Stencil.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/SL-Stencil.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/SL-Stencil.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/SL-Stencil.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/SL-Stencil.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/SL-Stencil.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/SL-Stencil.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/SL-Stencil.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/SL-Stencil.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/SL-Stencil.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/SL-Stencil.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/SL-Stencil.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="Shaders.html">着色器</a></li>
+<li><a href="shader-writing.html">编写着色器</a></li>
+<li><a href="SL-Reference.html">ShaderLab</a></li>
+<li><a href="shader-shaderlab-commands.html">ShaderLab：命令</a></li>
+<li>ShaderLab 命令：模板</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SL-Offset.html"></a></span><div class="tip">ShaderLab 命令：Offset</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SL-UsePass.html"></a></span><div class="tip">ShaderLab 命令：UsePass</div>
+</div>
+</div></div>
+<h1>ShaderLab 命令：模板</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>配置与 GPU 上的模板缓冲区相关的设置。</p>
+
+<p>模板缓冲区为帧缓冲区中的每个像素存储一个 8 位整数值。为给定像素执行片元着色器之前，GPU 可以将模板缓冲区中的当前值与给定参考值进行比较。这称为模板测试。如果模板测试通过，则 GPU 会执行深度测试。如果模板测试失败，则 GPU 会跳过对该像素的其余处理。这意味着可以使用模板缓冲区作为遮罩来告知 GPU 要绘制的像素以及要丢弃的像素。</p>
+
+<p>通常会将模板缓冲区用于特殊效果，例如门户或镜子。此外，在渲染硬阴影或者<a href="https://en.wikipedia.org/wiki/Constructive_solid_geometry?">构造型实体几何 (CSG)</a> 时，有时会使用模板缓冲区。</p>
+
+<h2>渲染管线兼容性</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能名称</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>通用渲染管线 (URP)</strong></th>
+	<th style="text-align:left;"><strong>高清渲染管线 (HDRP)</strong></th>
+	<th style="text-align:left;"><strong>自定义 SRP</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>模板</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+</tbody>
+</table>
+
+<h2>用法</h2>
+
+<p>此命令会更改渲染状态。在 <code>Pass</code> 代码块中使用它可为该通道设置渲染状态，或者在 <code>SubShader</code> 代码块中使用它可为该子着色器中的所有通道设置渲染状态。</p>
+
+<p>You can use the <code>Stencil</code> command to do two different things: to configure the stencil test, and to configure what the GPU writes to the stencil buffer. You can do both of these things in the same command, but the most common use case is to create one Shader object that masks out areas of the screen that other Shader objects cannot draw to. To do this, you need to configure the first Shader object to always pass the stencil test and write to the stencil buffer, and configure the others to perform a stencil test and not write to the stencil buffer.</p>
+
+<p>使用 <code>Ref</code>、<code>ReadMask</code> 和 <code>Comp</code> 参数可配置模板测试。使用 <code>Ref</code>、<code>WriteMask</code>、<code>Pass</code>、<code>Fail</code> 和 <code>ZFail</code> 参数可配置模板写入操作。</p>
+
+<p>模板测试方程为：</p>
+
+<pre><code>(ref &amp; readMask) comparisonFunction (stencilBufferValue &amp; readMask)
+</code></pre>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>签名</strong></th>
+	<th style="text-align:left;"><strong>示例语法</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">
+<code>Stencil</code><br><code>{</code><br>    <code>Ref &lt;ref&gt;</code><br>    <code>ReadMask &lt;readMask&gt;</code><br>    <code>WriteMask &lt;writeMask&gt;</code><br>    <code>Comp &lt;comparisonOperation&gt;</code><br>    <code>Pass &lt;passOperation&gt;</code><br>    <code>Fail &lt;failOperation&gt;</code><br>    <code>ZFail &lt;zFailOperation&gt;</code><br>    <code>CompBack &lt;comparisonOperationBack&gt;</code><br>    <code>PassBack &lt;passOperationBack&gt;</code><br>    <code>FailBack &lt;failOperationBack&gt;</code><br>    <code>ZFailBack &lt;zFailOperationBack&gt;</code><br>    <code>CompFront &lt;comparisonOperationFront&gt;</code><br>    <code>PassFront &lt;passOperationFront&gt;</code><br>    <code>FailFront &lt;failOperationFront&gt;</code><br>    <code>ZFailFront &lt;zFailOperationFront&gt;</code><br><code>}</code><br><br>请注意，所有参数都是可选的。</td>
+	<td style="text-align:left;">
+<code>Stencil</code><br><code>{</code><br>    <code>Ref 2</code><br>    <code>Comp equal</code><br>    <code>Pass keep</code><br>    <code>ZFail decrWrap</code><br><code>}</code>
+</td>
+	<td style="text-align:left;">根据给定参数配置模板缓冲区。</td>
+</tr>
+</tbody>
+</table>
+
+<h2>有效参数值</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>参数</strong></th>
+	<th style="text-align:left;"><strong>值</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>ref</strong></td>
+	<td style="text-align:left;">整数。范围为 0 到 255。默认值为 0。</td>
+	<td style="text-align:left;">参考值。<br><br>GPU 使用在 compareOperation 中定义的操作将模板缓冲区的当前内容与此值进行比较。<br><br>此值使用 readMask 或 writeMask 进行遮罩，具体取决于进行的是读取操作还是写入操作。<br><br>如果 Pass、Fail 或 ZFail 的值为 Replace，则 GPU 也可以将此值写入模板缓冲区。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>readMask</strong></td>
+	<td style="text-align:left;">整数。范围为 0 到 255。默认值为 255。</td>
+	<td style="text-align:left;">GPU 在执行模板测试时使用此值作为遮罩。<br><br>有关模板测试方程，请参阅上文。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>writeMask</strong></td>
+	<td style="text-align:left;">整数。范围为 0 到 255。默认值为 255。</td>
+	<td style="text-align:left;">GPU 在写入模板缓冲区时使用此值作为遮罩。<br><br>请注意，与其他遮罩一样，它指定操作中包含的位。例如，值为 0 表示写入操作中不包含任何位，而不是模板缓冲区接收值 0。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>comparisonOperation</strong></td>
+	<td style="text-align:left;">比较操作。请参阅<a href="#comparison-operation-values">比较操作值</a>以了解有效值。默认值为 Always。</td>
+	<td style="text-align:left;">GPU 为所有像素的模板测试执行的操作。<br><br>这会定义适用于所有像素的操作，而与朝向无关。如果定义了此值以及 comparationOperationBack 和 comparationOperationFront，则此值会覆盖它们。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>passOperation</strong></td>
+	<td style="text-align:left;">模板操作。请参阅<a href="#stencil-operation-values">模板操作值</a>以了解有效值。默认值为 Keep。</td>
+	<td style="text-align:left;">当像素通过模板测试和深度测试时，GPU 对模板缓冲区执行的操作。<br><br>这会定义适用于所有像素的操作，而与朝向无关。如果定义了此值以及 passOperationBack 和 passOperationFront，则此值会覆盖它们。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>failOperation</strong></td>
+	<td style="text-align:left;">模板操作。请参阅<a href="#stencil-operation-values">模板操作值</a>以了解有效值。默认值为 Keep。</td>
+	<td style="text-align:left;">当像素未能通过模板测试时，GPU 对模板缓冲区执行的操作。<br><br>这会定义适用于所有像素的操作，而与朝向无关。如果定义了此值以及 failOperationBack 和 failOperationFront，则此值会覆盖它们。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>zFailOperation</strong></td>
+	<td style="text-align:left;">模板操作。请参阅<a href="#stencil-operation-values">模板操作值</a>以了解有效值。默认值为 Keep。</td>
+	<td style="text-align:left;">当像素通过模板测试，但是未能通过深度测试时，GPU 对模板缓冲区执行的操作。<br><br>这会定义适用于所有像素的操作，而与朝向无关。如果定义了此值以及 zFailOperation 和 zFailOperation，则此值会覆盖它们。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>comparisonOperationBack</strong></td>
+	<td style="text-align:left;">比较操作。请参阅<a href="#comparison-operation-values">比较操作值</a>以了解有效值。默认值为 Always。</td>
+	<td style="text-align:left;">GPU 为模板测试执行的操作。<br><br>这会定义仅适用于背面像素的操作。如果定义了 comparisonOperation，则该值会覆盖此值。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>passOperationBack</strong></td>
+	<td style="text-align:left;">模板操作。请参阅<a href="#stencil-operation-values">模板操作值</a>以了解有效值。默认值为 Keep。</td>
+	<td style="text-align:left;">当像素通过模板测试和深度测试时，GPU 对模板缓冲区执行的操作。<br><br>这会定义仅适用于背面像素的操作。如果定义了 passOperation，则该值会覆盖此值。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>failOperationBack</strong></td>
+	<td style="text-align:left;">模板操作。请参阅<a href="#stencil-operation-values">模板操作值</a>以了解有效值。默认值为 Keep。</td>
+	<td style="text-align:left;">当像素未能通过模板测试时，GPU 对模板缓冲区执行的操作。<br><br>这会定义仅适用于背面像素的操作。如果定义了 failOperation，则该值会覆盖此值。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>zFailOperationBack</strong></td>
+	<td style="text-align:left;">模板操作。请参阅<a href="#stencil-operation-values">模板操作值</a>以了解有效值。默认值为 Keep。</td>
+	<td style="text-align:left;">当像素通过模板测试，但未能通过深度测试时，GPU 对模板缓冲区执行的操作。<br><br>这会定义仅适用于背面像素的操作。如果定义了 zFailOperation，则该值会覆盖此值。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>comparisonOperationFront</strong></td>
+	<td style="text-align:left;">比较操作。请参阅<a href="#comparison-operation-values">比较操作值</a>以了解有效值。默认值为 Always。</td>
+	<td style="text-align:left;">GPU 为模板测试执行的操作。<br><br>这会定义仅适用于正面像素的操作。如果定义了 comparisonOperation，则该值会覆盖此值。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>passOperationFront</strong></td>
+	<td style="text-align:left;">模板操作。请参阅<a href="#stencil-operation-values">模板操作值</a>以了解有效值。默认值为 Keep。</td>
+	<td style="text-align:left;">当像素通过模板测试和深度测试时，GPU 对模板缓冲区执行的操作。<br><br>这会定义仅适用于正面像素的操作。如果定义了 passOperation，则该值会覆盖此值。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>failOperationFront</strong></td>
+	<td style="text-align:left;">模板操作。请参阅<a href="#stencil-operation-values">模板操作值</a>以了解有效值。默认值为 Keep。</td>
+	<td style="text-align:left;">当像素未能通过模板测试时，GPU 对模板缓冲区执行的操作。<br><br>这会定义仅适用于正面像素的操作。如果定义了 failOperation，则该值会覆盖此值。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>zFailOperationFront</strong></td>
+	<td style="text-align:left;">模板操作。请参阅<a href="#stencil-operation-values">模板操作值</a>以了解有效值。默认值为 Keep。</td>
+	<td style="text-align:left;">当像素通过模板测试，但未能通过深度测试时，GPU 对模板缓冲区执行的操作。<br><br>这会定义仅适用于正面像素的操作。如果定义了 zFailOperation，则该值会覆盖此值。</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="comparison-operation-values"></a></p>
+
+<h3>比较操作值</h3>
+
+<p>在 C# 中，这些值通过 <a href="../ScriptReference/Rendering.CompareFunction.html">Rendering.CompareFunction</a> 枚举进行表示。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>值</strong></th>
+	<th style="text-align:left;"><strong>Rendering.CompareFunction 枚举中的对应整数值</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><code>Never</code></td>
+	<td style="text-align:left;">1</td>
+	<td style="text-align:left;">从不渲染像素。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>Less</code></td>
+	<td style="text-align:left;">2</td>
+	<td style="text-align:left;">在参考值小于模板缓冲区中的当前值时渲染像素。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>Equal</code></td>
+	<td style="text-align:left;">3</td>
+	<td style="text-align:left;">在参考值等于模板缓冲区中的当前值时渲染像素。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>LEqual</code></td>
+	<td style="text-align:left;">4</td>
+	<td style="text-align:left;">在参考值小于或等于模板缓冲区中的当前值时渲染像素。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>Greater</code></td>
+	<td style="text-align:left;">5</td>
+	<td style="text-align:left;">在参考值大于模板缓冲区中的当前值时渲染像素。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>NotEqual</code></td>
+	<td style="text-align:left;">6</td>
+	<td style="text-align:left;">在参考值与模板缓冲区中的当前值不同时渲染像素。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>GEqual</code></td>
+	<td style="text-align:left;">7</td>
+	<td style="text-align:left;">在参考值大于或等于模板缓冲区中的当前值时渲染像素。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>Always</code></td>
+	<td style="text-align:left;">8</td>
+	<td style="text-align:left;">始终渲染像素。</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="stencil-operation-values"></a></p>
+
+<h3>模板操作值</h3>
+
+<p>In C#, these values are represented by the <a href="../ScriptReference/Rendering.StencilOp.html">Rendering.Rendering.StencilOp</a> enum.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>值</strong></th>
+	<th style="text-align:left;"><strong>Rendering.StencilOp 枚举中的对应整数值</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><code>Keep</code></td>
+	<td style="text-align:left;">0</td>
+	<td style="text-align:left;">保持模板缓冲区的当前内容。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>Zero</code></td>
+	<td style="text-align:left;">1</td>
+	<td style="text-align:left;">将 0 写入模板缓冲区。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>Replace</code></td>
+	<td style="text-align:left;">2</td>
+	<td style="text-align:left;">将参考值写入缓冲区。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>IncrSat</code></td>
+	<td style="text-align:left;">3</td>
+	<td style="text-align:left;">递增缓冲区中的当前值。如果该值已经是 255，则保持为 255。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>DecrSat</code></td>
+	<td style="text-align:left;">4</td>
+	<td style="text-align:left;">递减缓冲区中的当前值。如果该值已经是 0，则保持为 0。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>Invert</code></td>
+	<td style="text-align:left;">5</td>
+	<td style="text-align:left;">将缓冲区中当前值的所有位求反。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>IncrWrap</code></td>
+	<td style="text-align:left;">6</td>
+	<td style="text-align:left;">递增缓冲区中的当前值。如果该值已经是 255，则变为 0。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>DecrWrap</code></td>
+	<td style="text-align:left;">7</td>
+	<td style="text-align:left;">递减缓冲区中的当前值。如果该值已经是 0，则变为 255。</td>
+</tr>
+</tbody>
+</table>
+
+<h2>示例</h2>
+
+<pre><code>Shader "Examples/CommandExample"
+{
+    SubShader
+    {
+         // 此处是定义子着色器的代码的其余部分。
+
+        Pass
+        {    
+             // 此通道中的所有像素都会通过模板测试并将值 2 写入模板缓冲区
+             // 如果要防止后续着色器绘制到渲染目标的此区域或将它们限制为仅渲染到此区域，则通常会执行此操作
+             Stencil
+             {
+                 Ref 2
+                 Comp Always
+                 Pass Replace
+             }            
+
+             // 此处是定义通道的代码的其余部分。
+        }
+    }
+}
+</code></pre>
+
+<p>此示例代码演示在 SubShader 代码块中使用此命令的语法。</p>
+
+<pre><code>Shader "Examples/CommandExample"
+{
+    SubShader
+    {
+             // 仅当模板缓冲区的当前值小于 2 时，此子着色器中的所有像素才通过模板测试
+             // 如果希望仅绘制到渲染目标中未"遮罩"的区域，则通常会执行此操作
+             Stencil
+             {
+                 Ref 2
+                 Comp Less
+             }  
+
+         // 此处是定义子着色器的代码的其余部分。
+
+        Pass
+        {    
+              // 此处是定义通道的代码的其余部分。
+        }
+    }
+}
+</code></pre>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SL-Offset.html"></a></span><div class="tip">ShaderLab 命令：Offset</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SL-UsePass.html"></a></span><div class="tip">ShaderLab 命令：UsePass</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

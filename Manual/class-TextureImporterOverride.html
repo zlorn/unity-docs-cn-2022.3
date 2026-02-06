@@ -1,0 +1,1161 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Recommended, default, and supported texture formats, by platform - Unity 手册">
+<title>Recommended, default, and supported texture formats, by platform - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="本页包含以下信息：">
+<meta property="og:description" content="本页包含以下信息：">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'class-TextureImporterOverride';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/class-TextureImporterOverride.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/class-TextureImporterOverride.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/class-TextureImporterOverride.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/class-TextureImporterOverride.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/class-TextureImporterOverride.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/class-TextureImporterOverride.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/class-TextureImporterOverride.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/class-TextureImporterOverride.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/class-TextureImporterOverride.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/class-TextureImporterOverride.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/class-TextureImporterOverride.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/class-TextureImporterOverride.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/class-TextureImporterOverride.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/class-TextureImporterOverride.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/class-TextureImporterOverride.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/class-TextureImporterOverride.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/class-TextureImporterOverride.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/class-TextureImporterOverride.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/class-TextureImporterOverride.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/class-TextureImporterOverride.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/class-TextureImporterOverride.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/class-TextureImporterOverride.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/class-TextureImporterOverride.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/class-TextureImporterOverride.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/class-TextureImporterOverride.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/class-TextureImporterOverride.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/class-TextureImporterOverride.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/class-TextureImporterOverride.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/class-TextureImporterOverride.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/class-TextureImporterOverride.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/class-TextureImporterOverride.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/class-TextureImporterOverride.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/class-TextureImporterOverride.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/class-TextureImporterOverride.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/class-TextureImporterOverride.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/class-TextureImporterOverride.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/class-TextureImporterOverride.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/class-TextureImporterOverride.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/class-TextureImporterOverride.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/class-TextureImporterOverride.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/class-TextureImporterOverride.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/class-TextureImporterOverride.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/class-TextureImporterOverride.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/class-TextureImporterOverride.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/class-TextureImporterOverride.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/class-TextureImporterOverride.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/class-TextureImporterOverride.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/class-TextureImporterOverride.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/class-TextureImporterOverride.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/class-TextureImporterOverride.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/class-TextureImporterOverride.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/class-TextureImporterOverride.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/class-TextureImporterOverride.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/class-TextureImporterOverride.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/class-TextureImporterOverride.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/class-TextureImporterOverride.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/class-TextureImporterOverride.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/class-TextureImporterOverride.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="Textures.html">纹理</a></li>
+<li><a href="texture-compression-formats.html">Texture formats</a></li>
+<li>Recommended, default, and supported texture formats, by platform</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="texture-compression-formats.html"></a></span><div class="tip">Texture formats</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="texture-mipmaps.html"></a></span><div class="tip">Mipmaps</div>
+</div>
+</div></div>
+<h1>Recommended, default, and supported texture formats, by platform</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>本页包含以下信息：</p>
+
+<ul>
+<li><a href="#terminology">Terminology</a></li>
+<li><a href="#recommended-formats">Recommended texture formats, by platform</a></li>
+<li><a href="#desktop">Desktop</a></li>
+<li><a href="#ios-and-tvos">iOS and tvOS</a></li>
+<li><a href="#android">Android</a></li>
+<li><a href="#default-texture-compression-formats-by-platform">Default texture formats, by platform</a></li>
+<li><a href="#texture-compression-by-quality">Texture compression formats, by quality </a></li>
+<li><a href="#texture-compression-support-platforms">Supported texture formats, by platform</a></li>
+</ul>
+
+<p>This page doesn’t contain information about console platforms. For information about console platforms, see the platform-specific documentation.</p>
+
+<p>For an overview of texture formats, see <a href="texture-compression-formats.html">Texture formats</a>. For information about texture import settings and how to set per-texture platform-specific overrides, see <a href="class-TextureImporter.html">Texture import settings</a>. Some texture import settings can also be overridden globally in <a href="BuildSettings.html">Build Settings</a>, mostly to speed up iteration time during development.</p>
+
+<p><a name="terminology"></a></p>
+
+<h2>术语</h2>
+
+<p>本页用到了以下术语：</p>
+
+<ul>
+<li>
+<strong>每像素位数 (bpp)</strong> 表示单个纹理像素所需的存储量。Bpp 值越低的纹理在磁盘和内存中也越小。较低的 bpp 值意味着 GPU 可在缓存中存储更多的像素，从而可以更快地访问纹理。</li>
+<li>LDR（低动态范围）是指最典型的图像，其中颜色在概念上介于 0.0（黑色）和 1.0（白色）值之间。大多数图像文件（例如 PNG 和 JPG）具有低动态范围。</li>
+<li>HDR（高动态范围）是指特殊的图像和纹理格式，其中颜色的范围可以高于 0 到 1。像 .exr 或 .hdr 这样的图像文件格式通常用于 HDR 图像数据。在运行时和 GPU 上，有多种 HDR 格式，分别对精度、范围和内存使用情况进行取舍。</li>
+<li>
+<strong>RGB</strong> 是一种颜色模型，通过红色、绿色和蓝色的组合生成一系列颜色。</li>
+<li>
+<strong>RGBA</strong> 是具有 Alpha 通道的 <strong>RGB</strong> 版本，支持混合和不透明度更改。</li>
+<li>
+<strong>可变比特率 (VBR)</strong> 表示每像素的位数不是固定值，而是取决于实际内容。VBR 仅适用于 <strong>Crunch 压缩</strong>，仅限于磁盘上的纹理大小。内存中的大小与使用基础纹理格式时的大小相同（例如，RGB Compressed DXT1 对应 RGB Crunched DXT1）。</li>
+</ul>
+
+<p><a name="recommended-formats"></a></p>
+
+<h2>Recommended texture formats, by platform</h2>
+
+<p><a name="desktop"></a></p>
+
+<h3>桌面端</h3>
+
+<p>对于具有 DirectX 11 或更高级别 GPU 的设备，可保证支持 BC7 和 BC6H 格式，推荐的压缩格式选择是：
+ RGB 纹理 - DXT1 4 位/像素。
+ RGBA 纹理 - BC7（质量更高，压缩速度较慢）或 DXT5（压缩速度较快），均为 8 位/像素。
+ HDR 纹理 - BC6H 8 位/像素。
+如果您需要在 PC 上支持 DirectX 10 类 GPU（2010 年之前的 NVIDIA GPU，2009 年之前的 AMD，2012 年之前的 Intel），则首选 DXT5（而不是 BC7），因为这些 GPU 不支持 BC7 和 BC6H。</p>
+
+<p>See the <a href="#texture-compression-support-platforms">Supported texture formats reference table</a> for detailed information about all supported formats.</p>
+
+<p><a name="ios-and-tvos"></a></p>
+
+<h3>iOS 和 tvOS</h3>
+
+<p>For Apple devices that use the A8 chip (2014) or above, ATSC is the recommended texture format for RGB and RGBA textures. This format allows you to choose between texture quality and size on a granular level: all the way from eight bits/pixel (4x4 block size) down to 0.89 bits/pixel (12x12 block size).
+If support for older devices is needed, or you want additional Crunch compression, then Apple devices support ETC/ETC2 formats starting with A7 chip (2013).
+For even older devices, PVRTC is the format to use. On iOS you can configure the default texture format in the <a href="iphone.html">Player Settings</a>. PVRTC gives you the broadest possible compatibility. ASTC is preferred, but is not supported on A7 devices (the very first Metal-enabled devices) and will be unpacked at runtime.</p>
+
+<p>See the <a href="#texture-compression-support-platforms">Supported texture formats reference table</a> for detailed information about all supported formats.</p>
+
+<p><a name="android"></a></p>
+
+<h3>Android</h3>
+
+<p>Texture format support on Android is complicated. You might need to build several application versions with different <a href="android-BuildProcess.html">sub-targets</a>.</p>
+
+<p>You can select the default format in <a href="class-PlayerSettingsAndroid.html#Rendering">Player Settings</a>. Your options are ASTC, ETC2 and ETC (ETC1 for RGB, ETC2 for RGBA). See <a href="android-requirements-and-compatibility.html#texture-compression">Texture compression settings</a> for more details on how the different settings interact.</p>
+
+<p>For LDR RGB and RGBA textures, most modern Android GPUs that support OpenGL ES 3.1 or Vulkan also support ASTC format, including:
+Qualcomm GPUs since Adreno 4xx / Snapdragon 415 (2015), ARM GPUs since Mali T624 (2012), NVIDIA GPUs since Tegra K1 (2014), PowerVR GPUs since GX6250 (2014).</p>
+
+<p>If you need support for older devices, or you want additional Crunch compression, then all GPUs that run Vulkan or OpenGL ES 3.0 support the ETC2 format.
+The resulting image quality is quite high, and it supports one- to four-component texture data. OpenGL ES 2 devices do not support the ETC2 format, so Unity decompresses the texture at runtime to the format <a href="class-TextureImporter.html#fallback">ETC2 fallback</a> specifies.
+For even older devices, usually only ETC format is available. The drawback is that there is no direct alpha channel support. For Sprites, Unity offers an option to use ETC1 compression by splitting a texture into two ETC1 textures: one for RGB, one for alpha. To enable this, enable the Android-specific <a href="class-TextureImporter.html#splitalpha">Split Alpha Channel</a> option for the Texture when importing a <a href="class-SpriteAtlas.html">Sprite Atlas</a>. The sprite shader samples both textures and combines them into the final result.</p>
+
+<p>For HDR textures, ASTC HDR is the only compressed format available on Android devices. ASTC HDR requires Vulkan or <a href="https://opengles.gpuinfo.org/listreports.php?extension=GL_KHR_texture_compression_astc_hdr">GL_KHR_texture_compression_astc_hdr</a> support. ASTC is the most flexible format.
+If a device doesn’t support ASTC HDR the texture is decompressed at runtime to RGB9e5 or RGBA Half, depending on alpha channel usage.</p>
+
+<p>对于不支持 ASTC HDR 的设备，所有运行 Vulkan、Metal 或 OpenGL ES 3.0 的设备都支持 RGB9e5，适用于没有 Alpha 通道的纹理。如果需要 Alpha 通道或更广泛的支持，请使用 RGBA Half。这种格式占用的内存是 RGB9e5 的两倍。</p>
+
+<p>See the <a href="#default-texture-compression-formats-by-platform">Supported texture formats reference table</a> for detailed information about all supported formats.</p>
+
+<p><a name="default-texture-compression-formats-by-platform"></a></p>
+
+<h2>Default texture formats, by platform</h2>
+
+<p>下表显示了每个平台使用的默认格式。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>平台</strong></th>
+	<th style="text-align:left;"><strong>颜色模型</strong></th>
+	<th style="text-align:left;"><strong>无</strong></th>
+	<th style="text-align:left;"><strong>正常质量（默认设置）</strong></th>
+	<th style="text-align:left;"><strong>高质量</strong></th>
+	<th style="text-align:left;"><strong>低质量（更高性能）</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Windows、Linux、macOS</strong></td>
+	<td style="text-align:left;">RGB</td>
+	<td style="text-align:left;">RGB 24 位</td>
+	<td style="text-align:left;">RGB Compressed DXT1</td>
+	<td style="text-align:left;">RGB(A) Compressed BC7</td>
+	<td style="text-align:left;">RGB Compressed DXT1</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">RGBA</td>
+	<td style="text-align:left;">RGBA 32 位</td>
+	<td style="text-align:left;">RGBA Compressed DXT5</td>
+	<td style="text-align:left;">RGB(A) Compressed BC7</td>
+	<td style="text-align:left;">RGBA Compressed DXT5</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">HDR</td>
+	<td style="text-align:left;">RGBA Half</td>
+	<td style="text-align:left;">RGB Compressed BC6H</td>
+	<td style="text-align:left;">RGB Compressed BC6H</td>
+	<td style="text-align:left;">RGB Compressed BC6H</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>WebGL</strong> (<a href="webgl-texture-format.html">configurable</a>)</td>
+	<td style="text-align:left;">RGB</td>
+	<td style="text-align:left;">RGB 24 位</td>
+	<td style="text-align:left;">RGB Compressed DXT1</td>
+	<td style="text-align:left;">RGB Compressed DXT1</td>
+	<td style="text-align:left;">RGB Compressed DXT1</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">RGBA</td>
+	<td style="text-align:left;">RGBA 32 位</td>
+	<td style="text-align:left;">RGBA Compressed DXT5</td>
+	<td style="text-align:left;">RGBA Compressed DXT5</td>
+	<td style="text-align:left;">RGBA Compressed DXT5</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>Android</strong> (<a href="android-requirements-and-compatibility.html#texture-compression">configurable</a>)</td>
+	<td style="text-align:left;">RGB</td>
+	<td style="text-align:left;">RGB 24 位</td>
+	<td style="text-align:left;">RGBA Compressed ASTC 6x6 block<br>RGB Compressed ETC2<br>RGB Compressed ETC</td>
+	<td style="text-align:left;">RGBA Compressed ASTC 4x4 block<br>RGB Compressed ETC2<br>RGB Compressed ETC</td>
+	<td style="text-align:left;">RGBA Compressed ASTC 8x8 block<br>RGB Compressed ETC2<br>RGB Compressed ETC</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">RGBA</td>
+	<td style="text-align:left;">RGBA 32 位</td>
+	<td style="text-align:left;">RGBA Compressed ASTC 6x6 block<br>RGBA Compressed ETC2</td>
+	<td style="text-align:left;">RGBA Compressed ASTC 4x4 block<br>RGBA Compressed ETC2</td>
+	<td style="text-align:left;">RGBA Compressed ASTC 8x8 block<br>RGBA Compressed ETC2</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>iOS</strong> (<a href="iphone.html">configurable</a>)</td>
+	<td style="text-align:left;">RGB</td>
+	<td style="text-align:left;">RGB 24 位</td>
+	<td style="text-align:left;">RGBA Compressed ASTC 6x6 block<br>RGB Compressed PVRTC 4 bits</td>
+	<td style="text-align:left;">RGBA Compressed ASTC 4x4 block<br>RGB Compressed PVRTC 4 bits</td>
+	<td style="text-align:left;">RGBA Compressed ASTC 8x8 block<br>RGB Compressed PVRTC 2 bits</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">RGBA</td>
+	<td style="text-align:left;">RGBA 32 位</td>
+	<td style="text-align:left;">RGBA Compressed ASTC 6x6 block<br>RGBA Compressed PVRTC 4 bits</td>
+	<td style="text-align:left;">RGBA Compressed ASTC 4x4 block<br>RGBA Compressed PVRTC 4 bits</td>
+	<td style="text-align:left;">RGBA Compressed ASTC 8x8 block<br>RGBA Compressed PVRTC 2 bits</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>tvOS</strong></td>
+	<td style="text-align:left;">RGB</td>
+	<td style="text-align:left;">RGB 24 位</td>
+	<td style="text-align:left;">RGBA Compressed ASTC 6x6 块</td>
+	<td style="text-align:left;">RGBA Compressed ASTC 4x4 块</td>
+	<td style="text-align:left;">RGBA Compressed ASTC 8x8 块</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">RGBA</td>
+	<td style="text-align:left;">RGBA 32 位</td>
+	<td style="text-align:left;">RGBA Compressed ASTC 6x6 块</td>
+	<td style="text-align:left;">RGBA Compressed ASTC 4x4 块</td>
+	<td style="text-align:left;">RGBA Compressed ASTC 8x8 块</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Default</strong></td>
+	<td style="text-align:left;">RGBA</td>
+	<td style="text-align:left;">RGBA 32 位</td>
+	<td style="text-align:left;">RGBA 16 位</td>
+	<td style="text-align:left;">RGBA 16 位</td>
+	<td style="text-align:left;">RGBA 16 位</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="texture-compression-by-quality"></a></p>
+
+<h2>Texture formats, by quality</h2>
+
+<p>The table below shows each format available in Unity, and their quality details. </p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Texture format</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+	<th style="text-align:left;"><strong>通道</strong></th>
+	<th style="text-align:left;"><strong>Quality</strong></th>
+	<th style="text-align:left;"><strong>每像素位数</strong></th>
+	<th style="text-align:left;"><strong>1024x1024 纹理的大小，以 MB 为单位</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>RGB(A) Compressed BC7</strong></td>
+	<td style="text-align:left;">压缩 RGB 或 RGBA</td>
+	<td style="text-align:left;">RGB 或 RGBA。</td>
+	<td style="text-align:left;">高</td>
+	<td style="text-align:left;">8</td>
+	<td style="text-align:left;">1</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGBA Crunched DXT5</strong></td>
+	<td style="text-align:left;">Compressed RGBA，采用额外的磁盘上 Crunch 压缩。</td>
+	<td style="text-align:left;">RGBA</td>
+	<td style="text-align:left;">低到中</td>
+	<td style="text-align:left;">可变</td>
+	<td style="text-align:left;">可变</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGBA 64 bit</strong></td>
+	<td style="text-align:left;">未压缩 RGBA，精度非常高</td>
+	<td style="text-align:left;">RGBA</td>
+	<td style="text-align:left;">非常高</td>
+	<td style="text-align:left;">64</td>
+	<td style="text-align:left;">8</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGBA 32 bit</strong></td>
+	<td style="text-align:left;">未压缩 RGBA</td>
+	<td style="text-align:left;">RGBA</td>
+	<td style="text-align:left;">高</td>
+	<td style="text-align:left;">32</td>
+	<td style="text-align:left;">4</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGBA 16 bit</strong></td>
+	<td style="text-align:left;">量化 RGBA</td>
+	<td style="text-align:left;">RGBA</td>
+	<td style="text-align:left;">中</td>
+	<td style="text-align:left;">16</td>
+	<td style="text-align:left;">2</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB Compressed DXT1</strong></td>
+	<td style="text-align:left;">压缩 RGB（也称为 BC1）</td>
+	<td style="text-align:left;">RGB</td>
+	<td style="text-align:left;">中</td>
+	<td style="text-align:left;">4</td>
+	<td style="text-align:left;">0.5</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB Crunched DXT1</strong></td>
+	<td style="text-align:left;">压缩 RGB，采用额外的磁盘上 Crunch 压缩。</td>
+	<td style="text-align:left;">RGB</td>
+	<td style="text-align:left;">低到中</td>
+	<td style="text-align:left;">可变</td>
+	<td style="text-align:left;">可变</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB 48 bit</strong></td>
+	<td style="text-align:left;">未压缩 RGB，精度非常高。为 GPU 转换为 RGBA 64 位</td>
+	<td style="text-align:left;">RGB</td>
+	<td style="text-align:left;">非常高</td>
+	<td style="text-align:left;">48（磁盘），64（GPU）</td>
+	<td style="text-align:left;">6（磁盘），8（GPU）</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB 24 bit</strong></td>
+	<td style="text-align:left;">未压缩 RGB。为 GPU 转换为 RGBA 32 位</td>
+	<td style="text-align:left;">RGB</td>
+	<td style="text-align:left;">高</td>
+	<td style="text-align:left;">24（磁盘），32（GPU）</td>
+	<td style="text-align:left;">3（磁盘），4（GPU）</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB 16 bit</strong></td>
+	<td style="text-align:left;">量化 RGB</td>
+	<td style="text-align:left;">RGB</td>
+	<td style="text-align:left;">中</td>
+	<td style="text-align:left;">16</td>
+	<td style="text-align:left;">2</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RG Compressed BC5</strong></td>
+	<td style="text-align:left;">压缩双通道 (RG)</td>
+	<td style="text-align:left;">RG</td>
+	<td style="text-align:left;">高</td>
+	<td style="text-align:left;">8</td>
+	<td style="text-align:left;">1</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RG 32 bit</strong></td>
+	<td style="text-align:left;">未压缩双通道 (RG)，精度非常高</td>
+	<td style="text-align:left;">RG</td>
+	<td style="text-align:left;">非常高</td>
+	<td style="text-align:left;">32</td>
+	<td style="text-align:left;">4</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>R Compressed BC4</strong></td>
+	<td style="text-align:left;">压缩单通道 (R)</td>
+	<td style="text-align:left;">R</td>
+	<td style="text-align:left;">高</td>
+	<td style="text-align:left;">4</td>
+	<td style="text-align:left;">0.5</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>R 8</strong></td>
+	<td style="text-align:left;">未压缩单通道 (R)</td>
+	<td style="text-align:left;">R</td>
+	<td style="text-align:left;">高</td>
+	<td style="text-align:left;">8</td>
+	<td style="text-align:left;">1</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>R 16 bit</strong></td>
+	<td style="text-align:left;">未压缩单通道 (R)，精度非常高</td>
+	<td style="text-align:left;">R</td>
+	<td style="text-align:left;">非常高</td>
+	<td style="text-align:left;">16</td>
+	<td style="text-align:left;">2</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Alpha 8</strong></td>
+	<td style="text-align:left;">未压缩单通道 (A)</td>
+	<td style="text-align:left;">A</td>
+	<td style="text-align:left;">高</td>
+	<td style="text-align:left;">8</td>
+	<td style="text-align:left;">1</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGBA Half</strong></td>
+	<td style="text-align:left;">HDR, half-precision (FP16) RGBA, –64k to +64k range</td>
+	<td style="text-align:left;">RGBA</td>
+	<td style="text-align:left;">高</td>
+	<td style="text-align:left;">64</td>
+	<td style="text-align:left;">8</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB Compressed BC6H</strong></td>
+	<td style="text-align:left;">HDR，压缩 RGB，0 到 +64k 范围</td>
+	<td style="text-align:left;">RGB</td>
+	<td style="text-align:left;">高</td>
+	<td style="text-align:left;">8</td>
+	<td style="text-align:left;">1</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB9e5 32 Bit Shared Exponent Float</strong></td>
+	<td style="text-align:left;">HDR，量化 RGB，0 到 +64k 范围</td>
+	<td style="text-align:left;">RGB</td>
+	<td style="text-align:left;">中</td>
+	<td style="text-align:left;">32</td>
+	<td style="text-align:left;">4</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB(A) Compressed ASTC</strong></td>
+	<td style="text-align:left;">压缩 RGB 或 RGBA，大小和质量取决于块大小</td>
+	<td style="text-align:left;">RGB 或 RGBA。</td>
+	<td style="text-align:left;">低到高</td>
+	<td style="text-align:left;">12x12: 0.89, 10x10: 1.28, 8x8: 2, 6x6: 3.56, 5x5: 5.12, 4x4: 8</td>
+	<td style="text-align:left;">12x12: 0.11, 10x10: 0.16, 8x8: 0.25, 6x6: 0.45, 5x5: 0.64, 4x4: 1.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGBA Compressed ETC2</strong></td>
+	<td style="text-align:left;">压缩 RGBA</td>
+	<td style="text-align:left;">RGBA</td>
+	<td style="text-align:left;">中</td>
+	<td style="text-align:left;">8</td>
+	<td style="text-align:left;">1</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGBA Crunched ETC2</strong></td>
+	<td style="text-align:left;">Compressed RGBA，采用额外的磁盘上 Crunch 压缩。</td>
+	<td style="text-align:left;">RGBA</td>
+	<td style="text-align:left;">低到中</td>
+	<td style="text-align:left;">可变</td>
+	<td style="text-align:left;">可变</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB + 1-bit Alpha Compressed ETC2 4 bits</strong></td>
+	<td style="text-align:left;">压缩 RGBA，Alpha 值完全不透明或完全透明</td>
+	<td style="text-align:left;">RGBA</td>
+	<td style="text-align:left;">中</td>
+	<td style="text-align:left;">4</td>
+	<td style="text-align:left;">0.5</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGBA Compressed PVRTC 4 bits</strong></td>
+	<td style="text-align:left;">压缩 RGBA，纹理要求为方形</td>
+	<td style="text-align:left;">RGBA</td>
+	<td style="text-align:left;">中</td>
+	<td style="text-align:left;">4</td>
+	<td style="text-align:left;">0.5</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGBA Compressed PVRTC 2 bits</strong></td>
+	<td style="text-align:left;">压缩 RGBA，纹理要求为方形</td>
+	<td style="text-align:left;">RGBA</td>
+	<td style="text-align:left;">低</td>
+	<td style="text-align:left;">2</td>
+	<td style="text-align:left;">0.25</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB Compressed ETC2</strong></td>
+	<td style="text-align:left;">压缩 RGB</td>
+	<td style="text-align:left;">RGB</td>
+	<td style="text-align:left;">中</td>
+	<td style="text-align:left;">4</td>
+	<td style="text-align:left;">0.5</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB Compressed ETC</strong></td>
+	<td style="text-align:left;">压缩 RGB</td>
+	<td style="text-align:left;">RGB</td>
+	<td style="text-align:left;">低</td>
+	<td style="text-align:left;">4</td>
+	<td style="text-align:left;">0.5</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB Crunched ETC</strong></td>
+	<td style="text-align:left;">压缩 RGB，采用额外的磁盘上 Crunch 压缩。</td>
+	<td style="text-align:left;">RGB</td>
+	<td style="text-align:left;">低</td>
+	<td style="text-align:left;">可变</td>
+	<td style="text-align:left;">可变</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB Compressed PVRTC 4 bits</strong></td>
+	<td style="text-align:left;">压缩 RGB，纹理要求为方形</td>
+	<td style="text-align:left;">RGB</td>
+	<td style="text-align:left;">中</td>
+	<td style="text-align:left;">4</td>
+	<td style="text-align:left;">0.5</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB Compressed PVRTC 2 bits</strong></td>
+	<td style="text-align:left;">压缩 RGB，纹理要求为方形</td>
+	<td style="text-align:left;">RGB</td>
+	<td style="text-align:left;">低</td>
+	<td style="text-align:left;">2</td>
+	<td style="text-align:left;">0.25</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RG Compressed EAC 8 bit</strong></td>
+	<td style="text-align:left;">压缩双通道 (RG)</td>
+	<td style="text-align:left;">RG</td>
+	<td style="text-align:left;">高</td>
+	<td style="text-align:left;">8</td>
+	<td style="text-align:left;">1</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>R Compressed EAC 4 bit</strong></td>
+	<td style="text-align:left;">压缩单通道 (R)</td>
+	<td style="text-align:left;">R</td>
+	<td style="text-align:left;">高</td>
+	<td style="text-align:left;">4</td>
+	<td style="text-align:left;">0.5</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB(A) Compressed ASTC HDR</strong></td>
+	<td style="text-align:left;">HDR，压缩 RGB 或 RGBA，大小和质量取决于块大小</td>
+	<td style="text-align:left;">RGB 或 RGBA。</td>
+	<td style="text-align:left;">低到高</td>
+	<td style="text-align:left;">12x12: 0.89, 10x10: 1.28, 8x8: 2, 6x6: 3.56, 5x5: 5.12, 4x4: 8</td>
+	<td style="text-align:left;">12x12: 0.11, 10x10: 0.16, 8x8: 0.25, 6x6: 0.45, 5x5: 0.64, 4x4: 1.0</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="texture-compression-support-platforms"></a></p>
+
+<h2>Supported texture formats, by platform</h2>
+
+<p>The table below shows each texture format available in Unity, and the platforms that support them. </p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Texture format</strong></th>
+	<th style="text-align:left;"><strong>Windows</strong></th>
+	<th style="text-align:left;"><strong>macOS</strong></th>
+	<th style="text-align:left;"><strong>Linux</strong></th>
+	<th style="text-align:left;"><strong>Android</strong></th>
+	<th style="text-align:left;"><strong>iOS 和 tvOS</strong></th>
+	<th style="text-align:left;"><strong>WebGL (Desktop Browsers)</strong></th>
+	<th style="text-align:left;"><strong>WebGL (iOS and Android browser)</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>RGB(A) Compressed BC7</strong></td>
+	<td style="text-align:left;">是 (1)</td>
+	<td style="text-align:left;">是 (1)</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;"><strong>yes (1)</strong></td>
+	<td style="text-align:left;">no</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGBA Compressed DXT5</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否 (3)</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">部分 (2)</td>
+	<td style="text-align:left;">no</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGBA Crunched DXT5</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否 (3)</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">部分 (2)</td>
+	<td style="text-align:left;">no</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGBA 64 bit</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">部分 (6)</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGBA 32 bit</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGBA 16 bit</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB Compressed DXT1</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否 (3)</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">部分 (2)</td>
+	<td style="text-align:left;">no</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB Crunched DXT1</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否 (3)</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">部分 (2)</td>
+	<td style="text-align:left;">no</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB 48 bit</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">部分 (6)</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB 24 bit</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB 16 bit</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RG Compressed BC5</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;"><strong>yes</strong></td>
+	<td style="text-align:left;">no</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RG 32 bit</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">部分 (6)</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>R Compressed BC4</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;"><strong>yes</strong></td>
+	<td style="text-align:left;">no</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>R 8</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">部分 (5)</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">部分 (5)</td>
+	<td style="text-align:left;">部分 (5)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>R 16 bit</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">部分 (6)</td>
+	<td style="text-align:left;">部分 (6)</td>
+	<td style="text-align:left;"><strong>yes (14)</strong></td>
+	<td style="text-align:left;">yes (14)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Alpha 8</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGBA Half</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">部分 (7)</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">部分 (7)</td>
+	<td style="text-align:left;">部分 (7)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB Compressed BC6H</strong></td>
+	<td style="text-align:left;">是 (1)</td>
+	<td style="text-align:left;">是 (1)</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;"><strong>yes (1)</strong></td>
+	<td style="text-align:left;">no</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB9e5 32 Bit Shared Exponent Float</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">部分 (4)</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">部分 (4)</td>
+	<td style="text-align:left;">部分 (4)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB(A) Compressed ASTC</strong></td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">部分 (8)</td>
+	<td style="text-align:left;">是 (10)</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">yes (13 &amp; 10)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGBA Compressed ETC2</strong></td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">部分 (9)</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGBA Crunched ETC2</strong></td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">部分 (9)</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB + 1-bit Alpha Compressed ETC2 4 bits</strong></td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">部分 (9)</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGBA Compressed PVRTC 4 bits</strong></td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">否 (12)</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGBA Compressed PVRTC 2 bits</strong></td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">否 (12)</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB Compressed ETC2</strong></td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">部分 (9)</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB Compressed ETC</strong></td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB Crunched ETC</strong></td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB Compressed PVRTC 4 bits</strong></td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">否 (12)</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB Compressed PVRTC 2 bits</strong></td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">否 (12)</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RG Compressed EAC 8 bit</strong></td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">部分 (9)</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>R Compressed EAC 4 bit</strong></td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">部分 (9)</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>RGB(A) Compressed ASTC HDR</strong></td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">部分 (11)</td>
+	<td style="text-align:left;">部分 (11)</td>
+	<td style="text-align:left;">no</td>
+	<td style="text-align:left;">部分 (11)</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>注意：</strong></p>
+
+<ol>
+<li>Except on pre-DX11 level GPUs, or macOS when using WebGL or OpenGL. When not supported, BC6H textures get decompressed to RGBA Half, and BC7 get decompressed to RGBA32 at load time.</li>
+<li>With <a href="LinearLighting.html">linear rendering</a> on web browsers that don’t support sRGB DXT, textures are decompressed to RGBA32 at load time.</li>
+<li>采用 NVIDIA Tegra GPU 的 Android 设备除外；这些确实支持 DXT/ BC 格式。</li>
+<li>OpenGL ES 2.0 / WebGL 1 上除外。</li>
+<li>对于 OpenGL ES 2.0/ WebGL 1：需要 GL_EXT_texture_rg 扩展支持。</li>
+<li>在 Android 上需要 GL_EXT_texture_norm16 或相应 Vulkan 功能。</li>
+<li>对于 OpenGL ES 2.0/ WebGL 1：需要 OES_texture_half_float 扩展支持。</li>
+<li>需要 Vulkan 或 <a href="https://opengles.gpuinfo.org/listreports.php?extension=GL_KHR_texture_compression_astc_ldr">GL_KHR_texture_compression_astc_ldr</a> OpenGL ES 扩展。</li>
+<li>Except on OpenGL ES 2.0; there ETC2 textures are decompressed into the format <em>ETC2 fallback</em> specifies in the <a href="android-build-settings.html">Android Build Settings</a> or on the Android tab for the <a href="class-TextureImporter.html#fallback">Platform-specific overrides</a>.</li>
+<li>Apple A7 芯片设备 (2013) 上除外。</li>
+<li>Android: requires <a href="https://opengles.gpuinfo.org/listreports.php?extension=GL_KHR_texture_compression_astc_hdr">GL_KHR_texture_compression_astc_hdr</a> extension. iOS: requires A13 or later chip (2019).WebGL: requires <a href="https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_compressed_texture_astc">WEBGL_compressed_texture_astc</a> extension and <a href="https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_compressed_texture_astc/getSupportedProfiles">HDR profile</a>. When not supported, the texture is decompressed to RGB9E5 format, losing the alpha channel.</li>
+<li>采用 Imagination PowerVR GPU 的 Android 设备除外；这些确实支持 PVRTC 格式。</li>
+<li>Requires <a href="https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_compressed_texture_astc">WEBGL_compressed_texture_astc</a> extension.</li>
+<li>Requires <a href="https://developer.mozilla.org/en-US/docs/Web/API/EXT_texture_norm16">EXT_texture_norm16</a> extension and WebGL 2.</li>
+</ol>
+
+<h2>Supported texture formats in WebGL</h2>
+
+<p>The following table provides the supported texture formats for WebGL.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>格式</strong></th>
+	<th style="text-align:left;"><strong>Descritpion</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>ASTC</strong></td>
+	<td style="text-align:left;">Adaptive Scalable Texture Compression (ASTC) is an advanced lossy texture compression format. Widely used for mobile browsers / devices.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>DXT</strong></td>
+	<td style="text-align:left;">Also known as S3 Texture Compression (S3TC), DXT is mainly used for desktop browsers and devices.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>ETC2</strong></td>
+	<td style="text-align:left;">Ericsson Texture Compression (ETC) is an older lossy texture compression format, lower quality than ASTC, used for mobile browsers / devices.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Additional resources:</h2>
+
+<ul>
+<li><a href="webgl-texture-format.html">Texture Compression format in WebGL</a></li>
+<li><a href="android-requirements-and-compatibility.html#texture-compression">Texture Compression format in Android</a></li>
+</ul>
+
+<p><span class="search-words">TextureImporterOverride</span></p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="texture-compression-formats.html"></a></span><div class="tip">Texture formats</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="texture-mipmaps.html"></a></span><div class="tip">Mipmaps</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

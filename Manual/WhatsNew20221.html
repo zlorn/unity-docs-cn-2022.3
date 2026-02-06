@@ -1,0 +1,433 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="New in Unity 2022.1 - Unity 手册">
+<title>New in Unity 2022.1 - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="To find out more about the new features, changes, and improvements to this Unity version, see the 2022.1 Release Notes.">
+<meta property="og:description" content="To find out more about the new features, changes, and improvements to this Unity version, see the 2022.1 Release Notes.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'WhatsNew20221';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/WhatsNew20221.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/WhatsNew20221.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/WhatsNew20221.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/WhatsNew20221.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/WhatsNew20221.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/WhatsNew20221.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/WhatsNew20221.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/WhatsNew20221.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/WhatsNew20221.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/WhatsNew20221.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/WhatsNew20221.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/WhatsNew20221.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/WhatsNew20221.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/WhatsNew20221.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/WhatsNew20221.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/WhatsNew20221.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/WhatsNew20221.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/WhatsNew20221.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/WhatsNew20221.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/WhatsNew20221.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/WhatsNew20221.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/WhatsNew20221.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/WhatsNew20221.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/WhatsNew20221.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/WhatsNew20221.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/WhatsNew20221.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/WhatsNew20221.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/WhatsNew20221.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/WhatsNew20221.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/WhatsNew20221.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/WhatsNew20221.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/WhatsNew20221.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/WhatsNew20221.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/WhatsNew20221.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/WhatsNew20221.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/WhatsNew20221.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/WhatsNew20221.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/WhatsNew20221.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/WhatsNew20221.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/WhatsNew20221.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/WhatsNew20221.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/WhatsNew20221.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/WhatsNew20221.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/WhatsNew20221.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/WhatsNew20221.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/WhatsNew20221.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/WhatsNew20221.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/WhatsNew20221.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/WhatsNew20221.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/WhatsNew20221.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/WhatsNew20221.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/WhatsNew20221.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/WhatsNew20221.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/WhatsNew20221.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/WhatsNew20221.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/WhatsNew20221.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/WhatsNew20221.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/WhatsNew20221.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="WhatsNew2022LTS.html">New in Unity 2022 LTS</a></li>
+<li>New in Unity 2022.1</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="WhatsNew20222.html"></a></span><div class="tip">New in Unity 2022.2</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="PackagesList.html"></a></span><div class="tip">Packages and feature sets</div>
+</div>
+</div></div>
+<h1>New in Unity 2022.1</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<h3>Release Notes</h3>
+
+<p>To find out more about the new features, changes, and improvements to this Unity version, see the <a href="https://unity3d.com/unity/whats-new/2022.1.0">2022.1 Release Notes</a>.</p>
+
+<h3>Upgrade Guide</h3>
+
+<p>If you are upgrading existing projects from 2021LTS, read the <a href="UpgradeGuide20221.html">Upgrade Guide to 2022.1</a> for information about how your project may be affected.</p>
+
+<h1>What’s new</h1>
+
+<p>See what’s changed in Unity 2022.1 since 2021LTS and view the documentation for the affected areas.</p>
+
+<h2>Editor and Workflow</h2>
+
+<h3><a href="https://github.com/Unity-Technologies/com.unity.search.extensions/wiki/Blog-Search-21.2#query-builder-new-in-221">Visual Search Queries</a></h3>
+
+<p>Visual search queries provide a consistent and intuitive user experience for building search queries. This enables users to discover and leverage the powerful capabilities of <strong>Search</strong> for finding items.</p>
+
+<h3><a href="https://github.com/Unity-Technologies/com.unity.search.extensions/wiki/Blog-Search-21.2">Dependency Viewer</a></h3>
+
+<p>The Dependency Viewer provides an accessible, quick and reliable way for you to reason about dependencies in your project, regardless of the amount of assets it contains.</p>
+
+<h3>UI Toolkit for Editor UI</h3>
+
+<p>Tool developers can now use the UI Toolkit for more of their Editor UI authoring needs. In 2022.1, you have access to more UI widgets, can programmatically draw custom shapes, and can write property drawers using UI Toolkit.</p>
+
+<h3>Enter Play Mode optimizations</h3>
+
+<p>The <strong>Enter Play Mode</strong> performance is optimized to speed up iteration times. This improvement includes faster scene saving, increased use of multi threading to speed up static batching and particle prewarming, and a reduced cost on some package initialisation times (e.g. TerrainTools and Visual Studio packages).</p>
+
+<h3>Editor workflow optimizations for large scale projects</h3>
+
+<p>Common editor workflows are optimized in large scale projects involving large object and asset counts. These improvements include:</p>
+
+<ul>
+<li>Faster hierarchy scrolling and picking of objects.</li>
+<li>Optimized multi-selection of game objects.</li>
+<li>Improved performance when you preview many textures.</li>
+<li>Reduced hitches when you change to large Prefabs.</li>
+</ul>
+
+<h3>Small file import optimizations</h3>
+
+<p>Small file import times are reduced by up to 60%.</p>
+
+<h3>Undo system improvements and optimisations</h3>
+
+<p>With the <strong>undo</strong> UI button, the overall performance of this feature is improved. The undo operations that feature large arrays are up to 100 times faster. You can also clear the redo stack around 30 times faster and delete large selections of undos around 2 times faster.</p>
+
+<h3>Accelerator corruption detection</h3>
+
+<p>Accelerator cached assets can be corrupted (modified bytes) on storage or during transmission. A hash of the content detects corrupt content; when content is seen as invalid, it’s discarded and imports locally. You can configure this behavior using the Content Validation setting in the Project Settings window (<strong>Editor/Cache Server/Content Validation</strong>). <strong>Enabled</strong> is the default setting, and the following options are available:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>选项</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Enabled</strong></td>
+	<td style="text-align:left;">Uses hashes when available but doesn’t require it.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Disabled</strong></td>
+	<td style="text-align:left;">Ignores any hashes provided by the accelerator.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Required</strong></td>
+	<td style="text-align:left;">Fails downloads if no hash is available from the accelerator.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>UploadOnly</strong></td>
+	<td style="text-align:left;">Only does hashing when uploading, and ignores hashing on downloads.</td>
+</tr>
+</tbody>
+</table>
+
+<h3><a href="https://docs.unity3d.com/Packages/com.unity.profiling.systemmetrics.mali@latest/">System Metrics Mali</a></h3>
+
+<p>The System Metrics Mali package allows you to access low-level system or hardware performance metrics on mobile devices for profiling or runtime performance adjustments. For example, you could use the package to:</p>
+
+<ul>
+<li>Monitor low-level GPU metrics in Unity Profiler to assess performance bottlenecks.</li>
+<li>Access the same metrics using Recorder API in runtime and adjust graphics quality based on the current bottleneck.</li>
+<li>Automate performance testing, by collecting extensive performance measurements with your continuous integration test runs.</li>
+</ul>
+
+<h3><a href="https://docs.unity3d.com/Packages/com.unity.splines@latest">Splines</a></h3>
+
+<p>The Splines package helps you work with curves and paths. You can use the package to generate objects and behaviors along paths, create trajectories, and draw shapes.</p>
+
+<p>The Splines package contains:</p>
+
+<ul>
+<li>The tools to create and manipulate splines in the Unity Editor.</li>
+<li>The framework to customize the standard spline editing tools in this package.</li>
+<li>A standard data format and storage model for commonly used splines.</li>
+<li>Samples of implementations that address common spline use cases, such as to create a road, animate a GameObject position and rotation along a spline, instantiate prefabs along a spline to create environments, and more.</li>
+</ul>
+
+<h3>Material Variants</h3>
+
+<p>Material Variants allow for reuse and improve management of materials that share most surface properties and differ only through others.</p>
+
+<p>With Material variants, you can create templates or material prefabs. Based on a base template, you can create variants that share common properties with the template material and override only the properties that differ. If you change common and non overridden properties in the template material, the changes automatically reflect in the variant material. You can also lock certain properties on material so they can’t be overridden in the variants.</p>
+
+<p>In a more complex setup, you can create variations of a variant material. The material inheritance hierarchy promotes reusability and improves iteration speed and scalability of material authoring in your project.</p>
+
+<h3>Package Manager improvements</h3>
+
+<p>The Package Manager improvements include:</p>
+
+<ul>
+<li>A new feature to set the storage location for the <a href="upm-config-cache.html">package cache</a> and <a href="upm-config-cache-as.html">asset store package cache</a> by using the <a href="Preferences.html#package-manager">Preferences window</a>.</li>
+<li>Support for <a href="upm-ui-multi.html">multiple selection</a> in the Package Manager window, so you can apply the same operation to multiple packages at once, rather than applying each operation individually.</li>
+<li>An enhanced flow for when you <a href="upm-ui-import.html#complete-proj">import complete projects from the Asset Store</a>. The enhancements include an option to import complete projects into a temporary project where you can safely explore the package without impacting your main project.</li>
+<li>Redesigned <a href="upm-ui-filter2.html">Filters</a> and <a href="upm-ui-sort.html">Sorting</a> controls in the <strong>Unity Registry</strong>, <strong>My Registries</strong>, <strong>In Project</strong>, and <strong>My Assets</strong> lists.</li>
+<li>A <strong>Check for updates</strong> option in the <strong>Refresh list</strong> in the <a href="upm-ui.html">My Assets list</a>. You can use this option to check for updates to all packages on your computer, not just the ones that are visible in the My Assets list.</li>
+<li>A new <strong>Update</strong> button to automatically update a Git package to the latest version, so you don’t have to add the package to the project again with <strong>Add package from git URL</strong>.</li>
+<li>Moved the <strong>Manual resolve</strong> action from the <strong>Refresh list</strong> button to the <a href="upm-ui.html">Package Manager settings</a> menu.</li>
+</ul>
+
+<h3>Added Delaunay Mesh Support for 2D Colliders</h3>
+
+<p>Polygons and outlines on the <code>PolygonCollider2D</code>, <code>CompositeCollider2D</code> &amp; <code>TilemapCollider2D</code> are produced via <code>libtess2</code>. Often those polygons can be too thin or small the physics engine filters them out. Delaunay tessellation produces superior results in these cases; it not only stops producing polygons that are too thin or small but also produces fewer polygons to cover the same area.</p>
+
+<h3>Sprite Atlas V2 (Out of Preview)</h3>
+
+<p>Sprite Atlas v2, which was introduced previously, will be out of preview in 2022.1. This brings support for Accelerator and as of 2021.2 provides full support for folders as packable objects.</p>
+
+<h3><a href="https://docs.unity3d.com/Packages/com.unity.2d.psdimporter@latest/">2D PSD Importer Improved Imports and Layer Management</a></h3>
+
+<p>The 2D PSD Importer now has support for importing files with the PSD file extension. You can control which layers to import from a Photoshop file if you select them from a new tab in the PSD Importer inspector. You can also set padding between Sprites in mosaic mode. Alongside this, there are a set of APIs for <code>PSDImporter</code>’s import settings.</p>
+
+<h2>图形</h2>
+
+<h3>Frame Timing Manager improvements</h3>
+
+<p>The Frame Timing Manager supports all platforms, works in Editor, and provides more information about frame timing. These improvements allow you to build performance adaption, profiling, and reporting tools on every platform.</p>
+
+<h3><a href="https://docs.unity3d.com/Packages/com.unity.2d.animation@8.0/manual/SpriteSwapIntro.html">Improved Sprite Swap workflows and 2D Animation quality of blife</a></h3>
+
+<p>The Sprite Swap feature is improved in the 2D Animation package, with streamlined Sprite Swap keyframing in the Animation window.</p>
+
+<p>The Animation quality of life for 2D has support for Sprite deformation, Sprite Swap, and IK Solvers in Animation preview windows. There is also an added Character Pivot tool in the Skinning Editor. You can use the new asset upgrading tool to upgrade older Sprite Library Assets and Animation Clips to the latest version.</p>
+
+<h3><a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@13.1/manual/2d-pixelperfect.html">2D Pixel Perfect Camera</a></h3>
+
+<p>The 2D Pixel Perfect Camera is enhanced with the addition of a new upscale filter to reduce blurriness.</p>
+
+<h3><a href="https://docs.unity3d.com/Packages/com.unity.2d.spriteshape@latest">SpriteShape: Custom Geometry Generation and Vertex Color support</a></h3>
+
+<p>You can write scripts to customize the Sprite Shape geometry after it’s generated. There are also added vertex colors for the Sprite Shape vertices.</p>
+
+<h2>Platforms</h2>
+
+<h3>Incremental build pipeline support for more platforms</h3>
+
+<p>Added <a href="incremental-build-pipelinel">incremental build pipeline</a> support for iOS, tvOS and other platforms. This makes Player builds faster for these platforms by removing redundant work in subsequent builds.</p>
+
+<h3>Advanced video encoder parameters for macOS</h3>
+
+<p>The <a href="https://docs.unity3d.com/Packages/com.unity.recorder@latest">Unity Recorder</a> can use advanced parameters with the <a href="https://docs.unity3d.com/2022.1/Documentation/ScriptReference/Media.MediaEncoder.html">MediaEncoder</a> on macOS (backed by Apple’s <a href="https://developer.apple.com/av-foundation/">AVFoundation</a> encoder API). This results in a consistent API across macOS and Windows and means the Unity Recorder can encode higher quality videos, such as YouTube compliant videos.</p>
+
+<h2>Artist and Cinematic tools</h2>
+
+<h3>Blackmagic Video for M&amp;E Enterprise Customers</h3>
+
+<p>You can leverage video capture cards from Blackmagic Design to input and output pro-grade video and audio in the Unity Editor and runtime builds. This allows you to unlock new workflows for users working in film, virtual production, live events, and broadcast. The package includes support for standard video formats, HDR, interlacing, and more.</p>
+
+<h3><a href="https://docs.unity3d.com/Packages/com.unity.live-capture@2.0/manual/ref-component-timecode-synchronizer.html">Timecode Synchronization for Live Capture</a></h3>
+
+<p>There is support for time code synchronization to the Live Capture package, which lets you synchronize compatible Live Capture devices connected to the Unity Editor.</p>
+
+<p>For example, you can synchronize data capture of the Unity Face Capture and Unity Virtual Camera companion apps. Future third-party motion capture and performance capture plugins can use this functionality to synchronize with any other plugin that implements the provided APIs.</p>
+
+<h3>Scene Handles and Overlays for Cinemachine Virtual Cameras</h3>
+
+<p>You can modify the camera constraint properties on the Cinemachine Virtual Cameras if you use Scene Overlays and purpose-built scene handles, instead of the property fields in the Inspector. Scene Handles and Overlays let you adjust properties like field of view, clipping planes, offsets, and damping directly in the Scene view.</p>
+
+<h3><a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@13.1/manual/ShaderGraph.html">Shadergraph: Added Blending Modes to 2D Master Stacks</a></h3>
+
+<p>The <strong>Shadergraph Sprite Lit</strong>, <strong>Sprite Unlit</strong>, and <strong>Sprite Custom Lit</strong> master stacks support several blending modes.</p>
+
+<p>This support allows you to create shaders that can blend using <strong>Alpha</strong>, <strong>Premultiply</strong>, <strong>Additive</strong>, and <strong>Multiply</strong> blending modes. These changes are included in the Universal Render Pipeline package.</p>
+
+<h3>Enhanced User Experiences and Performance Improvements For Cinematic Studio</h3>
+
+<p>There are improvements to sequences and Alembic updates that include support for SubD (sub division modeling) and Inferred Material Mapping.</p>
+
+<h2>Programmer tools</h2>
+
+<h3><a href="https://docs-multiplayer.unity3d.com/netcode/current/about/">Netcode for GameObjects</a></h3>
+
+<p>Netcode for GameObjects is an open-source networking library built for the Unity game engine. It’s available to users under a permissive, MIT license.The first release focuses on enabling the creation of small-scale, cooperative, client-hosted games. You can also choose to extend the library and leverage the available support for dedicated servers.</p>
+
+<h3>IL2CPP full generic sharing fallback</h3>
+
+<p>The IL2CPP scripting backend always generates fully shared versions of all generic methods. This allows you to use generic type combinations that are not present at compile time. This improvement avoids a whole class of difficult to detect errors that can occur only at runtime.</p>
+
+<h3>IL2CPP run time performance improvements</h3>
+
+<p>The IL2CPP scripting backend emits code that improves the performance of delegate invocation at runtime. More information about delegate invocation is cached initially, so that each delegate call is much faster.</p>
+
+<h3>Visual scripting interpreter dependency on reflection removed</h3>
+
+<p>This improvement brings faster initialization and execution of Visual Scripting graphs without the need to sacrifice the flexibility of runtime graph modifications.</p>
+
+<p>This is achieved through the introduction of an interpreted representation of VS graphs at runtime while you preserve the ability to modify and execute MonoBehavior-based graphs at execution time.</p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="WhatsNew20222.html"></a></span><div class="tip">New in Unity 2022.2</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="PackagesList.html"></a></span><div class="tip">Packages and feature sets</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

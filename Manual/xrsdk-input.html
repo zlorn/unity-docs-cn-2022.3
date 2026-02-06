@@ -1,0 +1,782 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="XR SDK 输入子系统 - Unity 手册">
+<title>XR SDK 输入子系统 - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="XR SDK 输入子系统是用于报告按钮、轴和跟踪设备信息的接口。这是将用户控制的数据输入到 Unity 引擎的各种输入端点中的核心子系统。Unity 会将输入信息报告给 InputDevices 和输入系统，具体取决于可用信息的类型。">
+<meta property="og:description" content="XR SDK 输入子系统是用于报告按钮、轴和跟踪设备信息的接口。这是将用户控制的数据输入到 Unity 引擎的各种输入端点中的核心子系统。Unity 会将输入信息报告给 InputDevices 和输入系统，具体取决于可用信息的类型。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'xrsdk-input';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/xrsdk-input.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/xrsdk-input.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/xrsdk-input.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/xrsdk-input.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/xrsdk-input.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/xrsdk-input.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/xrsdk-input.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/xrsdk-input.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/xrsdk-input.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/xrsdk-input.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/xrsdk-input.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/xrsdk-input.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/xrsdk-input.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/xrsdk-input.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/xrsdk-input.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/xrsdk-input.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/xrsdk-input.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/xrsdk-input.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/xrsdk-input.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/xrsdk-input.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/xrsdk-input.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/xrsdk-input.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/xrsdk-input.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/xrsdk-input.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/xrsdk-input.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/xrsdk-input.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/xrsdk-input.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/xrsdk-input.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/xrsdk-input.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/xrsdk-input.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/xrsdk-input.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/xrsdk-input.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/xrsdk-input.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/xrsdk-input.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/xrsdk-input.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/xrsdk-input.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/xrsdk-input.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/xrsdk-input.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/xrsdk-input.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/xrsdk-input.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/xrsdk-input.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/xrsdk-input.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/xrsdk-input.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/xrsdk-input.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/xrsdk-input.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/xrsdk-input.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/xrsdk-input.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/xrsdk-input.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/xrsdk-input.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/xrsdk-input.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/xrsdk-input.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/xrsdk-input.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/xrsdk-input.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/xrsdk-input.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/xrsdk-input.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/xrsdk-input.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/xrsdk-input.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/xrsdk-input.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="XR.html">XR</a></li>
+<li><a href="xr-sdk.html">Unity XR SDK</a></li>
+<li>Subsystems</li>
+<li>XR SDK 输入子系统</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="xrsdk-runtime-discovery.html"></a></span><div class="tip">子系统的运行时发现和激活</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="xrsdk-display.html"></a></span><div class="tip">XR SDK 显示子系统</div>
+</div>
+</div></div>
+<h1>XR SDK 输入子系统</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>XR SDK 输入子系统是用于报告按钮、轴和跟踪设备信息的接口。这是将用户控制的数据输入到 Unity 引擎的各种输入端点中的核心子系统。Unity 会将输入信息报告给 <a href="../ScriptReference/XR.InputDevices.html">InputDevices</a> 和<a href="https://github.com/Unity-Technologies/InputSystem">输入系统</a>，具体取决于可用信息的类型。</p>
+
+<h2>创建基本 XR 输入提供程序</h2>
+
+<p>要创建可正常工作的基本 XR 输入提供程序，请执行以下步骤：</p>
+
+<ol>
+<li><a href="#device-connection-and-disconnection">报告设备连接和断开连接</a></li>
+<li><a href="#device-definitions">填写所有已连接设备的定义信息</a></li>
+<li><a href="#device-states">每当 Unity 请求时更新设备的状态</a></li>
+<li><a href="#event-handling">响应所有相关事件和查询</a></li>
+<li><a href="#new-input-system-device-layout">向新的输入系统报告设备布局</a></li>
+</ol>
+
+<h2>术语</h2>
+
+<p>本指南用到了以下术语：</p>
+
+<h3>设备</h3>
+
+<p>大多数输入子系统 API 都依赖于设备。设备是通过您选择的唯一 ID 引用的输入功能容器。这可以是具体的内容（例如游戏手柄或头盔），也可以表示抽象对象（例如检测到的手部骨架）。设备具有固定数量的功能，您在设备连接期间无法更改这些功能。</p>
+
+<h3>功能</h3>
+
+<p>输入功能是您可以从中获取传感器或用户修改数据的任何内容。这可以是按钮、位置跟踪元素或电池寿命。它们分组为各种类型的数据，通过 UnityXRInputFeatureType 进行标识。下面是可以在输入设备上采用的当前受支持数据类型：</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>UnityXRInputFeatureType</strong></th>
+	<th style="text-align:left;"><strong>Data Type</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">kUnityXRInputFeatureTypeCustom</td>
+	<td style="text-align:left;">char[]（最多 1024 个元素）</td>
+</tr>
+<tr>
+	<td style="text-align:left;">kUnityXRInputFeatureTypeBinary</td>
+	<td style="text-align:left;">bool</td>
+</tr>
+<tr>
+	<td style="text-align:left;">kUnityXRInputFeatureTypeDiscreteStates</td>
+	<td style="text-align:left;">unsigned int</td>
+</tr>
+<tr>
+	<td style="text-align:left;">kUnityXRInputFeatureTypeAxis1D</td>
+	<td style="text-align:left;">浮点精度</td>
+</tr>
+<tr>
+	<td style="text-align:left;">kUnityXRInputFeatureTypeAxis2D</td>
+	<td style="text-align:left;">UnityXRVector2</td>
+</tr>
+<tr>
+	<td style="text-align:left;">kUnityXRInputFeatureTypeAxis3D</td>
+	<td style="text-align:left;">UnityXRVector3</td>
+</tr>
+<tr>
+	<td style="text-align:left;">kUnityXRInputFeatureTypeRotation</td>
+	<td style="text-align:left;">UnityXRVector4</td>
+</tr>
+<tr>
+	<td style="text-align:left;">kUnityXRInputFeatureTypeHand</td>
+	<td style="text-align:left;">UnityXRHand</td>
+</tr>
+<tr>
+	<td style="text-align:left;">kUnityXRInputFeatureTypeBone</td>
+	<td style="text-align:left;">UnityXRBone</td>
+</tr>
+<tr>
+	<td style="text-align:left;">kUnityXRInputFeatureTypeEyes</td>
+	<td style="text-align:left;">UnityXREyes</td>
+</tr>
+</tbody>
+</table>
+
+<h3>用法</h3>
+
+<p>用途为功能提供上下文。它标识开发者应如何使用功能。例如，功能可以是一个 2D 轴，但用途会告知开发者它是一个触摸板。用途还可以告知开发者，某个一维轴功能在报告电池寿命。您可以创建自己的用途，不过需要尽可能多地使用 Unity 开发的用途，因为它们为开发者启用了跨平台实用程序。有关所有人员都可用的常见用途列表，请参阅下面的<a href="#feature-usages">功能用途</a>部分。</p>
+
+<h3>UnityXRInternalInputDeviceId</h3>
+
+<p>UnityXRInternalInputDeviceId 可标识所有设备。可将这些标识符视为 Unity 和提供程序进行共享以引用特定设备的唯一 ID。您可以定义哪些 Id 映射到哪些设备，唯一的约束是不能对同时连接的两个设备使用相同 Id。将特定 Id 报告为正在连接时，Unity 会请求有关设备的功能以及使用该 Id 的该设备当前状态的信息，并使用该 Id 发送特定于设备的事件。</p>
+
+<p><a name="device-connection-and-disconnection"></a></p>
+
+<h2>设备连接和断开连接</h2>
+
+<p>IUnityXRInputInterface 中的两个 API 可处理设备连接和断开连接：</p>
+
+<h4>IUnityXRInputInterface.InputSubsystem_DeviceConnected</h4>
+
+<p>这会报告一个新设备。提供程序提供的 <code>UnityXRInternalInputDeviceId</code> 可以是任何值，只要它表示内部唯一的设备并且没有两个设备与来自相同提供程序的相同 Id 连接。设备只能在输入提供程序生命周期的开始与停止事件之间连接。在调用 <strong>IUnityXRInputProvider.Start</strong> 时任何已连接的设备在该回调期间应进行报告。</p>
+
+<p>一旦设备报告为已连接，Unity 便会在下一个输入更新循环中使用提供的 <strong>UnityXRInternalInputDeviceId</strong> 调用 <strong>IUnityXRInputProvider.FillDeviceDefinition</strong>，以便获取有关该设备的特定信息。</p>
+
+<h4>IUnityXRInputInterface.InputSubsystem_DeviceDisconnected</h4>
+
+<p>这会报告输入设备不再可用。仅在已将输入设备报告为已连接后，才能将它报告为已断开连接。收到 <strong>IUnityXRInputProvider.Stop</strong> 时，必须将当前连接的所有输入设备都报告为断开连接。</p>
+
+<p>以上两个调用都是线程安全的，可以随时调用。</p>
+
+<p><a name="device-definitions"></a></p>
+
+<h2>设备定义</h2>
+
+<p>设备定义描述设备可以向 Unity 报告的功能。功能包括设备标识信息，例如设备名称、角色、制造商和序列号。设备定义还包含所有可用输入功能的索引列表。</p>
+
+<p>当设备报告为已连接时，Unity 会通过 <strong>IUnityXRInputProvider.FillDeviceDefinition</strong> 调用提供程序。<strong>UnityXRInputDeviceDefinition</strong> 参数充当句柄，可以传递到 <strong>IUnityXRInputInterface</strong> 上任何以 <strong>DeviceDefinition</strong> 为前缀的方法中。这些方法如下所示：</p>
+
+<h3>设置标识信息</h3>
+
+<p>开发者使用设备上的一些数据来标识特定设备或新连接设备的常规功能。</p>
+
+<h4>IUnityXRInputInterface.DeviceDefinition_SetName</h4>
+
+<p>这使提供程序可以设置设备名称。名称必须清晰、简洁，并且可被大众市场消费者所识别。这不应包括制造商的名称。此名称可通过 <strong>UnityEngine.XR.InputDevice.name</strong> 供开发者使用，在输入系统中用作 <strong>InputDevice.product</strong>。请勿将此留空。</p>
+
+<h4>IUnityXRInputInterface.DeviceDefinition_SetCharacteristics</h4>
+
+<p>这使提供程序可以指定连接的设备类型。<strong>UnityXRInputDeviceCharacteristics</strong> 是一系列有助于定义设备功能的标志。这些可更改 <strong>InputDevice</strong> 的输入系统用途。</p>
+
+<h4>IUnityXRInputInterface.DeviceDefinition_SetManufacturer</h4>
+
+<p>这使提供程序可以设置设备的制造商。制造商必须清晰、简洁，并且可被大众市场消费者所识别。此字符串可通过 <strong>UnityEngine.XR.InputDevice.manufacturer</strong> 供开发者使用，在输入系统中用作 <strong>InputDevice.manufacturer</strong>。请勿将此留空。</p>
+
+<h4>IUnityXRInputInterface.DeviceDefinition_SetSerialNumber</h4>
+
+<p>这使提供程序可以设置设备的序列号。此字符串可通过 <strong>UnityEngine.XR.InputDevice.serialNumber</strong> 供开发者使用，在输入系统中用作 <strong>InputDevice.serialNumber</strong>。这必须是此特定设备的唯一标识符，否则您应该将它留空。</p>
+
+<h3>添加功能</h3>
+
+<p>您可以通过以下 API 调用将输入功能添加到设备定义中。</p>
+
+<h4>IUnityXRInputInterface.DeviceDefinition_AddFeature</h4>
+
+<p>这会添加所设置类型的功能（<strong>kUnityXRInputFeatureTypeCustom</strong> 除外），并返回该新功能的 <strong>UnityXRInputFeatureIndex</strong>。</p>
+
+<h4>IUnityXRInputInterface.DeviceDefinition_AddCustomFeature</h4>
+
+<p>这会添加 <strong>kUnityXRInputFeatureTypeCustom</strong> 功能。这些是可变缓冲区，最多 1024 字节。您可以使用这些缓冲区创建 Unity 未知的自定义类型，需要显式大小。此方法返回该新功能的 <strong>UnityXRInputFeatureIndex</strong>。</p>
+
+<h4>IUnityXRInputInterface.DeviceDefinition_AddFeatureWithUsage</h4>
+
+<p>这会添加一个功能，而且还包括一个<a href="#feature-usages">功能用途</a>。此方法是 helper 方法，将 <strong>DeviceDefinition_AddFeature</strong> 和 <strong>DeviceDefinition_AddUsageAtIndex</strong> 相结合，并返回该新功能的 <strong>UnityXRInputFeatureIndex</strong>。</p>
+
+<h4>IUnityXRInputInterface.DeviceDefinition_AddUsageAtIndex</h4>
+
+<p>这会向现有功能添加<a href="#feature-usages">功能用途</a>。它从添加功能的方法之一获取 <strong>UnityXRInputFeatureIndex</strong>。您可以向单一功能添加所需数量的用途。</p>
+
+<p><strong>注意：</strong>返回的 <strong>UnityXRInputFeatureIndex</strong> 值全部采用添加它们的先后顺序。</p>
+
+<p><a name="device-states"></a></p>
+
+<h2>设备状态</h2>
+
+<p>设备状态是包含设备当前状态的数据结构。<strong>UnityXRInputDeviceState</strong> 的结构通过 <strong>UnityXRInputDeviceDefinition</strong> 进行描述。</p>
+
+<p><strong>注意：</strong>包含在设备状态中的功能使用 <strong>UnityXRInputFeatureIndex</strong>（在设备定义中声明该功能时报告）进行访问。</p>
+
+<h3>设备状态更新类型</h3>
+
+<p>定义声明后，Unity 会通过 <strong>IUnityXRInputProvider.UpdateDeviceState</strong> 在每一帧请求设备状态两次。<strong>UnityXRInputUpdateType</strong> 参数指定 Unity 所需的更新类型：</p>
+
+<ul>
+<li>
+<strong>kUnityXRInputUpdateTypeDynamic</strong> 是在 Unity 遍历 <strong>MonoBehaviour.Update</strong> 调用和协程继续之前的更新。这些应表示设备当前所在的位置。</li>
+<li>
+<strong>kUnityXRInputUpdateTypeBeforeRender</strong> 就在 Unity 准备好渲染到头盔之前，以及就在调用 <strong>Application.OnBeforeRender</strong> 之前进行调用。这些调用应使用正向预测的跟踪位置，并表示您希望在显示场景时渲染场景的位置。</li>
+</ul>
+
+<h3>设备状态方法</h3>
+
+<p><strong>UnityXRInputDeviceState</strong> 参数充当句柄，可以传递到 <strong>IUnityXRInputInterface</strong> 上任何以 <strong>DeviceState</strong> 为前缀的方法中。</p>
+
+<h4>IUnityXRInputInterface.DeviceState_SetCustomValue</h4>
+
+<p>这会在提供的 <strong>UnityXRInputFeatureIndex</strong> 处设置类型为 <strong>kUnityXRInputFeatureTypeCustom</strong> 的功能。设置自定义值功能时，提供程序必须始终使用所声明功能的完整大小设置值；没有部分值设置。此外，您必须在提交期间向 Unity 声明所有自定义功能，并详细说明它们包含的数据类型以及使用其他各个功能类型无法存在的原因。</p>
+
+<h4>IUnityXRInputInterface.DeviceState_SetBinaryValue</h4>
+
+<p>这会设置类型为 <strong>kUnityXRInputFeatureTypeBinary</strong> 的布尔值（开/关）功能。此功能的默认、静止或未使用状态必须为 false。</p>
+
+<h4>IUnityXRInputInterface.DeviceState_SetDiscreteStateValue</h4>
+
+<p>这会设置 32 位无符号整数值。这还可用于表示枚举。默认、未使用值必须是 0，如果用于枚举，则 0 必须表示 null、无、未设置或无效值。</p>
+
+<h4>IUnityXRInputInterface.DeviceState_SetAxis1DValue</h4>
+
+<p>这会设置 32 位浮点值。默认、未使用值必须是 0.0。</p>
+
+<h4>IUnityXRInputInterface.DeviceState_SetAxis2DValue</h4>
+
+<p>这会设置类型为 <strong>UnityXRVector2</strong> 的值。UnityXRVector2 结构是一对 (X, Y) 32 位浮点数。默认、未使用值必须是 (0.0, 0.0)。</p>
+
+<h4>IUnityXRInputInterface.DeviceState_SetAxis3DValue</h4>
+
+<p>这会设置类型为 <strong>UnityXRVector3</strong> 的值。UnityXRVector2 结构是一对 (X, Y, Z) 32 位浮点数。默认、未使用值必须是 (0.0, 0.0, 0.0)。</p>
+
+<h4>IUnityXRInputInterface.DeviceState_SetRotationValue</h4>
+
+<p>这会设置类型为 <strong>UnityXRVector4</strong> 的值（格式设置为四元数）。默认、未使用值必须是 (0, 0, 0, 1)。请参阅有关<a href="../ScriptReference/Quaternion.html">四元数</a>的文档以了解更多信息。</p>
+
+<h4>IUnityXRInputInterface.DeviceState_SetBoneValue</h4>
+
+<p>这会设置类型为 <strong><a href="#unityxrbone">UnityXRBone</a></strong> 的值。</p>
+
+<h4>IUnityXRInputInterface.DeviceState_SetHandValue</h4>
+
+<p>这会设置类型为 <strong><a href="#unityxrhand">UnityXRHand</a></strong> 的值。</p>
+
+<h4>IUnityXRInputInterface.DeviceState_SetEyesValue</h4>
+
+<p>这会设置类型为 <strong><a href="#unityxreyes">UnityXREyes</a></strong> 的值。</p>
+
+<p><strong>注意：</strong>传入的 <strong>UnityXRInputFeatureUsageIndex</strong> 是在填写 <strong>UnityXRInputFeatureDefinition</strong> 期间，向设备定义添加该单个功能时返回的相同值。</p>
+
+<h3>特定于功能的结构</h3>
+
+<p>以下高级类型是用于包含来自多个数据源的数据的特殊功能类型。</p>
+
+<p><a name="unityxrbone"></a></p>
+
+<h4>UnityXRBone</h4>
+
+<p>这些表示空间中分层姿势的一个骨骼或一个元素。<strong>position</strong> 成员表示以米为单位的三维位置（使用 Y 向上的左手坐标）。<strong>rotation</strong> 成员表示该骨骼在空间中的方向，通过以弧度为单位的归一化四元数进行表示。<strong>parentBoneIndex</strong> 是 <strong>UnityXRInputFeatureIndex</strong>，必须指向在层级视图中向上的 <strong>UnityXRBone</strong> 或 <strong>kUnityInvalidXRInputFeatureIndex</strong>（如果它是此骨架的根）。</p>
+
+<p><a name="unityxrhand"></a></p>
+
+<h4>UnityXRHand</h4>
+
+<p>这些表示骨骼的手状结构。它们将骨骼层级视图组织成手指和根，以便于遍历。<strong>rootBoneIndex</strong> 必须始终指向类型为 <strong>kUnityXRInputFeatureTypeBone</strong> 的有效索引（表示手的手掌或中心）。<strong>fingerBoneIndices</strong> 必须堆叠，以便第一个维度或数组映射到各个手指（跟在 <strong>UnityXRHandFinger</strong> 枚举值后），数组的第二个维度是从根到尖端的各个手指骨骼。</p>
+
+<p><a name="unityxreyes"></a></p>
+
+<h4>UnityXREyes</h4>
+
+<p>这些表示一双眼睛、其凝视点和当前眨眼数据。The <strong>leftEyePose</strong> 和 <strong>rightEyePose</strong> 属于类型 <strong>UnityXRPose</strong>，其中 <strong>position</strong> 成员表示以米为单位的三维位置（使用 Y 向上的左手坐标），<strong>rotation</strong> 成员表示以弧度为单位的归一化四元数。<strong>fixationPoint</strong> 表示左右眼会聚的位置，也是以米为单位的三维位置（使用 Y 向上的左手坐标）。<strong>leftOpenAmount</strong> 和 <strong>rightOpenAmount</strong> 表示眼睛的睁开程度，其中 0 为闭合，1 为完全睁开。它们不能超过 [0,1] 范围。</p>
+
+<p><a name="event-handling"></a></p>
+
+<h2>事件处理</h2>
+
+<p>在设备状态和定义更新之外，Unity 期望您对各种事件进行反应和响应。</p>
+
+<h3>通用事件</h3>
+
+<h4>UnityXRInputProvider.HandleEvent</h4>
+
+<p>这适用于私有事件，特定于此提供程序。<strong>eventType</strong> 参数是用于标识有效负载的自定义代码。如果提供程序不理解该事件，则它必须返回 <strong>kUnitySubsystemErrorCodeFailure</strong>。</p>
+
+<h3>跟踪原点事件</h3>
+
+<p>跟踪原点是指真实世界空间中与被跟踪设备相关的点。它实际上是真实世界空间中设备报告位置 (0, 0, 0) 的点。Unity 支持多种跟踪原点模式，提供程序可以选择加入它们支持的模式。追踪原点模式在 <strong>UnityXRInputTrackingOriginModeFlags</strong> 下列出。</p>
+
+<p><strong>kUnityXRInputTrackingOriginModeDevice</strong> 将原点放置在主设备在启动时的位置和偏航处，或是最后一个 <strong>UnityXRInputProvider.HandleRecenter</strong> 事件的位置处。</p>
+
+<p><strong>kUnityXRInputTrackingOriginModeFloor</strong> 将原点放置在地板上的某处。地板上的位置取决于提供程序，只要让开发者可以了解地板与各种设备之间的高度差即可。</p>
+
+<p><strong>kUnityXRInputTrackingOriginModeTrackingReference</strong> 将原点放置在具有 <strong>kUnityXRInputDeviceCharacteristicsTrackingReference</strong> 特征的特定 InputDevice 位置处。</p>
+
+<p>最后，<strong>kUnityXRInputTrackingOriginModeUnknown</strong> 是一个错误案例，不应由提供程序返回。</p>
+
+<h4>UnityXRInputProvider.HandleRecenter</h4>
+
+<p>当跟踪原点模式设置为 <strong>kUnityXRInputTrackingOriginModeDevice</strong> 时，对重新居中的调用应将主设备的当前位置设置为新原点。</p>
+
+<h4>UnityXRInputProvider.QueryTrackingOriginMode</h4>
+
+<p>这是来自 Unity 的请求，用于获取提供程序所使用的当前跟踪原点模式。提供程序应设置 <strong>trackingOriginMode</strong> 参数并返回 <strong>kUnitySubsystemErrorCodeSuccess</strong>。返回的参数只能是单一标志值。</p>
+
+<h4>UnityXRInputProvider.QuerySupportedTrackingOriginModes</h4>
+
+<p>这是针对支持的跟踪原点模式的请求。提供程序应设置 <strong>supportedTrackingOriginModes</strong> 参数并返回 <strong>kUnitySubsystemErrorCodeSuccess</strong>。返回的参数应该是 <strong>UnityXRInputProvider.HandleSetTrackingOriginMode</strong> 能够支持的所有 <strong>UnityXRInputTrackingOriginModeFlags</strong> 的累积列表。</p>
+
+<h4>UnityXRInputProvider.HandleSetTrackingOriginMode</h4>
+
+<p>这是来自 Unity 的请求，用于更改当前跟踪原点模式。<strong>trackingOriginMode</strong> 参数是所需的跟踪原点模式。如果原点能够更改，则提供程序应返回 <strong>kUnitySubsystemErrorCodeSuccess</strong>，否则返回 <strong>kUnitySubsystemErrorCodeSuccess</strong>。如果跟踪原点模式已是所需模式，则提供程序不应执行任何操作，并返回 <strong>kUnitySubsystemErrorCodeSuccess</strong>。</p>
+
+<h4>IUnityXRInputInterface.InputSubsystem_TrackingOriginUpdated</h4>
+
+<p>这是提供程序可以发送的事件，用于向 Unity 通知跟踪原点的位置已更改。在 <strong>UnityXRInputProvider.HandleSetTrackingOriginMode</strong> 成功并移动原点时，必须调用此事件。如果提供程序由于整体跟踪信息更改而不得不更改原点，也可以调用此事件。</p>
+
+<h4>IUnityXRInputInterface.InputSubsystem_SetTrackingBoundary</h4>
+
+<p>这是提供程序可以发送的事件，用于向 Unity 通知有可用的跟踪边界，或跟踪边界已更改。如果存在边界，并且跟踪原点已更改，从而移动了边界的相对位置，则必须调用此事件。这可以使用 null 和 0 个点进行调用，以便移除现有跟踪边界。</p>
+
+<h3>触觉事件</h3>
+
+<h4>UnityXRInputProvider.QueryHapticCapabilities</h4>
+
+<p>这是对提供程序填写的给定设备触觉功能的请求。将 <strong>supportsImpulse</strong> 设置为 true 可为 <strong>UnityXRInputProvider.HandleHapticImpulse</strong> 启用事件。将 <strong>supportsBuffer</strong> 设置为 true 可为 <strong>UnityXRInputProvider.HandleHapticBuffer</strong> 启用事件。</p>
+
+<p><strong>注意：</strong>功能结构使提供程序可以设置通道和请求的数量以启动和停止包含通道索引的触觉。这使提供程序可以在单一设备内具有多个可以独立运行的电机。第一个通道应是要使用的最常用电机，但后续顺序取决于提供程序。</p>
+
+<h4>UnityXRInputProvider.HandleHapticImpulse</h4>
+
+<p>这是要求设备在设置的持续时间内以设置的幅度运行的请求。Unity 会为此请求填写数据。缓冲区参数属于类型 <strong>UnityXRHapticImpulse</strong>。</p>
+
+<h4>UnityXRInputProvider.HandleHapticBuffer</h4>
+
+<p>这是要求设备在提供设置的缓冲区的情况下，运行某个模式的请求。Unity 会为此请求填写数据。缓冲区参数属于类型 <strong>UnityXRHapticUpdate</strong>。</p>
+
+<p>bufferSize 从不会多于从 <strong>UnityXRInputProvider.QueryHapticCapabilities</strong> 事件返回的 <strong>UnityXRHapticCapabilities.bufferMaxSize</strong>。</p>
+
+<h4>UnityXRInputProvider.HandleHapticStop</h4>
+
+<p>这是来自 Unity，要求停止任何触觉效果的请求。这应该对提供的 <strong>UnityXRInternalInputDeviceId</strong> 停止脉冲或缓冲触觉效果。</p>
+
+<p><a id="feature-usages"></a></p>
+
+<h2>功能用途</h2>
+
+<p>功能用途是简单的字符串标签，可提供有关功能的上下文并帮助 Unity 开发者以通用方式访问设备。您可以将设备声明为具有触发器、设备位置、菜单按钮或输入功能的其他共享概念。开发者可以访问这些内容并与设备进行交互，而无需确切知道它是什么。这些也用于将输入数据路由到 <strong>UnityEngine.Input</strong> 和 <strong>UnityEngine.XR.InputTracking</strong> 并决定索引。单一输入功能可以具有多种用途，但您声明的每个输入功能必须至少分配有一个用途。如果您选择不使用 Unity 默认提供的用途，则必须在提交进行认证时让 Unity 了解您使用了什么，并准备好根据 Unity 的反馈更新用途字符串。</p>
+
+<p>所有世界空间用途都以米、m/s、m/s<sup>2</sup> 或弧度（适当时）为单位。空间方向应为左手，z 向前，y 向上。空间原点应是设备在连接时的位置。此空间是您自己的，不会直接映射到 Unity 世界空间。</p>
+
+<p>下面是 Unity 中提供的常见用途：</p>
+
+<h3>姿势和跟踪</h3>
+
+<p>以下功能适用于在真实世界中提供跟踪的设备。它们对于识别当前跟踪能力十分有用：</p>
+
+<p><strong>kUnityXRInputFeatureUsageIsTracked</strong> 是一个布尔值，指定设备当前是否在正确跟踪。True 表示完全跟踪，false 表示部分跟踪或未跟踪。</p>
+
+<p><strong>kUnityXRInputFeatureUsageTrackingState</strong> 是离散状态功能，由 <strong>UnityXRInputTrackingStateFlags</strong> 枚举提供支持，用于标识当前可用和更新的实际跟踪功能。此值绝不能高于 <strong>kUnityXRInputTrackingStateAll</strong>。</p>
+
+<p>其余跟踪功能会中继有关特定“节点”（例如设备、左眼或彩色摄像机）的个别数据。根据数据类型，它们分为六个一组。这些内容必须与 <strong>kUnityXRInputFeatureUsageTrackingState</strong> 中的当前值结合起来更新。也就是说，如果跟踪状态显示位置可用，则所有位置用途都必须正确更新。</p>
+
+<p>用途前缀如下所示：</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>前缀</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>kUnityXRInputFeatureUsageDevice</strong></td>
+	<td style="text-align:left;">输入设备的通用化位置</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>kUnityXRInputFeatureUsageCenterEye</strong></td>
+	<td style="text-align:left;">所有眼睛渲染位置的集中式平均值</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>kUnityXRInputFeatureUsageLeftEye</strong></td>
+	<td style="text-align:left;">左眼的渲染位置</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>kUnityXRInputFeatureUsageRightEye</strong></td>
+	<td style="text-align:left;">右眼的渲染位置</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>kUnityXRInputFeatureUsageColorCamera</strong></td>
+	<td style="text-align:left;">任何传入摄像机视频源的位置</td>
+</tr>
+</tbody>
+</table>
+
+<p>这些前缀各自都具有一系列可用后缀，表示各种跟踪属性，如下所示：
+* <strong>Position</strong>
+* <strong>Rotation</strong>
+* <strong>Velocity</strong>
+* <strong>AngularVelocity</strong>
+* <strong>Acceleration</strong>
+* <strong>AngularAcceleration</strong></p>
+
+<p>定义中不包含这些前缀意味着它们从不可用。包含它们，但通过 <strong>kUnityXRInputFeatureUsageTrackingState</strong> 功能将它们标记为不可用表示功能当前不可用，但以后可能可用。</p>
+
+<h3>设备信息</h3>
+
+<p>这些包含通用化设备信息，而不是用户启动的控件。它们是用户无法直接控制的设备功能。</p>
+
+<p><strong>kUnityXRInputFeatureUsageBatteryLevel</strong> 是表示设备当前电池电量的 1D 轴功能，其中 0 表示没有电池电量，1 表示充满电。它必须始终在 [0–1] 范围内。</p>
+
+<p><strong>kUnityXRInputFeatureUsageUserPresence</strong> 是布尔值，在用户当前佩戴头盔时返回 true。</p>
+
+<h3>2D 轴</h3>
+
+<p>这些是二维模拟浮点值，例如触控板和游戏杆。这些控件通常使用拇指进行移动。它们提供 X 和 Y，应始终在 ([–1,1],[–1,1]) 范围内。</p>
+
+<p><strong>kUnityXRInputFeatureUsagePrimary2DAxis</strong> 是表示触控板或游戏杆的 2D 轴功能。0,0 是空闲位置，Y 正值表示远离控制器用户。</p>
+
+<p><strong>kUnityXRInputFeatureUsageSecondary2DAxis</strong> 是表示第二个游戏杆或触控板的 2D 轴（与 <strong>kUnityXRInputFeatureUsagePrimary2DAxis</strong> 一起使用）。0,0 是空闲位置，Y 正值表示远离控制器用户。</p>
+
+<h3>1D 轴</h3>
+
+<p>这些全部是一维模拟浮点值。此处标识了可以“半按”的按钮、触发器和其他控件。</p>
+
+<p><strong>kUnityXRInputFeatureUsageTrigger</strong> 是映射到索引启动的触发器的 1D 轴。这必须始终在 [0,1] 范围内，其中 0 是打开，1 是完全挤压。如果实现了此功能，则设备还必须实现 <strong>kUnityXRInputFeatureUsageTriggerButton</strong>。</p>
+
+<p><strong>kUnityXRInputFeatureUsageGrip</strong> 是映射到用手挤压激活握把的 1D 轴。这必须始终在 [0,1] 范围内，其中 0 是打开，1 是完全挤压。如果实现了此功能，则设备还必须实现 <strong>kUnityXRInputFeatureUsageGripButton</strong>。</p>
+
+<h3>二进制</h3>
+
+<p>这些是一维数字值。它们可以启动或不启动，但没有进一步的粒度。</p>
+
+<p><strong>kUnityXRInputFeatureUsagePrimaryButton</strong> 是表示控制器上主按钮的二进制功能。这通常用作菜单中的接受或高级按钮。如果启动了此功能，则 <strong>kUnityXRInputFeatureUsagePrimaryTouch</strong> 也必须启动（如果存在）。</p>
+
+<p><strong>kUnityXRInputFeatureUsagePrimaryTouch</strong> 是表示控制器上主按钮的触摸状态的二进制功能。如果实现了此功能，则设备还必须实现 <strong>kUnityXRInputFeatureUsagePrimaryButton</strong>。</p>
+
+<p><strong>kUnityXRInputFeatureUsageSecondaryButton</strong> 是表示控制器上辅助按钮的二进制功能。这通常用作后退或备选按钮。如果启动了此功能，则 <strong>kUnityXRInputFeatureUsageSecondaryTouch</strong> 也必须启动（如果存在）。</p>
+
+<p><strong>kUnityXRInputFeatureUsageSecondaryTouch</strong> 是表示控制器上辅助按钮的触摸状态的二进制功能。如果实现了此功能，则设备还必须实现 <strong>kUnityXRInputFeatureUsageSecondaryButton</strong>。</p>
+
+<p><strong>kUnityXRInputFeatureUsageGripButton</strong> 是表示是否触发手动挤压的二进制功能。如果实现了此功能，则设备还必须实现 <strong>kUnityXRInputFeatureUsageGrip</strong>。</p>
+
+<p><strong>kUnityXRInputFeatureUsageTriggerButton</strong> 是表示是否触发手动挤压的布尔值功能。如果实现了此功能，则设备还必须实现 <strong>kUnityXRInputFeatureUsageTrigger</strong>。</p>
+
+<p><strong>kUnityXRInputFeatureUsageMenuButton</strong> 是表示非游戏暂停或菜单按钮的二进制功能。这对于用户而言通常不容易实现。</p>
+
+<p><strong>kUnityXRInputFeatureUsagePrimary2DAxisClick</strong> 是表示按下或单击 <strong>kUnityXRInputFeatureUsagePrimary2DAxis</strong> 2D 轴的二进制功能。如果实现了此功能，则设备还必须实现 <strong>kUnityXRInputFeatureUsagePrimary2DAxis</strong>。如果启动了此功能，则 <strong>kUnityXRInputFeatureUsagePrimary2DAxisTouch</strong> 也必须启动（如果存在）。</p>
+
+<p><strong>kUnityXRInputFeatureUsagePrimary2DAxisTouch</strong> 是表示轻触 <strong>kUnityXRInputFeatureUsagePrimary2DAxis</strong> 2D 轴的二进制功能。如果实现了此功能，则设备还必须实现 <strong>kUnityXRInputFeatureUsagePrimary2DAxis</strong>。</p>
+
+<p><strong>kUnityXRInputFeatureUsageSecondary2DAxisClick</strong> 是表示按下或单击 <strong>kUnityXRInputFeatureUsageSecondary2DAxis</strong> 2D 轴的二进制功能。如果实现了此功能，则设备还必须实现 <strong>kUnityXRInputFeatureUsageSecondary2DAxis</strong>。如果启动了此功能，则 <strong>kUnityXRInputFeatureUsageSecondary2DAxisTouch</strong> 也必须启动（如果存在）。</p>
+
+<p><strong>kUnityXRInputFeatureUsageSecondary2DAxisTouch</strong> 是表示轻触 <strong>kUnityXRInputFeatureUsageSecondary2DAxis</strong> 2D 轴的二进制功能。如果实现了此功能，则设备还必须实现 <strong>kUnityXRInputFeatureUsageSecondary2DAxis</strong>。</p>
+
+<h3>基于传感器</h3>
+
+<p>这些表示各种传感器类型。它们用作搜索手部和眼睛类型数据的简便方法。</p>
+
+<p><strong>kUnityXRInputFeatureUsageHandData</strong> 是表示手部跟踪数据的 <strong>UnityXRHands</strong> 功能。
+<strong>kUnityXRInputFeatureUsageEyesData</strong> 是表示眼睛跟踪数据的 <strong>UnityXREyes</strong> 功能。</p>
+
+<p><a name="new-input-system-device-layout"></a></p>
+
+<h1>新输入系统设备布局</h1>
+
+<p>要让用户可以在使用新输入系统时绑定到并使用代码访问您的设备属性，您需要提供设备布局描述作为输入提供程序的一部分。</p>
+
+<p>您应该为您在输入提供程序中定义的每种设备类型提供设备布局。
+如果您没有为注册的设备提供显式设备布局，则用户将无法使用新输入系统 UI 绑定到设备上的功能。输入系统仍会接收设备数据，用户能够手动创建到新设备功能的绑定。</p>
+
+<p>有关输入系统设备布局的更多信息，请参阅输入系统<a href="https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/manual/Layouts.html">文档</a>。下面提供了一个便于实现的示例。</p>
+
+<h2>示例设备布局</h2>
+
+<p>此示例为新的 Example VR Controller 提供布局。
+Example VR Controller 的 XRSDK 布局定义描述为具有：
+- 一个附加 <code>kUnityXRInputFeatureTypeBinary</code>，名为 <code>exampleButton</code>
+- 一个 <code>kUnityXRInputFeatureTypeAxis3D</code> 值，名为 <code>examplePosition</code>
+- 一个 <code>kUnityXRInputFeatureTypeRotation</code> 值，名为 <code>exampleRotation</code></p>
+
+<p>要使用户可以使用新输入系统绑定和控制设备，您必须为新的 Example VR Controller 提供设备布局。</p>
+
+<p>首先，您需要提供 <code>InputControlLayout</code> 属性，还需要提供用于新输入系统 UI 的显式名称。使用 <code>[Preseve]</code> 属性确保这些元素不会从编译步骤中剥离。</p>
+
+<pre><code>[Preserve]
+[InputControlLayout(displayName = "Example VR Controller")]
+public class ExampleVRController : XRController
+{
+</code></pre>
+
+<p>接下来，为 XRSDK 布局中定义的各种元素提供 <code>InputControl</code> 映射。
+再次使用 <code>[Preserve]</code> 确保这些元素不会从构建中剥离。<code>aliases</code> 关键字的使用使新输入系统可以根据提供的别名执行常见匹配。</p>
+
+<pre><code>        [Preserve]
+                [InputControl(aliases = new[] { "PrimaryButton" })]
+                public ButtonControl exampleButton { get; private set; }
+                [Preserve]
+                [InputControl]
+                public Vector3Control examplePosition { get; private set; }
+                [Preserve]
+                [InputControl]
+                public QuaternionControl exampleRotation { get; private set; }
+</code></pre>
+
+<p>最后，提供 <code>FinishSetup</code> 方法的实现，该方法将控件映射绑定到控件的实例。确保还调用了基类的 <code>FinishSetup</code>，否则基控件不会绑定。</p>
+
+<pre><code>        protected override void FinishSetup()
+                {
+                    base.FinishSetup();
+
+                    exampleButton = GetChildControl&lt;ButtonControl&gt;("exampleButton");
+                    examplePosition = GetChildControl&lt;Vector3Control&gt;("examplePosition");
+                    exampleRotation = GetChildControl&lt;QuaternionControl&gt;("exampleRotation");            
+                }
+
+</code></pre>
+
+<h2>注册布局</h2>
+
+<p>需要执行的最后一步是在为这些设备启动 XRSDK 加载程序时向新输入系统注册新设备布局。以下代码是此实现的示例。</p>
+
+<p>您必须使用与产品正确匹配的字符串或 XRSDK 输入提供程序在连接设备时提供的其他字符串填写 <code>REGEX THAT MATCHES YOUR DEVICE</code> 部分。</p>
+
+<pre><code>        public override bool Initialize()
+                {
+        # if UNITY_INPUT_SYSTEM
+                    InputLayoutLoader.RegisterInputLayouts();
+        # endif
+
+        # if UNITY_INPUT_SYSTEM
+        # if UNITY_EDITOR
+            [InitializeOnLoad]
+        # endif
+            static class InputLayoutLoader
+            {
+                static InputLayoutLoader()
+                {
+                    RegisterInputLayouts();
+                }
+
+                public static void RegisterInputLayouts()
+                {
+                    UnityEngine.InputSystem.InputSystem.RegisterLayout&lt;ExampleVRController&gt;(
+                        matches: new InputDeviceMatcher()
+                            .WithInterface(XRUtilities.InterfaceMatchAnyVersion)
+                            .WithProduct("&lt;REGEX THAT MATCHES YOUR DEVICE&gt;")
+                    );
+
+</code></pre>
+
+<hr>
+
+<h2>用于创建自己的输入提供程序的检查清单</h2>
+
+<ul>
+<li>设置基本生命周期注册：
+
+<ul>
+<li>
+<strong>IUnityXRInputInterface.RegisterLifecycleProvider</strong>，带有用于初始化、启动、停止、关闭的函数指针。</li>
+<li>
+<strong>IUnityXRInputInterface.RegisterInputProvider</strong>，在填写了输入提供程序调用的情况下从 <strong>UnityLifecycleProvider.Initialize</strong> 回调进行调用。</li>
+</ul>
+</li>
+<li>对每个连接的设备使用唯一 Id 来调用 <strong>IUnityXRInputInterface.InputSubsystem_DeviceConnected</strong>。</li>
+<li>为 <strong>UnityXRInputProvider.FillDeviceDefinition</strong> 中的每个设备填写有效的设备定义：
+
+<ul>
+<li>添加有效名称。</li>
+<li>添加有效角色。</li>
+<li>添加至少一个输入功能。</li>
+</ul>
+</li>
+<li>对于每个连接的设备，在 <strong>UnityXRInputProvider.UpdateDeviceState</strong> 中更新设备状态。
+
+<ul>
+<li>如果您可以转发预测跟踪位置以进行渲染，请在更新属于类型 <strong>kUnityXRInputUpdateTypeBeforeRender</strong> 时执行此操作。</li>
+</ul>
+</li>
+<li>使用任何包围盒调用 <strong>IUnityXRInputInterface.InputSubsystem_SetBoundaryPoints</strong>。</li>
+<li>实现 <strong>UnityXRInputProvider.QueryTrackingOriginMode</strong>、<strong>UnityXRInputProvider.QuerySupportedTrackingOriginModes</strong> 和 <strong>UnityXRInputProvider.HandleSetTrackingOriginMode</strong>。</li>
+<li>实现 <strong>UnityXRInputProvider.TryRecenter</strong>。</li>
+<li>为您的设备提供新输入系统设备布局。</li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="xrsdk-runtime-discovery.html"></a></span><div class="tip">子系统的运行时发现和激活</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="xrsdk-display.html"></a></span><div class="tip">XR SDK 显示子系统</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

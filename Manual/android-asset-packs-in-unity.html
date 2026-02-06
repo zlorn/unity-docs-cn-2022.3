@@ -1,0 +1,261 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Asset packs in Unity - Unity 手册">
+<title>Asset packs in Unity - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="This page describes how asset packs work in the context of a Unity Android application that uses Play Asset Delivery.">
+<meta property="og:description" content="This page describes how asset packs work in the context of a Unity Android application that uses Play Asset Delivery.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'android-asset-packs-in-unity';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/android-asset-packs-in-unity.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/android-asset-packs-in-unity.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/android-asset-packs-in-unity.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/android-asset-packs-in-unity.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/android-asset-packs-in-unity.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/android-asset-packs-in-unity.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/android-asset-packs-in-unity.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/android-asset-packs-in-unity.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/android-asset-packs-in-unity.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/android-asset-packs-in-unity.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/android-asset-packs-in-unity.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/android-asset-packs-in-unity.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/android-asset-packs-in-unity.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/android-asset-packs-in-unity.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/android-asset-packs-in-unity.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/android-asset-packs-in-unity.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/android-asset-packs-in-unity.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/android-asset-packs-in-unity.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/android-asset-packs-in-unity.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/android-asset-packs-in-unity.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/android-asset-packs-in-unity.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/android-asset-packs-in-unity.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/android-asset-packs-in-unity.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/android-asset-packs-in-unity.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/android-asset-packs-in-unity.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/android-asset-packs-in-unity.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/android-asset-packs-in-unity.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/android-asset-packs-in-unity.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/android-asset-packs-in-unity.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/android-asset-packs-in-unity.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/android-asset-packs-in-unity.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/android-asset-packs-in-unity.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/android-asset-packs-in-unity.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/android-asset-packs-in-unity.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/android-asset-packs-in-unity.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/android-asset-packs-in-unity.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/android-asset-packs-in-unity.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/android-asset-packs-in-unity.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/android-asset-packs-in-unity.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/android-asset-packs-in-unity.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/android-asset-packs-in-unity.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/android-asset-packs-in-unity.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/android-asset-packs-in-unity.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/android-asset-packs-in-unity.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/android-asset-packs-in-unity.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/android-asset-packs-in-unity.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/android-asset-packs-in-unity.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/android-asset-packs-in-unity.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/android-asset-packs-in-unity.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/android-asset-packs-in-unity.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/android-asset-packs-in-unity.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/android-asset-packs-in-unity.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/android-asset-packs-in-unity.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/android-asset-packs-in-unity.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/android-asset-packs-in-unity.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/android-asset-packs-in-unity.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/android-asset-packs-in-unity.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/android-asset-packs-in-unity.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="PlatformSpecific.html">平台开发</a></li>
+<li><a href="android.html">Android</a></li>
+<li><a href="android-developing.html">Developing for Android</a></li>
+<li><a href="android-application-size-restrictions.html">Android application size restrictions</a></li>
+<li><a href="play-asset-delivery.html">Play 资源交付</a></li>
+<li>Asset packs in Unity</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="play-asset-delivery.html"></a></span><div class="tip">Play 资源交付</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="android-asset-packs-set-up.html"></a></span><div class="tip">Set up Play Asset Delivery</div>
+</div>
+</div></div>
+<h1>Asset packs in Unity</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>This page describes how asset packs work in the context of a Unity Android application that uses <a href="play-asset-delivery.html">Play Asset Delivery</a>.</p>
+
+<p>You can configure Unity to generate an <a href="https://developer.android.com/guide/app-bundle">Android App Bundle</a> (AAB) that includes your application split into a <a href="https://developer.android.com/guide/app-bundle/configure-base">base module</a> and asset packs:</p>
+
+<ul>
+<li>
+<strong>Base module</strong>: Contains the executables (Java and native), plug-ins, and assets in the first scene. The first scene is the scene that has a <a href="../ScriptReference/SceneManagement.Scene-buildIndex.html">build index</a> of 0.</li>
+<li>
+<strong>Asset packs</strong>: Contains everything else, including the remaining scenes, resources, and <a href="StreamingAssets.html">Streaming Assets</a>. For more information about the asset packs that Unity generates at build time, refer to <a href="#generated-asset-packs">Generated asset packs</a>.</li>
+</ul>
+
+<p>Alongside the asset packs that Unity generates automatically, you can also create your own custom asset packs. This is useful when you need to control which assets an asset pack contains. Unity adds your custom asset packs to the final AAB. For more information, see <a href="#custom-asset-packs">Custom asset packs</a>.</p>
+
+<p><a name="generated-asset-packs"></a></p>
+
+<h2>Generated asset packs</h2>
+
+<p>资源包具有<a href="https://developer.android.com/guide/playcore/asset-delivery#download-size-limits">下载大小限制</a>。为了解决这个问题，Unity 会根据附加资源的大小更改其生成资源包的方式：</p>
+
+<ul>
+<li>如果额外的资源占用的存储空间少于 1GB，Unity 会将所有内容打包到一个带有 <code>install-time</code> <a href="https://developer.android.com/guide/playcore/asset-delivery#delivery-modes">交付模式 (delivery mode)</a> 的资源包中。如果您不创建任何<a href="#custom-asset-packs">自定义资源包</a>，这意味着设备会在应用程序安装过程中下载资源包，并且当用户首次启动应用程序时，所有资源都可用。</li>
+<li>If the additional assets take more than 1GB of storage, Unity adds <a href="StreamingAssets.html">streaming assets</a> into one asset pack and adds all other assets into another asset pack. Unity assigns the <code>install-time</code> delivery mode to the larger asset pack and assigns the <code>fast-follow</code> delivery mode to the smaller one.</li>
+</ul>
+
+<p><strong>Important</strong>: If either of these asset packs is larger than the <a href="https://developer.android.com/guide/playcore/asset-delivery#download-size-limits">size limit</a> that the Google Play Store allows, Unity displays a warning but doesn’t fail the build. Also, Unity checks the sizes of asset packs individually and doesn’t perform size verification for custom asset packs. This means that, if Unity-generated asset packs fit within the Google Play Store limits but their combination with custom asset packs is too large for the Google Play Store, Unity doesn’t display a warning or error.</p>
+
+<p>对于 Unity 自动生成的资源包，Unity 不支持更改<a href="https://developer.android.com/guide/playcore/asset-delivery#delivery-modes">交付模式</a>。如果您想更改资源包的交付模式，请使用您的资源创建自定义资源包。</p>
+
+<p><a name="custom-asset-packs"></a></p>
+
+<h2>自定义资源包</h2>
+
+<p>如果要控制特定资源包中包含哪些非代码资源，可以创建自定义资源包。与 Unity 生成的资源包不同，您可以为自定义资源包设置交付模式。如果您创建自定义资源包，请注意 Google Play 应用商店对资源包的大小和数量限制。有关限制的信息，请参阅<a href="https://developer.android.com/guide/playcore/asset-delivery#download-size-limits">下载大小限制</a>。</p>
+
+<p>To use custom asset packs with <a href="https://docs.unity3d.com/Packages/com.unity.addressables@latest/index.html">Addressables</a>, you must extend the Addressables functionality. The <a href="https://github.com/Unity-Technologies/Addressables-Sample/tree/master/Advanced/Play%20Asset%20Delivery">Play Asset Delivery Addressables sample</a> provides an example of how to do this. For more information, refer to the <a href="https://github.com/Unity-Technologies/Addressables-Sample#advancedplay-asset-delivery">sample documentation</a>.</p>
+
+<h2>其他资源</h2>
+
+<ul>
+<li><a href="android-asset-packs-set-up.html">Set up Play Asset delivery</a></li>
+<li><a href="android-asset-packs-create-custom.html">Create a custom asset pack</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="play-asset-delivery.html"></a></span><div class="tip">Play 资源交付</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="android-asset-packs-set-up.html"></a></span><div class="tip">Set up Play Asset Delivery</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

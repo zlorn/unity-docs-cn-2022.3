@@ -1,0 +1,474 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="DOTS Instancing shaders - Unity 手册">
+<title>DOTS Instancing shaders - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="To render large instance counts efficiently, BRG uses a new shader instancing mode called DOTS Instancing. Every shader that BRG uses must support DOTS Instancing. In traditional instanced shaders, the shader is passed an array for each instanced property in a constant or uniform buffer, such that each element in each array contains the property value for a single instance in the draw. In DOTS Instanced shaders, Unity passes one 32-bit integer to the shader for each DOTS Instanced property. This 32-bit integer is called a metadata value. This integer can represent anything you want, but typically it represents an offset in the buffer from where the shader loads property data for the instance that the shader is rendering.">
+<meta property="og:description" content="To render large instance counts efficiently, BRG uses a new shader instancing mode called DOTS Instancing. Every shader that BRG uses must support DOTS Instancing. In traditional instanced shaders, the shader is passed an array for each instanced property in a constant or uniform buffer, such that each element in each array contains the property value for a single instance in the draw. In DOTS Instanced shaders, Unity passes one 32-bit integer to the shader for each DOTS Instanced property. This 32-bit integer is called a metadata value. This integer can represent anything you want, but typically it represents an offset in the buffer from where the shader loads property data for the instance that the shader is rendering.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'dots-instancing-shaders';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/dots-instancing-shaders.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/dots-instancing-shaders.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/dots-instancing-shaders.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/dots-instancing-shaders.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/dots-instancing-shaders.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/dots-instancing-shaders.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/dots-instancing-shaders.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/dots-instancing-shaders.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/dots-instancing-shaders.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/dots-instancing-shaders.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/dots-instancing-shaders.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/dots-instancing-shaders.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/dots-instancing-shaders.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/dots-instancing-shaders.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/dots-instancing-shaders.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/dots-instancing-shaders.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/dots-instancing-shaders.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/dots-instancing-shaders.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/dots-instancing-shaders.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/dots-instancing-shaders.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/dots-instancing-shaders.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/dots-instancing-shaders.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/dots-instancing-shaders.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/dots-instancing-shaders.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/dots-instancing-shaders.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/dots-instancing-shaders.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/dots-instancing-shaders.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/dots-instancing-shaders.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/dots-instancing-shaders.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/dots-instancing-shaders.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/dots-instancing-shaders.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/dots-instancing-shaders.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/dots-instancing-shaders.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/dots-instancing-shaders.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/dots-instancing-shaders.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/dots-instancing-shaders.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/dots-instancing-shaders.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/dots-instancing-shaders.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/dots-instancing-shaders.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/dots-instancing-shaders.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/dots-instancing-shaders.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/dots-instancing-shaders.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/dots-instancing-shaders.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/dots-instancing-shaders.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/dots-instancing-shaders.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/dots-instancing-shaders.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/dots-instancing-shaders.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/dots-instancing-shaders.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/dots-instancing-shaders.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/dots-instancing-shaders.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/dots-instancing-shaders.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/dots-instancing-shaders.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/dots-instancing-shaders.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/dots-instancing-shaders.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/dots-instancing-shaders.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/dots-instancing-shaders.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/dots-instancing-shaders.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/dots-instancing-shaders.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="graphics-performance-profiling.html">Graphics performance and profiling</a></li>
+<li><a href="batch-renderer-group.html">BatchRendererGroup</a></li>
+<li>DOTS Instancing shaders</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="batch-renderer-group-creating-draw-commands.html"></a></span><div class="tip">Creating draw commands</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="RenderingStatistics.html"></a></span><div class="tip">The Rendering Statistics window</div>
+</div>
+</div></div>
+<h1>DOTS Instancing shaders</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>To render large instance counts efficiently, BRG uses a new shader instancing mode called DOTS Instancing. Every shader that BRG uses must support DOTS Instancing. In traditional instanced shaders, the shader is passed an array for each instanced property in a constant or uniform buffer, such that each element in each array contains the property value for a single instance in the draw. In DOTS Instanced shaders, Unity passes one 32-bit integer to the shader for each DOTS Instanced property. This 32-bit integer is called a metadata value. This integer can represent anything you want, but typically it represents an offset in the buffer from where the shader loads property data for the instance that the shader is rendering.</p>
+
+<p>DOTS Instancing has many advantages compared to traditional instancing, including the following:</p>
+
+<ul>
+<li>The instance data is stored in a GraphicsBuffer and remains persistent on the GPU, which means that Unity doesn’t need to set it up again each time it renders the instance. Setting up data only when an instance actually changes can significantly improve performance in cases where instance data changes rarely or not at all. This is much more efficient than traditional instancing, which requires an engine to set up all data for every instance every frame.</li>
+<li>The process for setting up instance data is separate from setting up the draw call. This makes draw call setup lightweight and efficient. BRG makes this possible with a special fast path of the SRP Batcher that only does a minimal amount of work for each draw call. The responsibility for this work moves to you and gives you more control over what to render in each draw call.</li>
+<li>The size of a draw call is no longer limited by how much instance data can fit in a constant or uniform buffer. This makes it possible for BRG to render larger instance counts with a single draw call.
+ <br><strong>Note</strong>: The number of instance indices still limits the draw call size, since each index still requires some data. However, an index consumes far less memory than a full set of instanced properties which means many more instances can fit inside a constant or uniform buffer. For example, each index requires 16 byes so if the memory limit for a buffer on a particular platform is 64kb, 4096 indices can fit in the buffer.</li>
+<li>If every instance uses the same value for a given property, it is possible to have all instances load the value from the same place in memory. This saves memory and the number of GPU cycles spent duplicating the value for each instance.</li>
+</ul>
+
+<h2>Supporting DOTS Instancing</h2>
+
+<p>To support DOTS Instancing, a shader needs to do the following:</p>
+
+<ul>
+<li>Use shader model 4.5 or newer. Specify <code>#pragma target 4.5</code> or higher.</li>
+<li>Support the <code>DOTS_INSTANCING_ON</code> keyword. Declare this with <code>#pragma multi_compile _ DOTS_INSTANCING_ON</code>.</li>
+<li>Declare at least one block of DOTS Instanced properties each of which has least one property. For more information, see <a href="#declaring-dots-instanced-properties">Declaring DOTS Instanced properties</a>.</li>
+</ul>
+
+<p><strong>Note</strong>: Shader Graphs and shaders that Unity provides in URP and HDRP support DOTS Instancing.</p>
+
+<p><a name="declaring-dots-instanced-properties"></a></p>
+
+<h2>Declaring DOTS Instanced properties</h2>
+
+<p>To load instance data, such as transform matrices, the shader needs to define DOTS Instanced properties. Below is an example of a simple DOTS Instanced property block:</p>
+
+<pre><code>UNITY_DOTS_INSTANCING_START(MaterialPropertyMetadata)
+    UNITY_DOTS_INSTANCED_PROP(float4, Color)
+UNITY_DOTS_INSTANCING_END(MaterialPropertyMetadata)
+</code></pre>
+
+<p>To mark the beginning and end of the property block, use the <code>UNITY_DOTS_INSTANCING_START</code> and <code>UNITY_DOTS_INSTANCING_END</code> macros followed by the name of the block. The example uses the name <code>MaterialPropertyMetadata</code>. There are three allowed block names:</p>
+
+<ul>
+<li>BuiltinPropertyMetadata</li>
+<li>MaterialPropertyMetadata</li>
+<li>UserPropertyMetadata</li>
+</ul>
+
+<p>The shader can declare one of each, so a DOTS Instanced shader can have between zero and three of such blocks. Unity-defined shader code doesn’t use UserPropertyMetadata so this name is guaranteed to be free for you to use. URP and HDRP define BuiltinPropertyMetadata for every shader they provide and define MaterialPropertyMetadata for most of them too, so it’s best practice to use UserPropertyMetadata. Your custom shaders can use all three possible names, even all at once.</p>
+
+<p>The block can contain any number of DOTS Instanced property definitions formatted like:</p>
+
+<pre><code>UNITY_DOTS_INSTANCED_PROP(PropertyType, PropertyName)
+</code></pre>
+
+<p><code>PropertyType</code> can be any HLSL built-in type (like uint, float4, float4x4, or int2x4) except a bool vector, and <code>PropertyName</code> is the name of the DOTS Instanced property. DOTS Instanced properties are completely separate from <a href="SL-Properties.html">regular material properties</a>, and you can give them the same name as another regular material property. This is possible because the <code>UNITY_DOTS_INSTANCED_PROP</code> macro generates special constant names which Unity recognizes that don’t conflict with other property names. Shaders that Unity provides give DOTS Instanced properties the same names as regular material properties, but you don’t need to follow this convention.</p>
+
+<p>Internally, Unity provides the shader with a 32-bit integer metadata value for every DOTS Instanced property the shader declares. Unity sets the metadata value when your code makes a <a href="../ScriptReference/Rendering.BatchRendererGroup.AddBatch.html">BatchRendererGroup.AddBatch</a> call to create the batch associated with the draw. The metadata value defaults to <code>0</code> if Unity doesn’t set it. The shader also has access to <code>ByteAddressBuffer unity_DOTSInstanceData</code> which Unity sets to the GraphicsBuffer you pass as an argument to <code>BatchRendererGroup.AddBatch</code>. This buffer is typically where the shader loads the instance data from. Multiple batches can share a single GraphicsBuffer, but it is also possible for each batch to use its own separate GraphicsBuffer for <code>unity_DOTSInstanceData</code>.</p>
+
+<p><strong>Note</strong>: Unity doesn’t provide any DOTS Instanced data automatically. It’s your responsibility to make sure that the <code>unity_DOTSInstanceData</code> buffer of each batch contains the correct data. Instance data must include many properties that are Unity normally provides for GameObjects, such as transform matrices, light probe coefficients, and lightmap texture coordinates.</p>
+
+<p><a name="accessing-dots-instanced-properties"></a></p>
+
+<h2>Accessing DOTS Instanced properties</h2>
+
+<p>To access DOTS Instanced properties, your shader can use one of the access macros that Unity provides. The access macros assume that instance data in <code>unity_DOTSInstanceData</code> uses the following layout:</p>
+
+<ul>
+<li>The 31 least significant bits of the metadata value contain the byte address of the first instance in the batch within the <code>unity_DOTSInstanceData</code> buffer.</li>
+<li>If the most significant bit of the metadata value is <code>0</code>, every instance uses the value from instance index zero. This means each instance loads directly from the byte address in the metadata value. In this case, the buffer only needs to store a single value, instead of one value per instance.</li>
+<li>If the most significant bit of the metadata value is <code>1</code>, the address should contain an array where you can find the value for instance index <code>instanceID</code> using <code>AddressOfInstance0 + sizeof(PropertyType) * instanceID</code>. In this case, you should ensure that every rendered instance index has valid data in buffer. Otherwise, out-of-bounds access and undefined behavior can occur.</li>
+</ul>
+
+<p>You can also set the the metadata value directly which is useful if you want to use a custom data source that doesn’t use the above layout, such as a texture.</p>
+
+<p>Unity provides the following access macros:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Access macro</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><code>UNITY_ACCESS_DOTS_INSTANCED_PROP(PropertyType, PropertyName)</code></td>
+	<td style="text-align:left;">Returns the value loaded from <code>unity_DOTSInstanceData</code> using the layout described above. Shaders that Unity provides use this version for DOTS Instanced built-in properties that don’t have a default value to fall back on.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>UNITY_ACCESS_DOTS_INSTANCED_PROP_WITH_DEFAULT(PropertyType, PropertyName)</code></td>
+	<td style="text-align:left;">Returns the same as <code>UNITY_ACCESS_DOTS_INSTANCED_PROP</code>, except if the most significant bit of the metadata value is zero, it returns a default value. The default value is the value of the regular material property with the same name as the DOTS Instanced property, which is why Shaders that Unity provides use the convention where DOTS Instanced properties have the same name as regular material properties. When using the default value, the access macro doesn’t access <code>unity_DOTSInstanceData</code> at all. Shaders that Unity provides use this access macro for DOTS Instanced material properties, so the loads fall back to the value set on the material.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>UNITY_ACCESS_DOTS_INSTANCED_PROP_WITH_CUSTOM_DEFAULT(PropertyType, PropertyName, DefaultValue)</code></td>
+	<td style="text-align:left;">Returns the same as <code>UNITY_ACCESS_DOTS_INSTANCED_PROP</code> unless the most significant bit of the metadata value is zero, in which case this macroreturns <code>DefaultValue</code> instead, and doesn’t access <code>unity_DOTSInstanceData</code>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>UNITY_DOTS_INSTANCED_METADATA_NAME(PropertyType, PropertyName)</code></td>
+	<td style="text-align:left;">Returns the metadata value directly without accessing anything. This is useful for custom instance data loading schemes.</td>
+</tr>
+</tbody>
+</table>
+
+<p>For an example of how to use these macros, see <a href="#access-macro-examples">Access macro example</a>.</p>
+
+<p>Alongside the access macros, Unity provides shader functions that load the values of constants directly from the draw command data. Shaders that Unity provides use these functions. </p>
+
+<p>Unity provides the following shader functions:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Shader function</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><code>LoadDOTSInstancedData_RenderingLayer</code></td>
+	<td style="text-align:left;">Returns the <a href="../ScriptReference/Rendering.BatchFilterSettings-renderingLayerMask.html">renderingLayerMask</a> for the draw command.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>LoadDOTSInstancedData_MotionVectorsParams</code></td>
+	<td style="text-align:left;">Returns the <a href="../ScriptReference/Rendering.BatchFilterSettings-motionMode.html">motion vector generation mode</a> for the draw command. This is formatted as a float4, which is what Unity shaders expect.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>LoadDOTSInstancedData_WorldTransformParams</code></td>
+	<td style="text-align:left;">Returns whether to draw the instance with a flipped triangle winding. See <a href="../ScriptReference/Rendering.BatchDrawCommandFlags.FlipWinding.html">FlipWinding</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>LoadDOTSInstancedData_LightData</code></td>
+	<td style="text-align:left;">Returns whether the scene’s main Directional Light is active for the instance. The main light can be deactivated for multiple reasons, for example if the light already included in light maps.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>LoadDOTSInstancedData_LODFade</code></td>
+	<td style="text-align:left;">Returns the 8 bit crossfade value you set if the <a href="../ScriptReference/Rendering.BatchDrawCommandFlags.LODCrossFade.html">LODCrossFade flag</a> is set. If the flag is not set, the return value is undefined.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="access-macro-examples"></a></p>
+
+<h3>Access macro examples</h3>
+
+<p>This section contains examples of the access macros that Unity provides and instructions for how to use these macros to access per-instance data and constant data.</p>
+
+<h4>Per-instance</h4>
+
+<p>在此示例中：</p>
+
+<ul>
+<li>The metadata value for <code>Color</code> is <code>0x80001000</code>.</li>
+<li>The instance index is <code>5</code>.</li>
+<li>Data for instance 0 starts at address 0x1000.</li>
+<li>Data for instance 5 is at address 0x1000 + 5 * sizeof(float4) = 0x1050</li>
+</ul>
+
+<p>Because the most significant bit is already set, the accessor macros don’t load defaults. This means that <code>c0</code>, <code>c1</code>, and <code>c2</code> will all have the same value, loaded from <code>unity_DOTSInstanceData</code> address <code>0x1050</code>.</p>
+
+<pre><code>void ExamplePerInstance()
+{
+    // rawMetadataValue will contain 0x80001000
+    uint rawMetadataValue = UNITY_DOTS_INSTANCED_METADATA_NAME(float4, Color);
+
+    float4 c0 = UNITY_ACCESS_DOTS_INSTANCED_PROP(float4, Color);
+    float4 c1 = UNITY_ACCESS_DOTS_INSTANCED_PROP_WITH_DEFAULT(float4, Color);
+    float4 c2 = UNITY_ACCESS_DOTS_INSTANCED_PROP_WITH_CUSTOM_DEFAULT(float4, Color, float4(1, 2, 3, 4));
+}
+</code></pre>
+
+<h4>Constant</h4>
+
+<p>在此示例中：</p>
+
+<ul>
+<li>The metadata value for <code>Color</code> is <code>0x00001000</code>.</li>
+<li>The instance index is <code>5</code>.</li>
+<li>Data for instance 0 starts at address 0x1000.</li>
+<li>The most significant bit is not set so data for instance 5 is at the same address as instance 0.</li>
+</ul>
+
+<p>Because the most significant bit is not set, the accessor macros that fall back to defaults don’t access <code>unity_DOTSInstanceData</code>. This means that:</p>
+
+<ul>
+<li>
+<code>c0</code> will contain the value from <code>unity_DOTSInstanceData</code> address <code>0x1000</code>.</li>
+<li>
+<code>c1</code> will contain the value of the regular material property <strong>Color</strong>, and cause a compile error if the Color property doesn’t exist.</li>
+<li>
+<code>c2</code> will contain <code>(1, 2, 3, 4)</code> because that was passed as the explicit default value.</li>
+</ul>
+
+<pre><code>void ExampleConstant()
+{
+    // rawMetadataValue will contain 0x00001000
+    uint rawMetadataValue = UNITY_DOTS_INSTANCED_METADATA_NAME(float4, Color);
+    float4 c0 = UNITY_ACCESS_DOTS_INSTANCED_PROP(float4, Color);
+    float4 c1 = UNITY_ACCESS_DOTS_INSTANCED_PROP_WITH_DEFAULT(float4, Color);
+    float4 c2 = UNITY_ACCESS_DOTS_INSTANCED_PROP_WITH_CUSTOM_DEFAULT(float4, Color, float4(1, 2, 3, 4));
+}
+</code></pre>
+
+<h2>详细信息</h2>
+
+<p>It is best practice to initialize the first 64 bytes of all <code>unity_DOTSInstanceData</code> buffers to zero and leave them unused. This is because the default metadata value that Unity uses for all metadata values not specified during batch creation is zero. Specifically, when a shader loads a zero metadata value from the <code>UNITY_ACCESS_DOTS_INSTANCED_PROP</code>macro, the shader loads this value from the address <code>zero</code> because the instance index will be disregarded. Ensuring that the first 64 bytes, which is the size of the largest value type (a float4x4 matrix), are zeroes guarantees that such loads predictably return a result of zero. Otherwise, the shader could load something unpredictable, depending on what happens to be located at address zero.</p>
+
+<p>When using DOTS Instancing, Shader Graphs and Shaders that Unity provides use a special convention for transform matrices. To save GPU memory and bandwidth, they store these matrices using only 12 floats instead of the full 16, because four floats are always constant. These shaders expect floats formatted in such a way that the x, y, and z of each column in the matrix are stored in order. In other words, the first three floats are the x, y, and z of the first column, the next three floats are the x, y, and z of the second column, and so on. The matrices don’t store the <code>w</code> element of each column. The transform matrices this affects are:</p>
+
+<ul>
+<li><code>unity_ObjectToWorld</code></li>
+<li><code>unity_WorldToObject</code></li>
+<li><code>unity_MatrixPreviousM</code></li>
+<li><code>unity_MatrixPreviousMI</code></li>
+</ul>
+
+<p>The following code sample includes a struct that converts regular four-by-four matrices into the 12 floats convention.</p>
+
+<pre><code class="c#">struct PackedMatrix
+{
+    public float c0x;
+    public float c0y;
+    public float c0z;
+    public float c1x;
+    public float c1y;
+    public float c1z;
+    public float c2x;
+    public float c2y;
+    public float c2z;
+    public float c3x;
+    public float c3y;
+    public float c3z;
+
+    public PackedMatrix(Matrix4x4 m)
+    {
+        c0x = m.m00;
+        c0y = m.m10;
+        c0z = m.m20;
+        c1x = m.m01;
+        c1y = m.m11;
+        c1z = m.m21;
+        c2x = m.m02;
+        c2y = m.m12;
+        c2z = m.m22;
+        c3x = m.m03;
+        c3y = m.m13;
+        c3z = m.m23;
+    }
+}
+</code></pre>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="batch-renderer-group-creating-draw-commands.html"></a></span><div class="tip">Creating draw commands</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="RenderingStatistics.html"></a></span><div class="tip">The Rendering Statistics window</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

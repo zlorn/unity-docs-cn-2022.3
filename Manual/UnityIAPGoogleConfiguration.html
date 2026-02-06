@@ -1,0 +1,342 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="针对 Google Play 应用商店进行配置 - Unity 手册">
+<title>针对 Google Play 应用商店进行配置 - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/IAPGoogleImage0.png">
+<meta name="description" content="本指南介绍如何建立 Unity 游戏与应用内购 (IAP) 商店进行交互所需的数字记录和关系。本指南针对的是 Unity IAP 购买 API。">
+<meta property="og:description" content="本指南介绍如何建立 Unity 游戏与应用内购 (IAP) 商店进行交互所需的数字记录和关系。本指南针对的是 Unity IAP 购买 API。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'UnityIAPGoogleConfiguration';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/UnityIAPGoogleConfiguration.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/UnityIAPGoogleConfiguration.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/UnityIAPGoogleConfiguration.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/UnityIAPGoogleConfiguration.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/UnityIAPGoogleConfiguration.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/UnityIAPGoogleConfiguration.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UnityIAPGoogleConfiguration.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UnityIAPGoogleConfiguration.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UnityIAPGoogleConfiguration.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UnityIAPGoogleConfiguration.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UnityIAPGoogleConfiguration.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UnityIAPGoogleConfiguration.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UnityIAPGoogleConfiguration.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UnityIAPGoogleConfiguration.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UnityIAPGoogleConfiguration.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UnityIAPGoogleConfiguration.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UnityIAPGoogleConfiguration.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UnityIAPGoogleConfiguration.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UnityIAPGoogleConfiguration.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UnityIAPGoogleConfiguration.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UnityIAPGoogleConfiguration.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UnityIAPGoogleConfiguration.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UnityIAPGoogleConfiguration.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UnityIAPGoogleConfiguration.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UnityIAPGoogleConfiguration.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UnityIAPGoogleConfiguration.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UnityIAPGoogleConfiguration.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UnityIAPGoogleConfiguration.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UnityIAPGoogleConfiguration.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UnityIAPGoogleConfiguration.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/UnityIAPGoogleConfiguration.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/UnityIAPGoogleConfiguration.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/UnityIAPGoogleConfiguration.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/UnityIAPGoogleConfiguration.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UnityIAPGoogleConfiguration.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UnityIAPGoogleConfiguration.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UnityIAPGoogleConfiguration.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UnityIAPGoogleConfiguration.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UnityIAPGoogleConfiguration.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UnityIAPGoogleConfiguration.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UnityIAPGoogleConfiguration.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UnityIAPGoogleConfiguration.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UnityIAPGoogleConfiguration.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UnityIAPGoogleConfiguration.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UnityIAPGoogleConfiguration.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UnityIAPGoogleConfiguration.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UnityIAPGoogleConfiguration.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UnityIAPGoogleConfiguration.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UnityIAPGoogleConfiguration.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UnityIAPGoogleConfiguration.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UnityIAPGoogleConfiguration.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UnityIAPGoogleConfiguration.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UnityIAPGoogleConfiguration.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UnityIAPGoogleConfiguration.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UnityIAPGoogleConfiguration.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UnityIAPGoogleConfiguration.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UnityIAPGoogleConfiguration.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UnityIAPGoogleConfiguration.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UnityServices.html">Unity 服务</a></li>
+<li><a href="UnityIAP.html">﻿Unity IAP</a></li>
+<li><a href="UnityIAPSettingUp.html">Setting up Unity IAP</a></li>
+<li>针对 Google Play 应用商店进行配置</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UnityIAPAppleConfiguration.html"></a></span><div class="tip">针对 Apple App Store 和 Mac App Store 进行配置</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UnityIAPWindowsConfiguration.html"></a></span><div class="tip">针对 Windows 应用商店进行配置</div>
+</div>
+</div></div>
+<h1>针对 Google Play 应用商店进行配置</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<h2>简介</h2>
+
+<p>本指南介绍如何建立 Unity 游戏与应用内购 (IAP) 商店进行交互所需的数字记录和关系。本指南针对的是 <a href="UnityIAP.html">Unity IAP</a> 购买 API。</p>
+
+<p>应用内购 (IAP) 是通过资金交易购买数字商品的过程。一个平台的应用商店会允许购买代表数字商品的产品。这些商品有一个标识符（通常是字符串数据类型）。商品的类型 (Types) 可表示其耐用性：_订阅<em>、</em>消耗品_（可以多次购买）以及_非消耗品_（可以购买一次）是最常见的类型。</p>
+
+<h2>Google Play 应用商店</h2>
+
+<h3>准备开始</h3>
+
+<ol>
+<li><p>Write a game implementing Unity IAP. See <a href="UnityIAPInitialization.html">Unity IAP Initialization</a> and <a href="https://forum.unity.com/threads/sample-iap-project.529555/">the Sample IAP Project</a>.</p></li>
+<li>
+<p>准备好游戏的商品标识符以便稍后在 <a href="UnityIAPGooglePlay.html">Google Play</a> Developer Console（开发者控制台）中使用。</p>
+
+<figure>
+<img src="../uploads/Main/IAPGoogleImage0.png" alt="gold50">
+<figcaption>gold50</figcaption>
+</figure>
+</li>
+<li>
+<p>Build a <a href="android.html">signed non-Development Build Android APK</a> from your game. </p>
+
+<p><strong>提示：</strong>务必妥善保存您的密钥库文件。始终需要原始密钥库来更新已发布的 Google Play 应用程序。</p>
+
+<p><strong>提示：</strong>在本地测试期间，请复用您上次上传的 APK 的 Bundle Version Code 以便允许侧载 (side-loading)，无需先将已更改的 APK 上传到 Developer Console。请参阅 <a href="class-PlayerSettingsAndroid.html">Android 平台 Player 设置</a>。</p>
+</li>
+</ol>
+
+<h3>注册应用程序</h3>
+
+<p>通过用于发布游戏的 Google 帐户，将 Android 应用程序注册到 <a href="https://play.google.com/apps/publish">Google Play Developer Console</a>。</p>
+
+<p><strong>NOTE:</strong> This guide uses the <a href="http://developer.android.com/google/play/billing/billing_testing.html">Google Play License Testing approach</a> for testing in-app purchase integration. </p>
+
+<ol>
+<li>
+<p>Choose <strong>Create app</strong>.</p>
+
+<figure>
+<img src="../uploads/Main/IAPGoogleImage1.png" alt="All apps">
+<figcaption>All apps</figcaption>
+</figure>
+</li>
+<li>
+<p>Give the application an App name and select the appropriate options for your game. </p>
+
+<figure>
+<img src="../uploads/Main/IAPGoogleImage2.png" alt="Create app">
+<figcaption>Create app</figcaption>
+</figure>
+</li>
+<li>
+<p>Navigate to <strong>Testing/Closed testing</strong> in the left nav and choose <strong>Create track</strong>. Select your APK and upload it. Also complete the basic Dashboard requirements, upload screenshots and add a Short and Full description. You can also create an Internal test track.</p>
+
+<figure>
+<img src="../uploads/Main/IAPGoogleImage3.png" alt="Closed testing">
+<figcaption>Closed testing</figcaption>
+</figure>
+</li>
+</ol>
+
+<h3>添加 IAP</h3>
+
+<p>Now that you have uploaded our first binary, you can add the IAP products.</p>
+
+<ol>
+<li>
+<p>Navigate to <strong>In-app Products</strong> and choose <strong>Create product</strong>.</p>
+
+<figure>
+<img src="../uploads/Main/IAPGoogleImage4.png" alt="In-app products">
+<figcaption>In-app products</figcaption>
+</figure>
+</li>
+<li>
+<p>Define the <strong>Product ID</strong> , product details and price. Remember to activate the product after saving. </p>
+
+<p>您可以在 <strong>Managed product</strong> 中指定消耗品或非消耗品商品类型。Unity IAP 也支持 <strong>Subscription</strong>（订阅）商品类型。</p>
+</li>
+</ol>
+
+<p><strong>NOTE</strong>: The “Product ID” here is the same identifier used in the game source code, added to the [Unity IAP ConfigurationBuilder] instance via <code>AddProduct()</code> or <code>AddProducts()</code>, like “gold50”. </p>
+
+<figure>
+<img src="../uploads/Main/IAPGoogleImage5.png" alt="50goldcoins">
+<figcaption>50goldcoins</figcaption>
+</figure>
+
+<h3>测试 IAP</h3>
+
+<p>Add your testers to License Testing. </p>
+
+<ol>
+<li><p>Navigate to All Apps on your Google Developer dashboard. </p></li>
+<li><p>Select <strong>Settings/License Testing</strong>. Add each Google Account email address. Save changes. </p></li>
+</ol>
+
+<p><img src="../uploads/Main/IAPGoogleImage6.png" alt="License testing"></p>
+
+<pre><code>NOTE: There may be a delay of several hours from the time you publish the APK. 
+</code></pre>
+
+<ol>
+<li>When available, share the <strong>Join on Android</strong> link with testers. Ensure that testers can install the application from the store.</li>
+</ol>
+
+<p><strong>Note:</strong> To test updates retaining permission to purchase IAPS’s for free, you may side-load applications, updating the existing store-downladed APK install.</p>
+
+<figure>
+<img src="../uploads/Main/IAPGoogleImage7.png" alt="My closed Track">
+<figcaption>My closed Track</figcaption>
+</figure>
+
+<ol>
+<li>
+<p>To test the IAP, make a purchase on a device logged in with a Tester Google Account. A modified purchase dialog box appears to confirm the fact this product is under test and is free.</p>
+
+<p><strong>WARNING</strong>: If this dialog box does not appear, then the Tester Google Account will be charged real money for the product.</p>
+
+<figure>
+<img src="../uploads/Main/IAPGoogleImage8.png" alt="">
+</figure>
+</li>
+</ol>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UnityIAPAppleConfiguration.html"></a></span><div class="tip">针对 Apple App Store 和 Mac App Store 进行配置</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UnityIAPWindowsConfiguration.html"></a></span><div class="tip">针对 Windows 应用商店进行配置</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

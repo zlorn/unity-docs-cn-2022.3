@@ -1,0 +1,412 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Expose custom control to UXML and UI Builder - Unity 手册">
+<title>Expose custom control to UXML and UI Builder - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="To use custom controls with UXML and UI Builder, you must expose them.">
+<meta property="og:description" content="To use custom controls with UXML and UI Builder, you must expose them.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'UIE-expose-custom-control-to-uxml';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/UIE-expose-custom-control-to-uxml.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/UIE-expose-custom-control-to-uxml.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/UIE-expose-custom-control-to-uxml.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/UIE-expose-custom-control-to-uxml.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/UIE-expose-custom-control-to-uxml.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/UIE-expose-custom-control-to-uxml.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIE-expose-custom-control-to-uxml.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIE-expose-custom-control-to-uxml.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIE-expose-custom-control-to-uxml.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIE-expose-custom-control-to-uxml.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-expose-custom-control-to-uxml.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-expose-custom-control-to-uxml.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-expose-custom-control-to-uxml.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-expose-custom-control-to-uxml.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-expose-custom-control-to-uxml.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-expose-custom-control-to-uxml.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-expose-custom-control-to-uxml.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-expose-custom-control-to-uxml.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-expose-custom-control-to-uxml.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-expose-custom-control-to-uxml.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-expose-custom-control-to-uxml.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-expose-custom-control-to-uxml.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-expose-custom-control-to-uxml.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-expose-custom-control-to-uxml.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-expose-custom-control-to-uxml.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-expose-custom-control-to-uxml.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-expose-custom-control-to-uxml.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-expose-custom-control-to-uxml.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-expose-custom-control-to-uxml.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-expose-custom-control-to-uxml.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/UIE-expose-custom-control-to-uxml.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/UIE-expose-custom-control-to-uxml.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/UIE-expose-custom-control-to-uxml.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/UIE-expose-custom-control-to-uxml.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIE-expose-custom-control-to-uxml.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIE-expose-custom-control-to-uxml.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIE-expose-custom-control-to-uxml.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIE-expose-custom-control-to-uxml.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-expose-custom-control-to-uxml.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-expose-custom-control-to-uxml.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-expose-custom-control-to-uxml.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-expose-custom-control-to-uxml.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-expose-custom-control-to-uxml.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-expose-custom-control-to-uxml.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-expose-custom-control-to-uxml.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-expose-custom-control-to-uxml.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-expose-custom-control-to-uxml.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-expose-custom-control-to-uxml.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-expose-custom-control-to-uxml.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-expose-custom-control-to-uxml.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-expose-custom-control-to-uxml.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-expose-custom-control-to-uxml.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-expose-custom-control-to-uxml.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-expose-custom-control-to-uxml.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-expose-custom-control-to-uxml.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-expose-custom-control-to-uxml.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-expose-custom-control-to-uxml.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-expose-custom-control-to-uxml.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UIToolkits.html">Create user interfaces (UI)</a></li>
+<li><a href="UIElements.html">UI 工具包</a></li>
+<li><a href="UIE-structure-ui.html">Structure UI</a></li>
+<li><a href="UIE-custom-controls.html">Custom controls</a></li>
+<li>Expose custom control to UXML and UI Builder</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-create-custom-controls.html"></a></span><div class="tip">Create a custom control</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-custom-tag-name-and-attributes.html"></a></span><div class="tip">Customize UXML tag names and attributes</div>
+</div>
+</div></div>
+<h1>Expose custom control to UXML and UI Builder</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>To use custom controls with UXML and UI Builder, you must expose them.</p>
+
+<p><a name="define-a-factory"></a></p>
+
+<h2>Define a factory</h2>
+
+<p>To define new elements, derive a new class from <code>VisualElement</code> or one of its subclasses, and then implement the appropriate functionality within this new class. </p>
+
+<p>Your new class must implement a default constructor. For example:</p>
+
+<pre><code class="lang-csharp">class StatusBar : VisualElement
+{
+    public StatusBar()
+    {
+        m_Status = String.Empty;
+    }
+
+    string m_Status;
+    public string status { get; set; }
+}
+</code></pre>
+
+<p>In order for UI Toolkit to instantiate a new class when it reads a UXML file, you must define a factory for your class. Unless your factory needs to do something special, you can derive the factory from <code>UxmlFactory&lt;T&gt;</code>. It’s recommended that you put the factory class within your component class.</p>
+
+<p>For example, the following code snippet define a factory named <code>UxmlFactory</code> for the <code>StatusBar</code> class: </p>
+
+<pre><code class="lang-csharp">class StatusBar : VisualElement
+{
+    public new class UxmlFactory : UxmlFactory&lt;StatusBar&gt; {}
+
+    // ...
+}
+</code></pre>
+
+<p>定义该工厂后，就可以在 UXML 文件中使用 <code>&lt;StatusBar&gt;</code> 元素。</p>
+
+<p><a name="define-attributes-on-elements"></a></p>
+
+<h2>Define attributes on elements</h2>
+
+<p>可为新类定义 UXML 特征，并将其工厂设置为使用这些特征。</p>
+
+<p>For example, the following code snippet defines a UXML traits class to initialize the <code>status</code> property as a property of the <code>StatusBar</code> class. The status property initializes from UXML data.</p>
+
+<pre><code class="lang-csharp">class StatusBar : VisualElement
+{
+    public new class UxmlFactory : UxmlFactory&lt;StatusBar, UxmlTraits&gt; {}
+
+    public new class UxmlTraits : VisualElement.UxmlTraits
+    {
+        UxmlStringAttributeDescription m_Status = new UxmlStringAttributeDescription { name = "status" };
+
+        public override IEnumerable&lt;UxmlChildElementDescription&gt; uxmlChildElementsDescription
+        {
+            get { yield break; }
+        }
+
+        public override void Init(VisualElement ve, IUxmlAttributes bag, CreationContext cc)
+        {
+            base.Init(ve, bag, cc);
+            ((StatusBar)ve).status = m_Status.GetValueFromBag(bag, cc);
+        }
+    }
+
+    // ...
+}
+</code></pre>
+
+<p><code>UxmlTraits</code> 有两个作用：</p>
+
+<ul>
+<li>由工厂用于初始化新建的对象。</li>
+<li>由架构生成过程对其进行分析以获取有关元素的信息。该信息将转换为 XML 架构指令。</li>
+</ul>
+
+<p>以上代码示例执行以下操作：</p>
+
+<ul>
+<li>
+<code>m_Status</code> 的声明定义一个名为 <code>status</code> 的 XML 属性。</li>
+<li>
+<code>uxmlChildElementsDescription</code> 返回空的 <code>IEnumerable</code>（表明 <code>StatusBar</code> 元素没有子项）。</li>
+<li>
+<code>Init()</code> 成员从 XML 解析器读取属性包中的 <code>status</code> 属性值，并将 <code>StatusBar.status</code> 属性设置为此值。</li>
+<li>The <code>UxmlTraits</code> class is placed inside the <code>StatusBar</code> class. This allows the <code>Init()</code> method to access the private members of <code>StatusBar</code>.</li>
+<li>新的 <code>UxmlTraits</code> 类继承自基类 <code>UxmlTraits</code>，因此其共享基类的属性。</li>
+<li>
+<code>Init()</code> 调用 <code>base.Init()</code> 来初始化基类属性。</li>
+</ul>
+
+<p>The code example above declares a string attribute with the <a href="../ScriptReference/UIElements.UxmlStringAttributeDescription.html"><code>UxmlStringAttributeDescription</code></a> class. UI Toolkit supports the following types of attributes and each links a C# type to a UMXL type:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>属性值</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.UxmlStringAttributeDescription.html"><code>UxmlStringAttributeDescription</code></a></td>
+	<td style="text-align:left;">字符串</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.UxmlFloatAttributeDescription.html"><code>UxmlFloatAttributeDescription</code></a></td>
+	<td style="text-align:left;">C# <code>float</code> 类型范围内的单精度浮点值。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.UxmlDoubleAttributeDescription.html"><code>UxmlDoubleAttributeDescription</code></a></td>
+	<td style="text-align:left;">C# <code>double</code> 类型范围内的双精度浮点值。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.UxmlIntAttributeDescription.html"><code>UxmlIntAttributeDescription</code></a></td>
+	<td style="text-align:left;">C# <code>int</code> 类型范围内的整数值。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.UxmlLongAttributeDescription.html"><code>UxmlLongAttributeDescription</code></a></td>
+	<td style="text-align:left;">C# <code>long</code> 类型范围内的长整数值。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.UxmlBoolAttributeDescription.html"><code>UxmlBoolAttributeDescription</code></a></td>
+	<td style="text-align:left;">
+<code>true</code> 或 <code>false</code>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.UxmlColorAttributeDescription.html"><code>UxmlColorAttributeDescription</code></a></td>
+	<td style="text-align:left;">A string that represents a color defined in USS format.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.UxmlEnumAttributeDescription_1.html"><code>UxmlEnumAttributeDescription&lt;T&gt;</code></a></td>
+	<td style="text-align:left;">A string that represents one of the values for the <code>Enum</code> type <code>T</code>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.UxmlTypeAttributeDescription_1.html"><code>UxmlTypeAttributeDescription&lt;T&gt;</code></a></td>
+	<td style="text-align:left;">A string that represents the assembly-qualified name of the type.</td>
+</tr>
+</tbody>
+</table>
+
+<p>In the code example above, the <code>uxmlChildElementsDescription</code> returns an empty <code>IEnumerable</code> which indicates that the <code>StatusBar</code> element doesn’t accept child element descriptions to the XML schema.</p>
+
+<p>To have an element accept children of any type, you must override the <code>uxmlChildElementsDescription</code> property. For example, for the <code>StatusBar</code> element to accept children of any type, you must specify the <code>uxmlChildElementsDescription</code> property as follows:</p>
+
+<pre><code class="lang-csharp">public override IEnumerable&lt;UxmlChildElementDescription&gt; uxmlChildElementsDescription
+{
+    get
+    {
+        yield return new UxmlChildElementDescription(typeof(VisualElement));
+    }
+}
+</code></pre>
+
+<h2>Define a namespace prefix</h2>
+
+<p>Once you have defined a new element in C#, you can use the element in your UXML files. To categorize elements, create your class in a namespace. When you define a new namespace, you can define a prefix for the namespace. You must define namespace prefixes as attributes of the root <code>&lt;UXML&gt;</code> element and replace the full namespace name when scoping elements.</p>
+
+<p>To define a namespace prefix, add a <code>UxmlNamespacePrefix</code> attribute to your assembly for each namespace prefix. For example:</p>
+
+<pre><code class="lang-csharp">[assembly: UxmlNamespacePrefix("My.First.Namespace", "first")]
+[assembly: UxmlNamespacePrefix("My.Second.Namespace", "second")]
+</code></pre>
+
+<p>此操作可以在程序集的任何 C# 文件的根级别（在任何命名空间之外）完成。</p>
+
+<p>架构生成系统会执行以下操作：</p>
+
+<ul>
+<li>检查是否有这些属性并使用它们来生成架构。</li>
+<li>Adds the namespace prefix definition as an attribute of the <code>&lt;UXML&gt;</code> element in newly created UXML files.</li>
+<li>将命名空间的架构文件位置包含在其 <code>xsi:schemaLocation</code> 属性中。</li>
+</ul>
+
+<p>To ensure that your text editor recognizes the new element, select <strong>Assets</strong> &gt; <strong>Update UXML Schema</strong> to update the schema definition.</p>
+
+<p>To create a new UXML document with the prefix, select <strong>Assets</strong> &gt; <strong>Create</strong> &gt; <strong>UI Toolkit</strong> &gt; <strong>UI Document</strong>.</p>
+
+<h2>其他资源</h2>
+
+<ul>
+<li><a href="UIE-create-custom-controls.html">Create custom controls</a></li>
+<li><a href="UIB-structuring-ui-custom-elements.html">Create a custom control with two attributes</a></li>
+<li><a href="UIE-slide-toggle.html">Create a slide toggle custom control</a></li>
+<li><a href="UIE-radial-progress.html">Create a radial progress indicator</a></li>
+<li><a href="UIE-create-bindable-custom-control.html">Create a bindable custom control</a></li>
+<li><a href="UIE-create-custom-style-custom-control.html">Create a custom style for a custom control</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-create-custom-controls.html"></a></span><div class="tip">Create a custom control</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-custom-tag-name-and-attributes.html"></a></span><div class="tip">Customize UXML tag names and attributes</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

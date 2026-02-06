@@ -1,0 +1,350 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="排序组 - Unity 手册">
+<title>排序组 - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/SortingGroup_component.png">
+<meta name="description" content="Sorting Groups allow you to group GameObjects with Sprite Renderers together, and control the order in which they render their Sprites. Unity renders Sprite Renderers in the same Sorting Group together, as if they are a single GameObject.">
+<meta property="og:description" content="Sorting Groups allow you to group GameObjects with Sprite Renderers together, and control the order in which they render their Sprites. Unity renders Sprite Renderers in the same Sorting Group together, as if they are a single GameObject.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'class-SortingGroup';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/class-SortingGroup.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/class-SortingGroup.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/class-SortingGroup.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/class-SortingGroup.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/class-SortingGroup.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/class-SortingGroup.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/class-SortingGroup.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/class-SortingGroup.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/class-SortingGroup.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/class-SortingGroup.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/class-SortingGroup.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/class-SortingGroup.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/class-SortingGroup.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/class-SortingGroup.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/class-SortingGroup.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/class-SortingGroup.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/class-SortingGroup.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/class-SortingGroup.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/class-SortingGroup.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/class-SortingGroup.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/class-SortingGroup.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/class-SortingGroup.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/class-SortingGroup.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/class-SortingGroup.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/class-SortingGroup.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/class-SortingGroup.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/class-SortingGroup.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/class-SortingGroup.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/class-SortingGroup.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/class-SortingGroup.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/class-SortingGroup.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/class-SortingGroup.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/class-SortingGroup.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/class-SortingGroup.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/class-SortingGroup.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/class-SortingGroup.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/class-SortingGroup.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/class-SortingGroup.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/class-SortingGroup.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/class-SortingGroup.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/class-SortingGroup.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/class-SortingGroup.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/class-SortingGroup.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/class-SortingGroup.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/class-SortingGroup.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/class-SortingGroup.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/class-SortingGroup.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/class-SortingGroup.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/class-SortingGroup.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/class-SortingGroup.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/class-SortingGroup.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/class-SortingGroup.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/class-SortingGroup.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/class-SortingGroup.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/class-SortingGroup.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/class-SortingGroup.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/class-SortingGroup.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/class-SortingGroup.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Unity2D.html">2D game development</a></li>
+<li><a href="Sprites.html">Work with sprites</a></li>
+<li>排序组</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="Sprite-data-provider-api.html"></a></span><div class="tip">Sprite Editor Data Provider API</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="9SliceSprites.html"></a></span><div class="tip">9 切片精灵</div>
+</div>
+</div></div>
+<h1>排序组</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p><strong>Sorting Groups</strong> allow you to group GameObjects with <a href="class-SpriteRenderer.html">Sprite Renderers</a> together, and control the order in which they render their Sprites. Unity renders Sprite Renderers in the same Sorting Group together, as if they are a single GameObject.</p>
+
+<h2>设置排序组</h2>
+
+<p>To place a GameObject into a Sorting Group, add the Sorting Group component to it. To do this, select the GameObject and go to <strong>Component &gt; Rendering &gt; Sorting Group</strong>, or select the <a href="UsingComponents.html">Add Component</a> button in the Inspector window of the GameObject.</p>
+
+<p>将 Sorting Group 组件添加到游戏对象时，Unity 会将同一<a href="#SGProperties">排序组</a>应用于该组件附加到的游戏对象的所有子游戏对象。</p>
+
+<p><img src="../uploads/Main/SortingGroup_component.png" alt=""><br>The ‘Sprite’ child objects belong to the empty parent GameObject’s <strong>Sorting Group</strong>.</p>
+
+<p>Unity 使用排序组的设置来确定如何在场景中的其他渲染器和排序组之间对渲染器进行排序。请参阅 <a href="2DSorting.html">2D 排序</a> 以了解更多信息。</p>
+
+<p>为了对排序组中的渲染器进行排序，Unity 使用排序组中渲染器的各排序设置。请参阅<a href="#InternalSort">对排序组中的渲染器进行排序</a>以了解更多信息。</p>
+
+<h2>Sorting Group 属性<a name="SGProperties"></a>
+</h2>
+
+<p>Unity uses a <strong>Sorting Group</strong>’s <a href="https://docs.unity3d.com/Manual/class-TagManager.html#SortingLayers">Sorting Layer</a> and <strong>Order in Layer</strong> values to determine its priority in the rendering queue among other Sorting Groups and GameObjects in the Scene.</p>
+
+<figure>
+<img src="../uploads/Main/SGonly_properties.png" alt="Sorting Group 组件">
+<figcaption>Sorting Group 组件</figcaption>
+</figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">属性</th>
+	<th style="text-align:left;">功能</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Sorting Layer</strong></td>
+	<td style="text-align:left;">从此下拉菜单中选择或添加<a href="https://docs.unity3d.com/Manual/class-TagManager.html#SortingLayers">排序图层</a>来确定排序组在渲染队列中的位置。Unity 通过排序图层在 Sorting Layer 设置中的位置来确定排序图层的顺序，按照排序图层在列表中显示的顺序来渲染排序图层。请参阅<a href="https://docs.unity3d.com/Manual/class-TagManager.html#SortingLayers">标签和图层 (Tags and Layers)</a> 以了解有关设置排序图层的信息。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Order in Layer</strong></td>
+	<td style="text-align:left;">Set the render order of this Sorting Group within its <strong>Sorting Layer</strong>. Unity queues Renderers with lower values first in the render queue, so they appear before Renderers with higher values.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Sort At Root</strong></td>
+	<td style="text-align:left;">Enable this option to ignore all parent Sorting Groups if this Sorting Group is nested. This allows this Sorting Group to be sorted against other Renderers and Sorting Groups at the root level.</td>
+</tr>
+</tbody>
+</table>
+
+<p>请参阅 <a href="2DSorting.html">2D 排序</a>以进一步了解如何使用排序图层对精灵进行排序以及 Unity 的渲染器排序条件。</p>
+
+<h2>对排序组中的渲染器进行排序<a name="InternalSort"></a>
+</h2>
+
+<p>Unity sorts all Renderers within the same Sorting Group by their individual <strong>Sorting Layer</strong> and <strong>Order in Layer</strong> <a href="class-SpriteRenderer.html">Renderer properties</a>. Unity does not consider each Renderer’s individual <strong>Distance to Camera</strong> property during this sorting process. Instead, it sets a Distance to Camera value for the whole Sorting Group (including all its child Renderers), based on the position of the root GameObject that contains the Sorting Group component.</p>
+
+<p>Unity 相对于场景中其他渲染器和排序组对排序组进行排序时，排序组的内部排序顺序保持不变。</p>
+
+<p>下图显示了排序过程。</p>
+
+<figure>
+<img src="../uploads/Main/SG_diagram1.png" alt="排序组内部排序过程。">
+<figcaption>排序组内部排序过程。</figcaption>
+</figure>
+
+<p>Unity treats all Renderers that belong to the same Sorting Group as a single layer, and sorts non-grouped Renderers based on their <strong>Sorting Layer</strong> and <strong>Order in Layer</strong> property settings.</p>
+
+<h3>粒子系统</h3>
+
+<p>The Editor treats a <a href="class-ParticleSystem.html">Particle System</a> that is a child of a Sorting Group as another Renderer within that Sorting Group, and sorts it internally among other Renderers based on its <strong>Sorting Layer</strong> and <strong>Order in Layer</strong> property settings.</p>
+
+<p>When Unity sorts the Particle System with the other Renderers within the Sorting Group, it ignores the Particle System’s <strong>Sorting Fudge</strong> value.</p>
+
+<h3>嵌套的排序组</h3>
+
+<p>嵌套的排序组是具有父排序组的一种排序组。Unity 首先对嵌套排序组中的渲染器进行排序，然后对其父级进行排序（请参阅<a href="#InternalSort">对排序组中的渲染器进行排序</a>）。</p>
+
+<p>Unity 确定嵌套排序组的内部排序顺序后，会将嵌套排序组与父排序组中的其他渲染器或排序组一起进行排序。一个嵌套排序组可以有一个子嵌套排序组。Unity 首先对最里面的子组排序，然后对其各自父级排序。</p>
+
+<p>下图提供了嵌套排序组的排序过程示例。</p>
+
+<figure>
+<img src="../uploads/Main/SG_diagram2.png" alt="嵌套排序组的排序过程。">
+<figcaption>嵌套排序组的排序过程。</figcaption>
+</figure>
+
+<h3>Sort At Root</h3>
+
+<p>In certain situations, you may have a nested Sorting Group that is ordered based on the Scene <a href="Hierarchy.html">Hierarchy</a>. However, you may want this nested Sorting Group to be rendered separately from its parent Sorting Group without changing its position in the Scene Hierarchy.</p>
+
+<p>You can enable this option to allow this Sorting Group to ignore its parent Sorting Groups, which allows this Sorting Group to be sorted against other Renderers and Sorting Groups globally without requiring the GameObject to be reparented to another Transform. All child Renderers and Sorting Groups (which have not ignored their parents) will be sorted under this Sorting Group.</p>
+
+<figure>
+<img src="../uploads/Main/SG_diagram3.png" alt="">
+</figure>
+
+<h2>使用排序组</h2>
+
+<p>The most common way to create a 2D multi-Sprite character is to arrange and parent multiple Sprite Renderers together in the Hierarchy window to form a character. You can use <strong>Sorting Groups</strong> to help manage this kind of complex multi-Sprite character.</p>
+
+<p>In the example below, the Sprite Renderers belong to the same <strong>Sorting Layer</strong>, but with different <strong>Order in Layer</strong> values. Unity sorts the different parts of a character in the order that you want them to appear.</p>
+
+<figure>
+<img src="../uploads/Main/character_hierarchy.png" alt="一个角色预制件及其各个部分位于一个层级视图中。">
+<figcaption>一个角色预制件及其各个部分位于一个层级视图中。</figcaption>
+</figure>
+
+<p>配置排序组和排序图层之后，可以将角色另存为<a href="Prefabs.html">预制件</a>，并根据需要进行多次克隆。</p>
+
+<p>However, Prefab Sprites all have the same <strong>Sorting Layer</strong> and <strong>Order in Layer</strong> values and render to the same layers as other Prefabs, which can cause different parts of a Prefab character to intersect and layer incorrectly.</p>
+
+<figure>
+<img src="../uploads/Main/part_intersect.png" alt="两个预制件的精灵错误相交，因为 Unity 在相同图层上渲染精灵。">
+<figcaption>两个预制件的精灵错误相交，因为 Unity 在相同图层上渲染精灵。</figcaption>
+</figure>
+
+<p>为了确保预制件的渲染顺序一致以便正确显示，请将 Sorting Group 组件添加到每个预制件的根游戏对象。保存编辑后的预制件，使所有当前和将来的预制件实例也具有 Sorting Group 组件。</p>
+
+<p>Each Prefab should have a Sorting Group component with the same <strong>Sorting Layer</strong> and <strong>Order in Layer</strong> property settings. This might cause Renderers in the Prefabs that are on the same <strong>Sorting Layer</strong> to render in inconsistent ways, because they have the same priority in the <a href="SL-SubShaderTags.html">Render Queue</a>.</p>
+
+<p>To prevent this issue, give each Prefab’s Sorting Group component a unique <strong>Order in Layer</strong> value. Unity renders Sorting Groups with lower <strong>Order in Layer</strong> values first and those with higher values overlap the Sorting Groups that are lower. Refer to <a href="class-TagManager.html">Tags and Layers</a> for more information about editing and reordering <strong>Sorting Layers</strong>.</p>
+
+<figure>
+<img src="../uploads/Main/unique_orderlayer.png" alt="">
+</figure>
+
+<p>Each Prefab has a Sorting Group component with a unique <strong>Order in Layer</strong> value to ensure that Unity renders each character and their parts correctly.</p>
+<!-- area:authoring -->
+
+<p><span class="search-words">SortingGroup</span></p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="Sprite-data-provider-api.html"></a></span><div class="tip">Sprite Editor Data Provider API</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="9SliceSprites.html"></a></span><div class="tip">9 切片精灵</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

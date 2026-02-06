@@ -1,0 +1,388 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Call Java and Kotlin plug-in code from C# scripts - Unity 手册">
+<title>Call Java and Kotlin plug-in code from C# scripts - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="To call Java code from C# scripts, Unity provides C# APIs that communicate with the Android Java Native Interface (JNI) through C++. Unity provides both a low level and a high level API that you can use to interact with Java code using JNI.">
+<meta property="og:description" content="To call Java code from C# scripts, Unity provides C# APIs that communicate with the Android Java Native Interface (JNI) through C++. Unity provides both a low level and a high level API that you can use to interact with Java code using JNI.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'android-plugins-java-code-from-c-sharp';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/android-plugins-java-code-from-c-sharp.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/android-plugins-java-code-from-c-sharp.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/android-plugins-java-code-from-c-sharp.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/android-plugins-java-code-from-c-sharp.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/android-plugins-java-code-from-c-sharp.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/android-plugins-java-code-from-c-sharp.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/android-plugins-java-code-from-c-sharp.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/android-plugins-java-code-from-c-sharp.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/android-plugins-java-code-from-c-sharp.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/android-plugins-java-code-from-c-sharp.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/android-plugins-java-code-from-c-sharp.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/android-plugins-java-code-from-c-sharp.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/android-plugins-java-code-from-c-sharp.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/android-plugins-java-code-from-c-sharp.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/android-plugins-java-code-from-c-sharp.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/android-plugins-java-code-from-c-sharp.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/android-plugins-java-code-from-c-sharp.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/android-plugins-java-code-from-c-sharp.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/android-plugins-java-code-from-c-sharp.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/android-plugins-java-code-from-c-sharp.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/android-plugins-java-code-from-c-sharp.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/android-plugins-java-code-from-c-sharp.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/android-plugins-java-code-from-c-sharp.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/android-plugins-java-code-from-c-sharp.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/android-plugins-java-code-from-c-sharp.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/android-plugins-java-code-from-c-sharp.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/android-plugins-java-code-from-c-sharp.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/android-plugins-java-code-from-c-sharp.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/android-plugins-java-code-from-c-sharp.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/android-plugins-java-code-from-c-sharp.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/android-plugins-java-code-from-c-sharp.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/android-plugins-java-code-from-c-sharp.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/android-plugins-java-code-from-c-sharp.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/android-plugins-java-code-from-c-sharp.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/android-plugins-java-code-from-c-sharp.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/android-plugins-java-code-from-c-sharp.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/android-plugins-java-code-from-c-sharp.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/android-plugins-java-code-from-c-sharp.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/android-plugins-java-code-from-c-sharp.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/android-plugins-java-code-from-c-sharp.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/android-plugins-java-code-from-c-sharp.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/android-plugins-java-code-from-c-sharp.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/android-plugins-java-code-from-c-sharp.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/android-plugins-java-code-from-c-sharp.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/android-plugins-java-code-from-c-sharp.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/android-plugins-java-code-from-c-sharp.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/android-plugins-java-code-from-c-sharp.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/android-plugins-java-code-from-c-sharp.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/android-plugins-java-code-from-c-sharp.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/android-plugins-java-code-from-c-sharp.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/android-plugins-java-code-from-c-sharp.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/android-plugins-java-code-from-c-sharp.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/android-plugins-java-code-from-c-sharp.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/android-plugins-java-code-from-c-sharp.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/android-plugins-java-code-from-c-sharp.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/android-plugins-java-code-from-c-sharp.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/android-plugins-java-code-from-c-sharp.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/android-plugins-java-code-from-c-sharp.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="PlatformSpecific.html">平台开发</a></li>
+<li><a href="android.html">Android</a></li>
+<li><a href="android-developing.html">Developing for Android</a></li>
+<li><a href="PluginsForAndroid.html">Create and use plug-ins in Android</a></li>
+<li>Call Java and Kotlin plug-in code from C# scripts</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="AndroidJavaSourcePlugins.html"></a></span><div class="tip">Java and Kotlin source plug-ins</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="AndroidUnityPlayerActivity.html"></a></span><div class="tip">Extend the default Unity activity</div>
+</div>
+</div></div>
+<h1>Call Java and Kotlin plug-in code from C# scripts</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>To call Java code from C# scripts, Unity provides C# APIs that communicate with the Android <a href="https://developer.android.com/training/articles/perf-jni">Java Native Interface</a> (JNI) through C++. Unity provides both a low level and a high level API that you can use to interact with Java code using JNI.</p>
+
+<h2>Low-level API</h2>
+
+<p>The low-level <a href="../ScriptReference/AndroidJNI.html">AndroidJNI</a> class wraps JNI calls and provides static methods that directly map to JNI methods. The <a href="../ScriptReference/AndroidJNIHelper.html">AndroidJNIHelper</a> API provides helper functionality that is primarily used by the high-level API, but they can be useful in certain situations.</p>
+
+<h2>High-level API</h2>
+
+<p>The high-level <a href="../ScriptReference/AndroidJavaObject.html">AndroidJavaObject</a>, <a href="../ScriptReference/AndroidJavaClass.html">AndroidJavaClass</a>, and <a href="../ScriptReference/AndroidJavaProxy.html">AndroidJavaProxy</a> APIs automate a lot of tasks required for JNI calls. They also use caching to make calls to Java faster. The combination of <code>AndroidJavaObject</code> and <code>AndroidJavaClass</code> is built on top of <code>AndroidJNI</code> and <code>AndroidJNIHelper</code>, but they also contain additional functionality such as static methods that you can use to access static members of Java classes.</p>
+
+<p>Instances of <code>AndroidJavaObject</code> and <code>AndroidJavaClass</code> have a one-to-one mapping to an instance of <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html">java.lang.Object</a> and <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/Class.html">java.lang.Class</a> respectively. They provide three types of interactions with Java/Kotlin code:</p>
+
+<ul>
+<li>
+<a href="../ScriptReference/AndroidJavaObject.Call.html">Call</a> a method.</li>
+<li>
+<a href="../ScriptReference/AndroidJavaObject.Get.html">Get</a> the value of a field.</li>
+<li>
+<a href="../ScriptReference/AndroidJavaObject.Set.html">Set</a> the value of a field.</li>
+</ul>
+
+<p>Each interaction also has a static version:</p>
+
+<ul>
+<li>
+<a href="../ScriptReference/AndroidJavaObject.CallStatic.html">CallStatic</a> to call a static method.</li>
+<li>
+<a href="../ScriptReference/AndroidJavaObject.GetStatic.html">GetStatic</a> to get the value of a static field.</li>
+<li>
+<a href="../ScriptReference/AndroidJavaObject.SetStatic.html">SetStatic</a> to set the value of a static field.</li>
+</ul>
+
+<p>When you get the value of a field or call a method that returns a value, you use <a href="https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/types/generics">generics</a> to specify the return type. When you set the value of a field, you also use generics to specify the type of the field that you are setting. For methods that don’t return a value, there is a regular, non-generic, version of <a href="../ScriptReference/AndroidJavaObject.Call.html">Call</a>.</p>
+
+<p><strong>Important</strong>: You must access any <a href="http://developer.android.com/reference/java/lang/Class.html">non-primitive type</a> as an <code>AndroidJavaObject</code>. The only exception is a string which you access directly, even though they don’t represent a primitive type in Java.</p>
+
+<h3>示例</h3>
+
+<p>This section contains code samples that show how to use the high-level <code>AndroidJavaObject</code> and <code>AndroidJavaClass</code> APIs.</p>
+
+<h4>Get the hash code for a Java string</h4>
+
+<p>The following code sample creates an instance of <a href="http://developer.android.com/reference/java/lang/String.html">java.lang.String</a> initialized with a <a href="http://developer.android.com/reference/java/lang/String.html#String(java.lang.StringBuilder)">string</a>, and retrieves the <a href="http://developer.android.com/reference/java/lang/String.html#hashCode()">hash value</a> for that string.</p>
+
+<pre><code class="c#">using UnityEngine;
+public class JavaExamples
+{
+    public static int GetJavaStringHashCode(string text)
+    {
+        using (AndroidJavaObject jo = new AndroidJavaObject("java.lang.String", text))
+        {
+            int hash = jo.Call&lt;int&gt;("hashCode");
+            return hash;
+        }
+    }
+}
+</code></pre>
+
+<p>This example:</p>
+
+<ol>
+<li>Creates an <code>AndroidJavaObject</code> that represents a <a href="http://developer.android.com/reference/java/lang/String.html">java.lang.String</a>. The <code>AndroidJavaObject</code> constructor takes at least one parameter, which is the name of the class to construct an instance of. Any parameters after the class name are for the constructor call on the object, in this case the <code>text</code> parameter from <code>GetJavaStringHashCode</code>.</li>
+<li>Calls <a href="https://developer.android.com/reference/java/lang/String.html#hashCode()">hashCode()</a> to get the hash code of the string. This call uses the <code>int</code> generic type parameter for <code>Call</code> because <code>hashCode()</code> returns the hash code as an integer.</li>
+</ol>
+
+<p><strong>Note</strong>: You can’t use dotted notation to instantiate a nested Java class. You must use the <code>$</code> separator to instantiate inner classes. For example, Use <code>android.view.ViewGroup$LayoutParams</code> or <code>android/view/ViewGroup$LayoutParams</code>, where the <code>LayoutParams</code> class is nested in the <code>ViewGroup</code> class.</p>
+
+<h4>Get the cache directory</h4>
+
+<p>The following code sample shows how to get the cache directory for the current application in C# without using plug-ins.</p>
+
+<pre><code class="c#">using UnityEngine;
+
+public class JavaExamples
+{
+    public static string GetApplicationCacheDirectory()
+    {
+       using (AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
+        using (AndroidJavaObject currentActivity = unityPlayer.GetStatic&lt;AndroidJavaObject&gt;("currentActivity"))
+        using (AndroidJavaObject javaFile = currentActivity.Call&lt;AndroidJavaObject&gt;("getCacheDir"))
+        {
+            string cacheDirectory = javaFile.Call&lt;string&gt;("getCanonicalPath");
+            return cacheDirectory;
+        }
+    }
+}
+</code></pre>
+
+<p>This example:</p>
+
+<ol>
+<li>Creates an <code>AndroidJavaClass</code> to represent <code>com.unity3d.player.UnityPlayer</code>. It’s best practice to use <code>AndroidJavaClass</code> instead of <code>AndroidJavaObject</code> to access static members.</li>
+<li>Creates an <code>AndroidJavaObject</code> to represent the current <a href="http://developer.android.com/reference/android/app/Activity.html">activity</a>, which is a static member of <code>com.unity3d.player.UnityPlayer</code>.</li>
+<li>Calls <a href="http://developer.android.com/reference/android/content/Context.html#getCacheDir()">getCacheDir()</a> on the Activity object, which returns a <a href="https://developer.android.com/reference/java/io/File.html">File</a> object that represents the cache directory.</li>
+<li>Calls <a href="http://developer.android.com/reference/java/io/File.html#getCanonicalPath()">getCanonicalPath()</a> on the File object can to get the cache directory as a string.</li>
+</ol>
+
+<p><strong>Note</strong>: This example is for reference purposes. Instead, to access the application’s cache and file directory use the <a href="../ScriptReference/Application-temporaryCachePath.html">Application.temporaryCachePath</a> and <a href="../ScriptReference/Application-persistentDataPath.html">Application.persistentDataPath</a> APIs.</p>
+
+<h4>Pass data from Java to Unity</h4>
+
+<p>The following code sample shows how to pass data from Java to Unity using <code>UnitySendMessage</code>.</p>
+
+<pre><code class="c#">using UnityEngine;
+
+public class JavaExamples : MonoBehaviour
+{
+
+    private void Start()
+    {
+        AndroidJNIHelper.debug = true;
+        using (AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
+        {
+            jc.CallStatic("UnitySendMessage", "My GameObject", "JavaMessage", "NewMessage");
+        }
+    }
+
+    private void JavaMessage(string message)
+    {
+        Debug.Log("message from java: " + message);
+    }
+}
+</code></pre>
+
+<p>This example:</p>
+
+<ol>
+<li>Creates an <code>AndroidJavaClass</code> to represent <code>com.unity3d.player.UnityPlayer</code>.</li>
+<li>Calls the static<code>UnitySendMessage</code> method that is a member of <code>com.unity3d.player.UnityPlayer</code>.</li>
+</ol>
+
+<p>Although you call <code>UnitySendMessage</code> from within Unity, it relays the message using Java, then Java calls back to the native/Unity code to deliver the message to the object, in this example it is the GameObject named “My GameObject” which has an attached script that contains a method called <code>JavaMessage</code>.</p>
+
+<h2>Best practice</h2>
+
+<p>This section describes best practices to be aware of when you call Java and Kotlin plug-in code from C# scripts.</p>
+
+<h3>Minimize JNI calls</h3>
+
+<p>Using the Java Native Interface (JNI), through either the high-level or low-level C# API is resource intensive and can be slow. To improve performance, and also code clarity, it’s best practice to keep the number of JNI calls low.</p>
+
+<p>To avoid unnecessary JNI calls, the high-level C# API caches the <a href="../ScriptReference/AndroidJNI.GetMethodID.html">ID</a> of each Java method that you call. This means that subsequent calls to the same method are not as resource intensive as the first call. The calls don’t need to be during the same frame or even from the same AndroidJavaObject/AndroidJavaClass instance. If you use the low-level API and want this performance benefit, you must cache method ID yourself. Otherwise, it’s best practice to use the high-level API.</p>
+
+<p><strong>Note</strong>: Unity maintains the cache until the application <a href="https://support.google.com/android/answer/9079646?hl=en-GB">closes</a>. This includes while the application is in the background.</p>
+
+<h3>Garbage collection</h3>
+
+<p>You should wrap any instance of <code>AndroidJavaObject</code> or <code>AndroidJavaClass</code> with a <code>using</code> statement to ensure Unity destroys them as soon as possible. If you don’t use <code>using</code>, Unity’s <a href="performance-garbage-collector.html">garbage collector</a> should still release all created instances, but you lose control of when this will be.</p>
+
+<p>The following code sample shows how to use <code>using</code> statements to get the system language in an optimal way:</p>
+
+<pre><code class="c#">using UnityEngine;
+
+public class LocaleExample : MonoBehaviour
+{
+    void Start()
+    {
+        using (AndroidJavaClass cls = new AndroidJavaClass("java.util.Locale"))
+        using (AndroidJavaObject locale = cls.CallStatic&lt;AndroidJavaObject&gt;("getDefault"))
+        {
+            if (locale != null)
+            {
+                Debug.Log("current lang = " + locale.Call&lt;string&gt;("getDisplayLanguage"));
+            }
+        }
+    }
+}
+</code></pre>
+
+<p><strong>Note</strong>: To see a record of the garbage collector’s activity in <a href="https://docs.unity3d.com/Packages/com.unity.mobile.android-logcat@latest/index.html">Android Logcat</a>, set <a href="../ScriptReference/AndroidJNIHelper-debug.html">AndroidJNIHelper.debug</a> to <code>true</code>.</p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="AndroidJavaSourcePlugins.html"></a></span><div class="tip">Java and Kotlin source plug-ins</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="AndroidUnityPlayerActivity.html"></a></span><div class="tip">Extend the default Unity activity</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="协程 - Unity 手册">
+<title>协程 - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/coroutines-cpu-profiler.png">
+<meta name="description" content="A coroutine allows you to spread tasks across several frames. In Unity, a coroutine is a method that can pause execution and return control to Unity but then continue where it left off on the following frame.">
+<meta property="og:description" content="A coroutine allows you to spread tasks across several frames. In Unity, a coroutine is a method that can pause execution and return control to Unity but then continue where it left off on the following frame.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'Coroutines';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/Coroutines.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/Coroutines.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/Coroutines.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/Coroutines.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/Coroutines.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/Coroutines.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/Coroutines.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/Coroutines.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/Coroutines.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/Coroutines.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/Coroutines.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/Coroutines.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/Coroutines.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/Coroutines.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/Coroutines.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/Coroutines.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/Coroutines.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/Coroutines.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/Coroutines.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/Coroutines.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/Coroutines.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/Coroutines.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/Coroutines.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/Coroutines.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/Coroutines.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/Coroutines.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/Coroutines.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/Coroutines.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/Coroutines.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/Coroutines.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/Coroutines.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/Coroutines.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/Coroutines.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/Coroutines.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/Coroutines.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/Coroutines.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/Coroutines.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/Coroutines.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/Coroutines.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/Coroutines.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/Coroutines.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/Coroutines.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/Coroutines.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/Coroutines.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/Coroutines.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/Coroutines.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/Coroutines.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/Coroutines.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/Coroutines.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/Coroutines.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/Coroutines.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/Coroutines.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/Coroutines.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/Coroutines.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/Coroutines.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/Coroutines.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/Coroutines.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/Coroutines.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="ScriptingSection.html">脚本</a></li>
+<li><a href="ScriptingConcepts.html">脚本概念</a></li>
+<li>协程</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="EventFunctions.html"></a></span><div class="tip">事件函数</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="Namespaces.html"></a></span><div class="tip">命名空间</div>
+</div>
+</div></div>
+<h1>协程</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>A coroutine allows you to spread tasks across several frames. In Unity, a coroutine is a method that can pause execution and return control to Unity but then continue where it left off on the following frame. </p>
+
+<p>In most situations, when you call a method, it runs to completion and then returns control to the calling method, plus any optional return values. This means that any action that takes place within a method must happen within a single frame update. </p>
+
+<p>In situations where you would like to use a method call to contain a procedural animation or a sequence of events over time, you can use a coroutine. </p>
+
+<p>However, it’s important to remember that coroutines aren’t threads. Synchronous operations that run within a coroutine still execute on the main thread. If you want to reduce the amount of CPU time spent on the main thread, it’s just as important to avoid blocking operations in coroutines as in any other script code. If you want to use multi-threaded code within Unity, consider the <a href="JobSystem.html">C# Job System</a>.</p>
+
+<p>It’s best to use coroutines if you need to deal with long asynchronous operations, such as waiting for HTTP transfers, asset loads, or file I/O to complete.</p>
+
+<h2>Coroutine example</h2>
+
+<p>As an example, consider the task of gradually reducing an object’s alpha (opacity) value until it becomes invisible:</p>
+
+<pre><code class="lang-csharp">void Fade()
+{
+    Color c = renderer.material.color;
+    for (float alpha = 1f; alpha &gt;= 0; alpha -= 0.1f)
+    {
+        c.a = alpha;
+        renderer.material.color = c;
+    }
+}
+</code></pre>
+
+<p>In this example, the Fade method doesn’t have the effect you might expect. To make the fading visible, you must reduce the alpha of the fade over a sequence of frames to display the intermediate values that Unity renders. However, this example method executes in its entirety within a single frame update. The intermediate values are never displayed, and the object disappears instantly.</p>
+
+<p>To work around this situation, you could add code to the <code>Update</code> function that executes the fade on a frame-by-frame basis. However, it can be more convenient to use a coroutine for this kind of task.</p>
+
+<p>In C#, you declare a coroutine like this:</p>
+
+<pre><code class="lang-csharp">IEnumerator Fade()
+{
+    Color c = renderer.material.color;
+    for (float alpha = 1f; alpha &gt;= 0; alpha -= 0.1f)
+    {
+        c.a = alpha;
+        renderer.material.color = c;
+        yield return null;
+    }
+}
+</code></pre>
+
+<p>A coroutine is a method that you declare with an <a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.ienumerator">IEnumerator</a> return type and with a <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/yield">yield</a> return statement included somewhere in the body. The <code>yield return null</code>line is the point where execution pauses and resumes in the following frame. To set a coroutine running, you need to use the <a href="../ScriptReference/MonoBehaviour.StartCoroutine.html">StartCoroutine</a> function:</p>
+
+<pre><code class="lang-csharp">void Update()
+{
+    if (Input.GetKeyDown("f"))
+    {
+        StartCoroutine(Fade());
+    }
+}
+</code></pre>
+
+<p>The loop counter in the Fade function maintains its correct value over the lifetime of the coroutine, and any variable or parameter is preserved between <code>yield</code> statements.</p>
+
+<h2>Coroutine time delay</h2>
+
+<p>By default, Unity resumes a coroutine on the frame after a <code>yield</code> statement. If you want to introduce a time delay, use <a href="../ScriptReference/WaitForSeconds.html">WaitForSeconds</a>:</p>
+
+<pre><code class="lang-csharp">IEnumerator Fade()
+{
+    Color c = renderer.material.color;
+    for (float alpha = 1f; alpha &gt;= 0; alpha -= 0.1f)
+    {
+        c.a = alpha;
+        renderer.material.color = c;
+        yield return new WaitForSeconds(.1f);
+    }
+}
+</code></pre>
+
+<p>You can use <code>WaitForSeconds</code> to spread an effect over a period of time, and you can use it as an alternative to including the tasks in the <code>Update</code> method. Unity calls the <code>Update</code> method several times per second, so if you don’t need a task to be repeated quite so often, you can put it in a coroutine to get a regular update but not every single frame. </p>
+
+<p>For example, you can might have an alarm in your application that warns the player if an enemy is nearby with the following code:</p>
+
+<pre><code class="lang-csharp">bool ProximityCheck()
+{
+    for (int i = 0; i &lt; enemies.Length; i++)
+    {
+        if (Vector3.Distance(transform.position, enemies[i].transform.position) &lt; dangerDistance) {
+                return true;
+        }
+    }
+
+    return false;
+}
+</code></pre>
+
+<p>如果有很多敌人，那么每帧都调用此函数可能会带来很大开销。但是，可以使用协程，每十分之一秒调用一次：</p>
+
+<pre><code class="lang-csharp">IEnumerator DoCheck()
+{
+    for(;;)
+    {
+        if (ProximityCheck())
+        {
+            // Perform some action here
+        }
+        yield return new WaitForSeconds(.1f);
+    }
+}
+</code></pre>
+
+<p>This reduces the number of checks that Unity carries out without any noticeable effect on gameplay.</p>
+
+<h2>Stopping coroutines</h2>
+
+<p>To stop a coroutine, use <a href="../ScriptReference/MonoBehaviour.StopCoroutine.html">StopCoroutine</a> and <a href="../ScriptReference/MonoBehaviour.StopAllCoroutines.html">StopAllCoroutines</a>. A coroutine also stops if you’ve set <a href="../ScriptReference/GameObject.SetActive.html">SetActive</a> to <code>false</code> to disable the GameObject the coroutine is attached to. Calling <code>Destroy(example)</code> (where <code>example</code> is a <code>MonoBehaviour</code> instance) immediately triggers <a href="../ScriptReference/MonoBehaviour.OnDisable.html">OnDisable</a> and Unity processes the coroutine, effectively stopping it. Finally, <code>OnDestroy</code> is invoked at the end of the frame.</p>
+
+<p><strong>Note:</strong> If you’ve disabled a <code>MonoBehaviour</code> by setting <a href="ScriptReference:Behaviour-enabled">enabled</a> to <code>false</code>, Unity doesn’t stop coroutines.</p>
+
+<h2>Analyzing coroutines</h2>
+
+<p>Coroutines execute differently from other script code. Most script code in Unity appears within a performance trace in a single location, beneath a specific callback invocation. However, the CPU code of coroutines always appears in two places in a trace.</p>
+
+<p>All the initial code in a coroutine, from the start of the coroutine method until the first <code>yield</code> statement, appears in the trace whenever Unity starts a coroutine. The initial code most often appears whenever the <a href="../ScriptReference/MonoBehaviour.StartCoroutine.html">StartCoroutine</a> method is called. Coroutines that Unity callbacks generate (such as <code>Start</code> callbacks that return an <code>IEnumerator</code>) first appear within their respective Unity callback.</p>
+
+<p>The rest of a coroutine’s code (from the first time it resumes until it finishes executing) appears within the <code>DelayedCallManager</code> line that’s inside Unity’s main loop.</p>
+
+<p>This happens because of the way that Unity executes coroutines. The <a href="overview-of-dot-net-in-unity.html">C# compiler</a> auto generates an instance of a class that backs coroutines. Unity then uses this object to track the state of the coroutine across multiple invocations of a single method. Because local-scope variables within the coroutine must persist across <code>yield</code> calls, Unity hoists the local-scope variables into the generated class, which remain allocated on the heap during the coroutine. This object also tracks the internal state of the coroutine: it remembers at which point in the code the coroutine must resume after yielding.</p>
+
+<p>Because of this, the memory pressure that happens when a coroutine starts is equal to a fixed overhead allocation plus the size of its local-scope variables.</p>
+
+<p>The code which starts a coroutine constructs and invokes an object, and then Unity’s <code>DelayedCallManager</code> invokes it again whenever the coroutine’s <code>yield</code> condition is satisfied. Because coroutines usually start outside of other coroutines, this splits their execution overhead between the <code>yield</code> call and <code>DelayedCallManager</code>.</p>
+
+<p>You can use the Unity Profiler to inspect and understand where Unity executes coroutines in your application. To do this, profile your application with <a href="ProfilerWindow.html#deep-profiling">Deep Profiling</a> enabled, which profiles every part of your script code and records all function calls. You can then use the <a href="ProfilerCPU.html">CPU Usage Profiler module</a> to investigate the coroutines in your application. </p>
+
+<figure>
+<img src="../uploads/Main/coroutines-cpu-profiler.png" alt="Profiler session with a coroutine in a DelayedCall">
+<figcaption>Profiler session with a coroutine in a DelayedCall</figcaption>
+</figure>
+
+<p>It’s best practice to condense a series of operations down to the fewest number of individual coroutines possible. Nested coroutines are useful for code clarity and maintenance, but they impose a higher memory overhead because the coroutine tracks objects.</p>
+
+<p>If a coroutine runs every frame and doesn’t <code>yield</code> on long-running operations, it’s more performant to replace it with an <code>Update</code> or <code>LateUpdate</code> callback. This is useful if you have long-running or infinitely looping coroutines.</p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="EventFunctions.html"></a></span><div class="tip">事件函数</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="Namespaces.html"></a></span><div class="tip">命名空间</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

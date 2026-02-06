@@ -1,0 +1,369 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Grass and other details - Unity 手册">
+<title>Grass and other details - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/TerrainWithGrass.png">
+<meta name="description" content="A Terrain might have grass clumps and other small objects (such as rocks) covering its surface. Unity renders these objects using textured quads or full meshes, depending on the level of detail and performance you require.">
+<meta property="og:description" content="A Terrain might have grass clumps and other small objects (such as rocks) covering its surface. Unity renders these objects using textured quads or full meshes, depending on the level of detail and performance you require.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'terrain-Grass';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/terrain-Grass.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/terrain-Grass.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/terrain-Grass.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/terrain-Grass.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/terrain-Grass.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/terrain-Grass.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/terrain-Grass.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/terrain-Grass.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/terrain-Grass.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/terrain-Grass.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/terrain-Grass.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/terrain-Grass.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/terrain-Grass.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/terrain-Grass.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/terrain-Grass.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/terrain-Grass.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/terrain-Grass.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/terrain-Grass.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/terrain-Grass.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/terrain-Grass.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/terrain-Grass.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/terrain-Grass.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/terrain-Grass.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/terrain-Grass.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/terrain-Grass.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/terrain-Grass.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/terrain-Grass.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/terrain-Grass.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/terrain-Grass.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/terrain-Grass.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/terrain-Grass.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/terrain-Grass.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/terrain-Grass.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/terrain-Grass.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/terrain-Grass.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/terrain-Grass.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/terrain-Grass.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/terrain-Grass.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/terrain-Grass.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/terrain-Grass.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/terrain-Grass.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/terrain-Grass.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/terrain-Grass.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/terrain-Grass.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/terrain-Grass.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/terrain-Grass.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/terrain-Grass.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/terrain-Grass.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/terrain-Grass.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/terrain-Grass.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/terrain-Grass.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/terrain-Grass.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/terrain-Grass.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/terrain-Grass.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/terrain-Grass.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/terrain-Grass.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/terrain-Grass.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/terrain-Grass.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="CreatingEnvironments.html">World building</a></li>
+<li><a href="script-Terrain.html">地形</a></li>
+<li>Grass and other details</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="class-WindZone.html"></a></span><div class="tip">风区（Wind Zones）</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="terrain-Heightmaps.html"></a></span><div class="tip">使用高度贴图</div>
+</div>
+</div></div>
+<h1>Grass and other details</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>A Terrain might have grass clumps and other small objects (such as rocks) covering its surface. Unity renders these objects using textured quads or full meshes, depending on the level of detail and performance you require.</p>
+
+<p>Prior to 2021.2, grass and other details only worked in the <a href="https://docs.unity3d.com/Manual/built-in-render-pipeline.html">built-in render pipeline</a> and <a href="https://docs.unity3d.com/Manual/universal-render-pipeline.html">Universal Render Pipeline</a> (URP). In 2021.2, Unity introduced instancing details that work with all render pipelines, including the <a href="https://docs.unity3d.com/Manual/high-definition-render-pipeline.html">High Definition Render Pipeline</a> (HDRP).</p>
+
+<figure>
+<img src="../uploads/Main/TerrainWithGrass.png" alt="Terrain with grass">
+<figcaption>Terrain with grass</figcaption>
+</figure>
+
+<p>Terrain details are available in several modes, where each mode has a different use during game development.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Mode</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">Instanced mesh</td>
+	<td style="text-align:left;">Unity recommends you use this mode because it’s best suited for most scenarios that require the placement of any number of arbitrary meshes on Terrain.<br><br>To add an instanced mesh, select <strong>Add Detail Mesh</strong> and enable the <strong>Use GPU Instancing</strong> option.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Vertex Lit mesh</td>
+	<td style="text-align:left;">Doesn’t use GPU instancing for rendering. Instead, it combines all detail instances into one mesh, which results in simple shading and limitations to the number of instances you can achieve.<br><br>To add a Vertex Lit mesh, select <strong>Add Detail Mesh</strong> and set the <strong>Render Mode</strong> to <strong>Vertex Lit</strong>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Grass mesh</td>
+	<td style="text-align:left;">Works similar to the vertex list mesh, but Unity treats these meshes as grass so they always have up-facing normals and move in the wind.<br><br>To add a grass mesh, select <strong>Add Detail Mesh</strong> and set the <strong>Render Mode</strong> to <strong>Grass</strong>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Grass Texture</td>
+	<td style="text-align:left;">Lets you create grass quad meshes directly from Texture, which move in the wind. You don’t need to specify any custom meshes, and there’s also an option you can enable to make grass quads always face the camera for a billboard effect.<br><br>Select <strong>Add Grass Texture</strong> for this option.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Paint Details</h2>
+
+<p>To enable grass and detail painting, select the <strong>Paint Details</strong> button on the Terrain Inspector toolbar.</p>
+
+<figure>
+<img src="../uploads/Main/TerrainDetailsPaintTool.png" alt="Terrain Inspector 中的 Paint Details 按钮">
+<figcaption>Terrain Inspector 中的 Paint Details 按钮</figcaption>
+</figure>
+
+<p>Initially, a Terrain has no grass or details available. In the Inspector, click the <strong>Edit Details</strong> button to display a menu with the <strong>Add Detail Mesh</strong> and <strong>Add Grass Texture</strong> options. Click either option to bring up a window that lets you choose <strong>Assets</strong> to add to the Terrain for painting.</p>
+
+<h3>Add Detail Mesh</h3>
+
+<figure>
+<img src="../uploads/Main/TerrainDetailAddWindow.png" alt="Add Detail Mesh 窗口">
+<figcaption>Add Detail Mesh 窗口</figcaption>
+</figure>
+
+<p>Use the <strong>Detail Prefab</strong> field to select a Prefab from your Project. To create an authentic look, each mesh is affected by a random factor to determine the size and color. Unity uses the Perlin noise algorithm to generate such random factors.</p>
+
+<p>The <strong>Min Width</strong>, <strong>Max Width</strong>, <strong>Min Height</strong>, and <strong>Max Height</strong> values specify the upper and lower scalings along the X and Y axes with which the meshes are randomly generated.</p>
+
+<p>The <strong>Align to Ground (%)</strong> value specifies how much the detail axis aligns to the terrain normal. 0 is unaligned, and 100 is completely aligned to the normal.</p>
+
+<p>The <strong>Position Jitter (%)</strong> controls the randomness of the detail distribution from ordered to random. This is only available when legacy distribution is turned off in <a href="class-QualitySettings.html#Terrain">Quality settings</a>.</p>
+
+<p>The <strong>Noise Seed</strong> setting sets the random number generator seed. Each seed value represents a unique generation. If you set the same seed for two types of details, the generated instances become identical. The <strong>Noise Spread</strong> value refers to the scaling of the noise pattern over the X-Z plane, with higher values indicating more variations within a given area. </p>
+
+<p>The <strong>Hole Edge Padding (%)</strong> setting controls how far away detail objects are from the edge of the hole area. For more information, see <a href="https://docs.unity3d.com/2021.2/Documentation/ScriptReference/DetailPrototype-holeEdgePadding.html">DetailPrototype.holeEdgePadding</a>.</p>
+
+<p>The <strong>Detail Density</strong> value controls the detail’s density relative to its size. You can enable this in “Coverage” detail scatter mode, set in <a href="terrain-OtherSettings.html">Terrain Settings</a>.</p>
+
+<p><strong>Healthy Color</strong> and <strong>Dry Color</strong> settings control the color variation. Unity performs linear interpolation between the healthy and dry colors, and selects a color based on the size of the mesh. For example, the system considers bigger-sized meshes to be healthier, thus the linear interpolation results for such meshes lean more towards the <strong>Healthy Color</strong> tint. These color settings disappear when you select <strong>Use GPU Instancing</strong> because they have no effect on instanced meshes.</p>
+
+<p>The <strong>Affected by Density Scale</strong> checkbox determines whether the Detail Density Scale setting set in the <a href="terrain-OtherSettings.html">Terrain Settings</a> affects this detail.</p>
+
+<p>You can set the <strong>Render Mode</strong> to <strong>Vertex Lit</strong> or <strong>Grass</strong>.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Render Mode</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Vertex Lit</strong></td>
+	<td style="text-align:left;">Renders detail meshes as solid, vertex lit GameObjects in the scene, which don’t move in the wind.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Grass</strong></td>
+	<td style="text-align:left;">Renders detail meshes in the scene with simplified lighting similar to Grass Textures, and do move in the wind.</td>
+</tr>
+</tbody>
+</table>
+
+<p><em><strong>Note</strong>: To apply a texture on a detail using Vertex Lit or Grass render mode, their material should have a texture assigned to the</em> **<em>MainTex** </em>material property (default property name for Base Color Map in built-in/URP). No other material properties are considered for non-instanced details._</p>
+
+<h4>Use GPU Instancing</h4>
+
+<p>In addition, you can specify if you want to use GPU instancing to render your detail meshes. With GPU instancing, Unity uses the material and the shader specified on the prefab for rendering. This lets you perform more customization in the shader, and potentially use <a href="https://docs.unity3d.com/Packages/com.unity.shadergraph@latest">Shader Graph</a>.</p>
+
+<p>Unity still applies the Width and Height noise to each instance, but disables the <strong>Healthy Color</strong>/<strong>Dry Color</strong> noise. You can use your own color variation technique, along with many other randomizations, in the shader.</p>
+
+<p>Under the hood, some of the Unity <a href="GPUInstancing.html">GPU instancing</a> limitations do affect rendering. For example:</p>
+
+<ul>
+<li>Your target platform needs to support GPU instancing.</li>
+<li>Your shader must support GPU instancing. (Most shaders do support it.)</li>
+<li>Objects are rendered in batches of 1,023 or fewer.</li>
+<li>Instanced light probe lighting or lightmap lighting are not supported.</li>
+</ul>
+
+<p>Unlike regular instancing where Unity dynamically builds up the instancing constant buffer every frame, instancing details have persistent constant buffers for better CPU and GPU performance when the target hardware allows for it, at the cost of moderately increased GPU memory usage.</p>
+
+<p>If you select <strong>Use GPU Instancing</strong>, the <strong>Render Mode</strong> setting becomes grayed out and unavailable.</p>
+
+<h3>Add Grass Texture</h3>
+
+<figure>
+<img src="../uploads/Main/TerrainGrassAddWindow.png" alt="Add Grass Texture 窗口">
+<figcaption>Add Grass Texture 窗口</figcaption>
+</figure>
+
+<p>The Add Grass Texture window</p>
+
+<p><strong>Detail Texture</strong> is the Texture that represents the grass. You can download Textures from the Asset Store, or create your own Textures. A Texture is a small image with alpha set to zero for the empty areas. Note that “Grass” is a generic term; it is possible for a Texture to represent flowers or man-made objects such as barbed wire coils.</p>
+
+<p>The <strong>Min Width</strong>, <strong>Max Width</strong>, <strong>Min Height</strong>, <strong>Max Height</strong>, <strong>Noise Seed</strong>, <strong>Noise Spread</strong>, <strong>Hole Edge Padding (%)</strong>, <strong>Align to Ground (%)</strong>, <strong>Position Jitter (%)</strong>, <strong>Detail Density</strong>, <strong>Affected by Density Scale</strong>, <strong>Healthy Color</strong>, and <strong>Dry Color</strong> settings work the same as they do for meshes, and are described in the Add Detail Mesh section above.</p>
+
+<p>Finally, when you enable the <strong>Billboard</strong> option, the grass images rotate so that they always face the Camera. This is useful when you want to show a dense field of grass because clumps are two-dimensional, and not visible from the side. However, with sparse grass, the rotations of individual clumps might become apparent to the viewer, creating a strange effect.</p>
+
+<h2>Remove details</h2>
+
+<p>To remove a detail, select the detail to remove, click the <strong>Edit Details</strong> button, then select <strong>Remove</strong>. When you remove a detail, Unity clears the data that represents the Terrain area on which you scattered that detail.</p>
+
+<hr>
+
+<ul>
+<li><span class="page-edit">2022–07–20 页面已修订</span></li>
+<li><span class="page-history">Added information about detail density and distribution.</span></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="class-WindZone.html"></a></span><div class="tip">风区（Wind Zones）</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="terrain-Heightmaps.html"></a></span><div class="tip">使用高度贴图</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

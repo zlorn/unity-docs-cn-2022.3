@@ -1,0 +1,482 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Roslyn analyzers and source generators - Unity 手册">
+<title>Roslyn analyzers and source generators - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="Use Roslyn analyzers, source generators and ruleset files in Unity projects to inspect your code for style, quality, and other issues.">
+<meta property="og:description" content="Use Roslyn analyzers, source generators and ruleset files in Unity projects to inspect your code for style, quality, and other issues.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'roslyn-analyzers';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/roslyn-analyzers.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/roslyn-analyzers.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/roslyn-analyzers.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/roslyn-analyzers.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/roslyn-analyzers.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/roslyn-analyzers.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/roslyn-analyzers.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/roslyn-analyzers.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/roslyn-analyzers.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/roslyn-analyzers.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/roslyn-analyzers.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/roslyn-analyzers.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/roslyn-analyzers.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/roslyn-analyzers.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/roslyn-analyzers.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/roslyn-analyzers.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/roslyn-analyzers.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/roslyn-analyzers.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/roslyn-analyzers.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/roslyn-analyzers.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/roslyn-analyzers.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/roslyn-analyzers.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/roslyn-analyzers.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/roslyn-analyzers.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/roslyn-analyzers.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/roslyn-analyzers.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/roslyn-analyzers.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/roslyn-analyzers.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/roslyn-analyzers.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/roslyn-analyzers.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/roslyn-analyzers.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/roslyn-analyzers.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/roslyn-analyzers.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/roslyn-analyzers.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/roslyn-analyzers.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/roslyn-analyzers.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/roslyn-analyzers.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/roslyn-analyzers.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/roslyn-analyzers.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/roslyn-analyzers.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/roslyn-analyzers.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/roslyn-analyzers.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/roslyn-analyzers.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/roslyn-analyzers.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/roslyn-analyzers.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/roslyn-analyzers.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/roslyn-analyzers.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/roslyn-analyzers.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/roslyn-analyzers.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/roslyn-analyzers.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/roslyn-analyzers.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/roslyn-analyzers.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/roslyn-analyzers.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/roslyn-analyzers.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/roslyn-analyzers.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/roslyn-analyzers.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/roslyn-analyzers.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/roslyn-analyzers.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="ScriptingSection.html">脚本</a></li>
+<li><a href="ScriptingSettingUp.html">设置脚本编写环境</a></li>
+<li>Roslyn analyzers and source generators</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="testing-editortestsrunner.html"></a></span><div class="tip">单元测试。</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ScriptingConcepts.html"></a></span><div class="tip">脚本概念</div>
+</div>
+</div></div>
+<h1>Roslyn analyzers and source generators</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Use Roslyn analyzers, source generators and ruleset files in Unity projects to inspect your code for style, quality, and other issues.</p>
+
+<p>You can use existing analyzer libraries to inspect your code, and write your own analyzers to promote the best practices or conventions within your organization. This page explains how to use Roslyn analyzers and source generators in an empty Unity Project.</p>
+
+<p><strong>Note</strong>: Roslyn analyzers are only compatible with the IDEs that Unity publically supports, which are Visual Studio and JetBrains Rider.</p>
+
+<p>For more information about how to write and use Roslyn analyzers, see Microsoft’s <a href="https://docs.microsoft.com/en-us/visualstudio/code-quality/use-roslyn-analyzers?view=vs-2019">Analyzer Configuration</a> and <a href="https://docs.microsoft.com/en-us/visualstudio/extensibility/getting-started-with-roslyn-analyzers?view=vs-2019">Get started with Roslyn analyzers</a> documentation.</p>
+
+<h2>Source generators</h2>
+
+<p>You can use source generators as an additional step in your script compilation process. You can use source generators to add new code while you compile your existing code. Like analyzers, you can use existing source generators or create your own. </p>
+
+<p><strong>Note</strong>: Unity only supports version 6.0.0-preview of the ‘System.Text.Json’ namespace. If you want to use this namespace in your application, ensure you use version 6.0.0-preview. For more information about <code>System.Text.Json</code>, see Microsoft’s <a href="https://docs.microsoft.com/en-us/dotnet/api/system.text.json?view=net-6.0">System.Text.Json Namespace documentation</a>.</p>
+
+<p>To set up a source generator using Visual Studio:</p>
+
+<ol>
+<li>In Visual Studio, create a .NET standard library project that targets .NET Standard 2.0.</li>
+<li>Install the Microsoft.CodeAnalysis NuGet package. Your source generator must use <a href="https://www.nuget.org/packages/Microsoft.CodeAnalysis.CSharp/3.8.0">Microsoft.CodeAnalysis 3.8</a> to work with Unity.</li>
+<li>In your Visual Studio project, create a new C# file and add the following code:</li>
+</ol>
+
+<pre><code class="csharp">using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.Text;
+using System.Text;
+
+namespace ExampleSourceGenerator
+{
+    [Generator]
+    public class ExampleSourceGenerator : ISourceGenerator
+    {
+        public void Execute(GeneratorExecutionContext context)
+        {
+            System.Console.WriteLine(System.DateTime.Now.ToString());
+
+            var sourceBuilder = new StringBuilder(
+            @"
+            using System;
+            namespace ExampleSourceGenerated
+            {
+                public static class ExampleSourceGenerated
+                {
+                    public static string GetTestText() 
+                    {
+                        return ""This is from source generator ");
+
+            sourceBuilder.Append(System.DateTime.Now.ToString());
+
+            sourceBuilder.Append(
+                @""";
+                    }
+    }
+}
+");
+
+            context.AddSource("exampleSourceGenerator", SourceText.From(sourceBuilder.ToString(), Encoding.UTF8));
+        }
+
+        public void Initialize(GeneratorInitializationContext context) { }
+    }
+}
+</code></pre>
+
+<ol>
+<li>Build your source generator for release. To do this, go to <strong>Build</strong> and select the <strong>Batch Build</strong> option.</li>
+<li>In your source generator’s project folder, find the bin/Release/netstandard2.0/ExampleSourceGenerator.dll file.</li>
+<li>Copy this file into your Unity project, inside the Assets folder.</li>
+<li>Inside the Asset Browser, click on the .dll file to open the Plugin Inspector window.</li>
+<li>Go to <strong>Select platforms</strong> for plugin and disable <strong>Any Platform</strong>.</li>
+<li>Go to <strong>Include Platforms</strong> and disable <strong>Editor</strong> and <strong>Standalone</strong>.</li>
+<li>Go to <strong>Asset Labels</strong> and open the <strong>Asset Labels</strong> sub-menu.</li>
+<li>Create and assign a new label called <strong>RoslynAnalyzer</strong>. To do this, enter “<strong>RoslynAnalyzer</strong>” into the text input window in the Asset Labels sub-menu. This label must match exactly and is case sensitive. After you create the label for the first analyzer, The label appears in the <strong>Asset Labels</strong> sub-menu. You can click on the name of the label in the menu to assign it to other analyzers.</li>
+<li>To test the source generator is working, create a new C# script in the editor with the following code:</li>
+</ol>
+
+<pre><code class="csharp">using UnityEngine;
+
+public class HelloFromSourceGenerator : MonoBehaviour
+{
+    static string GetStringFromSourceGenerator()
+    {
+        return ExampleSourceGenerated.ExampleSourceGenerated.GetTestText();
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        var output = "Test";
+        output = GetStringFromSourceGenerator();
+        Debug.Log(output);
+    }
+}
+</code></pre>
+
+<ol>
+<li>Add this script to a GameObject in the scene and enter Play mode. You should see a message from the source generator in the Console window, including the time stamp.</li>
+</ol>
+
+<p>For more information about source generators, see Microsoft’s <a href="https://docs.microsoft.com/en-us/dotnet/csharp/roslyn-sdk/source-generators-overview">Source Generators documentation</a>.</p>
+
+<h2>
+<a name="analyser-scope-anchor-link"></a> Analyzer scope</h2>
+
+<p>You can limit the scope of analyzers in your project by using assembly definitions, so that they only analyze certain portions of your code.</p>
+
+<p>Unity applies analyzers to all assemblies in your project’s Assets folder, or in any subfolder whose parent folder doesn’t contain an <a href="ScriptCompilationAssemblyDefinitionFiles.html">assembly definition file</a>. If an analyzer is in a folder that contains an assembly definition, or a subfolder of such a folder, the analyzer only applies to the assembly generated from that assembly definition, and to any other assembly that references it.</p>
+
+<p>This means, for example, that a <a href="PackagesList.html">package</a> can supply analyzers that only analyze code related to the package, which can help package users to use the package API correctly.</p>
+
+<h2>Report analyzer diagnostics</h2>
+
+<p>To view information such as the total execution time of your analyzers and source generators or the relative execution times of each analyzer or source generator, go to <strong>Preferences</strong> &gt; <strong>Diagnostic Switches</strong> and enable <strong>EnableDomainReloadTimings</strong>. When enabled, the information is displayed in the console window.</p>
+
+<h2>Installing an existing Roslyn analyzer or source generator</h2>
+
+<p>Unity doesn’t support the installation of Roslyn Analyzers or source generators through NuGet directly. The below example uses the <a href="https://www.nuget.org/packages/ErrorProne.NET.CoreAnalyzers/">ErrorProne.NET.CoreAnalyzers</a> library to demonstrate how to install Roslyn Analyzers and source generators from NuGet:</p>
+
+<ol>
+<li>Download the library as a .zip file with the <strong>Download package</strong> button.</li>
+<li>Extract the contents of the .zip file.</li>
+<li>Inside the extracted folder, locate the .dll files that contain the analyzers. In this example, navigate to <strong><code>errorprone.net.coreanalyzers&lt;version-number&gt;\analyzers\dotnet\cd</code></strong>. The required files should be in this folder, named <code>ErrorProne.NET.Core.dll</code>, <code>ErrorProne.Net.CoreAnalyzers.dll</code>, and <code>RuntimeContracts.dll</code>.</li>
+<li>Move these files into the Assets folder, or any folder nested inside of the Assets folder, in your Unity project. To do this, either go to <strong>Assets</strong> &gt; <strong>Import new asset</strong> and select the .dll for each of the three files, or copy them into your project’s Assets folder through your device’s file browser.</li>
+<li>Click on the .dll file inside the <strong>Asset Browser</strong> inside Unity to open the <strong><a href="PluginInspector.html">Plugin Inspector</a></strong> window.</li>
+<li>Inside the Plugin Inspector window:
+
+<ul>
+<li>Under the <strong>Select platforms for plugin</strong> heading, disable <strong>Any Platform</strong>.</li>
+<li>Under the <strong>Include Platforms</strong> heading, disable <strong>Editor</strong> and <strong>Standalone</strong>.</li>
+</ul>
+</li>
+<li>Under the <strong>Asset Labels</strong> heading in the Plugin Inspector window, click on the blue label icon to open the <strong>Asset Labels</strong> sub-menu.</li>
+<li>Create and assign a new label called RoslynAnalyzer. To do this, type “RoslynAnalyzer” into the text input window in the <strong>Asset Labels</strong> sub-menu and press <strong>Return</strong>. This label must exactly match the example and is case sensitive. After you create the label for the first analyzer, it appears on the list of available labels in the <strong>Asset Labels</strong> sub-menu. You can click on the name of the label in the menu to assign it to other analyzers.</li>
+</ol>
+
+<p>Unity recognizes the RoslynAnalyzer label and treats assets with this label as Roslyn Analyzers or source generators. When you assign the label to an analyzer, Unity recompiles scripts within the scope of the analyzer and analyzes the code in those scripts according to the rules in the analyzer. Any scripts that are within the same assembly definition as an analyzer are in that analyzer’s scope. For analyzers in the root level of the Assets folder, Unity considers all files in the project to be in scope. For more information about scope, see <a href="#analyser-scope-anchor-link">Analyzer scope</a> above.</p>
+
+<p>To test that your analyzers work correctly, follow the example below. If you have installed the analyzers correctly, the ErrorProne.NET analyzer raises warnings when it analyzes the code in the example.</p>
+
+<p>Create a new script file named <code>RethrowError.cs</code>. Copy the following code into this script and save the file:</p>
+
+<pre><code class="lang-C#">using System;
+using UnityEngine;
+
+public class RethrowError : MonoBehaviour
+{
+    void Update()
+    {
+        try
+        {
+            DoSomethingInteresting();
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e.Message);
+            throw e;
+        }
+    }
+
+    private void DoSomethingInteresting()
+    {
+        throw new System.NotImplementedException();
+    }
+}
+</code></pre>
+
+<p>When you save the file, Unity recompiles the script and runs any applicable analyzers on the script’s code. When the ErrorProne.NET analyzer is correctly installed, it raises the following warnings in the Console window about the above code:</p>
+
+<p><code>Assets\RethrowError.cs(14,23): warning EPC12: Suspicious exception handling: only e.Message is observed in exception block.</code></p>
+
+<p><code>Assets\RethrowError.cs(15,19): warning ERP021: Incorrect exception propagation. Use throw; instead.</code></p>
+
+<h2>规则集文件</h2>
+
+<p>To define your own rules on how to handle the various warnings and errors that the analyzers in your project raise, you can create a ruleset file. For more information on how to create a custom ruleset, see Microsoft’s Visual Studio documentation on <a href="https://docs.microsoft.com/en-us/visualstudio/code-quality/how-to-create-a-custom-rule-set?view=vs-2019">how to create a custom rule set</a>.</p>
+
+<p>In the Assets root folder, place a ruleset file named Default.ruleset. The rules you define in Default.ruleset apply to all predefined assemblies (for example <code>Assembly-CSharp.dll</code>), and all assemblies that are built using .asmdef files.</p>
+
+<p>To override the rules in Default.ruleset for a predefined assembly, create a .ruleset file in the root folder with the name <code>[PredefinedAssemblyName].ruleset</code>. For example, the rules in <code>Assembly-CSharp.ruleset</code> apply to the code in <code>Assembly-CSharp.dll</code>. Only these .ruleset files are allowed inside the root folder:</p>
+
+<ul>
+<li><code>Default.ruleset</code></li>
+<li><code>Assembly-CSharp.ruleset</code></li>
+<li><code>Assembly-CSharp-firstpass.ruleset</code></li>
+<li><code>Assembly-CSharp-Editor.ruleset</code></li>
+<li><code>Assembly-CSharp-Editor-firstpass.ruleset</code></li>
+</ul>
+
+<h3>工作流程：在 Unity 中测试规则集文件</h3>
+
+<p>要在 Unity 中测试规则集文件，请执行以下步骤：</p>
+
+<h4>步骤 1：设置规则集文件</h4>
+
+<ol>
+<li>Create a subfolder named “Subfolder” inside your project’s Assets folder.</li>
+<li>Inside <strong>Subfolder</strong>:
+
+<ol>
+<li>Create a new .asmdef file.</li>
+<li>Save a duplicate copy of <code>RethrowError.cs</code>.</li>
+</ol>
+</li>
+<li>Create a Default.ruleset file inside <strong>Assets</strong> with the following code:</li>
+</ol>
+
+<pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;RuleSet Name="New Rule Set" Description=" " ToolsVersion="10.0"&gt;
+  &lt;Rules AnalyzerId="ErrorProne.NET.CodeAnalyzers" RuleNamespace="ErrorProne.NET.CodeAnalyzers"&gt;
+    &lt;Rule Id="ERP021" Action="Error" /&gt;
+  &lt;Rule Id="EPC12" Action="None" /&gt;
+  &lt;/Rules&gt;
+&lt;/RuleSet&gt;
+</code></pre>
+
+<p><code>Default.ruleset</code> 文件定义了以下规则：</p>
+
+<ul>
+<li>Suppress EPC12, the warning about suspicious exception handling.</li>
+<li>Elevate ERP021, the warning about incorrect exception propagation, to an error.</li>
+</ul>
+
+<h4>第 2 步：重新加载项目</h4>
+
+<p>After you add the ruleset files to your project, reimport any script that lives in an assembly where the rules should apply. This forces Unity to recompile the assembly using the new ruleset files. After recompilation, you should see two messages in the Console window:</p>
+
+<p><code>Assets\Subfolder\RethrowError.cs(15,19): error ERP021: Incorrect exception propagation. Use throw; instead.</code></p>
+
+<p><code>Assets\RethrowError.cs(15,19): error ERP021: Incorrect exception propagation. Use throw; instead.</code></p>
+
+<p>Notice that Unity applies the rules defined in Default.ruleset to both <code>Assets/RethrowError.cs</code> and <code>Assets/Subfolder/RethrowError.cs</code>.</p>
+
+<h4>第 3 步：添加自定义规则集</h4>
+
+<p>In Assets/Subfolder, create a .ruleset file, and give it any name you like (in this <code>exampleHello.ruleset</code>):</p>
+
+<pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;RuleSet Name="New Rule Set" Description=" " ToolsVersion="10.0"&gt;
+  &lt;Rules AnalyzerId="ErrorProne.NET.CodeAnalyzers" RuleNamespace="ErrorProne.NET.CodeAnalyzers"&gt;
+    &lt;Rule Id="ERP021" Action="Info" /&gt;
+    &lt;Rule Id="EPC12" Action="Info" /&gt;
+  &lt;/Rules&gt;
+&lt;/RuleSet&gt;
+</code></pre>
+
+<p>This new <code>Hello.ruleset</code> file tells Unity to print both EPC12 and ERP021 to the Console, without treating them as warnings or errors.</p>
+
+<p>Unity 再次编译项目后，您会在 Console 窗口中看到以下消息：</p>
+
+<p><code>Assets\Subfolder\RethrowError.cs(14,23): info EPC12: Suspicious exception handling: only e.Message is observed in exception block.</code></p>
+
+<p><code>Assets\Subfolder\RethrowError.cs(15,19): info ERP021: Incorrect exception propagation. Use throw; instead.</code></p>
+
+<p><code>Assets\RethrowError.cs(15,19): error ERP021: Incorrect exception propagation. Use throw; instead.</code></p>
+
+<p><code>Default.ruleset</code> 中的规则仍然应用于 <code>Assets\RethrowError.cs</code>，但它们不再应用于 <code>Assets\Subfolder\RethrowError.cs</code>，因为 <code>Hello.ruleset</code> 中的规则将其覆盖。</p>
+
+<p>有关所有允许的规则集操作文件的更多信息，请参阅 Visual Studio 文档<a href="https://docs.microsoft.com/en-us/visualstudio/code-quality/working-in-the-code-analysis-rule-set-editor?view=vs-2019">使用代码分析规则集编辑器</a>。</p>
+
+<h2>更多分析器</h2>
+
+<p>以下是指向其他流行 Roslyn 分析器库的 Github 存储库的链接：</p>
+
+<ul>
+<li><a href="https://github.com/Cybermaxs/awesome-analyzers">awesome-analyzers</a></li>
+<li><a href="https://github.com/dotnet/roslyn-analyzers">dotnet/roslyn-analyzers</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="testing-editortestsrunner.html"></a></span><div class="tip">单元测试。</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ScriptingConcepts.html"></a></span><div class="tip">脚本概念</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

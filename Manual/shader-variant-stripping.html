@@ -1,0 +1,325 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Shader variant stripping - Unity 手册">
+<title>Shader variant stripping - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="You can prevent shader variants from being compiled. This is called stripping. Stripping unneeded variants can greatly reduce build times, file size, shader loading times, and runtime memory usage. In larger projects, or projects with complex shaders, this is a very important consideration.">
+<meta property="og:description" content="You can prevent shader variants from being compiled. This is called stripping. Stripping unneeded variants can greatly reduce build times, file size, shader loading times, and runtime memory usage. In larger projects, or projects with complex shaders, this is a very important consideration.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'shader-variant-stripping';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/shader-variant-stripping.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/shader-variant-stripping.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/shader-variant-stripping.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/shader-variant-stripping.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/shader-variant-stripping.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/shader-variant-stripping.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/shader-variant-stripping.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/shader-variant-stripping.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/shader-variant-stripping.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/shader-variant-stripping.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/shader-variant-stripping.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/shader-variant-stripping.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/shader-variant-stripping.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/shader-variant-stripping.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/shader-variant-stripping.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/shader-variant-stripping.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/shader-variant-stripping.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/shader-variant-stripping.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/shader-variant-stripping.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/shader-variant-stripping.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/shader-variant-stripping.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/shader-variant-stripping.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/shader-variant-stripping.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/shader-variant-stripping.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/shader-variant-stripping.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/shader-variant-stripping.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/shader-variant-stripping.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/shader-variant-stripping.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/shader-variant-stripping.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/shader-variant-stripping.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/shader-variant-stripping.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/shader-variant-stripping.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/shader-variant-stripping.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/shader-variant-stripping.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/shader-variant-stripping.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/shader-variant-stripping.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/shader-variant-stripping.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/shader-variant-stripping.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/shader-variant-stripping.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/shader-variant-stripping.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/shader-variant-stripping.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/shader-variant-stripping.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/shader-variant-stripping.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/shader-variant-stripping.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/shader-variant-stripping.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/shader-variant-stripping.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/shader-variant-stripping.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/shader-variant-stripping.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/shader-variant-stripping.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/shader-variant-stripping.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/shader-variant-stripping.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/shader-variant-stripping.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/shader-variant-stripping.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/shader-variant-stripping.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/shader-variant-stripping.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/shader-variant-stripping.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/shader-variant-stripping.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/shader-variant-stripping.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="Shaders.html">着色器</a></li>
+<li><a href="ShadersOverview.html">着色器核心概念</a></li>
+<li><a href="shader-variants-and-keywords.html">Branching, variants, and keywords</a></li>
+<li>Shader variant stripping</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="shader-keywords-material-inspector.html"></a></span><div class="tip">Using shader keywords with the material Inspector</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="shader-variant-collections.html"></a></span><div class="tip">着色器变体集合</div>
+</div>
+</div></div>
+<h1>Shader variant stripping</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>You can prevent <a href="shader-variants.html">shader variants</a> from being compiled. This is called <strong>stripping</strong>. Stripping unneeded variants can greatly reduce build times, file size, shader loading times, and runtime memory usage. In larger projects, or projects with complex shaders, this is a very important consideration.</p>
+
+<p>If you strip a shader variant that a Material needs at runtime, Unity tries to choose a similar shader variant that’s available. To avoid this, use the following approaches:</p>
+
+<ul>
+<li>If you use a <code>shader_feature</code> keyword, don’t use the keyword to change which code branch executes at runtime.</li>
+<li>
+<a href="shader-how-many-variants.html">Check what shader variants you have</a> to help you see which shader variants and keyword combinations Materials need at runtime.</li>
+<li>Add shaders to the <strong>Always Included Shaders</strong> list in <a href="class-GraphicsSettings.html">Graphics settings</a>.</li>
+</ul>
+
+<h2>Limiting shader variants when you declare shader keywords</h2>
+
+<p>The way that you declare shader keywords can limit the number of variants that they produce:</p>
+
+<ul>
+<li>Use <code>shader_feature</code> instead of <code>multi_compile</code> where possible - see <a href="shader-conditionals.html">conditionals in shaders</a>.</li>
+<li>Ensure that you don’t define unused keywords with <code>multi_compile</code>.</li>
+<li>
+<a href="shader-keywords.html#stage-specific-keywords">Indicate when shader keywords only affect a given shader stage</a>.</li>
+</ul>
+
+<p>For information on declaring keywords in hand-coded shaders, see <a href="SL-MultipleProgramVariants.html">Declaring and using shader keywords in HLSL</a>. For information on declaring keywords in Shader Graph, see <a href="https://docs.unity3d.com/Packages/com.unity.shadergraph@latest?subfolder=/manual/Blackboard.html">Shader Graph: Blackboard</a>.</p>
+
+<h3>Use preprocessor macros to limit variants by platform</h3>
+
+<p>In Unity 2021.3 and above, you can create conditional shader code using a <a href="SL-BuiltinMacros.html">target platform preprocessor macro</a>, so you can limit variants on platforms with limited memory.</p>
+
+<p>The code sample does the following:</p>
+
+<ul>
+<li>If you build for a <a href="SL-BuiltinMacros.html"><code>SHADER_API_DESKTOP</code> platform</a>, Unity builds variants for every possible keyword combination.</li>
+<li>If you build for another platform, Unity builds only variants for keyword combinations the Materials in your build use.</li>
+</ul>
+
+<pre><code>#ifdef SHADER_API_DESKTOP
+   #pragma multi_compile _ RED GREEN BLUE WHITE
+#else
+   #pragma shader_feature RED GREEN BLUE WHITE
+#endif
+</code></pre>
+
+<p>You can use target platform preprocessor macros to select between <code>shader_feature</code>, <code>multi_compile</code> and <code>dynamic_branch</code>. For more information on when to use each type of conditional, see <a href="shader-conditionals.html">Shader Conditionals</a>.</p>
+
+<h3>Create user-controlled quality settings</h3>
+
+<p>When you build for console and mobile platforms that have limited memory, you can limit shader variants by only allowing users to switch between a small number of quality settings.</p>
+
+<p>For example, if you use the keywords <code>DYNAMIC_LIGHTING</code>, <code>SOFT_SHADOWS</code> and <code>HIGH_QUALITY_LIGHTMAPS</code>, you can create the following:</p>
+
+<ul>
+<li>A ‘low quality’ setting that turns on <code>DYNAMIC_LIGHTING</code>.</li>
+<li>A ‘high quality’ setting that turns on <code>DYNAMIC_LIGHTING</code>, <code>SOFT_SHADOWS</code> and <code>HIGH_QUALITY_LIGHTMAPS</code>.</li>
+</ul>
+
+<p>This means Unity won’t create shader variants for <code>DYNAMIC_LIGHTING</code> when it’s off, or the many different combinations of the 3 keywords being on and off.</p>
+
+<p>You can use <a href="SL-BuiltinMacros.html">target platform preprocessor macros</a> to conditionally create fewer quality settings and fewer variants on platforms with limited memory. For example the following code sample will allow users to switch between 8 permutations of settings on <code>SHADER_API_DESKTOP</code> platforms, but only 2 on <code>SHADER_API_MOBILE</code> platforms.</p>
+
+<pre><code>#if SHADER_API_DESKTOP
+   #pragma multi_compile SHADOWS_LOW SHADOWS_HIGH
+   #pragma multi_compile REFLECTIONS_LOW REFLECTIONS_HIGH
+   #pragma multi_compile CAUSTICS_LOW CAUSTICS_HIGH
+#elif SHADER_API_MOBILE
+   #pragma multi_compile QUALITY_LOW QUALITY_HIGH
+   #pragma shader_feature CAUSTICS // Uses shader_feature, so Unity strips variants that use CAUSTICS if there are no Materials that use the keyword at build time.
+#endif
+</code></pre>
+
+<h2>Stripping shader variants in the Editor UI</h2>
+
+<p>There are several places in the Unity Editor UI where you can configure shader stripping:</p>
+
+<ul>
+<li><p>In the <a href="class-GraphicsSettings.html#stripping">Graphics Settings window</a>, configure the settings in the <strong>Shader stripping</strong> section:</p></li>
+<li><p>Ensure that no unneeded shaders are included in the <strong>Always-included shaders</strong> setting.</p></li>
+<li><p>Strip variants relating to GPU instancing, lightmapping, and fog.</p></li>
+<li><p>In the Built-in Render Pipeline, if it is not important that your Tier settings are different, ensure that they are identical to each other. For more information, see <a href="graphics-tiers.html">Graphics tiers</a>.</p></li>
+<li><p>In the Universal Render Pipeline (URP), disable unused features in the URP Asset. For more information, see <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest?subfolder=/manual/shader-stripping.html">Shader stripping</a>.</p></li>
+</ul>
+
+<p>If you use the Universal Render Pipeline you can also do the following:</p>
+
+<ul>
+<li>In the <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/universalrp-asset.html">Universal Render Pipeline Asset</a>, disable rendering any features your project doesn’t use.</li>
+<li>Enable <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@13.1/manual/shader-stripping.html">shader stripping</a>.</li>
+</ul>
+
+<p>If you use the High Definition Render Pipeline you can also do the following:</p>
+
+<ul>
+<li>In the <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@12.1/manual/HDRP-Asset.html">High Definition Render Pipeline Asset</a>, disable any rendering features your project doesn’t use.</li>
+<li>In the <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@12.1/manual/Default-Settings-Window.html#miscellaneous">Miscellaneous section of the HDRP Global Settings Window</a>, disable <strong>Runtime Debug Shaders</strong>.</li>
+</ul>
+
+<h2>Stripping shader variants using Editor scripts</h2>
+
+<p>For shader variants that you can’t strip in other ways, you can use the following APIs in an Editor script to perform build-time stripping:</p>
+
+<ul>
+<li>
+<a href="../ScriptReference/Build.IPreprocessShaders.OnProcessShader.html">IPreprocessShaders.OnProcessShader</a>: receive a callback before Unity compiles a graphics shader Pass into a build.</li>
+<li>
+<a href="../ScriptReference/Build.IPreprocessComputeShaders.OnProcessComputeShader.html">IPreprocessComputeShaders.OnProcessComputeShader</a>: receive a callback before Unity compiles a compute shader into a build.</li>
+</ul>
+
+<p>For more information on this subject, see the Unity blog post <a href="https://blogs.unity3d.com/2018/05/14/stripping-scriptable-shader-variants/">Stripping scriptable shader variants</a></p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="shader-keywords-material-inspector.html"></a></span><div class="tip">Using shader keywords with the material Inspector</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="shader-variant-collections.html"></a></span><div class="tip">着色器变体集合</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

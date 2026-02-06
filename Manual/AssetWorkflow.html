@@ -1,0 +1,319 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="资源工作流程 - Unity 手册">
+<title>资源工作流程 - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/AssetWorkflowOverview.svg">
+<meta name="description" content="资源表示 Unity 项目中用来创建游戏或应用的任何项。资源可以代表项目中的视觉或音频元素，例如 3D 模型、纹理、精灵、音效或音乐。资源还可以表示更抽象的项目，例如任何用途的颜色渐变、动画遮罩或任意文本或数字数据。">
+<meta property="og:description" content="资源表示 Unity 项目中用来创建游戏或应用的任何项。资源可以代表项目中的视觉或音频元素，例如 3D 模型、纹理、精灵、音效或音乐。资源还可以表示更抽象的项目，例如任何用途的颜色渐变、动画遮罩或任意文本或数字数据。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'AssetWorkflow';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/AssetWorkflow.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/AssetWorkflow.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/AssetWorkflow.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/AssetWorkflow.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/AssetWorkflow.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/AssetWorkflow.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/AssetWorkflow.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/AssetWorkflow.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/AssetWorkflow.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/AssetWorkflow.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/AssetWorkflow.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/AssetWorkflow.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/AssetWorkflow.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/AssetWorkflow.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/AssetWorkflow.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/AssetWorkflow.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/AssetWorkflow.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/AssetWorkflow.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/AssetWorkflow.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/AssetWorkflow.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/AssetWorkflow.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/AssetWorkflow.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/AssetWorkflow.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/AssetWorkflow.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/AssetWorkflow.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/AssetWorkflow.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/AssetWorkflow.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/AssetWorkflow.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/AssetWorkflow.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/AssetWorkflow.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/AssetWorkflow.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/AssetWorkflow.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/AssetWorkflow.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/AssetWorkflow.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/AssetWorkflow.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/AssetWorkflow.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/AssetWorkflow.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/AssetWorkflow.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/AssetWorkflow.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/AssetWorkflow.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/AssetWorkflow.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/AssetWorkflow.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/AssetWorkflow.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/AssetWorkflow.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/AssetWorkflow.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/AssetWorkflow.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/AssetWorkflow.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/AssetWorkflow.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/AssetWorkflow.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/AssetWorkflow.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/AssetWorkflow.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/AssetWorkflow.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/AssetWorkflow.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/AssetWorkflow.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/AssetWorkflow.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/AssetWorkflow.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/AssetWorkflow.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/AssetWorkflow.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li>资源工作流程</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="AsyncReadManagerMetrics.html"></a></span><div class="tip">资源加载指标</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ImportingAssets.html"></a></span><div class="tip">Importing assets</div>
+</div>
+</div></div>
+<h1>资源工作流程</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>资源表示 Unity 项目中用来创建游戏或应用的任何项。资源可以代表项目中的视觉或音频元素，例如 3D 模型、纹理、精灵、音效或音乐。资源还可以表示更抽象的项目，例如任何用途的颜色渐变、动画遮罩或任意文本或数字数据。</p>
+
+<p>资源可能来自 Unity 外部创建的文件，例如 3D 模型、音频文件、图像。还可以在 Unity 编辑器中创建一些资源类型，例如 ProBuilder 网格 (ProBuilder Mesh)、Animator Controller、混音器 (Audio Mixer) 或渲染纹理 (Render Texture)。</p>
+
+<h2>导入、创建、构建、分发、加载</h2>
+
+<figure>
+<img src="../uploads/Main/AssetWorkflowOverview.svg" alt="Unity 中的资源工作流程">
+<figcaption>Unity 中的资源工作流程</figcaption>
+</figure>
+
+<p>上图显示了在 Unity 中使用资源时的典型工作流程。每列代表一个单独的步骤，如下所述：</p>
+
+<ul>
+<li>将资源<strong>导入</strong> Unity 编辑器</li>
+<li>使用 Unity 编辑器通过这些资源<strong>创建</strong>内容。</li>
+<li>
+<strong>构建</strong>您的应用或游戏文件，以及可选的随附内容包</li>
+<li>
+<strong>分发</strong>构建的文件，以便您的用户可以通过发布者或应用程序商店访问</li>
+<li>根据您用户的行为以及您对内容进行分组和捆绑的方式，在运行时根据需要<strong>加载</strong>进一步更新。</li>
+</ul>
+
+<p><a name="howUnityImportsAssets"></a></p>
+
+<h3>导入</h3>
+
+<p>导入是将源文件载入 Unity 编辑器以进行处理的过程。在将文件保存或复制到项目的 <code>Assets</code> 文件夹时，Unity 将导入该文件，从而使您可以在编辑器中使用该文件。</p>
+
+<p>It’s important to learn some fundamentals of importing assets into Unity, such as where the files are stored in your Project, how to adjust the Import Settings for each kind of asset, what the meta files are for, and how the Asset Database stores imported data. See <a href="ImportingAssets.html">Importing Assets</a> for more detail about these topics.</p>
+
+<p>通过使用 <a href="UnityAccelerator.html">Unity Accelerator</a>，您可以在与团队合作时加快 Unity 对资源的处理速度。</p>
+
+<h3>创建</h3>
+
+<p>一旦您将一些资源导入到您的项目中，就可以开始创建您的游戏或应用。这通常涉及将资源作为游戏对象放置到一个或多个<a href="CreatingScenes.html">场景</a>中，并添加<a href="ScriptingSection.html">脚本</a>来控制用户如何与它们交互。</p>
+
+<p>随着项目开发的发展，您可能需要将资源分成不同的组，这样您的游戏就可以在运行时逐步下载选定的额外内容。</p>
+
+<p>在创建过程中，您可以决定如何将您的资源分组为单独的<strong>包</strong>并实现选择何时加载它们的代码。</p>
+
+<p>Grouping your assets into bundles allows you reduce the size of your initial download and load some assets later at runtime. This can help you optimize the download size and memory usage of your game or app. The recommended way to do this is to use Unity’s <a href="com.unity.addressables.html">Addressables</a> system.</p>
+
+<h3>Build</h3>
+
+<p>Building refers to the process of exporting your completed project to binary files which you can then distribute and run on the platform of your choice. For example, when building for Windows, Unity generates an <code>.EXE</code> file, along with some accompanying data files which you can then distribute.</p>
+
+<p>如果您使用 Addressables 或 Asset Bundles 将您的资源分组为单独的下载包中，您还需要构建这些包文件以进行分发。</p>
+
+<p>您可以在自己的计算机上构建项目，也可以使用 Unity 的 <a href="UnityCloudBuild">Cloud Build 服务</a>，它可为您的 Unity 项目提供自动构建生成和持续集成。</p>
+
+<h3>分发</h3>
+
+<p>在完成游戏或应用及其内容包的构建后，用户需要一种方式对其进行访问。分发方法的选择取决于您的目标平台。</p>
+
+<p>例如，移动平台有自己的应用商店，您可以使用专业发布商，或者可在自己的服务器上自行托管。</p>
+
+<p>Unity 提供了自己的 <a href="UnityCCD.html">Cloud Content Delivery</a> 服务，可托管您的游戏或应用及其内容，并将其提供给您的用户，该服务完全集成到 Unity 开发平台中。这样可节省大量的时间，对于内容丰富的实时游戏或需要定期更新内容的应用程序很有价值。</p>
+
+<h3>加载</h3>
+
+<p>When users load and use your game or app, the loading process and experience is defined by the rules and programming that you set up, and the way that you grouped and bundled your assets.</p>
+
+<p>结合使用此处描述的技术和服务，您可以提供快速的初始下载，并在项目的整个生命周期内推出持续更新和额外内容。</p>
+
+<hr>
+
+<h2>Artist workflow benefits</h2>
+
+<p>Unity’s asset workflow has tools and features which make it easy to edit and design directly in the Unity Editor:</p>
+
+<ul>
+<li>支持诸多不同的<a href="BuiltInImporters.html">文件格式</a>
+</li>
+<li>在 Unity 和第三方工具之间<a href="ImportingAssets.html">快速往返</a>
+</li>
+<li>
+<a href="Presets.html">预设</a>为资源类型应用自定义默认设置</li>
+<li>使用 <a href="com.unity.addressables.html">Addressables</a> 和 <a href="UnityCCD.html">Cloud Content Delivery</a> 无缝更新实时内容</li>
+</ul>
+
+<h2>Programmer workflow benefits</h2>
+
+<ul>
+<li>A tailored content pipeline (for example, you can write scripts to process assets as Unity imports them, or to control which presets Unity automatically applies based on your own rules).</li>
+<li>通过脚本<a href="ModifyingSourceAssetsThroughScripting.html">修改源资源</a>。您可以通过游戏代码来调整源资源，如材质、网格或物理。</li>
+<li>使用 <a href="com.unity.addressables.html">Addressable 资源系统</a>节省内存，这简化了复杂项目的内容管理，并提供了自动内存管理和性能分析工具。</li>
+<li>针对目标平台优化资源。当您制作一个多平台项目时，可能会有数百种不同的纹理，它们都需要针对不同的平台以不同的分辨率打包。当您为每个目标平台进行构建时，Unity 会自动打包、调整和重新压缩您的资源。</li>
+</ul>
+
+<h2>工作流程考虑事项</h2>
+
+<p>When working with assets in Unity there are different strategies you can use. Which one suits your project depends on factors such as the size of your team, the size of your project, your target platforms, the memory availability on those platforms, and whether you want to release updates, patches, and DLC after publishing it.</p>
+
+<p>For example, if you are working in a team, you could use a <a href="UnityAccelerator.html">Cache Server</a> alongside your version control system to cache Unity’s import results, to save time across the team.</p>
+
+<p>如果您使用大量作为单独包发布的资源，可能会发现将部分资源组分离为单独的项目很有帮助，这样您的团队成员就不需要一次性加载大型项目来使用这些资源包。</p>
+
+<h2>平台注意事项</h2>
+
+<p>If you keep all your assets in a single project, Unity automatically builds them in the correct format for the current selected platform when you run a build. However, if you split your assets across multiple projects to build your bundles separately, you must make a build for each platform you support. See the Addressables documentation <a href="https://docs.unity3d.com/Packages/com.unity.addressables@latest?subfolder=/manual/AddressableAssetsGettingStarted.html%23building-for-multiple-platforms">Building for multiple platforms</a> for more information.</p>
+
+<p>The characteristics of a platform also determine the restrictions and possibilities of how you organize your runtime assets. For example, on the standalone platforms (PC or macOS), virtual memory provides a almost unbounded pool of memory, so using the <a href="SpecialFolders.html#Resources">Resources folder</a> or large asset bundles doesn’t typically pose a memory challenge. Conversely, mobile devices and console platforms typically have limited or nonexistent virtual memory, so apps built for those platforms must manage asset loading and unloading more efficiently. </p>
+
+<p>用户对平台的期望也是一个重要的考虑因素。例如，在移动平台上，漫长的初始下载和安装过程可能会导致玩家尚未尝试就放弃了您的应用。出于这个原因，移动应用通常在初始构建中只包含最少的资源集，并在用户第一次运行您的应用时从远程服务器下载剩余的资源。</p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="AsyncReadManagerMetrics.html"></a></span><div class="tip">资源加载指标</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ImportingAssets.html"></a></span><div class="tip">Importing assets</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

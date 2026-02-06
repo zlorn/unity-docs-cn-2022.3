@@ -1,0 +1,513 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Get started with UI Builder - Unity 手册">
+<title>Get started with UI Builder - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/uie-howto-runtimeUI-finalMainView.png">
+<meta name="description" content="Want to learn how to create UI with UI Builder? Use this example to get started.">
+<meta property="og:description" content="Want to learn how to create UI with UI Builder? Use this example to get started.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'UIB-getting-started';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/UIB-getting-started.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/UIB-getting-started.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/UIB-getting-started.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/UIB-getting-started.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/UIB-getting-started.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/UIB-getting-started.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIB-getting-started.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIB-getting-started.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIB-getting-started.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIB-getting-started.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIB-getting-started.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIB-getting-started.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIB-getting-started.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIB-getting-started.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIB-getting-started.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIB-getting-started.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIB-getting-started.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIB-getting-started.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIB-getting-started.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIB-getting-started.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIB-getting-started.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIB-getting-started.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIB-getting-started.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIB-getting-started.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIB-getting-started.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIB-getting-started.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIB-getting-started.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIB-getting-started.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIB-getting-started.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIB-getting-started.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/UIB-getting-started.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/UIB-getting-started.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/UIB-getting-started.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/UIB-getting-started.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIB-getting-started.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIB-getting-started.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIB-getting-started.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIB-getting-started.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIB-getting-started.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIB-getting-started.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIB-getting-started.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIB-getting-started.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIB-getting-started.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIB-getting-started.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIB-getting-started.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIB-getting-started.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIB-getting-started.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIB-getting-started.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIB-getting-started.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIB-getting-started.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIB-getting-started.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIB-getting-started.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIB-getting-started.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIB-getting-started.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIB-getting-started.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIB-getting-started.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIB-getting-started.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIB-getting-started.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UIToolkits.html">Create user interfaces (UI)</a></li>
+<li><a href="UIElements.html">UI 工具包</a></li>
+<li><a href="UIBuilder.html">UI Builder</a></li>
+<li>Get started with UI Builder</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIB-interface-overview.html"></a></span><div class="tip">UI Builder interface overview</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIB-structuring-ui-elements.html"></a></span><div class="tip">Work with elements</div>
+</div>
+</div></div>
+<h1>Get started with UI Builder</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Want to learn how to create UI with UI Builder? Use this example to get started.</p>
+
+<p>To create UI in the UI Builder:</p>
+
+<ol>
+<li>Create a new UI Document (UXML).</li>
+<li>Add elements to create your UI hierarchy.</li>
+<li>Set up attributes and style properties in the Inspector.</li>
+<li>When more than one element starts to need the same style properties, <a href="#create-a-uss-class-for-the-border-style">create USS style sheets and selectors</a>.</li>
+<li>Test your UI and if you are satisfied with the results, <a href="#extract-inline-styles">extract inline style properties to USS classes</a>.</li>
+<li>Save the UI Document (UXML).</li>
+</ol>
+
+<h2>先决条件</h2>
+
+<p>Before you start, get familiar with the following:</p>
+
+<ul>
+<li><a href="UIE-VisualTree.html">Introduction to visual elements and visual tree</a></li>
+<li><a href="UIE-WritingUXMLTemplate.html">Introduction to UXML</a></li>
+<li><a href="UIE-about-uss.html">Introduction to USS</a></li>
+<li><a href="UIB-interface-overview.html">UI Builder interface overview</a></li>
+</ul>
+
+<h2>Example overview</h2>
+
+<p>This example creates the main view for the <a href="UIE-HowTo-CreateRuntimeUI.html">Create a list view runtime UI</a> example. It creates a root element as the background, with two containers. One container holds the character name list and another holds the character details. In the character details container, you add background and foreground frames. Finally, you add two labels for the character name. This example won’t create the character name list entry UI.</p>
+
+<figure>
+<img src="../uploads/Main/uie-howto-runtimeUI-finalMainView.png" alt="Final main view layout">
+<figcaption>Final main view layout</figcaption>
+</figure>
+
+<h2>Create the root element</h2>
+
+<p>Create a new project and then create a root visual element that covers the entire screen. Set your root element to have a background color and center all child elements in the middle of the screen.</p>
+
+<ol>
+<li><p>Create a project in Unity with any template.</p></li>
+<li><p>Select <strong>Window</strong> &gt; <strong>UI Toolkit</strong> &gt; <strong>UI Builder</strong>. </p></li>
+<li>
+<p>In the UI Builder window, at the top left of the <strong>Viewport</strong> window, select <strong>File</strong> &gt; <strong>New</strong> to create a new UXML document.</p>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/uie-howto-runtimeUI-fileMenu.png" alt="UI Builder file menu">
+<figcaption>UI Builder file menu</figcaption>
+</figure>
+</li>
+<li><p>Name it as <code>MainView.uxml</code> and save.</p></li>
+<li>
+<p>Drag <strong>VisualElement</strong> from <strong>Library</strong> into the Hierarchy window. </p>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/uie-howto-runtimeUI-newVisualElement.png" alt="Create new elements by dragging from the Library">
+<figcaption>Create new elements by dragging from the Library</figcaption>
+</figure>
+
+<p><strong>Tip</strong>: You can also double-click a control to add it to the Hierarchy window. </p>
+</li>
+<li><p>Select the element from the Hierarchy window.</p></li>
+<li>
+<p>In the Inspector window, set <strong>Flex</strong> &gt; <strong>Grow</strong> to <code>1</code>. This sets the <code>flex-grow</code> property to <code>1</code>, making it cover the entire screen.</p>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/uie-howto-runtimeUI-flexGrow.png" alt="Set the Flex property">
+<figcaption>Set the Flex property</figcaption>
+</figure>
+</li>
+<li>
+<p>To center all child elements, set both <strong>Align Items</strong> and <strong>Justify Content</strong> to <code>Center</code>.</p>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/uie-howto-runtimeUI-alignCenter.png" alt="Center children">
+<figcaption>Center children</figcaption>
+</figure>
+</li>
+<li>
+<p>Set <strong>Background</strong> &gt; <strong>Color</strong> to <code>#732526</code>.</p>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/uie-howto-runtimeUI-backgroundColor.png" alt="Root element background color">
+<figcaption>Root element background color</figcaption>
+</figure>
+</li>
+</ol>
+
+<h2>Create the parent container</h2>
+
+<p>Create a new VisualElement underneath the root element. This element becomes the parent container for the left and right sections of the UI.</p>
+
+<ol>
+<li>
+<p>Drag <strong>VisualElement</strong> from <strong>Library</strong> to the root VisualElement in the Hierarchy window.</p>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/uie-howto-runtimeUI-secondaryContainer.png" alt="Add a child VisualElement">
+<figcaption>Add a child VisualElement</figcaption>
+</figure>
+</li>
+<li><p>Select the element from the Hierarchy window.</p></li>
+<li><p>In the Inspector window, set <strong>Flex</strong> &gt; <strong>Direction</strong> to <code>row</code>.</p></li>
+<li>
+<p>Set <strong>Size</strong> &gt; <strong>Height</strong> to <code>350</code> pixels.</p>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/uie-howto-runtimeUI-centerContainer.png" alt="Center container properties">
+<figcaption>Center container properties</figcaption>
+</figure>
+</li>
+</ol>
+
+<h2>Create the character names list container</h2>
+
+<p>Add a ListView as the child element of the container to hold the character names.</p>
+
+<ol>
+<li><p>Drag a <strong>ListView</strong> from the <strong>Library</strong> to the container VisualElement in the Hierarchy window.</p></li>
+<li><p>Select the element from the Hierarchy window.</p></li>
+<li>
+<p>In the Inspector window, set <strong>Name</strong> to <code>CharacterList</code>.</p>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/uie-howto-runtimeUI-setElementName.png" alt="Background container with the empty element inside">
+<figcaption>Background container with the empty element inside</figcaption>
+</figure>
+</li>
+<li><p>Set <strong>Size</strong> &gt; <strong>Width</strong> to <code>230</code> pixels. </p></li>
+<li>
+<p>Set <strong>Margin &amp; Padding</strong> &gt; <strong>Margin</strong> &gt; <strong>Right</strong> to <code>6</code> pixels. </p>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/uie-howto-runtimeUI-sizeAndMargin.png" alt="Size and Margin foldouts for the character list">
+<figcaption>Size and Margin foldouts for the character list</figcaption>
+</figure>
+</li>
+<li><p>Set <strong>Background</strong> &gt; <strong>Color</strong> to <code>#6E3925</code>.</p></li>
+<li><p>Set <strong>Border</strong> &gt; <strong>Color</strong> to <code>#311A11</code>.</p></li>
+<li><p>Set <strong>Border</strong> &gt; <strong>Width</strong> to <code>4</code> pixels.</p></li>
+<li>
+<p>Set <strong>Border</strong> &gt; <strong>Radius</strong> to <code>15</code> pixels.</p>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/uie-howto-runtimeUI-characterListStyling.png" alt="Styled character list">
+<figcaption>Styled character list</figcaption>
+</figure>
+</li>
+</ol>
+
+<h2>Create the character details container</h2>
+
+<p>Add a new VisualElement under the same parent as the <code>#CharacterList</code> to hold the character details container. The purpose is that when the user selects a character from the list on the left, it displays the character’s portrait, name, and class.</p>
+
+<ol>
+<li><p>Drag a <strong>VisualElement</strong> from the <strong>Library</strong> to the container element in the Hierarchy window. This is the container to hold all the elements on the right.</p></li>
+<li><p>Select the element from the Hierarchy window.</p></li>
+<li><p>In the Inspector window, set <strong>Align</strong> &gt; <strong>Align Items</strong> to <code>flex-end</code>.</p></li>
+<li>
+<p>Set <strong>Align</strong> &gt; <strong>Justify Content</strong> to <code>space-between</code>.</p>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/uie-howto-runtimeUI-justifySpaceBetween.png" alt="Justify content property">
+<figcaption>Justify content property</figcaption>
+</figure>
+</li>
+<li><p>Add another <strong>VisualElement</strong> as the child of the right container.</p></li>
+<li><p>Select the element from the Hierarchy window.</p></li>
+<li><p>Set <strong>Size</strong> &gt; <strong>Width</strong> to <code>276</code> pixels.</p></li>
+<li><p>In the <strong>Align</strong> section, set both <strong>Align Items</strong> and <strong>Justify Content</strong> to <code>center</code>. </p></li>
+<li>
+<p>Set <strong>Margin &amp; Padding</strong> &gt; <strong>Padding</strong> to <code>8</code> pixels.</p>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/uie-howto-runtimeUI-characterDetailsProperties.png" alt="Properties of the character details container">
+<figcaption>Properties of the character details container</figcaption>
+</figure>
+</li>
+<li><p>Set <strong>Background</strong> &gt; <strong>Color</strong> to <code>#AA5939</code>.</p></li>
+<li><p>Set <strong>Border</strong> &gt; <strong>Color</strong> to <code>#311A11</code>.</p></li>
+<li><p>Set <strong>Border</strong> &gt; <strong>Width</strong> to <code>4</code> pixels.</p></li>
+<li><p>Set <strong>Border</strong> &gt; <strong>Radius</strong> to <code>15</code> pixels.</p></li>
+</ol>
+
+<p>Your UI layout should now look like the following:</p>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/uie-howto-runtimeUI-intermediate02.png" alt="Empty character details panel">
+<figcaption>Empty character details panel</figcaption>
+</figure>
+
+<h2>Create the character portrait background</h2>
+
+<p>Add the individual UI controls to the character details container. The first step is to add the character portrait background.</p>
+
+<ol>
+<li><p>Drag <strong>VisualElement</strong> from <strong>Library</strong> to the character details container. </p></li>
+<li><p>Select the element from the Hierarchy window.</p></li>
+<li><p>In the <strong>Size</strong> section, set both <strong>Width</strong> and <strong>Height</strong> to <code>120</code> pixels.</p></li>
+<li><p>Set <strong>Margin &amp; Padding</strong> &gt; <strong>Padding</strong> to <code>4</code> pixels. </p></li>
+<li>
+<p>Set <strong>Background</strong> &gt; <strong>Color</strong> to <code>#FF8554</code>.</p>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/uie-howto-runtimeUI-pictureFrame.png" alt="Background frame for the character portrait">
+<figcaption>Background frame for the character portrait</figcaption>
+</figure>
+</li>
+</ol>
+
+<p><a name="create-a-uss-class-for-the-border-style"></a></p>
+
+<h2>Create a USS class for the border style</h2>
+
+<p>The character details container will use the same border styles as the character names list container. Create a USS class to apply to both containers.</p>
+
+<ol>
+<li>In the StyleSheet window, select <strong>+</strong> &gt; <strong>Create New USS</strong>.</li>
+<li>Name it as <code>MainView.uss</code> and save.</li>
+<li>Click on the <strong>Add new selector…</strong> field and enter <code>.border</code>. A <strong><code>.border</code></strong> selector appears in the StyleSheet window.</li>
+<li>In the StyleSheet window, select <strong><code>.border</code></strong>.</li>
+<li>In the Inspector window, set <strong>Border</strong> &gt; <strong>Color</strong> to <code>#311A11</code>.</li>
+<li>Set <strong>Border</strong> &gt; <strong>Width</strong> to <code>2</code> pixels.</li>
+<li>Set <strong>Border</strong> &gt; <strong>Radius</strong> to <code>15</code> pixels.</li>
+<li>Drag <strong><code>.border</code></strong> from the StyleSheet window to the character details container <strong>VisualElement</strong>.</li>
+<li>Drag <strong><code>.border</code></strong> from the StyleSheet window to the character names list container <strong>VisualElement</strong>.</li>
+<li>Select the character names list container <strong>VisualElement</strong>.</li>
+<li>In the Inspector window, right-click <strong>Border</strong> and select <strong>Unset</strong> to remove the inline style you set earlier.</li>
+</ol>
+
+<h2>Create the character portrait foreground</h2>
+
+<p>Next in the character details container is to add the foreground for an actual image.</p>
+
+<ol>
+<li><p>Drag <strong>VisualElement</strong> from <strong>Library</strong> to the character details container. </p></li>
+<li><p>Select the element from the Hierarchy window.</p></li>
+<li><p>Set <strong>Name</strong> to <code>CharacterPortrait</code>.</p></li>
+<li><p>Set <strong>Flex</strong> &gt; <strong>Grow</strong> to <code>1</code>, so that the image can use all the available space. </p></li>
+<li>
+<p>Set <strong>Background &gt; Scale Mode</strong> to <code>scale-to-fit</code>, so that you can scale the image to match the element size while keeping the correct aspect ratio.</p>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/uie-howto-runtimeUI-portraitElement.png" alt="VisualElement for the portrait image">
+<figcaption>VisualElement for the portrait image</figcaption>
+</figure>
+</li>
+</ol>
+
+<h2>Create labels</h2>
+
+<p>Add two label controls to the character details container to display the selected character’s name and class. </p>
+
+<ol>
+<li><p>Drag <strong>Label</strong> from <strong>Library</strong> to the character details container in the Hierarchy window.</p></li>
+<li><p>Set <code>Name</code> to <code>CharacterName</code>.</p></li>
+<li><p>Drag <strong>Label</strong> from <strong>Library</strong> to the character details container in the Hierarchy window.</p></li>
+<li>
+<p>Set <code>Name</code> to <code>CharacterClass</code>.</p>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/uie-howto-runtimeUI-characterLabels.png" alt="Add labels for name and class">
+<figcaption>Add labels for name and class</figcaption>
+</figure>
+</li>
+<li><p>Select the <code>#CharacterName</code> element.</p></li>
+<li><p>Set <strong>Text</strong> &gt; <strong>Font Style</strong> to <code>B</code>.</p></li>
+<li>
+<p>Set <strong>Text</strong> &gt; <strong>Size</strong> to <code>18</code> pixels.</p>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/uie-howto-runtimeUI-labelSettings.png" alt="Change font settings">
+<figcaption>Change font settings</figcaption>
+</figure>
+</li>
+<li><p>In the <strong>Viewport</strong> window, select <strong>File</strong> &gt; <strong>Save</strong> to save the changes to <code>MainView.uxml</code>. </p></li>
+</ol>
+
+<p><a name="extract-inline-styles"></a></p>
+
+<h2>Extract inline styles</h2>
+
+<p>In UI Builder, you can create elements and use inline styles only to experiment while the number of elements is still small. As you build a more complex UI, it’s easier to manage styles using style sheets. You can extract inline styles to a style sheet in UI Builder. </p>
+
+<ol>
+<li>Select the root visual element.</li>
+<li>In the Inspector window, in the <strong>Style Class List</strong> field, enter <code>.background</code> as the class name.</li>
+<li>Select <strong>Extract Inlined Styles to New Class</strong>. This creates a <code>.background</code> class selector with the inline styles you set for the root element and updates the UI Document (UXML) for the root visual element to use the class selector instead of the inline styles.</li>
+<li>In the <strong>Viewport</strong> window, select <strong>File</strong> &gt; <strong>Save</strong>.</li>
+</ol>
+
+<p>If you want to continue to work on the <a href="UIE-HowTo-CreateRuntimeUI.html">Create a list view runtime UI</a> example, you can repeat the steps to extract styles for all the other elements, and follow the instructions to create the example.</p>
+
+<h2>其他资源</h2>
+
+<ul>
+<li><a href="UIB-styling-ui-using-uss-selectors.html">Style elements with UI Builder</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIB-interface-overview.html"></a></span><div class="tip">UI Builder interface overview</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIB-structuring-ui-elements.html"></a></span><div class="tip">Work with elements</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Log files - Unity 手册">
+<title>Log files - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="Unity produces log files for the Editor, package manager, licensing, development players, and Hub. You can use these log files to understand where any problems happened in your application.">
+<meta property="og:description" content="Unity produces log files for the Editor, package manager, licensing, development players, and Hub. You can use these log files to understand where any problems happened in your application.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'LogFiles';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/LogFiles.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/LogFiles.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/LogFiles.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/LogFiles.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/LogFiles.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/LogFiles.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/LogFiles.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/LogFiles.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/LogFiles.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/LogFiles.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/LogFiles.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/LogFiles.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/LogFiles.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/LogFiles.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/LogFiles.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/LogFiles.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/LogFiles.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/LogFiles.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/LogFiles.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/LogFiles.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/LogFiles.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/LogFiles.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/LogFiles.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/LogFiles.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/LogFiles.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/LogFiles.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/LogFiles.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/LogFiles.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/LogFiles.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/LogFiles.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/LogFiles.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/LogFiles.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/LogFiles.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/LogFiles.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/LogFiles.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/LogFiles.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/LogFiles.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/LogFiles.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/LogFiles.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/LogFiles.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/LogFiles.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/LogFiles.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/LogFiles.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/LogFiles.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/LogFiles.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/LogFiles.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/LogFiles.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/LogFiles.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/LogFiles.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/LogFiles.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/LogFiles.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/LogFiles.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/LogFiles.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/LogFiles.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/LogFiles.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/LogFiles.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/LogFiles.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/LogFiles.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UnityOverview.html">在 Unity 中操作</a></li>
+<li><a href="analysis.html">分析</a></li>
+<li>Log files</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="performance-profiler-traces.html"></a></span><div class="tip">Analyzing profiler traces</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="BestPracticeUnderstandingPerformanceInUnity.html"></a></span><div class="tip">了解 Unity 中的优化</div>
+</div>
+</div></div>
+<h1>Log files</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Unity produces log files for the Editor, package manager, licensing, development players, and Hub. You can use these log files to understand where any problems happened in your application.</p>
+
+<p>Unity adds all messages, warnings, and errors from the <a href="Console.html">Console window</a> to the log files. To add your own messages to the Console window, and the logs, use the <a href="class-Debug.html">Debug class</a>.</p>
+
+<p>Each operating system stores the log files in different locations. The default locations are outlined on this page, but you can also use certain command line arguments to control when and where Unity generates log files. For more information, see the <a href="EditorCommandLineArguments.html">Command line arguments</a> documentation.</p>
+
+<p><strong>Note:</strong> Not all platforms support this feature. See <a href="PlatformSpecific.html">platform specific</a> documentation for further information.</p>
+
+<h2>Editor-related log locations</h2>
+
+<p>You can access the Editor logs from the console window. To do this, open a Console Window (<strong>menu: Window &gt; General &gt; Console</strong>) and select <strong>Open Editor Log</strong> from the Console window menu. </p>
+
+<p>You can access the other logs by using your operating system’s file manager application.</p>
+
+<h3>Linux</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Log type</strong></th>
+	<th style="text-align:left;"><strong>Log location</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Editor</strong></td>
+	<td style="text-align:left;"><code>~/.config/unity3d/Editor.log</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Package manager</strong></td>
+	<td style="text-align:left;"><code>~/.config/unity3d/upm.log</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Licensing client</strong></td>
+	<td style="text-align:left;"><code>~/.config/unity3d/Unity/Unity.Licensing.Client.log</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Licensing audits</strong></td>
+	<td style="text-align:left;"><code>~/.config/unity3d/Unity/Unity.Entitlements.Audit.log</code></td>
+</tr>
+</tbody>
+</table>
+
+<h3>macOS</h3>
+
+<p>On macOS, you can also access Unity’s logs via the Console.app utility</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Log type</strong></th>
+	<th style="text-align:left;"><strong>Log location</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Editor</strong></td>
+	<td style="text-align:left;"><code>~/Library/Logs/Unity/Editor.log</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Package manager</strong></td>
+	<td style="text-align:left;"><code>~/Library/Logs/Unity/upm.log</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Licensing client</strong></td>
+	<td style="text-align:left;"><code>~/Library/Logs/Unity/Unity.Licensing.Client.log</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Licensing audits</strong></td>
+	<td style="text-align:left;"><code>~/Library/Logs/Unity/Unity.Entitlements.Audit.log</code></td>
+</tr>
+</tbody>
+</table>
+
+<h3>Windows</h3>
+
+<p>On Windows, the Package Manager and Editor logs are placed in folders which aren’t shown in the Windows Explorer by default. To view the AppData folder, you must enable the Hidden Items setting on Windows. For more information on how to do this, see Microsoft’s documentation on <a href="https://support.microsoft.com/en-us/windows/view-hidden-files-and-folders-in-windows-97fbc472-c603-9d90-91d0-1166d1d9f4b5">View hidden files and folders in Windows</a>.</p>
+
+<p>On Windows, a standard out stream doesn’t exist by default, so you must launch the Editor with a valid configured <code>stdout</code> stream, as a child process from a CI system. If you specify <code>-</code> to send output` <code>to</code>stdout`, then you won’t see the output in the console window.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Log type</strong></th>
+	<th style="text-align:left;"><strong>Log location</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Editor</strong></td>
+	<td style="text-align:left;"><code>%LOCALAPPDATA%\Unity\Editor\Editor.log</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Package manager</strong></td>
+	<td style="text-align:left;">User account: <code>%LOCALAPPDATA%\Unity\Editor\upm.log</code> <br>SYSTEM account: <code>%ALLUSERSPROFILE%\Unity\Editor\upm.log</code>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Licensing client</strong></td>
+	<td style="text-align:left;"><code>%LOCALAPPDATA%\Unity\Unity.Licensing.Client.log</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Licensing audits</strong></td>
+	<td style="text-align:left;"><code>%LOCALAPPDATA%\Unity\Unity.Entitlements.Audit.log</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Crash files</strong></td>
+	<td style="text-align:left;">
+<code>%TMP%\CompanyName\ProductName\Crashes</code> <br><br> <strong>Note:</strong> You can overwrite the location of the folder location with the <code>-crash-report-folder</code> command line argument.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Player-related log locations</h2>
+
+<p>To view the Player log, open a Console Window (<strong>menu: Window &gt; General &gt; Console</strong>) and select <strong>Open Player Log</strong> from the Console window menu. You can also navigate to the following folder:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>操作系统</strong></th>
+	<th style="text-align:left;"><strong>Player log location</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Android</strong></td>
+	<td style="text-align:left;">To access the Player log for an Android application, use <a href="https://developer.android.com/studio/command-line/logcat">Android logcat</a>. For more information, see <a href="android-debugging-on-an-android-device.html#view-android-logs">View Android logs</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>iOS</strong></td>
+	<td style="text-align:left;">Use the GDB console, or the Organizer Console through XCode to access iOS device logs. For more information on device logs, see <a href="https://developer.apple.com/documentation/xcode/acquiring-crash-reports-and-diagnostic-logs">Apple’s documentation</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Linux</strong></td>
+	<td style="text-align:left;"><code>~/.config/unity3d/CompanyName/ProductName/Player.log</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>macOS</strong></td>
+	<td style="text-align:left;">
+<code>~/Library/Logs/Company Name/Product Name/Player.log</code><br><br><strong>Note:</strong> You can also use the Console.app utility to find the log file.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>通用 Windows 平台</strong></td>
+	<td style="text-align:left;"><code>%USERPROFILE%\AppData\Local\Packages\&lt;productname&gt;\TempState\UnityPlayer.log</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>WebGL</strong></td>
+	<td style="text-align:left;">Unity writes the log output to your <a href="webgl-debugging.html">browser’s JavaScript console</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Windows</strong></td>
+	<td style="text-align:left;"><code>%USERPROFILE%\AppData\LocalLow\CompanyName\ProductName\Player.log</code></td>
+</tr>
+</tbody>
+</table>
+
+<h2>Unity Hub log locations</h2>
+
+<p>You can access the Hub logs by using your operating system’s file manager application. You can also access these logs from within the Hub. For more information, see <a href="https://docs.unity3d.com/hub/manual/Help.html">Hub documentation</a>.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>操作系统</strong></th>
+	<th style="text-align:left;"><strong>Player log location</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Linux</strong></td>
+	<td style="text-align:left;"><code>~/.config/UnityHub/logs/info-log.json</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>macOS</strong></td>
+	<td style="text-align:left;"><code>~/Library/Application\ Support/UnityHub/logs/info-log.json</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Windows</strong></td>
+	<td style="text-align:left;"><code>%UserProfile%\AppData\Roaming\UnityHub\logs\info-log.json</code></td>
+</tr>
+</tbody>
+</table>
+
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="performance-profiler-traces.html"></a></span><div class="tip">Analyzing profiler traces</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="BestPracticeUnderstandingPerformanceInUnity.html"></a></span><div class="tip">了解 Unity 中的优化</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

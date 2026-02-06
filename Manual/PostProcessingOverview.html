@@ -1,0 +1,524 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Post-processing and full-screen effects - Unity 手册">
+<title>Post-processing and full-screen effects - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/PostProcessing-0.jpg">
+<meta name="description" content="Unity 提供了许多后期处理效果和全屏效果，可以用很少的设置时间大大改善应用程序的外观。可以使用这些效果模拟物理摄像机和胶片属性，或创建风格化的视觉效果。">
+<meta property="og:description" content="Unity 提供了许多后期处理效果和全屏效果，可以用很少的设置时间大大改善应用程序的外观。可以使用这些效果模拟物理摄像机和胶片属性，或创建风格化的视觉效果。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'PostProcessingOverview';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/PostProcessingOverview.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/PostProcessingOverview.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/PostProcessingOverview.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/PostProcessingOverview.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/PostProcessingOverview.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/PostProcessingOverview.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/PostProcessingOverview.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/PostProcessingOverview.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/PostProcessingOverview.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/PostProcessingOverview.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/PostProcessingOverview.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/PostProcessingOverview.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/PostProcessingOverview.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/PostProcessingOverview.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/PostProcessingOverview.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/PostProcessingOverview.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/PostProcessingOverview.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/PostProcessingOverview.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/PostProcessingOverview.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/PostProcessingOverview.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/PostProcessingOverview.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/PostProcessingOverview.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/PostProcessingOverview.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/PostProcessingOverview.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/PostProcessingOverview.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/PostProcessingOverview.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/PostProcessingOverview.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/PostProcessingOverview.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/PostProcessingOverview.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/PostProcessingOverview.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/PostProcessingOverview.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/PostProcessingOverview.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/PostProcessingOverview.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/PostProcessingOverview.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/PostProcessingOverview.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/PostProcessingOverview.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/PostProcessingOverview.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/PostProcessingOverview.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/PostProcessingOverview.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/PostProcessingOverview.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/PostProcessingOverview.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/PostProcessingOverview.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/PostProcessingOverview.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/PostProcessingOverview.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/PostProcessingOverview.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/PostProcessingOverview.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/PostProcessingOverview.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/PostProcessingOverview.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/PostProcessingOverview.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/PostProcessingOverview.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/PostProcessingOverview.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/PostProcessingOverview.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/PostProcessingOverview.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/PostProcessingOverview.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/PostProcessingOverview.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/PostProcessingOverview.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/PostProcessingOverview.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/PostProcessingOverview.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="visual-effects.html">Visual effects</a></li>
+<li>Post-processing and full-screen effects</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="visual-effects.html"></a></span><div class="tip">Visual effects</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ParticleSystems.html"></a></span><div class="tip">粒子系统</div>
+</div>
+</div></div>
+<h1>Post-processing and full-screen effects</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Unity 提供了许多<strong>后期处理</strong>效果和全屏效果，可以用很少的设置时间大大改善应用程序的外观。可以使用这些效果模拟物理摄像机和胶片属性，或创建风格化的视觉效果。</p>
+
+<p>本页包含以下信息：</p>
+
+<ul>
+<li><a href="#render-pipeline-compatibility">Render pipeline compatibility</a></li>
+<li><a href="#effect-availability-and-location">Effect availability and location</a></li>
+</ul>
+
+<p>下面的图像展示了应用和未应用后期处理的场景。</p>
+
+<figure>
+<img src="../uploads/Main/PostProcessing-0.jpg" alt="未应用后期处理的场景">
+<figcaption>未应用后期处理的场景</figcaption>
+</figure>
+
+<figure>
+<img src="../uploads/Main/PostProcessing-1.jpg" alt="应用后期处理后的场景">
+<figcaption>应用后期处理后的场景</figcaption>
+</figure>
+
+<p><a name="render-pipeline-compatibility"></a></p>
+
+<h2>渲染管线兼容性</h2>
+
+<p>可用的后期处理效果和这些效果的应用方式取决于所使用的<a href="render-pipelines.html">渲染管线</a>。一个渲染管线的后期处理解决方案与其他渲染管线不兼容。</p>
+
+<p>此表包含有关与每个 Unity 渲染管线兼容的 Unity 后期处理解决方案的信息。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>渲染管线</strong></th>
+	<th style="text-align:left;"><strong>后期处理支持</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><a href="SL-RenderPipeline.html"><strong>内置渲染管线</strong></a></td>
+	<td style="text-align:left;">默认情况下，内置渲染管线不包含后期处理解决方案。要在内置渲染管线中使用后期处理效果，请下载<a href="https://docs.unity3d.com/Packages/com.unity.postprocessing@latest">后期处理 (Post-Processing) 版本 2</a> 包。有关在内置渲染管线中使用后期处理效果的信息，请参阅<a href="https://docs.unity3d.com/Packages/com.unity.postprocessing@latest">后期处理 (Post-Processing) 版本 2</a> 的文档。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest/index.html">通用渲染管线 (URP)</a></strong></td>
+	<td style="text-align:left;">URP 包括自身的后期处理解决方案（由 Unity 在使用 URP 模板创建项目时安装）。有关在 URP 中使用后期处理效果的信息，请参阅 <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest/index.html?subfolder=/manual/integration-with-post-processing.html">URP 后期处理文档</a>。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest/index.html?preview=1">高清渲染管线 (HDRP)</a></strong></td>
+	<td style="text-align:left;">HDRP 包括自身的后期处理解决方案（由 Unity 在使用 HDRP 模板创建项目时安装）。有关在 HDRP 中使用后期处理效果的信息，请参阅 <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest/index.html?subfolder=/manual/Post-Processing-Main.html">HDRP 后期处理文档</a>。</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>注意：</strong>后期处理栈 (Post processing stack) 版本 1 现已弃用，不应再使用。</p>
+
+<p><a name="effect-availability-and-location"></a></p>
+
+<h2>效果可用性和位置</h2>
+
+<p>此表包含有关不同 Unity 后期处理解决方案中可用的后期处理效果和全屏效果、如何找到这些效果以及可以用于实现类似结果的其他效果的信息。</p>
+
+<p>在以前的 Unity 版本中，以相同的方式应用所有后期处理效果和全屏效果；即通过向摄像机添加组件。在更新的 Unity 版本中，可以通过不同方式应用这些效果。</p>
+
+<p>请注意，Unity 根据所使用的包，以不同方式实现效果。这意味着效果的性能、外观和配置因包而异。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>效果名称</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+	<th style="text-align:left;"><strong>是否在 URP 集成解决方案中可用？</strong></th>
+	<th style="text-align:left;"><strong>是否在 HDRP 集成解决方案中可用？</strong></th>
+	<th style="text-align:left;"><strong>是否在 PPv2 包中可用？</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">环境光遮挡</td>
+	<td style="text-align:left;">
+<strong>环境光遮挡</strong>效果使场景中未暴露在环境光照下的区域变暗。</td>
+	<td style="text-align:left;">是 <br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@10.0/manual/post-processing-ssao.html">通用渲染管线：环境光遮挡</a><br><br>还可以将环境光遮挡作为烘焙光照的一部分进行应用。有关更多信息，请参阅<a href="https://docs.unity3d.com/Manual/LightingBakedAmbientOcclusion.html">烘焙环境光遮挡</a>。</td>
+	<td style="text-align:left;">是 <br><br>使用体积覆盖或<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest?subfolder=/manual/Ray-Traced-Ambient-Occlusion.html?q=ambientocclusion">光线追踪环境光遮挡</a>从 <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@9.0/manual/Override-Ambient-Occlusion.html">SSAO</a> 中进行选择 <br><br> 还可以应用<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest?subfolder=/manual/Ambient-Occlusion.html?q=ambient">每材质环境光遮挡</a> <br><br> 还可以将环境光遮挡作为烘焙光照的一部分进行应用。有关更多信息，请参阅<a href="https://docs.unity3d.com/Manual/LightingBakedAmbientOcclusion.html">烘焙环境光遮挡</a>。</td>
+	<td style="text-align:left;">是 <br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.postprocessing@latest?subfolder=/manual/Ambient-Occlusion.html">后期处理：环境光遮挡</a> <br> 还可以将环境光遮挡作为烘焙光照的一部分进行应用。有关更多信息，请参阅<a href="https://docs.unity3d.com/Manual/LightingBakedAmbientOcclusion.html">烘焙环境光遮挡</a>。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">抗锯齿</td>
+	<td style="text-align:left;">
+<strong>抗锯齿</strong>效果使场景中的边缘外观柔化。<br>根据渲染管线，可以使用 MSAA（硬件抗锯齿）或是 FXAA、SMAA 或 TAA（抗锯齿后期处理效果）</td>
+	<td style="text-align:left;">是 <br><br>FXAA 和 SMAA 可以在 <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest?subfolder=/manual/camera-component-reference.html#rendering">Camera</a> 组件中启用<br><br>还可以在<a href="https://docs.unity3d.com/Manual/class-QualitySettings.html">质量设置</a>中配置 MSAA（硬件抗锯齿）</td>
+	<td style="text-align:left;">是 <br><br>FXAA、SMAA 和 TAA 在 <strong>Project Settings &gt; Frame Settings &gt; HDRP Default Settings</strong> 中实现；请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest?subfolder=/manual/Anti-Aliasing.html?q=ANTI">高清渲染管线中的抗锯齿</a><br><br>还可以在 HDRP 资源中配置 MSAA（硬件抗锯齿） - 请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest?subfolder=/manual/Anti-Aliasing.html?q=ANTI">高清渲染管线中的抗锯齿</a>。</td>
+	<td style="text-align:left;">是 <br><br>对于 FXAA、SMAA 和 TAA，请参阅<a href="https://docs.unity3d.com/Packages/com.unity.postprocessing@latest?subfolder=/manual/Anti-aliasing.html">后期处理：抗锯齿</a><br><br>还可以在<a href="https://docs.unity3d.com/Manual/class-QualitySettings.html">质量设置</a>中配置 MSAA（硬件抗锯齿）</td>
+</tr>
+<tr>
+	<td style="text-align:left;">自动曝光 (Auto Exposure)</td>
+	<td style="text-align:left;">
+<strong>自动曝光</strong>效果动态调整图像的曝光以匹配其中间色调。</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是 <br><br>当 <strong>Mode</strong> 设置为 <strong>Automatic</strong> 时，在<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest?subfolder=/manual/Override-Exposure.html">高清渲染管线：曝光体积覆盖</a>中</td>
+	<td style="text-align:left;">是 <br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.postprocessing@latest?subfolder=/manual/Auto-Exposure.html">后期处理：自动曝光</a>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">泛光</td>
+	<td style="text-align:left;">
+<strong>泛光</strong>效果使图像中的明亮区域发光。请注意，泛光在每个包中的工作方式有所不同，需要不同的设置；请阅读给定包的文档以获取更多信息。</td>
+	<td style="text-align:left;">是 <br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest?subfolder=/manual/post-processing-bloom.html">通用渲染管线：泛光</a>
+</td>
+	<td style="text-align:left;">是 <br><br> 请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest?subfolder=/manual/Post-Processing-Bloom.html">高清渲染管线：泛光</a>
+</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.postprocessing@latest?subfolder=/manual/Bloom.html">后期处理：泛光</a>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Channel Mixer</td>
+	<td style="text-align:left;">通过<strong>通道混合器</strong>可以调整每种输入颜色的平衡。</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest?subfolder=/manual/Post-Processing-Channel-Mixer.html">通用渲染管线：通道混合器</a>
+</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest?subfolder=/manual/Post-Processing-Channel-Mixer.html">高清渲染管线：通道混合器</a>
+</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.postprocessing@latest?subfolder=/manual/Color-Grading.html">后期处理：颜色分级</a>中的<strong>通道混合器</strong>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">色差</td>
+	<td style="text-align:left;">
+<strong>色差</strong>效果沿图像暗区和亮区之间的边界分散颜色。</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest?subfolder=/manual/post-processing-chromatic-aberration.html">通用渲染管线：色差</a>
+</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest?subfolder=/manual/Post-Processing-Chromatic-Aberration.html">高清渲染管线：色差</a>
+</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.postprocessing@latest?subfolder=/manual/Chromatic-Aberration.html">后期处理：色差</a>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">颜色调整 (Color Adjustments)</td>
+	<td style="text-align:left;">通过<strong>颜色调整</strong>效果可调整最终渲染的图像的整体色调、亮度和对比度。</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest?subfolder=/manual/Post-Processing-Color-Adjustments.html">通用渲染管线：颜色调整</a>
+</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest?subfolder=/manual/Post-Processing-Color-Adjustments.html">高清渲染管线：颜色调整</a>
+</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.postprocessing@latest?subfolder=/manual/Color-Grading.html">后期处理：颜色分级</a>中的<strong>色调</strong>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">颜色曲线</td>
+	<td style="text-align:left;">
+<strong>颜色曲线</strong>效果允许在特定范围调整色调、饱和度或亮度。</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest?subfolder=/manual/Post-Processing-Color-Curves.html">通用渲染管线：颜色曲线</a>
+</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest?subfolder=/manual/Post-Processing-Color-Curves.html">高清渲染管线：颜色曲线</a>
+</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.postprocessing@latest?subfolder=/manual/Color-Grading.html">后期处理：颜色分级</a>中的<strong>分级曲线</strong>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">雾效</td>
+	<td style="text-align:left;">
+<strong>雾效</strong>效果模拟室外环境中的雾或雾气的外观。</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest?subfolder=/manual/Override-Fog.html?q=fog">高清渲染管线：雾体积覆盖</a>（请注意，这不是作为全屏效果或后期处理效果进行实现）</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.postprocessing@latest?subfolder=/manual/Deferred-Fog.html">后期处理：延迟雾效</a>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">景深</td>
+	<td style="text-align:left;">
+<strong>景深</strong>效果使图像的背景模糊，而前景中的对象保持焦点。</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest?subfolder=/manual/post-processing-depth-of-field.html">通用渲染管线：景深</a>
+</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest?subfolder=/manual/Post-Processing-Depth-of-Field.html">高清渲染管线：景深</a>
+</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.postprocessing@latest?subfolder=/manual/Depth-of-Field.html">后期处理：景深</a>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">颗粒</td>
+	<td style="text-align:left;">
+<strong>颗粒</strong>效果将胶片噪点叠加到图像上。</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest?subfolder=/manual/Post-Processing-Film-Grain.html">通用渲染管线：胶片颗粒</a>
+</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest?subfolder=/manual/Post-Processing-Film-Grain.html">高清渲染管线：胶片颗粒</a>
+</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.postprocessing@2.3/manual/Grain.html">后期处理：颗粒</a>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">镜头失真</td>
+	<td style="text-align:left;">
+<strong>镜头失真</strong>效果模拟真实摄像机镜头的形状所导致的失真。</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@8.1/manual/Post-Processing-Lens-Distortion.html">通用渲染管线：镜头失真</a>
+</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@9.0/manual/Post-Processing-Lens-Distortion.html">高清渲染管线：镜头失真</a>
+</td>
+	<td style="text-align:left;">是 <br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.postprocessing@latest?subfolder=/manual/Lens-Distortion.html">后期处理：镜头失真</a>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">提升、伽马、增益</td>
+	<td style="text-align:left;">
+<strong>提升、伽马、增益</strong>效果可用于执行三向颜色分级。</td>
+	<td style="text-align:left;">是 <br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest?subfolder=/manual/Post-Processing-Lift-Gamma-Gain.html">通用渲染管线：提升、伽玛、增益</a>
+</td>
+	<td style="text-align:left;">是 <br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest?subfolder=/manual/Post-Processing-Lift-Gamma-Gain.html">高清渲染管线：提升、伽玛、增益</a>
+</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.postprocessing@latest?subfolder=/manual/Color-Grading.html">后期处理：颜色分级</a>中的<strong>轨迹球</strong>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">运动模糊</td>
+	<td style="text-align:left;">
+<strong>运动模糊</strong>效果沿<strong>摄像机</strong>移动的方向使图像模糊</td>
+	<td style="text-align:left;">是 <br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest?subfolder=/manual/Post-Processing-Motion-Blur.html">通用渲染管线：运动模糊</a>
+</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest?subfolder=/manual/Post-Processing-Motion-Blur.html">高清渲染管线：运动模糊</a>
+</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.postprocessing@latest?subfolder=/manual/Motion-Blur.html">后期处理：运动模糊</a>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Panini 投影</td>
+	<td style="text-align:left;">
+<strong>Panini 投影</strong>效果校正由宽视野引起的图像边缘失真。</td>
+	<td style="text-align:left;">是 <br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest?subfolder=/manual/Post-Processing-Panini-Projection.html">通用渲染管线：Panini 投影</a>
+</td>
+	<td style="text-align:left;">是 <br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest?subfolder=/manual/Post-Processing-Panini-Projection.html">高清渲染管线：Panini 投影</a>
+</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;">屏幕空间反射</td>
+	<td style="text-align:left;">
+<strong>屏幕空间反射</strong>效果可以产生微妙的反射，模拟潮湿的地板表面或水坑。</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是 <br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest?subfolder=/manual/Override-Screen-Space-Reflection.html?q=screenspace">高清渲染管线：屏幕空间反射</a>
+</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.postprocessing@latest?subfolder=/manual/Screen-Space-Reflections.html">后期处理：屏幕空间反射</a>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">阴影、中间调、高光 (Shadows Midtones Highlights)</td>
+	<td style="text-align:left;">
+<strong>阴影、中间调、高光</strong>效果分别控制图像中阴影、中间调和高光的色调和亮度。</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest?subfolder=/manual/Post-Processing-Shadows-Midtones-Highlights.html">通用渲染管线：阴影、中间调、高光</a>
+</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest?subfolder=/manual/Post-Processing-Shadows-Midtones-Highlights.html">高清渲染管线：阴影、中间调、高光</a>
+</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;">拆分着色 (Split Toning)</td>
+	<td style="text-align:left;">
+<strong>拆分着色</strong>效果将图像中的两种不同色调映射到两种特定颜色。</td>
+	<td style="text-align:left;">是 <br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest?subfolder=/manual/Post-Processing-Split-Toning.html">通用渲染管线：拆分着色</a>
+</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@9.0/manual/Post-Processing-Split-Toning.html">高清渲染管线：拆分着色</a>
+</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;">色调映射</td>
+	<td style="text-align:left;">
+<strong>色调映射</strong>将图像的值重新映射到高动态范围 (HDR) 颜色</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@8.1/manual/post-processing-tonemapping.html">通用渲染管线：色调映射</a>
+</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest?subfolder=/manual/Post-Processing-Tonemapping.html">高清渲染管线：色调映射</a>
+</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.postprocessing@latest?subfolder=/manual/Color-Grading.html">后期处理：颜色分级</a>中的<strong>色调映射</strong>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">渐晕</td>
+	<td style="text-align:left;">
+<strong>渐晕</strong>效果使图像边缘变暗</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest?subfolder=/manual/post-processing-vignette.html">通用渲染管线：渐晕</a>
+</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest?subfolder=/manual/Post-Processing-Vignette.html">高清渲染管线：渐晕</a>
+</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.postprocessing@latest?subfolder=/manual/Vignette.html">后期处理：渐晕</a>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">白平衡 (White Balance)</td>
+	<td style="text-align:left;">
+<strong>白平衡</strong>效果保留图像中的白色区域并平衡白色区域周围的其他色调</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest?subfolder=/manual/Post-Processing-White-Balance.html">通用渲染管线：白平衡</a>
+</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest?subfolder=/manual/Post-Processing-White-Balance.html">高清渲染管线：白平衡</a>
+</td>
+	<td style="text-align:left;">是<br><br>请参阅<a href="https://docs.unity3d.com/Packages/com.unity.postprocessing@latest?subfolder=/manual/Color-Grading.html">后期处理：颜色分级</a>中的<strong>白平衡</strong>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- area:graphics -->
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="visual-effects.html"></a></span><div class="tip">Visual effects</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ParticleSystems.html"></a></span><div class="tip">粒子系统</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

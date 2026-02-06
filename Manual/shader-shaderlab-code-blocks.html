@@ -1,0 +1,433 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="ShaderLab：添加着色器程序 - Unity 手册">
+<title>ShaderLab：添加着色器程序 - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="在 Unity 中，您通常使用 HLSL 编写着色器程序。要将 HLSL 代码添加到您的着色器资源，应将该代码放在一个着色器代码块 中。">
+<meta property="og:description" content="在 Unity 中，您通常使用 HLSL 编写着色器程序。要将 HLSL 代码添加到您的着色器资源，应将该代码放在一个着色器代码块 中。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'shader-shaderlab-code-blocks';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/shader-shaderlab-code-blocks.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/shader-shaderlab-code-blocks.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/shader-shaderlab-code-blocks.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/shader-shaderlab-code-blocks.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/shader-shaderlab-code-blocks.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/shader-shaderlab-code-blocks.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/shader-shaderlab-code-blocks.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/shader-shaderlab-code-blocks.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/shader-shaderlab-code-blocks.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/shader-shaderlab-code-blocks.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/shader-shaderlab-code-blocks.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/shader-shaderlab-code-blocks.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/shader-shaderlab-code-blocks.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/shader-shaderlab-code-blocks.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/shader-shaderlab-code-blocks.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/shader-shaderlab-code-blocks.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/shader-shaderlab-code-blocks.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/shader-shaderlab-code-blocks.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/shader-shaderlab-code-blocks.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/shader-shaderlab-code-blocks.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/shader-shaderlab-code-blocks.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/shader-shaderlab-code-blocks.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/shader-shaderlab-code-blocks.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/shader-shaderlab-code-blocks.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/shader-shaderlab-code-blocks.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/shader-shaderlab-code-blocks.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/shader-shaderlab-code-blocks.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/shader-shaderlab-code-blocks.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/shader-shaderlab-code-blocks.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/shader-shaderlab-code-blocks.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/shader-shaderlab-code-blocks.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/shader-shaderlab-code-blocks.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/shader-shaderlab-code-blocks.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/shader-shaderlab-code-blocks.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/shader-shaderlab-code-blocks.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/shader-shaderlab-code-blocks.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/shader-shaderlab-code-blocks.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/shader-shaderlab-code-blocks.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/shader-shaderlab-code-blocks.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/shader-shaderlab-code-blocks.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/shader-shaderlab-code-blocks.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/shader-shaderlab-code-blocks.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/shader-shaderlab-code-blocks.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/shader-shaderlab-code-blocks.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/shader-shaderlab-code-blocks.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/shader-shaderlab-code-blocks.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/shader-shaderlab-code-blocks.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/shader-shaderlab-code-blocks.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/shader-shaderlab-code-blocks.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/shader-shaderlab-code-blocks.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/shader-shaderlab-code-blocks.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/shader-shaderlab-code-blocks.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/shader-shaderlab-code-blocks.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/shader-shaderlab-code-blocks.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/shader-shaderlab-code-blocks.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/shader-shaderlab-code-blocks.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/shader-shaderlab-code-blocks.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/shader-shaderlab-code-blocks.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="Shaders.html">着色器</a></li>
+<li><a href="shader-writing.html">编写着色器</a></li>
+<li><a href="SL-Reference.html">ShaderLab</a></li>
+<li>ShaderLab：添加着色器程序</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="shader-predefined-pass-tags-built-in.html"></a></span><div class="tip">ShaderLab：内置渲染管线中的预定义通道标签</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SL-PackageRequirements.html"></a></span><div class="tip">ShaderLab: specifying package requirements</div>
+</div>
+</div></div>
+<h1>ShaderLab：添加着色器程序</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>在 Unity 中，您通常使用 HLSL 编写着色器程序。要将 HLSL 代码添加到您的<a href="SL-Shader.html">着色器资源</a>，应将该代码放在一个<strong>着色器代码块</strong> 中。</p>
+
+<p>本页面包含有关使用着色器代码块的信息。有关编写 HLSL 本身的信息，请参阅<a href="SL-ShaderPrograms.html">在 Unity 中使用 HLSL</a>。</p>
+
+<p><strong>注意：</strong>Unity 还支持使用其他语言编写着色器程序，不过通常不需要或不推荐这样做。有关更多信息，请参阅<a href="shader-writing.html">编写着色器</a>。</p>
+
+<h2>渲染管线兼容性</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">功能</th>
+	<th style="text-align:left;">内置渲染管线</th>
+	<th style="text-align:left;">通用渲染管线 (URP)</th>
+	<th style="text-align:left;">高清渲染管线 (HDRP)</th>
+	<th style="text-align:left;">自定义可编程渲染管线</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">HLSLPROGRAM</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;">HLSLINCLUDE</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;">CGPROGRAM</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是<br><br>与使用 <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.core@latest">SRP Core</a> 包的自定义渲染管线不兼容。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">CGINCLUDE</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是<br><br>与使用 <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.core@latest">SRP Core</a> 包的自定义渲染管线不兼容。</td>
+</tr>
+</tbody>
+</table>
+
+<h2>着色器代码块的类型</h2>
+
+<p>要添加 HLSL 代码，您可以使用以下类型的着色器代码块：</p>
+
+<ul>
+<li>HLSLPROGRAM</li>
+<li>CGPROGRAM</li>
+<li>HLSLINCLUDE</li>
+<li>CGINCLUDE</li>
+</ul>
+
+<p>要了解何时使用哪个，您必须了解它们的前缀（<code>HLSL</code> 或 <code>CG</code>）及后缀（<code>PROGRAM</code> 或 <code>INCLUDE</code>）。</p>
+
+<h3>HLSL 和 CG 前缀</h3>
+
+<p>以 <code>HLSL</code> 或 <code>CG</code> 为前缀的块之间的区别是：</p>
+
+<ul>
+<li>The shader code blocks prefixed with <code>CG</code> are older. They include several of Unity’s <a href="SL-BuiltinIncludes.html">built-in shader include files</a> by default, which can be convenient if you need this functionality. The built-in includes are only compatible with the Built-in Render Pipeline.</li>
+<li>以 <code>HLSL</code> 为前缀的着色器代码块较新。默认情况下，它们不包含 Unity 的内置着色器 include 文件，因此您必须手动包含要使用的任何库代码。它们适用于任何渲染管线。</li>
+</ul>
+
+<p>For information on Unity’s built-in shader include files, see <a href="SL-BuiltinIncludes.html">Built-in shader include files</a>.</p>
+
+<h3>PROGRAM 和 INCLUDE 后缀</h3>
+
+<p>以 <code>PROGRAM</code> 或 <code>INCLUDE</code> 为后缀的块之间的区别是：</p>
+
+<ul>
+<li>以 <code>PROGRAM</code> 为后缀的着色器代码块被称为<strong>着色器程序块</strong>。您可以使用它们来编写着色器程序。您在这些块中编写 HLSL 着色器代码，然后将它们放在 ShaderLab 代码中的 Pass 块中。</li>
+<li>以 <code>INCLUDE</code> 为后缀的着色器代码块被称为<strong>着色器 include 块</strong>。您可以使用它们在同一源文件中的着色器程序块之间共享公共代码。您编写要在这些块中共享的 HLSL 着色器代码，然后将它们放置在您的 ShaderLab 代码中的 Pass、SubShader 或 Shader 块中。它的工作方式与在 HLSL 代码中使用 include 的方式类似。</li>
+</ul>
+
+<h2>使用着色器程序块</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>签名</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">
+<code>HLSLPROGRAM</code><br>    <code>[着色器程序的 HLSL 源代码]</code><br><code>ENDHLSL</code>
+</td>
+	<td style="text-align:left;">将 HLSL 着色器程序添加到包含此着色器程序块的 Pass。不包含 Unity 的内置着色器 include 文件。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<code>CGPROGRAM</code><br>    <code>[着色器程序的 HLSL 源代码]</code><br><code>ENDCG</code>
+</td>
+	<td style="text-align:left;">Adds the HLSL shader program to the Pass that includes this shader program block. Includes several of Unity’s <a href="SL-BuiltinIncludes.html">built-in shader include files</a> by default, enabling you to use built-in variables and functions.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>示例</h3>
+
+<pre><code>Shader "Examples/ExampleShader"
+{
+    SubShader
+    {
+        Pass
+        {                
+              Name "ExamplePassName"
+              Tags { "LightMode" = "ExampleLightModeTagValue" }
+
+              // 在此编写设置渲染状态的 ShaderLab 命令
+
+              HLSLPROGRAM
+                // 在此编写 HLSL 着色器代码
+              ENDHLSL
+        }
+    }
+}
+</code></pre>
+
+<h2>使用着色器 include 块</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>签名</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">
+<code>HLSLINCLUDE</code><br>    <code>[您要共享的 HLSL 代码]</code><br><code>ENDHLSL</code>
+</td>
+	<td style="text-align:left;">Unity 将此代码包含在 <code>HLSLPROGRAM</code> 块中定义的所有着色器程序中，可位于此源文件的任何位置。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<code>CGINCLUDE</code><br>    <code>[您要共享的 HLSL 代码]</code><br><code>ENDCG</code>
+</td>
+	<td style="text-align:left;">Unity 将此代码包含在 <code>CGPROGRAM</code> 块中定义的所有着色器程序中，可位于此源文件的任何位置。</td>
+</tr>
+</tbody>
+</table>
+
+<h3>示例</h3>
+
+<pre><code>Shader "Examples/ExampleShader"
+{
+    SubShader
+    {
+
+        HLSLINCLUDE
+            // 在此编写要共享的 HLSL 代码
+        ENDHLSL
+
+        Pass
+        {                
+              Name "ExampleFirstPassName"
+              Tags { "LightMode" = "ExampleLightModeTagValue" }
+
+              // 在此编写设置渲染状态的 ShaderLab 命令
+
+              HLSLPROGRAM
+                // 此 HLSL 着色器程序自动包含上面的 HLSLINCLUDE 块的内容
+                // 在此编写 HLSL 着色器代码
+              ENDHLSL
+        }
+
+        Pass
+        {                
+              Name "ExampleSecondPassName"
+              Tags { "LightMode" = "ExampleLightModeTagValue" }
+
+              // 在此编写设置渲染状态的 ShaderLab 命令
+
+              HLSLPROGRAM
+                // 此 HLSL 着色器程序自动包含上面的 HLSLINCLUDE 块的内容
+                // 在此编写 HLSL 着色器代码
+              ENDHLSL
+        }
+
+    }
+}
+</code></pre>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="shader-predefined-pass-tags-built-in.html"></a></span><div class="tip">ShaderLab：内置渲染管线中的预定义通道标签</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SL-PackageRequirements.html"></a></span><div class="tip">ShaderLab: specifying package requirements</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

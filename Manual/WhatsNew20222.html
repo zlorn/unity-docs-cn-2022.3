@@ -1,0 +1,550 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="New in Unity 2022.2 - Unity 手册">
+<title>New in Unity 2022.2 - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="To find out more about the new features, changes, and improvements to this Unity version, refer to the 2022.3 Release Notes.">
+<meta property="og:description" content="To find out more about the new features, changes, and improvements to this Unity version, refer to the 2022.3 Release Notes.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'WhatsNew20222';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/WhatsNew20222.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/WhatsNew20222.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/WhatsNew20222.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/WhatsNew20222.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/WhatsNew20222.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/WhatsNew20222.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/WhatsNew20222.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/WhatsNew20222.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/WhatsNew20222.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/WhatsNew20222.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/WhatsNew20222.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/WhatsNew20222.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/WhatsNew20222.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/WhatsNew20222.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/WhatsNew20222.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/WhatsNew20222.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/WhatsNew20222.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/WhatsNew20222.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/WhatsNew20222.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/WhatsNew20222.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/WhatsNew20222.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/WhatsNew20222.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/WhatsNew20222.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/WhatsNew20222.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/WhatsNew20222.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/WhatsNew20222.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/WhatsNew20222.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/WhatsNew20222.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/WhatsNew20222.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/WhatsNew20222.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/WhatsNew20222.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/WhatsNew20222.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/WhatsNew20222.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/WhatsNew20222.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/WhatsNew20222.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/WhatsNew20222.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/WhatsNew20222.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/WhatsNew20222.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/WhatsNew20222.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/WhatsNew20222.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/WhatsNew20222.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/WhatsNew20222.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/WhatsNew20222.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/WhatsNew20222.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/WhatsNew20222.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/WhatsNew20222.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/WhatsNew20222.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/WhatsNew20222.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/WhatsNew20222.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/WhatsNew20222.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/WhatsNew20222.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/WhatsNew20222.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/WhatsNew20222.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/WhatsNew20222.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/WhatsNew20222.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/WhatsNew20222.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/WhatsNew20222.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/WhatsNew20222.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="WhatsNew2022LTS.html">New in Unity 2022 LTS</a></li>
+<li>New in Unity 2022.2</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="WhatsNew2022LTS.html"></a></span><div class="tip">New in Unity 2022 LTS</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="WhatsNew20221.html"></a></span><div class="tip">New in Unity 2022.1</div>
+</div>
+</div></div>
+<h1>New in Unity 2022.2</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<h3>Release Notes</h3>
+
+<p>To find out more about the new features, changes, and improvements to this Unity version, refer to the <a href="https://unity3d.com/unity/whats-new/2022.3.0">2022.3 Release Notes</a>.
+<!-- Double check link --></p>
+
+<h3>Upgrade Guide</h3>
+
+<p>If you are upgrading existing projects from 2022.2, read the <a href="UpgradeGuide20222LTS">Upgrade Guide to 2022LTS</a> for information about how your project might be affected.</p>
+
+<h1>What’s new</h1>
+
+<p>See what’s changed in Unity 2022.2 since 2022.1 and view the documentation for the affected areas.</p>
+
+<h2>Editor and Workflow</h2>
+
+<ul>
+<li>The Device Simulator device list now includes a new button to install the com.unity.device-simulator.devices package, which contains the latest device definitions from Unity.</li>
+<li>You now have the option to block shortcuts from triggering during Play mode while the Game view window is focused.</li>
+<li>Added an Edit mode preview Overlay for the Trail Renderer</li>
+<li>Added Context column to <code>ShortcutManager</code>.</li>
+<li>Added functionality to import and export profiles in the Shortcuts manager.</li>
+<li>Added MinMaxCurveProperty Drawer to UIToolkit Inspector.</li>
+<li>You can now run tests in a specified order from a test list.</li>
+</ul>
+
+<h2>Memory Profiler</h2>
+
+<p><a href="https://docs.unity3d.com/Packages/com.unity.memoryprofiler@1.0/manual/index.html">Memory Profiler 1.0.0</a> includes the following features:</p>
+
+<ul>
+<li>A new <strong>All Of Memory snapshots comparison</strong> tab.</li>
+<li>A <strong>Close</strong> button to close snapshots, which means, single-clicking a selected snapshot no longer closes it.</li>
+<li>Unity Objects breakdown comparison between two captures.</li>
+</ul>
+
+<p>For a summary of changes, refer to <a href="https://docs.unity3d.com/Packages/com.unity.memoryprofiler@1.0/manual/whats-new.html">What’s new in Memory Profiler 1.0.0</a>.</p>
+
+<h3>UI Toolkit for Editor UI</h3>
+
+<ul>
+<li>Added support for <code>background-position</code>, <code>background-size</code> and <code>background-repeat</code> for background rendering.</li>
+<li>Added new UI Toolkit versions for <code>ColorBlockDrawer</code> and <code>NavigationDrawer</code>.</li>
+<li>Improved UI/UX of the Inspector displaying appropriate visual cues according to the statuses of properties and provided more details about how properties’ values are bound and resolved.</li>
+<li>Improved the UI Builder Inspector.</li>
+<li>Added library icons to UI Builder.</li>
+<li>Added the <code>align-self</code> field to the UI Builder style Inspector.</li>
+<li>Added call to implement <code>DecoratorDrawers</code>.</li>
+<li>
+<a href="UIE-work-with-text.html">Synchronized TextCore’s text generation with the latest code from TextMeshPro</a>.</li>
+</ul>
+
+<h2>图形</h2>
+
+<ul>
+<li>Added access to the bounds of the current renderer in the per object constant buffer for SRPs.</li>
+<li>Implemented custom error/loading shader support for the <code>BatchRendererGroup</code>.</li>
+<li>Added visual debug tool for buffer load/store actions.</li>
+<li>OpenGL ES 3.1 support for <code>BatchRendererGroup</code>.</li>
+<li>Terrain heightmap support in <code>RayTracingAccelerationStructure</code> when using <code>RayTracingAccelerationStructure.CullInstances</code> function.</li>
+<li>Added gaze foveated rendering (GFR) on Vulkan using fragment density map offset.</li>
+<li>The Texture2D importer and constructor now allow excluding the texture from mipmap limits, ensuring that all mips can get uploaded regardless of the quality settings.</li>
+<li>Added the runtime-modifiable Texture2D property to toggle excluding the texture from mipmap limits (only for readable Texture2Ds).</li>
+<li>The Texture2D importer and constructor can now be used to add the texture to a project-defined mipmap limit group for more fine-grained control of how texture quality gets affected per quality level.</li>
+<li>Added mipmap limit groups for more fine-grained configurability over the single value that applies to all mipmapped Texture2Ds.</li>
+<li>Added shader variant loading settings in Player Settings to control how much memory shaders use at runtime.</li>
+<li>Shader Warmup can now compile pipeline state objects asynchronously.</li>
+<li>Foveated Rendering support for D3D12/Vulkan.</li>
+</ul>
+
+<h3>URP</h3>
+
+<p>For a complete description of new features and improvements in URP, refer to the <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/whats-new/urp-whats-new.html">What’s new in URP 14 (Unity 2022.2)</a> page. </p>
+
+<h4>New features</h4>
+
+<ul>
+<li>
+<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/renderer-features/renderer-feature-full-screen-pass.html">Added Full Screen Pass Renderer feature</a>.</li>
+<li>Added <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/post-processing/post-processing-custom-effect-low-code.html">Custom post-processing effects</a> with <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/renderer-features/renderer-feature-full-screen-pass.html">Full Screen Pass Renderer feature</a>.</li>
+<li>
+<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/features/rendering-layers.html">Added Rendering Layers</a>.</li>
+<li>
+<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/rendering/forward-plus-rendering-path.html">Added Forward+ Rendering Path</a>.</li>
+<li>
+<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/universalrp-asset.html#lod-cross-fade">Added LOD Cross-fade</a>.</li>
+<li>Shader stripping improvement: added light cookies stripping.</li>
+<li>
+<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/features/rendering-layers.html">Changed light and decal layers to rendering layers</a>.</li>
+</ul>
+
+<h4>Improvements</h4>
+
+<ul>
+<li>Performance and usability improvements to Screen space ambient occlusion (SSAO).</li>
+<li>New 64-bit high precision HDR render target format.</li>
+<li>New bloom quality settings.</li>
+<li>Improvements to the <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/features/rp-converter.html">Render Pipeline Converter</a>.</li>
+<li>Full screen draws in URP now use the <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/renderer-features/how-to-fullscreen-blit.html">SRP Core Bliter API</a>.</li>
+<li>More consistent lighting behavior on different platforms.</li>
+<li>New XRSystem API.</li>
+<li>Shader stripping improvements</li>
+<li>CPU performance improvements for light-heavy scenes.</li>
+</ul>
+
+<h3>HDRP</h3>
+
+<h4>New features</h4>
+
+<ul>
+<li>Added Fullscreen material type and sample set.</li>
+<li>Added Ray tracing support for Terrain.</li>
+<li>Added the Water System.</li>
+<li>Volumetric material support for <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/Local-Volumetric-Fog.html">local volumetric fog</a> volumes.</li>
+<li>Added transparency sample scene.</li>
+<li>Added color monitors to the <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/Render-Pipeline-Debug-Window.html">Rendering Debugger</a>.</li>
+<li>Added a new <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/eye-shader.html">Eye Shader</a> type called Eye Cinematic with Caustic.</li>
+<li>The <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/Ray-Tracing-Settings.html">Ray Tracing Settings</a> volume includes <strong>Culling Mode</strong> properties to define the algorithm that performs Ray Tracing culling.</li>
+</ul>
+
+<h4>Improvements</h4>
+
+<ul>
+<li>Replaced the <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/Diffusion-Profile.html">Diffusion Profile</a> <strong>Scattering Color</strong> HDR color picker with an LDR color picker.</li>
+<li>Added properties to the <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/Override-Screen-Space-Reflection.html">Screen Space Reflection</a> component to control how the PBR Accumulation SSR algorithm behaves.</li>
+<li>Added a property called <strong>Target</strong> in the <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/Custom-Pass-Creating.html">Custom pass</a> drawer to access the current custom pass instance.</li>
+<li>Added <strong>Asymmetric projection</strong> and <strong>Screen Coordinates Override</strong> <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/Frame-Settings.html">Frame settings</a>.</li>
+<li>Adapted <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/Post-Processing-Main.html">post-processing</a> effects to support Screen Coordinates Override.</li>
+<li>Added settings to overwrite diffusion profile IOR on <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/master-stack-stacklit.html">StackLit</a>.</li>
+<li>Added the <strong>Occlusion remap Curve</strong> property to the <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/shared/lens-flare/lens-flare-component.html">Lens Flare</a> component.</li>
+<li>Added <strong>Probe Touchup Volumes</strong> for tuning Probe Volumes, and you can now bake separate lighting scenarios using Probe Volumes and blend between them.</li>
+</ul>
+
+<h2>Package Manager</h2>
+
+<ul>
+<li>Moved the package action toolbar in the <a href="upm-ui-details.html">package details</a> header and implemented new design changes on the details header.</li>
+<li>Reorganized <a href="upm-ui-details.html">Package Details</a> into tab-based display. Packages now have individual tabs for <strong>Description</strong>, <strong>Version History</strong>, <strong>Samples</strong>, and <strong>Dependencies</strong>, while Asset Store Packages have tabs for <strong>Overview</strong>, <strong>Releases</strong>, and <strong>Images</strong>.</li>
+<li>Added a runtime module from the <code>com.unity.properties</code> package that enables the use of a generalized visitor pattern.</li>
+<li>Updated the scripting API by adding the <code>isDeprecated</code> and <code>deprecationMessage</code> properties to the <code>UnityEditor.PackageManager.PackageInfo</code> class, which are set when a given package version is labeled as <a href="upm-lifecycle.html">deprecated</a> on the registry by its author.</li>
+<li>Updated the scripting API by adding the <code>deprecated</code> property to the <a href="../ScriptReference/PackageManager.VersionsInfo.html"><code>UnityEditor.PackageManager.VersionsInfo</code></a> class (usually accessed through the <code>versions</code> property of a <code>UnityEditor.PackageManager.PackageInfo</code> instance), which lists all versions of that package that are labeled as <a href="upm-lifecycle.html">deprecated</a> on the registry.</li>
+</ul>
+
+<h2>Authoring Tools</h2>
+
+<h3>Animation</h3>
+
+<ul>
+<li>Modified fields on <code>SerializeReference</code> instances of <code>MonoBehaviour</code> so they can be animated like fields directly on <code>MonoBehaviour</code> classes.</li>
+<li>Added support to edit multiple Animation Clips at once.</li>
+</ul>
+
+<h3>Navigation and Pathfinding</h3>
+
+<ul>
+<li>Released a new <a href="https://docs.unity3d.com/Packages/com.unity.ai.navigation@latest">AI Navigation package</a> which will eventually replace the core Navigation and Pathfinding feature.</li>
+<li>Removed the Bake and Object tabs from the Navigation window as they’re no longer necessary. However, you can still find them in the Navigation (Obsolete) window.</li>
+<li>The Navigation Static and Off Mesh Link Generation options are no longer available in the Static Editor Flags dropdown menu. However, you can still find them in the Navigation (Obsolete) window &gt; Object tab.</li>
+</ul>
+
+<h3>Terrain</h3>
+
+<p>Added Quality Settings to control various Terrain settings at different quality levels.</p>
+
+<h3>Audio</h3>
+
+<p>Added clock management options with the Video Player component.</p>
+
+<h3>2D</h3>
+
+<p>2D now supports the following features:</p>
+
+<ul>
+<li>New 2D Physics Profiler Area with Custom Profile Counters.</li>
+<li>New Editor Preference editor for 2D Physics that allows the configuration of Gizmo colors and settings.</li>
+<li>The ability for 2D Physics Collider Gizmos to optionally draw Outlines and Filled Colliders. These are new options in the Physics 2D Project Settings Editor.</li>
+<li>The ability to select per-Collider2D, which layers that contacts:
+
+<ul>
+<li>Are captured for querying and producing physics callbacks.</li>
+<li>Will produce a physics callbacks for.</li>
+</ul>
+</li>
+<li>An option to override Layer collisions for Colliders, Rigidbody components, ArticulationBodies and Character Controllers, which allows to fine tune which bodies should collide with what layers.</li>
+</ul>
+
+<h4>2D Physics improvements</h4>
+
+<p>You can now allow the following in 2D Physics: </p>
+
+<ul>
+<li>A Rigidbody2D/Collider2D to explicitly override (include or exclude) contact layers, so it can override the Layer Collision Matrix per-object.</li>
+<li>A Collider2D to control Send and Receive forces per-layer upon contact with another Collider2D.</li>
+<li>A Rigidbody2D to read or write the total force or torque that has been applied to it directly via add force or add torque calls.</li>
+<li>A Joint2D to select one of four modes that control an action to be taken when the joint breaks. These are <strong>Ignore</strong>, <strong>CallbackOnly</strong>, <strong>Disable</strong>, or <strong>Destroy</strong>. Previously, <strong>Destroy</strong> was the fixed action and is still the default.</li>
+</ul>
+
+<h3>Burst</h3>
+
+<p>Added support for detecting managed breakpoints in code compiled with Burst, and automatically switching the affected code to the mono execution path to allow managed debugging. Requires Burst 1.8.</p>
+
+<h3>VFX Graph</h3>
+
+<ul>
+<li>VFX Instancing now optimizes both CPU and GPU VFX runtime.</li>
+<li>Activation Boolean port on blocks.</li>
+<li>Added passthrough space (None).</li>
+<li>Skinned Mesh Sampling out of experimental.</li>
+<li>Added a new lighting model for smoke: Six-way lighting.</li>
+</ul>
+
+<h2>Platforms</h2>
+
+<ul>
+<li>Added preliminary support for Magic Leap 2 in Android.</li>
+<li>Introduced a new WebGL player setting to display <a href="class-PlayerSettingsWebGL.html#diagnostic">diagnostics information (currently limited to memory usage)</a> in WebGL applications.</li>
+<li>WebGL VideoPlayer now has a configurable time update mode, to support game time, unscaled game time, and audio display time.</li>
+</ul>
+
+<h2>Artist and Cinematic tools</h2>
+
+<h3>ShaderGraph</h3>
+
+<p>Added access to the renderer bounds in Shader Graph through the object node.</p>
+
+<h2>Programmer tools</h2>
+
+<h3>AI</h3>
+
+<p>Added an option to create a height mesh when you build the NavMesh at runtime.</p>
+
+<h3>Kernel</h3>
+
+<p>Added a new Memory Manager Plug-in interface to allow Unity’s native Memory Manager to do native memory allocations.</p>
+
+<h3>Serialization improvements</h3>
+
+<ul>
+<li>Changed so fields on <code>SerializeReference</code> instances of <code>MonoBehaviours</code> can now be animated like fields directly on <code>MonoBehaviours</code>.</li>
+<li>Made EditorSerializationUtility services to access and manipulate <code>SerializeReference</code> instances with IDs available at runtime in <code>Serialization.ManagedReferenceUtility</code>.</li>
+</ul>
+
+<h3>Version Control</h3>
+
+<p>Added branch name column in changeset view.</p>
+
+<h2>Asset Store</h2>
+
+<p>Added Verified Solutions program, a library of third-party assets and solutions that Unity curates.</p>
+
+<h2>XR</h2>
+
+<ul>
+<li>Added profiler markers for some XR Display subsystem entry points. Markers are named <code>XR.Display.*</code>
+</li>
+<li>Added support for late latch debug mode to help verify late latch functionality to the Oculus XR plug-in</li>
+<li>
+<a href="https://unity.com/products/mars/get-started">Unity Mars</a> is now included with Unity Pro, Unity Enterprise, and Unity Industrial Collection.</li>
+</ul>
+
+<h3>XR package changes</h3>
+
+<p><strong>Version updates:</strong></p>
+
+<ul>
+<li>com.unity.xr.arcore: 4.2.1 → <a href="https://docs.unity3d.com/Packages/com.unity.xr.arcore@5.0/changelog/CHANGELOG.html">5.0.2</a>
+</li>
+<li>com.unity.xr.arfoundation: 4.2.1 → <a href="https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@5.0/changelog/CHANGELOG.html">5.0.2</a>
+</li>
+<li>com.unity.xr.arkit: 4.2.1 → <a href="https://docs.unity3d.com/Packages/com.unity.xr.arkit@5.0/changelog/CHANGELOG.html">5.0.2</a>
+</li>
+<li>com.unity.xr.core-utils: 2.0.0-pre.5 → <a href="https://docs.unity3d.com/Packages/com.unity.xr.core-utils@2.1/changelog/CHANGELOG.html">2.1.0</a>
+</li>
+<li>com.unity.xr.interaction.toolkit: 2.0.0-pre.5 → <a href="https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.1/changelog/CHANGELOG.html">2.1.1</a>
+</li>
+<li>com.unity.xr.legacyinputhelpers: 2.1.8 → <a href="https://docs.unity3d.com/Packages/com.unity.xr.legacyinputhelpers@2.1/changelog/CHANGELOG.html">2.1.10</a>
+</li>
+<li>com.unity.xr.oculus: 1.11.0 → <a href="https://docs.unity3d.com/Packages/com.unity.xr.oculus@3.2/changelog/CHANGELOG.html">3.2.1</a>
+</li>
+<li>com.unity.xr.openxr: 1.3.0 → <a href="https://docs.unity3d.com/Packages/com.unity.xr.openxr@1.5/changelog/CHANGELOG.html">1.5.3</a>
+</li>
+</ul>
+
+<p>Removed the deprecated <code>unity.xr.arkit-face-tracking</code> package from the AR Feature set. (APIs are now in the main ARKit package.)</p>
+
+<h3>AR Foundation 5.0.2</h3>
+
+<ul>
+<li>Added <a href="https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@5.0/manual/ar-debug-menu.html">AR Debug Menu</a> to provide visualization for AR debug information.</li>
+<li>Added <a href="https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@5.0/manual/simulation.html">XR Simulation</a> to allow testing of AR apps in a simulated environment within the editor (previously a Mars only feature).</li>
+<li>Merged the <code>com.unity.xr.arsubsystems</code> package into AR Foundation.</li>
+<li>Renamed XRDepthSubsystem to <a href="https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@5.0/api/UnityEngine.XR.ARSubsystems.XRPointCloudSubsystem.html">XRPointCloudSubsystem</a> and XRDepthSubsystemDescriptor to <a href="https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@5.0/api/UnityEngine.XR.ARSubsystems.XRPointCloudSubsystemDescriptor.html">XRPointCloudSubsystemDescriptor</a>.</li>
+</ul>
+
+<h3>ARCore 5.0.2</h3>
+
+<ul>
+<li>Added <a href="https://docs.unity3d.com/Packages/com.unity.xr.arcore@5.0/manual/project-configuration-arcore.html#project-validation">project validation rules</a>, which can identify configuration and settings issues in your app.</li>
+<li>Added an option to <a href="https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@5.0/api/UnityEngine.XR.ARSubsystems.OcclusionPreferenceMode.html">OcclusionPreferenceMode</a> to disable occlusion rendering.</li>
+<li>Added support for changing the camera background rendering order.</li>
+<li>Updated the package to use Google’s ARCore 1.31.</li>
+<li>Updated depth data to 16 bit, which increases range from 8 meters to 65 meters.</li>
+<li>Added the <a href="https://docs.unity3d.com/Packages/com.unity.xr.arcore@5.0/api/UnityEngine.XR.ARCore.ARCorePermissionManager.html#UnityEngine_XR_ARCore_ARCorePermissionManager_CancelPermissionRequest">CancelPermissionRequest</a> method to allow developers to handle permission requests. Resolves issue: <a href="https://issuetracker.unity3d.com/issues/arfoundation-camera-request-permission-window-is-not-shown-when-app-is-minimized-and-opened-again-on-android-device">ARFOUNDATION: CAMERA REQUEST PERMISSION WINDOW IS NOT SHOWN WHEN APP IS MINIMIZED AND OPENED AGAIN ON ANDROID DEVICE</a>.</li>
+</ul>
+
+<h3>ARKit 5.0.2</h3>
+
+<ul>
+<li>Expanded face tracking capabilities to include tracking multiple faces with both the front and rear cameras at the same time. The device must support Apple ARKit 3.</li>
+<li>Merged the com.unity.arkit-face-tracking package into the ARKit package. The separate ARKit Face Tracking package is no longer needed.</li>
+</ul>
+
+<h3>Oculus 3.2.1</h3>
+
+<ul>
+<li>Added optional support for <a href="https://docs.unity3d.com/Packages/com.unity.xr.oculus@3.2/api/Unity.XR.Oculus.OculusSettings.html#Unity_XR_Oculus_OculusSettings_SymmetricProjection">Symmetric Projection</a> on Quest 2 when using Vulkan and Multiview. This mode can improve GPU performance when using Multiview due to more common workloads between the left and right eye. Enable Symmetric Projection in the Oculus settings under <strong>XR Plug-in Management</strong>.</li>
+<li>Added Quest Pro to the list of target devices in the Oculus settings under <strong>XR Plug-in Management</strong>. Enable this option to add the Quest Pro to the app’s Android manifest.</li>
+</ul>
+
+<h3>OpenXR 1.5.3</h3>
+
+<ul>
+<li>Added <a href="https://docs.unity3d.com/Packages/com.unity.xr.core-utils@2.1/manual/project-validation.html">Project Validation support</a> (requires XR Core Utilities 2.1.0+). Project validation evaluates the project settings to identify possible problems.</li>
+<li>Added support for setting the Environment Blend Mode.</li>
+<li>Added support for XR_MSFT_holographic_windown_attachment extension on UWP so that installing Microsoft Mixed Reality OpenXR Plug-in is no longer required if targeting HoloLens V2 devices.</li>
+<li>Added support for XR_FB_foveation, XR_FB_foveation_configuration, XR_FB_swapchain_update_state, XR_FB_foveation_vulkan and XR_FB_space_warp extensions.</li>
+<li>Applications now attempt to recover after the Oculus Link is lost and reconnected.</li>
+</ul>
+
+<h3>XR Interaction Toolkit 2.1.1</h3>
+
+<ul>
+<li>Added an option to make the attachment point used when grabbing objects dynamic. Refer to <a href="https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.1/manual/xr-grab-interactable.html">XR Grab Interactable</a> for more information.</li>
+<li>Added “intention” filtering that uses a weighted score to choose which object to select when more than one otherwise qualifies. Refer to <a href="https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.1/manual/target-filters.html">Target filters</a> for more information.</li>
+<li>Added an option to activate a comfort mode vignette during locomotion. Refer to <a href="https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.1/manual/tunneling-vignette-controller.html">Tunneling Vignette Controller</a> for more info.</li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="WhatsNew2022LTS.html"></a></span><div class="tip">New in Unity 2022 LTS</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="WhatsNew20221.html"></a></span><div class="tip">New in Unity 2022.1</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

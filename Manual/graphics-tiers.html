@@ -1,0 +1,343 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Graphics tiers - Unity 手册">
+<title>Graphics tiers - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="In the Built-in Render Pipeline, you can use graphics tiers to apply different graphics settings when your application runs on hardware with different capabilities. You can use Unity&amp;#8217;s built-in tier settings to configure common settings, or you can define custom behaviors in your own shader code or C# code.">
+<meta property="og:description" content="In the Built-in Render Pipeline, you can use graphics tiers to apply different graphics settings when your application runs on hardware with different capabilities. You can use Unity&amp;#8217;s built-in tier settings to configure common settings, or you can define custom behaviors in your own shader code or C# code.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'graphics-tiers';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/graphics-tiers.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/graphics-tiers.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/graphics-tiers.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/graphics-tiers.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/graphics-tiers.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/graphics-tiers.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/graphics-tiers.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/graphics-tiers.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/graphics-tiers.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/graphics-tiers.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/graphics-tiers.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/graphics-tiers.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/graphics-tiers.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/graphics-tiers.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/graphics-tiers.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/graphics-tiers.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/graphics-tiers.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/graphics-tiers.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/graphics-tiers.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/graphics-tiers.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/graphics-tiers.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/graphics-tiers.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/graphics-tiers.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/graphics-tiers.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/graphics-tiers.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/graphics-tiers.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/graphics-tiers.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/graphics-tiers.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/graphics-tiers.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/graphics-tiers.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/graphics-tiers.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/graphics-tiers.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/graphics-tiers.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/graphics-tiers.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/graphics-tiers.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/graphics-tiers.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/graphics-tiers.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/graphics-tiers.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/graphics-tiers.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/graphics-tiers.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/graphics-tiers.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/graphics-tiers.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/graphics-tiers.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/graphics-tiers.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/graphics-tiers.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/graphics-tiers.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/graphics-tiers.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/graphics-tiers.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/graphics-tiers.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/graphics-tiers.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/graphics-tiers.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/graphics-tiers.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/graphics-tiers.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/graphics-tiers.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/graphics-tiers.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/graphics-tiers.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/graphics-tiers.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/graphics-tiers.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="render-pipelines.html">渲染管线</a></li>
+<li><a href="built-in-render-pipeline.html">使用内置渲染管线</a></li>
+<li>Graphics tiers</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="built-in-render-pipeline.html"></a></span><div class="tip">使用内置渲染管线</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="RenderingPaths.html"></a></span><div class="tip">内置渲染管线中的渲染路径</div>
+</div>
+</div></div>
+<h1>Graphics tiers</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>In the Built-in Render Pipeline, you can use <strong>graphics tiers</strong> to apply different graphics settings when your application runs on hardware with different capabilities. You can use Unity’s built-in <strong>tier settings</strong> to configure common settings, or you can define custom behaviors in your own shader code or C# code. </p>
+
+<p><strong>Note:</strong> This feature is only supported in the Built-in Render Pipeline. In other render pipelines, Unity still examines the hardware on startup and stores its value in <a href="../ScriptReference/Graphics-activeTier.html">Graphics.activeTier</a>; however, the value of this field has no effect, and Unity does not perform any other operations relating to graphics tiers.</p>
+
+<h2>Graphics tiers overview</h2>
+
+<p>When Unity first loads your application, it examines the hardware and graphics API and determines which graphics tier the current environment corresponds to. </p>
+
+<p>The graphics tiers are:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Value</strong></th>
+	<th style="text-align:left;"><strong>Hardware</strong></th>
+	<th style="text-align:left;"><strong>Corresponding <a href="../ScriptReference/Rendering.GraphicsTier.html">GraphicsTier</a> enum value</strong></th>
+	<th style="text-align:left;"><strong>Corresponding <a href="shader-keywords.html">shader keyword</a>
+</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">1</td>
+	<td style="text-align:left;">Android: devices that only support OpenGL ES 2<br>iOS: iPhones before iPhone 5S (not including 5S, but including 5C), iPods up to and including 5th generation, iPads up to 4th generation, iPad mini first generation<br>Desktop: DirectX 9<br>XR: HoloLens</td>
+	<td style="text-align:left;"><a href="../ScriptReference/Rendering.GraphicsTier.Tier1.html">Tier1</a></td>
+	<td style="text-align:left;"><code>UNITY_HARDWARE_TIER1</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;">2</td>
+	<td style="text-align:left;">Android: devices that support OpenGL ES 3, devices that support Vulkan<br>iOS: iPhones starting from iPhone 5S, iPad Air, iPad mini 2nd generation, iPod 6th generation, AppleTV<br>WebGL: all devices</td>
+	<td style="text-align:left;"><a href="../ScriptReference/Rendering.GraphicsTier.Tier2.html">Tier2</a></td>
+	<td style="text-align:left;"><code>UNITY_HARDWARE_TIER2</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;">3</td>
+	<td style="text-align:left;">Desktop: OpenGL, Metal, Vulkan, DirectX 11+</td>
+	<td style="text-align:left;"><a href="../ScriptReference/Rendering.GraphicsTier.Tier3.html">Tier3</a></td>
+	<td style="text-align:left;"><code>UNITY_HARDWARE_TIER3</code></td>
+</tr>
+</tbody>
+</table>
+
+<h2>Using graphics tiers with C# scripts</h2>
+
+<p>Unity stores the value of the current graphics tier in <a href="../ScriptReference/Graphics-activeTier.html">Graphics.activeTier</a>, represented by a <a href="../ScriptReference/Rendering.GraphicsTier.html">GraphicsTier</a> enum. To add custom behavior based on the current graphics tier, you can test against this value.</p>
+
+<p>To override the value of <code>Graphics.activeTier</code>, set it directly. Note that you must do this before Unity loads any shaders that vary based on graphics tier. A good place to set this value is in a pre-loading scene, before you load your main scene.</p>
+
+<p><a name="tier-settings"></a></p>
+
+<h2>Tier settings</h2>
+
+<p>In the Unity Editor, you can configure <strong>tier settings</strong>. Tier settings allow you to enable or disable graphics features for each tier.</p>
+
+<p>Tier settings work by changing <code>#define</code> preprocessor directives in Unity’s internal shader code. These changes automatically affect prebuilt shaders for the Built-in Render Pipeline (such as the <a href="shader-StandardShader.html">Standard Shader</a>), and the internal shader library code for <a href="SL-SurfaceShaders.html">Surface Shaders</a>. You can also add code to your own hand-coded shaders that changes their behavior based on tier settings. For more information, see <a href="#shader-variants">Graphics tiers and shader variants</a>.</p>
+
+<p>The default tier settings are suitable for most use cases. You should only change them if you are experiencing performance issues, or if you want to enable features on lower-end devices that are not enabled by default.</p>
+
+<p>You can configure different tier settings for each graphics tier of a given build target. You can change tier settings in the following ways:</p>
+
+<ul>
+<li>Use the <a href="class-GraphicsSettings.html">Graphics Settings</a> window, in the <strong>Tier Settings</strong> section.</li>
+<li>Use these APIs in an Editor script:
+
+<ul>
+<li><a href="../ScriptReference/Rendering.EditorGraphicsSettings.html">EditorGraphicsSettings</a></li>
+<li><a href="../ScriptReference/Rendering.TierSettings.html">TierSettings</a></li>
+</ul>
+</li>
+</ul>
+
+<p>You can test tier settings in the Editor. To do this, navigate to <strong>Edit &gt; Graphics Tier</strong> and choose the tier that you want the Unity Editor to use.</p>
+
+<p><a name="shader-variants"></a></p>
+
+<h2>图形层和着色器变体</h2>
+
+<p>In the Built-in Render Pipeline, Unity can generate <a href="shader-variants.html">shader variants</a> that correspond to graphics tiers.</p>
+
+<p><strong>Note:</strong> These tier shader variants work differently to regular shader variants. At runtime, when Unity loads a Shader object into CPU memory, it only loads the variants for the active tier; it does not load the variants for other tiers. This helps to reduce the runtime impact of tier variants.</p>
+
+<p>To generate tier shader variants, Unity adds this set of <a href="shader-keywords.html">shader keywords</a> to all graphics shaders:</p>
+
+<pre><code>UNITY_HARDWARE_TIER1
+UNITY_HARDWARE_TIER2
+UNITY_HARDWARE_TIER3
+</code></pre>
+
+<p>You can use these keywords in your HLSL code to write conditional behavior for lower or higher-end hardware, the same way that you would for any shader keywords. For example:</p>
+
+<pre><code>#if UNITY_HARDWARE_TIER1
+// Put code for tier 1 devices here
+#else
+// Put code for other devices here
+#endif
+</code></pre>
+
+<p>For more information on working with shader keywords in HLSL code, see <a href="SL-MultipleProgramVariants.html">Declaring and using shader keywords in HLSL</a>.</p>
+
+<p>Unity automatically generates tier shader variants based on the tier settings for the current build target, like this:</p>
+
+<ul>
+<li>If all settings for all tiers are identical, Unity does not generate any tier shader variants.</li>
+<li>If any of the settings for different tiers differ in any way, Unity generates all tier shader variants.</li>
+</ul>
+
+<p>After generating all tier shader variants, Unity identifies and <a href="shader-variants.html#deduplication">deduplicates</a> identical tier shader variants. This means that if the settings for two tiers are identical (for example, if tier 1 is different but tier 2 and tier 3 are identical to one another), then these variants do not add to the file size of your application, and the way that Unity loads tier variants means that they do not affect loading times or runtime memory usage. However, this still results in redundant compilation work.</p>
+
+<p>If you want to use different settings for different tiers, but you also know that this will result in redundant work - for example, if you know that your application will only ever run on tier 1 and tier 2 devices - you can use a script to strip unneeded tier variants from compilation, the same as for any other variants. For more information, see <a href="shader-variant-stripping.html">Shader variant stripping</a>.</p>
+
+<p>In addition to the automatic behavior, you can also force Unity to generate tier shader variants on a per-shader basis. This is useful if you use these constants in your HLSL code and you want to be certain that Unity will compile the required variants, regardless of whether the tier settings for the current build differ from each other</p>
+
+<p>To manually force Unity to generate tier shader variants for a given shader, use the <code>#pragma hardware_tier_variants</code> preprocessor directive in your HLSL code, and specify the graphics APIs for which you want to generate per-tier variants:</p>
+
+<pre><code># pragma hardware_tier_variants gles3
+</code></pre>
+
+<p>For a list of valid graphics API names that you can use with this directive, see <a href="SL-ShaderCompilationAPIs.html">Targeting graphics APIs</a>. For general information on <code>#pragma</code> directives, see <a href="SL-PragmaDirectives.html">pragma directives</a>.</p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="built-in-render-pipeline.html"></a></span><div class="tip">使用内置渲染管线</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="RenderingPaths.html"></a></span><div class="tip">内置渲染管线中的渲染路径</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

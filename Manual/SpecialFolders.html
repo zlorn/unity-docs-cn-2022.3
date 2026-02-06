@@ -1,0 +1,318 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Special folder names - Unity 手册">
+<title>Special folder names - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="You can usually choose any name you like for the folders you create to organize your Unity project. However, there are folder names that Unity reserves for special purposes. For example, you must place Editor scripts in a folder called Editor for them to work correctly.">
+<meta property="og:description" content="You can usually choose any name you like for the folders you create to organize your Unity project. However, there are folder names that Unity reserves for special purposes. For example, you must place Editor scripts in a folder called Editor for them to work correctly.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'SpecialFolders';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/SpecialFolders.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/SpecialFolders.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/SpecialFolders.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/SpecialFolders.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/SpecialFolders.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/SpecialFolders.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/SpecialFolders.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/SpecialFolders.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/SpecialFolders.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/SpecialFolders.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/SpecialFolders.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/SpecialFolders.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/SpecialFolders.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/SpecialFolders.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/SpecialFolders.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/SpecialFolders.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/SpecialFolders.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/SpecialFolders.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/SpecialFolders.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/SpecialFolders.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/SpecialFolders.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/SpecialFolders.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/SpecialFolders.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/SpecialFolders.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/SpecialFolders.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/SpecialFolders.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/SpecialFolders.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/SpecialFolders.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/SpecialFolders.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/SpecialFolders.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/SpecialFolders.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/SpecialFolders.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/SpecialFolders.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/SpecialFolders.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/SpecialFolders.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/SpecialFolders.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/SpecialFolders.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/SpecialFolders.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/SpecialFolders.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/SpecialFolders.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/SpecialFolders.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/SpecialFolders.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/SpecialFolders.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/SpecialFolders.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/SpecialFolders.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/SpecialFolders.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/SpecialFolders.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/SpecialFolders.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/SpecialFolders.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/SpecialFolders.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/SpecialFolders.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/SpecialFolders.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/SpecialFolders.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/SpecialFolders.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/SpecialFolders.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/SpecialFolders.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/SpecialFolders.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/SpecialFolders.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="AssetWorkflow.html">资源工作流程</a></li>
+<li>Special folder names</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="AssetDatabaseBatching.html"></a></span><div class="tip">AssetDatabase 批处理</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ImportActivityWindow.html"></a></span><div class="tip">Import Activity window</div>
+</div>
+</div></div>
+<h1>Special folder names</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>You can usually choose any name you like for the folders you create to organize your Unity project. However, there are folder names that Unity reserves for special purposes. For example, you must place Editor scripts in a folder called <strong>Editor</strong> for them to work correctly.</p>
+
+<p>本页面包含 Unity 使用的特殊文件夹名称的完整列表。</p>
+
+<p><a name="Assets"></a></p>
+
+<h2>资源</h2>
+
+<p>The <strong>Assets</strong> folder is the main folder that contains the Assets used by a Unity project. The contents of the Project window in the Editor correspond directly to the contents of the Assets folder. Most API functions assume that everything is located in the Assets folder and don’t require it to be mentioned explicitly. However, some functions do need to have the Assets folder included as part of a pathname (for example, certain functions in the <a href="../ScriptReference/AssetDatabase.html">AssetDatabase</a> class).</p>
+
+<p><a name="Editor"></a> </p>
+
+<h2>Editor</h2>
+
+<p>Editor scripts add functionality to Unity during development but aren’t available in builds at runtime. Scripts in an <strong>Editor</strong> folder run as Editor scripts, not runtime scripts.</p>
+
+<p>可在 Assets 文件夹中的任何位置添加多个 Editor 文件夹。应将 Editor 脚本放在 Editor 文件夹内或其中的子文件夹内。</p>
+
+<p>Editor 文件夹的确切位置会影响其脚本相对于其他脚本的编译时间。参阅<a href="ScriptCompileOrderFolders.html">特殊文件夹和脚本编译顺序</a>上的文档了解完整的描述。</p>
+
+<p>Use the <a href="../ScriptReference/EditorGUIUtility.Load.html">EditorGUIUtility.Load</a> function in Editor scripts to load Assets from a Resources folder within an Editor folder. These Assets are only loaded through Editor scripts and are stripped from builds.</p>
+
+<p><strong>注意：</strong>如果脚本位于 Editor 文件夹中，Unity 不允许将派生自 MonoBehaviour 的组件分配给游戏对象。</p>
+
+<p><a name="EditorDefaultResources"></a></p>
+
+<h2>Editor Default Resources</h2>
+
+<p>Editor 脚本可以使用通过 <a href="../ScriptReference/EditorGUIUtility.Load.html">EditorGUIUtility.Load</a> 函数按需加载的资源文件。此函数在名为 <strong>Editor Default Resources</strong> 的文件夹中查找资源文件。</p>
+
+<p>You can only have one Editor Default Resources folder and you must place it in Project root, directly within the Assets folder. Place the needed Asset files in this Editor Default Resources folder or a subfolder within it. Always include the subfolder path in the path passed to the <a href="../ScriptReference/EditorGUIUtility.Load.html">EditorGUIUtility.Load</a> function if your Asset files are in subfolders.</p>
+
+<p><a name="Gizmos"></a></p>
+
+<h2>Gizmos</h2>
+
+<p><a href="../ScriptReference/Gizmos.html">Gizmos</a> 允许将图形添加到 Scene 视图，以帮助可视化不可见的设计细节。<a href="../ScriptReference/Gizmos.DrawIcon.html">Gizmos.DrawIcon</a> 函数在场景中放置一个图标，作为特殊对象或位置的标记。必须将用于绘制此图标的图像文件放在名为 <strong>Gizmos</strong> 的文件夹中，这样才能被 DrawIcon 函数找到。</p>
+
+<p>You can only have one Gizmos folder, and it must be placed in the root of the Project, directly within the Assets folder. Place the needed Asset files in this Gizmos folder or a subfolder within it. Always include the subfolder path in the path passed to the <a href="../ScriptReference/Gizmos.DrawIcon.html">Gizmos.DrawIcon</a> function if your Asset files are in subfolders.</p>
+
+<p><a name="Resources"></a></p>
+
+<h2>Resources</h2>
+
+<p>可从脚本中按需加载资源，而不必在场景中创建资源实例以用于游戏。为此，应将资源放在一个名为 <strong>Resources</strong> 的文件夹中。通过使用 <a href="../ScriptReference/Resources.Load.html">Resources.Load</a> 函数即可加载这些资源。</p>
+
+<p>可在 Assets 文件夹中的任何位置添加多个 Resources 文件夹。将所需的资源文件放在 Resources 文件夹内或其中的子文件夹内。如果资源文件位于子文件夹中，请始终在传递给 <a href="../ScriptReference/Resources.Load.html">Resources.Load</a> 函数的路径中包含子文件夹路径。</p>
+
+<p><strong>Note</strong>: If the Resources folder is an Editor subfolder, the Assets in it are loadable from Editor scripts but are removed from builds.</p>
+
+<p><a name="StandardAssets"></a></p>
+
+<h2>标准资源</h2>
+
+<p>When you <a href="upm-ui-import.html">import a Standard Asset package</a>, Unity puts the assets in a folder called <code>Standard Assets</code>. In addition to containing the assets, these folders have an effect on script compilation order. For more information, see the page on <a href="ScriptCompileOrderFolders.html">Special Folders and Script Compilation Order</a>.</p>
+
+<p>You can only have one <code>Standard Assets</code> folder, and you must leave it in the root of the project, directly within the <code>Assets</code> folder. Place the asset files you need inside the <code>&lt;project-root&gt;/Assets/Standard Assets</code> folder or one of its subfolders.</p>
+
+<p><a name="StreamingAssets"></a></p>
+
+<h2>StreamingAssets</h2>
+
+<p>You may want the Asset to be available as a separate file in its original format (though it’s more common to directly incorporate Assets into a build). For example, you need to access a video file from the filesystem to play the video on IOS using <a href="https://docs.unity3d.com/ScriptReference/Handheld.PlayFullScreenMovie.html">Handheld.PlayFullScreenMovie</a>.</p>
+
+<p>要包含流媒体资源，请执行以下操作：</p>
+
+<ol>
+<li>将文件放在 StreamingAssets 文件夹中。</li>
+<li>该文件在复制到目标机器时保持不变，它可以从特定文件夹中获得。</li>
+</ol>
+
+<p>请参阅关于<a href="StreamingAssets.html">流媒体资源</a>的页面以了解更多详细信息。</p>
+
+<p>You can only have one StreamingAssets folder, and it must be placed in the root of the Project, directly within the Assets folder. Place the Assets files in the StreamingAssets folder or subfolder. Always include the subfolder path in the path used to reference the streaming asset if your Asset files are in subfolders.</p>
+
+<p><a name="android-asset-packs"></a></p>
+
+<h2>Android Asset Packs</h2>
+
+<p>Unity interprets any folder that ends with <code>.androidpack</code> as an <a href="android-asset-packs-in-unity.html">Android asset packs</a>. For more information, see <a href="android-asset-packs-create-custom.html">Create a custom asset pack</a>.</p>
+
+<p><a name="android-library-projects"></a></p>
+
+<h2>Android 库项目</h2>
+
+<p>Unity interprets any folder that ends with <code>.androidlib</code> as an <a href="android-library-project-and-aar-plugins-introducing.html">Android Library Project</a>. For more information, see <a href="android-library-project-import.html">Import and Android Library Project</a>.</p>
+
+<p><a name="HiddenAssets"></a></p>
+
+<h2>Hidden Assets</h2>
+
+<p>在导入过程中，Unity 忽略 <strong>Assets</strong> 文件夹（或其子文件夹）中的以下文件和文件夹：</p>
+
+<ul>
+<li>隐藏的文件夹。</li>
+<li>以“<strong>.</strong>”开头的文件和文件夹。</li>
+<li>以“<strong>~</strong>”结尾的文件和文件夹。</li>
+<li>名为 <strong>cvs</strong> 的文件和文件夹。</li>
+<li>扩展名为 <strong>.tmp</strong> 的文件。</li>
+</ul>
+
+<p>这可以防止导入由操作系统或其他应用程序创建的特殊文件和临时文件。</p>
+<!-- area:authoring -->
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="AssetDatabaseBatching.html"></a></span><div class="tip">AssetDatabase 批处理</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ImportActivityWindow.html"></a></span><div class="tip">Import Activity window</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

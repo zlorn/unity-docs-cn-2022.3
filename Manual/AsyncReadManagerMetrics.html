@@ -1,0 +1,353 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="资源加载指标 - Unity 手册">
+<title>资源加载指标 - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="AsyncReadManagerMetrics 类用于监控运行时资源加载和文件读取性能。该类记录了有关由 AsyncReadManager 管理的所有文件读取操作的数据。">
+<meta property="og:description" content="AsyncReadManagerMetrics 类用于监控运行时资源加载和文件读取性能。该类记录了有关由 AsyncReadManager 管理的所有文件读取操作的数据。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'AsyncReadManagerMetrics';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/AsyncReadManagerMetrics.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/AsyncReadManagerMetrics.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/AsyncReadManagerMetrics.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/AsyncReadManagerMetrics.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/AsyncReadManagerMetrics.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/AsyncReadManagerMetrics.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/AsyncReadManagerMetrics.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/AsyncReadManagerMetrics.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/AsyncReadManagerMetrics.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/AsyncReadManagerMetrics.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/AsyncReadManagerMetrics.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/AsyncReadManagerMetrics.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/AsyncReadManagerMetrics.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/AsyncReadManagerMetrics.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/AsyncReadManagerMetrics.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/AsyncReadManagerMetrics.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/AsyncReadManagerMetrics.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/AsyncReadManagerMetrics.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/AsyncReadManagerMetrics.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/AsyncReadManagerMetrics.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/AsyncReadManagerMetrics.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/AsyncReadManagerMetrics.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/AsyncReadManagerMetrics.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/AsyncReadManagerMetrics.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/AsyncReadManagerMetrics.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/AsyncReadManagerMetrics.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/AsyncReadManagerMetrics.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/AsyncReadManagerMetrics.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/AsyncReadManagerMetrics.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/AsyncReadManagerMetrics.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/AsyncReadManagerMetrics.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/AsyncReadManagerMetrics.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/AsyncReadManagerMetrics.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/AsyncReadManagerMetrics.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/AsyncReadManagerMetrics.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/AsyncReadManagerMetrics.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/AsyncReadManagerMetrics.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/AsyncReadManagerMetrics.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/AsyncReadManagerMetrics.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/AsyncReadManagerMetrics.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/AsyncReadManagerMetrics.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/AsyncReadManagerMetrics.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/AsyncReadManagerMetrics.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/AsyncReadManagerMetrics.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/AsyncReadManagerMetrics.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/AsyncReadManagerMetrics.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/AsyncReadManagerMetrics.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/AsyncReadManagerMetrics.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/AsyncReadManagerMetrics.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/AsyncReadManagerMetrics.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/AsyncReadManagerMetrics.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/AsyncReadManagerMetrics.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/AsyncReadManagerMetrics.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/AsyncReadManagerMetrics.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/AsyncReadManagerMetrics.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/AsyncReadManagerMetrics.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/AsyncReadManagerMetrics.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/AsyncReadManagerMetrics.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UnityOverview.html">在 Unity 中操作</a></li>
+<li><a href="analysis.html">分析</a></li>
+<li>资源加载指标</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="BestPracticeUnderstandingPerformanceInUnity8.html"></a></span><div class="tip">特别优化</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="AssetWorkflow.html"></a></span><div class="tip">资源工作流程</div>
+</div>
+</div></div>
+<h1>资源加载指标</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p><a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics.html">AsyncReadManagerMetrics</a> 类用于监控运行时资源加载和文件读取性能。该类记录了有关由 <a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.AsyncReadManager.html">AsyncReadManager</a> 管理的所有文件读取操作的数据。</p>
+
+<p>Unity 引擎使用 <a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.AsyncReadManager.html">AsyncReadManager</a> 在运行时读取大多数文件。使用 AsyncReadManager 加载的文件包括 AssetBundles、Addressables 和 Resources。此外，您可以使用 <a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.AsyncReadManager.Read.html">AsyncReadManager.Read</a> 从脚本加载文件。</p>
+
+<p><a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics.html">AsyncReadManagerMetrics</a> 类允许您启用指标收集并检索记录的指标数据。您还可以过滤和汇总记录的数据以帮助您进行分析。该指标信息可帮助您识别涉及资源加载的问题区域，并衡量您的更改对资源加载性能的影响。</p>
+
+<p><a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics.html">AsyncReadManagerMetrics</a> 类<em>仅</em>在开发版中提供。您必须将任何对 AsyncReadManagerMetrics API 的调用保护在使用 <code>ENABLE_PROFILER</code> 符号的 #if 预处理器指令内。<code>ENABLE_PROFILER</code> 符号仅针对开发版定义，这可使您的脚本在指标不可用的版本中编译。为了向后兼容，您还可以使用 <code>UNITY_2020_2_OR_NEWER</code> 符号从早期版本的 Unity 中去除指标代码。例如：</p>
+
+<pre><code class="lang-cs"># if ENABLE_PROFILER &amp;&amp; UNITY_2020_2_OR_NEWER
+    AsyncReadManagerMetrics.StartCollectingMetrics();
+# endif
+</code></pre>
+
+<h2>启用指标收集</h2>
+
+<p>您必须启用指标收集才能开始记录数据。使用以下方法之一启用指标收集：</p>
+
+<ul>
+<li>调用 <a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics.StartCollectingMetrics.html">AsyncReadManagerMetrics.StartCollectingMetrics</a>
+*启动应用程序时传递命令行参数 <strong>-enable-file-read-metrics</strong>
+</li>
+</ul>
+
+<p><strong>注意：</strong> 启动 Unity 编辑器应用程序时，您可以通过传递 <strong>-enable-file-read-metrics</strong> 在进入运行模式时启用收集。但是，编辑器本身会加载某些类别的资源（如纹理），并且不会在您进入运行模式时重新加载它们。要全面了解文件 IO 指标，您必须从应用程序的开发版中收集数据。</p>
+
+<h2>获取指标数据</h2>
+
+<p>通过调用 <a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics.GetMetrics.html">GetMetrics</a> 检索由 <a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics.html">AsyncReadManagerMetrics</a> 类收集的指标。向此函数传递 <a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics.Flags.html">AsyncReadManagerMetrics.Flags</a> 指定是否在检索后清除指标。清除指标会将所有已完成（包括取消和失败）的读取从存储的指标中删除。清除不会影响任何排队中或进行中的操作；您可以之后通过再次调用 <a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics.GetMetrics.html">GetMetrics</a> 获取未完成操作的指标。通过定期清除指标，您可以避免重复读取相同的数据，还可以减少系统的数据开销。</p>
+
+<pre><code class="lang-cs"># if ENABLE_PROFILER &amp;&amp; UNITY_2020_2_OR_NEWER
+    AsyncReadManagerRequestMetric[] metrics 
+        = AsyncReadManagerMetrics.GetMetrics(AsyncReadManagerMetrics.Flags.ClearOnRead);
+# endif
+
+</code></pre>
+
+<p>指标数据会尽可能包括有关读取操作的上下文信息。这些信息包括：请求该读取操作的 <a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.AssetLoadingSubsystem.html">AssetLoadingSubsystem</a>、<a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.AsyncReadManagerRequestMetric.AssetName.html">AssetName</a> 以及 <a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.AsyncReadManagerRequestMetric.AssetTypeId.html">AssetTypeID</a>。当 AsyncReadManager 无权访问此信息时，这些指标字段的值分别为：<a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.AssetLoadingSubsystem.Other.html">Other</a>、空值和 0。</p>
+
+<p>__注意：__目前已知支持的资源 TypeID 如下表所示。对于可能出现的其他 TypeID，请参阅 <a href="ClassIDReference.html">YAML 类 ID 参考</a>。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">TypeID</th>
+	<th style="text-align:left;">类型名</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">28</td>
+	<td style="text-align:left;">Texture2D</td>
+</tr>
+<tr>
+	<td style="text-align:left;">117</td>
+	<td style="text-align:left;">Texture3D</td>
+</tr>
+<tr>
+	<td style="text-align:left;">89</td>
+	<td style="text-align:left;">CubeMap</td>
+</tr>
+<tr>
+	<td style="text-align:left;">43</td>
+	<td style="text-align:left;">Mesh</td>
+</tr>
+</tbody>
+</table>
+
+<h2>获取汇总数据</h2>
+
+<p>您可以使用以下方法获取 AsyncReadManager 指标的汇总：</p>
+
+<ul>
+<li>
+<a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics.GetCurrentSummaryMetrics.html">GetCurrentSummaryMetrics</a> – 返回自上次清除指标存储以来收集的所有指标的汇总。</li>
+<li>
+<a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics.GetSummaryOfMetrics.html">GetSummaryOfMetrics</a> – 返回一个包含指标汇总的 <a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.AsyncReadManagerRequestMetric.html">AsyncReadManagerRequestMetric</a> 数组，该数组可通过调用 <a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics.GetMetrics.html">GetMetrics</a> 获得。</li>
+</ul>
+
+<p>例如：</p>
+
+<pre><code class="lang-cs"># if ENABLE_PROFILER &amp;&amp; UNITY_2020_2_OR_NEWER
+    AsyncReadManagerSummaryMetrics summaryOfMetrics 
+        = AsyncReadManagerMetrics.GetCurrentSummaryMetrics(AsyncReadManagerMetrics.Flags.ClearOnRead);
+# endif
+</code></pre>
+
+<p>或者：</p>
+
+<pre><code class="lang-cs"># if ENABLE_PROFILER &amp;&amp; UNITY_2020_2_OR_NEWER
+    AsyncReadManagerRequestMetric[] metrics 
+        = AsyncReadManagerMetrics.GetMetrics(AsyncReadManagerMetrics.Flags.ClearOnRead);
+    AsyncReadManagerSummaryMetrics summaryOfMetrics 
+        = AsyncReadManagerMetrics.GetSummaryOfMetrics(metrics);
+# endif
+</code></pre>
+
+<p>指标的汇总数据包括以下统计信息：</p>
+
+<ul>
+<li>平均带宽</li>
+<li>平均读取大小</li>
+<li>加载时间最长的资源类型</li>
+<li>读取数</li>
+<li>请求数</li>
+<li>读取的总字节数</li>
+</ul>
+
+<p>（请参阅 <a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.AsyncReadManagerSummaryMetrics.html">AsyncReadManagerSummaryMetrics</a> 获取完整列表。）</p>
+
+<p>默认情况下，汇总统计信息包括所有读取操作，其中包含排队中或进行中的读取操作。您可以使用过滤器将汇总限制为您特别感兴趣的那些操作。例如，您可以使用过滤器将汇总统计数据限制为已完成的纹理资源读取操作。</p>
+
+<p><strong>注意：</strong> 计算汇总统计确实需要处理资源。为了防止这些计算改变您正在记录的测量值，您可以先收集指标，然后在您分析的操作完成后才获取汇总。</p>
+
+<h3>汇总过滤器</h3>
+
+<p>通过下列方式之一使用 <a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetricsFilters.html">AsyncReadManagerMetricsFilters</a> 可指定要汇总的数据类型。任何与过滤器不匹配的指标都将从汇总中排除。您可以使用以下类别进行过滤：</p>
+
+<ul>
+<li>资源类型（按 <a href="ClassIDReference.html">YAML ID</a>）
+*<a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.ProcessingState.html"> 处理状态</a>（读取操作是否排队、读取、完成等）</li>
+<li>
+<a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.FileReadType.html">读取类型</a>（异步或同步）</li>
+<li>
+<a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.Priority.html">优先级</a>（高或低）</li>
+<li>子系统 (<a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.AssetLoadingSubsystem.html">AssetLoadingSubsystem</a>)</li>
+</ul>
+
+<p>您可以为同一个过滤器设置多个类别。读取操作必须匹配所有类别才能使其指标包含在汇总中。例如，您可以为一个过滤器指定 <a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.ProcessingState.html">ProcessingState</a> 和 <a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.AssetLoadingSubsystem.html">Subsystem</a> 值，仅汇总由指定子系统启动、处于指定处理状态中的操作。</p>
+
+<p>您还可以为一个类别指定多个值。在这种情况下，读取操作可以匹配为该类别指定的任何值，使其指标包含在汇总中。例如，您可以为 <a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.AssetLoadingSubsystem.html">Subsystem</a> 类别指定 <a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.AssetLoadingSubsystem.Mesh.html">Mesh</a> 和 <a href="../ScriptReference/Unity.IO.LowLevel.Unsafe.AssetLoadingSubsystem.Texture.html">Texture</a>，汇总网格和纹理资源的操作。</p>
+<!-- area:scripting -->
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="BestPracticeUnderstandingPerformanceInUnity8.html"></a></span><div class="tip">特别优化</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="AssetWorkflow.html"></a></span><div class="tip">资源工作流程</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

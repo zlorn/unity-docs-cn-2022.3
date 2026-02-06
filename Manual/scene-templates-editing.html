@@ -1,0 +1,388 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="编辑场景模板 - Unity 手册">
+<title>编辑场景模板 - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/scene-template-inspector.png">
+<meta name="description" content="要编辑场景模板，请在 Project 窗口中选择该模板，然后在 Inspector 窗口中将其打开。">
+<meta property="og:description" content="要编辑场景模板，请在 Project 窗口中选择该模板，然后在 Inspector 窗口中将其打开。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'scene-templates-editing';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/scene-templates-editing.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/scene-templates-editing.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/scene-templates-editing.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/scene-templates-editing.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/scene-templates-editing.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/scene-templates-editing.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/scene-templates-editing.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/scene-templates-editing.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/scene-templates-editing.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/scene-templates-editing.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/scene-templates-editing.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/scene-templates-editing.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/scene-templates-editing.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/scene-templates-editing.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/scene-templates-editing.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/scene-templates-editing.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/scene-templates-editing.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/scene-templates-editing.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/scene-templates-editing.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/scene-templates-editing.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/scene-templates-editing.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/scene-templates-editing.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/scene-templates-editing.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/scene-templates-editing.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/scene-templates-editing.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/scene-templates-editing.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/scene-templates-editing.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/scene-templates-editing.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/scene-templates-editing.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/scene-templates-editing.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/scene-templates-editing.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/scene-templates-editing.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/scene-templates-editing.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/scene-templates-editing.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/scene-templates-editing.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/scene-templates-editing.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/scene-templates-editing.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/scene-templates-editing.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/scene-templates-editing.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/scene-templates-editing.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/scene-templates-editing.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/scene-templates-editing.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/scene-templates-editing.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/scene-templates-editing.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/scene-templates-editing.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/scene-templates-editing.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/scene-templates-editing.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/scene-templates-editing.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/scene-templates-editing.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/scene-templates-editing.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/scene-templates-editing.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/scene-templates-editing.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/scene-templates-editing.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/scene-templates-editing.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/scene-templates-editing.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/scene-templates-editing.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/scene-templates-editing.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/scene-templates-editing.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UnityOverview.html">在 Unity 中操作</a></li>
+<li><a href="CreatingGameplay.html">Create Gameplay</a></li>
+<li><a href="CreatingScenes.html">场景</a></li>
+<li><a href="scene-templates.html">场景模板</a></li>
+<li>编辑场景模板</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="scene-templates-creating.html"></a></span><div class="tip">创建场景模板</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="scene-templates-customizing-scene-instantiation.html"></a></span><div class="tip">自定义新场景创建</div>
+</div>
+</div></div>
+<h1>编辑场景模板</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>要编辑场景模板，请在 <a href="https://docs.unity3d.com/Manual/ProjectView.html">Project 窗口</a>中选择该模板，然后在 <a href="https://docs.unity3d.com/Manual/UsingTheInspector.html">Inspector 窗口</a>中将其打开。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>注意：</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">When you first create an <a href="scene-templates-creating.html#creating-an-empty-scene-template">empty scene template</a>, you must edit its properties to associate it with a scene before you can use it. Templates that you create from the active scene, or an existing scene asset, have some properties set by default.</td>
+</tr>
+</tbody>
+</table>
+
+<p><img src="../uploads/Main/scene-template-inspector.png" alt="场景模板 Inspector"><br><em>场景模板 Inspector</em></p>
+
+<p>场景模板 Inspector 包含以下部分：</p>
+
+<ol>
+<li>
+<strong><a href="#details">Details</a></strong>：指定模板使用哪个场景，并包含模板的描述，该内容将出现在 New Scene 对话框中。</li>
+<li>
+<strong><a href="#thumbnail">Thumbnail</a></strong>：提供用于为模板创建预览图像的选项。</li>
+<li>
+<strong><a href="#scene-template-pipeline">Scene Template Pipeline</a></strong>：指定在 Unity 从模板创建新场景时运行的可选自定义脚本。</li>
+<li>
+<strong><a href="#dependencies">Dependencies</a></strong>：列出模板场景的依赖项，并指定 Unity 在从模板创建新场景时是否克隆它们。</li>
+</ol>
+
+<p><a name="details"></a></p>
+
+<h3>详细信息</h3>
+
+<p>使用 Details 部分指定要用于模板的场景，并控制模板在 <a href="CreatingScenes.html#new-scene-dialog">New Scene 对话框</a> 中如何显示。</p>
+
+<p><img src="../uploads/Main/scene-template-inspector-details.png" alt=""><br></p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"><strong>属性：</strong></th>
+	<th style="text-align:left;"><strong>描述：</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Template Scene</strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">指定要用作模板的场景。可以是项目中的任何场景。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Title</strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">模板的名称。您在此处输入的名称将出现在 <a href="CreatingScenes.html#new-scene-dialog">New Scene 对话框</a>中。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>描述</strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">模板的描述。您在此处输入的描述将出现在 <a href="CreatingScenes.html#new-scene-dialog">New Scene 对话框</a>中。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Pin in New Scene Dialog</strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">控制此模板是否在 <a href="CreatingScenes.html#new-scene-dialog">New Scene 对话框</a> 中固定。<br><br>固定模板始终显示在 <strong>Scene Templates in Project</strong> 列表的顶部。</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="thumbnail"></a></p>
+
+<h3>缩略图</h3>
+
+<p>Thumbnail 部分包含用于为模板创建预览图像的选项。预览图像将出现在 New Scene 对话框中。</p>
+
+<p><img src="../uploads/Main/scene-template-inspector-thumbnail.png" alt="场景模板 Inspector"><br></p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"><strong>属性：</strong></th>
+	<th style="text-align:left;"><strong>描述：</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Texture</strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">指定要用作此模板缩略图的纹理资源。项目中的任何纹理资源均可使用。<br><br>如果您不分配纹理，模板将使用默认场景模板资源图标。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><em>[缩略图预览]</em></strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">显示模板的缩略图纹理（如果有）。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Snapshot</strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">提供用于为此模板捕获缩略图的选项。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">View</td>
+	<td style="text-align:left;">指定捕获 <strong>Main Camera</strong> 视图还是 <strong>Game 视图</strong>。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Take Snapshot</td>
+	<td style="text-align:left;">单击此按钮可捕获选定的<strong>视图</strong>。</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="scene-template-pipeline"></a></p>
+
+<h3>场景模板管线</h3>
+
+<p>使用这些属性可将一个<strong>场景模板管线</strong>脚本添加到此模板。</p>
+
+<p><img src="../uploads/Main/scene-template-inspector-pipeline.png" alt=""><br></p>
+
+<p>场景模板管线脚本可让您在从模板创建新场景时执行自定义代码。请参阅<a href="scene-templates-customizing-scene-instantiation.html">自定义新场景创建</a>。</p>
+
+<p><a name="dependencies"></a></p>
+
+<h3>依赖项</h3>
+
+<p>本部分列出了模板场景的所有<strong>依赖项</strong>。您可以指定<a href="scenes-working-with.html">从模板创建一个新场景</a>时是否<strong>克隆</strong>每一个依赖项。</p>
+
+<p>To search for a dependency by name, enter text in the search bar.</p>
+
+<p>To sort the <strong>Dependencies</strong> list:</p>
+
+<ul>
+<li>Click the <strong>Dependencies</strong> heading to sort by the name of the dependency in alphabetical order.</li>
+<li>Click the <strong>Type</strong> heading to sort by the dependency Type.</li>
+<li>Click the <strong>Clone</strong> heading to sort by dependencies that are cloned and not cloned.</li>
+</ul>
+
+<p><img src="../uploads/Main/Scene-template-inspector-dependencies.png" alt=""><br></p>
+
+<p>For each dependency in the list, toggle the <strong>Clone</strong> option on to clone the dependency, or off to reference the dependency. When you clone a dependency, you create a copy. When you reference a dependency, all changes made to the original will affect the dependency.</p>
+
+<p>当您从模板创建新场景时，Unity 会检查模板场景是否具有可克隆的依赖项。如果有，Unity 会创建一个与新场景同名的文件夹，并将所有克隆的依赖项放在该文件夹中。</p>
+
+<p>有关克隆和引用的依赖项的更多信息，请参阅<a href="scene-templates.html#templates-and-scene-dependencies">模板和场景依赖项</a>。</p>
+
+<p>要指定默认情况下 Unity 克隆的资源类型，请编辑<a href="scene-templates-settings.html">场景模板项目设置</a>。</p>
+
+<hr>
+<!-- area:authoring -->
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="scene-templates-creating.html"></a></span><div class="tip">创建场景模板</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="scene-templates-customizing-scene-instantiation.html"></a></span><div class="tip">自定义新场景创建</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

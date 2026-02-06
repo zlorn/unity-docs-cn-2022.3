@@ -1,0 +1,342 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Unity 中的 .NET 概述 - Unity 手册">
+<title>Unity 中的 .NET 概述 - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/unity-engine-object.png">
+<meta name="description" content="Unity uses the open-source .NET platform to ensure that applications you make with Unity can run on a wide variety of different hardware configurations. The .NET platform supports a range of languages and API libraries.">
+<meta property="og:description" content="Unity uses the open-source .NET platform to ensure that applications you make with Unity can run on a wide variety of different hardware configurations. The .NET platform supports a range of languages and API libraries.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'overview-of-dot-net-in-unity';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/overview-of-dot-net-in-unity.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/overview-of-dot-net-in-unity.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/overview-of-dot-net-in-unity.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/overview-of-dot-net-in-unity.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/overview-of-dot-net-in-unity.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/overview-of-dot-net-in-unity.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/overview-of-dot-net-in-unity.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/overview-of-dot-net-in-unity.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/overview-of-dot-net-in-unity.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/overview-of-dot-net-in-unity.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/overview-of-dot-net-in-unity.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/overview-of-dot-net-in-unity.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/overview-of-dot-net-in-unity.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/overview-of-dot-net-in-unity.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/overview-of-dot-net-in-unity.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/overview-of-dot-net-in-unity.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/overview-of-dot-net-in-unity.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/overview-of-dot-net-in-unity.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/overview-of-dot-net-in-unity.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/overview-of-dot-net-in-unity.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/overview-of-dot-net-in-unity.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/overview-of-dot-net-in-unity.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/overview-of-dot-net-in-unity.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/overview-of-dot-net-in-unity.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/overview-of-dot-net-in-unity.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/overview-of-dot-net-in-unity.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/overview-of-dot-net-in-unity.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/overview-of-dot-net-in-unity.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/overview-of-dot-net-in-unity.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/overview-of-dot-net-in-unity.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/overview-of-dot-net-in-unity.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/overview-of-dot-net-in-unity.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/overview-of-dot-net-in-unity.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/overview-of-dot-net-in-unity.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/overview-of-dot-net-in-unity.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/overview-of-dot-net-in-unity.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/overview-of-dot-net-in-unity.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/overview-of-dot-net-in-unity.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/overview-of-dot-net-in-unity.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/overview-of-dot-net-in-unity.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/overview-of-dot-net-in-unity.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/overview-of-dot-net-in-unity.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/overview-of-dot-net-in-unity.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/overview-of-dot-net-in-unity.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/overview-of-dot-net-in-unity.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/overview-of-dot-net-in-unity.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/overview-of-dot-net-in-unity.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/overview-of-dot-net-in-unity.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/overview-of-dot-net-in-unity.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/overview-of-dot-net-in-unity.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/overview-of-dot-net-in-unity.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/overview-of-dot-net-in-unity.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/overview-of-dot-net-in-unity.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/overview-of-dot-net-in-unity.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/overview-of-dot-net-in-unity.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/overview-of-dot-net-in-unity.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/overview-of-dot-net-in-unity.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/overview-of-dot-net-in-unity.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="ScriptingSection.html">脚本</a></li>
+<li><a href="unity-architecture.html">Unity 架构</a></li>
+<li>Unity 中的 .NET 概述</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="unity-architecture.html"></a></span><div class="tip">Unity 架构</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="dotnetProfileSupport.html"></a></span><div class="tip">.NET 配置文件支持</div>
+</div>
+</div></div>
+<h1>Unity 中的 .NET 概述</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Unity uses the open-source .NET platform to ensure that applications you make with Unity can run on a wide variety of different hardware configurations. The .NET platform supports a range of languages and API libraries.</p>
+
+<h2>脚本后端</h2>
+
+<p>Unity has two scripting backends; Mono, and <a href="IL2CPP.html">IL2CPP</a> (Intermediate Language To C++), each of which uses a different compilation technique:</p>
+
+<ul>
+<li>Mono 使用即时 (JIT) 编译，在运行时按需编译代码。</li>
+<li>IL2CPP uses ahead-of-time (AOT) compilation and compiles your entire application before it runs.</li>
+</ul>
+
+<p>The benefit of using a JIT-based scripting backend is that the compilation time is typically much faster than AOT.</p>
+
+<p>By default, Unity uses the Mono backend on platforms that support Mono. When you build a player for your application, you can choose which scripting backend to use. To do this through the Editor, go to <strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Player</strong>, open the <strong>Other Settings</strong> panel, then click on the <strong>Scripting Backend</strong> dropdown and select which backend you want. For more information, see <a href="scripting-backends.html">Scripting backends</a>.</p>
+
+<h2>托管代码剥离</h2>
+
+<p>When you build an application, Unity compiles and then searches the assemblies (.DLLs) in your project to detect and remove unused code. This process of stripping code reduces the final binary size of your build, but increases build time.</p>
+
+<p>Code stripping is disabled by default when you use Mono but code stripping can’t be disabled for IL2CPP. You can control how much code Unity strips with the <strong>Managed Stripping Level</strong> property.</p>
+
+<p>To change this property, go to <strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Player</strong>, open the <strong>Other Settings</strong> panel, then click on the <strong>Managed Stripping Level</strong> dropdown and select a stripping level.</p>
+
+<p>As you increase the <strong>Managed Stripping Level</strong>, Unity removes more code. This increases the risk that Unity might remove code that your application relies on, especially if you use reflection or generate code at runtime.</p>
+
+<p>You can use annotations on certain elements of your code to prevent Unity from stripping it. For more information, see <a href="ManagedCodeStripping.html">Managed Code Stripping</a>.</p>
+
+<h2>垃圾收集</h2>
+
+<p>Unity uses the <a href="https://en.wikipedia.org/wiki/Boehm_garbage_collector">Boehm garbage collector</a> for both the Mono and IL2CPP backends. Unity uses the <strong>Incremental</strong> mode by default. You can disable the <strong>Incremental</strong> mode to use stop-the-world garbage collection, although Unity recommends the <strong>Incremental</strong> mode.</p>
+
+<p>To toggle between Incremental mode and stop-the-world, go to <strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Player</strong>, open the <strong>Other Settings</strong> panel and click on the <strong>Use incremental GC</strong> checkbox. In <strong>Incremental</strong> mode, Unity’s garbage collector only runs for a limited period of time and doesn’t necessarily collect all objects in one pass. This spreads the time it takes to collect objects over multiple frames and reduces stuttering and CPU spikes. For more information, see <a href="performance-managed-memory.html">Managed memory</a>.</p>
+
+<p>To check the number of allocations and possible CPU spikes in your application, use the <a href="Profiler.html">Unity Profiler</a>. You can also use the <a href="../ScriptReference/Scripting.GarbageCollector.html">GarbageCollector</a> API to completely disable garbage collection in Players. When the collector is disabled, be careful to avoid allocating excess memory.</p>
+
+<h2>.NET 系统库</h2>
+
+<p>Unity supports many platforms and might use different scripting backends depending on the platform. The .NET system libraries require platform-specific implementations to work correctly in some cases. While Unity tries its best to support as much of the .NET ecosystem as possible, there are some exceptions to parts of the .NET system libraries that Unity explicitly doesn’t support.</p>
+
+<p>Unity makes no performance or allocation guarantees for the .NET system libraries across Unity versions. Generally, Unity doesn’t fix any performance regressions in the .NET system libraries.</p>
+
+<p>Unity doesn’t support the System.Drawing library and it isn’t guaranteed to work on all platforms.</p>
+
+<p>The JIT compilation that the Mono scripting backend uses enables you to emit dynamic C#/.NET Intermediate Language (IL) code generation during the runtime of your application. The AOT compilation that the IL2CPP scripting backend uses doesn’t support dynamic code generation.</p>
+
+<p>This is important to consider when you use third-party libraries, because they might have different code paths for JIT and AOT, or they might use code paths that rely on dynamically generated code. For more information on how to generate code at runtime, see Microsoft’s <a href="https://docs.microsoft.com/en-us/dotnet/api/system.reflection.emit.modulebuilder?view=netcore-3.1">ModuleBuilder</a> documentation.</p>
+
+<p>Although Unity supports multiple .NET API profiles, you should use the .NET Standard <a href="../ScriptReference/ApiCompatibilityLevel.html">API Compatibility Level</a> for all new projects for the following reasons:</p>
+
+<ul>
+<li>.NET Standard is a smaller API surface and so has a smaller implementation. This reduces the size of your final executable file.</li>
+<li>.NET Standard has better cross-platform support, so your code is more likely to work across all platforms.</li>
+<li>All .NET runtimes support .NET Standard, so your code works across more VM/runtime environments (for example, .NET Framework. .NET Core, Xamarin, Unity) when you use .NET Standard.</li>
+<li>.NET Standard moves more errors to compile time. A number of APIs in .NET Framework are available at compile time, but have implementations on some platforms that throw an exception at runtime.</li>
+</ul>
+
+<p>Other profiles can be useful if, for example, you need to provide support for an older existing application. To change the <strong>Api Compatibility Level</strong> setting, go to <strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Player</strong>. Under the <strong>Other Settings</strong> heading, set the <strong>Api Compatibility Level</strong> to the desired setting.</p>
+
+<p>For more information, see <a href="dotnetProfileSupport.html">.NET Profile Support</a>.</p>
+
+<h2>使用第三方 .NET 库</h2>
+
+<p>应该只使用在各种 Unity 配置和平台上经过广泛测试的第三方 .NET 库。</p>
+
+<p>The performance characteristics of JIT and AOT code paths in third-party libraries might be significantly different. AOT generally reduces startup times and is suited to larger applications for this reason but increases the binary file size to accommodate the compiled code. AOT also takes longer to build during development.</p>
+
+<p>JIT adjusts at runtime based on the platform it’s running on, which can increase running performance at the cost of a potentially longer application startup time. As such, you should profile your application in both the Editor, and on your target platform. For more information, see <a href="Profiler.html">Profiler overview</a>.</p>
+
+<p>You should profile the usage of your .NET system libraries on all target platforms because their performance characteristics might vary depending on the scripting backends, .NET versions, and profiles you use.</p>
+
+<p>查看第三方库时，请考虑以下方面：</p>
+
+<ul>
+<li>兼容性：第三方库可能与某些 Unity 平台和脚本后端不兼容。</li>
+<li>性能：与其他 .NET 运行时相比，第三方库在 Unity 中可能具有截然不同的性能特征。</li>
+<li>AOT 二进制文件大小：由于库使用的依赖项数量，第三方库可能会显著增大 AOT 二进制文件大小。</li>
+</ul>
+
+<h2>C# 反射开销</h2>
+
+<p>Mono and IL2CPP internally cache all C# reflection (System.Reflection) objects and by design, Unity doesn’t garbage collect them. The result of this behavior is that the garbage collector continuously scans the cached C# reflection objects during the lifetime of your application, which causes unnecessary and potentially significant garbage collector overhead.</p>
+
+<p>要最大程度减少垃圾回收器开销，请在应用程序中避免使用诸如 <a href="https://docs.microsoft.com/en-us/dotnet/api/system.reflection.assembly.gettypes">Assembly.GetTypes</a> 和 <a href="https://docs.microsoft.com/en-us/dotnet/api/system.type.getmethods">Type.GetMethods()</a> 等方法，这些方法会在运行时创建许多 C# 反射对象。而是应该在编辑器中扫描程序集以获取所需数据，并进行序列化和/或代码生成以在运行时使用。</p>
+
+<h2>UnityEngine.Object 特殊行为</h2>
+
+<p><a href="class-Object.html">UnityEngine.Object</a> is a special type of C# object in Unity, because it’s linked to a native C++ counterpart object. For example, when you use a <a href="../ScriptReference/Camera.html">Camera</a> component, Unity stores the state of the object on the object’s native C++ counterpart, not on the C# object itself.</p>
+
+<figure>
+<img src="../uploads/Main/unity-engine-object.png" alt="">
+</figure>
+
+<p>Unity doesn’t currently support the use of the C# WeakReference class with instances of UnityEngine.Object. For this reason, you shouldn’t use a WeakReference to reference a loaded asset. See Microsoft’s <a href="https://docs.microsoft.com/en-us/dotnet/api/system.weakreference?view=netcore-3.1">WeakReference documentation</a> for more information on the WeakReference class.</p>
+
+<h3>Unity C# 和 Unity C++ 共享 UnityEngine 对象</h3>
+
+<p>When you use a method such as <a href="../ScriptReference/Object.Destroy.html">Object.Destroy</a> or <a href="../ScriptReference/Object.DestroyImmediate.html">Object.DestroyImmediate</a> to destroy a UnityEngine.Object derived object, Unity destroys (unloads) the native counter object. You can’t destroy the C# object with an explicit call, because the garbage collector manages the memory. Once there are no longer any references to the managed object, the garbage collector collects and destroys it.</p>
+
+<p>If your application tries to access a destroyed UnityEngine.Object again, Unity recreates the native counterpart object for most types. Two exceptions to this recreation behavior are <a href="../ScriptReference/MonoBehaviour.html">MonoBehaviour</a> and <a href="ScriptableObject">ScriptableObject</a>: Unity never reloads them once they have been destroyed.</p>
+
+<p>MonoBehaviour and ScriptableObject override the equality (==) and inequality (!=) operators. If you compare a destroyed MonoBehaviour or ScriptableObject against <code>null</code>, the operators return true when the managed object still exists and hasn’t yet been garbage collected.</p>
+
+<p>Because you can’t overload the ?? and ?. operators, they aren’t compatible with objects that derive from UnityEngine.Object. The operators don’t return the same results as the equality and inequality operators when you use them on a destroyed MonoBehaviour or ScriptableObject while the managed object still exists.</p>
+
+<h2>Limitations of async and await tasks</h2>
+
+<p>The Unity API isn’t thread safe and therefore, you should only use async and await tasks from inside the UnitySynchronizationContext. Async tasks often allocate objects when invoked, which might cause performance issues if you overuse them. </p>
+
+<p>Unity overwrites the default <a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2011/february/msdn-magazine-parallel-computing-it-s-all-about-the-synchronizationcontext">SynchronizationContext</a> with a custom <a href="https://github.com/Unity-Technologies/UnityCsReference/blob/master/Runtime/Export/Scripting/UnitySynchronizationContext.cs">UnitySynchronizationContext</a> and runs all the tasks on the main thread in both <strong>Edit</strong> and <strong>Play</strong> modes by default. To use async tasks, you must manually create and handle your own threads with the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.run?view=net-5.0">Task.Run</a> API, and use the default SynchronizationContext instead of the Unity version.</p>
+
+<p>Unity doesn’t automatically stop async tasks that run on managed threads when you exit Play mode. To listen for enter and exit Play mode events to stop the tasks manually, use <a href="../ScriptReference/EditorApplication.playModeStateChanged.html">EditorApplication.playModeStateChanged</a>. If you take this approach, most of the Unity scripting APIs aren’t available to use unless you migrate the context back to the UnitySynchronizationContext.</p>
+
+<p>In development builds, Unity displays the following error message if you try to use Unity APIs in multithreaded code:</p>
+
+<pre><code class="lang-csharp">
+UnityException: Internal_CreateGameObject can only be called from the main thread. \
+
+Constructors and field initializers will be executed from the loading thread when loading a scene. \
+
+Don't use this function in the constructor or field initializers, instead move initialization code to the Awake or Start function.
+
+</code></pre>
+
+<p>For performance reasons, Unity doesn’t perform checks for multithreaded behavior in non-development builds and doesn’t display this error in live builds. This means that while Unity doesn’t prevent execution of multithreaded code on live builds, random crashes and other unpredictable errors are likely if you do use multiple threads. </p>
+
+<p>For this reason, you shouldn’t use your own multithreading and instead use Unity’s <a href="JobSystem.html">job system</a>. The job system uses multiple threads safely to execute jobs in parallel and achieve the performance benefits of multithreading. For more information, see <a href="JobSystemOverview.html">Job system overview</a>.</p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="unity-architecture.html"></a></span><div class="tip">Unity 架构</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="dotnetProfileSupport.html"></a></span><div class="tip">.NET 配置文件支持</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

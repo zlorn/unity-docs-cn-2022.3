@@ -1,0 +1,369 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Introduction to font assets - Unity 手册">
+<title>Introduction to font assets - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/font/FontAsssetBMPRaster.png">
+<meta name="description" content="Font assets act as containers for fonts. With font assets, you can import fonts into your projects and create variations of a font from one file and not change the original font. Another reason to create font asset is to deal with languages with massive character sets, such as Chinese. You can include only the characters you need, rather than the full set of characters.">
+<meta property="og:description" content="Font assets act as containers for fonts. With font assets, you can import fonts into your projects and create variations of a font from one file and not change the original font. Another reason to create font asset is to deal with languages with massive character sets, such as Chinese. You can include only the characters you need, rather than the full set of characters.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'UIE-font-asset';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/UIE-font-asset.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/UIE-font-asset.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/UIE-font-asset.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/UIE-font-asset.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/UIE-font-asset.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/UIE-font-asset.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIE-font-asset.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIE-font-asset.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIE-font-asset.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIE-font-asset.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-font-asset.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-font-asset.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-font-asset.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-font-asset.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-font-asset.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-font-asset.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-font-asset.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-font-asset.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-font-asset.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-font-asset.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-font-asset.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-font-asset.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-font-asset.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-font-asset.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-font-asset.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-font-asset.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-font-asset.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-font-asset.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-font-asset.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-font-asset.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/UIE-font-asset.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/UIE-font-asset.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/UIE-font-asset.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/UIE-font-asset.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIE-font-asset.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIE-font-asset.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIE-font-asset.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIE-font-asset.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-font-asset.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-font-asset.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-font-asset.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-font-asset.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-font-asset.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-font-asset.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-font-asset.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-font-asset.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-font-asset.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-font-asset.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-font-asset.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-font-asset.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-font-asset.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-font-asset.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-font-asset.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-font-asset.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-font-asset.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-font-asset.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-font-asset.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-font-asset.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UIToolkits.html">Create user interfaces (UI)</a></li>
+<li><a href="UIElements.html">UI 工具包</a></li>
+<li><a href="UIE-work-with-text.html">Work with text</a></li>
+<li><a href="UIE-font-asset-landing.html">Font assets</a></li>
+<li>Introduction to font assets</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-font-asset-landing.html"></a></span><div class="tip">Font assets</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-font-asset-properties.html"></a></span><div class="tip">Font Asset properties reference</div>
+</div>
+</div></div>
+<h1>Introduction to font assets</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Font assets act as containers for fonts. With font assets, you can import fonts into your projects and create variations of a font from one file and not change the original font. Another reason to create font asset is to deal with languages with massive character sets, such as Chinese. You can include only the characters you need, rather than the full set of characters.</p>
+
+<p>You can convert TrueType (<code>.ttf</code>), OpenType (<code>.otf</code>), or TrueType Collection(<code>.ttc</code>) fonts to font assets. A font asset includes a font atlas texture file that contains all of the characters. There are several <a href="#atlas-population-modes">atlas populate modes</a> and <a href="#atlas-render-modes">render modes</a> to choose when you create a font asset. </p>
+
+<p><a name="atlas-population-modes"></a></p>
+
+<h2>Atlas population modes</h2>
+
+<p>TextCore supports the <strong>Static</strong>, <strong>Dynamic</strong>, and <strong>Dynamic OS</strong> atlas population modes.</p>
+
+<h3>Static font asset</h3>
+
+<p>Static font assets pre-bake characters into the atlas texture during conversion. Use static font assets to contain known text in your project, such as labels and section titles. When you create a static font asset, the font atlas is empty by default. You must manually generate the font atlas and include all the characters required for the project. The project build doesn’t require you to include the font source file, so it’s fast and efficient.</p>
+
+<p>See instructions on how to <a href="UIE-get-started-with-text.html#create-a-static-font-asset">create a Static font asset</a>.</p>
+
+<h3>Dynamic font asset</h3>
+
+<p>Dynamic font assets start with an empty atlas texture. Dynamic font assets look for characters in the source font file and adds the characters dynamically as you use them in a UI. Use Dynamic font assets for unknown text in your project, such as any text input fields. Dynamic fonts assets are flexible, but they have additional performance overhead because the project build requires to include all source font files.</p>
+
+<p>See instructions on how to <a href="UIE-get-started-with-text.html#create-a-dynamic-font-asset">create a Dynamic font asset</a>.</p>
+
+<h3>Dynamic OS font asset</h3>
+
+<p>Dynamic OS font assets are a dynamic font asset that references the font file on the operating system instead of the source font file. Compared to the Dynamic font asset, dynamic OS font assets have less memory overhead. The project build doesn’t require to include the font source files. Make sure that the fonts are on the operating system of the targeted platforms. Dynamic OS font assets are great candidates for fallback font assets.</p>
+
+<p>To create a dynamic OS font asset, import the font from the operating system to your project, and use it to create a dynamic font asset and change the <strong>Atlas Population Mode</strong> to <strong>Dynamic OS</strong>.</p>
+
+<p><a name="atlas-render-modes"></a></p>
+
+<h2>Atlas render modes</h2>
+
+<p>TextCore supports atlas render modes for bitmap and Signed Distance Field (SDF).</p>
+
+<h3>Bitmap fonts</h3>
+
+<p>Bitmap rendering generates font assets that perfectly aligns each pixel of the font with scene and GUI pixels. Use the following render modes for pixel art:</p>
+
+<ul>
+<li>
+<strong>SMOOTH</strong> or <strong>SMOOTH_HINTED</strong> to render text to an antialiased bitmap. <strong>SMOOTH_HINTED</strong> aligns character pixels with texture pixels for clearer images.</li>
+<li>
+<strong>RASTER</strong> or <strong>RASTER_HINTE</strong> to render text to a non-antialiased bitmap. <strong>RASTER_HINTE</strong> aligns character pixels with texture pixels for a clearer image.</li>
+</ul>
+
+<p><a name="sdf-fonts"></a></p>
+
+<h3>SDF fonts</h3>
+
+<p>SDF rendering generates font assets that look crisp when you transform or magnify them. SDF rendering supports effects such as outlines and drop shadows.</p>
+
+<p>Unlike bitmap font textures, SDF font assets contain contour distance information. In font atlases, this information looks like grayscale gradients that run from the middle of each glyph to a point past its edge. The gradient’s mid-point corresponds to the edge of the glyph.</p>
+
+<p>The images below show bitmap and SDF font assets and the rendered text they produce. The bitmap fonts produce text whose edges are more or less jagged and blurry, depending on how far the text is from the camera, and how it’s transformed and distorted. The SDF font produces text with smooth edges regardless of the distance from the camera.</p>
+
+<figure>
+<img src="../uploads/Main/font/FontAsssetBMPRaster.png" alt="A bitmap font, atlas texture and rendered result">
+<figcaption>A bitmap font, atlas texture and rendered result</figcaption>
+</figure>
+
+<figure>
+<img src="../uploads/Main/font/FontAsssetBMPSmooth.png" alt="A smoothed bitmap, atlas texture and rendered result">
+<figcaption>A smoothed bitmap, atlas texture and rendered result</figcaption>
+</figure>
+
+<figure>
+<img src="../uploads/Main/font/FontAsssetSDF.png" alt="An SDF font, atlas texture and rendered result">
+<figcaption>An SDF font, atlas texture and rendered result</figcaption>
+</figure>
+
+<p>Use the following render mode for SDF fonts:</p>
+
+<ul>
+<li>
+<strong>SDFAA</strong>: Use this mode to produce font atlases for most use cases except when you render large text such as titles that exceed 90 point size on screen with a large outline. <strong>SDFAA</strong> is the default mode for Dynamic or Dynamic OS font assets for fast generation. <strong>SDFAA</strong> is a faster but less accurate SDF generation mode.</li>
+<li>
+<strong>SDFAA_HINTED</strong> Use this mode to align character pixels with texture pixels for a crisper result.</li>
+<li>
+<strong>SDF32</strong>: Default mode for Static font assets. Use this mode for fonts with complex or small characters. It’s a slower and accurate SDF generation mode with 32x oversampling.</li>
+<li>
+<strong>SDF16</strong>: Use this mode for Static font assets and mostly large text, such as titles that are 72 point size or larger. It’s a slower and accurate SDF generation mode with 16x oversampling.</li>
+<li>
+<strong>SDF8</strong>: Use this mode for a slower and accurate SDF generation with 8x oversampling.</li>
+<li>
+<strong>SDF</strong>: Use this mode for a slower and accurate SDF generation without oversampling.</li>
+</ul>
+
+<h2>Font asset variant</h2>
+
+<p>If you want to make changes only to a font asset’s metrics, instead of creating a new font asset, create a font asset variant based on another font asset. A font asset variant can have styling that distinguishes it from the original font asset , without consuming extra space for textures. The variant stores its own <a href="UIE-font-asset-properties.html">Face Info, Character, Glyph, and Adjustment Pair data</a>, but still refers to the original atlas. </p>
+
+<p>To create a font asset variant, right-click the font asset and select <strong>Create</strong> &gt; <strong>Text</strong>&gt; <strong>Font Asset Variant</strong>.</p>
+
+<p><a name="padding"></a></p>
+
+<h2>Padding</h2>
+
+<p>Characters in the font texture need padding between them so they can be rendered separately. This padding is specified in pixels. Padding also creates room for the SDF gradient. The larger the padding, the smoother the transition, which allows for higher-quality rendering and larger effects, like thick outlines. Use a padding of <code>5</code> for a <code>512x512</code> texture. A good rule of thumb is to have a sampling to padding ration of <code>1:10</code>.</p>
+
+<p><a name="multi-atlas"></a></p>
+
+<h2>Enable Multi Atlas Textures for large texture</h2>
+
+<p>For most fonts, use a <code>512x512</code> texture resolution if you include all ASCII characters. To support thousands of characters, use large textures and enable <strong>Multi Atlas Textures</strong> in the font asset’s Inspector window. This automatically creates new textures of the same size once the main texture is full. </p>
+
+<p>You can also enable <strong>Multi Atlas Textures</strong> if you design for mobile devices, where an imposed maximum texture size prevents an entire set of glyphs from fitting in a single atlas of sufficient quality.</p>
+
+<h2>Use a font asset</h2>
+
+<p>To use a font asset, in UI Builder, select the font from <strong>Font Asset</strong> in the Inspector window. </p>
+
+<p><strong>Note</strong>: The <strong>Font</strong> field is for backward compatibility. If you want to use a font from the <strong>Font</strong> list for your legacy projects, you must select <strong>None</strong> from <strong>Font Asset</strong>. Otherwise, the font you selected from <strong>Font</strong> won’t take effect.</p>
+
+<p>You can apply a font asset to a text element in USS with the following syntax:</p>
+
+<pre><code class="lang-css">-unity-font-definition: &lt;resource&gt; | &lt;url&gt;
+</code></pre>
+
+<p>例如：</p>
+
+<pre><code class="lang-css">Label {
+-unity-font-definition: url("/Assets/UI Toolkit/Resources/Fonts &amp; Materials/LiberationSans SDF.asset");
+}
+</code></pre>
+
+<p>For more information, see <a href="UIE-USS-SupportedProperties.html#unity-font">USS text properties</a>.</p>
+
+<h2>最佳实践</h2>
+
+<p>In summary, consider the following when you create a font asset: </p>
+
+<ul>
+<li>
+<strong>User input text</strong>: Use Dynamic or Dynamic OS population mode, and SDFAA mode for fast generation. You might need to add fallbacks for localization.</li>
+<li>
+<strong>Generic labels</strong>: Use the Static population mode and SDF16 mode with smaller sampling point size.</li>
+<li>
+<strong>Titles</strong>: Use the Static population mode and SDF32 mode with higher sampling point size.</li>
+<li>
+<strong>Pixel Art</strong>: Use any of the bitmap font render modes.</li>
+<li>
+<strong>Padding</strong>: Use a sampling to padding ration of <code>1:10</code>.</li>
+<li>Enable <strong>Multi Atlas Textures</strong> for large texture.</li>
+</ul>
+
+<h2>其他资源</h2>
+
+<ul>
+<li><a href="UIE-font-asset-properties.html">Font Asset properties reference</a></li>
+<li><a href="UIE-font-creator-properties.html">Font Asset Creator properties reference</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-font-asset-landing.html"></a></span><div class="tip">Font assets</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-font-asset-properties.html"></a></span><div class="tip">Font Asset properties reference</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

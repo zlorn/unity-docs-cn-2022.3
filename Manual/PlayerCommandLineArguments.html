@@ -1,0 +1,403 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Unity Standalone Player command line arguments - Unity 手册">
+<title>Unity Standalone Player command line arguments - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="You can launch Unity Players from the command line and pass in arguments to change how the Player executes. These arguments work on any standalone platform unless this page specifies other platform requirements.">
+<meta property="og:description" content="You can launch Unity Players from the command line and pass in arguments to change how the Player executes. These arguments work on any standalone platform unless this page specifies other platform requirements.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'PlayerCommandLineArguments';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/PlayerCommandLineArguments.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/PlayerCommandLineArguments.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/PlayerCommandLineArguments.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/PlayerCommandLineArguments.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/PlayerCommandLineArguments.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/PlayerCommandLineArguments.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/PlayerCommandLineArguments.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/PlayerCommandLineArguments.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/PlayerCommandLineArguments.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/PlayerCommandLineArguments.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/PlayerCommandLineArguments.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/PlayerCommandLineArguments.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/PlayerCommandLineArguments.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/PlayerCommandLineArguments.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/PlayerCommandLineArguments.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/PlayerCommandLineArguments.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/PlayerCommandLineArguments.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/PlayerCommandLineArguments.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/PlayerCommandLineArguments.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/PlayerCommandLineArguments.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/PlayerCommandLineArguments.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/PlayerCommandLineArguments.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/PlayerCommandLineArguments.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/PlayerCommandLineArguments.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/PlayerCommandLineArguments.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/PlayerCommandLineArguments.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/PlayerCommandLineArguments.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/PlayerCommandLineArguments.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/PlayerCommandLineArguments.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/PlayerCommandLineArguments.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/PlayerCommandLineArguments.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/PlayerCommandLineArguments.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/PlayerCommandLineArguments.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/PlayerCommandLineArguments.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/PlayerCommandLineArguments.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/PlayerCommandLineArguments.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/PlayerCommandLineArguments.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/PlayerCommandLineArguments.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/PlayerCommandLineArguments.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/PlayerCommandLineArguments.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/PlayerCommandLineArguments.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/PlayerCommandLineArguments.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/PlayerCommandLineArguments.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/PlayerCommandLineArguments.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/PlayerCommandLineArguments.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/PlayerCommandLineArguments.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/PlayerCommandLineArguments.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/PlayerCommandLineArguments.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/PlayerCommandLineArguments.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/PlayerCommandLineArguments.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/PlayerCommandLineArguments.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/PlayerCommandLineArguments.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/PlayerCommandLineArguments.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/PlayerCommandLineArguments.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/PlayerCommandLineArguments.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/PlayerCommandLineArguments.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/PlayerCommandLineArguments.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/PlayerCommandLineArguments.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UnityOverview.html">在 Unity 中操作</a></li>
+<li><a href="EditorFeatures.html">编辑器功能</a></li>
+<li><a href="CommandLineArguments.html">命令行参数</a></li>
+<li>Unity Standalone Player command line arguments</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="EditorCommandLineArguments.html"></a></span><div class="tip">Unity Editor command line arguments</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="CLIBatchmodeCoroutines.html"></a></span><div class="tip">批处理模式和内置协程兼容性</div>
+</div>
+</div></div>
+<h1>Unity Standalone Player command line arguments</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>You can launch Unity Players from the command line and pass in arguments to change how the Player executes. These arguments work on any standalone platform unless this page specifies other platform requirements.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>命令</strong></th>
+	<th style="text-align:left;"><strong>详细信息：</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><code>-batchmode</code></td>
+	<td style="text-align:left;">Run the application in “headless” mode. In this mode, the application doesn’t display anything or accept user input. This is useful for running servers for <a href="UNet.html">networked applications</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>-disable-gpu-skinning</code></td>
+	<td style="text-align:left;">Disables Graphics Processing Unit (GPU) skinning at startup.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>-force-clamped</code></td>
+	<td style="text-align:left;">Use this together with <code>-force-glcoreXY</code> to prevent checks for additional OpenGL extensions, allowing the application to run between platforms with the same code paths.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>-force-d3d11-singlethreaded</code></td>
+	<td style="text-align:left;">强制在使用 <code>D3D11_CREATE_DEVICE_SINGLETHREADED</code> 标志的情况下创建 DirectX 11.0。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>-force-device-index</code></td>
+	<td style="text-align:left;">Make the Standalone Player use a specific GPU device by passing it the index of that GPU. This option is supported for D3D11, D3D12, Metal, and Vulkan graphics APIs, but isn’t supported for OpenGL.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>-force-gfx-direct</code></td>
+	<td style="text-align:left;">强制使用单线程渲染。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>-force-glcore</code></td>
+	<td style="text-align:left;">Force the application to use the OpenGL core profile for rendering. The Editor tries to use the most recent OpenGL version available, and all OpenGL extensions exposed by the OpenGL drivers. Unity uses Direct3D if the platform doesn’t support OpenGL.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>-force-glcoreXY</code></td>
+	<td style="text-align:left;">Similar to <code>-force-glcore</code>, but requests a specific OpenGL context version. Accepted values for XY: 32, 33, 40, 41, 42, 43, 44, or 45.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>-force-vulkan</code></td>
+	<td style="text-align:left;">Force the application to use Vulkan for rendering.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>-max-async-pso-job-count</code></td>
+	<td style="text-align:left;">Set the number of parallel threads Unity uses to create pipeline state objects (PSOs) when you use <a href="../ScriptReference/Experimental.Rendering.ShaderWarmup.html">Experimental.Rendering.ShaderWarmup</a> to prewarm shader variants. This only has an effect if your application runs on a platform that uses the DirectX 12, Metal, or Vulkan graphics API.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>-monitor N</code></td>
+	<td style="text-align:left;">在指定的监视器上运行独立平台播放器，该监视器由基于 1 的索引号指示。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>-nographics</code></td>
+	<td style="text-align:left;">When you use this argument in batch mode, Unity doesn’t initialize a graphics device. This makes it possible to run your automated workflows on machines that don’t have a GPU. <br> <strong>Note</strong>: Output logs are turned off in this mode. To enable the creation of output logs, specify a file location using the command <code>-logFile</code>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>-nolog</code></td>
+	<td style="text-align:left;">Do not produce an output log. When you don’t use this argument, Unity writes the <code>output_log.txt</code> in the <a href="LogFiles.html">Log Files</a> folder, where the <a href="../ScriptReference/Debug.Log.html">Debug.Log</a> output is printed.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>-no-stereo-rendering</code></td>
+	<td style="text-align:left;">关闭立体渲染。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>-popupwindow</code></td>
+	<td style="text-align:left;">Create the window as a pop-up window, without a frame. This command isn’t supported on macOS.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>-screen-fullscreen</code></td>
+	<td style="text-align:left;">覆盖默认的全屏状态。此值必须是 0 或 1。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>-screen-height</code></td>
+	<td style="text-align:left;">覆盖默认屏幕高度。此值必须是受支持分辨率中的整数。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>-screen-width</code></td>
+	<td style="text-align:left;">Override the default screen width. This width value must be an integer from a supported resolution.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>-screen-quality</code></td>
+	<td style="text-align:left;">覆盖默认屏幕质量。示例用法为：<code>/path/to/myGame -screen-quality Beautiful</code>。支持的选项与 <a href="class-QualitySettings.html">Quality Settings</a> 名称匹配。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<code>-dontConnectAcceleratorEvent</code> (UWP only)</td>
+	<td style="text-align:left;">Disable connecting to AcceleratorKeyEvent. This may help if you have issues with input in XAML elements. <br><strong>Note:</strong> Unity cannot handle some keyboard keys, such as F10, Ctrl, Alt, and Tab.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<code>-force-d3d11</code>（仅限 Windows）</td>
+	<td style="text-align:left;">Force the application to use Direct3D 11 for rendering.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<code>-force-d3d12</code>（仅限 Windows）</td>
+	<td style="text-align:left;">Force the application to use Direct3D 12 for rendering.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<code>-force-d3d11-bitblt-model</code> (Windows only)</td>
+	<td style="text-align:left;">Force the application to use DXGI BitBlt model swapchain when using Direct3D 11. For more information, see <a href="../ScriptReference/PlayerSettings-useFlipModelSwapchain.html">PlayerSettings.useFlipModelSwapchain</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<code>-force-d3d11-flip-model</code> (Windows only)</td>
+	<td style="text-align:left;">Force the application to use DXGI flip model swapchain when using Direct3D 11. For more information, see <a href="../ScriptReference/PlayerSettings-useFlipModelSwapchain.html">PlayerSettings.useFlipModelSwapchain</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<code>-force-d3d11-no-singlethreaded</code> (Windows and UWP only)</td>
+	<td style="text-align:left;">强制在不使用 <code>D3D11_CREATE_DEVICE_SINGLETHREADED</code> 标志的情况下创建 DirectX 11.0。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<code>-force-d3d11-singlethreaded</code> (Windows and UWP only)</td>
+	<td style="text-align:left;">强制在使用 <code>D3D11_CREATE_DEVICE_SINGLETHREADED</code> 标志的情况下创建 DirectX 11.0。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<code>-force-driver-type-warp</code> (Windows and UWP only)</td>
+	<td style="text-align:left;">Force the DirectX 11.0 driver type WARP device. For more information, see Microsoft’s documentation on <a href="https://docs.microsoft.com/en-gb/windows/win32/direct3darticles/directx-warp?redirectedfrom=MSDN">Windows Advanced Rasterization Platform</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<code>-force-feature-level-10-0</code> (Windows and UWP only)</td>
+	<td style="text-align:left;">强制使用 DirectX 11.0 功能级别 10.0。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<code>-force-feature-level-10-1</code> (Windows and UWP only)</td>
+	<td style="text-align:left;">强制使用 DirectX 11.0 功能级别 10.1。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<code>-force-feature-level-11-0</code> (Windows and UWP only)</td>
+	<td style="text-align:left;">强制使用 DirectX 11.0 功能级别 11.0。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<code>-force-low-power-device</code>（仅限 macOS）</td>
+	<td style="text-align:left;">使独立平台播放器使用低功耗设备。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<code>-force-metal</code>（仅限 macOS）</td>
+	<td style="text-align:left;">使独立平台播放器使用 Metal 作为默认图形 API。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<code>-forceTextBoxBasedKeyboard</code> (UWP only)</td>
+	<td style="text-align:left;">Use TextBox-based implementation for TouchScreenKeyboard. This implementation allows switching to different implementations, in case there are issues with the default. <br><br><strong>Note:</strong> This implementation has an effect only on UWP XAML applications.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<code>-force-wayland</code> (Linux only)</td>
+	<td style="text-align:left;">运行 Linux 播放器时激活实验性 Wayland 支持。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<code>--parentHWND &lt;HWND&gt; delayed</code> (Windows only)</td>
+	<td style="text-align:left;">Embed the Windows Standalone application into another application. When you use this argument, you need to pass the parent application’s window handle (‘HWND’) to the Windows Standalone application.<br><br>When you pass <code>-parentHWND 'HWND' delayed</code>, the Unity application is hidden while it runs. You must also call <a href="https://docs.microsoft.com/en-gb/windows/win32/api/winuser/nf-winuser-setparent?redirectedfrom=MSDN">SetParent</a> from the <a href="https://docs.microsoft.com/en-gb/">Microsoft Developer library</a> for Unity in the application. Microsoft’s <code>SetParent</code> embeds the Unity window. When it creates Unity processes, the Unity window respects the position and size provided as part of Microsoft’s <a href="https://docs.microsoft.com/en-gb/windows/win32/api/processthreadsapi/ns-processthreadsapi-startupinfoa?redirectedfrom=MSDN">STARTUPINFO</a> structure.<br><br>To resize the Unity window, check its <a href="https://docs.microsoft.com/en-gb/windows/win32/api/winuser/nf-winuser-getwindowlongptra?redirectedfrom=MSDN">GWLP_USERDATA</a> in Microsoft’s <code>GetWindowLongPtr</code> function. Its lowest bit is set to 1 when the graphics initialize and it’s safe to resize. Its second lowest bit is set to 1 after the Unity splash screen finishes displaying.<br><br>For more information, see this downloadable example: <a href="https://docs.unity3d.com/uploads/Examples/EmbeddedWindow.zip">EmbeddedWindow.zip</a>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<code>-single-instance</code>（仅限 Linux 和 Windows）</td>
+	<td style="text-align:left;">Run only one instance of the application at the time. If another instance is already running then launching the application again with <code>-single-instance</code> focuses the existing one.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<code>-window-mode</code>（仅限 Windows）</td>
+	<td style="text-align:left;">Override fullscreen windowed mode. Accepted values are <code>exclusive</code> or <code>borderless</code>. For more information, see <a href="class-PlayerSettings.html">Player settings</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="EditorCommandLineArguments.html"></a></span><div class="tip">Unity Editor command line arguments</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="CLIBatchmodeCoroutines.html"></a></span><div class="tip">批处理模式和内置协程兼容性</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

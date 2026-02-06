@@ -1,0 +1,302 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Work with elements - Unity 手册">
+<title>Work with elements - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/UIBuilder/ReorderInHierarchy.png">
+<meta name="description" content="The most basic building block in UI Toolkit is a `VisualElement&amp;#8217;. These elements are ordered into a hierarchy tree with parent-child relationships. This is called the visual tree.">
+<meta property="og:description" content="The most basic building block in UI Toolkit is a `VisualElement&amp;#8217;. These elements are ordered into a hierarchy tree with parent-child relationships. This is called the visual tree.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'UIB-structuring-ui-elements';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/UIB-structuring-ui-elements.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/UIB-structuring-ui-elements.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/UIB-structuring-ui-elements.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/UIB-structuring-ui-elements.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/UIB-structuring-ui-elements.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/UIB-structuring-ui-elements.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIB-structuring-ui-elements.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIB-structuring-ui-elements.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIB-structuring-ui-elements.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIB-structuring-ui-elements.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIB-structuring-ui-elements.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIB-structuring-ui-elements.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIB-structuring-ui-elements.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIB-structuring-ui-elements.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIB-structuring-ui-elements.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIB-structuring-ui-elements.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIB-structuring-ui-elements.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIB-structuring-ui-elements.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIB-structuring-ui-elements.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIB-structuring-ui-elements.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIB-structuring-ui-elements.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIB-structuring-ui-elements.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIB-structuring-ui-elements.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIB-structuring-ui-elements.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIB-structuring-ui-elements.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIB-structuring-ui-elements.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIB-structuring-ui-elements.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIB-structuring-ui-elements.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIB-structuring-ui-elements.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIB-structuring-ui-elements.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/UIB-structuring-ui-elements.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/UIB-structuring-ui-elements.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/UIB-structuring-ui-elements.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/UIB-structuring-ui-elements.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIB-structuring-ui-elements.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIB-structuring-ui-elements.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIB-structuring-ui-elements.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIB-structuring-ui-elements.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIB-structuring-ui-elements.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIB-structuring-ui-elements.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIB-structuring-ui-elements.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIB-structuring-ui-elements.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIB-structuring-ui-elements.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIB-structuring-ui-elements.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIB-structuring-ui-elements.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIB-structuring-ui-elements.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIB-structuring-ui-elements.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIB-structuring-ui-elements.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIB-structuring-ui-elements.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIB-structuring-ui-elements.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIB-structuring-ui-elements.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIB-structuring-ui-elements.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIB-structuring-ui-elements.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIB-structuring-ui-elements.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIB-structuring-ui-elements.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIB-structuring-ui-elements.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIB-structuring-ui-elements.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIB-structuring-ui-elements.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UIToolkits.html">Create user interfaces (UI)</a></li>
+<li><a href="UIElements.html">UI 工具包</a></li>
+<li><a href="UIBuilder.html">UI Builder</a></li>
+<li>Work with elements</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIB-getting-started.html"></a></span><div class="tip">Get started with UI Builder</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIB-structuring-ui-templates.html"></a></span><div class="tip">Use UXML instances as templates</div>
+</div>
+</div></div>
+<h1>Work with elements</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>The most basic building block in UI Toolkit is a `VisualElement’. These elements are ordered into a hierarchy tree with parent-child relationships. This is called the <a href="UIE-VisualTree.html">visual tree</a>. </p>
+
+<h2>Add elements</h2>
+
+<p>You need to add elements to the hierarchy to create UI. To add an element to the hierarchy in UI Builder, drag it from the <strong>Library</strong> tab into the <strong>Hierarchy</strong> window. You can also double-click on an element in the <strong>Library</strong> to append it to the <strong>Hierarchy</strong>. By default, elements aren’t named, so they appear in the <strong>Hierarchy</strong> as their type name. </p>
+
+<p>To name an element, double-click on the item in the <strong>Hierarchy</strong>, or update the <strong>Name</strong> attribute in the element’s Inspector window. </p>
+
+<p>Unique naming in UI Toolkit isn’t enforced, so they’re only for identification within the UI. UI Builder doesn’t use element names for any internal identification or functionality.</p>
+
+<p>To build a hierarchy, you can drag one or more elements in the <strong>Hierarchy</strong> to reorder them or move them between parents:</p>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/ReorderInHierarchy.png" alt="ReorderInHierarchy">
+<figcaption>ReorderInHierarchy</figcaption>
+</figure>
+
+<p>You can also drag elements into and from the <strong>Canvas</strong>, where a <strong>yellow line</strong> appears to indicate the element placement:</p>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/ReorderInCanvas.png" alt="ReorderInCanvas">
+<figcaption>ReorderInCanvas</figcaption>
+</figure>
+
+<h2>Manipulate elements</h2>
+
+<p>To copy, paste, duplicate, or delete one or more selected elements, right-click on an element and select the option in the menu. You can also use the standard short-cut keys for your operating system.</p>
+
+<p>When you copy an element in the <strong>Hierarchy</strong> pane, it copies the UXML text representation of the element and its children. This means you can paste it directly into a text editor. You can also copy UXML text and paste it into the UI Builder.</p>
+
+<p>All actions you do to an element are also applied to all its children. For example, deleting an element deletes all its children and duplicating an element replicates the entire sub-tree of elements under it.</p>
+
+<p><a name="read-only-elements"></a></p>
+
+<h2>Read-only elements</h2>
+
+<p>When you drag an element from the Library tab to the Hierarchy tab, you might notice additional child elements appearing in a dimmed state. These are read-only elements. This happens with some built-in UI controls, and some <a href="UIE-custom-controls.html">custom elements</a> that <a href="UIE-encapsulate-uxml-with-logic.html#element-first-approach">create their internal hierarchy upon creation</a>.</p>
+
+<p>When you add child elements to a <code>VisualElement</code>, children elements are added to the <code>contentContainer</code> of this parent element. For example, the <a href="UIE-uxml-element-ScrollView.html">ScrollView</a> below has one <a href="UIE-uxml-element-Foldout.html">Foldout</a> child element that’s inside the <code>contentContainer</code>. It also has several <a href="UIE-uxml-element-Scroller.html">Scroller</a> child elements that are in the shadow tree. The shadow tree is the hierarchy of child elements that are outside of the <code>contentContainer</code> of this element.</p>
+
+<figure>
+<img src="../uploads/Main/uitk/shadow-tree.png" alt="The hierarchy of a ScrollView element">
+<figcaption>The hierarchy of a ScrollView element</figcaption>
+</figure>
+
+<p>As the UI Builder can only edit what it can represent in the UXML Document, it is not possible to edit the internal hierarchy. UXML is not a direct copy of the live UI hierarchy but rather an instruction set.</p>
+
+<h2>Attributes in UXML</h2>
+
+<p>Elements have per-element attributes which can be set in UXML. You can think of them as a constructor or initialization arguments. This includes the <code>name</code> attribute. The base <code>VisualElement</code> class comes with a few standard attributes that all elements share (since all elements inherit from <code>VisualElement</code>), like <code>name</code>, <code>tooltip</code>, and <code>tabindex</code>. More advanced elements and controls have additional attributes you can set, for example, the <code>Label</code> adds the <code>text</code> attribute.</p>
+
+<p><strong>Note</strong>: You can use the <strong>Enter</strong> key to add newline characters for the <code>text</code> attribute.</p>
+
+<h2>Change attributes in the Inspector</h2>
+
+<p>All standard and custom attributes appear in the <strong>Attribute</strong> section at the top of the Inspector window.</p>
+
+<p>You can set the value of an attribute in the attribute section. If the field appears <strong>bold</strong> with a solid line on the left of the field’s label, it means the attribute is already set and not using the default. For example, setting <code>tooltip</code> from empty to <code>test</code> and then back to empty is different from never setting it in the first place: the first case is <code>unset</code> while the second case is <code>set to empty</code>. What <code>this attribute is set</code> means is there’s an entry in the UXML text on this element setting this attribute to <code>a</code>value</p>
+
+<p>If the attribute doesn’t appear in the UXML file, it’s <code>not set</code>.</p>
+
+<p>To unset an attribute, right-click on the field’s label and select <strong>Unset</strong>. </p>
+
+<p>To unset all attributes, right-click on the field’s label and select <strong>Unset All</strong>.</p>
+
+<h2>Change attributes in the Canvas</h2>
+
+<p>The only attribute you can change directly in the <strong>Canvas</strong> is the <code>text</code> attribute on text elements such as a <code>Button</code> or a <code>Label</code>. To change the <code>text</code> attribute in the Canvas, double-click on it in the <strong>Canvas</strong>. </p>
+
+<figure>
+<img src="../uploads/Main/UIBuilder/EditButtonTextInCanvas.png" alt="EditButtonTextInCanvas">
+<figcaption>EditButtonTextInCanvas</figcaption>
+</figure>
+
+<p>To commit the change, press the <strong>Enter</strong> key. If the <code>text</code> attribute contains newline characters, use <strong>Shift + Enter</strong> to commit the change. </p>
+
+<p>To cancel the change, press the <strong>Esc</strong> key.</p>
+
+<h2>其他资源</h2>
+
+<ul>
+<li><a href="UIB-interface-overview.html">UI Builder interface overview</a></li>
+<li><a href="UIB-getting-started.html">Get started with UI Builder</a></li>
+<li><a href="UIB-structuring-ui-templates.html">Instancing UI Documents (UXML) as templates</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIB-getting-started.html"></a></span><div class="tip">Get started with UI Builder</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIB-structuring-ui-templates.html"></a></span><div class="tip">Use UXML instances as templates</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

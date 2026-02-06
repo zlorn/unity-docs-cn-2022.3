@@ -1,0 +1,361 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="2D 车轮关节 (Wheel Joint 2D) - Unity 手册">
+<title>2D 车轮关节 (Wheel Joint 2D) - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/WheelJoint2DInspector.png">
+<meta name="description" content="Use the Wheel Joint 2D to simulate a rolling wheel, on which an object can move. You can apply motor power to the joint. The wheel uses a suspension spring to maintain its distance from the main body of the vehicle.">
+<meta property="og:description" content="Use the Wheel Joint 2D to simulate a rolling wheel, on which an object can move. You can apply motor power to the joint. The wheel uses a suspension spring to maintain its distance from the main body of the vehicle.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'class-WheelJoint2D';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/class-WheelJoint2D.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/class-WheelJoint2D.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/class-WheelJoint2D.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/class-WheelJoint2D.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/class-WheelJoint2D.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/class-WheelJoint2D.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/class-WheelJoint2D.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/class-WheelJoint2D.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/class-WheelJoint2D.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/class-WheelJoint2D.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/class-WheelJoint2D.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/class-WheelJoint2D.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/class-WheelJoint2D.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/class-WheelJoint2D.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/class-WheelJoint2D.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/class-WheelJoint2D.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/class-WheelJoint2D.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/class-WheelJoint2D.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/class-WheelJoint2D.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/class-WheelJoint2D.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/class-WheelJoint2D.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/class-WheelJoint2D.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/class-WheelJoint2D.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/class-WheelJoint2D.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/class-WheelJoint2D.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/class-WheelJoint2D.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/class-WheelJoint2D.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/class-WheelJoint2D.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/class-WheelJoint2D.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/class-WheelJoint2D.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/class-WheelJoint2D.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/class-WheelJoint2D.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/class-WheelJoint2D.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/class-WheelJoint2D.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/class-WheelJoint2D.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/class-WheelJoint2D.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/class-WheelJoint2D.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/class-WheelJoint2D.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/class-WheelJoint2D.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/class-WheelJoint2D.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/class-WheelJoint2D.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/class-WheelJoint2D.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/class-WheelJoint2D.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/class-WheelJoint2D.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/class-WheelJoint2D.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/class-WheelJoint2D.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/class-WheelJoint2D.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/class-WheelJoint2D.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/class-WheelJoint2D.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/class-WheelJoint2D.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/class-WheelJoint2D.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/class-WheelJoint2D.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/class-WheelJoint2D.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/class-WheelJoint2D.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/class-WheelJoint2D.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/class-WheelJoint2D.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/class-WheelJoint2D.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/class-WheelJoint2D.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Unity2D.html">2D game development</a></li>
+<li><a href="Physics2DReference.html">Physics 2D Reference</a></li>
+<li><a href="Joints2D.html">2D joints</a></li>
+<li>2D 车轮关节 (Wheel Joint 2D)</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="class-TargetJoint2D.html"></a></span><div class="tip">Target Joint 2D</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-ConstantForce2D.html"></a></span><div class="tip">2D 恒定力 (Constant Force 2D)</div>
+</div>
+</div></div>
+<h1>2D 车轮关节 (Wheel Joint 2D)</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Use the <strong>Wheel Joint 2D</strong> to simulate a rolling wheel, on which an object can move. You can apply motor power to the joint. The wheel uses a suspension spring to maintain its distance from the main body of the vehicle.</p>
+
+<figure>
+<img src="../uploads/Main/WheelJoint2DInspector.png" alt="">
+</figure>
+
+<h2>属性</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">属性</th>
+	<th style="text-align:left;">功能</th>
+	<th style="text-align:left;"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Enable Collision</strong></td>
+	<td style="text-align:left;" colspan="2">Enable this property to enable collisions between the two connected GameObjects.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Connected Rigid Body</strong></td>
+	<td style="text-align:left;" colspan="2">Specify the other GameObject this joint connects to. If you leave this as <strong>None</strong>, the other end of the joint is fixed to a point in space defined by the <strong>Connected Anchor</strong> setting. Select the circle icon to the right to view a list of GameObjects to connect to.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Auto Configure Connected Anchor</strong></td>
+	<td style="text-align:left;" colspan="2">Enable this property to automatically set the anchor location for the other GameObject this Hinge Joint 2D connects to. You do not need to enter coordinates for the <strong>Connected Anchor</strong> property if you enable this property.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Anchor</strong></td>
+	<td style="text-align:left;" colspan="2">Define where (in terms of x, y-coordinates on the <strong>Rigidbody 2D</strong>) the end point of the joint connects to this GameObject.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Connected Anchor</strong></td>
+	<td style="text-align:left;" colspan="2">Define where (in terms of x, y-coordinates on the <strong>Rigidbody 2D</strong>) the end point of the joint connects to the other GameObject.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Suspension</strong></td>
+	<td style="text-align:left;" colspan="2">Select this to expand this property’s settings.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Damping Ratio</strong></td>
+	<td style="text-align:left;">Set the degree to suppress spring oscillation. In the range 0 to 1, the higher the value, the less movement.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Frequency</strong></td>
+	<td style="text-align:left;">Set the frequency at which the spring oscillates while the GameObjects are approaching the separation distance you want (measured in cycles per second). In the range 0 to 1,000,000 - the higher the value, the stiffer the spring. <strong>Note:</strong> Setting <strong>Frequency</strong> to zero will create the stiffest spring type joint possible.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Angle</strong></td>
+	<td style="text-align:left;">Set the world movement angle for the suspension.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Use Motor</strong></td>
+	<td style="text-align:left;" colspan="2">Enable this to apply motor force to the joint.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Motor</strong></td>
+	<td style="text-align:left;" colspan="2">Select this to expand this property’s settings.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Motor Speed</strong></td>
+	<td style="text-align:left;">Target speed (degrees per second) for the motor to reach.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Maximum Motor Force</strong></td>
+	<td style="text-align:left;">Set the maximum torque (or rotation) the motor can apply when attempting to reach the target speed.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Break Action</strong></td>
+	<td style="text-align:left;" colspan="2">Set the action taken when either the force or torque threshold is exceeded.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Break Force</strong></td>
+	<td style="text-align:left;" colspan="2">Set the force threshold which if exceeded, will cause the joint to perform the selected <strong>Break Action</strong>. The default value is set to <strong>Infinity</strong>, which can never be exceeded and therefore the <strong>Break Action</strong> can never be taken while the threshold remains at this value.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Break Torque</strong></td>
+	<td style="text-align:left;" colspan="2">Set the torque threshold which if exceeded, will cause the joint to perform the selected <strong>Break Action</strong>. The default value is set to <strong>Infinity</strong>, which can never be exceeded and therefore the <strong>Break Action</strong> can never be taken while the threshold remains at this value.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Using this joint</h2>
+
+<p>Use this joint to simulate wheels and suspension. The aim of the joint is to keep the position of two points on a line that extends to infinity, whilst at the same time making them overlap. Those two points can be two <strong>Rigidbody2D</strong> components or a <strong>Rigidbody2D</strong> component and a fixed position in the world. (Connect to a fixed position in the world by setting <strong>Connected Rigidbody</strong> to None). </p>
+
+<p>2D 车轮关节的行为就像 <a href="class-SliderJoint2D.html">2D 滑动关节</a>（不包括其电机或限制约束）和 <a href="class-HingeJoint2D.html">2D 铰链关节</a>（不包括其限制约束）的组合。</p>
+
+<p>此关节对两个连接的刚体对象施加线性力，使这些对象保持在这条线上，使用角度电机来旋转这条线上的对象，并使用弹簧来模拟车轮悬架。</p>
+
+<p>Set the <strong>Maximum Motor Speed</strong> and <strong>Maximum Motor Force</strong> (torque, in this joint) to control the angular motor speed, and make the two rigid body objects rotate.</p>
+
+<p>You can set the wheel suspension stiffness and movement in order to simulate different degrees of suspension. For example, to simulate a stiff, barely moving suspension:</p>
+
+<ul>
+<li><p>Set a high (1,000,000 is the highest) <strong>Frequency</strong> == stiff suspension.</p></li>
+<li><p>Set a high (1 is the highest) <strong>Damping Ratio</strong> == barely moving suspension.</p></li>
+</ul>
+
+<p>To simulate a looser and more freely moving suspension, you would use the following settings:</p>
+
+<ul>
+<li><p>Set a low <strong>Frequency</strong> == loose suspension.</p></li>
+<li><p>Set a low <strong>Damping Ratio</strong> == moving suspension.</p></li>
+</ul>
+
+<p>It has two simultaneous constraints:</p>
+
+<ul>
+<li>与两个刚体对象上两个锚点之间的一条指定线保持相对线性距离为零。</li>
+<li>Maintain an angular speed between two anchor points on two rigid body objects. (Set the speed via the <strong>Maximum Motor Speed</strong> option and maximum torque via <strong>Maximum Motor Force</strong>.)</li>
+</ul>
+
+<p>使用此关节构建的物理对象就好像是通过旋转枢轴相连一样但不能远离指定线。例如：</p>
+
+<ul>
+<li>在模拟车轮时，用电机驱动这些车轮，并用一条线定义允许的悬架移动。</li>
+</ul>
+
+<h2>Behavior difference to the Wheel Collider</h2>
+
+<p>Unlike the <a href="class-WheelCollider.html">Wheel Collider</a> used with 3D physics, the Wheel Joint 2D uses a separate <strong>Rigidbody</strong> object for the wheel, which rotates when the force is applied. (The Wheel Collider, by contrast, simulates the suspension using a raycast and the wheel’s rotation is purely a graphical effect). The wheel object will typically be a <a href="class-CircleCollider2D.html">Circle Collider 2D</a> with a <a href="class-PhysicsMaterial2D.html">Physics Material 2D</a> that gives the right amount of traction for your gameplay.</p>
+
+<h2>其他资源</h2>
+
+<ul>
+<li>Refer to <a href="Joints2D.html">Joints 2D</a> for more information about other 2D Joints.</li>
+</ul>
+
+<p><span class="search-words">WheelJoint2D</span></p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="class-TargetJoint2D.html"></a></span><div class="tip">Target Joint 2D</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-ConstantForce2D.html"></a></span><div class="tip">2D 恒定力 (Constant Force 2D)</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

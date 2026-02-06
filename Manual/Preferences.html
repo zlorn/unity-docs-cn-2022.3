@@ -1,0 +1,1163 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Preferences - Unity 手册">
+<title>Preferences - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/SourceGearDiffMerge.png">
+<meta name="description" content="Use preferences to customize the behavior of the Unity Editor.">
+<meta property="og:description" content="Use preferences to customize the behavior of the Unity Editor.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'Preferences';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/Preferences.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/Preferences.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/Preferences.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/Preferences.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/Preferences.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/Preferences.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/Preferences.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/Preferences.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/Preferences.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/Preferences.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/Preferences.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/Preferences.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/Preferences.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/Preferences.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/Preferences.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/Preferences.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/Preferences.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/Preferences.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/Preferences.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/Preferences.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/Preferences.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/Preferences.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/Preferences.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/Preferences.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/Preferences.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/Preferences.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/Preferences.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/Preferences.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/Preferences.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/Preferences.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/Preferences.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/Preferences.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/Preferences.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/Preferences.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/Preferences.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/Preferences.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/Preferences.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/Preferences.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/Preferences.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/Preferences.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/Preferences.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/Preferences.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/Preferences.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/Preferences.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/Preferences.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/Preferences.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/Preferences.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/Preferences.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/Preferences.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/Preferences.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/Preferences.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/Preferences.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/Preferences.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/Preferences.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/Preferences.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/Preferences.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/Preferences.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/Preferences.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UnityOverview.html">在 Unity 中操作</a></li>
+<li><a href="EditorFeatures.html">编辑器功能</a></li>
+<li>Preferences</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="2DAnd3DModeSettings.html"></a></span><div class="tip">2D 和 3D 模式设置</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ShortcutsManager.html"></a></span><div class="tip">Shortcuts Manager</div>
+</div>
+</div></div>
+<h1>Preferences</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Use preferences to customize the behavior of the Unity Editor.</p>
+
+<p>To access the <strong>Preferences</strong> window, go to <strong>Edit</strong> &gt; <strong>Preferences</strong> (Windows) or <strong>Unity</strong> &gt; <strong>Preferences</strong> (macOS) from the main menu in Unity. </p>
+
+<p>To navigate the <strong>Preferences</strong> window, use the search box to filter the list of settings categories and highlight keywords in the details pane on the right of the <strong>Preferences</strong> window.</p>
+
+<p>The following preference categories are available:</p>
+
+<ul>
+<li><a href="#general">General</a></li>
+<li><a href="#2D">2D</a></li>
+<li><a href="#analysis">Analysis</a></li>
+<li><a href="#asset-pipeline">Asset Pipeline</a></li>
+<li><a href="#colors">Colors</a></li>
+<li><a href="#diagnostics">Diagnostics</a></li>
+<li><a href="#display-settings">Display Settings</a></li>
+<li><a href="#external-tools">External Tools</a></li>
+<li><a href="#gi-cache">GI Cache</a></li>
+<li><a href="#package-manager">Package Manager</a></li>
+<li><a href="#scene-view">Scene view</a></li>
+<li><a href="#search">Search</a></li>
+<li><a href="#custom">Custom package preferences</a></li>
+</ul>
+
+<p><a name="general"></a></p>
+
+<h2>General</h2>
+
+<p><strong>General</strong> 偏好设置可用于自定义 Unity 的总体使用方式。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Load Previous Project on Startup</strong></td>
+	<td style="text-align:left;">启用此设置可在启动时始终加载上一个项目。</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2">
+<strong>Disable Editor Analytics</strong> (Pro only)</td>
+	<td style="text-align:left;">启用此设置可禁止 Editor 自动将信息发送回 Unity。</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Script Changes While Playing</strong></td>
+	<td style="text-align:left;">选择在 Editor 中运行游戏时脚本发生更改的情况下 Unity 采取的行为。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><em>Recompile And Continue Playing</em></td>
+	<td style="text-align:left;">重新编译脚本并继续运行场景。这是默认行为，但如果脚本依赖于任何不可序列化的数据，可能需要更改默认行为。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><em>Recompile After Finished Playing</em></td>
+	<td style="text-align:left;">推迟重新编译，直到手动停止场景，从而避免发生任何中断。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><em>Stop Playing And Recompile</em></td>
+	<td style="text-align:left;">Immediately stops your Scene for recompilation, allowing you to quickly restart testing.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Code Optimization On Startup</strong></td>
+	<td style="text-align:left;">Choose whether to set code optimization mode to <strong>Debug</strong> or <strong>Release</strong> when the Unity Editor starts. <strong>Debug</strong> mode allows you to attach external debugger software, but gives slower C# performance when you run your Project in Play mode in the Editor. <strong>Release</strong> mode gives faster C# performance when you run your Project in Play mode in the Editor, but you can’t attach any external debuggers. For more information, see <a href="ManagedCodeDebugging.html#DebugInEditor">Code Optimization Mode</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Editor Theme</strong></td>
+	<td style="text-align:left;">Choose the background to use in the Unity Editor.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><em>Light</em></td>
+	<td style="text-align:left;">Applies the light grey background with black text.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><em>Dark</em></td>
+	<td style="text-align:left;">Applies the dark theme with white text.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Editor Font</strong></td>
+	<td style="text-align:left;">选择要在 Unity Editor 中显示的字体。默认字体为 Inter。</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Enable Alpha Numeric Sorting</strong></td>
+	<td style="text-align:left;">启用此设置可在 <a href="Hierarchy.html">Hierarchy</a> 窗口的右上角显示一个按钮，用于在变换 (Transform) 排序（默认）和字母数字 (Alphanumeric) 排序之间切换。</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Interaction Mode</strong></td>
+	<td style="text-align:left;">指定 Editor 在最长空闲多长时间之后更新。一帧结束后，Editor 将等待指定的时间，直到下一帧开始。<br><br>这样可以调节 Editor 的性能，并减少 CPU 资源消耗和功耗。<br><br>例如，如果要测试 Editor 的性能，请将此属性设置为 <strong>No Throttling</strong>。如果要降低功耗（例如，延长笔记本电脑的电池续航时间），请将此属性设置为调速模式之一。<br><br>在调速模式下，如果与 Editor 进行交互（例如，通过在 Scene 视图中平移），Editor 将停止空闲模式。<br><br><strong>注意：</strong>在运行模式下，Unity 会忽略您使用此偏好设置应用的任何调速模式。除非在 <a href="GameView.html">Game 视图</a>中启用了 VSync 选项，或者将 <code>Application.targetFrameRate</code> 设置为 –1 以外的值，否则 Editor 会尽快更新。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><em>Default</em></td>
+	<td style="text-align:left;">每次勾选时，Editor 最多闲置 4 毫秒。如果一帧用时 5 毫秒或更长时间，则 Editor 完全不会空闲，并且下一帧会自动开始。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><em>No Throttling</em></td>
+	<td style="text-align:left;">每一帧结束时，下一帧立即开始。Editor 永远不会等待，并且会尽快更新。<br><br>此模式消耗大量 CPU 资源。如果使用的是笔记本电脑，可能会导致电池电量快速耗尽。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><em>Monitor Refresh Rate</em></td>
+	<td style="text-align:left;">Editor 空闲的最长时间是监视器的帧率（以毫秒为单位）。对于大多数监视器，此值为 16 毫秒。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><em>Custom</em></td>
+	<td style="text-align:left;">指定应用程序可以处于空闲状态的最长时间。<br><br>选择此选项时，将显示 <strong>Frame Throttling (milliseconds)</strong> 属性。</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Frame Throttling (milliseconds)</strong></td>
+	<td style="text-align:left;">当 <strong>Interaction Mode</strong> 设置为 <strong>Custom</strong> 时，此属性指定 Editor 可以在帧之间处于空闲状态的时间长度。该值可介于 0 到 33 毫秒之间。0 等效于将 <strong>Interaction Mode</strong> 设置为 <strong>No Throttling</strong>。</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Package Manager Log Level</strong></td>
+	<td style="text-align:left;">Choose the level of detail you want the Package Manager logs to report. The options are:</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><em>Error</em></td>
+	<td style="text-align:left;">Unexpected errors and failures only.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><em>Warn</em></td>
+	<td style="text-align:left;">Unusual situations that can cause issues.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><em>Info</em></td>
+	<td style="text-align:left;">High-level informational-only messages.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><em>Verbose</em></td>
+	<td style="text-align:left;">Detailed informational messages.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><em>Debug</em></td>
+	<td style="text-align:left;">High-level debugging messages.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><em>Silly</em></td>
+	<td style="text-align:left;">Detailed debugging messages.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Enable extended Dynamic hints</strong></td>
+	<td style="text-align:left;">Select this to enable extended dynamic hints, which displays more information when a property, object, or tool is hovered for enough time, or when a dynamic hint appears.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Perform Bump Map Check</strong></td>
+	<td style="text-align:left;">Select this to enable bump map checks upon material imports, which helps check that textures used in a normal map material slot are actually defined as normal maps.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="2D"></a></p>
+
+<h2>2D</h2>
+
+<p>The <strong>2D</strong> preference settings allow you to define the settings of 2D-related features and packages. When you <a href="#custom">install</a> 2D related packages (such as the <a href="https://docs.unity3d.com/Packages/com.unity.2d.tilemap@1.0/manual/index.html">Tilemap Editor</a> package) into your Project, their preference settings will appear in this section.</p>
+
+<h3>Physics</h3>
+
+<p>Use the <strong>Physics</strong> preferences to configure the 2D physics settings, such as the colors used in the UI.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Colliders</strong></td>
+	<td style="text-align:left;" colspan="2">Set the colors for the following UI elements.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Awake Color (Outline)</strong></td>
+	<td style="text-align:left;">Set the color of the Collider 2D Gizmo’s outline when the Rigidbody 2D it’s attached to is <strong>Awake</strong>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Awake Color (Filled)</strong></td>
+	<td style="text-align:left;">Set the color of the Collider 2D Gizmo’s interior fill when the Rigidbody 2D it’s attached to is <strong>Awake</strong>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Asleep Color (Outline)</strong></td>
+	<td style="text-align:left;">Set the color of the Collider 2D Gizmo’s outline when the Rigidbody 2D it’s attached to is <strong>Asleep</strong>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Asleep Color (Filled)</strong></td>
+	<td style="text-align:left;">Set the color of the Collider 2D Gizmo’s interior fill when the Rigidbody 2D it’s attached to is <strong>Asleep</strong>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Bounds Color</strong></td>
+	<td style="text-align:left;">Set the color of the bounds for all <a href="../ScriptReference/PhysicsShape2D.html">PhysicsShape2D</a> that a Collider 2D creates.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Contacts</strong></td>
+	<td style="text-align:left;" colspan="2">Set the colors used for the following UI elements.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Contact Color</strong></td>
+	<td style="text-align:left;">Set the color of the Collider 2D Gizmo’s contacts which are displayed as a directional arrow starting at the contact point in the direction of the contact normal.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Contact Arrow Scale</strong></td>
+	<td style="text-align:left;">Set the scale of the Collider 2D contacts arrow. Larger values draw the arrow larger.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="analysis"></a></p>
+
+<h2>Analysis</h2>
+
+<p>The <strong>Analysis</strong> preferences let you define settings for the <a href="Profiler.html">Profiler</a>.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Frame count</strong></td>
+	<td style="text-align:left;">设置性能分析器要捕获的最大帧数。您可以将此数字设置在 300 到 2,000 之间。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Show stats for ‘current frame’</strong></td>
+	<td style="text-align:left;">By default, when you select the <strong>Current Frame</strong> button and enter Current Frame mode, the frame indicator line doesn’t have annotations with the stats for the current frame. This is because the stats annotations might make it difficult to view data in real-time. To display the annotations, enable this setting.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Default recording state</strong></td>
+	<td style="text-align:left;">选择性能分析器应该在哪种记录状态下打开。可选择 <strong>Enabled</strong>、<strong>Disabled</strong> 或 <strong>Remember</strong>。Enabled 保持 <strong>Record</strong> 按钮在会话之间启用，而 <strong>Disbled</strong> 则将其禁用，无论您在性能分析会话期间是否将其打开或关闭。<strong>Remember</strong> 状态会记住您是否启用或禁用了 <strong>Record</strong> 按钮，并在您下次打开 Profiler 窗口时保持其上次的状态。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Default editor target mode</strong></td>
+	<td style="text-align:left;">Select what mode the <strong>Attach to Player</strong> dropdown should target by default. Choose from either <strong>Playmode</strong> or <strong>Editor</strong>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Custom connection ID</strong></td>
+	<td style="text-align:left;">Enter the connection name that you want to use for the device that’s running your application in the <strong>Attach to Player</strong> drop down in the <a href="profiler-profiling-applications.html#attach-to-player">Profiler Window</a> or <a href="Console.html">Console Window</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="asset-pipeline"></a></p>
+
+<h2>Asset Pipeline</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Auto Refresh</strong></td>
+	<td style="text-align:left;">Enable this setting to import Assets automatically as they change.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Import Worker Count %</strong></td>
+	<td style="text-align:left;">Enter your <strong>Desired Import Worker Count</strong> for new projects in percentage of available logical CPU cores. For example, if your system has 16 logical cores and this preference is set to 25%, the <a href="ParallelImport.html#desiredimport"><strong>Desired Import Worker Count</strong></a> for new projects is set to 4. If you set this value too high, your import worker processes need to compete over other processes and system resources such as reading and writing files. The default value of 25% is suitable for most situations.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Directory Monitoring (available only on Windows)</strong></td>
+	<td style="text-align:left;">Enable this setting to monitor directories instead of scanning all project files to detect asset changes.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Compress Textures on Import</strong></td>
+	<td style="text-align:left;">Disable this setting to skip texture compression during <a href="ImportingTextures.html">import</a>. Textures are typically imported into uncompressed formats.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Verify Saving Assets</strong></td>
+	<td style="text-align:left;">Enable this setting to verify which Assets to save individually. A dialog is shown any time Unity saves any assets.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Unity Accelerator (Cache Server)</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Default Mode</strong></td>
+	<td style="text-align:left;">Define the default setting for the Cache Server, whether to enable or disable it by default. You can override this per Project in the Unity Editor settings. For more information, see <a href="UnityAccelerator.html">Unity Accelerator</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Default IP address</strong></td>
+	<td style="text-align:left;">设置要使用的缓存服务器的默认 IP 地址。可以在 Unity Editor 设置中根据每个项目覆盖此设置。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Check Connection</strong></td>
+	<td style="text-align:left;">单击此按钮尝试连接到远程缓存服务器。</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="colors"></a></p>
+
+<h2>Colors</h2>
+
+<p>The <strong>Colors</strong> preferences let you pick colors for various user interface elements in the Unity Editor.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>动画</strong></td>
+	<td style="text-align:left;">Use this setting to customize color preferences for animated properties.</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Property Animated</strong></td>
+	<td style="text-align:left;">The color to indicate a property that’s currently being animated.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Property Candidate</strong></td>
+	<td style="text-align:left;">The color to indicate the animated property that you modified recently.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Property Recorded</strong></td>
+	<td style="text-align:left;">The color to indicate that an animated property automatically records changes in the animation clip.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>General</strong></td>
+	<td style="text-align:left;">Use this setting to customize color preferences for General settings.</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Playmode Tint</strong></td>
+	<td style="text-align:left;">The color to tint the editor to for ease of identifying when you’re in Play mode. Unity tints the whole editor with the color you pick here when you enter Play mode. Some operations in the Editor aren’t available when in Play mode, and you can reset some edited values when exiting the Play mode.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Scene</strong></td>
+	<td style="text-align:left;">Use this setting to customize preferences for a Scene.</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Background</strong></td>
+	<td style="text-align:left;">Set the color for the scene camera to clear to when the Scene FX skybox setting is turned off.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Background for Prefabs</strong></td>
+	<td style="text-align:left;">Set the color for the scene camera to clear to when the Scene FX skybox setting is turned off.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Contribute GI: Off / Receive GI: Light Probes</strong></td>
+	<td style="text-align:left;">Set the color to display when <strong>ContributeGI</strong> is disabled in the GameObject’s Static Editor Flags.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Contribute GI: On / Receive GI: Light Probes</strong></td>
+	<td style="text-align:left;">Set the color to display when <strong>ContributorGI</strong> is enabled in the GameObject’s Static Editor Flags, and the Renderer’s ReceiveGI property is set to <strong>Lightmaps</strong>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Contribute GI: On / Receive GI: Lightmaps</strong></td>
+	<td style="text-align:left;">Set the color to display when <strong>ContributeGI</strong> is enabled in the GameObject’s Static Editor Flags, and the Renderer’s ReceiveGI property is set to <strong>Light Probes</strong>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Grid</strong></td>
+	<td style="text-align:left;">Set the color of the grid in the Scene view.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Guide Line</strong></td>
+	<td style="text-align:left;">Set the color of the Guide Line in the Scene view.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Material Validator Pure Metal</strong></td>
+	<td style="text-align:left;">Set the color for the <strong>Validate Albedo/Metal Specular debug render mode</strong> to indicate the material properties.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Material Validator Value Too High</strong></td>
+	<td style="text-align:left;">Set the color for the <strong>Validate Albedo/Metal Specular debug render mode</strong> to indicate when the material value is too high.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Material Validator Value Too Low</strong></td>
+	<td style="text-align:left;">Set the color for the <strong>Validate Albedo/Metal Specular debug render mode</strong> to indicate when the material value is too low.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Selected Axis</strong></td>
+	<td style="text-align:left;">Set the color for the selected handle to show highlighted in, when Move, Rotate, or the Scale tool is engaged.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Selected Children Outline</strong></td>
+	<td style="text-align:left;">Set the outline color for the children of the selected objects.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Selected Material Highlight</strong></td>
+	<td style="text-align:left;">Set the outline color that shows when clicking on a mesh in the MeshRenderer to ping the submesh in the Scene view.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Selected Outline</strong></td>
+	<td style="text-align:left;">Set the outline color for the selected GameObjects.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>UI Collider Handle</strong></td>
+	<td style="text-align:left;">Set the color to use for the Unity UI’s padding visualization.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Volume Gizmo</strong></td>
+	<td style="text-align:left;">Set the color to indicate the audio source in Gizmo.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Wireframe</strong></td>
+	<td style="text-align:left;">Set the color of the wireframe when the wireframe render mode is active.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Wireframe Overlay</strong></td>
+	<td style="text-align:left;">Set the color of the wireframe when the textured wireframe render mode is active.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Wireframe Selected</strong></td>
+	<td style="text-align:left;">If you’ve enabled <strong>Selection Wire</strong> in the Gizmo options, then the selected wireframes appear in the color that you set here.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>X Axis</strong></td>
+	<td style="text-align:left;">The color that you set here is indicated for any built-in transform tool handle affecting x-axis.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Y Axis</strong></td>
+	<td style="text-align:left;">The color that you set here is indicated for any built-in transform tool handle affecting y-axis.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Z Axis</strong></td>
+	<td style="text-align:left;">The color that you set here is indicated for any built-in transform tool handle affecting z-axis.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="diagnostics"></a></p>
+
+<h2>Diagnostics</h2>
+
+<p>When you report a problem to Unity, the Unity Support Team might need you to enable diagnostic switches to help identify the cause. Running diagnostics on an application, whether in the Editor or a player, impacts performance and user experience. You should only run diagnostics when the Unity Support Team requires them.</p>
+
+<p>If diagnostic switches are active in your application, Unity shows a warning in the console. To reset switches, in the <strong>Diagnostics</strong> tab, click <strong>Reset all</strong>.</p>
+
+<p>If an active diagnostic switch prevents the Unity Editor from opening, use the <code>--reset-diagnostic-switches</code> parameter to reset all switches from the command line. For more information on using command line arguments at launch, see <a href="CommandLineArguments.html">Command line arguments</a>.</p>
+
+<p><a name="display-settings"></a></p>
+
+<h2>Display Settings</h2>
+
+<p>Use the <strong>Display Settings</strong> preferences to customize the behavior of the Game view for attached monitors.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Sort Display Order (Windows Only)</strong></td>
+	<td style="text-align:left;">Enable this setting to sort the display numbers of the attached monitors by distance to the main display. Note that this setting works on Windows only.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Show notification when entering fullscreen</strong></td>
+	<td style="text-align:left;">Enable this to display a notification in fullscreen mode to view the shortcut required (CTRL+SHIFT+F7) to exit the fullscreen mode in Game view. When disabled, the shortcut notification to exit the fullscreen mode doesn’t appear.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Show game view toolbar on Fullscreen</strong></td>
+	<td style="text-align:left;">When enabled, the Game view Control Bar that contains game objects like gizmos and stats is visible on the fullscreen mode.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Standalone simulation monitor mapping</strong></td>
+	<td style="text-align:left;">Displays the number of standalone monitors mapped to your device.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="external-tools"></a></p>
+
+<h2>External Tools</h2>
+
+<p>使用 <strong>External Tools</strong> 偏好设置可设置用于编写脚本、处理图像和进行源代码控制的外部应用程序。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>External Script Editor</strong></td>
+	<td style="text-align:left;">选择 Unity 应使用哪个应用程序来打开脚本文件。Unity 会自动将正确的参数传递给内置支持的脚本编辑器。Unity 内置支持 Visual Studio Community、Visual Studio Code (VSCode) 和 JetBrains Rider。<strong>Open by file extension</strong> 选项会将设备的默认应用程序用于打开相关的文件类型。如果没有默认应用程序可用，设备会打开一个窗口，提示选择用于打开文件的应用程序。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>External Script Editor Args</strong></td>
+	<td style="text-align:left;">This field controls parameters that Unity can send to your code editor when you open a file. The <code>$(File)</code>, <code>$(Line)</code> and <code>$(Column)</code> arguments pass the filename, line number and column number to your external code editor. Your code editor uses these arguments to open the correct file with the cursor at the correct position. For example, if you double click an error message in the Unity Console, Unity passes these arguments from that error message to the external editor, which then opens the right file at the position where that error occurred.<br><br>You can manually edit this field to customize the arguments Unity sends to your external code editor. Click the <strong>Reset argument</strong> button to reset this field to its default setting.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Generate all .csproj files</strong></td>
+	<td style="text-align:left;">启用此设置可生成所有 .csproj 文件。代码编辑器使用 .sln 和 .csproj 文件来访问有关项目的数据。.csproj 文件以 XML 格式存储描述性数据或元数据。此数据可能包括版本信息、平台要求、构建文件或数据库设置。<br><br>当这些文件存在时，代码编辑器可以使用其中包含的数据来提供有用的功能，例如突出显示潜在的编译错误。启用此设置可指示 Unity 在项目中尽可能创建 .csproj 文件。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>Extensions handled</strong><br><em>（仅当在 External Script Editor 中选择 Rider 或 Visual Studio Code 时才可用）</em>
+</td>
+	<td style="text-align:left;">此字段确定<strong>外部脚本编辑器 (External Script Editor)</strong> 打开的文件类型。此字段预先填充了脚本编辑器默认打开的文件列表。要将其他文件类型添加到此列表，请键入文件扩展名，并用分号分隔每个扩展名。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Image application</strong></td>
+	<td style="text-align:left;">选择希望 Unity 使用哪个应用程序来打开图像文件。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Revision Control Diff/Merge</strong></td>
+	<td style="text-align:left;">选择希望 Unity 使用哪个应用程序解决源代码控制代码仓库中的文件差异。Unity 在工具的默认安装位置检测这些工具。在 Windows 上，Unity 会检查 TortoiseMerge、WinMerge、PlasticSCM Merge 和 Beyond Compare 4 的注册表项。<br><br>有关更多信息，请参阅下面的 <a href="#diffmerge">Revision Control Diff/Merge</a> 部分。</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="diffmerge"></a></p>
+
+<h3>Revision Control Diff/Merge</h3>
+
+<p>Unity 目前支持以下工具：</p>
+
+<ul>
+<li>SourceGear DiffMerge</li>
+<li>TkDiff</li>
+<li>P4Merge</li>
+<li>TortoiseMerge</li>
+<li>WinMerge</li>
+<li>PlasticSCM Merge</li>
+<li>Beyond Compare 4</li>
+</ul>
+
+<p><strong>Note:</strong> As these are third-party tools that Unity doesn’t include by default, you might want to download and install them separately.</p>
+
+<p>要设置自定义修订工具，请按照下列步骤操作：</p>
+
+<ol>
+<li>From the <strong>Revision Control Diff/Merge</strong> dropdown list, select <strong>Custom Tool</strong>.</li>
+<li>输入自定义工具的安装文件夹的路径。在 Mac 上，应指向该工具的安装文件夹中的 <em>Contents / MacOS</em> 文件夹。</li>
+<li>输入有关双向差异、三向差异和合并的参数。</li>
+</ol>
+
+<p>要指定修订工具中的文件布局，请使用以下参数：</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><code>#LTITLE</code></td>
+	<td style="text-align:left;">左侧标题</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>#RTITLE</code></td>
+	<td style="text-align:left;">右侧标题</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>#ATITLE</code></td>
+	<td style="text-align:left;">上级标题</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>#LEFT</code></td>
+	<td style="text-align:left;">左侧文件</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>#RIGHT</code></td>
+	<td style="text-align:left;">右侧文件</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>#ANCESTOR</code></td>
+	<td style="text-align:left;">上级文件</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>#OUTPUT</code></td>
+	<td style="text-align:left;">输出文件</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>#ABSLEFT</code></td>
+	<td style="text-align:left;">左侧文件的绝对路径</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>#ABSRIGHT</code></td>
+	<td style="text-align:left;">右侧文件的绝对路径</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>#ABSANCESTOR</code></td>
+	<td style="text-align:left;">上级文件的绝对路径</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>#ABSOUTPUT</code></td>
+	<td style="text-align:left;">输出文件的绝对路径</td>
+</tr>
+</tbody>
+</table>
+
+<p>例如：</p>
+
+<figure>
+<img src="../uploads/Main/SourceGearDiffMerge.png" alt="SourceGear DiffMerge">
+<figcaption>SourceGear DiffMerge</figcaption>
+</figure>
+
+<figure>
+<img src="../uploads/Main/P4DiffMerge.png" alt="P4Merge">
+<figcaption>P4Merge</figcaption>
+</figure>
+
+<p><a name="gi-cache"></a></p>
+
+<h2>GI Cache</h2>
+
+<p>The <a href="LightingInUnity.html#globalIllumination">Global Illumination</a> (GI) system uses <a href="GICache.html">a cache on each computer</a> to store intermediate files used to pre-compute real-time Global Illumination. All projects on the computer share the cache.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Maximum Cache Size (GB)</strong></td>
+	<td style="text-align:left;">Use the slider to set the maximum GI cache folder size. Unity keeps the GI cache folder size below this number whenever possible. Unity periodically deletes unused files to create more space (deleting the oldest files first). This is an automatic process, and doesn’t require you to do anything. <br><strong>Note:</strong> If the current Scene is using all the files in the GI cache, increase your cache size. Otherwise, resource-intensive recomputation occurs when baking. This can happen when the Scene is large or the cache size is too small.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Custom cache location</strong></td>
+	<td style="text-align:left;">启用此选项可允许设置 GI 缓存文件夹的自定义位置。默认情况下，GI 缓存存储在 <em>Caches</em> 文件夹中。所有项目共享缓存文件夹。<br><strong>提示</strong>：将 GI 缓存存储在 SSD 驱动器上可以在烘焙过程受 I/O 限制的情况下加速进行烘焙。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Cache Folder Location</strong></td>
+	<td style="text-align:left;">单击 <strong>Browse</strong> 按钮可指定缓存的位置。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Cache compression</strong></td>
+	<td style="text-align:left;">This option enables Unity to compress datafiles in the GI cache to use less hard drive space. The datafiles are LZ4-compressed by default, and the naming scheme is a hash and a file extension. Unity computes the hashes based on the inputs to the lighting system, so changing any of the following settings, properties or assets can lead to lighting recomputation:<br>- Materials (Textures, Albedo, Emission)<br>- Lights<br>- Geometry<br>- Static flags<br>- Light Probe groups<br>- Reflection probes<br>- Lightmap Parameters<br><strong>Tip:</strong> If you need to access the raw Enlighten Realtime Global Illumination data, disable Cache Compression and clear the cache.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Clean Cache</strong></td>
+	<td style="text-align:left;">Use this button to clear the cache directory. <br>It’s not safe to delete the GI Cache directory manually while the Editor is running. This is because the Editor creates the <em>GiCache</em> folder when it starts and maintains a set of references to those files. The <strong>Clean Cache</strong> button ensures that the Editor releases all references to the files on disk before they’re deleted.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Cache size is</strong></td>
+	<td style="text-align:left;">显示当前缓存大小。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Cache Folder Location</strong></td>
+	<td style="text-align:left;">显示当前缓存文件夹的位置。</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="package-manager"></a></p>
+
+<h2>Package Manager</h2>
+
+<p>Use the Package Manager preferences to change the default cache location for the following packages:</p>
+
+<ul>
+<li>Packages installed from the Unity Registry</li>
+<li>Packages downloaded from the Asset Store</li>
+</ul>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>包</strong></td>
+	<td style="text-align:left;">Set the cache location that determines where packages installed from the Unity Registry are stored. For more information, see <a href="upm-config-cache.html">Customizing the global cache location</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>My Assets</strong></td>
+	<td style="text-align:left;">Set the cache location that determines where packages downloaded from the Asset Store are stored. For more information, see <a href="upm-config-cache-as.html">Customize the Asset Store cache location</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="scene-view"></a></p>
+
+<h2>Scene View</h2>
+
+<p>使用 Scene View 偏好设置自定义对象在编辑时的放置和可见性。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Create Objects at Origin</strong></td>
+	<td style="text-align:left;">启用以在原点创建新对象（与 Scene 轴心相反）。默认禁用。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Create Objects with Constrained Proportions</strong></td>
+	<td style="text-align:left;">Enable to define the default behavior for Scale in the <a href="class-Transform.html">Transform</a> component.<br>If enabled, when you adjust the value of a scale axis, the other values adjust proportionately.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Line Thickness</strong></td>
+	<td style="text-align:left;">设置您的<a href="PositioningGameObjects.html">转换工具</a>的线条粗细。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Enable filtering while searching</strong></td>
+	<td style="text-align:left;">启用可使 Scene 视图中的任何不匹配项变灰。默认启用。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Enable filtering while editing LOD groups</strong></td>
+	<td style="text-align:left;">Enable to gray out other objects in the scene while editing level of detail (LOD) groups. Enabled by default.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="search"></a></p>
+
+<h2>Search</h2>
+
+<p>Use the Search preferences to set your search preferences for the Editor.</p>
+
+<blockquote>
+<p><strong>Tip:</strong> You can also access the Search preferences in one of the following ways:</p>
+
+<ul>
+<li><p>Enter <strong>?</strong> (question mark) in the search field and select <strong>Open Search Preferences</strong> from the results.</p></li>
+<li><p>From <strong>More Options (</strong>:<strong>)</strong> in the top-left of the <strong>Search</strong> window, select <strong>Preferences</strong>.</p></li>
+</ul>
+</blockquote>
+
+<p><img src="../uploads/Main/preferences-search.png" alt="preferences page"><br><em>Search Preferences</em></p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"><strong>设置</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Track the current selection in the search</strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Enable this setting to execute the <a href="api-register-provider.html"><code>SearchProvider.trackSelection</code></a> callback each time the Search selection changes.<br><br>The callback <em>pings</em> Assets in the Project window or Hierarchy window, which can slow Search navigation in large Projects.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Generate an asset preview thumbnail for found items</strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Enable this setting to display thumbnails for items that are currently visible in the results pane of the Search window.<br><br>When you disable this setting, Search displays a generic icon. This is useful in large Projects, where generating icons can slow Search navigation.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Select the typing debounce threshold (ms)</strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">The debouncing threshold is the time the system waits for the user to finish typing before executing the search.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Provider Settings</strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">
+<strong>A</strong> <em>[Provider Toggles]</em>
+</td>
+	<td style="text-align:left;">Enable and disable providers. When you disable a provider, Search ignores it when executing searches.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">
+<strong>B</strong> <em>[Provider Order]</em>
+</td>
+	<td style="text-align:left;">Use these settings to modify the order in which search items are shown on the screen. All items of a given provider priority appear before any lower priority items.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">
+<strong>C</strong> <em>[Default Actions]</em>
+</td>
+	<td style="text-align:left;">Use these settings to choose the default actions to execute when you select (for example, double-click) an item in the search results.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Reset Priorities</strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Resets all providers to their default on/off state and priority.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Search Engines</strong></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Set the search fields in the <a href="search-advanced-object-picker.html">Object Selector</a>, <a href="Searching.html">Project</a>, and <a href="Searching.html">Scene</a> to one of the available search engines. <br><br> <strong>Classic</strong> - The original search functionality. <br> <strong>Advanced</strong> - The latest version of Search for Unity (formerly QuickSearch).</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="index"></a></p>
+
+<h3>Indexing</h3>
+
+<p>Set the Custom index pages by selecting them or deselecting them from the <strong>Custom Indexers</strong> dropdown list.</p>
+
+<p><a name="custom"></a></p>
+
+<h2>包的自定义偏好设置</h2>
+
+<p>Some Asset Store or Unity packages add their own custom preferences to the <strong>Preferences</strong> window. Typically, these use the package name as the preferences category. In this example, you can see the <a href="https://docs.unity3d.com/Packages/com.unity.cinemachine@latest">Cinemachine package</a> preferences:</p>
+
+<figure>
+<img src="../uploads/Main/PrefsPackages.png" alt="范围列表中显示特定于包的偏好设置">
+<figcaption>范围列表中显示特定于包的偏好设置</figcaption>
+</figure>
+
+<p>有关特定包的偏好设置的信息，请参阅该包的文档。本部分仅包含标准 Unity 偏好设置的文档。</p>
+<!-- area:authoring -->
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="2DAnd3DModeSettings.html"></a></span><div class="tip">2D 和 3D 模式设置</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ShortcutsManager.html"></a></span><div class="tip">Shortcuts Manager</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

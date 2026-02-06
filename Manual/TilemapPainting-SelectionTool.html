@@ -1,0 +1,483 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="选择工具 - Unity 手册">
+<title>选择工具 - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/GridSelect_properties.png">
+<meta name="description" content="选择工具 Inspector 窗口包含以下两个主要部分，即 Grid Selection 和 Modify Tilemap 属性设置。">
+<meta property="og:description" content="选择工具 Inspector 窗口包含以下两个主要部分，即 Grid Selection 和 Modify Tilemap 属性设置。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'TilemapPainting-SelectionTool';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/TilemapPainting-SelectionTool.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/TilemapPainting-SelectionTool.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/TilemapPainting-SelectionTool.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/TilemapPainting-SelectionTool.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/TilemapPainting-SelectionTool.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/TilemapPainting-SelectionTool.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/TilemapPainting-SelectionTool.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/TilemapPainting-SelectionTool.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/TilemapPainting-SelectionTool.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/TilemapPainting-SelectionTool.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/TilemapPainting-SelectionTool.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/TilemapPainting-SelectionTool.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/TilemapPainting-SelectionTool.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/TilemapPainting-SelectionTool.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/TilemapPainting-SelectionTool.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/TilemapPainting-SelectionTool.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/TilemapPainting-SelectionTool.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/TilemapPainting-SelectionTool.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/TilemapPainting-SelectionTool.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/TilemapPainting-SelectionTool.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/TilemapPainting-SelectionTool.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/TilemapPainting-SelectionTool.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/TilemapPainting-SelectionTool.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/TilemapPainting-SelectionTool.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/TilemapPainting-SelectionTool.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/TilemapPainting-SelectionTool.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/TilemapPainting-SelectionTool.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/TilemapPainting-SelectionTool.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/TilemapPainting-SelectionTool.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/TilemapPainting-SelectionTool.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/TilemapPainting-SelectionTool.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/TilemapPainting-SelectionTool.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/TilemapPainting-SelectionTool.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/TilemapPainting-SelectionTool.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/TilemapPainting-SelectionTool.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/TilemapPainting-SelectionTool.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/TilemapPainting-SelectionTool.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/TilemapPainting-SelectionTool.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/TilemapPainting-SelectionTool.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/TilemapPainting-SelectionTool.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/TilemapPainting-SelectionTool.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/TilemapPainting-SelectionTool.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/TilemapPainting-SelectionTool.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/TilemapPainting-SelectionTool.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/TilemapPainting-SelectionTool.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/TilemapPainting-SelectionTool.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/TilemapPainting-SelectionTool.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/TilemapPainting-SelectionTool.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/TilemapPainting-SelectionTool.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/TilemapPainting-SelectionTool.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/TilemapPainting-SelectionTool.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/TilemapPainting-SelectionTool.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/TilemapPainting-SelectionTool.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/TilemapPainting-SelectionTool.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/TilemapPainting-SelectionTool.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/TilemapPainting-SelectionTool.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/TilemapPainting-SelectionTool.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/TilemapPainting-SelectionTool.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Unity2D.html">2D game development</a></li>
+<li><a href="Tilemap.html">Create Tilemaps</a></li>
+<li><a href="Tilemap-workflow.html">瓦片地图工作流程</a></li>
+<li><a href="Tilemap-Painting.html">在瓦片地图上绘制</a></li>
+<li>选择工具</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="Tilemap-Painting.html"></a></span><div class="tip">在瓦片地图上绘制</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-TilemapCollider2D.html"></a></span><div class="tip">瓦片地图 2D 碰撞体 (Tilemap Collider 2D)</div>
+</div>
+</div></div>
+<h1>选择工具</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>选择工具 Inspector 窗口包含以下两个主要部分，即 <a href="#GridSelect">Grid Selection</a> 和 <a href="#Modify">Modify Tilemap</a> 属性设置。</p>
+
+<h2>Grid Selection<a name="GridSelect"></a>
+</h2>
+
+<p>使用<a href="https://docs.unity3d.com/Manual/Tilemap-Painting.html#Select">选择工具</a>可选择一个或多个单元格。<strong>Grid Selection</strong> Inspector 窗口显示选定位置处的瓦片的内容和属性。</p>
+
+<p><img src="../uploads/Main/GridSelect_properties.png" alt=""><br>Grid Selection Inspector 窗口属性</p>
+
+<h2>Grid Selection 属性</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">属性</th>
+	<th style="text-align:left;">功能</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>瓦片</strong></td>
+	<td style="text-align:left;">显示当前在选定单元格位置处设置的瓦片。如果选择多个单元格，并且它们显示相同瓦片，则会显示该瓦片的名称。如果选择具有不同瓦片的多个单元格，则此属性为空白。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Sprite</strong></td>
+	<td style="text-align:left;">在上面的 <strong>Tile</strong> 属性中会显示分配给瓦片的精灵。如果选择具有相同瓦片的多个单元格，则这会显示相同精灵。如果选择具有不同瓦片的多个单元格，则此属性为空白。这在默认情况下显示为灰色，因此无法进行编辑。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>Color</strong><a name="Color"></a>
+</td>
+	<td style="text-align:left;">精灵的顶点颜色。如果启用了 <a href="#LockColor">Lock Color</a>，则这显示为灰色，因此无法进行编辑。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Collider Type</strong></td>
+	<td style="text-align:left;">选定位置处的瓦片的碰撞体类型。这在默认情况下显示为灰色，无法进行编辑。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">-</td>
+	<td style="text-align:left;">
+<strong>注意：</strong>如果 <a href="#LockTransform">Lock Transform</a> 已启用且无法编辑，则以下<a name="Transforms"></a>变换（Position、Rotation、Scale）显示为灰色。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Position</strong></td>
+	<td style="text-align:left;">输入每个轴的偏移（以单元格为单位）以沿相应轴移动瓦片精灵。瓦片在瓦片地图上的实际单元格位置保持不变。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Rotation</strong></td>
+	<td style="text-align:left;">这会在选定位置处旋转一个或多个瓦片精灵。输入每个轴的旋转（以单元格为单位）以围绕相应轴旋转瓦片精灵。瓦片在瓦片地图上的实际单元格位置保持不变。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Scale</strong></td>
+	<td style="text-align:left;">在选定位置处缩放一个或多个瓦片精灵的大小。输入每个轴的因子以沿相应轴缩放瓦片精灵。瓦片在瓦片地图上的实际单元格位置保持不变。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>Lock Color</strong><a name="LockColor"></a>
+</td>
+	<td style="text-align:left;">选择此项可防止更改瓦片的<a href="#Color">颜色</a>，清除此项可启用 Color 属性。此属性显示为灰色时，其状态保持固定。请查看在瓦片资源中设置的 <a href="https://docs.unity3d.com/ScriptReference/Tilemaps.TileFlags.html">Tilemaps.TileFlags</a> 以修改此属性。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>Lock Transform</strong><a name="LockTransform"></a>
+</td>
+	<td style="text-align:left;">选择此项可防止更改瓦片的<a href="#Transforms">变换</a>，清除此项可启用 <strong>Transform</strong> 属性。此属性显示为灰色时，其状态保持固定。请查看在瓦片资源中设置的 <a href="../ScriptReference/Tilemaps.TileFlags.html">Tilemaps.TileFlags</a> 以修改此属性。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>删除选定项</strong></td>
+	<td style="text-align:left;">选择此按钮可删除瓦片地图中的当前选定内容。</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Modify Tilemap<a name="Modify"></a>
+</h2>
+
+<p>此部分包含可用于修改瓦片地图和其中选定内容的各种功能和工具。这包括一个工具栏（显示可用于修改瓦片地图和瓦片地图中选定内容的可用功能），以及一个下拉菜单（提供用于将由空白单元格组成的行和列插入瓦片地图中或是从中移除行和列的不同选项）。</p>
+
+<p><img src="../uploads/Main/ModifyTilemap.png" alt=""><br><strong>Modify Tilemap</strong> 部分中的可用功能。</p>
+
+<h3>辅助图标工具栏</h3>
+
+<p>从工具栏中选择功能可激活 Gizmos，它可修改瓦片地图中的选定内容。下表介绍每个选项，以及演示它们如何影响瓦片地图的示例链接。</p>
+
+<p><img src="../uploads/Main/GizmoFunctions.png" alt=""><br>这是辅助图标功能示例所基于的默认瓦片地图。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">辅助图标</th>
+	<th style="text-align:left;">功能</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><a href="#None">None</a></td>
+	<td style="text-align:left;">Scene 视图中没有辅助图标处于激活状态或显示。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="#Move">Move</a></td>
+	<td style="text-align:left;">在 Scene 视图中激活并显示一个 <strong>Move</strong> 辅助图标。使用此项可更改选定内容的偏移。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="#Rotate">Rotate</a></td>
+	<td style="text-align:left;">在 Scene 视图中激活并显示一个 <strong>Rotate</strong> 辅助图标。使用此项可更改选定内容的旋转。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="#Scale">Scale</a></td>
+	<td style="text-align:left;">在 Scene 视图中激活并显示一个 <strong>Scale</strong> 辅助图标。使用此项可更改选定内容的缩放。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="#Transform">Transform</a></td>
+	<td style="text-align:left;">在 Scene 视图中激活并显示一个 <strong>Transform</strong> 辅助图标。使用此项可一次性同时更改选定内容的偏移、旋转和缩放。</td>
+</tr>
+</tbody>
+</table>
+
+<h4>辅助图标功能示例</h4>
+
+<p><strong>None</strong><a name="None"></a></p>
+
+<p><img src="../uploads/Main/None_ex.png" alt=""><br>默认瓦片地图和选定单元格位置。没有辅助图标处于激活或可见状态。</p>
+
+<p><strong>Move</strong><a name="Move"></a></p>
+
+<p><img src="../uploads/Main/Move_ex.png" alt=""><br><strong>左：</strong>默认瓦片地图和选定单元格位置。<strong>右：</strong>选定单元格位置的偏移已更改。</p>
+
+<p><strong>Rotate</strong><a name="Rotate"></a></p>
+
+<p><img src="../uploads/Main/Rotate_ex.png" alt=""><br><strong>左：</strong>默认瓦片地图和选定单元格位置。<strong>右：</strong>选定单元格位置的旋转已更改。</p>
+
+<p><strong>Scale</strong><a name="Scale"></a></p>
+
+<p><img src="../uploads/Main/Scale_ex.png" alt=""><br><strong>左</strong>：默认瓦片地图和选定单元格位置。<strong>右</strong>：选定单元格位置的缩放已更改。</p>
+
+<p><strong>Transform</strong><a name="Transform"></a></p>
+
+<p><img src="../uploads/Main/Transform_ex.png" alt=""><br><strong>左：</strong>默认瓦片地图和选定单元格位置。<strong>右：</strong>选定单元格位置的偏移、旋转和缩放已修改。</p>
+
+<h3>Modify Tilemap 下拉选单扩展选项</h3>
+
+<figure>
+<img src="../uploads/Main/ModifyTilemap_Dropdown.png" alt="">
+</figure>
+
+<p>该下拉菜单提供用于在瓦片地图上插入由空白单元格组成的行和列或是从中移除行和列的不同选项。选择下拉菜单选项之一后，在框中输入要插入或移除的行数或列数，然后选择 <strong>Modify</strong>。</p>
+
+<p>下表介绍每个选项，以及演示它们如何影响瓦片地图的示例链接。</p>
+
+<p><img src="../uploads/Main/Default_Tilemap_example.png" alt=""><br>这是以下示例所基于的默认瓦片地图。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">属性</th>
+	<th style="text-align:left;">功能</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><a href="#InsertRow">Insert Row</a></td>
+	<td style="text-align:left;">在选定位置插入一行或多行空白单元格。现有单元格沿正 y 轴向上移位。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="#InsertRowB4">Insert Row Before</a></td>
+	<td style="text-align:left;">在选定位置下方插入一行或多行空白单元格。现有单元格沿负 y 轴向下移位。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="#DelRow">Delete Row</a></td>
+	<td style="text-align:left;">在选定位置及其上方移除一行或多行单元格。上方的现有单元格随后落下以填充已删除行留下的空间。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="#DelRowB4">Delete Row Before</a></td>
+	<td style="text-align:left;">在选定位置下方移除一行或多行单元格。下方的现有单元格随后沿正 y 轴向上移位以填充已删除行留下的空间。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="#InsertCol">Insert Column</a></td>
+	<td style="text-align:left;">在选定位置插入一列或多列空白单元格。现有单元格沿正 x 轴向右移位。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="#InsertColB4">Insert Column Before</a></td>
+	<td style="text-align:left;">在选定单元格的左侧插入一列或多列空白单元格。现有单元格沿负 x 轴向左移位。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="#DelCol">Delete Column</a></td>
+	<td style="text-align:left;">在选定位置及其右侧移除一列或多列单元格。现有单元格随后沿负 x 轴向左移位以填充已删除列留下的空间。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="#DelCol">Delete Column Before</a></td>
+	<td style="text-align:left;">在选定单元格的左侧移除一列或多列单元格。现有单元格沿正 x 轴向右移位以填充已删除列留下的空间。</td>
+</tr>
+</tbody>
+</table>
+
+<h4>不同下拉菜单选项的示例</h4>
+
+<p><strong>Insert Row</strong><a name="InsertRow"></a></p>
+
+<p><img src="../uploads/Main/InsertRow_ex.png" alt="Insert Row"><br><strong>左：___默认瓦片地图和选定单元格位置。</strong><em>右：___Insert Row。</em></p>
+
+<p><strong>Insert Row Before</strong><a name="InsertRowB4"></a></p>
+
+<p><img src="../uploads/Main/InsertRowB4_ex.png" alt="Insert Row Before"><br><strong>左：___默认瓦片地图和选定单元格位置。</strong><em>右：___Insert Row Before。</em></p>
+
+<p><strong>Delete Row</strong><a name="DelRow"></a></p>
+
+<p><img src="../uploads/Main/DelRow_ex.png" alt="Delete Row"><br><strong>左：___默认瓦片地图和选定单元格位置。</strong><em>右：___Delete Row。</em></p>
+
+<p><strong>Delete Row Before</strong><a name="DelRowB4"></a></p>
+
+<p><img src="../uploads/Main/DelRowB4_ex.png" alt="Delete Row Before"><br><strong>左：___默认瓦片地图和选定单元格位置。</strong><em>右：___Delete Row Before。</em></p>
+
+<p><strong>Insert Column</strong><a name="InsertCol"></a></p>
+
+<p><img src="../uploads/Main/InsCol_ex.png" alt="Insert Column"><br><strong>左：___默认瓦片地图和选定单元格位置。</strong><em>右：___Insert Column。</em></p>
+
+<p><strong>Insert Column Before</strong><a name="InsertColB4"></a></p>
+
+<p><img src="../uploads/Main/InsColB4_ex.png" alt="Insert Column Before"><br><strong>左：___默认瓦片地图和选定单元格位置。</strong><em>右：___Insert Column Before。</em></p>
+
+<p><strong>Delete Column</strong><a name="DelCol"></a></p>
+
+<p><img src="../uploads/Main/DelCol_ex.png" alt="Delete Column"><strong>左：___默认瓦片地图和选定单元格位置。</strong><em>右：___Delete Column。</em></p>
+
+<p><strong>Delete Column Before</strong><a name="DelColB4"></a></p>
+
+<p><img src="../uploads/Main/DelColB4_ex.png" alt="Delete Column Before"><br><strong>左：___默认瓦片地图和选定单元格位置。</strong><em>右：___Delete Column Before。</em></p>
+
+<p><strong>多单元格选择</strong></p>
+
+<p>如果选择了多个单元格，则最左下方的单元格是应用 Modify Tilemap 选项时的主参考点。请参阅以下选择多个单元格，然后修改瓦片地图的示例。</p>
+
+<p><img src="../uploads/Main/InsertRow_mult_ex.png" alt="选择多个单元格时的 Insert Row"><br><strong>左：___选择了多个单元格的默认瓦片地图。</strong><em>Right：___Insert Row。</em></p>
+
+<p><img src="../uploads/Main/InsertCol_mult_ex.png" alt="选择多个单元格时的 Insert Column"><br><strong>左：___选择了多个单元格的默认瓦片地图。</strong><em>Right：___Insert Column。</em></p>
+
+<p><img src="../uploads/Main/DelRow_mult_ex.png" alt="选择多个单元格时的 Delete Row"><br><strong>左：___选择了多个单元格的默认瓦片地图。</strong><em>Right：___Delete Row。</em></p>
+
+<p><img src="../uploads/Main/DelCol_mult_ex.png" alt="选择多个单元格时的 Delete Column"><br><strong>左：___选择了多个单元格的默认瓦片地图。</strong><em>Right：___Delete Column。</em></p>
+
+<hr>
+
+<ul>
+<li><span class="page-edit">2020–08–17</span></li>
+<li><span class="page-edit">2020–01–07</span></li>
+<li><span class="page-history">更新了 Unity 中的选择工具功能 <a href="https://docs.unity3d.com/2020.1/Documentation/Manual/30_search.html?q=newin20201">2020.1</a> <span class="search-words">NewIn20201</span></span></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="Tilemap-Painting.html"></a></span><div class="tip">在瓦片地图上绘制</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-TilemapCollider2D.html"></a></span><div class="tip">瓦片地图 2D 碰撞体 (Tilemap Collider 2D)</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

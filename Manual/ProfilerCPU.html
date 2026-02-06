@@ -1,0 +1,577 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="CPU Usage Profiler 模块 - Unity 手册">
+<title>CPU Usage Profiler 模块 - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/profiler-cpu-window.png">
+<meta name="description" content="CPU Usage Profiler 模块包含一个图表，其中显示应用程序中的时间花费情况。通过该图表可以概要了解应用程序花费时间的所有重要方面（例如渲染、脚本和动画）。文档的此部分涵盖：">
+<meta property="og:description" content="CPU Usage Profiler 模块包含一个图表，其中显示应用程序中的时间花费情况。通过该图表可以概要了解应用程序花费时间的所有重要方面（例如渲染、脚本和动画）。文档的此部分涵盖：">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'ProfilerCPU';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/ProfilerCPU.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/ProfilerCPU.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/ProfilerCPU.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/ProfilerCPU.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/ProfilerCPU.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/ProfilerCPU.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/ProfilerCPU.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/ProfilerCPU.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/ProfilerCPU.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/ProfilerCPU.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/ProfilerCPU.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/ProfilerCPU.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/ProfilerCPU.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/ProfilerCPU.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/ProfilerCPU.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/ProfilerCPU.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/ProfilerCPU.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/ProfilerCPU.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/ProfilerCPU.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/ProfilerCPU.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/ProfilerCPU.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/ProfilerCPU.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/ProfilerCPU.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/ProfilerCPU.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/ProfilerCPU.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/ProfilerCPU.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/ProfilerCPU.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/ProfilerCPU.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/ProfilerCPU.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/ProfilerCPU.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/ProfilerCPU.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/ProfilerCPU.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/ProfilerCPU.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/ProfilerCPU.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/ProfilerCPU.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/ProfilerCPU.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/ProfilerCPU.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/ProfilerCPU.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/ProfilerCPU.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/ProfilerCPU.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/ProfilerCPU.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/ProfilerCPU.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/ProfilerCPU.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/ProfilerCPU.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/ProfilerCPU.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/ProfilerCPU.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/ProfilerCPU.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/ProfilerCPU.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/ProfilerCPU.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/ProfilerCPU.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/ProfilerCPU.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/ProfilerCPU.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/ProfilerCPU.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/ProfilerCPU.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/ProfilerCPU.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/ProfilerCPU.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/ProfilerCPU.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/ProfilerCPU.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UnityOverview.html">在 Unity 中操作</a></li>
+<li><a href="analysis.html">分析</a></li>
+<li><a href="Profiler.html">性能分析器概述</a></li>
+<li><a href="ProfilerWindow.html">Profiler 窗口</a></li>
+<li>CPU Usage Profiler 模块</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="ProfilerAudio.html"></a></span><div class="tip">Audio Profiler 模块</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="profiler-file-access-module.html"></a></span><div class="tip">File Access Profiler module</div>
+</div>
+</div></div>
+<h1>CPU Usage Profiler 模块</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>CPU Usage Profiler 模块包含一个图表，其中显示应用程序中的时间花费情况。通过该图表可以概要了解应用程序花费时间的所有重要方面（例如渲染、脚本和动画）。文档的此部分涵盖：</p>
+
+<ul>
+<li><a href="#charts">图表类别</a></li>
+<li>
+<a href="#details-pane">模块详细信息面板</a>
+
+<ul>
+<li><a href="#live-setting">Live 设置</a></li>
+<li><a href="#full-names-setting">Show Full Scripting Method Names 设置</a></li>
+</ul>
+</li>
+<li>
+<a href="#timeline">Timeline 视图</a>
+
+<ul>
+<li><a href="#flow-events">Flow events</a></li>
+</ul>
+</li>
+<li><a href="#hierarchy">Hierarchy 和 Raw Hierarchy 视图</a></li>
+<li><a href="#call-stacks">分配调用栈</a></li>
+<li><a href="#samples">常用标记</a></li>
+</ul>
+
+<p><a name="charts"></a></p>
+
+<h2>图表类别</h2>
+
+<p>CPU Usage Profiler 模块的图表可跟踪应用程序主线程中花费的时间。这些时间被分为九个类别。要更改图表中类别的顺序，可以在图表的图例中拖放这些类别。还可以单击某个类别的有色图例以切换是否显示。</p>
+
+<figure>
+<img src="../uploads/Main/profiler-cpu-window.png" alt="CPU Usage Profiler 模块">
+<figcaption>CPU Usage Profiler 模块</figcaption>
+</figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>类别</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Rendering</strong></td>
+	<td style="text-align:left;">应用程序花费多少时间来渲染图形。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Scripts</strong></td>
+	<td style="text-align:left;">应用程序花费多少时间来运行脚本。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Physics</strong></td>
+	<td style="text-align:left;">应用程序在物理引擎上花费多少时间。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>动画</strong></td>
+	<td style="text-align:left;">应用程序花费多少时间来动画化应用程序中带蒙皮的网格渲染器 (Skinned Mesh Renderers)、游戏对象和其他组件。这还包括针对 Animation 组件和 Animator 组件所用的系统进行计算所花费的时间。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>GarbageCollector</strong></td>
+	<td style="text-align:left;">应用程序花费多少时间来运行<a href="../ScriptReference/Scripting.GarbageCollector.html">垃圾回收器</a>。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>VSync</strong></td>
+	<td style="text-align:left;">应用程序每帧花费多少时间来等待 <a href="../ScriptReference/Application-targetFrameRate.html">targetFrameRate</a> 或下一个要同步的 VBlank。此时间基于 <a href="../ScriptReference/QualitySettings-vSyncCount.html">QualitySettings.vSyncCount</a> 值、目标帧率或者 VSync 设置（即运行应用程序的平台的默认或强制最大值）。有关 VSync 的更多信息，请参阅本文档中的<a href="#samples">渲染和 VSync 样本</a>部分。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Global Illumination</strong></td>
+	<td style="text-align:left;">应用程序在光照中花费多少时间。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>UI</strong></td>
+	<td style="text-align:left;">应用程序花费多少时间来显示其 UI。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Others</strong></td>
+	<td style="text-align:left;">应用程序在不属于任何其他类别的代码中花费多少时间。此事件包括整个 EditorLoop 或者是 Editor 中对运行模式进行性能分析时的性能分析开销等方面。</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="details-pane"></a></p>
+
+<h2>模块详细信息面板</h2>
+
+<p>选择 CPU Usage 模块时，下面的详细信息面板将显示应用程序在选定帧内花费的时间的细分信息。可以将时间数据显示为时间轴或层级表。要更改显示视图，请使用详细信息面板中的左上角下拉选单（默认设置为 __Timeline__）。三个可用视图为：</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>视图</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><a href="#timeline">Timeline</a></td>
+	<td style="text-align:left;">显示特定帧的时间细分信息，以及该帧长度的时间轴。只有在此视图模式中才可以一次性查看所有线程上的时间以及在帧内运行线程的时间，因此可以关联各个线程的时间（例如<a href="JobSystem.html">作业系统</a>工作线程在主线程上的系统调度这些线程之后启动）。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="#hierarchy">Hierarchy</a></td>
+	<td style="text-align:left;">按时间数据的内部层级结构对这些数据分组。此选项以降序列表格式显示应用程序调用的元素，默认按花费的时间排序。还可以按分配的脚本内存量 (<strong>GC Alloc</strong>) 或调用次数对信息进行排序。要更改用于对表进行排序的列，请单击该表列的标题。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="#hierarchy">Raw Hierarchy</a></td>
+	<td style="text-align:left;">以类似于发生计时的调用栈的层级结构显示时间数据。Unity 在此模式中单独列出每个调用栈，而不是像在 <strong>Hierarchy</strong> 视图中一样将它们合并。</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="live-setting"></a></p>
+
+<h3>Live 设置</h3>
+
+<p>当您开始在运行模式 (Playmode) 或 Editor 中记录新数据时，__Live__ 设置（在每个视图中都可用）可在模块详细信息面板中显示有关当前帧或选定帧的信息。为了启用此设置，请单击模块详细信息下拉选单旁的 <strong>Live</strong> 按钮。默认情况下，此设置已禁用，并且在您记录数据时模块详细信息面板为空白。<strong>注意：</strong>重绘 Profiler 窗口时，此设置会增加 <code>EditorLoop</code> 的开销。</p>
+
+<p><a name="full-names-setting"></a></p>
+
+<h3>Show Full Scripting Method Names 设置</h3>
+
+<p>此外，在每个视图中，可以选择 <strong>More Items</strong> 菜单 (⋮) 并启用 __Show Full Scripting Method Names__，此设置随后显示所有脚本方法的完全限定名称 (<code>Assembly::Class::MethodName</code>)。</p>
+
+<figure>
+<img src="../uploads/Main/profiler-cpu-full-scripting-methods.png" alt="A：未启用 Show Full Scripting Method Names 的情况下，Hierarchy 视图和 Timeline 视图中的脚本方法&lt;br/&gt; B：已启用 Show Full Scripting Method Names 的情况下，Hierarchy 视图和 Timeline 视图中的脚本方法">
+<figcaption><strong>A：</strong>未启用 <strong>Show Full Scripting Method Names</strong> 的情况下，Hierarchy 视图和 Timeline 视图中的脚本方法<br>
+<strong>B：</strong>已启用 <strong>Show Full Scripting Method Names</strong> 的情况下，Hierarchy 视图和 Timeline 视图中的脚本方法</figcaption>
+</figure>
+
+<p><a name="timeline"></a></p>
+
+<h2>Timeline 视图</h2>
+
+<figure>
+<img src="../uploads/Main/profiler-cpu-timeline-view.png" alt="CPU Usage Profiler 模块以及 Timeline 视图">
+<figcaption>CPU Usage Profiler 模块以及 Timeline 视图</figcaption>
+</figure>
+
+<p>The Timeline view is the default view for the CPU Usage Profiler module. It contains an overview of where time is spent in your application and how the timings relate to each other.</p>
+
+<p>与 Hierarchy 视图不同，Timeline 视图沿同一时间轴在各自子部分中显示所有线程的性能分析数据。Hierarchy 视图一次只显示一个线程（默认显示主线程）的性能分析数据。此外，这些视图仅显示样本的持续时间，而 Timeline 视图会显示每个样本发生的时间。</p>
+
+<p>使用 Timeline 视图可以查看不同线程上的活动在并行执行过程中如何相互关联。在此处可以了解对不同线程（例如<a href="JobSystem.html">作业系统</a>的工作线程）的使用程度、线程上工作的排队方式以及任何线程是处于空闲状态（Idle 样本）还是在等待另一线程或作业完成（Wait for x 样本）。</p>
+
+<h3>导航和选择项目</h3>
+
+<p>要放大时间轴的区域，请使用鼠标上的滚轮，或在按住 Alt 键的同时按住鼠标右键进行拖动。也可以使用水平滚动条的两端来放大。按下键盘上的 <strong>A</strong> 键可重置缩放，以便可看到整个帧时间。</p>
+
+<p>每当在线程底部看到白色箭头时，都可以单击该箭头来展开线程以便显示所有行，或者再次单击以便仅显示顶部的行。也可以拖动分隔线程的行以重新调整可看到的行数。双击该行可将线程部分的高度设置为调用栈的最大深度。要平移视图，请按鼠标中键，或按住 Alt 键（在 macOS 上为 Command 键），然后按鼠标左键。</p>
+
+<p>要折叠和展开线程组，请单击视图最左侧的线程名称旁的折叠箭头。</p>
+
+<p>要查看某一项对 CPU 图表的贡献，请在下方面板中选择这一项。性能分析器会突出显示该项的贡献，并使图表的其余部分变暗。要取消选择该项，请单击视图中的其他位置。按 <strong>F</strong> 键可以聚焦所选的当前样本，或者如果未选择任何项，则会显示默认的缩放水平。</p>
+
+<figure>
+<img src="../uploads/Main/profiler-cpu-selected-module.png" alt="Timeline 视图中的 CPU Usage 模块，并且选择了一项">
+<figcaption>Timeline 视图中的 CPU Usage 模块，并且选择了一项</figcaption>
+</figure>
+
+<p>In the image above, the tooltip on the selected sample provides further details, such as the number of instances and the total time of this sample across all threads. You can select the text within the tooltip and copy it as well as use the buttons to interact with the sample further:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Operation</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Copy</strong></td>
+	<td style="text-align:left;">Copy the call stack and the entire content of the tooltip to your clipboard.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Show</strong></td>
+	<td style="text-align:left;">Select this dropdown to choose from the following options:</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><em>Hierarchy</em></td>
+	<td style="text-align:left;">Switch to this sample in <a href="#hierarchy">Hierarchy</a> view</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><em>Raw Hierarchy</em></td>
+	<td style="text-align:left;">Switch to this sample in <a href="#hierarchy">Raw Hierarchy</a> view</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><em>Full Details for Call Stacks</em></td>
+	<td style="text-align:left;">Unity records call stacks as a list of method pointer addresses, which it uses to display the method name, file path, and line number of the stack. Whenever only the pointer address is present, Unity ignores it to conserve screen space for the actionable items that have further information available. Enable this property to see the full list of method pointer addresses of the call stack.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><em>Selected Sample Stack</em></td>
+	<td style="text-align:left;">View the details of the sample stack. Unity opens this information in a separate window. You can then copy the sample stack information to your clipboard.<br><br>The sample stack differs from a method’s call stack because Unity does not tie every sample to a specific method, nor does it record every call as a sample. If you select a sample in a different frame and there isn’t a sample with the same sample stack in the displayed frame, this window shows both the sample stack of the original selection, as well as the approximate selection for this frame.</td>
+</tr>
+</tbody>
+</table>
+
+<p>GC.Alloc samples appear colored in red-magenta, and show you the size of the allocation.</p>
+
+<p>要在工具提示中显示托管的调用栈，请导航到 Profiler 窗口的工具栏，然后选择 Call Stacks 按钮。必须先启用此属性，然后对帧进行性能分析以显示帧的调用栈。有关更多信息，请参阅关于<a href="#call-stacks">调用栈</a>的部分。</p>
+
+<p><a name="flow-events"></a></p>
+
+<h3>Flow Events</h3>
+
+<p>为了帮助您直观地了解 Unity 如何跨线程调度作业，您可以使用 <strong>Flow Events</strong> 设置。此设置显示系统、作业和线程之间的关系。要启用此设置，请选择 Timeline 视图窗格的右上角的 <strong>More</strong> menu (⋮) ，然后选择 <strong>Show Flow Events</strong>。</p>
+
+<p>启用此设置后，性能分析器会将白色事件标记添加到用于调度作业或等待调度作业完成的性能分析器样本。它还会使不相关的样本变暗，以便您可以更容易地看到您选择的样本。</p>
+
+<p>性能分析器将三种类型的箭头添加到样本中：</p>
+
+<ul>
+<li>向下箭头：指示流程的开始，并且此样本调度了某些工作。</li>
+<li>向右箭头：指示流程中的下一个项目，并且另一个样本调度了此工作。</li>
+<li>向上箭头：指示流程的结束，以及此样本上的工作已结束或同步。</li>
+</ul>
+
+<p>当您选择一个样本时，Profiler 将相关的流程事件标记用线条连接在一起。粗线条突出显示您选择的特定流程。例如，如果一个 <code>begin</code> 样本指向另外两个 <code>next</code> 样本，当您单击 <code>next</code> 样本之一时，性能分析器会为其绘制一条较粗的线条。</p>
+
+<p>此视图有助于发现代码的执行流程、等待完成的工作，并帮助您以直观方式发现代码的依赖关系。</p>
+
+<figure>
+<img src="../uploads/Main/profiler-flow-events.png" alt="The Timeline CPU Profiler view with Flow Events enabled and a sample selected.">
+<figcaption>The Timeline CPU Profiler view with Flow Events enabled and a sample selected.</figcaption>
+</figure>
+
+<p><a name="hierarchy"></a></p>
+
+<h2>Hierarchy 和 Raw Hierarchy 视图</h2>
+
+<p>切换到 <strong>Hierarchy</strong> 或 <strong>Raw Hierarchy</strong> 视图时，只要样本在主线程上，您所做的选择就会继续存在。如果无法立即找到您的选择，请按 F 键进行聚焦。</p>
+
+<figure>
+<img src="../uploads/Main/profiler-cpu-hierarchy-view.png" alt="CPU Usage Profiler 模块以及 Hierarchy 视图">
+<figcaption>CPU Usage Profiler 模块以及 Hierarchy 视图</figcaption>
+</figure>
+
+<p><strong>Hierarchy</strong> 视图列出已进行性能分析的所有样本，并按共享的调用栈和 ProfilerMarker 层级视图将样本一起分组。<strong>Raw Hierarchy</strong> 视图不会将样本一起分组，因此非常适合在粒度级别上查看样本。也可以使用 <strong>Thread</strong> 下拉选单来选择特定线程，例如要在这些视图中检查的主线程 (Main Thread) 或渲染线程 (Render Thread)。</p>
+
+<p>默认情况下，在这些视图中，所有 EditorOnly 样本都是折叠状态。EditorOnly 样本是玩家循环 (Player Loop) 中仅由于“仅 Editor”安全性检查而发生的样本。样本折叠后，它们的 GC.Alloc 值不会影响所属样本的 GC.Alloc 值。要显示这些样本，请选择详细信息面板右上角的 <strong>More Items</strong> 菜单 (⋮)，然后禁用 <strong>Collapse EditorOnly Samples</strong> 设置。有关更多信息，请参阅本文档的<a href="#editor-only">仅 Editor 样本</a>部分。</p>
+
+<p>这两个视图都会在 Hierarchy 中每行旁边显示有关每一项的以下详细信息：</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Total</strong></td>
+	<td style="text-align:left;">Unity 在特定函数上花费的总时间（以百分比表示）。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Self</strong></td>
+	<td style="text-align:left;">Unity 在特定函数上花费的总时间（以百分比表示），不包括 Unity 在调用子函数时花费的时间。<br> <br> 例如，在截屏中，16.7% 的时间用在了 <code>Camera.Render</code> 函数上。这是因为该函数调用了许多绘制和剔除函数。但是，排除调用的函数后，只有 0.2% 的时间花费在 <code>Camera.Render</code> 函数本身上。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Calls</strong></td>
+	<td style="text-align:left;">此帧中调用此函数的次数。在 <strong>Raw Hierarchy</strong> 视图中，此列中的值始终为 1，因为性能分析器不会合并样本的层级视图。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>GC Alloc</strong></td>
+	<td style="text-align:left;">How much scripting heap memory Unity has allocated in the current frame. The <a href="performance-garbage-collector.html">garbage collector</a> manages the scripting heap memory. <br> <br> Whenever Unity calls <code>GC.Collect()</code> or there is a scripting heap allocation that does not fit within the heap’s current size, the garbage collector triggers. It marks all allocations that have no more references to them and collects them. This process appears as <strong>GC.Collect</strong> samples in the Profiler. <br> <br> Unity runs the garbage collector more frequently as your application allocates more on the heap. As the managed heap grows, it takes Unity longer to mark and collect the memory. As such, you should keep the <strong>GC Alloc</strong> value at zero while your application runs, to prevent the garbage collector from affecting your application’s framerate, and to keep the overall heap size small.<br> <br> For more details about the managed heap see the documentation on <a href="performance-managed-memory.html">Understanding Automatic Memory Management</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Time ms</strong></td>
+	<td style="text-align:left;">Unity 在特定函数上花费的总时间（以毫秒为单位）。如果应用程序使用<a href="JobSystem.html">作业系统</a>或多线程渲染，则此信息可能会产生误导，因为它仅包含 Unity 在当前选定线程上花费的时间。要更改线程，请选择 Hierarchy 面板顶部的 <strong>Thread</strong> 下拉选单。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Self ms</strong></td>
+	<td style="text-align:left;">Unity 在特定函数上花费的总时间（以毫秒为单位），不包括 Unity 在调用子函数时花费的时间。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Warning</strong></td>
+	<td style="text-align:left;">由警告图标指示，此处显示应用程序在当前帧中触发警告的次数。有关更多信息，请参阅本文档的<a href="#warnings">性能警告</a>部分。</td>
+</tr>
+</tbody>
+</table>
+
+<p>要进一步了解应用程序在何处调用和使用了接受性能分析的函数，请选择模块详细信息面板右上角的 <strong>Details</strong> 下拉选单，然后选择 <strong>Related Data</strong> 或 <strong>Calls</strong> 视图。</p>
+
+<figure>
+<img src="../uploads/Main/profiler-related-data.png" alt="Related Data panel">
+<figcaption>Related Data panel</figcaption>
+</figure>
+
+<p>The <strong>Related Data</strong> view displays a list of <code>UnityEngine.Objects</code> that use a <a href="../ScriptReference/Unity.Profiling.ProfilerMarker.Begin.html">Begin()</a> overload and are associated with the Profiler sample. Some samples that Unity reports have these associations built in, such as Camera.Render samples that are linked to the Camera GameObject that does the rendering. Unity reports these objects via their instance ID and resolves them to a name in the Profiler window, if you profile in the Editor.</p>
+
+<p>单击这些对象之一时，Unity 尝试通过 Scene 层级视图来查找此对象，然后对此对象进行 <a href="../ScriptReference/EditorGUIUtility.PingObject.html">ping</a> 操作。因为此关联性使用实例 ID，所以只有在 Editor 中对应用程序进行性能分析并且该对象仍然存在的情况下，ping 操作才有效。</p>
+
+<p>对于 <code>GC.Alloc</code> 样本，此视图会显示 <code>N/A</code> 项的列表；在此层级视图级别发生的每个分配都有一个对应的项，并且会在 GC.Alloc 列中列出此分配的大小。如果在已启用 <strong>Call Stacks</strong> 设置的情况下对应用程序进行性能分析，则在此视图中选择 <code>GC.Alloc</code> 样本时，Profiler 窗口将显示选定的所分配脚本对象的调用栈（即使未启用 Deep Profiling 设置）。有关更多信息，请参阅本文档的<a href="#allocation-callstacks">分配调用栈</a>部分。</p>
+
+<figure>
+<img src="../uploads/Main/profiler-show-calls.png" alt="Calls panel">
+<figcaption>Calls panel</figcaption>
+</figure>
+
+<p>The <strong>Calls</strong> view displays where the selected sample is being called from as well as what other functions it calls to.</p>
+
+<p><a name="call-stacks"></a></p>
+
+<h2>调用栈</h2>
+
+<p><a href="https://docs.unity3d.com/ScriptReference/Unity.Profiling.ProfilerMarker.html">ProfilerMarkers</a> emit a set of samples which the Profiler uses to display and organize profiling information into different chronological and hierarchical views. Any sample displayed in the Profiler window is therefore part of a sample stack.</p>
+
+<p>A sample stack differs from a method’s call stack because Unity does not tie every sample to a specific method, nor does it record every call as a sample. <a href="ProfilerWindow.html#deep-profiling">Deep Profiling</a> adds a <code>ProfilerMarker</code> to every function call, but it does not add any for native code, plus recording all of these samples comes with a potentially high overhead.</p>
+
+<p>您可以为 <strong>GC.Alloc</strong>、<strong>UnsafeUtility.Malloc</strong>、<strong>JobHandle.Complete</strong> 发出的样本启用完整的调用栈。如果您希望在不启用深度性能分析并避免较大开销的情况下跟踪这些样本的发生位置，这将非常有用。有关这些标记的更多信息，请参阅有关<a href="profiler-markers.html">常见性能分析器标记</a>的文档。</p>
+
+<p>To enable full call stacks for these samples, navigate to the toolbar of the Profiler window and enable the <strong>Call Stacks</strong> button. By default, this enables the call stacks for <strong>GC.Alloc</strong> samples. To enable other call stacks, select the dropdown arrow and enable any of the other markers you would like to see the call stacks for.</p>
+
+<p>无论是在编辑器中还是在运行的播放器中进行性能分析，都可以使用此功能。此功能仅在您打开此选项后才会对进行性能分析的框架生效。</p>
+
+<p>For example, every scripting heap allocation shows up as a GC.Alloc sample in both the <strong>Hierarchy</strong> view and <strong>Timeline</strong> view. In the Timeline view, it is colored bright magenta. To see a call stack, select the CPU Profiler module and then select a GC.Alloc sample in Timeline view. The call stack appears in the selection highlight.</p>
+
+<p>To copy the call stack, select the <strong>Copy</strong> button in the tooltip. You can also open the relevant code file from this view if the file path is highlighted as a blue link. Click on the link and the file opens in your default IDE. <strong>Note:</strong> The call stack information does not contain the exact line number within that method but just the line at the beginning of that method.</p>
+
+<figure>
+<img src="../uploads/Main/profiler-cpu-heirarchy-callstack.png" alt="Profiler window in Timeline view with GC.Alloc sample selected (top), and with the same sample selected in Hierarchy view.">
+<figcaption>Profiler window in Timeline view with GC.Alloc sample selected (top), and with the same sample selected in Hierarchy view.</figcaption>
+</figure>
+
+<p>You can also use the <strong>Show</strong> dropdown to see the GC.Alloc’s sample stack, its full details, or switch to view it in the <strong>Hierarchy</strong> or <strong>Raw Hierarchy</strong> view.</p>
+
+<p>要查看完整的调用栈详细信息，请在 Hierarchy 或 Raw Hierarchy 视图中将 <strong>Details</strong> 视图设置为 <strong>Related Data</strong>。此视图列出了与此样本关联的元数据，其中可能包括与之相关联的 UnityEngine.Object。对于任何不与 UnityEngine.Object 关联的元数据条目，该名称在此面板中显示为 <strong>N/A</strong>。选择 N/A 条目时，性能分析器会在 Details 视图的下半部分中显示元数据，包括调用栈。</p>
+
+<p>For more information about managed allocations, see documentation on <a href="performance-managed-memory.html">Understanding Automatic Memory Management</a>.</p>
+
+<p><a name="samples"></a></p>
+
+<h2>常用标记</h2>
+
+<p>Unity 的代码配备了大量性能分析器标记，可用于深入了解应用程序中占用时间的内容。有关您可能在性能分析数据中看到的最常见标记的完整列表，请参阅有关<a href="profiler-markers.html">常用性能分析器标记 </a>的文档。</p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="ProfilerAudio.html"></a></span><div class="tip">Audio Profiler 模块</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="profiler-file-access-module.html"></a></span><div class="tip">File Access Profiler module</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

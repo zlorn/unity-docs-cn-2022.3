@@ -1,0 +1,470 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Creating draw commands - Unity 手册">
+<title>Creating draw commands - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="To create draw commands, use the BatchRendererGroup.OnPerformCulling callback. Specifically, you use the callback&amp;#8217;s BatchCullingOutput parameter. This parameter contains a NativeArray with a single element. This layout means you can directly modify the contents of the array element without Unity copying data unnecessarily. The element in the NativeArray is a BatchCullingOutputDrawCommands struct that contains the actual draw commands.">
+<meta property="og:description" content="To create draw commands, use the BatchRendererGroup.OnPerformCulling callback. Specifically, you use the callback&amp;#8217;s BatchCullingOutput parameter. This parameter contains a NativeArray with a single element. This layout means you can directly modify the contents of the array element without Unity copying data unnecessarily. The element in the NativeArray is a BatchCullingOutputDrawCommands struct that contains the actual draw commands.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'batch-renderer-group-creating-draw-commands';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/batch-renderer-group-creating-draw-commands.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/batch-renderer-group-creating-draw-commands.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/batch-renderer-group-creating-draw-commands.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/batch-renderer-group-creating-draw-commands.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/batch-renderer-group-creating-draw-commands.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/batch-renderer-group-creating-draw-commands.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/batch-renderer-group-creating-draw-commands.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/batch-renderer-group-creating-draw-commands.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/batch-renderer-group-creating-draw-commands.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/batch-renderer-group-creating-draw-commands.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/batch-renderer-group-creating-draw-commands.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/batch-renderer-group-creating-draw-commands.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/batch-renderer-group-creating-draw-commands.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/batch-renderer-group-creating-draw-commands.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/batch-renderer-group-creating-draw-commands.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/batch-renderer-group-creating-draw-commands.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/batch-renderer-group-creating-draw-commands.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/batch-renderer-group-creating-draw-commands.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/batch-renderer-group-creating-draw-commands.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/batch-renderer-group-creating-draw-commands.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/batch-renderer-group-creating-draw-commands.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/batch-renderer-group-creating-draw-commands.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/batch-renderer-group-creating-draw-commands.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/batch-renderer-group-creating-draw-commands.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/batch-renderer-group-creating-draw-commands.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/batch-renderer-group-creating-draw-commands.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/batch-renderer-group-creating-draw-commands.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/batch-renderer-group-creating-draw-commands.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/batch-renderer-group-creating-draw-commands.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/batch-renderer-group-creating-draw-commands.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/batch-renderer-group-creating-draw-commands.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/batch-renderer-group-creating-draw-commands.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/batch-renderer-group-creating-draw-commands.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/batch-renderer-group-creating-draw-commands.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/batch-renderer-group-creating-draw-commands.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/batch-renderer-group-creating-draw-commands.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/batch-renderer-group-creating-draw-commands.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/batch-renderer-group-creating-draw-commands.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/batch-renderer-group-creating-draw-commands.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/batch-renderer-group-creating-draw-commands.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/batch-renderer-group-creating-draw-commands.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/batch-renderer-group-creating-draw-commands.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/batch-renderer-group-creating-draw-commands.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/batch-renderer-group-creating-draw-commands.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/batch-renderer-group-creating-draw-commands.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/batch-renderer-group-creating-draw-commands.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/batch-renderer-group-creating-draw-commands.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/batch-renderer-group-creating-draw-commands.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/batch-renderer-group-creating-draw-commands.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/batch-renderer-group-creating-draw-commands.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/batch-renderer-group-creating-draw-commands.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/batch-renderer-group-creating-draw-commands.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/batch-renderer-group-creating-draw-commands.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/batch-renderer-group-creating-draw-commands.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/batch-renderer-group-creating-draw-commands.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/batch-renderer-group-creating-draw-commands.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/batch-renderer-group-creating-draw-commands.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/batch-renderer-group-creating-draw-commands.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="graphics-performance-profiling.html">Graphics performance and profiling</a></li>
+<li><a href="batch-renderer-group.html">BatchRendererGroup</a></li>
+<li><a href="batch-renderer-group-creating-a-renderer.html">Creating a renderer with BatchRendererGroup</a></li>
+<li>Creating draw commands</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="batch-renderer-group-creating-batches.html"></a></span><div class="tip">Creating batches</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="dots-instancing-shaders.html"></a></span><div class="tip">DOTS Instancing shaders</div>
+</div>
+</div></div>
+<h1>Creating draw commands</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>To create draw commands, use the <a href="../ScriptReference/Rendering.BatchRendererGroup.OnPerformCulling.html">BatchRendererGroup.OnPerformCulling</a> callback. Specifically, you use the callback’s <a href="../ScriptReference/Rendering.BatchCullingOutput.html">BatchCullingOutput</a> parameter. This parameter contains a <a href="../ScriptReference/Unity.Collections.NativeArray_1.html">NativeArray</a> with a single element. This layout means you can directly modify the contents of the array element without Unity copying data unnecessarily. The element in the NativeArray is a <a href="../ScriptReference/Rendering.BatchCullingOutputDrawCommands.html">BatchCullingOutputDrawCommands</a> struct that contains the <a href="../ScriptReference/Rendering.BatchCullingOutputDrawCommands-drawCommands.html">actual draw commands</a>.</p>
+
+<p>Your OnPerformCulling implementation can generate as many or as few draw commands as you want. A simple implementation that only uses a single mesh and material could only output a single draw command, a more complex implementation could output thousands, each with different meshes and materials.</p>
+
+<p><strong>Note</strong>: To provide maximum flexibility, Unity doesn’t preallocate the arrays in the BatchCullingOutputDrawCommands output struct and stores them as raw pointers so you can easily allocate them and use them from <a href="https://docs.unity3d.com/Packages/com.unity.burst@latest">Burst</a> jobs. You must allocate the arrays using <a href="../ScriptReference/Unity.Collections.LowLevel.Unsafe.UnsafeUtility.Malloc.html">UnsafeUtility.Malloc</a> with the the <a href="../ScriptReference/Unity.Collections.Allocator.TempJob.html">Allocator.TempJob</a> allocator. The callback shouldn’t release the memory. Instead, Unity releases the memory after it finishes rendering using the draw commands.</p>
+
+<p>See the following code sample for an example of how to create draw commands. This code sample builds on the one in <a href="batch-renderer-group-creating-batches.html">Creating batches</a>.</p>
+
+<pre><code class="c#">using System;
+using Unity.Collections;
+using Unity.Collections.LowLevel.Unsafe;
+using Unity.Jobs;
+using UnityEngine;
+using UnityEngine.Rendering;
+
+public class SimpleBRGExample : MonoBehaviour
+{
+    public Mesh mesh;
+    public Material material;
+
+    private BatchRendererGroup m_BRG;
+
+    private GraphicsBuffer m_InstanceData;
+    private BatchID m_BatchID;
+    private BatchMeshID m_MeshID;
+    private BatchMaterialID m_MaterialID;
+
+    // Some helper constants to make calculations more convenient.
+    private const int kSizeOfMatrix = sizeof(float) * 4 * 4;
+    private const int kSizeOfPackedMatrix = sizeof(float) * 4 * 3;
+    private const int kSizeOfFloat4 = sizeof(float) * 4;
+    private const int kBytesPerInstance = (kSizeOfPackedMatrix * 2) + kSizeOfFloat4;
+    private const int kExtraBytes = kSizeOfMatrix * 2;
+    private const int kNumInstances = 3;
+
+    // The PackedMatrix is a convenience type that converts matrices into
+    // the format that Unity-provided SRP shaders expect.
+    struct PackedMatrix
+    {
+        public float c0x;
+        public float c0y;
+        public float c0z;
+        public float c1x;
+        public float c1y;
+        public float c1z;
+        public float c2x;
+        public float c2y;
+        public float c2z;
+        public float c3x;
+        public float c3y;
+        public float c3z;
+
+        public PackedMatrix(Matrix4x4 m)
+        {
+            c0x = m.m00;
+            c0y = m.m10;
+            c0z = m.m20;
+            c1x = m.m01;
+            c1y = m.m11;
+            c1z = m.m21;
+            c2x = m.m02;
+            c2y = m.m12;
+            c2z = m.m22;
+            c3x = m.m03;
+            c3y = m.m13;
+            c3z = m.m23;
+        }
+    }
+
+    private void Start()
+    {
+        m_BRG = new BatchRendererGroup(this.OnPerformCulling, IntPtr.Zero);
+        m_MeshID = m_BRG.RegisterMesh(mesh);
+        m_MaterialID = m_BRG.RegisterMaterial(material);
+
+        AllocateInstanceDateBuffer();
+        PopulateInstanceDataBuffer();
+    }
+
+    private void AllocateInstanceDateBuffer()
+    {
+        m_InstanceData = new GraphicsBuffer(GraphicsBuffer.Target.Raw,
+            BufferCountForInstances(kBytesPerInstance, kNumInstances, kExtraBytes),
+            sizeof(int));
+    }
+
+    private void PopulateInstanceDataBuffer()
+    {
+        // Place a zero matrix at the start of the instance data buffer, so loads from address 0 return zero.
+        var zero = new Matrix4x4[1] { Matrix4x4.zero };
+
+        // Create transform matrices for three example instances.
+        var matrices = new Matrix4x4[kNumInstances]
+        {
+            Matrix4x4.Translate(new Vector3(-2, 0, 0)),
+            Matrix4x4.Translate(new Vector3(0, 0, 0)),
+            Matrix4x4.Translate(new Vector3(2, 0, 0)),
+        };
+
+        // Convert the transform matrices into the packed format that shaders expects.
+        var objectToWorld = new PackedMatrix[kNumInstances]
+        {
+            new PackedMatrix(matrices[0]),
+            new PackedMatrix(matrices[1]),
+            new PackedMatrix(matrices[2]),
+        };
+
+        // Also create packed inverse matrices.
+        var worldToObject = new PackedMatrix[kNumInstances]
+        {
+            new PackedMatrix(matrices[0].inverse),
+            new PackedMatrix(matrices[1].inverse),
+            new PackedMatrix(matrices[2].inverse),
+        };
+
+        // Make all instances have unique colors.
+        var colors = new Vector4[kNumInstances]
+        {
+            new Vector4(1, 0, 0, 1),
+            new Vector4(0, 1, 0, 1),
+            new Vector4(0, 0, 1, 1),
+        };
+
+        // In this simple example, the instance data is placed into the buffer like this:
+        // Offset | Description
+        //      0 | 64 bytes of zeroes, so loads from address 0 return zeroes
+        //     64 | 32 uninitialized bytes to make working with SetData easier, otherwise unnecessary
+        //     96 | unity_ObjectToWorld, three packed float3x4 matrices
+        //    240 | unity_WorldToObject, three packed float3x4 matrices
+        //    384 | _BaseColor, three float4s
+
+        // Calculates start addresses for the different instanced properties. unity_ObjectToWorld starts at 
+        // address 96 instead of 64 which means 32 bits are left uninitialized. This is because the 
+        // computeBufferStartIndex parameter requires the start offset to be divisible by the size of the source
+        // array element type. In this case, it's the size of PackedMatrix, which is 48.
+        uint byteAddressObjectToWorld = kSizeOfPackedMatrix * 2;
+        uint byteAddressWorldToObject = byteAddressObjectToWorld + kSizeOfPackedMatrix * kNumInstances;
+        uint byteAddressColor = byteAddressWorldToObject + kSizeOfPackedMatrix * kNumInstances;
+
+        // Upload the instance data to the GraphicsBuffer so the shader can load them.
+        m_InstanceData.SetData(zero, 0, 0, 1);
+        m_InstanceData.SetData(objectToWorld, 0, (int)(byteAddressObjectToWorld / kSizeOfPackedMatrix), objectToWorld.Length);
+        m_InstanceData.SetData(worldToObject, 0, (int)(byteAddressWorldToObject / kSizeOfPackedMatrix), worldToObject.Length);
+        m_InstanceData.SetData(colors, 0, (int)(byteAddressColor / kSizeOfFloat4), colors.Length);
+
+        // Set up metadata values to point to the instance data. Set the most significant bit 0x80000000 in each
+        // which instructs the shader that the data is an array with one value per instance, indexed by the instance index.
+        // Any metadata values that the shader uses and not set here will be zero. When such a value is used with
+        // UNITY_ACCESS_DOTS_INSTANCED_PROP (i.e. without a default), the shader interprets the
+        // 0x00000000 metadata value and loads from the start of the buffer. The start of the buffer which is
+        // is a zero matrix so this sort of load is guaranteed to return zero, which is a reasonable default value.
+        var metadata = new NativeArray&lt;MetadataValue&gt;(3, Allocator.Temp);
+        metadata[0] = new MetadataValue { NameID = Shader.PropertyToID("unity_ObjectToWorld"), Value = 0x80000000 | byteAddressObjectToWorld, };
+        metadata[1] = new MetadataValue { NameID = Shader.PropertyToID("unity_WorldToObject"), Value = 0x80000000 | byteAddressWorldToObject, };
+        metadata[2] = new MetadataValue { NameID = Shader.PropertyToID("_BaseColor"), Value = 0x80000000 | byteAddressColor, };
+
+        // Finally, create a batch for the instances, and make the batch use the GraphicsBuffer with the
+        // instance data, as well as the metadata values that specify where the properties are. 
+        m_BatchID = m_BRG.AddBatch(metadata, m_InstanceData.bufferHandle);
+    }
+
+    // Raw buffers are allocated in ints. This is a utility method that calculates
+    // the required number of ints for the data.
+    int BufferCountForInstances(int bytesPerInstance, int numInstances, int extraBytes = 0)
+    {
+        // Round byte counts to int multiples
+        bytesPerInstance = (bytesPerInstance + sizeof(int) - 1) / sizeof(int) * sizeof(int);
+        extraBytes = (extraBytes + sizeof(int) - 1) / sizeof(int) * sizeof(int);
+        int totalBytes = bytesPerInstance * numInstances + extraBytes;
+        return totalBytes / sizeof(int);
+    }
+
+
+    private void OnDisable()
+    {
+        m_BRG.Dispose();
+    }
+
+    public unsafe JobHandle OnPerformCulling(
+        BatchRendererGroup rendererGroup,
+        BatchCullingContext cullingContext,
+        BatchCullingOutput cullingOutput,
+        IntPtr userContext)
+    {
+        // UnsafeUtility.Malloc() requires an alignment, so use the largest integer type's alignment
+        // which is a reasonable default.
+        int alignment = UnsafeUtility.AlignOf&lt;long&gt;();
+
+        // Acquire a pointer to the BatchCullingOutputDrawCommands struct so you can easily
+        // modify it directly.
+        var drawCommands = (BatchCullingOutputDrawCommands*)cullingOutput.drawCommands.GetUnsafePtr();
+
+        // Allocate memory for the output arrays. In a more complicated implementation, you would calculate
+        // the amount of memory to allocate dynamically based on what is visible.
+        // This example assumes that all of the instances are visible and thus allocates
+        // memory for each of them. The necessary allocations are as follows:
+        // - a single draw command (which draws kNumInstances instances)
+        // - a single draw range (which covers our single draw command)
+        // - kNumInstances visible instance indices.
+        // You must always allocate the arrays using Allocator.TempJob.
+        drawCommands-&gt;drawCommands = (BatchDrawCommand*)UnsafeUtility.Malloc(UnsafeUtility.SizeOf&lt;BatchDrawCommand&gt;(), alignment, Allocator.TempJob);
+        drawCommands-&gt;drawRanges = (BatchDrawRange*)UnsafeUtility.Malloc(UnsafeUtility.SizeOf&lt;BatchDrawRange&gt;(), alignment, Allocator.TempJob);
+        drawCommands-&gt;visibleInstances = (int*)UnsafeUtility.Malloc(kNumInstances * sizeof(int), alignment, Allocator.TempJob);
+        drawCommands-&gt;drawCommandPickingInstanceIDs = null;
+
+        drawCommands-&gt;drawCommandCount = 1;
+        drawCommands-&gt;drawRangeCount = 1;
+        drawCommands-&gt;visibleInstanceCount = kNumInstances;
+
+        // This example doens't use depth sorting, so it leaves instanceSortingPositions as null.
+        drawCommands-&gt;instanceSortingPositions = null;
+        drawCommands-&gt;instanceSortingPositionFloatCount = 0;
+
+        // Configure the single draw command to draw kNumInstances instances
+        // starting from offset 0 in the array, using the batch, material and mesh
+        // IDs registered in the Start() method. It doesn't set any special flags.
+        drawCommands-&gt;drawCommands[0].visibleOffset = 0;
+        drawCommands-&gt;drawCommands[0].visibleCount = kNumInstances;
+        drawCommands-&gt;drawCommands[0].batchID = m_BatchID;
+        drawCommands-&gt;drawCommands[0].materialID = m_MaterialID;
+        drawCommands-&gt;drawCommands[0].meshID = m_MeshID;
+        drawCommands-&gt;drawCommands[0].submeshIndex = 0;
+        drawCommands-&gt;drawCommands[0].splitVisibilityMask = 0xff;
+        drawCommands-&gt;drawCommands[0].flags = 0;
+        drawCommands-&gt;drawCommands[0].sortingPosition = 0;
+
+        // Configure the single draw range to cover the single draw command which
+        // is at offset 0.
+        drawCommands-&gt;drawRanges[0].drawCommandsBegin = 0;
+        drawCommands-&gt;drawRanges[0].drawCommandsCount = 1;
+
+        // This example doesn't care about shadows or motion vectors, so it leaves everything
+        // at the default zero values, except the renderingLayerMask which it sets to all ones
+        // so Unity renders the instances regardless of mask settings.
+        drawCommands-&gt;drawRanges[0].filterSettings = new BatchFilterSettings { renderingLayerMask = 0xffffffff, };
+
+        // Finally, write the actual visible instance indices to the array. In a more complicated
+        // implementation, this output would depend on what is visible, but this example
+        // assumes that everything is visible.
+        for (int i = 0; i &lt; kNumInstances; ++i)
+            drawCommands-&gt;visibleInstances[i] = i;
+
+        // This simple example doesn't use jobs, so it returns an empty JobHandle.
+        // Performance-sensitive applications are encouraged to use Burst jobs to implement
+        // culling and draw command output. In this case, this function returns a
+        // handle here that completes when the Burst jobs finish.
+        return new JobHandle();
+    }
+}
+</code></pre>
+
+<p>This is the final, complete, code sample for BRG. If you attach this Component to a GameObject, set a mesh and <a href="dots-instancing-shaders.html">DOTS Instancing</a>-compatible material in the Inspector, and enter Play Mode, Unity renders three instances of the mesh using the material.</p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="batch-renderer-group-creating-batches.html"></a></span><div class="tip">Creating batches</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="dots-instancing-shaders.html"></a></span><div class="tip">DOTS Instancing shaders</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

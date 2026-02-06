@@ -1,0 +1,508 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Handle events - Unity 手册">
+<title>Handle events - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="Events in UI Toolkit are similar to HTML events. When an event occurs, it&amp;#8217;s sent to the target visual element and to all elements within the propagation path in the visual element tree.">
+<meta property="og:description" content="Events in UI Toolkit are similar to HTML events. When an event occurs, it&amp;#8217;s sent to the target visual element and to all elements within the propagation path in the visual element tree.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'UIE-Events-Handling';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/UIE-Events-Handling.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/UIE-Events-Handling.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/UIE-Events-Handling.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/UIE-Events-Handling.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/UIE-Events-Handling.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/UIE-Events-Handling.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIE-Events-Handling.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIE-Events-Handling.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIE-Events-Handling.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIE-Events-Handling.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-Events-Handling.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-Events-Handling.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-Events-Handling.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-Events-Handling.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-Events-Handling.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-Events-Handling.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-Events-Handling.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-Events-Handling.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-Events-Handling.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-Events-Handling.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-Events-Handling.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-Events-Handling.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-Events-Handling.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-Events-Handling.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-Events-Handling.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-Events-Handling.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-Events-Handling.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-Events-Handling.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-Events-Handling.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-Events-Handling.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/UIE-Events-Handling.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/UIE-Events-Handling.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/UIE-Events-Handling.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/UIE-Events-Handling.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIE-Events-Handling.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIE-Events-Handling.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIE-Events-Handling.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIE-Events-Handling.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-Events-Handling.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-Events-Handling.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-Events-Handling.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-Events-Handling.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-Events-Handling.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-Events-Handling.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-Events-Handling.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-Events-Handling.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-Events-Handling.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-Events-Handling.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-Events-Handling.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-Events-Handling.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-Events-Handling.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-Events-Handling.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-Events-Handling.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-Events-Handling.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-Events-Handling.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-Events-Handling.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-Events-Handling.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-Events-Handling.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UIToolkits.html">Create user interfaces (UI)</a></li>
+<li><a href="UIElements.html">UI 工具包</a></li>
+<li><a href="UIE-Events.html">Control behavior with events</a></li>
+<li>Handle events</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-Events-Dispatching.html"></a></span><div class="tip">Dispatch events</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-Events-Synthesizing.html"></a></span><div class="tip">Synthesize and send events</div>
+</div>
+</div></div>
+<h1>Handle events</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Events in UI Toolkit are similar to <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events">HTML events</a>. When an event occurs, it’s sent to the target visual element and to all elements within the propagation path in the visual element tree.</p>
+
+<p>事件处理顺序如下：</p>
+
+<ol>
+<li>在从根元素往下到事件目标父级的元素上执行事件回调。这是分发过程的<strong>涓滴阶段</strong>。</li>
+<li>在事件目标上执行事件回调。这是分发过程的<strong>目标阶段</strong>。</li>
+<li>在事件目标上调用 <code>ExecuteDefaultActionAtTarget()</code>。</li>
+<li>从事件目标父级往上到直到根部的元素上执行事件回调。这是分发过程的<strong>冒泡阶段</strong>。</li>
+<li>在事件目标上调用 <code>ExecuteDefaultAction()</code>。</li>
+</ol>
+
+<p>在沿着传播路径发送事件时，<code>Event.currentTarget</code> 属性更新为当前正在处理事件的元素。在事件回调函数中：</p>
+
+<ul>
+<li>
+<code>Event.currentTarget</code> 是回调注册的视觉元素。</li>
+<li>
+<code>Event.target</code> 是原始事件发生的视觉元素。</li>
+</ul>
+
+<p>有关更多信息，请参阅<a href="UIE-Events-Dispatching.html">分发事件</a>。</p>
+
+<h2>Register an event callback</h2>
+
+<p>You can register an event callback to customize the behavior of an individual instance of an existing class, such as reacting to a mouse click on a text label.</p>
+
+<p>传播路径上的每个元素（目标除外）对一个事件可以接收两次：</p>
+
+<ul>
+<li>在涓滴阶段一次。</li>
+<li>在冒泡阶段一次。</li>
+</ul>
+
+<p>By default, a registered callback executes during the target phase and the bubble-up phase. This default behavior ensures that a parent element reacts after its child element. </p>
+
+<p>On the other hand, if you want a parent element to react before its child, register your callback with the <code>TrickleDown.TrickleDown</code> option:</p>
+
+<pre><code class="lang-csharp">using UnityEngine;
+using UnityEngine.UIElements;
+
+...
+VisualElement myElement = new VisualElement();
+
+// Register a callback for the trickle-down phase.
+myElement.RegisterCallback&lt;MouseDownEvent&gt;(MyCallback, TrickleDown.TrickleDown);
+...
+</code></pre>
+
+<p>此代码将通知分发程序在目标阶段和涓滴阶段执行回调。</p>
+
+<p>To add a custom behavior to a specific visual element, register an event callback on that element. </p>
+
+<p>The following example registers a callback for the <code>MouseDownEvent</code>:</p>
+
+<pre><code class="lang-csharp">// 对鼠标按下事件注册回调
+myElement.RegisterCallback&lt;MouseDownEvent&gt;(MyCallback);
+</code></pre>
+
+<p>The signature for the callback function looks like this:</p>
+
+<pre><code class="lang-csharp">void MyCallback(MouseDownEvent evt) { /* ...*/ }
+</code></pre>
+
+<p>You can register multiple callbacks for an event. However, you can only register the same callback function on the same event and propagation phase once. </p>
+
+<p>To remove a callback from a <code>VisualElement</code>, call the <code>myElement.UnregisterCallback()</code> method.</p>
+
+<h2>Send custom data to an event callback</h2>
+
+<p>您可以将自定义数据随同回调一起发送到事件。要附加自定义数据，您必须通过扩展该调用的方式来注册回调。</p>
+
+<p>The following example registers a callback for the <code>MouseDownEvent</code> and sends custom data to the callback function:</p>
+
+<pre><code class="lang-csharp">//将用户数据一起发送到回调
+myElement.RegisterCallback&lt;MouseDownEvent, MyType&gt;(MyCallbackWithData, myData);
+</code></pre>
+
+<p>The signature for the callback function looks like this:</p>
+
+<pre><code class="lang-csharp">void MyCallbackWithData(MouseDownEvent evt, MyType data) { /* ...*/ }
+</code></pre>
+
+<h2>Listen to value changes</h2>
+
+<p>UI controls can use the <code>value</code> property to hold data for their internal state. For example:</p>
+
+<ul>
+<li>A <code>Toggle</code> holds a Boolean value that changes when the <code>Toggle</code> is turned on or off.</li>
+<li>An <code>IntegerField</code> holds an integer that holds the field’s value.</li>
+</ul>
+
+<p>You can get the value of the control by the following:</p>
+
+<ul>
+<li><p>Get the value from the control directly: <code>int val = myIntegerField.value;</code>.</p></li>
+<li>
+<p>Listen to a <code>ChangeEvent</code> sent by the control and process the change when it happens. You must register your callback to the event like this:</p>
+
+<pre><code class="lang-csharp">//RegisterValueChangedCallback is a shortcut for RegisterCallback&lt;ChangeEvent&gt;. 
+//It constrains the right type of T for any VisualElement that implements an 
+//INotifyValueChange interface.
+myIntegerField.RegisterValueChangedCallback(OnIntegerFieldChange); 
+</code></pre>
+
+<p>The signature for the callback function looks like this:</p>
+
+<pre><code class="lang-csharp">void OnIntegerFieldChange(ChangeEvent&lt;int&gt; evt) { /* ... */ }
+</code></pre>
+</li>
+</ul>
+
+<p>You can change the value of a control by the following:</p>
+
+<ul>
+<li>Directly change the <code>value</code> variable: <code>myControl.value = myNewValue;</code>. This will trigger a new <code>ChangeEvent</code>.</li>
+<li>Use <code>myControl.SetValueWithoutNotify(myNewValue);</code>. This won’t trigger a new <code>ChangeEvent</code>.</li>
+</ul>
+
+<p>For more information, see <a href="UIE-Change-Events.html">Change events</a></p>
+
+<h2>Handle input events for a control</h2>
+
+<p>You can use an event handler or use a manipulator to handle input events.</p>
+
+<h3>Capture the pointer</h3>
+
+<p>When you handle pointer input, you might want the control to capture a pointer. When a visual element captures a pointer, Unity sends all the events associated with the pointer to the visual element regardless of whether the pointer hovers over the visual element. For example, if you create a control that receives drag events and captures the pointer, the control still receives drag events regardless of the pointer location.</p>
+
+<p>To capture a pointer, use <a href="UIE-Capture-Events.html">capture events</a>. See <a href="UIE-create-drag-and-drop-ui.html">Create a drag-and-drop UI inside a custom Editor window</a> for an example.</p>
+
+<h3>
+<a name="manipulator"></a>Use a manipulator to handle events</h3>
+
+<p>If you want to separate your event logic from your UI code, use a manipulator to handle events. A <strong>manipulator</strong> is a dedicated class that stores, registers, and unregisters event callbacks. You can use or inherit from one of the manipulators that UI Toolkit supports to handle events.</p>
+
+<p>UI Toolkit supports the following manipulators:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Manipulator</strong></th>
+	<th style="text-align:left;"><strong>Inherits from</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.Manipulator.html"><strong><code>Manipulator</code></strong></a></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Base class for all provided manipulators.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.KeyboardNavigationManipulator.html"><strong><code>KeyboardNavigationManipulator</code></strong></a></td>
+	<td style="text-align:left;"><code>Manipulator</code></td>
+	<td style="text-align:left;">Handles translation of device-specific input events to higher-level navigation operations with a keyboard.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.MouseManipulator.html"><strong><code>MouseManipulator</code></strong></a></td>
+	<td style="text-align:left;"><code>Manipulator</code></td>
+	<td style="text-align:left;">Handles mouse input. Has a list of activation filters.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.ContextualMenuManipulator.html"><strong><code>ContextualMenuManipulator</code></strong></a></td>
+	<td style="text-align:left;"><code>MouseManipulator</code></td>
+	<td style="text-align:left;">Displays a contextual menu when the user clicks the right mouse button or presses the menu key on the keyboard.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.PointerManipulator.html"><strong><code>PointerManipulator</code></strong></a></td>
+	<td style="text-align:left;"><code>MouseManipulator</code></td>
+	<td style="text-align:left;">Handles pointer input. Has a list of activation filters.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/UIElements.Clickable.html"><strong><code>Clickable</code></strong></a></td>
+	<td style="text-align:left;"><code>PointerManipulator</code></td>
+	<td style="text-align:left;">Tracks mouse events on an element and callbacks when a user clicks a mouse button while the pointer hovers over an element.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Respond to events with custom controls</h2>
+
+<p>如果您要实现自定义控件，则可以通过两种方式响应 UI 工具包事件：</p>
+
+<ul>
+<li>注册事件回调。</li>
+<li>实现默认操作。</li>
+</ul>
+
+<p>您选择如何响应事件取决于情况。</p>
+
+<p>回调和默认操作之间的区别是：</p>
+
+<ul>
+<li>回调必须在类的实例上注册。默认操作作为类上的虚拟函数运行。</li>
+<li>回调在传播路径上的所有视觉元素都会执行。默认操作仅对事件目标执行。</li>
+<li>回调可能会执行额外的检查，以确定它们是否应该对事件做出反应。例如，处理鼠标单击的回调可能会检查元素是否是事件的目标。默认操作可以跳过此步骤。</li>
+<li>默认操作在性能上略有优势，因为它们在传播阶段不需要在回调注册表中查找。</li>
+</ul>
+
+<h3>Implement a default action</h3>
+
+<p>默认操作适用于该类的所有实例。实现默认操作的类也可以在该类的实例上注册回调。</p>
+
+<p>当一个类实现默认操作时，它必须派生一个新的 <code>VisualElement</code> 的子类并实现 <code>ExecuteDefaultActionAtTarget()</code> 和/或 <code>ExecuteDefaultAction()</code> 方法，或两者都实现。</p>
+
+<p>默认操作是视觉元素子类的每个实例在接收事件时执行的操作。您可以通过覆盖 <code>ExecuteDefaultActionAtTarget()</code> 和 <code>ExecuteDefaultAction()</code> 来自定义默认操作，如下例所示：</p>
+
+<pre><code class="lang-csharp">override void ExecuteDefaultActionAtTarget(EventBase evt)
+{
+    // Call the base function.
+    base.ExecuteDefaultActionAtTarget(evt);
+
+    if (evt.eventTypeId == MouseDownEvent.TypeId())
+    {
+        // ...
+    }
+    else if (evt.eventTypeId == MouseUpEvent.TypeId())
+    {
+        // ...
+    }
+    // More event types
+}
+</code></pre>
+
+<p>通过在 <code>ExecuteDefaultAction()</code> 中实现您的默认操作，您可以停止或阻止一个默认操作的执行。</p>
+
+<p>如果希望在父级回调之前执行目标默认操作，请在 `ExecuteDefaultActionAtTarget() 中实现默认操作。</p>
+
+<p>应该将默认操作视为一个元素类型在接收事件时应该具有的行为。例如，复选框应通过切换其状态来响应单击事件。您可以通过覆盖默认操作虚拟函数（而不是在所有复选框上注册回调）来实现此行为。</p>
+
+<h2>自定义控件的最佳实践</h2>
+
+<p>The following are best practices for custom controls.</p>
+
+<h3>Implement behaviors</h3>
+
+<p>您应该通过具有默认操作的元素来实现行为。您可以在附加到实例的回调中调用 <code>PreventDefault()</code> 取消默认元素行为。</p>
+
+<p>将行为实现为默认操作的其他好处是：</p>
+
+<ul>
+<li>默认操作不需要在回调注册表中查找。</li>
+<li>没有回调的实例不进入传播过程。</li>
+</ul>
+
+<p>为了获得更大灵活性，可在事件分发过程中的以下两个时刻执行事件目标的默认操作：</p>
+
+<ul>
+<li>Between the trickle-down and the bubble-up propagation phase, immediately after execution of the target callbacks, override <code>ExecuteDefaultActionsAtTarget()</code>.</li>
+<li>At the end of the event dispatch process, override <code>ExecuteDefaultActions()</code>.</li>
+</ul>
+
+<h3>类的默认操作</h3>
+
+<p>如有可能，尽量在 <code>ExecuteDefaultActions()</code> 中实现类的默认操作。这允许更多选项来覆盖类。您可以在事件传播过程的涓滴阶段或冒泡阶段调用 <code>PreventDefault()</code> 来覆盖类。</p>
+
+<p>如果事件不应传播到父元素，则必须在默认操作期间停止事件传播。例如，文本字段接收修改其值的 <code>KeyDownEvent</code>，例如使用 <code>Delete</code> 键删除内容。此事件不得传播到父视觉元素。使用 <code>ExecuteDefaultActionsAtTarget()</code> 实现默认操作并调用 <code>StopPropagation()</code> 以确保在冒泡阶段不处理该事件。</p>
+
+<p>仅对事件目标执行默认操作。要使类对针对其子元素或父元素的事件做出反应，您必须注册回调以在涓流或冒泡传播阶段接收事件。避免在类中注册回调以提高性能。</p>
+
+<h3>Stop event propagation and cancel default actions</h3>
+
+<p>在回调或默认操作中处理事件时，您可以停止进一步的事件传播和默认操作的执行。例如，父面板可通过在涓流阶段停止传播来阻止其子面板接收事件。</p>
+
+<p>您不能阻止事件类自身内部的 <code>EventBase.PreDispatch()</code> 和 <code>EventBase.PostDispatch()</code> 方法。</p>
+
+<p>以下方法影响事件传播和默认操作：</p>
+
+<ul>
+<li>
+<code>StopImmediatePropagation()</code>: Stops the event propagation process immediately, so no other callbacks execute for the event. However, the <code>ExecuteDefaultActionAtTarget()</code> and <code>ExecuteDefaultAction()</code> default actions still execute.</li>
+<li>
+<code>StopPropagation()</code>: Stops the event propagation process after the last callback on the current element. This ensures that all callbacks execute on the current element, but no further elements react to the event. The <code>ExecuteDefaultActionAtTarget()</code> and <code>ExecuteDefaultAction()</code> default actions still execute.</li>
+<li>
+<code>PreventDefaultAction()</code>: Prevents the event propagation process from calling the <code>ExecuteDefaultActionAtTarget()</code> and <code>ExecuteDefaultAction()</code> default actions. <code>PreventDefaultAction()</code> doesn’t prevent the execution of other callbacks and doesn’t affect the <code>ExecuteDefaultActionAtTarget()</code> action during the bubble-up phase.</li>
+</ul>
+
+<h2>其他资源</h2>
+
+<ul>
+<li><a href="UIE-Events-Synthesizing.html">Synthesize and send events</a></li>
+<li><a href="UIE-Events-Reference.html">Events reference</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-Events-Dispatching.html"></a></span><div class="tip">Dispatch events</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-Events-Synthesizing.html"></a></span><div class="tip">Synthesize and send events</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

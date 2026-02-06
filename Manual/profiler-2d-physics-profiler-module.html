@@ -1,0 +1,840 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Physics 2D Profiler module - Unity 手册">
+<title>Physics 2D Profiler module - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/physics2d-profiler-window.png">
+<meta name="description" content="The Physics 2D Profiler module displays information about the physics that the physics system has processed in your project’s scene. This information can help you diagnose and resolve performance issues or unexpected discrepancies related to the physics in your project’s scene.">
+<meta property="og:description" content="The Physics 2D Profiler module displays information about the physics that the physics system has processed in your project’s scene. This information can help you diagnose and resolve performance issues or unexpected discrepancies related to the physics in your project’s scene.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'profiler-2d-physics-profiler-module';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/profiler-2d-physics-profiler-module.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/profiler-2d-physics-profiler-module.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/profiler-2d-physics-profiler-module.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/profiler-2d-physics-profiler-module.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/profiler-2d-physics-profiler-module.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/profiler-2d-physics-profiler-module.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/profiler-2d-physics-profiler-module.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/profiler-2d-physics-profiler-module.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/profiler-2d-physics-profiler-module.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/profiler-2d-physics-profiler-module.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/profiler-2d-physics-profiler-module.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/profiler-2d-physics-profiler-module.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/profiler-2d-physics-profiler-module.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/profiler-2d-physics-profiler-module.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/profiler-2d-physics-profiler-module.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/profiler-2d-physics-profiler-module.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/profiler-2d-physics-profiler-module.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/profiler-2d-physics-profiler-module.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/profiler-2d-physics-profiler-module.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/profiler-2d-physics-profiler-module.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/profiler-2d-physics-profiler-module.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/profiler-2d-physics-profiler-module.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/profiler-2d-physics-profiler-module.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/profiler-2d-physics-profiler-module.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/profiler-2d-physics-profiler-module.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/profiler-2d-physics-profiler-module.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/profiler-2d-physics-profiler-module.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/profiler-2d-physics-profiler-module.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/profiler-2d-physics-profiler-module.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/profiler-2d-physics-profiler-module.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/profiler-2d-physics-profiler-module.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/profiler-2d-physics-profiler-module.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/profiler-2d-physics-profiler-module.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/profiler-2d-physics-profiler-module.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/profiler-2d-physics-profiler-module.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/profiler-2d-physics-profiler-module.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/profiler-2d-physics-profiler-module.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/profiler-2d-physics-profiler-module.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/profiler-2d-physics-profiler-module.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/profiler-2d-physics-profiler-module.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/profiler-2d-physics-profiler-module.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/profiler-2d-physics-profiler-module.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/profiler-2d-physics-profiler-module.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/profiler-2d-physics-profiler-module.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/profiler-2d-physics-profiler-module.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/profiler-2d-physics-profiler-module.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/profiler-2d-physics-profiler-module.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/profiler-2d-physics-profiler-module.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/profiler-2d-physics-profiler-module.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/profiler-2d-physics-profiler-module.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/profiler-2d-physics-profiler-module.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/profiler-2d-physics-profiler-module.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/profiler-2d-physics-profiler-module.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/profiler-2d-physics-profiler-module.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/profiler-2d-physics-profiler-module.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/profiler-2d-physics-profiler-module.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/profiler-2d-physics-profiler-module.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/profiler-2d-physics-profiler-module.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UnityOverview.html">在 Unity 中操作</a></li>
+<li><a href="analysis.html">分析</a></li>
+<li><a href="Profiler.html">性能分析器概述</a></li>
+<li><a href="ProfilerWindow.html">Profiler 窗口</a></li>
+<li>Physics 2D Profiler module</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="ProfilerPhysics.html"></a></span><div class="tip">Physics Profiler 模块</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ProfilerRendering.html"></a></span><div class="tip">Rendering Profiler 模块</div>
+</div>
+</div></div>
+<h1>Physics 2D Profiler module</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>The Physics 2D Profiler module displays information about the physics that the physics system has processed in your project’s scene. This information can help you diagnose and resolve performance issues or unexpected discrepancies related to the physics in your project’s scene.</p>
+
+<p><img src="../uploads/Main/physics2d-profiler-window.png" alt="Physics 2D Profiler window"><br>The Physics 2D Profiler module in the <a href="ProfilerWindow.html#layout">Profiler window</a></p>
+
+<h2>图表类别</h2>
+
+<p>The Physics 2D Profiler module’s chart tracks different statistics related to the physics that the physics system processes in the project’s scene, divided into the following chart categories. Click on the frame chart window or select a captured frame in the chart graph to track selected categories. To change the order of the categories in the chart, drag and drop them in the chart’s legend. You can also click a category’s colored legend to toggle its display. Refer to the <a href="#module-details-pane">module details pane</a> for more information about the selected statistics.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Chart</th>
+	<th style="text-align:left;">描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Total Contacts</strong></td>
+	<td style="text-align:left;">The total number of contacts that were present in this frame. This includes both Collision and Trigger contacts. Processing and solving contacts can be time consuming therefore they should be kept to a minimum.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Total Shapes</strong></td>
+	<td style="text-align:left;">The total number of <a href="../ScriptReference/PhysicsShape2D.html">physics shapes</a> that were present in this frame. Different <a href="../ScriptReference/Collider2D.html">Collider2D</a> produce different amounts of physics shapes ranging from one to unlimited. You can get the <a href="../ScriptReference/Collider2D-shapeCount.html">shape count</a> and <a href="../ScriptReference/Collider2D.GetShapes.html">retrieve the physics shapes</a> to determine this for any Collider2D.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Total Queries</strong></td>
+	<td style="text-align:left;">The total number of queries that were called this frame. This includes queries such as <a href="../ScriptReference/Physics2D.Raycast.html">Physics2D.Raycast</a>, <a href="../ScriptReference/Physics2D.OverlapPoint.html">Physics2D.OverlapPoint</a> etc.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>Total Callbacks</strong><a name="TotalCallbacks"></a>
+</td>
+	<td style="text-align:left;">The total number of <a href="../ScriptReference/Collider2D.OnCollisionEnter2D.html">OnCollisionEnter2D</a>, <a href="../ScriptReference/Collider2D.OnCollisionStay2D.html">OnCollisionStay2D</a>, <a href="../ScriptReference/Collider2D.OnCollisionExit2D.html">OnCollisionExit2D</a>, <a href="../ScriptReference/Collider2D.OnTriggerEnter2D.html">OnTriggerEnter2D</a>, <a href="../ScriptReference/Collider2D.OnTriggerStay2D.html">OnTriggerStay2D</a> and <a href="../ScriptReference/Collider2D.OnTriggerExit2D.html">OnTriggerExit2D</a> callbacks that were called in this frame.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Total Joints</strong></td>
+	<td style="text-align:left;">The total number of any <a href="../ScriptReference/Joint2D.html">Joint2D</a> that were present in this frame.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Total Bodies</strong></td>
+	<td style="text-align:left;">The total number of <a href="../ScriptReference/Rigidbody2D.html">Rigidbody2D</a> that were present in this frame.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Awake Bodies</strong></td>
+	<td style="text-align:left;">The total number of Rigidbody2D that were both <a href="../ScriptReference/Rigidbody2D.IsAwake.html">awake</a> (not <a href="../ScriptReference/Rigidbody2D.IsSleeping.html">sleeping</a>) and were present in this frame.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Dynamic Bodies</strong></td>
+	<td style="text-align:left;">The total number of Rigidbody2D with a <a href="../ScriptReference/RigidbodyType2D.Dynamic.html">Dynamic</a> body type that were present in this frame. Dynamic bodies take the most processing of all body types therefore they should be kept to a minimum.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Continuous Bodies</strong></td>
+	<td style="text-align:left;">The total number of Rigidbody2D with a <a href="../ScriptReference/CollisionDetectionMode2D.Continuous.html">Continuous</a> collision detection mode that were present in this frame. Continuous bodies are much more expensive than when using Discrete collision detection mode therefore they should be kept to a minimum.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Physics Used Memory</strong></td>
+	<td style="text-align:left;">The total amount of persistent memory used exclusively by the 2D physics system. This includes both the core engine and the memory used by each physics component, but does not include the temporary memory used in this frame.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Module details pane <a name="module-details-pane"></a>
+</h2>
+
+<p>When you select a frame in the Physics 2D Profiler module, the details pane displays detailed information about the physics in your project’s scene. The details pane is sorted by category, where each category exists on a single line.</p>
+
+<p>The following reference table describes the statistics available, plus its corresponding profiler counter, and availability in Release builds. The profiler counters are always available in the Editor and Development builds. This information is also available via the <a href="../ScriptReference/Unity.Profiling.ProfilerRecorder.html">ProfilerRecorder API</a> and in the <a href="profiler-module-editor.html">Profiler Module Editor</a> so you can add them to a custom Profiler module.</p>
+
+<h3>Physics Used Memory</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Statistic</th>
+	<th style="text-align:left;">描述</th>
+	<th style="text-align:left;">Corresponding Profiler Counter (exact name)</th>
+	<th style="text-align:left;">Available in Release Players?</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Total</strong></td>
+	<td style="text-align:left;">The total amount of persistent memory used exclusively by the 2D physics system. This includes both the core engine and the memory used by each physics component, but does not include temporary memory used in this frame.</td>
+	<td style="text-align:left;">Physics Used Memory 2D</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Relative</strong></td>
+	<td style="text-align:left;">The relative percentage of memory used by the 2D physics system compared to the overall memory usage of Unity.</td>
+	<td style="text-align:left;">无</td>
+	<td style="text-align:left;">无 </td>
+</tr>
+</tbody>
+</table>
+
+<h3>Bodies</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Statistic</th>
+	<th style="text-align:left;">描述</th>
+	<th style="text-align:left;">Corresponding Profiler Counter (exact name)</th>
+	<th style="text-align:left;">Available in Release Players?</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Total</strong></td>
+	<td style="text-align:left;">The total number of <a href="../ScriptReference/Rigidbody2D.html">Rigidbody2D</a> that were present in this frame.</td>
+	<td style="text-align:left;">Total Bodies</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Awake</strong></td>
+	<td style="text-align:left;">The number of Rigidbody2D that were both <a href="../ScriptReference/Rigidbody2D.IsAwake.html">awake</a> (not <a href="../ScriptReference/Rigidbody2D.IsSleeping.html">sleeping</a>) and were present in this frame. Note that a Rigidbody2D with a <a href="../ScriptReference/RigidbodyType2D.Static.html">Static</a> body type is always asleep.</td>
+	<td style="text-align:left;">Awake Bodies</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Asleep</strong></td>
+	<td style="text-align:left;">The number of Rigidbody2D that were both sleeping (not awake) and were present in this frame. Note that a Rigidbody2D with a Static body type is always asleep.</td>
+	<td style="text-align:left;">Asleep Bodies</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Dynamic</strong></td>
+	<td style="text-align:left;">The number of Rigidbody2D with a <a href="../ScriptReference/RigidbodyType2D.Dynamic.html">Dynamic</a> body type that were present in this frame. Dynamic bodies take the most processing of all body types therefore they should be kept to a minimum.</td>
+	<td style="text-align:left;">Dynamic Bodies</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Kinematic</strong></td>
+	<td style="text-align:left;">The number of Rigidbody2D with a <a href="../ScriptReference/RigidbodyType2D.Kinematic.html">Kinematic</a> body type that were present in this frame. Kinematic bodies have minimal processing therefore they should be used when explicit movement is required but reaction to external forces is not.</td>
+	<td style="text-align:left;">Kinematic Bodies</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Static</strong></td>
+	<td style="text-align:left;">The number of Rigidbody2D with a <a href="../ScriptReference/RigidbodyType2D.Static.html">Static</a> body type that were present in this frame. Static bodies take the least processing of all body types therefore they should be used when possible where no movement is required.</td>
+	<td style="text-align:left;">Static Bodies</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Discrete</strong></td>
+	<td style="text-align:left;">The number of Rigidbody2D with a <a href="../ScriptReference/CollisionDetectionMode2D.Discrete.html">Discrete</a> collision detection mode that were present in this frame. Discrete bodies are far less expensive than when using <a href="../ScriptReference/CollisionDetectionMode2D.Continuous.html">Continuous</a> collision detection mode therefore they should be used where possible.</td>
+	<td style="text-align:left;">Discrete Bodies</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Continuous</strong></td>
+	<td style="text-align:left;">The number of Rigidbody2D with a <a href="../ScriptReference/CollisionDetectionMode2D.Continuous.html">Continuous</a> collision detection mode that were present in this frame. Continuous bodies are much more expensive than when using Discrete collision detection mode therefore they should be kept to a minimum.</td>
+	<td style="text-align:left;">Continuous Bodies</td>
+	<td style="text-align:left;">否</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Shapes</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Statistic</th>
+	<th style="text-align:left;">描述</th>
+	<th style="text-align:left;">Corresponding Profiler Counter (exact name)</th>
+	<th style="text-align:left;">Available in Release Players?</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Total</strong></td>
+	<td style="text-align:left;">The total number of <a href="../ScriptReference/PhysicsShape2D.html">physics shapes</a> that were present in this frame.. Different <a href="../ScriptReference/Collider2D.html">Collider2D</a> produce different amounts of physics shapes ranging from one to unlimited. You can get the <a href="../ScriptReference/Collider2D-shapeCount.html">shape count</a> and <a href="../ScriptReference/Collider2D.GetShapes.html">retrieve the physics shapes</a> to determine this for any Collider2D.</td>
+	<td style="text-align:left;">Total Shapes</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Awake</strong></td>
+	<td style="text-align:left;">A physics shape is awake if it is attached to a <a href="../ScriptReference/Rigidbody2D.html">Rigidbody2D</a> that is <a href="../ScriptReference/Rigidbody2D.IsAwake.html">awake</a>. This is the number of physics shapes that were both awake (not <a href="../ScriptReference/Rigidbody2D.IsSleeping.html">sleeping</a>) and were present in this frame.</td>
+	<td style="text-align:left;">Awake Shapes</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Asleep</strong></td>
+	<td style="text-align:left;">A physics shape is asleep if it is attached to a Rigidbody2D that is asleep. This is the number of physics shapes that were both sleeping (not awake) and were present in this frame.</td>
+	<td style="text-align:left;">Asleep Shapes</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Dynamic</strong></td>
+	<td style="text-align:left;">A physics shape is <a href="../ScriptReference/RigidbodyType2D.Dynamic.html">Dynamic</a> if it is attached to a Rigidbody2D with a Dynamic body type. This is the number of physics shapes that were both Dynamic and were present in this frame.</td>
+	<td style="text-align:left;">Dynamic Shapes</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Kinematic</strong></td>
+	<td style="text-align:left;">A physics shape is Dynamic if it is attached to a Rigidbody2D with a <a href="../ScriptReference/RigidbodyType2D.Kinematic.html">Kinematic</a> body type. This is the number of physics shapes that were both Kinematic and were present in this frame.</td>
+	<td style="text-align:left;">Kinematic Shapes</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Static</strong></td>
+	<td style="text-align:left;">A physics shape is Dynamic if it is attached to a Rigidbody2D with a <a href="../ScriptReference/RigidbodyType2D.Static.html">Static</a> body type. This is the number of physics shapes that were both Static and were present in this frame.</td>
+	<td style="text-align:left;">Static Shapes</td>
+	<td style="text-align:left;">否</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Queries</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Statistic</th>
+	<th style="text-align:left;">描述</th>
+	<th style="text-align:left;">Corresponding Profiler Counter (exact name)</th>
+	<th style="text-align:left;">Available in Release Players?</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Total</strong></td>
+	<td style="text-align:left;">The total number of queries that were called this frame. This includes queries such as <a href="../ScriptReference/Physics2D.Raycast.html">Physics2D.Raycast</a>, and <a href="../ScriptReference/Physics2D.OverlapPoint.html">Physics2D.OverlapPoint</a>.</td>
+	<td style="text-align:left;">Total Queries</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Raycast</strong></td>
+	<td style="text-align:left;">The number of ray or line based queries that were called this frame. This includes queries such as Physics2D.Raycast and <a href="../ScriptReference/Physics2D.Linecast.html">Physics2D.Linecast</a>.</td>
+	<td style="text-align:left;">Raycast Queries</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Shapecast</strong></td>
+	<td style="text-align:left;">The number of shape swept queries that were called this frame. This includes queries such as <a href="../ScriptReference/Physics2D.BoxCast.html">Physics2D.BoxCast</a>, <a href="../ScriptReference/Physics2D.CircleCast.html">Physics2D.CircleCast</a>, and <a href="../ScriptReference/Collider2D.Cast.html">Collider2D.Cast</a>.</td>
+	<td style="text-align:left;">Shapecast Queries</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Overlap</strong></td>
+	<td style="text-align:left;">The number of overlap queries that were called this frame. This includes queries such as <a href="../ScriptReference/Physics2D.OverlapPoint.html">Physics2D.OverlapPoint</a>, <a href="../ScriptReference/Physics2D.OverlapCircle.html">Physics2D.OverlapCircle</a>, and <a href="../ScriptReference/Collider2D.OverlapCollider.html">Collider2D.OverlapCollider</a>.</td>
+	<td style="text-align:left;">Overlap Queries</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>IsTouching</strong></td>
+	<td style="text-align:left;">The number of contact touching queries that were called this frame. This includes queries such as <a href="../ScriptReference/Physics2D.IsTouching.html">Physics2D.IsTouching</a>, <a href="../ScriptReference/Collider2D.IsTouching.html">Collider2D.IsTouching</a>, <a href="../ScriptReference/Rigidbody2D.IsTouchingLayers.html">Rigidbody2D.IsTouching</a> etc.</td>
+	<td style="text-align:left;">IsTouching Queries</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>GetContacts</strong></td>
+	<td style="text-align:left;">The number of contact retrieval queries that were called this frame. This includes queries such as <a href="../ScriptReference/Physics2D.GetContacts.html">Physics2D.GetContacts</a>, <a href="../ScriptReference/Collider2D.GetContacts.html">Collider2D.GetContacts</a>, and <a href="../ScriptReference/Rigidbody2D.GetContacts.html">Rigidbody2D.GetContacts</a>. Note that this does not include <a href="../ScriptReference/Collision2D-contacts.html">Collision2D.GetContacts</a> which is not a physics query.</td>
+	<td style="text-align:left;">GetContacts Queries</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Particle</strong></td>
+	<td style="text-align:left;">The number of queries that were called by the particle system in this frame. This is used when the particle system module is configured to contact 2D physics Colliders and is entirely controlled by the particle system. Note that this can become quite high but is also very efficient to process.</td>
+	<td style="text-align:left;">Particle Queries</td>
+	<td style="text-align:left;">否</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Contacts</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Statistic</th>
+	<th style="text-align:left;">描述</th>
+	<th style="text-align:left;">Corresponding Profiler Counter (exact name)</th>
+	<th style="text-align:left;">Available in Release Players?</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Total</strong></td>
+	<td style="text-align:left;">The total number of contacts that were present in this frame. This includes both Collision and Trigger contacts. Processing and solving contacts can be time consuming therefore they should be kept to a minimum.</td>
+	<td style="text-align:left;">Total Contacts</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Added</strong></td>
+	<td style="text-align:left;">The number of contacts that were added in this frame. This includes both Collision and Trigger contacts. Adding too many contacts in a single frame can cause performance spikes therefore this should be kept to a minimum.</td>
+	<td style="text-align:left;">Added Contacts</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Removed</strong></td>
+	<td style="text-align:left;">The number of contacts that were removed in this frame. This includes both Collision and Trigger contacts. Removing contacts is fast and has minimum impact on performance.</td>
+	<td style="text-align:left;">Removed Contacts</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Broadphase Updates</strong></td>
+	<td style="text-align:left;">The number of broadphase updates that were processed in this frame. A broadphase update occurs when physics shapes are added, removed or change in size. Broadphase updates are used to detect contact changes when two physics shapes potentially overlap and can result in a broadphase pair (see below) being created.</td>
+	<td style="text-align:left;">Broadphase Updates</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Broadphase Pairs</strong></td>
+	<td style="text-align:left;">The number of broadphase pairs that were processed in this frame. A broadphase pair is created when a broadphase update results in a potential overlap of two physics shapes. A broadphase pair is then processed and the result will be a new contact or it will be ignored if the physics shapes are not configured to contact each other.</td>
+	<td style="text-align:left;">Broadphase Pairs</td>
+	<td style="text-align:left;">否</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Callbacks</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Statistic</th>
+	<th style="text-align:left;">描述</th>
+	<th style="text-align:left;">Corresponding Profiler Counter (exact name)</th>
+	<th style="text-align:left;">Available in Release Players?</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Total</strong></td>
+	<td style="text-align:left;">The total number of <a href="../ScriptReference/Collider2D.OnCollisionEnter2D.html">OnCollisionEnter2D</a>, <a href="../ScriptReference/Collider2D.OnCollisionStay2D.html">OnCollisionStay2D</a>, <a href="../ScriptReference/Collider2D.OnCollisionExit2D.html">OnCollisionExit2D</a>, <a href="../ScriptReference/Collider2D.OnTriggerEnter2D.html">OnTriggerEnter2D</a>, <a href="../ScriptReference/Collider2D.OnTriggerStay2D.html">OnTriggerStay2D</a> and <a href="../ScriptReference/Collider2D.OnTriggerExit2D.html">OnTriggerExit2D</a> callbacks that were called in this frame.</td>
+	<td style="text-align:left;">Total Callbacks</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Collision Enter</strong></td>
+	<td style="text-align:left;">The number of OnCollisionEnter2D callbacks that were called in this frame.</td>
+	<td style="text-align:left;">Collision Enter</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Collision Stay</strong></td>
+	<td style="text-align:left;">The number of OnCollisionStay2D callbacks that were called in this frame.</td>
+	<td style="text-align:left;">Collision Stay</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Collision Exit</strong></td>
+	<td style="text-align:left;">The number of OnCollisionExit2D callbacks that were called in this frame.</td>
+	<td style="text-align:left;">Collision Exit</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Trigger Enter</strong></td>
+	<td style="text-align:left;">The number of OnTriggerEnter2D callbacks that were called in this frame.</td>
+	<td style="text-align:left;">Trigger Enter</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Trigger Stay</strong></td>
+	<td style="text-align:left;">The number of OnTriggerStay2D callbacks that were called in this frame.</td>
+	<td style="text-align:left;">Trigger Stay</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Trigger Exit</strong></td>
+	<td style="text-align:left;">The number of OnTriggerExit2D callbacks that were called in this frame.</td>
+	<td style="text-align:left;">Trigger Exit</td>
+	<td style="text-align:left;">否</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Solver</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Statistic</th>
+	<th style="text-align:left;">描述</th>
+	<th style="text-align:left;">Corresponding Profiler Counter (exact name)</th>
+	<th style="text-align:left;">Available in Release Players?</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">
+<strong>World Count</strong><a name="WorldCount"></a>
+</td>
+	<td style="text-align:left;">The total number of <a href="../ScriptReference/PhysicsScene2D.html">physics scene</a> that were present in this frame. Each physics scene contains a physics world that can be simulated independently of any other physics world. Having a large number of worlds is not in of itself a performance issue because it will only occupy memory and not perform any work unless it is simulated.</td>
+	<td style="text-align:left;">Solver World Count</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>Simulation Count</strong><a name="SimCount"></a>
+</td>
+	<td style="text-align:left;">The number of times all physics scene were simulated either by Unity automatically, by calling <a href="../ScriptReference/Physics2D.Simulate.html">Physics2D.Simulate</a> or by directly calling <a href="../ScriptReference/PhysicsScene2D.Simulate.html">PhysicsScene2D.Simulate</a>.</td>
+	<td style="text-align:left;">Solver Simulation Count</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Discrete Islands</strong></td>
+	<td style="text-align:left;">An island is a connected graph of bodies connected via mutual joints or mutual contacts. Note that <a href="../ScriptReference/RigidbodyType2D.Static.html">Static</a> body types do not connect islands. The number of contact islands solved when handling the discrete solving step.</td>
+	<td style="text-align:left;">Solver Discrete Islands</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Continuous Islands</strong></td>
+	<td style="text-align:left;">An island is a connected graph of bodies connected via mutual joints or mutual contacts. Note that Static body types do not connect islands. This is the number of islands solved when handling the continuous solving step. Solving continuous islands is an extremely expensive process and involves multiple iterations that require islands to be regenerated and reprocessed so this should be kept to a minimum. Only a <a href="../ScriptReference/Rigidbody2D.html">Rigidbody2D</a> with a <a href="../ScriptReference/CollisionDetectionMode2D.Continuous.html">Continuous</a> collision detection mode will result in this additional continuous island being formed and processed.</td>
+	<td style="text-align:left;">Solver Continuous Islands</td>
+	<td style="text-align:left;">否</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Transform Sync</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Statistic</th>
+	<th style="text-align:left;">描述</th>
+	<th style="text-align:left;">Corresponding Profiler Counter (exact name)</th>
+	<th style="text-align:left;">Available in Release Players?</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">
+<strong>Sync Calls</strong><a name="SyncCalls"></a>
+</td>
+	<td style="text-align:left;">The total number of Transform sync calls that were called in this frame. A Transform sync (known as a Transform Read) involves checking to see if any Transforms have changed and if so, the Transform poses are read and cause any <a href="../ScriptReference/Rigidbody2D.html">Rigidbody2D</a> or <a href="../ScriptReference/Collider2D.html">Collider2D</a> to be updated. Transforms should not be changed when using physics components however sometimes this is necessary but should be avoided due to potential performance issues if performing too many. Any movements should be performed by using the Rigidbody2D API.<br><br>The physics system will perform a single Transform sync as the first part of performing a simulation step so this will always be at least one if a simulation occurred (see <a href="#SimCount">Simulation Count</a> above). The physics system will also perform a single Transform sync per-frame if it is handling any Rigidbody2D interpolation.<br><br>Additional calls are shown if either <a href="../ScriptReference/Physics2D-autoSyncTransforms.html">Physics2D.AutoSyncTransforms</a> is active (inactive by default) or if <a href="../ScriptReference/Physics2D.SyncTransforms.html">Physics2D.SyncTransforms</a> is called although both of these should be avoided as they can both have a severe impact on performance.</td>
+	<td style="text-align:left;">Total Transform Sync Calls</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Sync Bodies</strong></td>
+	<td style="text-align:left;">The number of Rigidbody2D that were affected by a Transform sync. This should be kept to a minimum, preferably zero.</td>
+	<td style="text-align:left;">Transform Sync Bodies</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Sync Colliders</strong></td>
+	<td style="text-align:left;">The number of Collider2D that were affected by a Transform sync. This should be kept to a minimum, preferably zero.</td>
+	<td style="text-align:left;">Transform Sync Colliders</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Parent Sync Bodies</strong></td>
+	<td style="text-align:left;">The number of Rigidbody2D that were affected by a Transform sync caused by reparenting a Transform.. This should be kept to a minimum, preferably zero.</td>
+	<td style="text-align:left;">Transform Parent Sync Bodies</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Parent Sync Colliders</strong></td>
+	<td style="text-align:left;">The number of Collider2D that were affected by a Transform sync caused by reparenting a Transform. This should be kept to a minimum, preferably zero.</td>
+	<td style="text-align:left;">Transform Parent Sync Colliders</td>
+	<td style="text-align:left;">否</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Joints</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Statistic</th>
+	<th style="text-align:left;">描述</th>
+	<th style="text-align:left;">Corresponding Profiler Counter (exact name)</th>
+	<th style="text-align:left;">Available in Release Players?</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Total</strong></td>
+	<td style="text-align:left;">The total number of any <a href="../ScriptReference/Joint2D.html">Joint2D</a> that were present in this frame. Solving joints can become expensive so these should be kept to a minimum.</td>
+	<td style="text-align:left;">Total Joints</td>
+	<td style="text-align:left;">否</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Timings</h3>
+
+<p><strong>Note</strong>: All timings are summed over all physics worlds (see <a href="#WorldCount">World Count</a>). The number of times any timing was sampled is shown in square brackets after the timing itself. Effectively the timing can be divided by the <strong>World Count</strong> value to give an average time.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Statistic</th>
+	<th style="text-align:left;">描述</th>
+	<th style="text-align:left;">Corresponding Profiler Counter (exact name)</th>
+	<th style="text-align:left;">Available in Release Players?</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Sim</strong></td>
+	<td style="text-align:left;">The total amount of time spent handling a full simulation step. This can be called by Unity automatically, by calling <a href="../ScriptReference/Physics2D.Simulate.html">Physics2D.Simulate</a> or by directly calling <a href="../ScriptReference/PhysicsScene2D.Simulate.html">PhysicsScene2D.Simulate</a>. This time includes all the stages involved in completing a simulation step including Transform Sync (read), Calculating Contacts, Integration, Solving Contacts and Joints, Transform Write and Contact Callbacks.</td>
+	<td style="text-align:left;">无</td>
+	<td style="text-align:left;">无</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Sync</strong></td>
+	<td style="text-align:left;">The total amount of time spent processing Transform Sync (see <a href="#SyncCalls">Sync Calls</a>).</td>
+	<td style="text-align:left;">无</td>
+	<td style="text-align:left;">无</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Step</strong></td>
+	<td style="text-align:left;">The total amount of time spent processing simulation steps. This time includes only the core stages involved in completing a simulation step including Calculating Contacts, Integration, Solving Contacts and Joints.</td>
+	<td style="text-align:left;">无</td>
+	<td style="text-align:left;">无</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Write</strong></td>
+	<td style="text-align:left;">The total amount of time spent processing Transform write. This happens during the end of the simulation step where body poses are read and written back to the Transform system.</td>
+	<td style="text-align:left;">无</td>
+	<td style="text-align:left;">无</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Callbacks</strong></td>
+	<td style="text-align:left;">The total amount of time spent processing all callbacks (see <a href="#TotalCallbacks">Total Callbacks</a>).</td>
+	<td style="text-align:left;">无</td>
+	<td style="text-align:left;">无</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Legacy Physics Profiler</h2>
+
+<p>You can switch to the <strong>Legacy</strong> mode to see the older version of the Physics 2D Profiler module, which was the default module in older versions of Unity. To do this, select <strong>Legacy</strong> from the dropdown menu at the upper-right of the Profiler module’s details pane.</p>
+
+<p>In this mode, you can load and inspect Profiler data that was saved in an older version of Unity. If you switch to this mode to inspect data captured in a newer version of Unity, then the data displayed may be unreliable and inaccurate. It is recommended to always use the <strong>Current</strong> mode to inspect Physics 2D Profiler data in current versions of Unity.</p>
+
+<figure>
+<img src="../uploads/Main/physics2d-profiler-legacy.png" alt="Legacy Profiler view">
+<figcaption>Legacy Profiler view</figcaption>
+</figure>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="ProfilerPhysics.html"></a></span><div class="tip">Physics Profiler 模块</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ProfilerRendering.html"></a></span><div class="tip">Rendering Profiler 模块</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

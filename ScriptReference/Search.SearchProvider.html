@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-cn">
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:title" content="Search.SearchProvider - Unity 脚本 API" />
+    <title>Search.SearchProvider - Unity 脚本 API</title>
+    <meta name="description" content="SearchProvider manages search for specific types of items and manages all fields of a SearchItem such as thumbnails, descriptions, subfilters." />
+    <meta property="og:description" content="SearchProvider manages search for specific types of items and manages all fields of a SearchItem such as thumbnails, descriptions, subfilters." />
+    <meta name="author" content="Unity Technologies" />
+    <link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico" />
+    <link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png" />
+    <meta name="msapplication-TileColor" content="#222c37" />
+    <meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png" />
+    <script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true">
+    </script>
+    <script type="text/javascript">function OptanonWrapper() {}</script>
+    <script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script>
+    <script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script>
+    <script>
+      var docs_type = 'ScriptReference';
+      var lang = 'cn';
+      var page = 'Search.SearchProvider';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script>
+    <script type="text/javascript" src="../StaticFiles/js/jquery.js">
+    </script>
+    <script type="text/javascript" src="../StaticFiles/js/core.js">
+    </script>
+    <script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js">
+    </script>
+    <script type="text/javascript" src="docdata/toc.js">
+    </script>
+    <script type="text/javascript" src="">
+    </script>
+    <script type="text/javascript" src="../StaticFiles/js/custom.js">
+    </script>
+    <script src="/StaticFilesConfig/feedback/feedback.js">
+    </script>
+    <link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css" />
+    <link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css" />
+    <link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/ScriptReference/Search.SearchProvider.html" />
+    <link rel="alternate" href="https://docs.unity3d.com/en/2022.3/ScriptReference/Search.SearchProvider.html" hreflang="en" />
+    <link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/ScriptReference/Search.SearchProvider.html" hreflang="zh" />
+    <link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/ScriptReference/Search.SearchProvider.html" hreflang="ja" />
+    <link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/ScriptReference/Search.SearchProvider.html" hreflang="ko" />
+    <link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Search.SearchProvider.html" hreflang="x-default" />
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <div id="header" class="header">
+        <div class="content">
+          <div class="spacer">
+            <div class="menu">
+              <div id="nav-open" for="nav-input">
+                <span>
+                </span>
+              </div>
+              <div class="logo">
+                <a href="./index.html">
+                </a>
+              </div>
+              <div class="search-form">
+                <form action="30_search.html" method="get" class="apisearch">
+                  <input type="text" name="q" placeholder="搜索脚本..." autosave="Unity Reference" results="5" class="sbox field" id="q">
+                  </input>
+                  <input type="submit" class="submit">
+                  </input>
+                </form>
+              </div>
+              <ul class="menu-items">
+                <li class="menu-item">
+                  <a href="../Manual/index.html" class="">手册</a>
+                </li>
+                <li class="menu-item">
+                  <a href="../ScriptReference/index.html" class="selected">脚本 API</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="more">
+            <div class="filler">
+            </div>
+            <ul>
+              <li>
+                <a href="https://unity3d.com/">
+                unity3d.com
+              </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="toolbar">
+        <div class="content">
+          <div class="version-switcher">
+            <div class="current toggle" data-target=".version-list">
+              <div class="version-number">
+                <div class="d-inline-block">
+          Version:
+          <b>2022.3</b></div>
+                <div class="d-inline-block arrow">
+                </div>
+              </div>
+            </div>
+            <div class="version-list" style="display:none;">
+              <ul class="versions">
+                <li class="supported">
+                  <a class="docs_version_url_2023.2" href="/cn/2023.2/ScriptReference/Search.SearchProvider.html">2023.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2023.1" href="/cn/2023.1/ScriptReference/Search.SearchProvider.html">2023.1</a>
+                </li>
+                <li class="supported">
+                  <a class="docs_version_url_2022.3" href="/cn/2022.3/ScriptReference/Search.SearchProvider.html">2022.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2022.2" href="/cn/2022.2/ScriptReference/Search.SearchProvider.html">2022.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2022.1" href="/cn/2022.1/ScriptReference/Search.SearchProvider.html">2022.1</a>
+                </li>
+                <li class="supported">
+                  <a class="docs_version_url_2021.3" href="/cn/2021.3/ScriptReference/Search.SearchProvider.html">2021.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2021.2" href="/cn/2021.2/ScriptReference/Search.SearchProvider.html">2021.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2021.1" href="/cn/2021.1/ScriptReference/Search.SearchProvider.html">2021.1</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2020.3" href="/cn/2020.3/ScriptReference/Search.SearchProvider.html">2020.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2020.2" href="/cn/2020.2/ScriptReference/Search.SearchProvider.html">2020.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2020.1" href="/cn/2020.1/ScriptReference/Search.SearchProvider.html">2020.1</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2019.4" href="/cn/2019.4/ScriptReference/Search.SearchProvider.html">2019.4</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2019.3" href="/cn/2019.3/ScriptReference/Search.SearchProvider.html">2019.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2019.2" href="/cn/2019.2/ScriptReference/Search.SearchProvider.html">2019.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2019.1" href="/cn/2019.1/ScriptReference/Search.SearchProvider.html">2019.1</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2018.4" href="/cn/2018.4/ScriptReference/Search.SearchProvider.html">2018.4</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2018.3" href="/cn/2018.3/ScriptReference/Search.SearchProvider.html">2018.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2018.2" href="/cn/2018.2/ScriptReference/Search.SearchProvider.html">2018.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2018.1" href="/cn/2018.1/ScriptReference/Search.SearchProvider.html">2018.1</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2017.4" href="/cn/2017.4/ScriptReference/Search.SearchProvider.html">2017.4</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2017.3" href="/cn/2017.3/ScriptReference/Search.SearchProvider.html">2017.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2017.2" href="/cn/2017.2/ScriptReference/Search.SearchProvider.html">2017.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2017.1" href="/cn/2017.1/ScriptReference/Search.SearchProvider.html">2017.1</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_560" href="/cn/560/ScriptReference/Search.SearchProvider.html">5.6</a>
+                </li>
+                <div class="versionsWithThisPage" style="display:none;">
+                  <li>
+                    <p>包含此页的版本：</p>
+                  </li>
+                </div>
+                <div class="versionsWithoutThisPage" style="display:none;">
+                  <li>
+                    <p>不含此页的版本：</p>
+                  </li>
+                </div>
+              </ul>
+              <ul class="description">
+                <li>
+                  <div class="supported-box">
+                  </div>受支持</li>
+                <li>
+                  <div class="legacy-box">
+                  </div>旧版</li>
+              </ul>
+            </div>
+          </div>
+          <ul class="nav-menu-items">
+            <li class="menu-item">
+              <a href="../Manual/index.html" class="">手册</a>
+            </li>
+            <li class="menu-item">
+              <a href="../ScriptReference/index.html" class="selected">脚本 API</a>
+            </li>
+          </ul>
+          <div class="lang-switcher">
+            <div class="current toggle" data-target=".lang-list">
+              <div class="lbl">语言:
+        <span class="b">中文</span></div>
+              <div class="arrow">
+              </div>
+            </div>
+            <div class="lang-list" style="display:none;">
+              <ul>
+                <li>
+                  <a data-lang="en" href="/2022.3/Documentation/ScriptReference/Search.SearchProvider.html">English</a>
+                </li>
+                <li>
+                  <a data-lang="cn" href="/cn/2022.3/ScriptReference/Search.SearchProvider.html">中文</a>
+                </li>
+                <li>
+                  <a data-lang="ja" href="/ja/2022.3/ScriptReference/Search.SearchProvider.html">日本語</a>
+                </li>
+                <li>
+                  <a data-lang="kr" href="/kr/2022.3/ScriptReference/Search.SearchProvider.html">한국어</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="master-wrapper" class="master-wrapper clear">
+      <div id="sidebar" class="sidebar hidden">
+        <div class="sidebar-wrap">
+          <div class="content">
+            <div class="sidebar-menu">
+              <div class="toc">
+                <h2>脚本 API</h2>
+                <div class="version-switcher">
+                  <div class="current toggle" data-target=".version-list">
+                    <div class="version-number">
+                      <div class="d-inline-block">
+          Version:
+          <b>2022.3</b></div>
+                      <div class="d-inline-block arrow">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="version-list" style="display:none;">
+                    <ul class="versions">
+                      <li class="supported">
+                        <a class="docs_version_url_2023.2" href="/cn/2023.2/ScriptReference/Search.SearchProvider.html">2023.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2023.1" href="/cn/2023.1/ScriptReference/Search.SearchProvider.html">2023.1</a>
+                      </li>
+                      <li class="supported">
+                        <a class="docs_version_url_2022.3" href="/cn/2022.3/ScriptReference/Search.SearchProvider.html">2022.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2022.2" href="/cn/2022.2/ScriptReference/Search.SearchProvider.html">2022.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2022.1" href="/cn/2022.1/ScriptReference/Search.SearchProvider.html">2022.1</a>
+                      </li>
+                      <li class="supported">
+                        <a class="docs_version_url_2021.3" href="/cn/2021.3/ScriptReference/Search.SearchProvider.html">2021.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2021.2" href="/cn/2021.2/ScriptReference/Search.SearchProvider.html">2021.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2021.1" href="/cn/2021.1/ScriptReference/Search.SearchProvider.html">2021.1</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2020.3" href="/cn/2020.3/ScriptReference/Search.SearchProvider.html">2020.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2020.2" href="/cn/2020.2/ScriptReference/Search.SearchProvider.html">2020.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2020.1" href="/cn/2020.1/ScriptReference/Search.SearchProvider.html">2020.1</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2019.4" href="/cn/2019.4/ScriptReference/Search.SearchProvider.html">2019.4</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2019.3" href="/cn/2019.3/ScriptReference/Search.SearchProvider.html">2019.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2019.2" href="/cn/2019.2/ScriptReference/Search.SearchProvider.html">2019.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2019.1" href="/cn/2019.1/ScriptReference/Search.SearchProvider.html">2019.1</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2018.4" href="/cn/2018.4/ScriptReference/Search.SearchProvider.html">2018.4</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2018.3" href="/cn/2018.3/ScriptReference/Search.SearchProvider.html">2018.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2018.2" href="/cn/2018.2/ScriptReference/Search.SearchProvider.html">2018.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2018.1" href="/cn/2018.1/ScriptReference/Search.SearchProvider.html">2018.1</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2017.4" href="/cn/2017.4/ScriptReference/Search.SearchProvider.html">2017.4</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2017.3" href="/cn/2017.3/ScriptReference/Search.SearchProvider.html">2017.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2017.2" href="/cn/2017.2/ScriptReference/Search.SearchProvider.html">2017.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2017.1" href="/cn/2017.1/ScriptReference/Search.SearchProvider.html">2017.1</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_560" href="/cn/560/ScriptReference/Search.SearchProvider.html">5.6</a>
+                      </li>
+                      <div class="versionsWithThisPage" style="display:none;">
+                        <li>
+                          <p>包含此页的版本：</p>
+                        </li>
+                      </div>
+                      <div class="versionsWithoutThisPage" style="display:none;">
+                        <li>
+                          <p>不含此页的版本：</p>
+                        </li>
+                      </div>
+                    </ul>
+                    <ul class="description">
+                      <li>
+                        <div class="supported-box">
+                        </div>受支持</li>
+                      <li>
+                        <div class="legacy-box">
+                        </div>旧版</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="clear">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="content-wrap" class="content-wrap opened-sidebar">
+        <div class="content-block">
+          <div class="content">
+            <div class="section">
+              <div class="mb20 clear" id="">
+                <h1 class="heading inherit">SearchProvider</h1>
+                <div class="clear">
+                </div>
+                <p class="cl mb0 left mr10">class in UnityEditor.Search</p>
+                <br />
+                <p class="cl mb0 left">实现接口：<a href="ISerializationCallbackReceiver.html" class="cl">ISerializationCallbackReceiver</a></p>
+                <div class="clear">
+                </div>
+                <a href="" class="switch-link gray-btn sbtn left hide">切换到手册</a>
+                <div class="clear">
+                </div>
+              </div>
+              <div class="subsection">
+                <div class="signature">
+                  <div class="signature-CS sig-block">
+                    <span style="color:red;">
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="subsection">
+                <h2>描述</h2>
+                <p>SearchProvider manages search for specific types of items and manages all fields of a SearchItem such as thumbnails, descriptions, subfilters.</p>
+              </div>
+              <div class="subsection">
+                <p>
+        A first example that allows to search for specific prefabs and insert them in the scene.
+      </p>
+              </div>
+              <div class="subsection">
+        <pre class="codeExampleCS">using System.Collections.Generic;
+using <a href="UnityEditor.html">UnityEditor</a>;
+using UnityEditor.Search;
+using UnityEngine;
+
+static class TreeSearchProvider
+{
+    internal static string id = "example_tree";
+
+    [SearchItemProvider]
+    internal static <a href="Search.SearchProvider.html">SearchProvider</a> CreateProvider()
+    {
+        return new <a href="Search.SearchProvider.html">SearchProvider</a>("example_tree", "Trees")
+        {
+            filterId = "tree:",
+            priority = 99999, // Put example provider at a low priority
+            showDetailsOptions = <a href="Search.ShowDetailsOptions.Inspector.html">ShowDetailsOptions.Inspector</a> | <a href="Search.ShowDetailsOptions.Actions.html">ShowDetailsOptions.Actions</a>,
+            fetchItems = (context, items, provider) =&gt; FetchItems(context, provider),
+            fetchThumbnail = (item, context) =&gt; <a href="AssetDatabase.GetCachedIcon.html">AssetDatabase.GetCachedIcon</a>(item.id) as <a href="Texture2D.html">Texture2D</a>,
+            fetchPreview = (item, context, size, options) =&gt; <a href="AssetDatabase.GetCachedIcon.html">AssetDatabase.GetCachedIcon</a>(item.id) as <a href="Texture2D.html">Texture2D</a>,
+            fetchLabel = (item, context) =&gt; <a href="AssetDatabase.LoadMainAssetAtPath.html">AssetDatabase.LoadMainAssetAtPath</a>(item.id).name,
+            fetchDescription = (item, context) =&gt; <a href="AssetDatabase.LoadMainAssetAtPath.html">AssetDatabase.LoadMainAssetAtPath</a>(item.id).name,
+            toObject = (item, type) =&gt; <a href="AssetDatabase.LoadMainAssetAtPath.html">AssetDatabase.LoadMainAssetAtPath</a>(item.id),
+        };
+    }
+
+    private static IEnumerable&lt;<a href="Search.SearchItem.html">SearchItem</a>&gt; FetchItems(<a href="Search.SearchContext.html">SearchContext</a> context, <a href="Search.SearchProvider.html">SearchProvider</a> provider)
+    {
+        if (context.empty)
+            yield break;
+
+        // Yield items asynchronously which is the recommended way.
+        foreach (var guid in <a href="AssetDatabase.FindAssets.html">AssetDatabase.FindAssets</a>("t:Prefab tree " + context.searchQuery))
+            yield return provider.CreateItem(context, <a href="AssetDatabase.GUIDToAssetPath.html">AssetDatabase.GUIDToAssetPath</a>(guid), null, null, null, null);
+    }
+
+
+    [SearchActionsProvider]
+    internal static IEnumerable&lt;<a href="Search.SearchAction.html">SearchAction</a>&gt; ActionHandlers()
+    {
+        yield return new <a href="Search.SearchAction.html">SearchAction</a>(id, "Insert tree", null, "Insert a single tree in scene", (<a href="Search.SearchItem.html">SearchItem</a> item) =&gt; InsertPrefab(item.id));
+    }
+
+    static <a href="GameObject.html">GameObject</a> InsertPrefab(string path)
+    {
+        return (<a href="GameObject.html">GameObject</a>)<a href="PrefabUtility.InstantiatePrefab.html">PrefabUtility.InstantiatePrefab</a>(
+            <a href="AssetDatabase.LoadMainAssetAtPath.html">AssetDatabase.LoadMainAssetAtPath</a>(path),
+            <a href="Selection-activeGameObject.html">Selection.activeGameObject</a> != null ? Selection.activeGameObject.transform : null);
+    }
+}
+</pre>
+      </div>
+              <div class="subsection">
+                <p>
+        Another example that allows to search for lights and modify them. This provider uses another provider to get the lights.
+      </p>
+              </div>
+              <div class="subsection">
+        <pre class="codeExampleCS">using System.Collections.Generic;
+using <a href="UnityEditor.html">UnityEditor</a>;
+using UnityEditor.Search;
+using UnityEngine;
+
+static class LightsSearchProvider
+{
+    [SearchItemProvider]
+    internal static <a href="Search.SearchProvider.html">SearchProvider</a> CreateProvider()
+    {
+        return new <a href="Search.SearchProvider.html">SearchProvider</a>("example_lights", "Lights")
+        {
+            filterId = "z:",
+            priority = 99999, // Put example provider at a low priority
+            showDetailsOptions = <a href="Search.ShowDetailsOptions.Inspector.html">ShowDetailsOptions.Inspector</a>,
+            fetchItems = (context, items, provider) =&gt; FetchItems(context, provider),
+            toObject = (item, type) =&gt; item.data as <a href="Light.html">Light</a>,
+
+            // This provider can be used in the scene view contextually.
+            isEnabledForContextualSearch = () =&gt; IsFocusedWindowTypeName("<a href="SceneView.html">SceneView</a>")
+        };
+    }
+
+    static IEnumerable&lt;<a href="Search.SearchItem.html">SearchItem</a>&gt; FetchItems(<a href="Search.SearchContext.html">SearchContext</a> context, <a href="Search.SearchProvider.html">SearchProvider</a> provider)
+    {
+        if (context.empty)
+            yield break;
+
+        var sceneProvider = <a href="Search.SearchService.GetProvider.html">SearchService.GetProvider</a>("scene");
+        using (var sceneQuery = <a href="Search.SearchService.CreateContext.html">SearchService.CreateContext</a>(sceneProvider, $"t:light {context.searchQuery}"))
+        using (var results = <a href="Search.SearchService.Request.html">SearchService.Request</a>(sceneQuery))
+        {
+            var lightIcon = <a href="EditorGUIUtility.FindTexture.html">EditorGUIUtility.FindTexture</a>("Lighting");
+            foreach (var r in results)
+            {
+                if (r == null)
+                {
+                    // ***IMPORTANT***: Make sure to yield so you do not block the main thread waiting for results.
+                    yield return null;
+                }
+                else
+                {
+                    yield return provider.CreateItem(context, r.id,
+                        r.GetLabel(sceneQuery, true), r.GetDescription(sceneQuery, true),
+                        lightIcon, r.ToObject&lt;<a href="GameObject.html">GameObject</a>&gt;().GetComponent&lt;<a href="Light.html">Light</a>&gt;());
+                }
+            }
+        }
+    }
+
+    static bool IsFocusedWindowTypeName(string focusWindowName)
+    {
+        return <a href="EditorWindow-focusedWindow.html">EditorWindow.focusedWindow</a> != null &amp;&amp; EditorWindow.focusedWindow.GetType().ToString().EndsWith("." + focusWindowName);
+    }
+
+    [<a href="MenuItem.html">MenuItem</a>("Examples/<a href="Search.SearchProvider.html">SearchProvider</a>/Show lights")]
+    public static void ShowLights()
+    {
+        // Search for directional lights (lights with "directional" in their name)
+        <a href="Search.SearchService.ShowWindow.html">SearchService.ShowWindow</a>(<a href="Search.SearchService.CreateContext.html">SearchService.CreateContext</a>("z:directional"));
+    }
+}
+</pre>
+      </div>
+              <div class="subsection">
+                <h2>变量</h2>
+                <table class="list">
+      <tr><td class="lbl"><a href="Search.SearchProvider-actions.html">actions</a></td><td class="desc">Search provider actions.</td></tr>
+      <tr><td class="lbl"><a href="Search.SearchProvider-active.html">active</a></td><td class="desc">Indicates if the search provider is active or not. Inactive search providers are ignored by the search service. The active state can be toggled in the search settings.</td></tr>
+      <tr><td class="lbl"><a href="Search.SearchProvider-fetchColumns.html">fetchColumns</a></td><td class="desc">Handler used to enumerate search columns to be used in the Search Table view.</td></tr>
+      <tr><td class="lbl"><a href="Search.SearchProvider-fetchDescription.html">fetchDescription</a></td><td class="desc">Handler to provide an asynchronous description for an item. Is called when the item is about to be displayed. Allows a plugin provider to only fetch long descriptions when they are needed.</td></tr>
+      <tr><td class="lbl"><a href="Search.SearchProvider-fetchItems.html">fetchItems</a></td><td class="desc">MANDATORY: Handler to get items for a given search context. The return value is an object that can be of type IEnumerable or IEnumerator. The enumeration of those objects should return SearchItems.</td></tr>
+      <tr><td class="lbl"><a href="Search.SearchProvider-fetchLabel.html">fetchLabel</a></td><td class="desc">Handler used to fetch and format the label of a search item.</td></tr>
+      <tr><td class="lbl"><a href="Search.SearchProvider-fetchPreview.html">fetchPreview</a></td><td class="desc">Similar to fetchThumbnail, fetchPreview usually returns a bigger preview. The Search UI will progressively show one preview each frame, preventing the UI from blocking if many previews need to be generated at the same time.</td></tr>
+      <tr><td class="lbl"><a href="Search.SearchProvider-fetchPropositions.html">fetchPropositions</a></td><td class="desc">Handler used to enumerate search propositions when the user is using TAB to auto-complete a query.</td></tr>
+      <tr><td class="lbl"><a href="Search.SearchProvider-fetchThumbnail.html">fetchThumbnail</a></td><td class="desc">Handler to provide an asynchronous thumbnail for an item. Is called when the item is about to be displayed. Compared to preview a thumbnail should be small and returned as fast as possible. Use fetchPreview if you want to generate a preview that is bigger and slower to return. Allows a plugin provider to only fetch/generate previews when they are needed.</td></tr>
+      <tr><td class="lbl"><a href="Search.SearchProvider-filterId.html">filterId</a></td><td class="desc">Text token used to "filter" by search provider (ex:  "me:", "p:", "s:").</td></tr>
+      <tr><td class="lbl"><a href="Search.SearchProvider-id.html">id</a></td><td class="desc">Search provider unique ID.</td></tr>
+      <tr><td class="lbl"><a href="Search.SearchProvider-isEnabledForContextualSearch.html">isEnabledForContextualSearch</a></td><td class="desc">Called when search is invoked in "contextual mode". Returns true if the search provider is enabled for this search context.</td></tr>
+      <tr><td class="lbl"><a href="Search.SearchProvider-isExplicitProvider.html">isExplicitProvider</a></td><td class="desc">This search provider is only active when specified explicitly using the filterId.</td></tr>
+      <tr><td class="lbl"><a href="Search.SearchProvider-name.html">name</a></td><td class="desc">Unique ID of the search provider.</td></tr>
+      <tr><td class="lbl"><a href="Search.SearchProvider-onDisable.html">onDisable</a></td><td class="desc">Called when the SearchWindow is closed. Allows the search provider to release cached resources.</td></tr>
+      <tr><td class="lbl"><a href="Search.SearchProvider-onEnable.html">onEnable</a></td><td class="desc">Called when the SearchWindow is opened. Allows the search provider to perform some caching.</td></tr>
+      <tr><td class="lbl"><a href="Search.SearchProvider-priority.html">priority</a></td><td class="desc">Hint to sort the search provider. Affects the order of search results and the order in which search providers are shown in the FilterWindow.</td></tr>
+      <tr><td class="lbl"><a href="Search.SearchProvider-showDetails.html">showDetails</a></td><td class="desc">Indicates if the search provider can show additional details or not.</td></tr>
+      <tr><td class="lbl"><a href="Search.SearchProvider-showDetailsOptions.html">showDetailsOptions</a></td><td class="desc">Defines the details options to be shown.</td></tr>
+      <tr><td class="lbl"><a href="Search.SearchProvider-startDrag.html">startDrag</a></td><td class="desc">If implemented, the item supports drag. It is up to the SearchProvider to properly set up the DragAndDrop manager.</td></tr>
+      <tr><td class="lbl"><a href="Search.SearchProvider-toObject.html">toObject</a></td><td class="desc">Returns any valid Unity object held by the search item.</td></tr>
+      <tr><td class="lbl"><a href="Search.SearchProvider-trackSelection.html">trackSelection</a></td><td class="desc">Called when the selection changed and can be tracked.</td></tr>
+      <tr><td class="lbl"><a href="Search.SearchProvider-type.html">type</a></td><td class="desc">The search provider type can be another search provider id that provider is based on. This is used when we have multiple groups in the search view that list results from a similar provider.</td></tr>
+    </table>
+              </div>
+              <div class="subsection">
+                <h2>构造函数</h2>
+                <table class="list">
+      <tr><td class="lbl"><a href="Search.SearchProvider-ctor.html">SearchProvider</a></td><td class="desc">Create a new SearchProvider.</td></tr>
+    </table>
+              </div>
+              <div class="subsection">
+                <h2>公共函数</h2>
+                <table class="list">
+      <tr><td class="lbl"><a href="Search.SearchProvider.CreateItem.html">CreateItem</a></td><td class="desc">Helper function to create a new search item for the current search provider.</td></tr>
+    </table>
+              </div>
+            </div>
+            <div class="section">
+              <div id="_content">
+              </div>
+            </div>
+            <div class="footer-wrapper">
+              <div class="footer clear">
+                <div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+                <div class="menu">
+                  <a href="https://learn.unity.com/">教程</a>
+                  <a href="https://answers.unity3d.com">社区答案</a>
+                  <a href="https://support.unity3d.com/hc/en-us">知识库</a>
+                  <a href="https://forum.unity3d.com">论坛</a>
+                  <a href="https://unity3d.com/asset-store">Asset Store</a>
+                  <a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a>
+                  <a href="https://unity.com/legal">法律条款</a>
+                  <a href="https://unity.com/legal/privacy-policy">隐私政策</a>
+                  <a href="https://unity.com/legal/cookie-policy">Cookie</a>
+                  <a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a>
+                  <div id="ot-sdk-btn-container">
+                    <a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

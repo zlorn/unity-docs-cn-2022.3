@@ -1,0 +1,454 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Single-pass instanced rendering and custom shaders - Unity 手册">
+<title>Single-pass instanced rendering and custom shaders - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/xr-debug-shadergraph.png">
+<meta name="description" content="URP, HDRP, ShaderGraph, Surface shaders, and built-in shaders already support single-pass stereo instanced rendering. However, shaders from the Asset Store, from other third parties, or those that you have written yourself might need to be updated.">
+<meta property="og:description" content="URP, HDRP, ShaderGraph, Surface shaders, and built-in shaders already support single-pass stereo instanced rendering. However, shaders from the Asset Store, from other third parties, or those that you have written yourself might need to be updated.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'SinglePassInstancing';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/SinglePassInstancing.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/SinglePassInstancing.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/SinglePassInstancing.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/SinglePassInstancing.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/SinglePassInstancing.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/SinglePassInstancing.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/SinglePassInstancing.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/SinglePassInstancing.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/SinglePassInstancing.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/SinglePassInstancing.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/SinglePassInstancing.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/SinglePassInstancing.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/SinglePassInstancing.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/SinglePassInstancing.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/SinglePassInstancing.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/SinglePassInstancing.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/SinglePassInstancing.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/SinglePassInstancing.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/SinglePassInstancing.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/SinglePassInstancing.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/SinglePassInstancing.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/SinglePassInstancing.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/SinglePassInstancing.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/SinglePassInstancing.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/SinglePassInstancing.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/SinglePassInstancing.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/SinglePassInstancing.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/SinglePassInstancing.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/SinglePassInstancing.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/SinglePassInstancing.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/SinglePassInstancing.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/SinglePassInstancing.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/SinglePassInstancing.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/SinglePassInstancing.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/SinglePassInstancing.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/SinglePassInstancing.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/SinglePassInstancing.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/SinglePassInstancing.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/SinglePassInstancing.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/SinglePassInstancing.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/SinglePassInstancing.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/SinglePassInstancing.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/SinglePassInstancing.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/SinglePassInstancing.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/SinglePassInstancing.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/SinglePassInstancing.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/SinglePassInstancing.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/SinglePassInstancing.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/SinglePassInstancing.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/SinglePassInstancing.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/SinglePassInstancing.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/SinglePassInstancing.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/SinglePassInstancing.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/SinglePassInstancing.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/SinglePassInstancing.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/SinglePassInstancing.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/SinglePassInstancing.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/SinglePassInstancing.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="XR.html">XR</a></li>
+<li><a href="xr-graphics.html">XR graphics </a></li>
+<li><a href="SinglePassStereoRendering.html">Stereo rendering</a></li>
+<li>Single-pass instanced rendering and custom shaders</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SinglePassStereoRendering.html"></a></span><div class="tip">Stereo rendering</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="VRFrameTiming.html"></a></span><div class="tip">VR 帧计时</div>
+</div>
+</div></div>
+<h1>Single-pass instanced rendering and custom shaders</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>URP, HDRP, ShaderGraph, Surface shaders, and built-in shaders already support single-pass stereo instanced rendering. However, shaders from the Asset Store, from other third parties, or those that you have written yourself might need to be updated. </p>
+
+<p>For more information about supporting instanced rendering in your shaders, see <a href="GPUInstancing.html">GPU Instancing</a>. The information in this section specifically talks about stereo rendering and might not include all changes you need to make to support instanced rendering in general.</p>
+
+<h2>Update the vertex input attributes struct</h2>
+
+<p>Add the <code>UNITY_VERTEX_INPUT_INSTANCE_ID</code> macro to the <code>appdata</code> struct.</p>
+
+<p>示例：</p>
+
+<pre><code>struct appdata
+{
+    float4 vertex : POSITION;
+    float2 uv : TEXCOORD0;
+
+    UNITY_VERTEX_INPUT_INSTANCE_ID //插入
+};
+</code></pre>
+
+<h2>Update the vertex output attributes struct</h2>
+
+<p>Add <code>UNITY_VERTEX_OUTPUT_STEREO</code> macro to the <code>v2f</code> output struct. </p>
+
+<p>示例：</p>
+
+<pre><code>struct v2f
+{
+    float2 uv : TEXCOORD0;
+    float4 vertex : SV_POSITION;
+
+    UNITY_VERTEX_OUTPUT_STEREO //插入
+};
+</code></pre>
+
+<h2>Update the main vertex shader function</h2>
+
+<p>Add the following macros to the beginning of your main <code>vert</code> method (in order):</p>
+
+<ol>
+<li><code>UNITY_SETUP_INSTANCE_ID()</code></li>
+<li><code>UNITY_INITIALIZE_OUTPUT(v2f, o)</code></li>
+<li><code>UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO()</code></li>
+</ol>
+
+<p><code>UNITY_SETUP_INSTANCE_ID()</code> calculates and sets the built-in <code>unity_StereoEyeIndex</code> and <code>unity_InstanceID</code> shader variables to the correct values based on which eye the GPU is currently rendering. </p>
+
+<p><code>UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO</code> 根据 <code>unity_StereoEyeIndex</code> 的值告诉 GPU 应该渲染到纹理数组中的哪只眼睛。此宏还从顶点着色器传输 <code>unity_StereoEyeIndex</code> 的值，确保仅当在片元着色器 <code>frag</code> 方法中调用 <code>UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX</code> 时才能在片元着色器中访问该值。</p>
+
+<p><code>UNITY_INITALIZE_OUTPUT(v2f,o)</code> 将所有 <code>v2f</code> 值初始化为 0。</p>
+
+<p>示例：</p>
+
+<pre><code>v2f vert (appdata v)
+{
+    v2f o;
+
+    UNITY_SETUP_INSTANCE_ID(v); //插入
+    UNITY_INITIALIZE_OUTPUT(v2f, o); //插入
+    UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o); //插入
+
+    o.vertex = UnityObjectToClipPos(v.vertex);
+
+    o.uv = v.uv;
+
+    return o;
+}
+</code></pre>
+
+<h2>后期处理着色器</h2>
+
+<p>If you want your Post-Processing shaders to support single-pass stereo instancing, follow the steps for custom shaders as well as the steps below. </p>
+
+<p><strong>Note:</strong> You can download all Unity base shader scripts from the <a href="https://unity3d.com/get-unity/download/archive">Unity website</a>.</p>
+
+<p>Do the following for each Post-Processing shader that you want to support single-pass instancing:</p>
+
+<ol>
+<li><p>Add the UNITY_DECLARE_SCREENSPACE_TEXTURE(tex) macro outside the frag method (see the example below for placement) in your Shader script, so that when you use a particular stereo rendering method the GPU uses the appropriate texture sampler. For example, if you use multi-pass rendering, the GPU uses a texture 2D sampler. For single-pass instancing or multi-view rendering, the texture sampler is a texture array.</p></li>
+<li><p>Add <code>UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)</code> at the beginning of the fragment shader frag method (See the example below for placement). You only need to add this macro if you want to use the <code>unity_StereoEyeIndex</code> built-in shader variable to find out which eye the GPU is rendering to. This is useful when testing post-processing effects.</p></li>
+<li><p>Use the <code>UNITY_SAMPLE_SCREENSPACE_TEXTURE()</code> macro when sampling 2D textures (See the example below). Standard shaders use a 2D texture-based back buffer to sample textures. Single-pass stereo instancing does not use this type of back buffer, so if you do not specify a different method for 2D texture sampling, your shader does not render correctly. To prevent rendering issues, the <code>UNITY_SAMPLE_SCREENSPACE_TEXTURE()</code> macro detects which stereo rendering path you are using and then automatically samples the texture in the correct manner. See Unity documentation on <a href="SL-BuiltinIncludes.html">HLSLSupport.cginc</a> to learn more about similar macros used for depth textures and screen-space shadow maps.</p></li>
+</ol>
+
+<p>示例：</p>
+
+<pre><code>UNITY_DECLARE_SCREENSPACE_TEXTURE(_MainTex); //插入
+
+fixed4 frag (v2f i) : SV_Target
+{
+    UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i); //插入
+    
+    fixed4 col = UNITY_SAMPLE_SCREENSPACE_TEXTURE(_MainTex, i.uv); //插入
+    
+    // 仅插入颜色
+    
+    col = 1 - col;
+    
+    return col;
+}
+</code></pre>
+
+<h2>完整的示例着色器代码</h2>
+
+<p>Below is a simple example of the template image effect shader with all of the previously mentioned changes applied to support single-pass stereo instancing. The lines added to the shader code are marked with the comment: <code>//Insert</code>.</p>
+
+<pre><code>struct appdata
+{
+    float4 vertex : POSITION;
+    float2 uv : TEXCOORD0;
+    
+    UNITY_VERTEX_INPUT_INSTANCE_ID //插入
+};
+
+//v2f 输出结构
+
+struct v2f
+{
+
+    float2 uv : TEXCOORD0;
+    float4 vertex : SV_POSITION;
+    
+    UNITY_VERTEX_OUTPUT_STEREO //插入
+};
+
+v2f vert (appdata v)
+{
+    v2f o;
+    
+    UNITY_SETUP_INSTANCE_ID(v); //插入
+    UNITY_INITIALIZE_OUTPUT(v2f, o); //插入
+    UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o); //插入
+    
+    o.vertex = UnityObjectToClipPos(v.vertex);
+    o.uv = v.uv;
+    return o;
+}
+
+UNITY_DECLARE_SCREENSPACE_TEXTURE(_MainTex); //插入
+
+fixed4 frag (v2f i) : SV_Target
+{
+    UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i); //插入
+    
+    fixed4 col = UNITY_SAMPLE_SCREENSPACE_TEXTURE(_MainTex, i.uv); //插入
+    
+    // 插入颜色
+    
+    col = 1 - col;
+    
+    return col;
+}
+</code></pre>
+
+<h2>程序化几何体</h2>
+
+<p>If you use the <a href="../ScriptReference/Graphics.DrawProcedural.html">Graphics.DrawProceduralIndirect()</a> and <a href="../ScriptReference/Graphics.DrawProceduralIndirect.html">CommandBuffer.DrawProceduralIndirect()</a> methods to draw fully procedural geometry on the GPU, note that both methods receive their arguments from a compute buffer. This means that it is difficult to increase the instance count at run time. To increase the instance count, you must manually double the instance count contained in your compute buffers.</p>
+
+<h2>调试着色器</h2>
+
+<p>以下着色器代码将游戏对象渲染为绿色（用户左眼）和红色（右眼）。此着色器对于调试立体渲染非常有用，因为它可用于验证所有立体图形是否正常工作。</p>
+
+<pre><code>Shader "XR/StereoEyeIndexColor"
+{
+   Properties
+   {
+       _LeftEyeColor("Left Eye Color", COLOR) = (0,1,0,1)
+       _RightEyeColor("Right Eye Color", COLOR) = (1,0,0,1)
+   }
+
+   SubShader
+   {
+      Tags { "RenderType" = "Opaque" }
+
+      Pass
+      {
+         CGPROGRAM
+
+         #pragma vertex vert
+         #pragma fragment frag
+
+         float4 _LeftEyeColor;
+         float4 _RightEyeColor;
+
+         #include "UnityCG.cginc"
+
+         struct appdata
+         {
+            float4 vertex : POSITION;
+
+            UNITY_VERTEX_INPUT_INSTANCE_ID
+         };
+
+         struct v2f
+         {
+            float4 vertex : SV_POSITION;
+
+            UNITY_VERTEX_INPUT_INSTANCE_ID 
+            UNITY_VERTEX_OUTPUT_STEREO
+         };
+
+         v2f vert (appdata v)
+         {
+            v2f o;
+
+            UNITY_SETUP_INSTANCE_ID(v);
+            UNITY_INITIALIZE_OUTPUT(v2f, o);
+            UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
+
+            o.vertex = UnityObjectToClipPos(v.vertex);
+
+            return o;
+         }
+
+         fixed4 frag (v2f i) : SV_Target
+         {
+            UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
+
+            return lerp(_LeftEyeColor, _RightEyeColor, unity_StereoEyeIndex);
+         }
+         ENDCG
+      }
+   }
+}
+</code></pre>
+
+<h3>ShaderGraph debug shader</h3>
+
+<p>ShaderGraph automatically adds the macros required to support single-pass stereo rendering. To implement the debug shader in ShaderGraph you can use a <a href="https://docs.unity3d.com/Packages/com.unity.shadergraph@10.10/manual/Custom-Function-Node.html">Custom Function Node</a> that sets the base color based on the eye index.</p>
+
+<figure>
+<img src="../uploads/Main/xr-debug-shadergraph.png" alt="">
+</figure>
+
+<p>Use the <code>unity_StereoEyeIndex</code> shader attribute to determine the base color depending on which eye instance is being rendered. The Custom Function Node in the example above contains the following code:</p>
+
+<pre><code>Out = lerp(LeftColor, RightColor, unity_StereoEyeIndex);
+</code></pre>
+<!-- area:platforms -->
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SinglePassStereoRendering.html"></a></span><div class="tip">Stereo rendering</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="VRFrameTiming.html"></a></span><div class="tip">VR 帧计时</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

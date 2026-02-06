@@ -1,0 +1,435 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="着色器数据类型和精度 - Unity 手册">
+<title>着色器数据类型和精度 - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="Unity uses the standard Shader language HLSL and supports general HLSL data types. However, Unity handles some data types differently from HLSL to provide better support on mobile platforms.">
+<meta property="og:description" content="Unity uses the standard Shader language HLSL and supports general HLSL data types. However, Unity handles some data types differently from HLSL to provide better support on mobile platforms.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'SL-DataTypesAndPrecision';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/SL-DataTypesAndPrecision.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/SL-DataTypesAndPrecision.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/SL-DataTypesAndPrecision.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/SL-DataTypesAndPrecision.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/SL-DataTypesAndPrecision.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/SL-DataTypesAndPrecision.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/SL-DataTypesAndPrecision.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/SL-DataTypesAndPrecision.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/SL-DataTypesAndPrecision.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/SL-DataTypesAndPrecision.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/SL-DataTypesAndPrecision.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/SL-DataTypesAndPrecision.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/SL-DataTypesAndPrecision.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/SL-DataTypesAndPrecision.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/SL-DataTypesAndPrecision.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/SL-DataTypesAndPrecision.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/SL-DataTypesAndPrecision.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/SL-DataTypesAndPrecision.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/SL-DataTypesAndPrecision.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/SL-DataTypesAndPrecision.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/SL-DataTypesAndPrecision.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/SL-DataTypesAndPrecision.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/SL-DataTypesAndPrecision.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/SL-DataTypesAndPrecision.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/SL-DataTypesAndPrecision.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/SL-DataTypesAndPrecision.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/SL-DataTypesAndPrecision.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/SL-DataTypesAndPrecision.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/SL-DataTypesAndPrecision.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/SL-DataTypesAndPrecision.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/SL-DataTypesAndPrecision.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/SL-DataTypesAndPrecision.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/SL-DataTypesAndPrecision.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/SL-DataTypesAndPrecision.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/SL-DataTypesAndPrecision.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/SL-DataTypesAndPrecision.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/SL-DataTypesAndPrecision.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/SL-DataTypesAndPrecision.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/SL-DataTypesAndPrecision.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/SL-DataTypesAndPrecision.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/SL-DataTypesAndPrecision.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/SL-DataTypesAndPrecision.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/SL-DataTypesAndPrecision.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/SL-DataTypesAndPrecision.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/SL-DataTypesAndPrecision.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/SL-DataTypesAndPrecision.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/SL-DataTypesAndPrecision.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/SL-DataTypesAndPrecision.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/SL-DataTypesAndPrecision.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/SL-DataTypesAndPrecision.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/SL-DataTypesAndPrecision.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/SL-DataTypesAndPrecision.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/SL-DataTypesAndPrecision.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/SL-DataTypesAndPrecision.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/SL-DataTypesAndPrecision.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/SL-DataTypesAndPrecision.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/SL-DataTypesAndPrecision.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/SL-DataTypesAndPrecision.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="Shaders.html">着色器</a></li>
+<li><a href="shader-writing.html">编写着色器</a></li>
+<li><a href="SL-ShaderPrograms.html">Unity 中的 HLSL</a></li>
+<li>着色器数据类型和精度</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SL-UnityShaderVariables.html"></a></span><div class="tip">内置着色器变量</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SL-SamplerStates.html"></a></span><div class="tip">使用采样器状态</div>
+</div>
+</div></div>
+<h1>着色器数据类型和精度</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Unity uses the standard Shader language <a href="SL-ShaderPrograms.html">HLSL</a> and supports general HLSL data types. However, Unity handles some data types differently from HLSL to provide better support on mobile platforms.</p>
+
+<h2>基本数据类型</h2>
+
+<p>Shaders carry out the majority of calculations using floating point numbers (also called as <code>float</code> in regular programming languages like C#). In Unity’s implementation of HLSL, the scalar floating point data types are <code>float</code>, <code>half</code>, and <code>fixed</code>. These data types differ in precision and, consequently, performance or power usage. There are also several related data types for vectors and matrices such as <code>half3</code> and <code>float4x4</code>.</p>
+
+<h4>高精度：<code>float</code>
+</h4>
+
+<p>This is the highest precision floating point data type. On most platforms, <code>float</code> values are 32 bits like in regular programming languages.</p>
+
+<p>Full <code>float</code> precision is typically useful for world space positions, texture coordinates, or scalar calculations that involve complex functions such as trigonometry or power/exponentiation. If you use lower precision floating point data types for these purposes, it can cause precision-related artifacts. For example with texture coordinates, a <code>half</code> doesn’t have enough precision to accurately represent 1-texel offsets of larger textures.</p>
+
+<h4>中等精度：<code>half</code>
+</h4>
+
+<p>This is a medium precision floating point data type. On platforms that support <code>half</code> values, they’re generally 16 bits. On other platforms, this becomes <code>float</code>.</p>
+
+<p><code>half</code> values have a smaller range and precision than <code>float</code> values.</p>
+
+<p>Half precision is useful to get better shader performance for values that don’t require high precision such as short vectors, directions, object space positions, and high dynamic range colors.</p>
+
+<h4>低精度：<code>fixed</code>
+</h4>
+
+<p>This is only supported by the OpenGL ES 2.0 Graphics API. On other APIs it becomes the lowest supported precision (<code>half</code> or <code>float</code>).</p>
+
+<p>This is the lowest precision fixed point value and is generally 11 bits. <code>fixed</code> values range from –2.0 to +2.0 and have a precision of 1/256.</p>
+
+<p>Fixed precision is useful for regular colors (that are typically stored in regular textures) and performing simple operations on them.</p>
+
+<h4>Floating point numbers</h4>
+
+<p>Unity’s shader compiler ignores <a href="https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-appendix-grammar#floating-point-numbers">floating point number suffixes from HLSL</a>. Floating point numbers with a suffix therefore all become <code>float</code>.</p>
+
+<p>This code shows a possible negative impact of numbers with the <code>h</code> suffix in Unity:
+<code>
+half3 packedNormal = ...;
+half3 normal = packedNormal * 2.0h - 1.0h;
+</code></p>
+
+<p>Since the <code>h</code> suffix is ignored, the shader compiler generates code that executes these steps:
+1. Calculate an intermediary <code>normal</code> value in high precision (<code>float3</code>)
+2. Convert the intermediary value to <code>half3</code>.
+This reduces your shader’s performance.</p>
+
+<p>This code is more efficient because it only uses <code>half</code> values in its calculations:
+<code>
+half3 packedNormal = ...;
+half3 normal = packedNormal * half(2.0) - half(1.0);
+</code></p>
+
+<h4>Floating point numbers</h4>
+
+<p>Unity’s shader compiler ignores <a href="https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-appendix-grammar#floating-point-numbers">floating point number suffixes from HLSL</a>. Floating point numbers with a suffix therefore all become <code>float</code>.</p>
+
+<p>This code shows a possible negative impact of numbers with the <code>h</code> suffix in Unity:
+<code>
+half3 packedNormal = ...;
+half3 normal = packedNormal * 2.0h - 1.0h;
+</code></p>
+
+<p>Since the <code>h</code> suffix is ignored, the shader compiler generates code that executes these steps:
+1. Calculate an intermediary <code>normal</code> value in high precision (<code>float3</code>)
+2. Convert the intermediary value to <code>half3</code>.
+This reduces your shader’s performance.</p>
+
+<p>This code is more efficient because it only uses <code>half</code> values in its calculations:
+<code>
+half3 packedNormal = ...;
+half3 normal = packedNormal * half(2.0) - half(1.0);
+</code></p>
+
+<h4>整数数据类型</h4>
+
+<p>Integers (<code>int</code> data type) are often used as loop counters or array indices, and typically work fine across various platforms.</p>
+
+<p>Depending on the platform you’ve chosen, your GPU might not support integer types. For example, OpenGL ES 2.0 GPUs only operate on floating point data, and might need complicated floating point math instructions to emulate simple-looking integer expressions that involves bit or logical operations.</p>
+
+<p>Direct3D 11, OpenGL ES 3, Metal, and other modern platforms have proper support for integer data types, so using bit shifts and bit masking works as expected.</p>
+
+<h2>复合矢量/矩阵类型</h2>
+
+<p>HLSL has built-in vector and matrix types are created from the basic types. For example, <code>float3</code> is a 3D vector with .x, .y, .z components, and <code>half4</code> is a medium precision 4D vector with .x, .y, .z, .w components. Alternatively, you can index vectors using .r, .g, .b, .a components, which is useful when working on colors. For example:</p>
+
+<pre><code>float4 myColor = ...
+float redValue = myColor.r;
+</code></pre>
+
+<p>Matrix types are built in a similar way; for example <code>float4x4</code> is a 4x4 transformation matrix. However, some platforms like OpenGL ES 2.0 only support square matrices.</p>
+
+<p><a name="samplertypes"></a></p>
+
+<h2>纹理/采样器类型</h2>
+
+<p>Typically, you declare textures in your HLSL code in the following way:</p>
+
+<pre><code>sampler2D _MainTex;
+samplerCUBE _Cubemap;
+</code></pre>
+
+<p>For mobile platforms, these translate into <code>low precision samplers</code>, that is, the textures should have low precision data in them.
+You can change the default sampler precision for the whole Unity project in the Player Settings using the <em>Shader precision model</em> dropdown.
+If you know your texture contains HDR colors, you might want to use half precision sampler:</p>
+
+<pre><code>sampler2D_half _MainTex;
+samplerCUBE_half _Cubemap;
+</code></pre>
+
+<p>Or if your texture contains full float precision data <a href="SL-CameraDepthTexture.html">depth texture</a>, use a full precision sampler:</p>
+
+<pre><code>sampler2D_float _MainTex;
+samplerCUBE_float _Cubemap;
+</code></pre>
+
+<h2>Precision, hardware support and performance</h2>
+
+<p>As PC (Windows/Mac/Linux) GPUs are <strong>always</strong> of high precision, it doesn’t matter whether you write <code>float</code>, <code>half</code> or <code>fixed</code> data types in your shaders. They always calculate everything in full 32-bit floating point precision.</p>
+
+<p>The <code>half</code> and <code>fixed</code> types only become relevant when targeting mobile GPUs, where these types primarily exist for power and performance constraints. Make sure to test your shaders on mobile to check for any precision/numerical issues.</p>
+
+<p>即使在移动端 GPU 上，不同的精度支持也会因 GPU 产品系列而异。下面概述了个每个移动端 GPU 产品系列如何处理每个浮点类型（以用于该产品系列的位数来表示）：</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">GPU 产品系列</th>
+	<th style="text-align:left;">浮点精度</th>
+	<th style="text-align:left;">半精度</th>
+	<th style="text-align:left;">固定精度</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">PowerVR 系列 6/7</td>
+	<td style="text-align:left;">32</td>
+	<td style="text-align:left;" colspan="2">16</td>
+</tr>
+<tr>
+	<td style="text-align:left;">PowerVR SGX 5xx</td>
+	<td style="text-align:left;">32</td>
+	<td style="text-align:left;">16</td>
+	<td style="text-align:left;">11</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Qualcomm Adreno 4xx/3xx</td>
+	<td style="text-align:left;">32</td>
+	<td style="text-align:left;" colspan="2">16</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Qualcomm Adreno 2xx</td>
+	<td style="text-align:left;" colspan="3">32 顶点，24 片元</td>
+</tr>
+<tr>
+	<td style="text-align:left;">ARM Mali T6xx/7xx</td>
+	<td style="text-align:left;">32</td>
+	<td style="text-align:left;" colspan="2">16</td>
+</tr>
+<tr>
+	<td style="text-align:left;">ARM Mali 400/450</td>
+	<td style="text-align:left;" colspan="3">32 顶点，16 片元</td>
+</tr>
+<tr>
+	<td style="text-align:left;">NVIDIA X1</td>
+	<td style="text-align:left;">32</td>
+	<td style="text-align:left;" colspan="2">16</td>
+</tr>
+<tr>
+	<td style="text-align:left;">NVIDIA K1</td>
+	<td style="text-align:left;" colspan="3">32</td>
+</tr>
+<tr>
+	<td style="text-align:left;">NVIDIA Tegra 3/4</td>
+	<td style="text-align:left;">32</td>
+	<td style="text-align:left;" colspan="2">16</td>
+</tr>
+</tbody>
+</table>
+
+<p>大多数现代移动端 GPU 实际上只支持 32 位数字（用于 <code>float</code> 类型）或 16 位数字（用于 <code>half</code> 和 <code>fixed</code> 类型）。一些较旧的 GPU 对顶点着色器和片元着色器计算具有不同的精度。</p>
+
+<p>使用较低的精度通常可以更快，这可能是由于改进的 GPU 寄存器分配，或是由于某些低精度数学运算的特殊“快速路径”执行单元。即使没有原始性能优势，使用较低的精度通常也会降低 GPU 的功耗，从而延长电池续航时间。</p>
+
+<p>Unity recommends to start with half precision for everything except positions and texture coordinates. Increase precision only if half precision isn’t enough for some parts of the computation.</p>
+
+<h4>支持无穷大、非数字和其他特殊浮点值</h4>
+
+<p>Support for special floating point values can be different depending on which GPU family (mostly mobile) you’re running.</p>
+
+<p>All PC GPUs that support Direct3D 10 support well-specified IEEE 754 floating point standard. This means that float numbers behave exactly like they do in regular programming languages on the CPU.</p>
+
+<p>Mobile GPUs can have slightly different levels of support. On some, dividing zero by zero might result in a NaN (“not a number”); on others it might result in infinity, zero or any other unspecified value. Make sure to test your shaders on the target device to check they’re supported.</p>
+
+<h2>External GPU documentation</h2>
+
+<p>GPU 供应商会提供有关其 GPU 性能和功能的深入指南。请参阅下文以了解详情：</p>
+
+<ul>
+<li><a href="https://developer.arm.com/docs/101897/0200">ARM Mali GPU 最佳实践开发者指南 (ARM Mali GPU Best Practices Developer Guide)</a></li>
+<li><a href="https://developer.qualcomm.com/software/adreno-gpu-sdk/tools">Qualcomm Adreno OpenGL ES 开发者指南 (Qualcomm Adreno OpenGL ES Developer Guide)</a></li>
+<li><a href="https://community.imgtec.com/developers/powervr/documentation/">PowerVR 架构指南 (PowerVR Architecture Guides)</a></li>
+</ul>
+
+<h2>Additional resources:</h2>
+
+<ul>
+<li><a href="SL-PlatformDifferences.html">平台特定的渲染差异</a></li>
+<li><a href="SL-ShaderPerformance.html">着色器性能提示</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SL-UnityShaderVariables.html"></a></span><div class="tip">内置着色器变量</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SL-SamplerStates.html"></a></span><div class="tip">使用采样器状态</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

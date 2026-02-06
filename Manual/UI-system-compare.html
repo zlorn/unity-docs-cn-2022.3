@@ -1,0 +1,680 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Unity 中 UI 系统的对比 - Unity 手册">
+<title>Unity 中 UI 系统的对比 - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="UI Toolkit is intended to become the recommended UI system for your new UI development projects. However, in the current release, UI Toolkit does not have some features that Unity UI (uGUI) and Immediate Mode GUI (IMGUI) support. uGUI and IMGUI are more appropriate for certain use cases, and are required to support legacy projects.">
+<meta property="og:description" content="UI Toolkit is intended to become the recommended UI system for your new UI development projects. However, in the current release, UI Toolkit does not have some features that Unity UI (uGUI) and Immediate Mode GUI (IMGUI) support. uGUI and IMGUI are more appropriate for certain use cases, and are required to support legacy projects.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'UI-system-compare';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/UI-system-compare.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/UI-system-compare.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/UI-system-compare.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/UI-system-compare.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/UI-system-compare.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/UI-system-compare.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UI-system-compare.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UI-system-compare.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UI-system-compare.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UI-system-compare.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UI-system-compare.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UI-system-compare.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UI-system-compare.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UI-system-compare.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UI-system-compare.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UI-system-compare.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UI-system-compare.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UI-system-compare.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UI-system-compare.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UI-system-compare.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UI-system-compare.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UI-system-compare.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UI-system-compare.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UI-system-compare.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UI-system-compare.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UI-system-compare.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UI-system-compare.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UI-system-compare.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UI-system-compare.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UI-system-compare.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/UI-system-compare.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/UI-system-compare.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/UI-system-compare.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/UI-system-compare.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UI-system-compare.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UI-system-compare.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UI-system-compare.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UI-system-compare.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UI-system-compare.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UI-system-compare.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UI-system-compare.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UI-system-compare.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UI-system-compare.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UI-system-compare.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UI-system-compare.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UI-system-compare.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UI-system-compare.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UI-system-compare.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UI-system-compare.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UI-system-compare.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UI-system-compare.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UI-system-compare.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UI-system-compare.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UI-system-compare.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UI-system-compare.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UI-system-compare.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UI-system-compare.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UI-system-compare.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UIToolkits.html">Create user interfaces (UI)</a></li>
+<li>Unity 中 UI 系统的对比</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIToolkits.html"></a></span><div class="tip">Create user interfaces (UI)</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIElements.html"></a></span><div class="tip">UI 工具包</div>
+</div>
+</div></div>
+<h1>Unity 中 UI 系统的对比</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p><a href="UIElements.html">UI Toolkit</a> is intended to become the recommended UI system for your new UI development projects. However, in the current release, UI Toolkit does not have some features that <a href="com.unity.ugui.html">Unity UI (uGUI)</a> and <a href="GUIScriptingGuide.html">Immediate Mode GUI (IMGUI)</a> support. uGUI and IMGUI are more appropriate for certain use cases, and are required to support legacy projects.</p>
+
+<p>This page provides a high-level feature comparison of UI Toolkit, uGUI, and IMGUI, and their respective approaches to UI design. </p>
+
+<h2>General consideration</h2>
+
+<p>The following table lists the recommended and alternative system for runtime and Editor:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">
+<!-- **2021** --><strong>2022</strong>
+</th>
+	<th style="text-align:left;"><strong>Recommendation</strong></th>
+	<th style="text-align:left;"><strong>Alternative</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong><a href="#runtime">Runtime</a></strong></td>
+	<td style="text-align:left;">Unity UI</td>
+	<td style="text-align:left;">UI Toolkit</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="#editor">Editor</a></strong></td>
+	<td style="text-align:left;">UI Toolkit</td>
+	<td style="text-align:left;">IMGUI</td>
+	<td style="text-align:left;"><!-- IMGUI | UI Toolkit|--></td>
+</tr>
+</tbody>
+</table>
+
+<h2>Roles and skill sets</h2>
+
+<p>团队的技能集以及对不同技术的习惯程度也是一个重要的考虑因素。</p>
+
+<p>The following table lists the recommended system for different roles:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Roles</strong></th>
+	<th style="text-align:left;"><strong>UI 工具包</strong></th>
+	<th style="text-align:left;"><strong>Unity UI<br>(uGUI)</strong></th>
+	<th style="text-align:left;"><strong>IMGUI</strong></th>
+	<th style="text-align:left;"><strong>Skill sets</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>程序员</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">程序员可以使用任何游戏开发工具或 API。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>技术美术师</strong></td>
+	<td style="text-align:left;">部分支持</td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">熟悉 Unity 基于游戏对象的工具和工作流程的技术美术师可能会习惯使用游戏对象、组件和 Scene 视图。<br><br>他们可能不习惯 UI 工具包类似于 Web 的方法或 IMGUI 的纯 C# 方法。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>UI 设计师</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">部分支持</td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">UI designers who are familiar with UI creation tools are likely to be comfortable with UI Toolkit’s document-based approach and can use the <a href="UIBuilder.html">UI Builder</a> to visually edit their UI.<br><br>If they are not familiar with GameObject-based workflows, they might require help from programmers or level designers.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Innovation and development</h2>
+
+<p>UI Toolkit is in active development and releases new features frequently. uGUI and IMGUI are established and production-proven UI systems that are updated infrequently.</p>
+
+<p>uGUI and IMGUI might be better choices if you need features that are not yet available in UI Toolkit, or you need to support or reuse older UI content.</p>
+
+<p><a name="runtime"></a></p>
+
+<h2>Runtime</h2>
+
+<p>uGUI is the recommended solution for the following:</p>
+
+<ul>
+<li>UI positioned and lit in a 3D world</li>
+<li>VFX with custom shaders and materials</li>
+<li>Easy referencing from <code>MonoBehaviours</code>
+</li>
+</ul>
+
+<p>UI Toolkit is an alternative to uGUI if you create a screen overlay UI that runs on a wide variety of screen resolutions. Consider UI Toolkit to do the following:</p>
+
+<ul>
+<li>Produce work with a significant amount of user interfaces</li>
+<li>Require familiar authoring workflows for artists and designers</li>
+<li>Seek textureless UI rendering capabilities</li>
+</ul>
+
+<h3>Use Cases</h3>
+
+<p>The following table lists the recommended system for major runtime use cases:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">
+<!-- **2021** --><strong>2022</strong>
+</th>
+	<th style="text-align:left;"><strong>Recommendation</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Multi-resolution menus and HUD in intensive UI projects</strong></td>
+	<td style="text-align:left;">UI Toolkit</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>World space UI and VR</strong></td>
+	<td style="text-align:left;">Unity UI</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>UI that requires customized shaders and materials</strong></td>
+	<td style="text-align:left;">Unity UI</td>
+</tr>
+</tbody>
+</table>
+
+<h3>In details</h3>
+
+<p>The following table lists the recommended system for detailed runtime features:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">
+<!-- **2021** --><strong>2022</strong>
+</th>
+	<th style="text-align:left;"><strong>UI 工具包</strong></th>
+	<th style="text-align:left;"><strong>Unity UI</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>WYSIWYG authoring</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Nesting reusable components</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Global style management</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Layout and Styling Debugger</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Scene integration</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Rich text tags</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是*</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Scalable text</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是*</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Font fallbacks</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是*</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Adaptive layout</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="com.unity.inputsystem.html">Input system</a> support</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Serialized events</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="com.unity.visualscripting.html">Visual Scripting</a> support</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="render-pipelines.html">Rendering pipelines</a> support</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Screen-space (2D) rendering</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>World-space (3D) rendering</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Custom materials and shaders</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="Sprites.html">Sprites</a> / <a href="class-SpriteAtlas.html">Sprite atlas</a> support</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Dynamic texture atlas</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Textureless elements</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>UI anti-aliasing</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Rectangle clipping</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Mask clipping</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Nested masking</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-Transitions.html">UI transition animations</a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Integration with Animation Clips and Timeline</strong></td>
+	<td style="text-align:left;">否</td>
+	<td style="text-align:left;">是</td>
+</tr>
+</tbody>
+</table>
+
+<p>*<em>Requires <a href="https://learn.unity.com/tutorial/textmesh-pro-importing-the-package#">the TextMesh Pro package</a></em></p>
+
+<p><a name="editor"></a></p>
+
+<h2>Editor</h2>
+
+<p>UI Toolkit is recommended if you create complex editor tools. UI Toolkit is also recommended for the following reasons:
+<!-- (this is for 2021)UI Toolkit is an alternative to IMGUI if you create complex editor tools. Consider UI Toolkit for the following reasons: --></p>
+
+<ul>
+<li>Better reusability and decoupling</li>
+<li>Visual tools for authoring UI</li>
+<li>Better scalability for code maintenance and performance</li>
+</ul>
+
+<p>IMGUI is an alternative to UI Toolkit for the following:
+<!-- (this is for 2021)IMGUI is the default solution for most use cases and is especially recommended for the following reasons: --></p>
+
+<ul>
+<li>Unrestricted access to editor extensible capabilities
+<!-- (this is for 2021) * Some specialized control such as the TreeView -->
+</li>
+<li>Light API to quickly render UI on screen</li>
+</ul>
+
+<h3>Use Cases</h3>
+
+<p>The following table lists the recommended system for major Editor use cases:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">
+<!-- **2021** --><strong>2022</strong>
+</th>
+	<th style="text-align:left;"><strong>Recommendation</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Complex editor tool</strong></td>
+	<td style="text-align:left;">UI Toolkit</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Property drawers</strong></td>
+	<td style="text-align:left;">
+<!-- IMGUI -->UI Toolkit</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Collaboration with designers</strong></td>
+	<td style="text-align:left;">UI Toolkit</td>
+</tr>
+</tbody>
+</table>
+
+<h3>In details</h3>
+
+<p>The following table lists the recommended system for detailed Editor features:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">
+<!-- **2021** --><strong>2022</strong>
+</th>
+	<th style="text-align:left;"><strong>UI 工具包</strong></th>
+	<th style="text-align:left;"><strong>IMGUI</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>WYSIWYG authoring</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Nesting reusable components</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Global style management</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Layout and Styling Debugger</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Rich text tags</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Scalable text</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">否</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Font fallbacks</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Adaptive layout</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Default Inspectors</strong></td>
+	<td style="text-align:left;">
+<!-- No -->Yes</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Inspector: Edit custom object types</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Inspector: Edit custom property types</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Inspector: Mixed values (multi-editing) support</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-uxml-element-ListView.html">Array and list-view control</a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong><a href="UIE-Binding.html">Data binding: Serialized properties</a></strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是</td>
+</tr>
+</tbody>
+</table>
+
+<h2>其他资源</h2>
+
+<ul>
+<li><a href="UIE-Transitioning-From-UGUI.html">Migrate from Unity UI (UGUI) to UI Toolkit</a></li>
+<li><a href="UIE-IMGUI-migration.html">Migrate from Immediate Mode GUI (IMGUI) to UI Toolkit</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIToolkits.html"></a></span><div class="tip">Create user interfaces (UI)</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIElements.html"></a></span><div class="tip">UI 工具包</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Search query operators - Unity 手册">
+<title>Search query operators - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="Most Search Providers use a QueryEngine (Scene, Asset, Objects and Resource providers) to parse and resolve their queries. They support a basic set of Query Operators that allow for more complex queries using Boolean operators and parentheses grouping. The table on this page lists the supported Query Operators.">
+<meta property="og:description" content="Most Search Providers use a QueryEngine (Scene, Asset, Objects and Resource providers) to parse and resolve their queries. They support a basic set of Query Operators that allow for more complex queries using Boolean operators and parentheses grouping. The table on this page lists the supported Query Operators.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'search-query-operators';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/search-query-operators.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/search-query-operators.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/search-query-operators.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/search-query-operators.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/search-query-operators.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/search-query-operators.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/search-query-operators.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/search-query-operators.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/search-query-operators.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/search-query-operators.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/search-query-operators.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/search-query-operators.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/search-query-operators.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/search-query-operators.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/search-query-operators.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/search-query-operators.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/search-query-operators.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/search-query-operators.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/search-query-operators.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/search-query-operators.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/search-query-operators.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/search-query-operators.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/search-query-operators.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/search-query-operators.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/search-query-operators.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/search-query-operators.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/search-query-operators.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/search-query-operators.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/search-query-operators.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/search-query-operators.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/search-query-operators.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/search-query-operators.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/search-query-operators.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/search-query-operators.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/search-query-operators.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/search-query-operators.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/search-query-operators.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/search-query-operators.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/search-query-operators.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/search-query-operators.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/search-query-operators.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/search-query-operators.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/search-query-operators.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/search-query-operators.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/search-query-operators.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/search-query-operators.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/search-query-operators.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/search-query-operators.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/search-query-operators.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/search-query-operators.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/search-query-operators.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/search-query-operators.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/search-query-operators.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/search-query-operators.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/search-query-operators.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/search-query-operators.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/search-query-operators.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/search-query-operators.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="search-overview.html">Unity Search</a></li>
+<li><a href="search-usage.html">Search usage</a></li>
+<li>Search query operators</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="search-filters.html"></a></span><div class="tip">Filter searches</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="search-index-manager.html"></a></span><div class="tip">The Index Manager</div>
+</div>
+</div></div>
+<h1>Search query operators</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Most Search Providers use a <code>QueryEngine</code> (<a href="#scene-provider">Scene</a>, <a href="#asset-provider">Asset</a>, <a href="#objects-provider">Objects</a> and <a href="#resources-provider">Resource</a> providers) to parse and resolve their queries. They support a basic set of Query Operators that allow for more complex queries using Boolean operators and parentheses grouping. The table on this page lists the supported Query Operators.</p>
+
+<p><strong>Case sensitivity</strong>: Most Search queries ignore case. For example, <code>Stone</code> or <code>stone</code> or <code>sToNe</code> will yield the same results.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Filter</strong></th>
+	<th style="text-align:left;"><strong>Search token</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Basic search</strong></td>
+	<td style="text-align:left;"><code>&lt;any partial name&gt;</code></td>
+	<td style="text-align:left;">
+<code>main</code><br>Searches matching the word <code>Main</code>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>And</strong></td>
+	<td style="text-align:left;"><code>and</code></td>
+	<td style="text-align:left;">
+<code>Main and t:camera</code><br>Search where name contains <code>Main</code> and is of type name containing <code>camera</code><br><br><code>t:texture and jpg</code><br>Searches all of type <code>texture</code> containing <code>jpg</code> in their filename. <br><br>Note: Since <code>and</code> <strong>is the default operator of the QueryEngine</strong> the last query is equivalent to:<br><code>t:texture jpg</code>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>or</strong></td>
+	<td style="text-align:left;"><code>or</code></td>
+	<td style="text-align:left;">
+<code>Player or Monster</code><br>Searches containing the word <code>Player</code> or <code>Monster</code>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Group</strong></td>
+	<td style="text-align:left;"><code>(&lt;group content&gt;)</code></td>
+	<td style="text-align:left;">
+<code>t:Character and (status=Poison or status=Stunned)</code><br>Searches for a <code>Character</code> component where the value of <code>status</code> property is either <code>Poison</code> or <code>Stunned</code>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Exclusion</strong></td>
+	<td style="text-align:left;"><code>-&lt;Expression to exclude&gt;</code></td>
+	<td style="text-align:left;">
+<code>p: dep:door -t:Scene</code><br>Searches all Assets with a dependency on an Asset containing the word <code>door</code> and that are not of type <code>Scene</code>. <br><br><code>p: dep:door -stone</code><br>Searches all Assets with a dependency on an Asset containing the word <code>door</code> and that do not contain the word <code>stone</code>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Exact Operator</strong></td>
+	<td style="text-align:left;"><code>!&lt;something&gt;</code></td>
+	<td style="text-align:left;">Most of the string matching in Search returns partial matches. Use the <code>!</code> operator to return <strong>exact</strong> matches.<br><br><code>p: stone</code><br>Searches all Assets containing the word stone (<code>stone_hammer.png</code>, <code>stone_door.prefab</code>).<br><br><code>p: !stone</code><br>Searches all Assets with the exact name <code>stone</code> (e.g.: <code>stone.png</code>)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Partial Value match (:)</strong></td>
+	<td style="text-align:left;"><code>property:&lt;partial value&gt;</code></td>
+	<td style="text-align:left;">
+<code>ref:aster</code><br>Because <code>:</code> is used, searches all Assets having an Asset containing the word <code>aster</code> (ex: <code>asteroid2</code>, <code>asteroids</code>) as a dependency.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Exact Value (=)</strong></td>
+	<td style="text-align:left;"><code>property=exactValue</code></td>
+	<td style="text-align:left;">
+<code>ref=asteroid</code><br>Because <code>=</code> is used, searches all Assets having an Asset with the exact name <code>asteroid</code> as a dependency.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>&gt;</strong></td>
+	<td style="text-align:left;"><code>property&gt;number</code></td>
+	<td style="text-align:left;">
+<code>t:texture size&gt;256</code><br>Searches all textures with a size bigger than 256 bytes.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>&lt;</strong></td>
+	<td style="text-align:left;"><code>property&lt;number</code></td>
+	<td style="text-align:left;">
+<code>t:texture size&lt;256</code><br>Searches all textures with a size smaller than 256 bytes.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>!=</strong></td>
+	<td style="text-align:left;"><code>property!=number</code></td>
+	<td style="text-align:left;">
+<code>t:texture size!=256</code><br>Searches all textures with a size different than 256 bytes.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>&gt;=</strong></td>
+	<td style="text-align:left;"><code>property&gt;=number</code></td>
+	<td style="text-align:left;">
+<code>t:texture size&gt;=256</code><br>Searches all textures with a size bigger or equal than 256 bytes.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>&lt;=</strong></td>
+	<td style="text-align:left;"><code>property&gt;number</code></td>
+	<td style="text-align:left;">
+<code>t:texture size&lt;=256</code><br>Searches all textures with a size smaller or equal than 256 bytes.</td>
+</tr>
+</tbody>
+</table>
+
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="search-filters.html"></a></span><div class="tip">Filter searches</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="search-index-manager.html"></a></span><div class="tip">The Index Manager</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

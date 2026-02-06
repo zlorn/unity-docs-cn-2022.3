@@ -1,0 +1,383 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Shader keywords - Unity 手册">
+<title>Shader keywords - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="Shader keywords allow you to use conditional behavior in your shader code. You can create shaders that share some common code, but have different functionality when a given keyword is enabled or disabled.">
+<meta property="og:description" content="Shader keywords allow you to use conditional behavior in your shader code. You can create shaders that share some common code, but have different functionality when a given keyword is enabled or disabled.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'shader-keywords';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/shader-keywords.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/shader-keywords.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/shader-keywords.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/shader-keywords.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/shader-keywords.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/shader-keywords.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/shader-keywords.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/shader-keywords.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/shader-keywords.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/shader-keywords.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/shader-keywords.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/shader-keywords.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/shader-keywords.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/shader-keywords.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/shader-keywords.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/shader-keywords.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/shader-keywords.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/shader-keywords.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/shader-keywords.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/shader-keywords.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/shader-keywords.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/shader-keywords.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/shader-keywords.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/shader-keywords.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/shader-keywords.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/shader-keywords.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/shader-keywords.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/shader-keywords.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/shader-keywords.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/shader-keywords.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/shader-keywords.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/shader-keywords.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/shader-keywords.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/shader-keywords.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/shader-keywords.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/shader-keywords.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/shader-keywords.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/shader-keywords.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/shader-keywords.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/shader-keywords.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/shader-keywords.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/shader-keywords.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/shader-keywords.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/shader-keywords.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/shader-keywords.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/shader-keywords.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/shader-keywords.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/shader-keywords.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/shader-keywords.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/shader-keywords.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/shader-keywords.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/shader-keywords.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/shader-keywords.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/shader-keywords.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/shader-keywords.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/shader-keywords.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/shader-keywords.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/shader-keywords.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="Shaders.html">着色器</a></li>
+<li><a href="ShadersOverview.html">着色器核心概念</a></li>
+<li><a href="shader-variants-and-keywords.html">Branching, variants, and keywords</a></li>
+<li>Shader keywords</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="shader-how-many-variants.html"></a></span><div class="tip">Check how many shader variants you have</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="shader-keywords-scripts.html"></a></span><div class="tip">Using shader keywords with C# scripts</div>
+</div>
+</div></div>
+<h1>Shader keywords</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Shader keywords allow you to use <a href="shader-conditionals.html">conditional behavior</a> in your shader code. You can create shaders that share some common code, but have different functionality when a given <strong>keyword</strong> is enabled or disabled.</p>
+
+<p>You can use shader keywords with <a href="shader-branching.html#dynamic-branching">dynamic branching</a>, or with <a href="shader-variants.html">Shader variants</a>. Before you use shader keywords, it is important to understand how these techniques work, and which one is right for your project.</p>
+
+<p>本页包含以下信息：</p>
+
+<ul>
+<li>
+<a href="#using-keywords">Using shader keywords</a>
+
+<ul>
+<li><a href="#declaring-keywords">Declaring shader keywords</a></li>
+<li><a href="#conditional-keywords">Making behavior conditional with shader keywords</a></li>
+<li><a href="#enabling-disabling-keywords">Enabling and disabling shader keywords</a></li>
+</ul>
+</li>
+<li><a href="#predefined-shader-keywords">Unity’s predefined shader keywords</a></li>
+<li><a href="#keyword-limits">Shader keyword limits</a></li>
+</ul>
+
+<p><a name="using-keywords"></a></p>
+
+<h2>Using shader keywords</h2>
+
+<p><a name="declaring-keywords"></a></p>
+
+<h3>Declaring shader keywords</h3>
+
+<p>You declare shader keywords in sets. A set contains mutually exclusive keywords.</p>
+
+<p>For example, the following set contains three keywords:</p>
+
+<ul>
+<li>COLOR_RED</li>
+<li>COLOR_GREEN</li>
+<li>COLOR_BLUE</li>
+</ul>
+
+<p><strong>Note:</strong> In Shader Graph, the terminology is different: a set of keywords is called a <strong>Keyword</strong>, and the keywords in a set are called <strong>states</strong>. Internally, the functionality is the same: Unity compiles them in the same way, you work with them the same way with C# scripts, and so on.</p>
+
+<p>The way that you declare shader keywords affects a number of things:</p>
+
+<ul>
+<li>The <a href="#declaring-keywords-definition-type">type</a> affects whether and how Unity uses the keywords to generate shader variants, or whether it uses them for dynamic branching.</li>
+<li>The <a href="#declaring-keywords-scope">scope</a> affects whether the keywords are local or global. This determines their behavior at runtime.</li>
+<li>The <a href="#stage-specific-keywords">stage</a> affects which shader stage the keywords affect (where applicable).</li>
+</ul>
+
+<p><a name="declaring-keywords-definition-type"></a></p>
+
+<h4>Definition type: “multi compile”, “shader feature”, or “dynamic branch”</h4>
+
+<p>When you declare a set of keywords, you choose whether to use them with <a href="shader-variants.html">shader variants</a> or with <a href="shader-branching.html">dynamic branching</a>. If you choose shader variants, you must also choose how Unity defines the keywords internally; this affects the number of variants that Unity compiles.</p>
+
+<ul>
+<li>“dynamic branch”: Use this to create a set of keywords for use with dynamic branching. Internally, Unity uses these keywords to create uniform variables.</li>
+<li>“multi compile” or “shader feature”: Use this to create a set of keywords for use with shader variants. Internally, Unity uses these keyword to create <code>#define</code> preprocessor directives.
+
+<ul>
+<li>“multi compile” declares a set of keywords for use with shader variants.<br><br>Unity compiles shader variants for all keywords in the set.</li>
+<li>“shader feature” declares a set of keywords for use with shader variants, and also instructs the compiler to compile variants where none of these keywords are enabled.<br><br>Unity examines the state of your project at build time, and only compiles variants for keywords that are in use. A keyword is in use if a material that is included in the build has that keyword enabled.</li>
+</ul>
+</li>
+</ul>
+
+<p>Whether to choose “multi compile” or “shader feature” depends on how you use the keywords. If you use the keywords to configure materials in your project and do not change their value from C# scripts at runtime, then you should use “shader feature” to reduce the number of shader keywords and variants in your project. If you enable and disable keywords at runtime using C# scripts, then you should use “multi compile” to prevent variants being stripped in error. For more information on shader stripping, see <a href="shader-variant-stripping.html">Shader variant stripping</a>.</p>
+
+<p><strong>Note:</strong> If you add a shader to the list of <a href="class-GraphicsSettings.html#Always"><strong>Always Included Shaders</strong></a> in the Graphics settings window, Unity includes all keywords from all sets in the build, even if they were declared with “shader feature”.</p>
+
+<p>To set this value, see the following documentation:</p>
+
+<ul>
+<li>In hand-coded shaders, see <a href="SL-MultipleProgramVariants.html">Declaring and using shader keywords in HLSL</a>
+</li>
+<li>In Shader Graph, see <a href="https://docs.unity3d.com/Packages/com.unity.shadergraph@latest?subfolder=/manual/Keywords.html">Keywords</a>. <strong>Note:</strong> The “dynamic branch” option is not available in Shader Graph. You can only use shader keywords with shader variants in Shader Graph.</li>
+</ul>
+
+<p><a name="declaring-keywords-scope"></a></p>
+
+<h4>Local or global scope</h4>
+
+<p>When you declare a set of keywords, you choose whether the keywords in the set have local or global <strong>scope</strong>. This determines whether you can override the state of this keyword at runtime using a global shader keyword.</p>
+
+<p>By default, you declare keywords with global scope. This means that you can override the state of this keyword at runtime using a global shader keyword. If you declare keywords with local scope, this means that you cannot override the state of this keyword at runtime using a global shader keyword. For more information and a code example, see <a href="shader-keywords-scripts.html">Using shader keywords with C# scripts</a>.</p>
+
+<p><strong>Note:</strong> If a keyword with the same name exists in a shader source file and its dependencies, the scope of the keyword in the source file overrides the scope in the dependencies. Dependencies comprise all Shaders that are included via the <a href="SL-Fallback.html">Fallback command</a>, and Passes that are included via the <a href="SL-UsePass.html">UsePass command</a>.</p>
+
+<p>To set this value, see the following documentation:</p>
+
+<ul>
+<li>In hand-coded shaders, see <a href="SL-MultipleProgramVariants.html">Declaring and using shader keywords in HLSL</a>
+</li>
+<li>In Shader Graph, see <a href="https://docs.unity3d.com/Packages/com.unity.shadergraph@latest?subfolder=/manual/Keywords.html">Keywords</a>
+</li>
+</ul>
+
+<p><a name="stage-specific-keywords"></a></p>
+
+<h4>Stage-specific keywords</h4>
+
+<p>By default, Unity generates keyword variants for each stage of your shader. For example, if your shader contains a vertex stage and a fragment stage, Unity generates variants for every keyword combination for both the vertex and the fragment shader programs. If a set of keywords is only used in one of those stages, this results in identical variants for the other stage. Unity automatically identifies and <a href="shader-variants.html#deduplication">deduplicates</a> identical variants so that they do not increase build size, but they still result in wasted compilation time, increased shader loading times, and increased runtime memory usage. </p>
+
+<p>To avoid this problem, when you declare a set of keywords in a hand-coded shader, you can instruct Unity to compile them only for a given shader stage. You are then responsible for ensuring that the keywords are only used in the specified shader stages. </p>
+
+<p><strong>Note:</strong> The following graphics APIs do not fully support stage-specific keywords. In OpenGL and Vulkan, at compile time, Unity automatically converts all stage-specific keyword directives to regular keyword directives. In Metal, any keyword targeting vertex stages also affects tessellation stages, and vice versa. </p>
+
+<p>To set this value:</p>
+
+<ul>
+<li>In hand-coded shaders, see <a href="SL-MultipleProgramVariants.html">Declaring and using shader keywords in HLSL</a>
+</li>
+<li>In Shader Graph, you cannot set this value. By default, all keywords affect all stages.</li>
+</ul>
+
+<p><a name="conditional-keywords"></a></p>
+
+<h3>Making behavior conditional with shader keywords</h3>
+
+<p>You can use shader keywords to make parts of your shader conditional, so that certain behaviors only execute when a given keyword is in a given state.</p>
+
+<p>为此需要执行以下操作：</p>
+
+<ul>
+<li>In hand-coded shaders, see <a href="SL-MultipleProgramVariants.html">Defining and using shader keywords</a>.</li>
+<li>In Shader Graph, see <a href="https://docs.unity3d.com/Packages/com.unity.shadergraph@latest?subfolder=/manual/Keyword-Node.html">Shader Graph: Keyword Node</a>.</li>
+</ul>
+
+<p><a name="enabling-disabling-keywords"></a></p>
+
+<h3>启用和禁用着色器关键字</h3>
+
+<p>You can enable or disable shader keywords. When you enable or disable a shader keyword, the shader displays the appropriate conditional behavior. Depending on whether the keyword work with shader variants or dynamic branching, this means that either Unity renders the appropriate shader variant, or the GPU executes the appropriate branch.</p>
+
+<p>There are two ways to enable and disable shader keywords:</p>
+
+<ul>
+<li>Use scripts, either at runtime or in the Unity Editor. For more information, see <a href="shader-keywords-scripts.html">Using shader keywords with C# scripts</a>.</li>
+<li>Use the Material Inspector in the Unity Editor. For more information, see <a href="shader-keywords-material-inspector.html">Using shader keywords with the Material Inspector</a>.</li>
+</ul>
+
+<p><a name="predefined-shader-keywords"></a></p>
+
+<h2>Unity’s predefined shader keywords</h2>
+
+<p>Unity uses predefined sets of shader keywords to generate shader variants that enable common functionality.</p>
+
+<p>Unity adds the following sets of shader variant keywords at compile time:</p>
+
+<ul>
+<li>By default, Unity adds this set of keywords to all graphics shader programs: STEREO_INSTANCING_ON, STEREO_MULTIVIEW_ON, STEREO_CUBEMAP_RENDER_ON, UNITY_SINGLE_PASS_STEREO. You can strip these keywords using an Editor script. For more information, see <a href="shader-variant-stripping.html">Shader variant stripping</a>.</li>
+<li>By default, Unity adds this set of keywords to the Standard Shader: LIGHTMAP_ON, DIRLIGHTMAP_COMBINED, DYNAMICLIGHTMAP_ON, LIGHTMAP_SHADOW_MIXING, SHADOWS_SHADOWMASK. You can strip these keywords using the <a href="class-GraphicsSettings.html">Graphics settings</a> window.</li>
+<li>In the Built-in Render Pipeline, if your project uses <a href="graphics-tiers.html#tier-settings">tier settings</a> that differ from each other, Unity adds this set of keywords to all graphics shaders: UNITY_HARDWARE_TIER1, UNITY_HARDWARE_TIER2, UNITY_HARDWARE_TIER3. For more information, see <a href="graphics-tiers.html#shader-variants">Graphics tiers: Graphics tiers and shader variants</a>.</li>
+</ul>
+
+<p><a name="keyword-limits"></a></p>
+
+<h2>Shader keyword limits</h2>
+
+<p>Unity can use up to 4,294,967,294 global shader keywords. Individual shaders and compute shaders can use up to 65,534 local shader keywords. These totals include keywords used for variants, and keywords used for dynamic branching.</p>
+
+<p>Every keyword declared in the shader source file and its dependencies count towards this limit. Dependencies include <a href="SL-Pass.html">Passes</a> that the shader includes with <a href="SL-UsePass.html">UsePass</a>, and <a href="SL-Fallback.html">fallbacks</a>.</p>
+
+<p>If Unity encounters a shader keyword with the same name multiple times, it only counts towards the limit once.</p>
+
+<p>If a shader uses more than 128 keywords in total, it incurs a small runtime performance penalty; therefore, it is best to keep the number of keywords low. Unity always reserves 4 keywords per shader.</p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="shader-how-many-variants.html"></a></span><div class="tip">Check how many shader variants you have</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="shader-keywords-scripts.html"></a></span><div class="tip">Using shader keywords with C# scripts</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

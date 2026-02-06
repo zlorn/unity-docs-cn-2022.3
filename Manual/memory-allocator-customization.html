@@ -1,0 +1,808 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Memory allocator customization - Unity 手册">
+<title>Memory allocator customization - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/Shared_Bucket.png">
+<meta name="description" content="When you are optimizing your application’s performance, one important factor to consider is the allocation of memory. Use this page for information on Unity’s native memory allocator types, and to learn about scenarios where you can customize the allocators to improve performance. Unity recommends that you have a general understanding of allocators.">
+<meta property="og:description" content="When you are optimizing your application’s performance, one important factor to consider is the allocation of memory. Use this page for information on Unity’s native memory allocator types, and to learn about scenarios where you can customize the allocators to improve performance. Unity recommends that you have a general understanding of allocators.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'memory-allocator-customization';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/memory-allocator-customization.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/memory-allocator-customization.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/memory-allocator-customization.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/memory-allocator-customization.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/memory-allocator-customization.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/memory-allocator-customization.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/memory-allocator-customization.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/memory-allocator-customization.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/memory-allocator-customization.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/memory-allocator-customization.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/memory-allocator-customization.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/memory-allocator-customization.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/memory-allocator-customization.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/memory-allocator-customization.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/memory-allocator-customization.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/memory-allocator-customization.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/memory-allocator-customization.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/memory-allocator-customization.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/memory-allocator-customization.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/memory-allocator-customization.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/memory-allocator-customization.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/memory-allocator-customization.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/memory-allocator-customization.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/memory-allocator-customization.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/memory-allocator-customization.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/memory-allocator-customization.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/memory-allocator-customization.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/memory-allocator-customization.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/memory-allocator-customization.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/memory-allocator-customization.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/memory-allocator-customization.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/memory-allocator-customization.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/memory-allocator-customization.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/memory-allocator-customization.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/memory-allocator-customization.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/memory-allocator-customization.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/memory-allocator-customization.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/memory-allocator-customization.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/memory-allocator-customization.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/memory-allocator-customization.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/memory-allocator-customization.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/memory-allocator-customization.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/memory-allocator-customization.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/memory-allocator-customization.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/memory-allocator-customization.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/memory-allocator-customization.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/memory-allocator-customization.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/memory-allocator-customization.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/memory-allocator-customization.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/memory-allocator-customization.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/memory-allocator-customization.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/memory-allocator-customization.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/memory-allocator-customization.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/memory-allocator-customization.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/memory-allocator-customization.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/memory-allocator-customization.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/memory-allocator-customization.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/memory-allocator-customization.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UnityOverview.html">在 Unity 中操作</a></li>
+<li><a href="analysis.html">分析</a></li>
+<li><a href="performance-memory-overview.html">Memory in Unity</a></li>
+<li>Memory allocator customization</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="performance-managed-memory.html"></a></span><div class="tip">Managed memory</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="performance-garbage-collector.html"></a></span><div class="tip">Garbage collector overview</div>
+</div>
+</div></div>
+<h1>Memory allocator customization</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>When you are optimizing your application’s performance, one important factor to consider is the allocation of memory. Use this page for information on Unity’s native memory allocator types, and to learn about scenarios where you can customize the allocators to improve performance. Unity recommends that you have a general understanding of allocators. </p>
+
+<p>For a full reference of allocator types and their default values, see <a href="#customizingAllocators">Customizing allocators</a>.</p>
+
+<p><strong>Note:</strong> Not all platforms support this feature. See <a href="PlatformSpecific.html">platform specific</a> documentation for further information.</p>
+
+<p>An application uses memory allocators to balance performance and available memory space. If an application has a lot of spare memory, it can favour faster, memory-heavy allocators when it loads scenes and frames. However, if the application has limited memory, it needs to use that memory efficiently, even if that means using slower allocators. To help you get the best performance for different projects, you can customize Unity’s allocators to fit the size and requirements of each application. </p>
+
+<p>Unity has five allocator types. Each type has a different algorithm for fitting allocations into blocks of memory, and is therefore useful for different allocations. The important difference between allocations is usually persistence, or allocation lifespan, which determines where an allocation should go. For example, a long-live (persistent) allocation goes to the heap and bucket allocators, while short-lived allocations go to the threadsafe linear and TLS allocators.</p>
+
+<p>This table lists the algorithm and uses of each allocator type:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Allocator type</strong></th>
+	<th style="text-align:left;"><strong>Algorithm</strong></th>
+	<th style="text-align:left;"><strong>Used for</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">Dynamic heap</td>
+	<td style="text-align:left;">Two Level Segregated Fit (TLSF)</td>
+	<td style="text-align:left;">• Main allocator<br>• Gfx allocator<br>• Typetree allocator<br>• File cache allocator<br>• Profiler allocator<br>• Editor Profiler allocator (on Editor only)</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Bucket</td>
+	<td style="text-align:left;">Fixed size lock-free allocator</td>
+	<td style="text-align:left;">As a shared allocator for small allocations for:<br><br>• Main allocator<br>• Gfx allocator<br>• Typetree allocator<br>• File cache allocator</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Dual thread</td>
+	<td style="text-align:left;">Redirects allocations based on size and thread ID</td>
+	<td style="text-align:left;">• Main allocator<br>• Gfx allocator<br>• Typetree allocator<br>• File cache allocator</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Thread Local Storage (TLS) stack</td>
+	<td style="text-align:left;">LIFO stack</td>
+	<td style="text-align:left;">Temporary allocations</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Threadsafe linear</td>
+	<td style="text-align:left;">Round robin FIFO</td>
+	<td style="text-align:left;">Buffers for passing data to jobs</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Note</strong>: The examples in this documentation use the memory usage reports that are written to the log when you close the player or Editor. To find your log files, follow the instructions on <a href="LogFiles.html">the log files page</a>.</p>
+
+<h2>Dynamic heap, bucket, and dual thread allocators</h2>
+
+<p>This section reviews the functionality and customization scenarios for the dynamic heap, bucket and dual thread allocators.</p>
+
+<h3>概述</h3>
+
+<p>The <strong>dual thread allocator</strong> is a wrapper that combines <strong>dynamic</strong> and <strong>bucket</strong> allocators. More specifically, it combines:</p>
+
+<ul>
+<li><p>Two dynamic heap allocators: A lock-free allocator for the main thread, and an allocator that is shared by all other threads, which locks on allocation and deallocation. Unity uses these allocators for allocations that are too large for the bucket allocator.
+The dynamic heap allocator uses memory blocks. Allocations that are equal to or greater than half a block go to the virtual memory system instead of the dynamic heap allocator.</p></li>
+<li><p>A bucket allocator for small allocations.
+If the bucket allocator is full, allocation spills over into the dynamic heap allocator.</p></li>
+</ul>
+
+<h3>Dynamic heap allocator</h3>
+
+<p>The main heap allocator is the dynamic heap allocator. It applies the algorithm Two Level Segregated Fit (TLSF) to blocks of memory.</p>
+
+<p>Each platform has a default block size, <a href="#customizingAllocators">which you can customize</a>. An allocation must be smaller than half a block. If an allocation is equal to or greater than half a block, it is too large for the dynamic heap allocator; instead, Unity uses the virtual memory API to make the allocation.</p>
+
+<p>An example usage report for the dynamic heap allocator:</p>
+
+<pre><code>[ALLOC_DEFAULT_MAIN]
+Peak usage frame count: [16.0 MB-32.0 MB]: 497 frames, [32.0 MB-64.0 MB]: 1 frames
+Requested Block Size 16.0 MB
+Peak Block count 2
+Peak Allocated memory 54.2 MB
+Peak Large allocation bytes 40.2 MB
+</code></pre>
+
+<p>In this example, the TLSF block size is set to 16 MB, and Unity has allocated two blocks. The peak usage of the allocator was 54.2MB. Of those 52.4MB, 40.2MB were not allocated in the TLSF block, and instead fell back to virtual memory. Most frames had 16–32MB of allocated memory, while one frame - likely the loading frame - peaked at 32–64MB of memory.</p>
+
+<p>If you increased the block size the large allocation would stay in the dynamic heap rather than fall back into virtual memory. However, that block size could lead to memory waste, because the blocks might not be fully used.</p>
+
+<p>To avoid using the typetree and cache allocators, set their size to 0. Allocations that would have used typetree and cache will instead fall back to the main allocator. This can cause more fragmentation, but saves the memory of those allocators’ memory blocks.</p>
+
+<h3>
+<a name="bucketAllocator"></a> Bucket allocator</h3>
+
+<p>The bucket allocator is a fast lock-free allocator that performs small allocations. Usually, the bucket allocator is used as a first step to speed up small allocations, before they go to the heap allocator.</p>
+
+<p>The allocator reserves blocks of memory for allocations. Each block is divided into <strong>subsections</strong> of 16KB. This is not configurable, and does not appear in the user interface. Each subsection is divided into <strong>allocations</strong>. The allocation size is a multiple of a configured fixed size, called <strong>granularity</strong>.</p>
+
+<p>The following example setup demonstrates the process of reserving blocks for allocations:</p>
+
+<figure>
+<img src="../uploads/Main/Shared_Bucket.png" alt="Shared Bucket Allocator for the Windows, Mac and Linux player">
+<figcaption>Shared Bucket Allocator for the Windows, Mac and Linux player</figcaption>
+</figure>
+
+<p>In this setup, the total <strong>block</strong> size (<strong>Bucket Allocator Block Size</strong>) is 4MB, and the granularity of allocations (<strong>Bucket Allocator Granularity</strong>) is 16B. The first allocation is 16B, the second is 32B (2*16), then 48B, 64B, 80B, 96B, 112B, and 128B, for a total of eight buckets (<strong>Bucket Allocator BucketCount</strong>).</p>
+
+<p>Each subsection contains a different number of buckets. To calculate the number of buckets in a subsection, divide the subsection size (16KB) by the granularity size. For example:</p>
+
+<ul>
+<li>When the allocation granularity is 64B, 256 buckets fit in a subsection.</li>
+<li>When the allocation granularity is 16B, 1,024 buckets fit in a subsection.</li>
+</ul>
+
+<p>Bucket allocators produce different usage reports for a development build and a release build, because a development build, each allocation has a header of an additional 40B. The following diagram demonstrates the difference between development and release builds for 16B and 64B allocations:</p>
+
+<figure>
+<img src="../uploads/Main/memory_allocation.png" alt="Development and Release builds comparison">
+<figcaption>Development and Release builds comparison</figcaption>
+</figure>
+
+<p>The header is also the reason the allocator reports it is full after allocating only 2MB of its 4MB:</p>
+
+<pre><code>[ALLOC_BUCKET]
+      Large Block size 4.0 MB
+      Used Block count 1
+      Peak Allocated bytes 2.0 MB
+      Failed Allocations. Bucket layout:
+        16B: 64 Subsections = 18724 buckets. Failed count: 3889
+        32B: 17 Subsections = 3868 buckets. Failed count: 169583
+        48B: 31 Subsections = 5771 buckets. Failed count: 39674
+        64B: 28 Subsections = 4411 buckets. Failed count: 9981
+        80B: 17 Subsections = 2321 buckets. Failed count: 14299
+        96B: 6 Subsections = 722 buckets. Failed count: 9384
+        112B: 44 Subsections = 4742 buckets. Failed count: 5909
+        128B: 49 Subsections = 4778 buckets. Failed count: 8715
+</code></pre>
+
+<p>In a release build for the same project, the allocator block size is enough:</p>
+
+<pre><code>[ALLOC_BUCKET]
+      Large Block size 4.0 MB
+      Used Block count 1
+      Peak Allocated bytes 3.3 MB
+</code></pre>
+
+<p>If the bucket allocator is full, the allocation falls back to another allocator. The usage report displays usage statistics, including how many allocations failed. If the report displays a fail count that increases linearly, it is likely that the failed allocations happen when calculating the frames, not the load. Fallback allocations are not a problem for a scene load, but they can impact performance if they happen when calculating frames. </p>
+
+<p>To prevent these fallback allocations, increase the block size, and limit the new block size to match the frames’ peak usage, rather than the scene load peak usage. This prevents the block from becoming so large that it reserves a lot of memory that is then not available at runtime.</p>
+
+<p><strong>Tip</strong>: The Profiler allocators share an instance of a bucket allocator. You can customize this shared instance in the <a href="#bucketAllocator">Shared Profiler Bucket Allocator</a>.</p>
+
+<h3>Dual thread allocator</h3>
+
+<p>The dual thread allocator wraps a shared bucket allocator for small allocations, and two instances of the dynamic heap allocator: a lock-free allocator for the main thread, and an allocator that is shared by all other threads, but locks on allocation and deallocation.</p>
+
+<p>You can customize the block sizes of the two dynamic heap allocators:</p>
+
+<figure>
+<img src="../uploads/Main/Main_Allocator.png" alt="Main Allocator, with a custom value for Shared Thread Block Size">
+<figcaption>Main Allocator, with a custom value for Shared Thread Block Size</figcaption>
+</figure>
+
+<p>The usage report contains information for all three parts of the allocator. For example:</p>
+
+<pre><code>[ALLOC_DEFAULT] Dual Thread Allocator
+  Peak main deferred allocation count 135
+    [ALLOC_BUCKET]
+      Large Block size 4.0 MB
+      Used Block count 1
+      Peak Allocated bytes 3.3 MB
+    [ALLOC_DEFAULT_MAIN]
+      Peak usage frame count: [16.0 MB-32.0 MB]: 8283 frames, [32.0 MB-64.0 MB]: 1 frames
+      Requested Block Size 16.0 MB
+      Peak Block count 2
+      Peak Allocated memory 53.3 MB
+      Peak Large allocation bytes 40.2 MB
+    [ALLOC_DEFAULT_THREAD]
+      Peak usage frame count: [64.0 MB-128.0 MB]: 8284 frames
+      Requested Block Size 16.0 MB
+      Peak Block count 2
+      Peak Allocated memory 78.3 MB
+      Peak Large allocation bytes 47.3 MB
+</code></pre>
+
+<p><strong>Note</strong>: The <strong>Peak main deferred allocation count</strong> is the number of items in a deletion queue. The main thread must delete any allocation it made. If another thread deletes an allocation, that allocation is added to a queue. The allocation waits in the queue for the main thread to delete it. It is then counted as a deferred allocation.</p>
+
+<h2>
+<a name="threadsafe"></a> TLS and threadsafe linear allocators</h2>
+
+<p>This section describes the functionality and customization scenarios for the Thread Local Storage (TLS) and threadsafe linear allocators.</p>
+
+<h3>概述</h3>
+
+<p>Unity has two allocators that work outside the dual thread allocator:</p>
+
+<ul>
+<li><p>Thread Local Storage (TLS): A stack-based allocator for fast temporary allocations. This is the fastest allocator because it has almost no overhead. It also prevents fragmentation. It is Last In, First Out (LIFO)-based.</p></li>
+<li><p>Threadsafe linear: A First In, First Out (FIFO) round-robin allocator that the temporary job allocation uses to pass short-lived memory between worker threads).</p></li>
+</ul>
+
+<h3>Thread Local Storage (TLS) stack allocator</h3>
+
+<p>Each thread uses its own fast stack allocator for temporary allocations. These allocations are very fast, with a lifespan of less than a frame. </p>
+
+<p>The default block size for the temporary allocator is 4MB for the platforms and 16MB for the Unity Editor. You can customize these values.</p>
+
+<p><strong>Note</strong>: If the allocator use exceeds the configured block size, Unity increases the block size. The limit for this increase is twice the original size.</p>
+
+<figure>
+<img src="../uploads/Main/Per_Thread.png" alt="Main Thread Block Size custom value in the Fast Per Thread Temporary Allocators">
+<figcaption>Main Thread Block Size custom value in the Fast Per Thread Temporary Allocators</figcaption>
+</figure>
+
+<p>If a thread’s stack allocator is full, allocations fall back to the <a href="#threadsafe">threadsafe linear job allocator</a>. A few overflow allocations are fine: 1 to 10 in a frame, or a few hundred during load. However, if the numbers grow on every frame, you can increase the block sizes. </p>
+
+<p>The information in the usage report can help you select a block size that is appropriate for your application. For example, in the following main thread usage report, the load peaks at 2.7MB, but the remaining frames are below 64KB. You can reduce the block size from 4MB to 64KB and allow the loading frame to spill over the allocations:</p>
+
+<pre><code>[ALLOC_TEMP_TLS] TLS Allocator
+  StackAllocators :
+    [ALLOC_TEMP_MAIN]
+      Peak usage frame count: [16.0 KB-32.0 KB]: 802 frames, [32.0 KB-64.0 KB]: 424 frames, [2.0 MB-4.0 MB]: 1 frames
+      Initial Block Size 4.0 MB
+      Current Block Size 4.0 MB
+      Peak Allocated Bytes 2.7 MB
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 18]
+</code></pre>
+
+<p>In this second example, the worker thread is not used for large temporary allocations. To save memory, you can reduce the worker’s block size to 32KB. This is especially useful on a multi-core machine, where each worker thread has its own stack:</p>
+
+<pre><code>[ALLOC_TEMP_Job.Worker 14]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 18.6 KB
+      Overflow Count 0
+</code></pre>
+
+<h3>Threadsafe linear allocator</h3>
+
+<p>The worker threads in Unity use a round robin first-in-first-out (FIFO) algorithm for fast, lock-free allocations of work buffers for jobs. The jobs dispose of the buffers when done.</p>
+
+<p>This allocator allocates blocks of memory, then linearly allocates memory within those blocks. Available blocks are held in a pool. When one block is full, the allocator fetches a new block from the pool. When the allocator no longer needs the memory in a block, it clears the block, and the block returns to the pool of available blocks. It is important to clear allocations quickly to make blocks available again, so a job should not stay allocated for more than a few frames.</p>
+
+<p>You can customize the block size. The allocator allocates up to 64 blocks, as needed.</p>
+
+<figure>
+<img src="../uploads/Main/Fast_Thread.png" alt="Default value for Fast Thread Shared Temporary Allocators for the Editor">
+<figcaption>Default value for Fast Thread Shared Temporary Allocators for the Editor</figcaption>
+</figure>
+
+<p>If all blocks are in use, or an allocation is too big for a block, the allocation falls back to the main heap allocator, which is much slower than the job allocator. A few overflow allocations are fine: 1 to 10 in a frame, or a few hundred, especially during load. If the overflow count grows with every frame, you can increase the block size to avoid fallback allocations. However, if you increase the block size too much (for example, to match peak use in events such as scene loading), you might leave a lot of memory unavailable during play.</p>
+
+<p>例如：</p>
+
+<pre><code>[ALLOC_TEMP_JOB_4_FRAMES (JobTemp)]
+  Initial Block Size 0.5 MB
+  Used Block Count 64
+  Overflow Count (too large) 0
+  Overflow Count (full) 50408
+</code></pre>
+
+<p>In this example usage report, the 0.5MB block size was too small to accommodate the job memory that the application needed, and the full allocator caused a large number of allocations to overflow.</p>
+
+<p>To check whether your build’s frame overflow is sufficient, run it for a short time and then for a longer time. If the overflow count remains steady, the overflow is a high watermark that occurs during load. If the overflow count increases with a longer run, the build is processing a per-frame overflow. In both cases, you can increase the blocksize to reduce the overflow, but the overflow is less critical during load than per frame.</p>
+
+<h2>
+<a name="customizingAllocators"></a> Customizing allocators</h2>
+
+<p>To customize allocator settings, do one of the following:</p>
+
+<ul>
+<li>Use the Editor:
+
+<ol>
+<li>Select <em>Project Settings</em> &gt; <em>Memory Settings</em>.</li>
+<li>Select the lock icon next to the value you want to edit.</li>
+</ol>
+</li>
+</ul>
+
+<figure>
+<img src="../uploads/Main/Memory_Settings.png" alt="Project Settings &gt; Memory Settings, showing a selection of Player memory settings">
+<figcaption>Project Settings &gt; Memory Settings, showing a selection of Player memory settings</figcaption>
+</figure>
+
+<ul>
+<li>Use command line arguments.
+To find the name of the allocator parameters you want to change, check the list of allocator settings the Editor and players print when they start up.
+For example, to change the block size of the main heap allocators, use <code>-memorysetup-main-allocator-block-size=&lt;new_value&gt;</code>
+</li>
+</ul>
+
+<p>The allocator parameter names and their default values:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="3"><strong>Allocator</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+	<th style="text-align:left;"><strong>Parameter name</strong></th>
+	<th style="text-align:left;"><strong>Default value</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;" colspan="3">Main Allocators</td>
+	<td style="text-align:left;">The allocators Unity uses for most allocations.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;" colspan="2">Main Allocator</td>
+	<td style="text-align:left;">The primary allocator Unity uses for most allocations.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Main Thread Block Size</td>
+	<td style="text-align:left;">Block size of dedicated main thread allocator.</td>
+	<td style="text-align:left;"><code>memorysetup-main-allocator-block-size</code></td>
+	<td style="text-align:left;"><code>16777216</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Shared Thread Block Size</td>
+	<td style="text-align:left;">Block size of shared thread allocator.</td>
+	<td style="text-align:left;"><code>memorysetup-thread-allocator-block-size</code></td>
+	<td style="text-align:left;"><code>16777216</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;" colspan="2">Gfx Allocator</td>
+	<td style="text-align:left;">The allocator Unity uses for CPU allocations related to the Gfx system.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Main Thread Block Size</td>
+	<td style="text-align:left;">Block size of the dedicated main thread Gfx allocator.</td>
+	<td style="text-align:left;"><code>memorysetup-gfx-main-allocator-block-size</code></td>
+	<td style="text-align:left;"><code>16777216</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Shared Thread Block Size</td>
+	<td style="text-align:left;">Block size of the shared thread Gfx allocator.</td>
+	<td style="text-align:left;"><code>memorysetup-gfx-thread-allocator-block-size</code></td>
+	<td style="text-align:left;"><code>16777216</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;" colspan="3">Other Allocators</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">File Cache Block Size</td>
+	<td style="text-align:left;">The file cache has its own allocator to avoid fragmentation. This is its block size.</td>
+	<td style="text-align:left;"><code>memorysetup-cache-allocator-block-size</code></td>
+	<td style="text-align:left;"><code>4194304</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Type Tree Block Size</td>
+	<td style="text-align:left;">The type treess have their own allocator to avoid fragmentation due to many small allocations. This is its block size.</td>
+	<td style="text-align:left;"><code>memorysetup-typetree-allocator-block-size</code></td>
+	<td style="text-align:left;"><code>2097152</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;" colspan="2">Shared Bucket Allocator</td>
+	<td style="text-align:left;">The bucket allocator that is shared between the main allocators.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Bucket Allocator Granularity</td>
+	<td style="text-align:left;">Step size for buckets in the shared allocator.</td>
+	<td style="text-align:left;"><code>memorysetup-bucket-allocator-granularity</code></td>
+	<td style="text-align:left;"><code>16</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Bucket Allocator BucketCount</td>
+	<td style="text-align:left;">Number of bucket sizes.</td>
+	<td style="text-align:left;"><code>memorysetup-bucket-allocator-bucket-count</code></td>
+	<td style="text-align:left;"><code>8</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Bucket Allocator Block Size</td>
+	<td style="text-align:left;">Size of memory blocks used for buckets.</td>
+	<td style="text-align:left;"><code>memorysetup-bucket-allocator-block-size</code></td>
+	<td style="text-align:left;">
+<code>Editor: 8388608</code><br><code>Player: 4194304</code>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Bucket Allocator Block Count</td>
+	<td style="text-align:left;">Maximum number of blocks to be allocated.</td>
+	<td style="text-align:left;"><code>memorysetup-bucket-allocator-block-count</code></td>
+	<td style="text-align:left;">
+<code>Editor: 8</code><br><code>Player: 1</code>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="3">Fast Per Thread Temporary Allocators</td>
+	<td style="text-align:left;">The Thread Local Storage (TLS) allocator that handles very short-lived allocations.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;" colspan="2">Main Thread Block Size</td>
+	<td style="text-align:left;">The initial size for the main thread stack.</td>
+	<td style="text-align:left;"><code>memorysetup-temp-allocator-size-main</code></td>
+	<td style="text-align:left;">
+<code>Editor: 16777216</code><br><code>Player: 4194304</code>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;" colspan="2">Job Worker Block Size</td>
+	<td style="text-align:left;">Size of each job worker in the Unity job system.</td>
+	<td style="text-align:left;"><code>memorysetup-temp-allocator-size-job-worker</code></td>
+	<td style="text-align:left;"><code>E262144</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;" colspan="2">Background Job Worker Block Size</td>
+	<td style="text-align:left;">Size for each background worker.</td>
+	<td style="text-align:left;"><code>memorysetup-temp-allocator-size-background-worker</code></td>
+	<td style="text-align:left;"><code>32768</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;" colspan="2">Preload Block Size</td>
+	<td style="text-align:left;">The preload manager stack size.</td>
+	<td style="text-align:left;"><code>memorysetup-temp-allocator-size-preload-manager</code></td>
+	<td style="text-align:left;">
+<code>Editor: 33554432</code><br><code>Player: 262144</code>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;" colspan="2">Audio Worker Block Size</td>
+	<td style="text-align:left;">Each audio worker thread’s stack size.</td>
+	<td style="text-align:left;"><code>memorysetup-temp-allocator-size-audio-worker</code></td>
+	<td style="text-align:left;"><code>65536</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;" colspan="2">Cloud Worker Block Size</td>
+	<td style="text-align:left;">Cloud worker threads stack size.</td>
+	<td style="text-align:left;"><code>memorysetup-temp-allocator-size-cloud-worker</code></td>
+	<td style="text-align:left;"><code>32768</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;" colspan="2">Gfx Thread Blocksize</td>
+	<td style="text-align:left;">The main render threads stack size.</td>
+	<td style="text-align:left;"><code>memorysetup-temp-allocator-size-gfx</code></td>
+	<td style="text-align:left;"><code>262144</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;" colspan="2">GI Baking Blocksize</td>
+	<td style="text-align:left;">Each GI worker thread’s stack size.</td>
+	<td style="text-align:left;"><code>memorysetup-temp-allocator-size-gi-baking-worker</code></td>
+	<td style="text-align:left;"><code>262144</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;" colspan="2">NavMesh Worker Block Size</td>
+	<td style="text-align:left;">Nav mesh worker threads stack size.</td>
+	<td style="text-align:left;"><code>memorysetup-temp-allocator-size-nav-mesh-worker</code></td>
+	<td style="text-align:left;"><code>65536</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="3">Fast Thread Shared Temporary Allocators</td>
+	<td style="text-align:left;">Fast linear allocator for short lived allocations shared between threads.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;" colspan="2">Job Allocator Block Size</td>
+	<td style="text-align:left;">The round robin linear thread allocator Unity mainly uses for the job worker threads.</td>
+	<td style="text-align:left;"><code>memorysetup-job-temp-allocator-block-size</code></td>
+	<td style="text-align:left;"><code>2097152</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;" colspan="2">Background Job Allocator Block Size</td>
+	<td style="text-align:left;">The linear allocator for the background workers that allows longer lived allocations.</td>
+	<td style="text-align:left;"><code>memorysetup-job-temp-allocator-block-size-background</code></td>
+	<td style="text-align:left;"><code>21048576</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;" colspan="2">Job Allocator Block Size on low memory platforms</td>
+	<td style="text-align:left;">Platforms with less than 2GB memory use this size for both the job workers and the background jobs.</td>
+	<td style="text-align:left;"><code>memorysetup-job-temp-allocator-reduction-small-platforms</code></td>
+	<td style="text-align:left;"><code>262144</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="3">Profiler Allocators</td>
+	<td style="text-align:left;">Allocators that Unity uses exclusively for the Profiler so that they don’t interfere with the application’s allocation patterns.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;" colspan="2">Profiler Block Size</td>
+	<td style="text-align:left;">The block size for the main part of the Profiler.</td>
+	<td style="text-align:left;"><code>memorysetup-profiler-allocator-block-size</code></td>
+	<td style="text-align:left;"><code>16777216</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;" colspan="2">Editor Profiler Block Size</td>
+	<td style="text-align:left;">Block size for the Editor part of the Profiler. This is not present on players.</td>
+	<td style="text-align:left;"><code>memorysetup-profiler-editor-allocator-block-size</code></td>
+	<td style="text-align:left;"><code>1048576</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;" colspan="2">Shared Profiler Bucket Allocator</td>
+	<td style="text-align:left;" colspan="3">Shared bucket allocator for the Profiler and Editor Profiler allocators.<br><br>Not present on low memory platforms.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Bucket Allocator Granularity</td>
+	<td style="text-align:left;">Step size for buckets in the shared allocator.</td>
+	<td style="text-align:left;"><code>memorysetup-profiler-bucket-allocator-granularity</code></td>
+	<td style="text-align:left;"><code>16</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Bucket Allocator BucketCount</td>
+	<td style="text-align:left;">Number of bucket sizes. For example, if the value is 4, the sizes are 16, 32, 48 and 64.</td>
+	<td style="text-align:left;"><code>memorysetup-profiler-bucket-allocator-bucket-count</code></td>
+	<td style="text-align:left;"><code>8</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Bucket Allocator Block Size</td>
+	<td style="text-align:left;">Size of memory blocks used for buckets.</td>
+	<td style="text-align:left;"><code>memorysetup-profiler-bucket-allocator-block-size</code></td>
+	<td style="text-align:left;">
+<code>Editor: 33554432</code><br><code>Player: 4194304</code>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Bucket Allocator Block Count</td>
+	<td style="text-align:left;">Maximum number of blocks to be allocated.</td>
+	<td style="text-align:left;"><code>memorysetup-profiler-bucket-allocator-block-count</code></td>
+	<td style="text-align:left;">
+<code>Editor: 8</code><br><code>Player: 1</code>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Tip</strong>: To ensure your settings improve performance, profile the application before and after making changes. See the <a href="Profiler.html">Profiler overview page</a> for more information. You can also check the memory usage reports. They are available in the log when you close the player or Editor. To find your log files, follow the instructions on the <a href="LogFiles.html">log files page</a>.</p>
+
+<h2>Storing and reading the settings</h2>
+
+<p>Unity stores allocator settings in <code>MemorySettings.asset</code>, which populates the <code>boot.config</code> file with the modified settings at build time. This means new settings take effect at every build.</p>
+
+<p>In the Editor, the <code>boot.config</code> is in the <code>ProjectSettings</code> folder. It gets updated every time Unity imports or changes <code>MemorySettings.asset</code>. New values for the Editor only take effect on the next Editor startup.</p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="performance-managed-memory.html"></a></span><div class="tip">Managed memory</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="performance-garbage-collector.html"></a></span><div class="tip">Garbage collector overview</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

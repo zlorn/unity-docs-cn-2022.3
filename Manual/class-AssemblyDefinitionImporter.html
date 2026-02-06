@@ -1,0 +1,442 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="程序集定义 (Assembly Definition) 属性 - Unity 手册">
+<title>程序集定义 (Assembly Definition) 属性 - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/name-and-general.png">
+<meta name="description" content="单击程序集定义资源 (Assembly Definition Asset) 可以在 Inspector 窗口中设置程序集的属性。">
+<meta property="og:description" content="单击程序集定义资源 (Assembly Definition Asset) 可以在 Inspector 窗口中设置程序集的属性。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'class-AssemblyDefinitionImporter';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/class-AssemblyDefinitionImporter.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/class-AssemblyDefinitionImporter.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/class-AssemblyDefinitionImporter.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/class-AssemblyDefinitionImporter.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/class-AssemblyDefinitionImporter.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/class-AssemblyDefinitionImporter.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/class-AssemblyDefinitionImporter.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/class-AssemblyDefinitionImporter.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/class-AssemblyDefinitionImporter.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/class-AssemblyDefinitionImporter.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/class-AssemblyDefinitionImporter.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/class-AssemblyDefinitionImporter.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/class-AssemblyDefinitionImporter.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/class-AssemblyDefinitionImporter.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/class-AssemblyDefinitionImporter.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/class-AssemblyDefinitionImporter.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/class-AssemblyDefinitionImporter.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/class-AssemblyDefinitionImporter.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/class-AssemblyDefinitionImporter.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/class-AssemblyDefinitionImporter.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/class-AssemblyDefinitionImporter.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/class-AssemblyDefinitionImporter.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/class-AssemblyDefinitionImporter.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/class-AssemblyDefinitionImporter.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/class-AssemblyDefinitionImporter.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/class-AssemblyDefinitionImporter.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/class-AssemblyDefinitionImporter.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/class-AssemblyDefinitionImporter.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/class-AssemblyDefinitionImporter.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/class-AssemblyDefinitionImporter.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/class-AssemblyDefinitionImporter.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/class-AssemblyDefinitionImporter.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/class-AssemblyDefinitionImporter.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/class-AssemblyDefinitionImporter.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/class-AssemblyDefinitionImporter.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/class-AssemblyDefinitionImporter.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/class-AssemblyDefinitionImporter.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/class-AssemblyDefinitionImporter.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/class-AssemblyDefinitionImporter.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/class-AssemblyDefinitionImporter.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/class-AssemblyDefinitionImporter.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/class-AssemblyDefinitionImporter.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/class-AssemblyDefinitionImporter.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/class-AssemblyDefinitionImporter.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/class-AssemblyDefinitionImporter.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/class-AssemblyDefinitionImporter.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/class-AssemblyDefinitionImporter.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/class-AssemblyDefinitionImporter.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/class-AssemblyDefinitionImporter.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/class-AssemblyDefinitionImporter.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/class-AssemblyDefinitionImporter.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/class-AssemblyDefinitionImporter.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/class-AssemblyDefinitionImporter.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/class-AssemblyDefinitionImporter.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/class-AssemblyDefinitionImporter.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/class-AssemblyDefinitionImporter.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/class-AssemblyDefinitionImporter.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/class-AssemblyDefinitionImporter.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="ScriptingSection.html">脚本</a></li>
+<li><a href="unity-architecture.html">Unity 架构</a></li>
+<li><a href="script-compilation.html">脚本编译</a></li>
+<li><a href="ScriptCompilationAssemblyDefinitionFiles.html">程序集定义</a></li>
+<li>程序集定义 (Assembly Definition) 属性</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="ScriptCompilationAssemblyDefinitionFiles.html"></a></span><div class="tip">程序集定义</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-AssemblyDefinitionReferenceImporter.html"></a></span><div class="tip">程序集定义引用属性</div>
+</div>
+</div></div>
+<h1>程序集定义 (Assembly Definition) 属性</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>单击程序集定义资源 (Assembly Definition Asset) 可以在 Inspector 窗口中设置程序集的属性。</p>
+
+<p>程序集定义属性分为以下部分：</p>
+
+<ul>
+<li><a href="#name">Name and General</a></li>
+<li><a href="#define-constraints">Define Constraints</a></li>
+<li><a href="#asmdef-references">Assembly Definition References</a></li>
+<li><a href="#assembly-references">Assembly References</a></li>
+<li><a href="#platforms">Platforms</a></li>
+<li><a href="#version-defines">Version Defines</a></li>
+</ul>
+
+<p><a name="name"></a>
+<a name="general"></a></p>
+
+<h2>Name and General</h2>
+
+<figure>
+<img src="../uploads/Main/name-and-general.png" alt="">
+</figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性：</strong></th>
+	<th style="text-align:left;"><strong>描述：</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Name</strong></td>
+	<td style="text-align:left;">The name for the assembly (without a file extension). Assembly names must be unique across the Project. Consider using a reverse-DNS naming style to reduce the chance of name conflicts, especially if you want to use the assembly in more than one Project.<br><br><strong>Note</strong>: Unity uses the name you assign to the Assembly Definition asset as the default value of the Name field, but you can change the name as needed. However, if you reference an Assembly Definition by its name rather than its GUID, changing the name will break the reference.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Allow ‘unsafe’ Code</strong></td>
+	<td style="text-align:left;">如果在程序集内的脚本中使用了 C# <code>unsafe</code> 关键字，请启用 Allow ‘unsafe’ Code 选项。启用此设置后，Unity 在编译程序集时会将 /unsafe 选项传递到 C# 编译器。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Auto Referenced</strong></td>
+	<td style="text-align:left;">指定预定义的程序集是否应引用此项目程序集。禁用 Auto Reference 选项后，Unity 不会在编译过程中自动引用该程序集。这不会影响 Unity 是否将文件包含在构建中。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>No Engine References</strong></td>
+	<td style="text-align:left;">启用此属性后，Unity 在编译程序集时不会添加对 UnityEditor 或 UnityEngine 的引用。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Override References</strong></td>
+	<td style="text-align:left;">Enable the Override References setting to manually specify which precompiled assemblies this assembly depends upon. When you enable Override References, the Inspector shows the Assembly References section, which you can use to specify the references.<br><br>A precompiled assembly is a library compiled outside your Unity Project. By default, assemblies you define in your Project reference all the precompiled assemblies you add to the Project, which matches how the predefined assemblies reference all precompiled assemblies. When you enable Override References, this assembly only references the precompiled assemblies you add under Assembly References.<br><br><strong>Note</strong>: To prevent Project assemblies from automatically referencing a precompiled assembly, you can disable its Auto Referenced option. See Plugin Inspector for more information.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Root Namespace</strong></td>
+	<td style="text-align:left;">The default namespace for <strong>scripts</strong> in this assembly definition. If you use either <a href="https://docs.unity3d.com/Packages/com.unity.ide.rider@latest/">Rider</a> or <a href="https://docs.unity3d.com/Packages/com.unity.ide.visualstudio@latest/">Visual Studio</a> as your code editor, they automatically add this namespace to any new scripts you create in this assembly definition.</td>
+</tr>
+</tbody>
+</table>
+
+<p>For more information, see <a href="ScriptCompilationAssemblyDefinitionFiles.html#create-asmdef">Creating an Assembly Definition asset</a>.</p>
+
+<p><a name="define-constraints"></a></p>
+
+<h2>Define Constraints</h2>
+
+<figure>
+<img src="../uploads/Main/define-constraints.png" alt="">
+</figure>
+
+<p>Define constraints specify the compiler #define directives that must be defined for Unity to compile or reference an assembly.</p>
+
+<p>Unity only compiles and references a Project assembly if all of the Define Constraints are satisfied. Constraints work like the #if preprocessor directive in C#, but on the assembly level instead of the script level. Define all the symbols in the Define Constraints setting for the constraints to be satisfied.</p>
+
+<p>要表示必须取消定义某个符号，请在该符号前面添加否定<code>!</code>（叹号）符号作为前缀。例如，如果在 Define Constraints 中指定以下符号：</p>
+
+<ul>
+<li><code>!ENABLE_IL2CPP</code></li>
+<li><code>UNITY_2018_3_OR_NEWER</code></li>
+</ul>
+
+<p>The constraints are satisfied when the symbol <code>ENABLE_IL2CPP</code> is not defined and the symbol <code>UNITY_2018_3_OR_NEWER</code> is defined. The result is that Unity only compiles and references this assembly on non-IL2CPP scripting runtimes for Unity 2018.3 or newer.</p>
+
+<p>You can use the || (OR) operator to specify that at least one of the constraints must be present in order for the constraints to be satisfied. For example:</p>
+
+<ul>
+<li><code>UNITY_IOS || UNITY_EDITOR_OSX</code></li>
+<li><code>UNITY_2019_3_OR_NEWER</code></li>
+<li><code>!UNITY_ANDROID</code></li>
+</ul>
+
+<p>The constraints are satisfied when either <code>UNITY_IOS</code> or <code>UNITY_EDITOR_OSX</code> and <code>UNITY_2019_3_OR_NEWER</code> are defined and <code>UNITY_ANDROID</code> is not defined. Individual lines are analogous to performing a logical AND operation between the constraints in them. The above example is equivalent to:</p>
+
+<p><code>(UNITY_IOS OR UNITY_EDITOR_OSX) AND (UNITY_2019_3_OR_NEWER) AND (NOT UNITY_ANDROID)</code></p>
+
+<p>可以使用 Unity 的任何内置 #define 指令、全局编译器响应文件 (.rsp) 定义的符号，以及项目的 Scripting Define Symbols Player 设置中定义的任何符号。请参阅[平台相关的编译]以了解更多信息（包括内置符号的列表）。</p>
+
+<p><strong>Note</strong>: The Scripting Define Symbols settings are platform-specific. If you use this setting to define whether Unity should use an assembly, make sure that you define the necessary symbols on all the relevant platforms.</p>
+
+<p>For more information, see <a href="ScriptCompilationAssemblyDefinitionFiles.html#conditional-assembly">Conditionally including an assembly</a>.</p>
+
+<p><a name="invalid-constraints"></a></p>
+
+<h3>无效或不兼容的约束</h3>
+
+<p>Unity marks each constraint with an indicator based on the currently defined settings (for example, the following set of three constraints indicates that the first symbol is currently defined while the other two are not). Since each individual constraint must be true for the overall constraint to be satisfied, the Editor marks the entire Define Constraints section as currently incompatible or invalid.</p>
+
+<figure>
+<img src="../uploads/Main/invalid-constraints.png" alt="Invalid or incompatible constraints are flagged.">
+<figcaption>Invalid or incompatible constraints are flagged.</figcaption>
+</figure>
+
+<p>To satisfy the constraints in this example, you could change the <strong>Scripting Backend</strong> to <strong>IL2CPP</strong> for the second constraint (in <strong>Player Settings</strong>) and remove the invalid characters from the third constraint. However, what often matters is how the constraints are evaluated when you build the project, not how the constraints appear in the Unity Editor (for example, you might have an assembly that you only want to include in builds that use the IL2CPP backend, but not on other builds that use the Mono backend).</p>
+
+<p><a name="asmdef-references"></a></p>
+
+<h2>Assembly Definition References</h2>
+
+<figure>
+<img src="../uploads/Main/assembly-definition-ref.png" alt="">
+</figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性：</strong></th>
+	<th style="text-align:left;"><strong>描述：</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Assembly Definition References</strong></td>
+	<td style="text-align:left;">Specify references to other assemblies that you have created using Assembly Definition assets. Unity uses these references to compile the assembly and also define the <strong>dependencies</strong> between assemblies.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Use GUIDs</strong></td>
+	<td style="text-align:left;">此设置控制 Unity 如何序列化对其他程序集定义资源的引用。启用此属性后，Unity 将这些引用另存为资源的 GUID，而不是程序集定义的名称。最好是使用 GUID 而不是名称，因为这意味着可以更改程序集定义资源的名称，而不必更新引用该程序集的其他程序集定义文件。</td>
+</tr>
+</tbody>
+</table>
+
+<p>For more information, see <a href="ScriptCompilationAssemblyDefinitionFiles.html#create-asmdef">Creating an Assembly Definition asset</a></p>
+
+<p><a name="assembly-references"></a></p>
+
+<h2>Assembly References</h2>
+
+<figure>
+<img src="../uploads/Main/assembly-ref.png" alt="">
+</figure>
+
+<p>The Assembly References section only appears when you enable the <strong>Override References</strong> property (in the <a href="#general">General</a> section). Use this area to specify any references to precompiled assemblies on which this assembly depends.</p>
+
+<p>For more information, see <a href="ScriptCompilationAssemblyDefinitionFiles.html#reference-precompiled-assembly">Referencing a precompiled, plugin assembly</a></p>
+
+<p><a name="platforms"></a></p>
+
+<h2>Platforms</h2>
+
+<figure>
+<img src="../uploads/Main/platforms.png" alt="">
+</figure>
+
+<p>设置程序集的平台兼容性。Unity 仅在包含（或不排除）的平台上编译或引用此程序集。</p>
+
+<p>For more information, see <a href="ScriptCompilationAssemblyDefinitionFiles.html#create-platform-specific">Creating a platform-specific assembly</a></p>
+
+<p><a name="version-defines"></a></p>
+
+<h2>版本定义</h2>
+
+<figure>
+<img src="../uploads/Main/version-defines.png" alt="">
+</figure>
+
+<p>根据项目中包和模块的版本指定要定义的符号。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性：</strong></th>
+	<th style="text-align:left;"><strong>描述：</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Resource</strong></td>
+	<td style="text-align:left;">一个包或模块</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Define</strong></td>
+	<td style="text-align:left;">该符号定义 Resource 的适用版本何时也出现在此 Unity 项目中。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Expression</strong></td>
+	<td style="text-align:left;">An expression defining a version or range of versions. See <a href="ScriptCompilationAssemblyDefinitionFiles.html#version-define-expressions">Version Define expressions</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Expression outcome</strong></td>
+	<td style="text-align:left;">The Expression evaluated as a logical statement, where “x” is the version checked. If the Expression outcome says, Invalid, then the Expression is malformed.</td>
+</tr>
+</tbody>
+</table>
+
+<p>For more information, see <a href="ScriptCompilationAssemblyDefinitionFiles.html#define-symbols">Defining symbols based on project packages</a></p>
+<!-- Start_links -->
+<!-- End_links -->
+
+<p><span class="search-words">AssemblyDefinitionImporter</span></p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="ScriptCompilationAssemblyDefinitionFiles.html"></a></span><div class="tip">程序集定义</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-AssemblyDefinitionReferenceImporter.html"></a></span><div class="tip">程序集定义引用属性</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

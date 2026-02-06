@@ -1,0 +1,449 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="包清单 - Unity 手册">
+<title>包清单 - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="Unity uses a package manifest file (package.json) to manage information about a specific version of a specific package. The package manifest is always at the root of the package and has crucial information about the package, such as its registered name and version number.">
+<meta property="og:description" content="Unity uses a package manifest file (package.json) to manage information about a specific version of a specific package. The package manifest is always at the root of the package and has crucial information about the package, such as its registered name and version number.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'upm-manifestPkg';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/upm-manifestPkg.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/upm-manifestPkg.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/upm-manifestPkg.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/upm-manifestPkg.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/upm-manifestPkg.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/upm-manifestPkg.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/upm-manifestPkg.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/upm-manifestPkg.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/upm-manifestPkg.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/upm-manifestPkg.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/upm-manifestPkg.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/upm-manifestPkg.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/upm-manifestPkg.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/upm-manifestPkg.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/upm-manifestPkg.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/upm-manifestPkg.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/upm-manifestPkg.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/upm-manifestPkg.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/upm-manifestPkg.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/upm-manifestPkg.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/upm-manifestPkg.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/upm-manifestPkg.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/upm-manifestPkg.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/upm-manifestPkg.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/upm-manifestPkg.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/upm-manifestPkg.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/upm-manifestPkg.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/upm-manifestPkg.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/upm-manifestPkg.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/upm-manifestPkg.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/upm-manifestPkg.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/upm-manifestPkg.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/upm-manifestPkg.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/upm-manifestPkg.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/upm-manifestPkg.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/upm-manifestPkg.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/upm-manifestPkg.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/upm-manifestPkg.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/upm-manifestPkg.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/upm-manifestPkg.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/upm-manifestPkg.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/upm-manifestPkg.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/upm-manifestPkg.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/upm-manifestPkg.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/upm-manifestPkg.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/upm-manifestPkg.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/upm-manifestPkg.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/upm-manifestPkg.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/upm-manifestPkg.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/upm-manifestPkg.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/upm-manifestPkg.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/upm-manifestPkg.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/upm-manifestPkg.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/upm-manifestPkg.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/upm-manifestPkg.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/upm-manifestPkg.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/upm-manifestPkg.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/upm-manifestPkg.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="PackagesList.html">Packages and feature sets</a></li>
+<li><a href="CustomPackages.html">创建自定义包</a></li>
+<li>包清单</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="cus-samples.html"></a></span><div class="tip">为资源包创建示例</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="upm-semver.html"></a></span><div class="tip">版本控制</div>
+</div>
+</div></div>
+<h1>包清单</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Unity uses a package manifest file (<code>package.json</code>) to manage information about a specific version of a specific package. The package manifest is always at the root of the package and has crucial information about the package, such as its registered name and version number. </p>
+
+<p>The package manifest also defines useful information to communicate to the user, such as:</p>
+
+<ul>
+<li>A user-friendly name that appears in the <span class="notooltips">UI</span>.</li>
+<li>A brief description of the package.</li>
+<li>The earliest version of the Unity Editor the package is compatible with.</li>
+</ul>
+
+<p>The package manifest uses the JSON (JavaScript Object Notation) syntax to describe what’s inside the package. The file’s format is similar to <a href="https://www.npmjs.com/">npm</a>’s <code>package.json</code> format, but uses different semantics for some of its properties. Refer to the <a href="#example">example</a> for a sample package manifest file.</p>
+
+<p>The Package Manager reads this manifest to find out the package’s contents, how to unpack its contents, and what information to display the user in the <a href="upm-ui.html">Package Manager window</a>. The manifest stores this information in a series of <a href="#required">required</a>, <a href="#mandatory">recommended</a>, and <a href="#optional">optional</a> properties.</p>
+
+<p><a name="required"></a></p>
+
+<h2>必需属性</h2>
+
+<p>If these properties aren’t present, either the registry refuses the package when it’s published, or the Package Manager can’t fetch or load the package.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>JSON 类型</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">
+<a name="name"></a><strong>name</strong>
+</td>
+	<td style="text-align:left;">String</td>
+	<td style="text-align:left;">A unique identifier that conforms to the Unity Package Manager naming convention, which uses reverse domain name notation. For more information about the naming convention, refer to <a href="cus-naming.html">Naming your package</a>.<br><br><strong>Note</strong>: The <code>name</code> identifier is different than the <a href="#displayName">user-friendly name</a> that appears in the list view in the <strong>Package Manager</strong> window.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<a name="version"></a><strong>version</strong>
+</td>
+	<td style="text-align:left;">string</td>
+	<td style="text-align:left;">The package version number (<strong>MAJOR.MINOR.PATCH</strong>). <br><br>For example, “3.2.1” indicates that this is the 3rd major release, the 2nd minor release, and the first patch. <br><br>This value must respect <a href="http://semver.org/">Semantic Versioning</a>. For more information, refer to <a href="upm-semver.html">Versioning</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="mandatory"></a></p>
+
+<h2>Recommended properties</h2>
+
+<p>The Package Manager can install packages in a project even if the recommended properties don’t have valid values or are missing.</p>
+
+<p>However, the recommended best practice is to assign values for these properties to ensure that your package is discoverable and to offer a better experience for users.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>JSON 类型</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">
+<a name="description"></a><strong>description</strong>
+</td>
+	<td style="text-align:left;">String</td>
+	<td style="text-align:left;">A brief description of the package. This is the text that appears in the <a href="upm-ui-details.html">details view</a> of the <strong>Package Manager</strong> window. This field supports <a href="https://en.wikipedia.org/wiki/UTF-8">UTF–8</a> character codes. This means that you can use special formatting character codes, such as line breaks (<strong>\n</strong>) and bullets (<strong>\u25AA</strong>).</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<a name="displayName"></a><strong>displayName</strong>
+</td>
+	<td style="text-align:left;">String</td>
+	<td style="text-align:left;">A user-friendly name to appear in the Unity Editor (for example, in the Project Browser, the <strong>Package Manager</strong> window, etc.). <br><br>For example, <strong>Unity Timeline</strong>, <strong>ProBuilder</strong>, <strong>In App Purchasing</strong>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<a name="unity"></a><strong>unity</strong>
+</td>
+	<td style="text-align:left;">String</td>
+	<td style="text-align:left;">Indicates the lowest Unity version the package is compatible with. If omitted, the Package Manager considers the package compatible with all Unity versions. <br><br>The expected format is “<strong>&lt;MAJOR&gt;.&lt;MINOR&gt;</strong>” (for example, <strong>2018.3</strong>). To point to a specific patch, use the <a href="#unityRelease">unityRelease</a> property as well.<br><br><strong>Note</strong>: A package that isn’t compatible with Unity doesn’t appear in the <a href="upm-ui.html">Package Manager window</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="optional"></a></p>
+
+<h2>可选属性</h2>
+
+<p>These properties are optional, meaning that you can omit them. However, if they’re present, they must have a valid value.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>JSON 类型</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>author</strong></td>
+	<td style="text-align:left;">Object or string</td>
+	<td style="text-align:left;">The author of the package. <br><br>This property has one required field, <strong>name</strong>, and two optional fields, <strong>email</strong> and <strong>url</strong>. <br><br>You can specify these fields as a JSON object, or collapse them into a single string whose key is <strong>author</strong>.<br><br>Object example: <br><code>{</code><br>   <code>"name" : "John Doe",</code><br>   <code>"email" : "john.doe@example.com",</code><br>   <code>"url" : "http://john.doe.example.com/"</code><br><code>}</code> <br><br>String example: <br><code>"John Doe &lt;john.doe@example.com&gt; (http://john.doe.example.com/)"</code>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<!-- @TODO: Remove when backporting to 2019.4 --><a name="changelogUrl"></a><strong>changelogUrl</strong>
+</td>
+	<td style="text-align:left;">String</td>
+	<td style="text-align:left;">Custom location for this package’s changelog specified as a URL. For example:<br><code>"changelogUrl": "https://example.com/changelog.html"</code><br><br><strong>Note</strong>: When the Package Manager can’t reach the URL location (for example, if there is a network issue), it does the following:<br><br>- If the package is installed, the Package Manager opens a file browser displaying the <code>CHANGELOG.md</code> file in the package cache. <br>- If the package isn’t installed, the Package Manager displays a warning that an offline changelog isn’t available.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<a name="dependencies"></a><strong>dependencies</strong>
+</td>
+	<td style="text-align:left;">对象</td>
+	<td style="text-align:left;">A map of package dependencies. Keys are package names, and values are specific versions. They identify other packages that this package depends on. <br><br><strong>Note</strong>: The Package Manager doesn’t support range syntax, only <strong>SemVer</strong> versions.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<!-- @TODO: Remove when backporting to 2019.4 --><a name="documentationUrl"></a><strong>documentationUrl</strong>
+</td>
+	<td style="text-align:left;">String</td>
+	<td style="text-align:left;">Custom location for this package’s documentation specified as a URL. For example:<br><code>"documentationUrl": "https://example.com/"</code><br><br><strong>Note</strong>: When the Package Manager can’t reach the URL location (for example, if there is a network issue), it does the following:<br><br>- If the package is installed, the Package Manager opens a file browser displaying the <code>Documentation~</code> folder in the package cache. <br>- If the package isn’t installed, the Package Manager displays a warning that offline documentation isn’t available.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<a name="hideInEditor"></a><strong>hideInEditor</strong>
+</td>
+	<td style="text-align:left;">Boolean</td>
+	<td style="text-align:left;">By default, a package’s assets are hidden in the <strong>Project</strong> window and omitted from the results when you use the <a href="EditingValueProperties.html#ref-assign-objectpicker">Object Picker</a> in the <strong>Inspector</strong> window. Set this property to “false” to make sure that this package’s assets are always visible.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>keywords</strong></td>
+	<td style="text-align:left;">字符串数组</td>
+	<td style="text-align:left;">Package Manager 搜索 API 使用的关键字数组。这可以帮助用户找到相关的包。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>license</strong></td>
+	<td style="text-align:left;">String</td>
+	<td style="text-align:left;">OSS 许可证的标识符使用 <a href="https://spdx.org/licenses/">SPDX 标识符格式</a>，或一个字符串，如 “See <code>LICENSE.md</code> file”。<br><br><strong>注意</strong>：如果您在包清单中省略此属性，则您的包必须包含一个 <code>LICENSE.md</code> 文件。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<!-- @TODO: Remove when backporting to 2019.4 --><a name="licensesUrl"></a><strong>licensesUrl</strong>
+</td>
+	<td style="text-align:left;">String</td>
+	<td style="text-align:left;">Custom location for this package’s license information specified as a URL. For example:<br><code>"licensesUrl": "https://example.com/licensing.html"</code><br><br><strong>Note</strong>: When the Package Manager can’t reach the URL location (for example, if there is a network issue), it does the following:<br><br>- If the package is installed, it opens a file browser displaying the <code>LICENSE.md</code> file in the package cache. <br>- If the package isn’t installed, the Package Manager displays a warning that offline license information isn’t available.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>samples</strong></td>
+	<td style="text-align:left;">对象数组</td>
+	<td style="text-align:left;">List of samples included in the package. Each sample has a display name, a description, and the path to the sample folder starting at the <code>Samples~</code> folder itself:<br><br><code>{</code><br>   <code>"displayName": "&lt;name-to-appear-in-the-UI&gt;",</code><br>   <code>"description": "&lt;brief-description&gt;",</code><br>   <code>"path": "Samples~/&lt;sample-subfolder&gt;"</code><br><code>}</code><br><br> For more information, refer to <a href="cus-samples.html">Creating samples for packages</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>type</strong></td>
+	<td style="text-align:left;">String</td>
+	<td style="text-align:left;">为 Package Manager 提供其他信息的常量。<br><br><strong>保留仅供内部使用。</strong>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<a name="unityRelease"></a><strong>unityRelease</strong>
+</td>
+	<td style="text-align:left;">String</td>
+	<td style="text-align:left;">Part of a Unity version indicating the specific release of Unity that the package is compatible with. You can use this property when an updated package requires changes made during the Unity alpha/beta development cycle. This might be the case if the package needs newly introduced APIs, or uses existing APIs that have changed in a non-backward-compatible way without <a href="APIUpdater.html">API Updater</a> rules. <br><br>The expected format is “<strong>&lt;UPDATE&gt;&lt;RELEASE&gt;</strong>” (for example, <strong>0b4</strong>). <br><br><strong>Note</strong>: If you omit the recommended <a href="#unity">unity</a> property, this property has no effect. <br><br>A package that isn’t compatible with Unity doesn’t appear in the <a href="upm-ui.html">Package Manager window</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="example"></a></p>
+
+<h2>包清单示例</h2>
+<!-- @TODO: Remove the lines with xxxUrl when backporting to 2019.4 -->
+
+<pre><code class="lang-json">{
+  "name": "com.[company-name].[package-name]",
+  "version": "1.2.3",
+  "displayName": "Package Example",
+  "description": "This is an example package",
+  "unity": "2019.1",
+  "unityRelease": "0b5",
+  "documentationUrl": "https://example.com/",
+  "changelogUrl": "https://example.com/changelog.html",
+  "licensesUrl": "https://example.com/licensing.html",
+  "dependencies": {
+    "com.[company-name].some-package": "1.0.0",
+    "com.[company-name].other-package": "2.0.0"
+ },
+ "keywords": [
+    "keyword1",
+    "keyword2",
+    "keyword3"
+  ],
+  "author": {
+    "name": "Unity",
+    "email": "unity@example.com",
+    "url": "https://www.unity3d.com"
+  }
+}
+
+</code></pre>
+
+<h2>其他资源</h2>
+
+<ul>
+<li><a href="class-Object.html">Important Classes - Object</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="cus-samples.html"></a></span><div class="tip">为资源包创建示例</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="upm-semver.html"></a></span><div class="tip">版本控制</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

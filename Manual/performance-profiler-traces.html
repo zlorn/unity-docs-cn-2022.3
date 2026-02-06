@@ -1,0 +1,312 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Analyzing profiler traces - Unity 手册">
+<title>Analyzing profiler traces - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/UnderstandingPerformanceinUnity-ProfilingSection_image_0.png">
+<meta name="description" content="When you profile your application, there are some common issues that you might come across. This page outlines how to investigate the cause of some common performance issues.">
+<meta property="og:description" content="When you profile your application, there are some common issues that you might come across. This page outlines how to investigate the cause of some common performance issues.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'performance-profiler-traces';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/performance-profiler-traces.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/performance-profiler-traces.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/performance-profiler-traces.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/performance-profiler-traces.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/performance-profiler-traces.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/performance-profiler-traces.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/performance-profiler-traces.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/performance-profiler-traces.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/performance-profiler-traces.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/performance-profiler-traces.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/performance-profiler-traces.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/performance-profiler-traces.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/performance-profiler-traces.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/performance-profiler-traces.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/performance-profiler-traces.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/performance-profiler-traces.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/performance-profiler-traces.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/performance-profiler-traces.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/performance-profiler-traces.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/performance-profiler-traces.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/performance-profiler-traces.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/performance-profiler-traces.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/performance-profiler-traces.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/performance-profiler-traces.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/performance-profiler-traces.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/performance-profiler-traces.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/performance-profiler-traces.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/performance-profiler-traces.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/performance-profiler-traces.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/performance-profiler-traces.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/performance-profiler-traces.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/performance-profiler-traces.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/performance-profiler-traces.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/performance-profiler-traces.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/performance-profiler-traces.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/performance-profiler-traces.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/performance-profiler-traces.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/performance-profiler-traces.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/performance-profiler-traces.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/performance-profiler-traces.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/performance-profiler-traces.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/performance-profiler-traces.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/performance-profiler-traces.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/performance-profiler-traces.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/performance-profiler-traces.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/performance-profiler-traces.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/performance-profiler-traces.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/performance-profiler-traces.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/performance-profiler-traces.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/performance-profiler-traces.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/performance-profiler-traces.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/performance-profiler-traces.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/performance-profiler-traces.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/performance-profiler-traces.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/performance-profiler-traces.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/performance-profiler-traces.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/performance-profiler-traces.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/performance-profiler-traces.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UnityOverview.html">在 Unity 中操作</a></li>
+<li><a href="analysis.html">分析</a></li>
+<li><a href="performance-profiling-tools.html">Profiling tools</a></li>
+<li>Analyzing profiler traces</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="performance-profiling-tools.html"></a></span><div class="tip">Profiling tools</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="LogFiles.html"></a></span><div class="tip">Log files</div>
+</div>
+</div></div>
+<h1>Analyzing profiler traces</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>When you profile your application, there are some common issues that you might come across. This page outlines how to investigate the cause of some common performance issues.</p>
+
+<h2>解析启动跟踪</h2>
+
+<p>When looking at a trace of start-up times, there are two key methods to inspect: <code>UnityInitApplicationGraphics</code> and <code>UnityLoadApplication</code>. These two methods are the primary places where the configuration, assets, and code of a project can impact start-up time.</p>
+
+<p><strong>Note:</strong> The start-up time of your application differs from platform to platform. On most platforms, start up happens while the <a href="class-PlayerSettingsSplashScreen.html">splash screen</a> appears. </p>
+
+<figure>
+<img src="../uploads/Main/UnderstandingPerformanceinUnity-ProfilingSection_image_0.png" alt="Instruments trace of an example Unity project running on an iOS device">
+<figcaption>Instruments trace of an example Unity project running on an iOS device</figcaption>
+</figure>
+
+<p>In the above screenshot from an Instruments trace of an example Unity project running on an iOS device, in the platform-specific <code>startUnity</code> method, note the <code>UnityInitApplicationGraphics</code> and <code>UnityLoadApplication</code> methods.</p>
+
+<p><code>UnityInitApplicationGraphics</code> performs a lot of internal work, such as setting up the graphics device and initializing a lot of Unity’s internal systems. It also initializes the <a href="BestPracticeUnderstandingPerformanceInUnity6.html">Resources system</a> by loading an index of all the files contained in the Resources system.</p>
+
+<p>Unity’s <a href="../ScriptReference/Resources.html">Resource system</a> includes every <a href="AssetTypes.html">asset file</a> in its data that’s in the <code>Resources</code> folder in the <code>Assets</code> folder of your project. This includes any files in the <code>Resources</code> folder’s children folders. As such, the time required to initialize the Resources system increases in correlation with the number of files within the <code>Resources</code> folders in your application’s project. </p>
+
+<p><code>UnityLoadApplication</code> contains methods that load and initialize the first Scene in the project. This includes deserializing and instantiating the data necessary to display the first Scene, such as compiling Shaders, uploading Textures and instantiating GameObjects. Also, Unity executes the <code>Awake</code> callbacks of all <code>MonoBehaviour</code>s in the first Scene.</p>
+
+<p>这就意味着，如果在项目的第一个场景中的 <code>Awake</code> 回调中存在任何执行时间很长的代码，那么该代码可能会导致项目的初始启动时间的延长。解决此问题的方法是删除这些运行速度慢的代码，或者在应用程序生命周期的其他地方执行该代码。</p>
+
+<h2>解析运行时跟踪</h2>
+
+<p>For profiling traces captured after the initial startup time, the primary place of interest is the method <code>PlayerLoop</code>. This is Unity’s main loop, and the code within it runs once per frame.</p>
+
+<figure>
+<img src="../uploads/Main/UnderstandingPerformanceinUnity-ProfilingSection_image_1.png" alt="Instruments trace of an example Unity project">
+<figcaption>Instruments trace of an example Unity project</figcaption>
+</figure>
+
+<p>The above screenshot illustrates several of the most performance-impacting methods within <code>PlayerLoop</code>. <strong>Note:</strong> The names of methods within the <code>PlayerLoop</code> might vary between Unity versions.</p>
+
+<p><code>PlayerRender</code> is the method that runs Unity’s rendering system. This includes culling objects, calculating dynamic batches, and submitting drawing instructions to the GPU. Any Image Effects or rendering-based script callbacks (<a href="../ScriptReference/MonoBehaviour.OnWillRenderObject.html">OnWillRenderObject</a>, for example) also run here. In general, this should be the top consumer of CPU time while the project is interactive.</p>
+
+<p><code>BaseBehaviourManager</code> calls three templated versions of <code>CommonUpdate</code>. These invoke certain callbacks within the <code>MonoBehaviour</code>s attached to active GameObjects in the current Scene:</p>
+
+<ul>
+<li>
+<code>CommonUpdate&lt;UpdateManager&gt;</code> 调用 <code>Update</code> 回调</li>
+<li>
+<code>CommonUpdate&lt;LateUpdateManager&gt;</code> 调用 <code>LateUpdate</code> 回调</li>
+<li>
+<code>CommonUpdate&lt;FixedUpdateManager&gt;</code> 调用 <code>FixedUpdate</code>（如果物理系统已勾选）</li>
+</ul>
+
+<p>In general, <code>BaseBehaviourManager::CommonUpdate&lt;UpdateManager&gt;</code> is the most useful method family to inspect, because it’s the entry point for most of the script code running within a Unity project.</p>
+
+<p>There are several other methods that are useful to inspect:</p>
+
+<ul>
+<li>
+<code>UI::CanvasManager</code> invokes several different callbacks if a project uses the <a href="https://docs.unity3d.com/Packages/com.unity.ugui@latest">UGUI system</a>. This includes Unity UI’s batch computation and layout updates; the two operations that most often cause <code>CanvasManager</code> to appear in the Profiler.</li>
+<li>
+<code>DelayedCallManager::Update</code> runs <a href="Coroutines.html">coroutines</a>.</li>
+<li>
+<code>PhysicsManager::FixedUpdate</code> runs the PhysX physics system. This primarily involves running PhysX’s internal code. The number of physics objects in the current Scene, such as <code>Rigidbody</code> and <code>Collider</code> influence PhysX’s internal code. Physics-based callbacks also appear here: in particular, <code>OnTriggerStay</code> and <code>OnCollisionStay</code>.</li>
+</ul>
+
+<p>If the project is using 2D physics, that appears as a similar set of calls under <code>Physics2DManager::FixedUpdate</code>.</p>
+
+<h2>解析脚本方法</h2>
+
+<p>When scripts are invoked on platforms cross-compiled with IL2CPP, look for trace lines that contain a <code>ScriptingInvocation</code> object. This is the point where Unity’s internal native code transitions into the script runtime to execute script code. <strong>Note:</strong> Technically, after Unity runs your C# code through IL2CPP, it also becomes native code. However, this cross-compiled code primarily executes methods via the IL2CPP runtime framework and doesn’t resemble handwritten C++.</p>
+
+<figure>
+<img src="../uploads/Main/UnderstandingPerformanceinUnity-ProfilingSection_image_2.png" alt="A trace from an example Unity project">
+<figcaption>A trace from an example Unity project</figcaption>
+</figure>
+
+<p>In the above screenshot, the methods nested beneath the <code>RuntimeInvoker_Void</code> line are part of cross-compiled C# scripts that Unity executed once per frame.</p>
+
+<p>The trace lines’ names are the name of the original class followed by an underscore and the name of the original method. In this example trace, you can see <code>EventSystem.Update</code>, <code>PlayerShooting.Update</code> and several other <code>Update</code> methods. These are the standard Unity <code>Update</code> callbacks found in most <code>MonoBehaviours</code>.</p>
+
+<p>You can expand these methods to see which methods within them consumed CPU time. This includes other script methods within the project, Unity APIs, and C# library code.</p>
+
+<p>The above trace shows that the <code>StandaloneInputModule.Process</code> method was ray casting through the entire UI once per frame. This method detects whether any touch events were hovering over, or activating any UI elements. The method iterating over all the UI elements, and testing whether the mouse’s position is within their bounding rectangle is resource-intensive.</p>
+
+<h2>资源加载</h2>
+
+<p>You can also identify asset loading in CPU traces. The main method that indicates an Asset load is <code>SerializedFile::ReadObject</code>. This method connects a binary data stream from a file to Unity’s serialization system, which operates via a method named <code>Transfer</code>. The <code>Transfer</code> method is on all Asset types, such as Textures, MonoBehaviours and Particle Systems.</p>
+
+<figure>
+<img src="../uploads/Main/UnderstandingPerformanceinUnity-ProfilingSection_image_3.png" alt="Trace of a Scene loading">
+<figcaption>Trace of a Scene loading</figcaption>
+</figure>
+
+<p>The above screenshot is a trace of Unity loading a Scene. When it loads a Scene, Unity reads and deserializes all the Assets within the Scene, as denoted by the calls to various <code>Transfer</code> methods beneath <code>SerializedFile::ReadObject</code>.</p>
+
+<p>If you see a performance stutter during runtime and the performance trace shows that <code>SerializedFile::ReadObject</code> used a significant amount of time, it means that Asset loads reduced the frame rate. <strong>Note:</strong> <code>SerializedFile::ReadObject</code> usually appears on the main thread when the <code>SceneManager</code>, <code>Resources</code> or AssetBundle APIs request synchronous Asset loads.</p>
+
+<p>To resolve this performance stutter can you can make Asset loading asynchronous (which moves the heavy <code>ReadObject</code> call to a worker thread), or preload certain heavy Assets.</p>
+
+<p><code>Transfer</code> calls also appear when Unity clones objects (denoted by the <code>CloneObject</code> method in a trace). If a call to <code>Transfer</code> appears beneath a <code>CloneObject</code> call, then Unity isn’t loading the Asset from storage. Instead, Unity transfers the old object’s data to the new object. To do this, Unity serializes the old object and deserializes the resulting data as the new object.</p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="performance-profiling-tools.html"></a></span><div class="tip">Profiling tools</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="LogFiles.html"></a></span><div class="tip">Log files</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,579 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="网格对齐 - Unity 手册">
+<title>网格对齐 - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/SceneGrids.png">
+<meta name="description" content="Unity provides a visual grid in the Editor&amp;#8217;s Scene view window, which can help precisely align GameObjects by snapping (moving) them to the nearest grid location.">
+<meta property="og:description" content="Unity provides a visual grid in the Editor&amp;#8217;s Scene view window, which can help precisely align GameObjects by snapping (moving) them to the nearest grid location.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'GridSnapping';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/GridSnapping.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/GridSnapping.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/GridSnapping.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/GridSnapping.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/GridSnapping.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/GridSnapping.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/GridSnapping.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/GridSnapping.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/GridSnapping.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/GridSnapping.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/GridSnapping.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/GridSnapping.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/GridSnapping.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/GridSnapping.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/GridSnapping.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/GridSnapping.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/GridSnapping.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/GridSnapping.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/GridSnapping.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/GridSnapping.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/GridSnapping.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/GridSnapping.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/GridSnapping.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/GridSnapping.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/GridSnapping.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/GridSnapping.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/GridSnapping.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/GridSnapping.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/GridSnapping.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/GridSnapping.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/GridSnapping.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/GridSnapping.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/GridSnapping.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/GridSnapping.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/GridSnapping.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/GridSnapping.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/GridSnapping.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/GridSnapping.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/GridSnapping.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/GridSnapping.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/GridSnapping.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/GridSnapping.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/GridSnapping.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/GridSnapping.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/GridSnapping.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/GridSnapping.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/GridSnapping.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/GridSnapping.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/GridSnapping.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/GridSnapping.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/GridSnapping.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/GridSnapping.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/GridSnapping.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/GridSnapping.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/GridSnapping.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/GridSnapping.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/GridSnapping.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/GridSnapping.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UnityOverview.html">在 Unity 中操作</a></li>
+<li><a href="UsingTheEditor.html">Unity 的界面</a></li>
+<li><a href="UsingTheSceneView.html">Scene 视图</a></li>
+<li><a href="PositioningGameObjects.html">Position GameObjects</a></li>
+<li>网格对齐</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="PositioningGameObjects.html"></a></span><div class="tip">Position GameObjects</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SceneViewNavigation.html"></a></span><div class="tip">Scene 视图导航</div>
+</div>
+</div></div>
+<h1>网格对齐</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Unity provides a visual grid in the Editor’s <strong>Scene view</strong> window, which can help precisely align GameObjects by snapping (moving) them to the nearest grid location.</p>
+
+<figure>
+<img src="../uploads/Main/SceneGrids.png" alt="显示沿 x、y 和 z 轴的网格线的同一视图">
+<figcaption>显示沿 x、y 和 z 轴的网格线的同一视图</figcaption>
+</figure>
+
+<p>可以通过几种方式沿 X、Y 或 Z 轴将游戏对象与网格对齐：</p>
+
+<ul>
+<li>
+<a href="#grid-align">将所选游戏对象与最接近的网格点对齐</a>。</li>
+<li>在移动、旋转或缩放游戏对象时<a href="#grid-snap">开启网格对齐</a>。</li>
+</ul>
+
+<p>还能<a href="#snap-increments">以增量方式变换游戏对象</a>，而无需将其与网格线对齐。如果需要更改移动、旋转或缩放的量，则可以更改递增的对齐值。</p>
+
+<p>默认情况下，网格是隐藏的，但是可以<a href="#grid-toggle">使其可见</a>并可<a href="#grid-axis">切换沿着哪个轴显示</a>。可以通过更改以下设置来自定义网格的外观和行为：</p>
+
+<ul>
+<li>网格的<a href="#grid-resize">大小</a>（调整线之间的距离）。</li>
+<li>网格线自身的<a href="#grid-color">颜色</a>。</li>
+<li>网格线显示的<a href="#grid-opacity">透明度或不透明度</a>。</li>
+<li>The <a href="#grid-location">position</a> of the grid in the <strong>Scene view</strong> window (move it closer or farther).</li>
+</ul>
+
+<p>其中很多<a href="#grid-custom">操作都支持键盘快捷键</a>。可以查看为这些操作分配了哪些组合键，并使用 <a href="ShortcutsManager.html">Shortcuts Manager</a> 对其进行自定义。</p>
+
+<p><a name="grid-and-snap"></a></p>
+
+<h2>Grid and Snap toolbar Overlay</h2>
+
+<figure>
+<img src="../uploads/Main/scene-grids-overlay.png" alt="Grid and Snap toolbar Overlay">
+<figcaption>Grid and Snap toolbar Overlay</figcaption>
+</figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Icon</th>
+	<th style="text-align:left;">Actions</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">
+<img src="../uploads/Main/SceneGrids-Vis-icon.png" alt=""> Grid visibility</td>
+	<td style="text-align:left;">
+<a href="#grid-toggle">Toggle grid on or off</a><br><a href="#grid-axis">Change grid axis</a><br> <a href="#grid-opacity">Change grid opacity</a><br> <a href="#grid-move-to-handle">Move grid to gizmo handle or back to origin</a>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<img src="../uploads/Main/SceneGrids-Mode-icon.png" alt=""> Grid snapping</td>
+	<td style="text-align:left;">
+<a href="#grid-snap">Toggle grid snapping on or off</a><br><a href="#grid-resize">Change grid size</a> <br> <a href="#grid-align">Align a GameObject to an axis</a>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<img src="../uploads/Main/scene-grids-increment-icon.png" alt=""> Snap increment</td>
+	<td style="text-align:left;"><a href="#snap-increments">Change the default increment snap values</a></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Note</strong>: The settings on the <strong>Grid and Snap</strong> <a href="overlays.html">Overlay</a> are global to all Scene views.</p>
+
+<h2>Align, snap, and incremental movements</h2>
+
+<p>本节提供有关如何执行以下操作的信息：</p>
+
+<ul>
+<li><a href="#grid-align">对齐（推动）到网格</a></li>
+<li><a href="#grid-snap">激活自动贴靠</a></li>
+<li><a href="#snap-increments">增量式移动、旋转和缩放</a></li>
+</ul>
+
+<p><a name="grid-align"></a></p>
+
+<h3>Align (push) to the grid</h3>
+
+<p>可以将游戏对象对齐到单个轴上的最近网格点，也可以一次性在所有轴上对齐游戏对象。</p>
+
+<p>要将游戏对象与特定轴的网格上的最近点对齐，请执行以下操作：</p>
+
+<ol>
+<li><p>In the <strong>Grid and Snap</strong> Overlays toolbar, open the grid snapping drop-down menu (<img src="../uploads/Main/SceneGrids-Mode-icon-inline.png" alt="">).</p></li>
+<li>
+<p>In the <strong>Align Selected</strong> section, click the <strong>X</strong>, <strong>Y</strong>, or <strong>Z</strong> button that matches the axis you want to push to.</p>
+
+<figure>
+<img src="../uploads/Main/scene-grid-align-selection.png" alt="Align Selection to Grid section of the Grid and Snap window">
+<figcaption>Align Selection to Grid section of the Grid and Snap window</figcaption>
+</figure>
+</li>
+</ol>
+
+<p>要一次性在所有轴上对齐游戏对象，请执行以下操作：</p>
+
+<ol>
+<li><p>选择要与网格对齐的游戏对象。</p></li>
+<li>
+<p>Use the <strong>Ctrl</strong>+<strong>\</strong> (Windows) or <strong>Cmd</strong>+<strong>\</strong> (macOS) shortcut to push the GameObject(s) onto the grids on all axes.</p>
+
+<p>Alternatively, from the <strong>Grid and Snap</strong> Overlays toolbar, open the grid visibility drop-down menu (<img src="../uploads/Main/SceneGrids-Mode-icon-inline.png" alt="">) and in the <strong>Align Selected</strong> section, click <strong>All Axes</strong>.</p>
+</li>
+</ol>
+
+<p><a name="grid-snap"></a></p>
+
+<h3>Activate auto-snapping</h3>
+
+<p>要开启自动贴靠网格，请执行以下操作：</p>
+
+<ol>
+<li>Activate the <strong>Move</strong> tool and make sure the handle orientation in the Tool Settings Overlay is set to <a href="PositioningGameObjects.html#GizmoHandlePositions">Global</a> (<img src="../uploads/Main/SceneGrids-Global-icon.png" alt="">).</li>
+<li>Click the grid snapping icon (<img src="../uploads/Main/SceneGrids-Mode-icon-inline.png" alt="">) in the <strong>Grid and Snap</strong> toolbar Overlay. The icon is blue when activated.</li>
+</ol>
+
+<p>启用自动网格贴靠时，__Move<strong>、</strong>Rotate__ 和 <strong>Scale</strong> 变换工具会沿激活的辅助图标轴将选定的游戏对象贴靠到网格。如果需要游戏对象以较小的增量移动，也可以<a href="#snap-increments">采用增量方式变换游戏对象</a>。</p>
+
+<p><a name="snap-increments"></a></p>
+
+<h3>Move, rotate, and scale in increments</h3>
+
+<p>要按增量贴靠值来移动、旋转或缩放，请执行以下操作：</p>
+
+<ul>
+<li>按住 <strong>Control</strong> 键 (Windows) 或 <strong>Command</strong> 键 (macOS)，同时使用其中一个<a href="PositioningGameObjects.html">变换辅助图标</a>。</li>
+</ul>
+
+<p>要更改默认的增量贴靠值，请执行以下操作：</p>
+
+<ol>
+<li><p>From the <strong>Grid and Snap</strong> Overlays toolbar, open the snap increment drop-down menu (<img src="../uploads/Main/scene-grids-increment-icon-inline.png" alt="">).</p></li>
+<li>
+<p><strong>Increment Snap</strong> 部分包含几个属性，可用于为所有轴设置相同的值或不同的值：</p>
+
+<figure>
+<img src="../uploads/Main/scene-grid-snapping-increment.png" alt="Increment Snap section of the Grid and Snap window">
+<figcaption>Increment Snap section of the Grid and Snap window</figcaption>
+</figure>
+
+<p><strong>Move</strong>: With the link icon selected, enter a uniform increment snap value for all axes, or unlink the axes and set different increment snap values in the <strong>X</strong>, <strong>Y</strong>, and <strong>Z</strong> axis properties.</p>
+
+<p><strong>Rotate</strong>: Enter a rotation increment value in degrees.</p>
+
+<p><strong>Scale</strong>: Enter a scale increment value as a scale factor. For example, if the Scale value is 2, the selected GameObject will scale at an increment of twice its original size.</p>
+</li>
+</ol>
+
+<h2>Customize the grid</h2>
+
+<p>本节提供有关自定义以下设置的信息：</p>
+
+<ul>
+<li><a href="#grid-toggle">Show and hide grid lines</a></li>
+<li><a href="#grid-axis">Change the axis where the grid appears</a></li>
+<li><a href="#grid-resize">Resize the grid</a></li>
+<li><a href="#grid-color">Change the default color of the grid lines</a></li>
+<li><a href="#grid-opacity">Change the opacity of the grid</a></li>
+<li><a href="#grid-move-to-handle">Move the grid to the handle of a GameObject</a></li>
+<li><a href="#grid-reset">Reset values and settings to default</a></li>
+</ul>
+
+<p><a name="grid-toggle"></a></p>
+
+<h3>Show and hide grid lines</h3>
+
+<p>Toggle grid visibility by clicking the grid visibility icon (<img src="../uploads/Main/SceneGrids-Vis-icon-inline.png" alt="">) on the Grid and Snap <a href="overlays.html">Overlay</a> toolbar to display or hide the grid on any axis (X, Y, Z). If you are in <a href="SceneViewNavigation.html">orthographic mode</a> (Iso), Unity chooses the view.</p>
+
+<figure>
+<img src="../uploads/Main/SceneGridsAxis.png" alt="The grid appears in the Scene view window when you click the grid visibility button">
+<figcaption>The grid appears in the <strong>Scene view</strong> window when you click the grid visibility button</figcaption>
+</figure>
+
+<p><a name="grid-axis"></a></p>
+
+<h3>Change the axis where the grid appears</h3>
+
+<p>要更改显示网格的轴，请执行以下操作：</p>
+
+<ol>
+<li><p>From the <strong>Grid and Snap</strong> Overlays toolbar, open the grid visibility drop-down menu (<img src="../uploads/Main/SceneGrids-Vis-icon-inline.png" alt="">).</p></li>
+<li>
+<p>From the <strong>Grid Plane</strong> section, select the axis you want to appear.</p>
+
+<figure>
+<img src="../uploads/Main/scene-grids-select-axis.png" alt="The Grid Axis section under the grid visibility drop-down menu">
+<figcaption>The Grid Axis section under the grid visibility drop-down menu</figcaption>
+</figure>
+</li>
+</ol>
+
+<p><a name="grid-resize"></a></p>
+
+<h3>Resize the grid</h3>
+
+<p>You can set the size of the gridlines as they appear in the <strong>Scene view</strong> window. This affects the appearance of the grid and how your GameObjects <a href="#grid-snap">automatically snap to the grid</a>, but doesn’t affect how much your GameObject(s) <a href="#snap-increments">move, rotate, or scale in increments</a>.</p>
+
+<p>如果一次性为所有轴设置一个大小，则会显示一个均匀（正方形）网格。但是，也可以在三个轴的任何一个轴上使用不同的值，从而查看非均匀（矩形）网格。默认情况下，网格设置为均匀距离（所有轴上为 1）。</p>
+
+<p>要调整网格的大小，请执行以下操作：</p>
+
+<ol>
+<li><p>From the <strong>Grid and Snap</strong> Overlays toolbar, open the snap increment drop-down menu (<img src="../uploads/Main/scene-grids-increment-icon-inline.png" alt="">).</p></li>
+<li>
+<p>Use the <strong>Size</strong> property with the link icon selected to enter a uniform value for the visual grid (all grid lines the same length), or unlink the axes and specify a non-uniform distance between the grid lines for the <strong>X</strong>, <strong>Y</strong>, and <strong>Z</strong>.</p>
+
+<p>例如，要在 x 和 y 轴上创建矩形网格，可取消轴的链接并将 <strong>X</strong> 和 <strong>Y</strong> 设置为 1，将 <strong>Z</strong> 设置为 2。</p>
+</li>
+<li>
+<p>如果要切换回网格线之间的均匀值，请执行以下操作：</p>
+
+<ul>
+<li>选择链接图标。</li>
+<li>
+<strong>Size</strong> 属性现在通过 <strong>X</strong> 中输入的值显示所有轴的值。</li>
+</ul>
+</li>
+</ol>
+
+<p><strong>注意</strong>：还可以使用键盘快捷键来增大和减小网格的大小：</p>
+
+<ul>
+<li>要增大网格大小，请使用 <strong>Ctrl</strong>+<strong>]</strong> (Windows) 或 <strong>Command</strong>+<strong>]</strong> (macOS)。</li>
+<li>要减小网格大小，请使用 <strong>Ctrl</strong>+<strong>[</strong> (Windows) 或 <strong>Command</strong>+<strong>[</strong> (macOS)。</li>
+</ul>
+
+<p><a name="grid-color"></a></p>
+
+<h3>Change the default color of the grid lines</h3>
+
+<p>To change the color of the visible grid lines in the <strong>Scene view</strong> window:</p>
+
+<ol>
+<li><p>打开 Unity 的 <a href="Preferences.html">Preferences</a> 页面（在 Windows 上选择 <strong>Edit</strong> &gt; <strong>Preferences</strong> 或在 macOS 上选择 <strong>Unity</strong> &gt; <strong>Preferences</strong>）。</p></li>
+<li>
+<p>从列表中单击 Colors 类别以查看 <strong>Colors</strong> 页面。</p>
+
+<figure>
+<img src="../uploads/Main/SceneGridsPrefs.png" alt="Preferences 页面上的网格偏好设置属性">
+<figcaption>Preferences 页面上的网格偏好设置属性</figcaption>
+</figure>
+</li>
+<li><p>使用 <strong>Grid</strong> 属性的拾色器选择一种新颜色。</p></li>
+</ol>
+
+<p><a name="grid-opacity"></a></p>
+
+<h3>Change the opacity of the grid</h3>
+
+<p>如果网格线太浅或太深，可以进行调整：</p>
+
+<ol>
+<li><p>From the <strong>Grid and Snap</strong> Overlays toolbar, open the grid visibility drop-down menu (<img src="../uploads/Main/SceneGrids-Vis-icon-inline.png" alt="">).</p></li>
+<li>
+<p>Adjust the <strong>Opacity</strong> using the slider.</p>
+
+<figure>
+<img src="../uploads/Main/scene-grids-opacity.png" alt="Adjust opacity in the grid visibility drop-down menu">
+<figcaption>Adjust opacity in the grid visibility drop-down menu</figcaption>
+</figure>
+</li>
+</ol>
+
+<p><a name="grid-move-to-handle"></a></p>
+
+<h3>Move the grid to the handle of a GameObject</h3>
+
+<p>From the grid visibility drop-down menu (<img src="../uploads/Main/SceneGrids-Vis-icon-inline.png" alt="">) in the Grid and Snap Overlay toolbar, use the <strong>Move To</strong> section to move the grid to the handle of the selected GameObject (<strong>Handle</strong>) or back to the default position (<strong>Origin</strong>).</p>
+
+<p><a name="grid-reset"></a></p>
+
+<h3>Reset values and settings to default</h3>
+
+<p>要将网格轴和不透明度设置重置为其默认值，请执行以下操作：</p>
+
+<ol>
+<li><p>From the <strong>Grid and Snap</strong> Overlays toolbar, open the grid visibility drop-down menu (<img src="../uploads/Main/SceneGrids-Vis-icon-inline.png" alt="">).</p></li>
+<li><p>Click the <strong>More</strong> menu (⋮) and then click <strong>Reset</strong>.</p></li>
+</ol>
+
+<p>要将网格的大小重置为默认值，请执行以下操作：</p>
+
+<ol>
+<li><p>From the <strong>Grid and Snap</strong> Overlays toolbar, open the grid snapping drop-down menu (<img src="../uploads/Main/SceneGrids-Mode-icon-inline.png" alt="">).</p></li>
+<li><p>Click the <strong>More</strong> menu (⋮) and then click <strong>Reset</strong>.</p></li>
+</ol>
+
+<p>要将增量贴靠值重置为默认值，请执行以下操作：</p>
+
+<ol>
+<li><p>From the <strong>Grid and Snap</strong> Overlays toolbar, open the snap increment drop-down menu (<img src="../uploads/Main/scene-grids-increment-icon-inline.png" alt="">).</p></li>
+<li>
+<p>Click the <strong>More</strong> menu (⋮) and then click <strong>Reset</strong>.</p>
+
+<p>只有 <strong>Increment Snap</strong> 部分下的值会恢复为其原始默认值。</p>
+</li>
+</ol>
+
+<p><a name="grid-custom"></a></p>
+
+<h2>默认快捷键</h2>
+
+<p>可以使用默认 Unity 快捷键执行以下操作：</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>操作</strong></th>
+	<th style="text-align:left;"><strong>默认快捷键</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><a href="#grid-resize">增大网格大小</a></td>
+	<td style="text-align:left;">
+<strong>Ctrl</strong>+<strong>]</strong> (Windows) 或 <br><strong>Command</strong>+<strong>]</strong> (macOS)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="#grid-resize">减小网格大小</a></td>
+	<td style="text-align:left;">
+<strong>Ctrl</strong>+<strong>[</strong> (Windows) 或 <br><strong>Command</strong>+<strong>[</strong> (macOS)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="#grid-align">推动到网格（将所选对象与网格对齐）</a></td>
+	<td style="text-align:left;">
+<strong>Ctrl</strong>+<strong>\</strong> (Windows) 或 <br><strong>Command</strong>+<strong>\</strong> (macOS)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="#grid-reset">重置网格</a></td>
+	<td style="text-align:left;">（默认情况下没有快捷键）</td>
+</tr>
+</tbody>
+</table>
+
+<p>要更改这些默认快捷键，请使用 <a href="ShortcutsManager.html">Shortcuts Manager</a>。</p>
+
+<hr>
+
+<ul>
+<li><span class="page-history">在 <a href="https://docs.unity3d.com/2019.3/Documentation/Manual/30_search.html?q=newin20193">2019.3</a> 中更新了本地网格改进 <span class="search-words">NewIn20193</span></span></li>
+<li><span class="page-history">Grid and snap moved to Overlays toolbar updated in <a href="https://docs.unity3d.com/2021.2/Documentation/Manual/30_search.html?q=newin20212">2021.2</a> <span class="search-words">NewIn20212</span></span></li>
+</ul>
+<!-- area:authoring -->
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="PositioningGameObjects.html"></a></span><div class="tip">Position GameObjects</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SceneViewNavigation.html"></a></span><div class="tip">Scene 视图导航</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

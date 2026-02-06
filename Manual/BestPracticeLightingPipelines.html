@@ -1,0 +1,459 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="选择和配置渲染管线和光照解决方案 - Unity 手册">
+<title>选择和配置渲染管线和光照解决方案 - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/BestPracticeLightingPipeline3.svg">
+<meta name="description" content="本指南是以下 Unity 博客文章的更新版本：聚光灯团队最佳实践：设置光照管线 (Spotlight Team Best Practices: Setting up the Lighting Pipeline) - Pierre Yves Donzallaz。">
+<meta property="og:description" content="本指南是以下 Unity 博客文章的更新版本：聚光灯团队最佳实践：设置光照管线 (Spotlight Team Best Practices: Setting up the Lighting Pipeline) - Pierre Yves Donzallaz。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'BestPracticeLightingPipelines';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/BestPracticeLightingPipelines.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/BestPracticeLightingPipelines.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/BestPracticeLightingPipelines.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/BestPracticeLightingPipelines.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/BestPracticeLightingPipelines.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/BestPracticeLightingPipelines.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/BestPracticeLightingPipelines.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/BestPracticeLightingPipelines.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/BestPracticeLightingPipelines.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/BestPracticeLightingPipelines.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/BestPracticeLightingPipelines.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/BestPracticeLightingPipelines.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/BestPracticeLightingPipelines.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/BestPracticeLightingPipelines.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/BestPracticeLightingPipelines.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/BestPracticeLightingPipelines.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/BestPracticeLightingPipelines.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/BestPracticeLightingPipelines.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/BestPracticeLightingPipelines.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/BestPracticeLightingPipelines.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/BestPracticeLightingPipelines.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/BestPracticeLightingPipelines.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/BestPracticeLightingPipelines.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/BestPracticeLightingPipelines.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/BestPracticeLightingPipelines.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/BestPracticeLightingPipelines.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/BestPracticeLightingPipelines.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/BestPracticeLightingPipelines.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/BestPracticeLightingPipelines.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/BestPracticeLightingPipelines.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/BestPracticeLightingPipelines.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/BestPracticeLightingPipelines.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/BestPracticeLightingPipelines.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/BestPracticeLightingPipelines.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/BestPracticeLightingPipelines.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/BestPracticeLightingPipelines.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/BestPracticeLightingPipelines.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/BestPracticeLightingPipelines.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/BestPracticeLightingPipelines.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/BestPracticeLightingPipelines.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/BestPracticeLightingPipelines.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/BestPracticeLightingPipelines.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/BestPracticeLightingPipelines.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/BestPracticeLightingPipelines.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/BestPracticeLightingPipelines.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/BestPracticeLightingPipelines.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/BestPracticeLightingPipelines.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/BestPracticeLightingPipelines.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/BestPracticeLightingPipelines.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/BestPracticeLightingPipelines.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/BestPracticeLightingPipelines.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/BestPracticeLightingPipelines.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/BestPracticeLightingPipelines.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/BestPracticeLightingPipelines.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/BestPracticeLightingPipelines.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/BestPracticeLightingPipelines.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/BestPracticeLightingPipelines.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/BestPracticeLightingPipelines.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="render-pipelines.html">渲染管线</a></li>
+<li>选择和配置渲染管线和光照解决方案</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="srp-setting-render-pipeline-asset.html"></a></span><div class="tip">How to get, set, and configure the active render pipeline</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="built-in-render-pipeline.html"></a></span><div class="tip">使用内置渲染管线</div>
+</div>
+</div></div>
+<h1>选择和配置渲染管线和光照解决方案</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>本指南是以下 Unity 博客文章的更新版本：<a href="https://blogs.unity3d.com/2018/08/28/spotlight-team-best-practices-setting-up-the-lighting-pipeline/">聚光灯团队最佳实践：设置光照管线 (Spotlight Team Best Practices: Setting up the Lighting Pipeline) - Pierre Yves Donzallaz</a>。</p>
+
+<h2>定义</h2>
+
+<p>首先，让我们来看看在本文中经常遇到的几个重要图形渲染术语的定义。</p>
+
+<ul>
+<li>
+<a href="render-pipelines.html">渲染管线</a>确定场景中对象的显示方式，分为三个主要阶段。
+
+<ul>
+<li>第一步是剔除；它列出了需要渲染的对象，最好是那些对摄像机可见的对象（<a href="https://docs.unity3d.com/Manual/UnderstandingFrustum.html">视锥体剔除</a>）和其他对象不遮挡的对象（<a href="https://docs.unity3d.com/Manual/OcclusionCulling.html">遮挡剔除</a>）。</li>
+<li>第二个阶段渲染是指将这些对象绘制到基于像素的缓冲区中（通过正确的光照以及它们的一些属性）。</li>
+<li>最后，可以在这些缓冲区上执行后期处理操作，例如，应用颜色分级、泛光和景深，从而生成发送到显示设备的最终输出帧。</li>
+</ul>
+</li>
+</ul>
+
+<p>根据帧率，这些操作每秒钟重复很多次。</p>
+
+<figure>
+<img src="../uploads/Main/BestPracticeLightingPipeline3.svg" alt="">
+</figure>
+
+<ul>
+<li>着色器是在图形处理单元 (GPU) 上运行的程序或程序集合的通用名称。例如，在剔除阶段完成后，顶点着色器用于将可见对象的顶点坐标从“对象空间”转换为称为“裁剪空间”的不同空间；然后 GPU 使用这些新的坐标对场景进行光栅化，也就是将场景的矢量表示转换为实际像素。在稍后阶段，这些像素将由像素（或片元）着色器进行着色；像素颜色通常将取决于各自表面的材质属性以及周围的光照。现代硬件上另一种常见的着色器是计算着色器：计算着色器允许程序员利用 GPU 的大量并行处理能力，用于任何类型的数学运算，如光照剔除、粒子物理或体积模拟。</li>
+<li>直接光照指的是从自发光光源（如灯泡）发出的光照，而不是光从表面反射的结果。根据光源的大小及其与接收者的距离，这种光照通常会产生清晰的不同阴影。
+
+<ul>
+<li>请勿将直接光照与方向光照混淆，后者是指是由无限远的光源（例如计算机模拟的太阳）发出的光。方向光的显著特性是能够用平行光线覆盖整个场景，并且不存在距离衰减（或光衰减）；也就是说，接收到的光照量不会随着与光源距离的增加而衰减。</li>
+<li>In reality, the sunlight, like any other source of light, falls off over distance, based on the inverse-square law. Simply put, the amount of received light drops quickly when increasing the distance between the receiver and the light source. For example, the illuminance on Mercury is almost <a href="https://www.nasa.gov/audience/foreducators/9-12/features/F_How_Far_How_Faint.html">7 times higher</a> than on Earth, and Mars receives nearly half of Earth’s sunshine, whereas Pluto enjoys a mere 0.06%. Nevertheless, for most real-time applications with a limited altitude range, the sunlight decay is insignificant. Therefore, the directional light is perfectly adequate to simulate sunlight in most Unity scenes, including large, planet-centric, open worlds.</li>
+</ul>
+</li>
+<li>间接光照是由于光从表面反射并通过介质（如大气或半透明物质）传播和散射而形成的结果。在这种状况下，遮挡物通常投射出柔和或难以看清的阴影。</li>
+<li>全局光照 (GI) 是对直接和间接光照进行建模以提供逼真光照效果的一组技术。GI 有几种方法，如烘焙/动态光照贴图、辐照度体积、光传播体积、烘焙/动态光照探针、基于体素的 GI 和基于距离场的 GI。Unity 支持开箱即用的烘焙/动态光照贴图和光照探针。</li>
+<li>
+<a href="Lightmappers.html">光照贴图程序</a>是一个基础系统，它通过发射光线、计算光线反弹并将产生的光线应用到纹理来生成光照贴图和光照探针的数据。因此，不同的光照贴图程序通常会产生不同的光照外观，因为它们可能依赖不同的技术来生成光照数据。</li>
+</ul>
+
+<h2>概述</h2>
+
+<p>下面的流程图从内容创建者的角度，大致显示了 Unity 中的整个光照管线。</p>
+
+<figure>
+<img src="../uploads/Main/BestPracticeLightingPipeline15.svg" alt="">
+</figure>
+
+<p>首先要选择一个渲染管线。然后决定如何产生间接光照，并相应地选择一个全局光照系统。确保为您的项目适当地调整了所有全局光照设置之后，您可以继续添加<a href="https://docs.unity3d.com/Manual/Lighting.html">光源</a>、<a href="https://docs.unity3d.com/Manual/StandardShaderMaterialParameterEmission.html">发光表面</a>、<a href="https://docs.unity3d.com/Manual/class-ReflectionProbe.html">反射探针</a>、<a href="https://docs.unity3d.com/Manual/LightProbes.html">光照探针</a>和<a href="https://docs.unity3d.com/Manual/class-LightProbeProxyVolume.html">光照探针代理体 (LPPV)</a>。所有这些光照对象的用法和特性的详细介绍超出了本文的范围，因此，建议您阅读手册中的“光照”部分，以学习如何在项目中正确地使用光照。</p>
+
+<h2>渲染管线</h2>
+
+<p>在 2018 年初之前，Unity 中只有一个渲染管线：<a href="https://docs.unity3d.com/Manual/built-in-render-pipeline.html">内置渲染管线 (Built-In Render Pipeline)</a>。此渲染管线提供了可选择的<a href="https://docs.unity3d.com/Manual/RenderingPaths.html">渲染路径</a>：前向渲染路径和延迟渲染路径。</p>
+
+<ul>
+<li>在使用（多通道）<a href="https://docs.unity3d.com/Manual/RenderTech-ForwardRendering.html">前向渲染路径</a>时，场景中的所有对象都是按顺序渲染，根据影响每个对象的光源数量，可能在多个通道中渲染，因此当对象被多个光源照亮时，渲染成本会急剧增加。这种类型的渲染器通常提供各种各样的着色器，并且可以很轻松地处理透明度。</li>
+<li>在使用<a href="https://docs.unity3d.com/Manual/RenderTech-DeferredShading.html">延迟渲染路径</a>时，所有（不透明）几何体首先渲染到缓冲区中，在其中存储有关材质的信息（颜色、镜面反射、光滑度等等）。在后一种通道（也就是“延迟”）中，每个像素按顺序着色：渲染时间将主要取决于影响每个像素的光源数量。对于透明对象以及某些包含复杂着色器的对象，仍然需要额外的前向渲染通道。当处理包含许多动态光源的场景时（例如具有人工光照的内部空间，或室外与室内光照相结合的项目），通常建议使用延迟渲染。</li>
+</ul>
+
+<p>2018 年 1 月，Unity 推出了<a href="https://docs.unity3d.com/Manual/ScriptableRenderPipeline.html">可编程渲染管线 (SRP)</a>，允许通过 C# 脚本来自定义渲染循环。这实际上是游戏引擎领域的一次小革命：用户终于无需使用像 C++ 这样的低级编程语言便可以个性化设置对象剔除、绘制和帧后期处理。</p>
+
+<p>Unity 当前提供两个预先构建的 SRP：</p>
+
+<ul>
+<li>
+<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest">高清渲染管线 (HDRP)</a> 是一种混合延迟/前向瓦片/聚类渲染器。它提供了先进的渲染和着色功能，是专为要求逼真视觉的 PC 和高端游戏主机项目而设计。</li>
+</ul>
+
+<figure>
+<img src="../uploads/Main/BestPracticeLightingPipeline6.svg" alt="">
+</figure>
+
+<p>瓦片是帧的一个小型二维方形像素部分，而聚类则是摄像机视锥体中的一个三维体积。瓦片和聚类渲染技术都依赖于影响每个瓦片和聚类的光源的列表，然后可以用相应的已知光源列表在一个通道中计算其光照。不透明对象很可能使用瓦片系统进行着色，而透明对象则依赖于聚类系统。该渲染器的主要优点是，与内置渲染管线（延迟）相比，光照处理速度更快，带宽消耗也大大减少，因为内置渲染管线依赖于更慢的多通道光照积累。</p>
+
+<ul>
+<li>The <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest/index.html?subfolder=/manual/index.html">Universal Render Pipeline (URP)</a> is a fast single-pass forward renderer; it has been designed primarily for lower-end devices lacking support for compute shader technology, such as older smartphones, tablets and XR devices. However, URP can also deliver higher-quality graphics for midrange devices such as consoles and PC, sometimes for a lower performance cost than the Built-In Render Pipeline. The lights are culled per-object and allow for the lighting to be computed in one single pass, which results in reduced draw calls compared to the Built-In Render Pipeline. Finally, URP also offers a 2D Renderer, and a <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest/index.html?subfolder=/manual/rendering/deferred-rendering-path.html">Deferred renderer</a>.</li>
+</ul>
+
+<p>您可以使用下面的决策图表来快速确认您应该根据几个关键标准选择哪一种渲染管线。</p>
+
+<figure>
+<img src="../uploads/Main/BestPracticeLightingPipeline16.svg" alt="">
+</figure>
+
+<h3>设置</h3>
+
+<p>You can download the latest versions of HDRP and URP via the Unity Package Manager (<strong>Window</strong> &gt; <strong>Package Manager</strong>). The easiest way to get started with one of these SRPs is to create a new project with the <a href="https://docs.unity3d.com/hub/manual/Projects.html">Unity Hub</a> and use one of the corresponding templates.</p>
+
+<p>如果要为项目设置 HDRP，请确保安装了所需的包。然后，使用 <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest/index.html?subfolder=/manual/Render-Pipeline-Wizard.html">HD Render Pipeline Wizard</a> (<strong>Window</strong> &gt; <strong>Render Pipeline</strong> &gt; <strong>HD Render Pipeline Wizard</strong>) 来一键设置您的项目。</p>
+
+<h3>可扩展性</h3>
+
+<p>如果您略懂渲染方面的知识，熟悉 C#，并需要为项目完全定制渲染器，您可以试着使用 SRP 概念来创建您自己的自定义可编程渲染管线。因为通用渲染管线的着色器库较小并且能够快速注入、删除和交换渲染通道，因此可以对通用渲染管线进行轻松扩展。</p>
+
+<h3>兼容性</h3>
+
+<p>在 Unity 中将项目的材质从内置渲染管线移植到 HDRP 或 URP 相对比较容易，这要归功于 <strong>Edit</strong> &gt; <strong>Render Pipeline</strong> &gt; <strong>Upgrade…</strong> 下的一键材质转换器。请注意，这种操作是不可逆的。强烈建议提前备份您的项目！</p>
+
+<figure>
+<img src="../uploads/Main/BestPracticeLightingPipeline9.png" alt="">
+</figure>
+
+<p>尽管如此，必须手动移植自定义着色器，因此在生产过程中从内置渲染管线过渡到 HDRP 或 URP 可能会耗费时间，具体时间取决于必须重新编写的自定义着色器数量。</p>
+
+<p>此外，由于 HDRP 在物理上比内置渲染管线更正确，特别是在光衰减和分布方面，因此在切换到 HDRP 之后，项目应该会有所不同。</p>
+
+<p>此外，HDRP 和 URP 并不是交叉兼容的，因为它们没有共同的渲染特征。可以将项目从 HDRP 移植到 URP，反过来也可以，但并不是一键操作，而是需要手动重新制作光照、材质和着色器！</p>
+
+<h2>全局光照系统</h2>
+
+<p>The Global Illumination systems available in Unity are:</p>
+
+<ol>
+<li><p><a href="realtime-gi-using-enlighten.html">Realtime Global Illumination</a>: This system builds upon Enlighten, a third-party middleware solution. It enables you to adjust your lighting in real-time if you do a precompute and do not modify GameObjects in your scene with the <strong>ContributeGI</strong> setting enabled. </p></li>
+<li><p>Baked Global Illumination: When you select this system, Unity uses a lightmapper to bake lighting data into Light Probes, textures called lightmaps, and Reflection Probes. There are two lightmappers: Enlighten Baked Global Illumination and the Progressive Lightmapper (CPU or GPU). </p></li>
+</ol>
+
+<p>The Progressive Lightmapper calculates indirect lighting values using path tracing. It can prioritize precomputing lighting that affects objects visible to the scene view camera. Although only updating lighting for parts of lightmaps increases the overall bake time, it also enables you to more quickly iterate on your lighting design.</p>
+
+<p>Enlighten Baked Global Illumination is deprecated and no longer visible in the user interface by default. See <a href="GI-Enlighten.html">Lightmapping using Enlighten Baked Global Illumination</a> for more information. </p>
+
+<p>See the <a href="render-pipelines-feature-comparison.html">Render Pipeline Feature Comparison</a> for compatibility information specific to scriptable render pipelines. Unless the comparison matrix specifies otherwise, the Built-In Render Pipeline supports all features this article describes.</p>
+
+<figure>
+<img src="../uploads/Main/BestPracticeLightingPipeline4.svg" alt="">
+</figure>
+
+<h3>静态与动态对比</h3>
+
+<p>无论使用哪种全局光照系统，在烘焙/预计算光照过程中，Unity 只会考虑标记为<a href="https://docs.unity3d.com/Manual/StaticObjects.html">“Contribute GI”</a>的对象。动态（即非静态）对象必须依赖于放置在整个场景中的光照探针来获得间接光照。</p>
+
+<p>由于光照的烘焙/预计算是一个相对缓慢的过程，所以只有具有不同光照变化（例如凹度和自我阴影）的大型和复杂资源才应被标记为“Contribute GI”。获得均匀光照的较小和凸面网格不应进行这样的标记，因此它们应该从<a href="https://docs.unity3d.com/Manual/LightProbes.html">光照探针</a>获得间接光照；光照探针中存储了更简单的光照近似值。较大的动态对象可以依赖 <a href="https://docs.unity3d.com/Manual/class-LightProbeProxyVolume.html">LPPV</a>，以便获得更好的本地化间接光照。要最大程度减少烘焙时间并同时保持足够的光照质量，最重要的就是限制场景中标记为“Contribute GI”的对象数量。可在本<a href="https://unity3d.com/learn/tutorials/topics/graphics/introduction-precomputed-realtime-gi?playlist=17102">教程</a>中详细了解这个优化过程和探针光照的重要性。</p>
+
+<h3>警告</h3>
+
+<p>The Unity Editor and Player allow you to use both Enlighten Realtime Global Illumination and baked lighting at the same time.</p>
+
+<p>However, simultaneously enabling these features greatly increases baking time and memory usage at runtime, because they do not use the same data sets. You can expect visual differences between indirect light you have baked and indirect light provided by Enlighten Realtime Global Illumination, regardless of the lightmapper you use for baking. This is because Enlighten Realtime Global Illumination often operates at a significantly different resolution than Unity’s baking backends, and relies on different techniques to simulate indirect lighting.</p>
+
+<p>If you wish to use both Enlighten Realtime Global Illumination and baked lighting at the same time, limit your simultaneous use of both global illumination systems to high-end platforms and/or to projects that have tightly controlled scenes with predictable costs. Only expert users who have a very good understanding of all lighting settings can effectively use this approach. Consequently, picking one of the two global illumination systems is usually a safer strategy for most projects. Using both systems is rarely recommended.</p>
+
+<h3>光照模式</h3>
+
+<p>Light 组件的 Mode 属性是一种常常让人混淆的属性。</p>
+
+<p><a href="class-Light.html">Light Inspector</a> 中提供了三种<a href="LightModes.html">光照模式</a>：</p>
+
+<ol>
+<li>
+<a href="LightMode-Baked.html">烘焙</a>：从这些光源产生的直接和间接光照被烘焙成光照贴图，这可能是一个耗时的过程。处理这些光源不需要运行时成本，但是将所产生的光照贴图应用到场景中确实需要很小的成本。</li>
+<li>
+<a href="LightMode-Realtime.html">Realtime</a>: The direct lighting and shadows from these lights are real-time and therefore not baked into lightmaps. Their runtime cost can be high, depending on the complexity of the scene, the number of shadow casting lights, the number of overlapping lights, etc. Furthermore, if you enable Enlighten Realtime Global Illumination, further performance costs will be incurred to update the indirect lighting at runtime.</li>
+<li>
+<a href="LightMode-Mixed.html">混合</a>：这种混合模式提供烘焙和实时功能（如烘焙间接光照和实时直接光照）的混合。场景中所有混合光源的行为及其性能影响取决于该场景的<a href="lighting-mode.html">光照模式</a>。</li>
+</ol>
+
+<p>It is important to note that the mode of a light is only relevant if the Baked Global Illumination system is enabled. If you do not use any global illumination system or only use Enlighten Realtime Global Illumination system, then all Baked and Mixed lights will behave as though their Mode property was set to Realtime.</p>
+
+<figure>
+<img src="../uploads/Main/BestPracticeLightingPipeline7.svg" alt="">
+</figure>
+
+<p>下面的图表结合了一个决策流程图和一个比较表；可以帮助您决定每次在场景中添加新光源时哪种光源模式合适。</p>
+
+<figure>
+<img src="../uploads/Main/BestPracticeLightingPipeline12.svg" alt="">
+</figure>
+
+<h3>光照模式</h3>
+
+<p>如前面的图表中所示，场景中的所有混合光源具有特定的烘焙和实时功能，具体取决于您在 Lighting 窗口中选择的光照模式 (Lighting Mode)。</p>
+
+<p>有三种模式可供选择：</p>
+
+<ol>
+<li>Subtractive</li>
+<li>Baked Indirect</li>
+<li>Shadowmask</li>
+</ol>
+
+<p>Shadowmask 光照模式有两个质量设置：</p>
+
+<ol>
+<li>Shadowmask</li>
+<li>Distance Shadowmask</li>
+</ol>
+
+<figure>
+<img src="../uploads/Main/BestPracticeLightingPipeline5.svg" alt="">
+</figure>
+
+<p>使用 HDRP 的<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest/index.html?subfolder=/manual/Lighting-Mode-Shadowmask.html">阴影遮罩光照模式 (Shadowmask Lighting Mode)</a> 时，在 Graphics 设置中分配的 HDRP 资源中会启用阴影遮罩功能；然后必须通过 <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest/index.html?subfolder=/manual/Frame-Settings.html">Frame Settings</a> 专门为您的摄像机激活该功能。</p>
+
+<h2>渲染管线比较表</h2>
+
+<p>See the <a href="render-pipelines-feature-comparison.html">Render Pipeline Feature Comparison</a> for compatibility information specific to scriptable render pipelines. Unless the comparison matrix specifies otherwise, the Built-In Render Pipeline supports all features this article describes.</p>
+
+<h2>光照情形</h2>
+
+<p>我们已经介绍了渲染管线和主要光照功能，现在让我们看看几个项目的例子，看看可以使用哪些设置来提供光照。由于每个项目都是独一无二的，因此您可能会根据自己的需求使用稍微不同的选项。</p>
+
+<h3>1.原型构建或快速预先可视化</h3>
+
+<p>如果您严重依赖 Asset Store 来构建原型，则内置渲染管线可能是唯一合适的渲染管线，因为 Asset Store 中的大多数资源并不完全兼容 HDRP 和 URP；尽管如此，资源兼容性将随着时间推移而改善。如果您要从头开始构建所有资源，并且已经清楚了解了自己项目的需求，那么您可以从这两个 SRP（即 URP 或 HDRP）中选择一个，甚至创建一个自定义 SRP。</p>
+
+<p>When you are in the early stage of (pre-)production and need a quick turnaround and maximum flexibility for the lighting, you might prefer a full real-time approach that does not require any precomputation, therefore you might want to turn off both Baked Global Illumination and Enlighten Realtime Global Illumination. To alleviate the lack of proper indirect lighting, you can enable Screen Space Ambient Occlusion: it can help ground the object in the scene by offering cheap real-time contact shadows.</p>
+
+<h3>2.3D 手机策略游戏</h3>
+
+<p>If you are targeting mobile devices, URP could be a great candidate to ensure solid performance for your game. It is in many cases possible to customise URP to suit your game’s specific needs, with help from a graphics programmer.</p>
+
+<p>The Built-In Render Pipeline and URP both support Shadowmask Lighting Mode which makes it possible for you to bake shadows for static objects while still enabling dynamic objects to cast real-time shadows. If Shadowmasks are too expensive for your project, you can fall back to the cheapest Subtractive mode. Finally, the forward rendering path is probably the best option if you have a very small number of lights in your level(s), and if you’re targeting older hardware.</p>
+
+<h3>3.AAA 级走廊射击游戏（一天中的固定时间）</h3>
+
+<p>如果目标是在 PC 和游戏主机上实现线性第一人称射击游戏的 AAA 级质量视觉效果，HDRP 应该是首选的渲染管线。同样，还可以在图形开发程序员的帮助下开发自定义 SRP。</p>
+
+<p>If your levels contain many real-time shadow casting lights (e.g. destructible light props and moving lights), then using the Baked Global Illumination system with the Baked Indirect mode should ensure you get great looking indirect lighting from the Mixed directional light and the Baked lights in static light props. If your levels consist of a larger proportion of fixed shadow casting lights, then an approach with Shadowmasks could be recommended because HDRP offers a great hybrid Shadowmask mode which gives you more control over the blend between real-time and baked shadows.</p>
+
+<p>如果您还计划支持 Nintendo Switch，则建议您使用 URP，这样您就可以支持市场上的大多数游戏平台，而不必经历将项目从 HDRP 移植到 URP（或反之）的繁琐过程。</p>
+
+<h3>4.大逃杀游戏（昼夜周期）</h3>
+
+<p>如果您计划发布一款面向 PC 和游戏主机的大逃杀类型游戏（特征是包含大规模环境和完全动态光照），那么应该选择 HDRP，或者进行扩展以便为项目量身定制渲染管线。如果目标不是实现 AAA 级逼真视觉效果，而是面向低规格的移动设备或系统，那么可以考虑使用 URP。</p>
+
+<p>For this particular scenario, if you are using the Built-in Render Pipeline, activating both the Enlighten Realtime Global Illumination and a Baked Global Illumination system is not recommended, because the resulting overhead in terms of performance and scene management for an immense level could be problematic. Another argument against the use of both global illumination systems is the unpredictable nature of such large-scale multiplayer games: performance estimations are for instance more difficult than in a highly-scripted linear level.</p>
+
+<h2>结束语</h2>
+
+<p>由于引入了可编程渲染管线，Unity 中的渲染架构在过去的几年中发生了翻天覆地的变化。因此，要弄清楚所有这些变化及其对光照管线的影响可能会令人筋疲力尽。</p>
+
+<p>希望本指南和及其多个插图能让您更好地理解每个渲染管线的功能，从而能在 Unity 中满怀信心地使用合适的渲染和光照设置让您项目大放异彩！</p>
+
+<p>可通过以下页面来详细了解 Unity 中的光照和渲染管线：</p>
+
+<ul>
+<li><p><a href="http://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest/index.html?subfolder=/manual/index.html">URP 文档</a> &amp; <a href="http://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest/index.html?subfolder=/manual/HDRP-Features.html">HDRP 文档</a></p></li>
+<li><p><a href="https://docs.unity3d.com/hub/manual/Templates.html">Use the Unity Hub to get started with HDRP, URP or Built-In RP</a></p></li>
+<li><p><a href="https://unity3d.com/learn/tutorials/topics/graphics/introduction-lighting-and-rendering?playlist=17102">光照与渲染简介 (Introduction to Lighting and Rendering) 教程</a></p></li>
+<li><p><a href="https://unity3d.com/learn/tutorials/s/creating-believable-visuals">创建逼真视觉效果 (Creating Believable Visuals) 教程（内置 RP）</a></p></li>
+<li><p><a href="https://blogs.unity3d.com/2020/01/09/how-to-set-up-unitys-unitys-high-definition-render-pipeline-for-high-end-visualizations/">设置面向高端可视化效果的 HDRP</a></p></li>
+<li><p><a href="https://blogs.unity3d.com/2019/02/05/create-high-quality-light-fixtures-in-unity/">在 Unity 中创建高品质灯具</a></p></li>
+</ul>
+<!-- area:graphics -->
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="srp-setting-render-pipeline-asset.html"></a></span><div class="tip">How to get, set, and configure the active render pipeline</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="built-in-render-pipeline.html"></a></span><div class="tip">使用内置渲染管线</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

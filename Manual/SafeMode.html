@@ -1,0 +1,374 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="安全模式 - Unity 手册">
+<title>安全模式 - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/SafeModeDialog.png">
+<meta name="description" content="Unity 的安全模式是在打开有脚本编译错误的项目时 Unity 编辑器可以进入的模式。安全模式旨在为解决编译错误提供最佳环境，以便可以快速将项目恢复到可运行的状态。">
+<meta property="og:description" content="Unity 的安全模式是在打开有脚本编译错误的项目时 Unity 编辑器可以进入的模式。安全模式旨在为解决编译错误提供最佳环境，以便可以快速将项目恢复到可运行的状态。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'SafeMode';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/SafeMode.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/SafeMode.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/SafeMode.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/SafeMode.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/SafeMode.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/SafeMode.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/SafeMode.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/SafeMode.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/SafeMode.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/SafeMode.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/SafeMode.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/SafeMode.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/SafeMode.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/SafeMode.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/SafeMode.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/SafeMode.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/SafeMode.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/SafeMode.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/SafeMode.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/SafeMode.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/SafeMode.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/SafeMode.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/SafeMode.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/SafeMode.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/SafeMode.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/SafeMode.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/SafeMode.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/SafeMode.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/SafeMode.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/SafeMode.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/SafeMode.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/SafeMode.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/SafeMode.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/SafeMode.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/SafeMode.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/SafeMode.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/SafeMode.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/SafeMode.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/SafeMode.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/SafeMode.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/SafeMode.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/SafeMode.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/SafeMode.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/SafeMode.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/SafeMode.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/SafeMode.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/SafeMode.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/SafeMode.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/SafeMode.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/SafeMode.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/SafeMode.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/SafeMode.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/SafeMode.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/SafeMode.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/SafeMode.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/SafeMode.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/SafeMode.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/SafeMode.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UnityOverview.html">在 Unity 中操作</a></li>
+<li><a href="EditorFeatures.html">编辑器功能</a></li>
+<li>安全模式</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SmartMerge.html"></a></span><div class="tip">智能合并（Smart merge）</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="CommandLineArguments.html"></a></span><div class="tip">命令行参数</div>
+</div>
+</div></div>
+<h1>安全模式</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<h2>概述</h2>
+
+<p>Unity 的安全模式是在打开有脚本编译错误的项目时 Unity 编辑器可以进入的模式。安全模式旨在为解决编译错误提供最佳环境，以便可以快速将项目恢复到可运行的状态。</p>
+
+<p>在安全模式下，Unity 提供编辑器用户界面的最小版本，功能有限。它只导入与脚本相关的资源，并阻止导入非脚本资源（例如模型、材质、纹理和预制件）。这是因为安全模式不适用于内容制作，仅用于解决编译错误。</p>
+
+<p>安全模式绝不允许托管代码从项目或其包中运行。这意味着自己的脚本（例如<a href="ExtendingTheEditor.html">编辑器脚本</a>、<a href="../ScriptReference/AssetPostprocessor.html">资源后处理器</a>和<a href="ScriptedImporters.html">脚本化导入器</a>）不会运行。安全模式也会禁用<a href="class-AssemblyDefinitionImporter.html#assembly-references">程序集覆盖</a>以及 <a href="com.unity.burst.html">Burst</a> 和 <a href="roslyn-analyzers.html">Roslyn</a> 分析器。这可确保处于安全模式的编辑器始终功能齐全且可靠，即使它在损坏严重的状态下打开项目也是如此。</p>
+
+<p>当 Unity 检测到不再有编译错误时，它会自动退出安全模式。退出安全模式时，Unity 会完整导入项目，编辑器会恢复其正常的完整功能。</p>
+
+<h2>编译错误的常见原因</h2>
+
+<p>执行以下操作时，会发生一些可能导致遇到编译错误的常见情况：</p>
+
+<ul>
+<li>将项目从较旧版本的 Unity 升级到较新版本。</li>
+<li>在与创建项目时不同的 Unity 版本中打开项目。</li>
+<li>打开缺失<a href="PackagesList.html">包</a>或包的版本不正确的项目。</li>
+<li>在自己的脚本中打开有错误的项目。</li>
+<li>在提取的最新更改包含编译错误的情况下，在<a href="VersionControl.html">版本控制</a>下打开项目。</li>
+</ul>
+
+<p>在没有安全模式的情况下打开存在编译错误的项目可能会导致许多类型的问题。例如，项目中的<a href="PackagesList.html">包</a>可能无法正确加载或运行，并且资源可能错误地导入，从而导致<a href="AssetWorkflow.html#processing">库</a>或<a href="UnityAccelerator.html">缓存服务器</a>中存在不正确的缓存工件。</p>
+
+<p>在这些情况下，通常不想在解决错误之前等待项目的其余部分导入。安全模式提供了工具来自己解决这些脚本相关问题，或是使用版本控制将项目更新到解决了错误的较新版本，而无需等待项目完全导入。</p>
+
+<h2>进入安全模式</h2>
+
+<p>打开存在编译错误的项目时，编辑器会显示一个对话框，询问是否要进入安全模式：</p>
+
+<figure>
+<img src="../uploads/Main/SafeModeDialog.png" alt="打开存在编译错误的项目时，Enter Safe Mode? 对话框会提示进入安全模式">
+<figcaption>打开存在编译错误的项目时，Enter Safe Mode? 对话框会提示进入安全模式</figcaption>
+</figure>
+
+<p>此时有三种选择：</p>
+
+<ul>
+<li>
+<strong>Enter Safe Mode</strong>（进入安全模式）</li>
+<li>
+<strong>Ignore</strong>（忽略）错误并打开项目</li>
+<li>
+<strong>Quit</strong>（退出）Unity</li>
+</ul>
+
+<p>在大多数情况下，应该选择 <strong>Enter Safe Mode</strong> 以解决项目中的错误（或者，如果在使用版本控制，则提取包含错误修复的更改）。安全模式可为解决编译错误提供最佳环境，以便在 Unity 导入项目的其余部分之前，可以快速将项目恢复到可运行的状态。</p>
+
+<p>但是，在某些情况下可能不想进入安全模式，在这种情况下可以 <strong>Quit</strong> Unity，或 <strong>Ignore</strong> 错误。</p>
+
+<p><strong>Note</strong>: <em>You can disable this dialog in <strong><em><em>Edit &gt; Preferences &gt; Asset Pipeline &gt; Show Enter Safe Mode Dialog</em></em></strong>. If you disable the dialog, Unity automatically enters Safe Mode when it opens a project with compilation errors.</em></p>
+
+<h3>退出而不进入安全模式</h3>
+
+<p>安全模式专为修复编译错误而设计。如果作为团队的一部分在处理 Unity 项目，但是不对导致错误的脚本负责，并且不知道该怎么做，则应该在该对话框中选择 <strong>Quit</strong>，并联系团队中的程序员以寻求建议。</p>
+
+<p><a name="IgnoringErrors"></a></p>
+
+<h3>忽略错误并继续导入</h3>
+
+<p>在某些情况下不需要项目处于可用状态（例如，如果打开旧项目以复制某些部分，或者只是检查其配置方式）。在这种情况下，可以忽略错误并仍然在损坏的状态下打开项目。</p>
+
+<p>如果选择 <strong>Ignore</strong>，并且以后要在安全模式下打开项目，则可以关闭并重新打开 Unity 以再次访问 “Enter Safe Mode” 对话框。</p>
+
+<h3>忽略编译错误的影响</h3>
+
+<p>如果选择忽略错误，则 Unity 会继续导入其余资源并完整打开项目。此处的潜在影响包括：</p>
+
+<ul>
+<li><p>项目可能未处于可用状态。在错误解决之前，可能无法进入运行模式或创建项目的编译版本。此外，项目中的任何包都可能无法正确加载，或者根本无法加载。</p></li>
+<li><p>Unity 可能需要导入资源两次；一次是在启动时，另一次是在解决项目的编译错误后。这会增加在可用状态下加载项目所需的时间量。</p></li>
+<li><p>If your project uses a <a href="ScriptableRenderPipeline.html">Scriptable Render Pipeline</a>, your render pipeline might not load, resulting in visual problems such as the <a href="shader-error.html">error shader</a>.</p></li>
+<li><p>脚本编译错误可能会导致项目中出现次要错误。例如，如果项目中的<a href="ScriptedImporters.html">脚本化导入器</a>由于编译错误而无法加载，则资源可能在不正确的状态下导入。</p></li>
+</ul>
+
+<p>安全模式旨在帮助避免所有这些问题。</p>
+
+<h2>安全模式下的编辑器</h2>
+
+<p>在安全模式下，Unity 提供功能有限的最小编辑器界面。</p>
+
+<figure>
+<img src="../uploads/Main/SafeModeEditor.png" alt="安全模式下的 Unity 编辑器">
+<figcaption>安全模式下的 Unity 编辑器</figcaption>
+</figure>
+
+<p>Unity 编辑器在编辑器顶部的工具栏部分显示一个安全模式横幅，它替代了标准编辑器工具栏。该工具栏指示处于安全模式，并提供 <strong>Exit Safe Mode</strong> 按钮，可用于忽略剩余错误并退出安全模式。该横幅还指示项目是否使用<a href="pack-preview.html">预览包</a>。</p>
+
+<p>Unity 编辑器在安全模式下保留<a href="ScriptingToolsIDEs.html">与代码编辑器的集成</a>，因此可以双击脚本资源或<a href="Console.html">控制台错误</a><a href="Console.html"></a>以打开关联脚本，并且可以通过 <strong>Assets</strong> 菜单打开 C# 项目。它还保留了与<a href="VersionControl.html">版本控制系统</a>的集成。</p>
+
+<h3>安全模式下的有限窗口集</h3>
+
+<p>编辑器在安全模式下显示有限的窗口选择。它们如下：</p>
+
+<ul>
+<li>Console 窗口
+*Project 窗口</li>
+<li>Inspector 窗口</li>
+<li>Package Manager 窗口</li>
+</ul>
+
+<p>这些是唯一可用的窗口，因为它们与修复编译错误相关。在安全模式下没有其他窗口可用。</p>
+
+<h3>安全模式下的编辑器菜单</h3>
+
+<p>在安全模式下，编辑器主菜单中的可用选项仅限于一组有限的选项。只能查看和选择与处理脚本相关的菜单选项；用于创建和处理其他内容的常规选项不可用。例如，无法创建或打开场景，或是创建非脚本资源（例如原始形状、光线或摄像机）。<strong>GameObject</strong> 和 <strong>Component</strong> 菜单不存在，而 <strong>Window</strong> 菜单仅提供一组有限的窗口。</p>
+
+<figure>
+<img src="../uploads/Main/SafeModeLimitedMenu.png" alt="在安全模式下出现的有限编辑器菜单，其中显示用于创建资源的可用选项。">
+<figcaption>在安全模式下出现的有限编辑器菜单，其中显示用于创建资源的可用选项。</figcaption>
+</figure>
+
+<h3>安全模式下的 Project 窗口</h3>
+
+<p>在安全模式下，Project 窗口与其在安全模式之外的正常行为相比有一些功能差异。</p>
+
+<p>主要区别在于只能选择与编译相关的资源。其他资源类型不可选择。它们在 Project 窗口中保持显示为灰色，但无法选择或编辑它们。</p>
+
+<p>具体来说，可以与之交互的编译相关资源类型有：</p>
+
+<ul>
+<li>C# 文件 (.cs)</li>
+<li>DLL 文件 (.dll)</li>
+<li>程序集定义 (.asm)</li>
+<li>响应文件 (.rsp)</li>
+<li>规则集文件 (.ruleset)</li>
+</ul>
+
+<p>此外，不可选择的资源的图标不会显示资源内容的预览。而是显示通用图标来表示资源的类型。</p>
+
+<figure>
+<img src="../uploads/Main/SafeModeProjectWindow.png" alt="Project 窗口对不可选择的资源显示通用图标。">
+<figcaption>Project 窗口对不可选择的资源显示通用图标。</figcaption>
+</figure>
+
+<p><strong>创建 (+)</strong> 菜单按钮处于禁用状态，并且 Project 窗口上下文菜单中的可用选项集会减少。</p>
+
+<figure>
+<img src="../uploads/Main/SafeModeCreateButton.png" alt="项目窗口中的创建 (+) 菜单按钮在安全模式下处于禁用状态">
+<figcaption>项目窗口中的<strong><em><em>创建 (+)</em></em></strong> 菜单按钮在安全模式下处于禁用状态</figcaption>
+</figure>
+
+<h2>退出安全模式</h2>
+
+<p>解决了所有编译错误后，Unity 会自动退出安全模式。Unity 随后会继续打开项目并导入资源。</p>
+
+<p>要在仍然剩余编译错误时退出安全模式，请选择安全模式工具栏中的 <strong>Exit Safe Mode</strong> 按钮。不推荐这样做（请参阅<a href="SafeMode.html#IgnoringErrors">忽略编译错误的影响</a>），Unity 会通过一个对话框提示确认决策。</p>
+
+<figure>
+<img src="../uploads/Main/SafeModeExitButton.png" alt="安全模式工具栏中的 Exit Safe Mode 按钮">
+<figcaption>安全模式工具栏中的 <strong>Exit Safe Mode</strong> 按钮</figcaption>
+</figure>
+
+<p>如果在项目中仍然存在错误时退出安全模式，并且以后要返回安全模式，则可以关闭并重新打开 Unity 以再次访问 “Enter Safe Mode” 对话框。</p>
+
+<h2>批处理模式下的安全模式</h2>
+
+<p>在批处理模式下，如果项目中存在编译错误，Unity 会自动退出，除非使用 <code>-ignoreCompilerErrors</code> <a href="CommandLineArguments.html">命令行参数</a>。</p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SmartMerge.html"></a></span><div class="tip">智能合并（Smart merge）</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="CommandLineArguments.html"></a></span><div class="tip">命令行参数</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

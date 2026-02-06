@@ -1,0 +1,579 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="常见性能分析器标记 - Unity 手册">
+<title>常见性能分析器标记 - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="Unity 的代码配备了大量性能分析器标记，可用于深入了解应用程序中占用时间的内容。下表说明了一些常见标记的作用：">
+<meta property="og:description" content="Unity 的代码配备了大量性能分析器标记，可用于深入了解应用程序中占用时间的内容。下表说明了一些常见标记的作用：">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'profiler-markers';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/profiler-markers.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/profiler-markers.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/profiler-markers.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/profiler-markers.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/profiler-markers.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/profiler-markers.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/profiler-markers.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/profiler-markers.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/profiler-markers.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/profiler-markers.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/profiler-markers.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/profiler-markers.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/profiler-markers.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/profiler-markers.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/profiler-markers.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/profiler-markers.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/profiler-markers.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/profiler-markers.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/profiler-markers.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/profiler-markers.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/profiler-markers.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/profiler-markers.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/profiler-markers.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/profiler-markers.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/profiler-markers.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/profiler-markers.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/profiler-markers.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/profiler-markers.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/profiler-markers.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/profiler-markers.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/profiler-markers.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/profiler-markers.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/profiler-markers.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/profiler-markers.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/profiler-markers.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/profiler-markers.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/profiler-markers.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/profiler-markers.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/profiler-markers.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/profiler-markers.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/profiler-markers.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/profiler-markers.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/profiler-markers.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/profiler-markers.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/profiler-markers.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/profiler-markers.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/profiler-markers.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/profiler-markers.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/profiler-markers.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/profiler-markers.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/profiler-markers.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/profiler-markers.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/profiler-markers.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/profiler-markers.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/profiler-markers.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/profiler-markers.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/profiler-markers.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/profiler-markers.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UnityOverview.html">在 Unity 中操作</a></li>
+<li><a href="analysis.html">分析</a></li>
+<li><a href="Profiler.html">性能分析器概述</a></li>
+<li>常见性能分析器标记</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="profiler-profiling-applications.html"></a></span><div class="tip">应用程序性能分析</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ProfilerWindow.html"></a></span><div class="tip">Profiler 窗口</div>
+</div>
+</div></div>
+<h1>常见性能分析器标记</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Unity 的代码配备了大量性能分析器标记，可用于深入了解应用程序中占用时间的内容。下表说明了一些常见标记的作用：</p>
+
+<ul>
+<li><a href="#main-thread">主线程基础标记</a></li>
+<li><a href="#script-update">脚本更新标记</a></li>
+<li><a href="#rendering">渲染和 VSync 标记</a></li>
+<li><a href="#backend">后端脚本标记</a></li>
+<li><a href="#multithreading">多线程标记</a></li>
+<li><a href="#physics">物理标记</a></li>
+<li><a href="#warnings">性能警告</a></li>
+</ul>
+
+<p><a name="main-thread"></a></p>
+
+<h2>主线程基础标记</h2>
+
+<p>主线程基础标记可清晰区分在应用程序上花费的时间与在编辑器和性能分析器活动中花费的时间。<a href="../ScriptReference/Unity.Profiling.ProfilerRecorder.html">ProfilerRecorder</a> 也可以使用这些标记来获取主线程上帧的时间使用情况。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>标记</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>PlayerLoop</strong></td>
+	<td style="text-align:left;">包含源自应用程序主循环的所有样本。如果播放器以活跃运行模式在编辑器中运行时，目标是编辑器而不是运行模式，则 PlayerLoop 样本会嵌套在 EditorLoop 下。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>EditorLoop</strong><br><em>（仅限编辑器的标记）</em>
+</td>
+	<td style="text-align:left;">包含源自编辑器主循环的所有样本。仅当在 Editor 中对播放器进行性能分析时才会出现此样本。使用性能分析器将运行模式作为目标时，EditorLoop 样本会显示渲染和运行包含播放器的编辑器所花费的时间。<br><br>性能分析器不会在 EditorLoop 标记下记录任何进一步的详细数据。这是因为性能分析器在对运行模式进行性能分析时，编辑器代码发出的样本会产生大量性能分析开销。<br><br>Unity 将来自 EditorLoop 标记的任何样本都在 <a href="ProfilerCPU.html#charts">CPU 分析器模块图表</a>中分类为 <strong>Others</strong>。因此，EditorLoop 样本通常是该类别的最大贡献者。如果想了解编辑器在这段时间内的操作，并且还想获得有关 <strong>Others</strong> 类别的其他贡献者的更详细细分，请<a href="profiler-profiling-applications.html">将性能分析器目标更改为编辑器</a>。<br><br>将性能分析器的目标切换为<strong>编辑器</strong>会更改性能分析器在 CPU 性能分析器模块的详细信息面板中显示的内容，以及 CPU 性能分析器模块图表中的类别细分。这是因为之前隐藏在 EditorLoop 样本下的样本随后会归类到其各自的类别中。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>Profiler.CollectEditorStats</strong><br><em>（仅限编辑器的标记）</em>
+</td>
+	<td style="text-align:left;">包含与收集不同活跃性能分析器模块的统计信息有关的任何样本。<br><br>嵌套在 Profiler.CollectGlobalStats 标记下的样本指示播放器在收集特定模块的统计信息时产生的开销量。所有其他子样本仅反映它们在编辑器中的效果。<br><br>要消除特定模块产生的开销，请关闭模块的图表，或调用 Profiler.SetAreaEnabled。<br><br><strong>注意：</strong>使用内置计数器的自定义性能分析器模块会启用内置计数器的区域（即使它所属的模块已禁用）。要防止性能分析器收集这些统计信息和产生收集开销，请确保禁用内置性能分析器模块和自定义性能分析器模块。</td>
+</tr>
+</tbody>
+</table>
+
+<h3>仅限编辑器的标记</h3>
+
+<p>某些标记仅当在 Unity 编辑器中进行性能分析时才会出现。这些标记不会出现在与播放器相关的活动中，仅与编辑器活动相关。仅限编辑器的标记包括如下的安全性检查：GetComponentNullErrorWrapper（有助于确定 null 组件使用情况）、CheckConsistency（验证对象设置）、CheckAllowDestructionRecursive（损坏检查）以及预制件相关活动。</p>
+
+<p>默认情况下，在 CPU 性能分析器模块的 <strong>Hierarchy</strong> 视图中，带有仅限编辑器的标记的样本栈会进行折叠并命名为 <code>EditorOnly [SampleName]</code>。虽然这些样本栈或其子样本可能会导致托管分配，从而导致触发垃圾收集，但它们在折叠时不会影响其父样本的 GC.Alloc 值。</p>
+
+<p>要更改默认行为，请单击模块详细信息面板右上角，选择上下文菜单，然后禁用 <a href="ProfilerCPU.html#hierarchy">Collapse EditorOnly Samples</a> 设置。完成此操作后，可以展开样本并将其 GC.Alloc 值贡献给所属标记。</p>
+
+<p>此选项不影响 <strong>Timeline</strong> 视图，并且样本及其子项显示为展开状态。通常可以忽略带有这些标记的样本，因为它们与仅限编辑器的活动相关，对减少托管分配没有任何影响。但是，如果在它们对运行模式的性能影响方面遇到严重问题，则它们可用于调查。</p>
+
+<p><a name="script-update"></a></p>
+
+<h2>脚本更新标记</h2>
+
+<p>除非使用<a href="JobSystem.html">作业系统</a>，否则大多数脚本代码都嵌套在以下标记下面。有关作业系统样本的信息，请参阅本页面的<a href="#multithreading">多线程标记</a>部分。</p>
+
+<p>有关 Unity 更新循环的更多详细信息，请参阅<a href="https://docs.unity3d.com/Manual/ExecutionOrder.html">事件函数执行顺序</a>相关文档。如果已通过 <a href="https://docs.unity3d.com/ScriptReference/LowLevel.PlayerLoop.SetPlayerLoop.html">PlayerLoop.SetPlayerLoop</a> 将自己的回调插入到<a href="https://docs.unity3d.com/ScriptReference/LowLevel.PlayerLoop.html">播放器循环</a>中，则脚本更新样本会出现在相应的主 PlayerLoopSystem 标记下（如果作为子系统进入，或者如果自行直接进入主循环中）。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>标记</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>BehaviourUpdate</strong></td>
+	<td style="text-align:left;">包含 <a href="../ScriptReference/MonoBehaviour.Update.html">MonoBehaviour.Update</a> 方法的所有样本。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>CoroutinesDelayedCalls</strong></td>
+	<td style="text-align:left;">包含首次生成后的所有<a href="../ScriptReference/Coroutine.html">协程</a>样本。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>FixedBehaviourUpdate</strong></td>
+	<td style="text-align:left;">Contains all samples of <a href="../ScriptReference/MonoBehaviour.FixedUpdate.html">Monobehaviour.FixedUpdate</a> methods.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>PreLateUpdate.ScriptRunBehaviourLateUpdate</strong></td>
+	<td style="text-align:left;">包含 <a href="../ScriptReference/MonoBehaviour.LateUpdate.html">Monobehaviour.LateUpdate</a> 方法的所有样本。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Update.ScriptRunBehaviourUpdate</strong></td>
+	<td style="text-align:left;">包含所有 <a href="../ScriptReference/MonoBehaviour.Update.html">MonoBehaviour.Update</a> 和<a href="../ScriptReference/Coroutine.html">协程</a>样本。</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="rendering"></a> </p>
+
+<h2>渲染和 VSync 标记</h2>
+
+<p>这些标记包含 CPU 在其中花时间来处理 GPU 的数据，或者可能在其中等待 GPU 完成的样本。如果 <a href="ProfilerGPU.html">GPU 性能分析器模块</a>不可用或者增加过多开销，则性能分析器模块详细信息面板中的工具栏不会显示此信息。这些标记下的样本可用于很好地了解应用程序是 CPU 密集型还是 GPU 密集型。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>标记</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>WaitForTargetFPS</strong></td>
+	<td style="text-align:left;">指示应用程序等待 <a href="../ScriptReference/Application-targetFrameRate.html">Application.targetFrameRate</a> 指定的目标 FPS 所花费的时间量。<br><br>如果样本是 Gfx.WaitForPresentOnGfxThread 的子样本，则指示应用程序等待 GPU 所花费的时间量。例如，这可能是 GPU 等待下一个 VSync 所花费的时间（如果在 <a href="../ScriptReference/QualitySettings-vSyncCount.html">QualitySettings.vSyncCount</a> 中进行了配置，或者如果在目标平台上强制实施了 vSync）。但是，如果 GPU 尚未完成帧计算，也会发出带有此标记的样本。<br><br>要确定导致带有此标记的样本使用大量时间的原因，请切换到 <a href="ProfilerCPU.html#timeline">CPU 性能分析器模块中的 Timeline 视图</a>。在此视图中，可以检查渲染线程上发生的情况，以及在当前帧中结束的此样本与在周围帧中结束的相同样本之间所经过的时间量。<br><br>如果持续时间大于应用程序帧时间（基于目标帧速率或 vSync），则帧渲染或计算时间过长。如果是这种情况，请调查渲染线程，并查看相对于它为做好准备和向 GPU 发出命令而进行的其他工作，它在 Gfx.PresentFrame 方面花费的时间量。如果渲染线程在 Gfx.PresentFrame 方面花费了大量时间，则渲染工作是 GPU 密集型。如果渲染线程的时间花费在准备命令上，则应用程序是 CPU 密集型。<br><br>要了解要关注的内容，如果应用程序是 GPU 密集型，请使用 Unity 性能分析器或平台性能分析器对 GPU 工作进行性能分析。有关更多信息，请参阅有关如何<a href="https://docs.unity3d.com/Manual/OptimizingGraphicsPerformance.html">优化图形性能</a>的用户手册文档。<br><br><strong>注意：</strong>编辑器不在 GPU 上进行 VSync，而是使用 WaitForTargetFPS 模拟 VSync 的延迟。某些平台（尤其是 Android 和 iOS）强制执行 VSync 或默认帧率上限为 30 或 60。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Gfx.PresentFrame</strong></td>
+	<td style="text-align:left;">表示应用程序在等待 GPU 渲染和呈现帧方面花费的时间，其中包括等待 VSync 的时间。<br><br>主线程上带有 WaitForTargetFPS 标记的样本会显示等待 VSync 所花费的时间量。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Gfx.ProcessCommands</strong></td>
+	<td style="text-align:left;">包含对渲染线程上渲染命令的所有处理。应用程序可能会花费此处理时间的一部分来等待 VSync 或主线程的新命令；可通过子样本 Gfx.WaitForPresentOnGfxThread 来了解此内容。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Gfx.WaitForCommands</strong></td>
+	<td style="text-align:left;">指示渲染线程已准备好接受新命令。如果看到此标记，则可能指示主线程上存在瓶颈。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<code>&lt;GraphicsAPIName&gt;.WaitForLastPresent</code> e.g.<br><strong>GfxDeviceD3D11.WaitForLastPresent</strong><br><strong>GfxDeviceD3D12.WaitForLastPresent</strong><br><strong>GfxDeviceMetal.WaitForLastPresent</strong>
+</td>
+	<td style="text-align:left;">当主线程等待 GPU 将帧号翻转到屏幕 (Time.frameCount - QualitySettings.maxQueuedFrames + 1`) 时，会出现带有此标记的样本。这意味着如果 QualitySettings.maxQueuedFrames 大于 1，则此时间用于等待 GPU 翻转应用程序在前一个主线程帧中请求渲染的帧。<br><br>有关此样本的更多详细信息以及 Unity 的帧管线概述，请参阅 <a href="https://blogs.unity3d.com/2020/10/01/fixing-time-deltatime-in-unity-2020-2-for-smoother-gameplay-what-did-it-take/">Unity 关于修复 Delta Time 的博客文章</a>。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Gfx.WaitForPresentOnGfxThread</strong></td>
+	<td style="text-align:left;">指示主线程已准备好开始渲染下一帧，但是渲染线程未结束对于 GPU 呈现该帧的等待。这可能表明应用程序是 GPU 密集型。要查看渲染线程同时在哪些方面花费时间，请查看 <a href="ProfilerCPU.html#timeline">CPU 性能分析器模块的 Timeline 视图</a>。<br><br>如果渲染线程将时间花费在 Camera.Render 中，则表示应用程序为 CPU 密集型并且可能花费太多时间向 GPU 发送绘制调用或纹理。<br><br>如果渲染线程将时间花费在 Gfx.PresentFrame 中，则表示应用程序是 GPU 密集型，或者可能在等待 GPU 上的 VSync。Gfx.WaitForPresentOnGfxThread 的 WaitForTargetFPS 子样本可以指示应用程序用于等待 VSync 的呈现阶段的一段时间。呈现阶段是从 Unity 指示图形 API 交换缓冲区到此操作完成时间之间的一段时间。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Gfx.WaitForRenderThread</strong></td>
+	<td style="text-align:left;">指示主线程正在等待渲染线程处理位于命令流中的所有命令。带有此标记的样本仅出现在多线程渲染中。</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="backend"></a></p>
+
+<h2>后端脚本标记</h2>
+
+<p>这些样本突出显示 Mono 或 IL2CPP 脚本后端活动，对于垃圾收集和分配问题的故障排除非常有用。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>标记</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>GC.Alloc</strong></td>
+	<td style="text-align:left;">表示托管堆（包含受自动垃圾回收影响的托管分配）中的分配。要减少应用程序在自动垃圾收集方面所花费的时间，应该尽量减少这些类型的样本。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>GC.Collect</strong></td>
+	<td style="text-align:left;">Represents samples that relate to garbage collection. Whenever Unity needs to perform garbage collection, it stops running your program code and only resumes normal execution when the garbage collector has finished all its work. <strong>Note:</strong> If you have enabled <a href="performance-incremental-garbage-collection.html">Incremental Garbage Collection</a> the garbage collector might not finish its work in a single frame.<br><br>This interruption might cause delays in the execution of your application that last anywhere from less than one millisecond to hundreds of milliseconds. This depends on how much memory the garbage collector needs to process and the platform your application is running on. For more information, see the documentation on <a href="performance-managed-memory.html">Understanding automatic memory management</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>Mono.JIT</strong><br><em>仅限 Mono</em>
+</td>
+	<td style="text-align:left;">包含与脚本方法的即时编译相关的样本。当函数首次执行时，Mono 会编译它，Mono.JIT 表示此编译开销。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>UnsafeUtility.Malloc</strong></td>
+	<td style="text-align:left;">包含调用 UnsafeUtility.Malloc 以分配非托管内存的样本。虽然垃圾回收器不跟踪此内存，但分配内存可能会产生显著性能影响（随此样本出现）。要调查此调用的源，可以在 Profiler 窗口中为此标记启用<a href="ProfilerCPU.html#call-stacks">调用栈</a>记录。</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="multithreading"></a></p>
+
+<h2>多线程标记</h2>
+
+<p>这些标记包含的样本不测量消耗的 CPU 周期，而是突出显示与线程同步和作业系统相关的信息。查看这些样本时，使用 CPU 性能分析器模块的 <a href="ProfilerCPU.html#timeline">Timeline 视图</a>可以检查其他线程上同时发生的操作。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>标记</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Idle</strong></td>
+	<td style="text-align:left;">包含指示工作线程处于非活动状态的时间长度的样本。工作线程在作业系统不使用它的任何时间都处于非活动状态，会进入等待模式以等待信号标。<br><br>Idle 样本之间的小间隙通常发生在作业系统唤醒它们时（例如用于安排新作业）。较长的间隙可能指示尚未检测的本机作业在线程上运行。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>JobHandle.Complete</strong></td>
+	<td style="text-align:left;">包含指示作业同步点何时发生的样本。同步点可能会对应用程序产生性能影响，并可能会干扰多线程作业代码的执行。要更容易找到同步点发生的确切位置，请为此样本启用<a href="ProfilerCPU.html#call-stacks">调用栈</a>记录。在 CPU 性能分析器模块的 <strong>Timeline</strong> 视图中，可以启用 <a href="ProfilerCPU.html#flow-events">Flow Events</a> 以查看此时完成的作业。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Semaphore.WaitForSignal</strong></td>
+	<td style="text-align:left;">包含描述线程上的同步点的样本。要找出所等待的线程，请在 Timeline 视图中查看在此线程之前不久结束的所有样本。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>WaitForJobGroupID</strong></td>
+	<td style="text-align:left;">触发了 JobHandle 上的同步栅栏 (Sync Fence)。这可能导致<a href="../ScriptReference/Unity.Jobs.IJobParallelFor.html">工作窃取</a>。一个工作线程完成工作，然后等待其他工作线程完成工作时，就会发生工作窃取。这些显示为在此标记下执行的作业样本。“被窃取”的作业不一定是所等待的作业。</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="physics"></a></p>
+
+<h2>物理标记</h2>
+
+<p>下表概括了一些高级物理性能分析器标记。<a href="../ScriptReference/MonoBehaviour.FixedUpdate.html">FixedUpdate</a> 会调用所有这些测量。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"><strong>标记</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Physics.FetchResults</strong></td>
+	<td style="text-align:left;">包含从物理引擎收集物理模拟结果的样本，例如接触流、触发器重叠和关节断裂事件。</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Physics.Interpolation</strong></td>
+	<td style="text-align:left;">包含测量 Physics.Interpolation 方法的执行时间的样本。此方法管理应用程序中所有物理对象的位置和旋转的插值。</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Physics.Processing</strong></td>
+	<td style="text-align:left;">包含花费时间等待主线程直到物理模拟在所有线程上完成的样本。如果应用程序在 Physics.Processing 方面花费大量时间，但是在场景中只有几个与物理相关的游戏对象，这可能指示工作线程由于工作窃取而拾取了其他系统任务并报告为物理。这是因为在等待期间，主线程会从高优先级队列中拾取作业。</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Physics.ProcessingCloth</strong></td>
+	<td style="text-align:left;">包含测量 Physics.ProcessingCloth 方法的执行时间的样本。此方法处理所有布料物理作业。展开此样本可显示物理引擎内部完成的工作的低级细节。</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Physics.ProcessReports</strong></td>
+	<td style="text-align:left;">包含与通过回调（如 OnTriggerEnter）将物理数据转发到脚本所花费的时间相对应的样本。<strong>注意：</strong>这些样本不计算所需的数据，因为它们已经在 FetchResults 期间做好准备。<br><br>有四个不同的子阶段：</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Physics.Contacts</strong></td>
+	<td style="text-align:left;">包含测量 Physics.Contacts 的执行时间的样本。这会处理 OnCollisionEnter、OnCollisionExit 和 OnCollisionStay 事件。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Physics.JointBreaks</strong></td>
+	<td style="text-align:left;">包含测量 Physics.JointBreaks 的执行时间的样本。这会处理与受损关节相关的更新和消息。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Physics.TriggerEnterExits</strong></td>
+	<td style="text-align:left;">包含测量 Physics.TriggerEnterExits 的执行时间的样本。这会处理 OnTriggerEnter 和 OnTriggerExit 事件。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Physics.TriggerStays</strong></td>
+	<td style="text-align:left;">包含测量 Physics.TriggerStays 的执行时间的样本。这会处理 OnTriggerStay 事件。</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Physics.Simulate</strong></td>
+	<td style="text-align:left;">包含测量为 <a href="../ScriptReference/Physics.Simulate.html">Physics.Simulate</a> 方法处理先决条件所花费的时间量的样本。此方法指示物理引擎运行其模拟，这会更新当前物理的状态。</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Physics.UpdateBodies</strong></td>
+	<td style="text-align:left;">包含更新所有物理体的位置和旋转的样本。对于每个具有刚体组件的游戏对象，带有此标记的样本会从物理引擎读取姿势并将其写入变换组件。</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Physics.UpdateCloth</strong></td>
+	<td style="text-align:left;">包含测量 Physics.UpdateCloth 方法的执行时间的样本。此方法处理与布料及其蒙皮网格相关的更新。</td>
+</tr>
+</tbody>
+</table>
+
+<p>有关脚本生命周期及脚本生命周期内的一般样本的更多信息，请参阅<a href="ExecutionOrder.html#UpdateOrder">事件函数的执行顺序</a>的相关文档。</p>
+
+<p><a name="warnings"></a></p>
+
+<h2>性能警告</h2>
+
+<p>CPU 性能分析器可检测到一些常见性能问题，并发出相关警告。这些警告会显示在 CPU 性能分析器模块的模块详细信息面板 <a href="ProfilerCPU.html#hierarchy">Hierarchy</a> 视图中的 Warning 列内。</p>
+
+<p>性能分析器可以检测到在性能至关重要的背景中应避免的某些特定调用。这种情况下会显示警告以及操作对性能产生影响的原因，如下所示：</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Warning</strong></th>
+	<th style="text-align:left;"><strong>描述</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">
+<strong>Animation.DestroyAnimationClip</strong><br><strong>Animation.AddClip</strong><br><strong>Animation.RemoveClip</strong><br><strong>Animation.Clone</strong><br><strong>Animation.Deactivate</strong>
+</td>
+	<td style="text-align:left;">指示已触发 RebuildInternalState。RebuildInternalState 是一种操作，它遍历动画组件中每个剪辑的曲线列表，然后将每条曲线重新绑定到游戏对象上某个组件中的值。<br><br>这是一种资源密集型操作，因此应尽可能避免在运行时调用这些方法。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>AssetBundle.asset/allAssets</strong></td>
+	<td style="text-align:left;">指示在 AssetBundle 加载未完成时（AssetBundleRequest.isDone 为 false），Unity 调用了 AssetBundleRequest.assets/allAssets API。这会导致主线程卡顿并等待加载操作完成。</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<strong>AsyncUploadManager.AsyncBufferResized</strong><br><strong>AsyncUploadManager.AsyncBufferDelete</strong>
+</td>
+	<td style="text-align:left;">指示用于将数据上传到 GPU 的内部缓冲区调整了大小，因为它不够大。这种大小调整比较缓慢，会导致 CPU 活动出现峰值。<br><br>如果可以腾出内存来提前分配较大的大小，则可以避免此警告。<br><br>可以使用<a href="class-QualitySettings.html">质量设置</a>中的 <strong>Async Upload Buffer Size</strong> 设置默认大小。<br><br>AsyncUploadManager.AsyncBufferResized 标记指示新分配的大小，可以将其用作默认缓冲区大小的指南。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Rigidbody.SetKinematic</strong></td>
+	<td style="text-align:left;">为刚体重新创建非凸面体 MeshCollider。</td>
+</tr>
+</tbody>
+</table>
+
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="profiler-profiling-applications.html"></a></span><div class="tip">应用程序性能分析</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ProfilerWindow.html"></a></span><div class="tip">Profiler 窗口</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

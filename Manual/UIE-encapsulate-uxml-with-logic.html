@@ -1,0 +1,529 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Encapsulate UXML documents with logic - Unity 手册">
+<title>Encapsulate UXML documents with logic - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/uxml/reusable-card.png">
+<meta name="description" content="A Prefab is a pre-made GameObject that you can instantiate multiple times in a scene. Prefabs are useful for creating reusable components. Visual elements in UI Toolkit aren&amp;#8217;t GameObjects and therefore Prefabs don&amp;#8217;t apply. However, you can create a custom control as a reusable UI component that encapsulates a specific hierarchy of elements with logic. Because UI Toolkit encourages you to separate the UI from your game or application code, you can use UXML to define the structure, use USS to define the look, and use C# to define the logic of your custom control.">
+<meta property="og:description" content="A Prefab is a pre-made GameObject that you can instantiate multiple times in a scene. Prefabs are useful for creating reusable components. Visual elements in UI Toolkit aren&amp;#8217;t GameObjects and therefore Prefabs don&amp;#8217;t apply. However, you can create a custom control as a reusable UI component that encapsulates a specific hierarchy of elements with logic. Because UI Toolkit encourages you to separate the UI from your game or application code, you can use UXML to define the structure, use USS to define the look, and use C# to define the logic of your custom control.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'UIE-encapsulate-uxml-with-logic';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/UIE-encapsulate-uxml-with-logic.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/UIE-encapsulate-uxml-with-logic.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/UIE-encapsulate-uxml-with-logic.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/UIE-encapsulate-uxml-with-logic.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/UIE-encapsulate-uxml-with-logic.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/UIE-encapsulate-uxml-with-logic.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIE-encapsulate-uxml-with-logic.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIE-encapsulate-uxml-with-logic.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIE-encapsulate-uxml-with-logic.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIE-encapsulate-uxml-with-logic.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-encapsulate-uxml-with-logic.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-encapsulate-uxml-with-logic.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-encapsulate-uxml-with-logic.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-encapsulate-uxml-with-logic.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-encapsulate-uxml-with-logic.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-encapsulate-uxml-with-logic.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-encapsulate-uxml-with-logic.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-encapsulate-uxml-with-logic.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-encapsulate-uxml-with-logic.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-encapsulate-uxml-with-logic.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-encapsulate-uxml-with-logic.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-encapsulate-uxml-with-logic.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-encapsulate-uxml-with-logic.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-encapsulate-uxml-with-logic.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-encapsulate-uxml-with-logic.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-encapsulate-uxml-with-logic.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-encapsulate-uxml-with-logic.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-encapsulate-uxml-with-logic.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-encapsulate-uxml-with-logic.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-encapsulate-uxml-with-logic.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/UIE-encapsulate-uxml-with-logic.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/UIE-encapsulate-uxml-with-logic.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/UIE-encapsulate-uxml-with-logic.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/UIE-encapsulate-uxml-with-logic.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIE-encapsulate-uxml-with-logic.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIE-encapsulate-uxml-with-logic.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIE-encapsulate-uxml-with-logic.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIE-encapsulate-uxml-with-logic.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-encapsulate-uxml-with-logic.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-encapsulate-uxml-with-logic.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-encapsulate-uxml-with-logic.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-encapsulate-uxml-with-logic.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-encapsulate-uxml-with-logic.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-encapsulate-uxml-with-logic.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-encapsulate-uxml-with-logic.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-encapsulate-uxml-with-logic.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-encapsulate-uxml-with-logic.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-encapsulate-uxml-with-logic.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-encapsulate-uxml-with-logic.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-encapsulate-uxml-with-logic.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-encapsulate-uxml-with-logic.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-encapsulate-uxml-with-logic.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-encapsulate-uxml-with-logic.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-encapsulate-uxml-with-logic.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-encapsulate-uxml-with-logic.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-encapsulate-uxml-with-logic.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-encapsulate-uxml-with-logic.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-encapsulate-uxml-with-logic.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UIToolkits.html">Create user interfaces (UI)</a></li>
+<li><a href="UIElements.html">UI 工具包</a></li>
+<li><a href="UIE-structure-ui.html">Structure UI</a></li>
+<li>Encapsulate UXML documents with logic</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-best-practices-for-managing-elements.html"></a></span><div class="tip">Best practices for managing elements</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-ElementRef.html"></a></span><div class="tip">UXML 元素参考</div>
+</div>
+</div></div>
+<h1>Encapsulate UXML documents with logic</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>A <a href="Prefabs.html">Prefab</a> is a pre-made GameObject that you can instantiate multiple times in a scene. Prefabs are useful for creating reusable components. Visual elements in UI Toolkit aren’t GameObjects and therefore Prefabs don’t apply. However, you can <a href="UIE-custom-controls.html">create a custom control</a> as a reusable UI component that encapsulates a specific hierarchy of elements with logic. Because UI Toolkit encourages you to separate the UI from your game or application code, you can use <a href="UIE-UXML.html">UXML</a> to define the structure, use <a href="UIE-USS.html">USS</a> to define the look, and use C# to define the logic of your custom control. </p>
+
+<h2>Create reusable UI components</h2>
+
+<p>To create a reusable UI component, such as a custom control called <code>CardElement</code> for a card, which displays an image for the character, and the life and attack statistics as shown below:</p>
+
+<figure>
+<img src="../uploads/Main/uxml/reusable-card.png" alt="An example card">
+<figcaption>An example card</figcaption>
+</figure>
+
+<p>These are the general steps to accomplish this:</p>
+
+<ol>
+<li><p>In C#, declare a <a href="UIE-create-custom-controls.html">custom element type</a> called CardElement.</p></li>
+<li>
+<p>In UXML, define the hierarchy of the custom control. You can use two approaches. Both approaches support instantiating the <code>CardElement</code> in C# and in a parent UXML.</p>
+
+<ul>
+<li>
+<a href="#uxml-first-approach">UXML-first approach</a> adds children after element construction.</li>
+<li>
+<a href="#element-first-approach">Element-first approach</a> adds children during element construction.</li>
+</ul>
+</li>
+<li><p>Locate references to child elements of the custom control. </p></li>
+<li><p>Expose properties and methods, and encapsulate logic in your custom control the same way as you do with any C# classes. </p></li>
+<li><p>Connect your custom control with your game or application code. You can also register event callbacks to implement user interaction.</p></li>
+</ol>
+
+<p><a name="uxml-first-approach"></a></p>
+
+<h2>UXML-first approach</h2>
+
+<p>With this approach, you include your custom element CardElement in the hierarchy UXML document and declare its child elements directly underneath, and use the hierarchy UXML document as a <a href="UIE-reuse-uxml-files.html">template</a>. This approach offers a simpler solution with a fixed UI structure within the hierarchy UXML document.</p>
+
+<p>The following C# and UXML examples demonstrate how to use the UXML-first approach to create reusable UI.</p>
+
+<p><a name="create-the-custom-control-class"></a></p>
+
+<h3>Create the custom control class</h3>
+
+<p>Create a C# script that defines CardElement custom control. The custom control class assigns an image and badge values to CardElement.</p>
+
+<pre><code class="lang-cs">using UnityEngine;
+using UnityEngine.UIElements;
+
+// Define the custom control type.
+public class CardElement : VisualElement
+{
+    // Expose the custom control to UXML and UI Builder.
+    public new class UxmlFactory : UxmlFactory&lt;CardElement&gt; {}
+
+    private VisualElement portraitImage =&gt; this.Q("image");
+    private Label attackBadge =&gt; this.Q&lt;Label&gt;("attack-badge");
+    private Label healthBadge =&gt; this.Q&lt;Label&gt;("health-badge");
+
+    // Use the Init() approach instead of a constructor because 
+    // we don't have children yet.
+    public void Init(Texture2D image, int health, int attack)
+    {
+        portraitImage.style.backgroundImage = image;
+        attackBadge.text = health;
+        healthBadge.text = attack;
+    }
+
+    // Custom controls need a default constructor. 
+    public CardElement() {}
+}
+</code></pre>
+
+<h3>Define the hierarchy of the custom control</h3>
+
+<p>Create a UXML document (<code>CardElement.uxml</code>) that defines the hierarchy of CardElement. This example styles CardElement with a USS file.</p>
+
+<pre><code class="lang-xml">&lt;ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False"&gt;
+    &lt;Style src="CardElementUI.uss" /&gt;
+    &lt;CardElement&gt; 
+        &lt;ui:VisualElement name="image" /&gt;
+        &lt;ui:VisualElement name="stats"&gt;
+            &lt;ui:Label name="attack-badge" class="badge" /&gt;
+            &lt;ui:Label name="health-badge" class="badge" /&gt;
+        &lt;/ui:VisualElement&gt;
+    &lt;/CardElement&gt; 
+&lt;/ui:UXML&gt;
+</code></pre>
+
+<h3>Connect custom controls to your game</h3>
+
+<p>You can connect your custom control to your game by the following:</p>
+
+<ul>
+<li>Instantiate <code>CardElement.uxml</code> inside a parent UXML document. You can <a href="UIB-structuring-ui-templates.html#edit-a-uxml-document-template-instance">navigate back and forth</a> between the hierarchy UXML and this UXML document in UI Builder.</li>
+<li>Instantiate <code>CardElement.uxml</code> containing <code>CardElement</code> from a MonoBehaviour C# script. You must use <a href="UIE-UQuery.html">UQuery</a> to find CardElement before you add it to the scene.</li>
+</ul>
+
+<p>You call <code>Init()</code> after adding the custom control into the scene.</p>
+
+<figure>
+<img src="../uploads/Main/uxml/option-b.png" alt="Workflow of the UXML-first approach">
+<figcaption>Workflow of the UXML-first approach</figcaption>
+</figure>
+
+<p>You can also add gameplay-related actions, such as a click event to interact with the elements.</p>
+
+<p><strong>Instantiate inside parent UXML</strong></p>
+
+<p>The following shows an example of instantiation in UXML:</p>
+
+<pre><code class="lang-xml">&lt;ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False"&gt;
+    &lt;ui:Template name="CardElement" src="CardElement.uxml"/&gt;
+    &lt;ui:Instance template="CardElement"/&gt;
+    &lt;ui:Instance template="CardElement"/&gt;
+    &lt;ui:Instance template="CardElement"/&gt;
+&lt;/ui:UXML&gt;
+</code></pre>
+
+<p>For information on how to render the UXML document in your game, see <a href="UIE-render-runtime-ui.html">Render UI in the Game view</a>.</p>
+
+<p><strong>Instantiate directly in C#</strong></p>
+
+<p><strong>Note</strong>: For learning purposes, the example code on this page uses <a href="UIE-manage-asset-reference.html#use-a-resources-folder">the Resources folder</a> method to load the UXML files which is convenient. However, this method doesn’t scale well. It’s recommended that you use <a href="UIE-manage-asset-reference.html">other methods</a> to load references for your production projects.</p>
+
+<p>The following shows an example of instantiation in C#:</p>
+
+<pre><code class="lang-cs">using UnityEngine;
+using UnityEngine.UIElements;
+
+public class UIManager : MonoBehaviour
+{
+    public void Start()
+    {
+        UIDocument document = GetComponent&lt;UIDocument&gt;();
+
+        // Load the UXML document that defines the hierarchy of CardElement.
+        // It assumes the UXML file is placed at the "Resources" folder.
+        VisualTreeAsset template = Resources.Load&lt;VisualTreeAsset&gt;("CardElement");
+
+        // Create a loop to modify properties and perform interactions 
+        // for each card.  It assumes that you have created a function 
+        // called `GetCards()` to get all the cards in your game.
+        foreach(Card card in GetCards())
+        {
+            // Instantiate a template container.
+            var templateContainer = template.Instantiate();
+
+            // Find the custom element inside the template container.
+            var cardElement = templateContainer.Q&lt;CardElement&gt;();
+
+            // Add the custom element into the scene.
+            document.rootVisualElement.Add(cardElement);
+
+            // Initialize the card.
+            cardElement.Init(card.image, card.health, card.attack);
+
+            // Register an event callback for additional interaction.
+            cardElement.RegisterCallback&lt;ClickEvent&gt;(SomeInteraction);
+        }
+    }
+
+    private void SomeInteraction(ClickEvent evt)
+    {
+        // Interact with the elements here.
+    }
+}
+</code></pre>
+
+<p><a name="element-first-approach"></a></p>
+
+<h2>Element-first approach</h2>
+
+<p>With this approach, you only include the child elements in the hierarchy UXML document and use C# to <a href="UIE-manage-asset-reference.html">load the hierarchy UXML document</a> into the CardElement class definition. This approach offers a flexible UI structure for custom controls. For example, you can load different hierarchy UXML documents depending on specific conditions.</p>
+
+<p>The following C# and UXML examples demonstrate how to use the element-first approach to create reusable UI.</p>
+
+<h3>Create the custom control class</h3>
+
+<p>Create a C# script that defines the CardElement custom control. In addition to <a href="#create-the-custom-control-class">defining a constructor to assign an image and badge values to CardElement</a>, the custom control loads the hierarchy UXML document in its class definition. </p>
+
+<pre><code class="lang-cs">using UnityEngine;
+using UnityEngine.UIElements;
+
+// Define the custom control type.
+public class CardElement : VisualElement
+{
+    // Expose the custom control to UXML and UI Builder.
+    public new class UxmlFactory : UxmlFactory&lt;CardElementA&gt; {}
+
+    private VisualElement portraitImage =&gt; this.Q("image");
+    private Label attackBadge =&gt; this.Q&lt;Label&gt;("attack-badge");
+    private Label healthBadge =&gt; this.Q&lt;Label&gt;("health-badge");
+
+
+    // Custom controls need a default constructor. This default constructor 
+    // calls the other constructor in this class.
+    public CardElement() {}
+
+    // Define a constructor that loads the UXML document that defines 
+    // the hierarchy of CardElement and assigns an image and badge values.
+    public CardElement(Texture2D image, int health, int attack)
+    {
+        // It assumes the UXML file is called "CardElement.uxml" and 
+        // is placed at the "Resources" folder.
+        var asset = Resources.Load&lt;VisualTreeAsset&gt;("CardElement");
+        asset.CloneTree(this);
+
+        portraitImage.style.backgroundImage = image;
+        attackBadge.text = health.ToString();
+        healthBadge.text = attack.ToString();
+    }
+}
+</code></pre>
+
+<p><strong>Note</strong>: If you have performance concerns, use lazy initialization to keep fields to cache the references and avoid re-evaluating the queries too often.</p>
+
+<h3>Define the hierarchy of the custom control</h3>
+
+<p>Create a UXML document (<code>CardElement.uxml</code>) that defines the hierarchy of the child elements of CardElement. The example styles CardElement with a USS file.</p>
+
+<pre><code class="lang-xml">&lt;ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False"&gt;
+    &lt;Style src="CardElementUI.uss" /&gt; 
+    &lt;ui:VisualElement name="image" /&gt;
+    &lt;ui:VisualElement name="stats"&gt;
+        &lt;ui:Label name="attack-badge" class="badge" /&gt;
+        &lt;ui:Label name="health-badge" class="badge" /&gt;
+    &lt;/ui:VisualElement&gt;
+&lt;/ui:UXML&gt;
+</code></pre>
+
+<h3>Connect custom controls to your game</h3>
+
+<p>You can connect your custom control to your game by doing the following:</p>
+
+<ul>
+<li>Instantiate <code>CardElement.uxml</code> inside a parent UXML document. In UI Builder, you can’t navigate back and forth between the hierarchy UXML and this UXML document because child elements are loaded from C#.</li>
+<li>Instantiate <code>CardElement.uxml</code> containing <code>CardElement</code> from a MonoBehaviour C# script.</li>
+</ul>
+
+<p>You call the constructor before adding the custom control to the scene.</p>
+
+<figure>
+<img src="../uploads/Main/uxml/option-a.png" alt="Workflow of the element-first approach">
+<figcaption>Workflow of the element-first approach</figcaption>
+</figure>
+
+<p>You can also add gameplay-related actions, such as a click event to interact with the elements.</p>
+
+<p><strong>Instantiate inside parent UXML</strong></p>
+
+<p>The following shows an example of instantiation in UXML:</p>
+
+<pre><code class="lang-xml">&lt;ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False"&gt;
+   &lt;CardElement /&gt;
+   &lt;CardElement /&gt;
+   &lt;CardElement /&gt;
+&lt;/ui:UXML&gt;
+</code></pre>
+
+<p>For information on how to render the UXML document in your game, see <a href="UIE-render-runtime-ui.html">Render UI in the Game view</a>.</p>
+
+<p><strong>Instantiate directly in C#</strong></p>
+
+<p>The following shows an example of instantiation in C#:</p>
+
+<pre><code class="lang-cs">using UnityEngine;
+using UnityEngine.UIElements;
+
+public class UIManager : MonoBehaviour
+{
+    public void Start()
+    {
+        UIDocument document = GetComponent&lt;UIDocument&gt;();
+
+        // Create a loop to modify properties and perform interactions 
+        // for each card. It assumes that you have created a function 
+        // called `GetCards()` to get all the cards in your game.
+        foreach(Card card in GetCards())
+        {
+            var cardElement = new CardElement(card.image, card.health, card.attack);
+
+            // Register an event callback for additional interaction.
+            cardElement.RegisterCallback&lt;ClickEvent&gt;(SomeInteraction);
+
+            // Add the custom element into the scene.
+            document.rootVisualElement.Add(cardElement);
+        }
+    }
+
+    private void SomeInteraction(ClickEvent evt)
+    {
+        // Interact with the elements here.
+    }
+}
+</code></pre>
+
+<h2>Build more complex elements</h2>
+
+<p>As the UI of your project gets more complex, it’s better to isolate your logic into higher-level components. This makes orchestrating the UI easier for the rest of the game or application.</p>
+
+<p>You can apply the concepts on this page to gradually build specialized components out of smaller, more generic components. For example, to build a main title screen from which the user can access an Options menu and an About section, you can create a TitleScreenManager element with three different child UXML documents. Each defines its own elements: Title, Options, and About. </p>
+
+<p><img src="../uploads/Main/uxml/title-screen-manager.png" alt="An example main title screen">
+For more information, see <a href="https://www.youtube.com/watch?v=AvpHqXJedB8">this</a> YouTube video.</p>
+
+<h2>其他资源</h2>
+
+<ul>
+<li><a href="UIE-UQuery.html">Find visual elements with UQuery</a></li>
+<li><a href="UIB-structuring-ui-templates.html">Use UXML instances as templates</a></li>
+<li><a href="UIE-reuse-uxml-files.html">Reuse UXML files</a></li>
+<li><a href="UIE-support-for-runtime-ui.html">Support for runtime UI</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-best-practices-for-managing-elements.html"></a></span><div class="tip">Best practices for managing elements</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-ElementRef.html"></a></span><div class="tip">UXML 元素参考</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

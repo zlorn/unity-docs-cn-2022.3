@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-cn">
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:title" content="Overlays.Overlay - Unity 脚本 API" />
+    <title>Overlays.Overlay - Unity 脚本 API</title>
+    <meta name="description" content="Overlays are persistent and customizable panels and toolbars that are available within Editor Windows. Use Overlays to expose actions and tool options in a convenient and user-controllable way." />
+    <meta property="og:description" content="Overlays are persistent and customizable panels and toolbars that are available within Editor Windows. Use Overlays to expose actions and tool options in a convenient and user-controllable way." />
+    <meta name="author" content="Unity Technologies" />
+    <link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico" />
+    <link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png" />
+    <meta name="msapplication-TileColor" content="#222c37" />
+    <meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png" />
+    <script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true">
+    </script>
+    <script type="text/javascript">function OptanonWrapper() {}</script>
+    <script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script>
+    <script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script>
+    <script>
+      var docs_type = 'ScriptReference';
+      var lang = 'cn';
+      var page = 'Overlays.Overlay';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script>
+    <script type="text/javascript" src="../StaticFiles/js/jquery.js">
+    </script>
+    <script type="text/javascript" src="../StaticFiles/js/core.js">
+    </script>
+    <script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js">
+    </script>
+    <script type="text/javascript" src="docdata/toc.js">
+    </script>
+    <script type="text/javascript" src="">
+    </script>
+    <script type="text/javascript" src="../StaticFiles/js/custom.js">
+    </script>
+    <script src="/StaticFilesConfig/feedback/feedback.js">
+    </script>
+    <link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css" />
+    <link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css" />
+    <link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/ScriptReference/Overlays.Overlay.html" />
+    <link rel="alternate" href="https://docs.unity3d.com/en/2022.3/ScriptReference/Overlays.Overlay.html" hreflang="en" />
+    <link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/ScriptReference/Overlays.Overlay.html" hreflang="zh" />
+    <link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/ScriptReference/Overlays.Overlay.html" hreflang="ja" />
+    <link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/ScriptReference/Overlays.Overlay.html" hreflang="ko" />
+    <link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Overlays.Overlay.html" hreflang="x-default" />
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <div id="header" class="header">
+        <div class="content">
+          <div class="spacer">
+            <div class="menu">
+              <div id="nav-open" for="nav-input">
+                <span>
+                </span>
+              </div>
+              <div class="logo">
+                <a href="./index.html">
+                </a>
+              </div>
+              <div class="search-form">
+                <form action="30_search.html" method="get" class="apisearch">
+                  <input type="text" name="q" placeholder="搜索脚本..." autosave="Unity Reference" results="5" class="sbox field" id="q">
+                  </input>
+                  <input type="submit" class="submit">
+                  </input>
+                </form>
+              </div>
+              <ul class="menu-items">
+                <li class="menu-item">
+                  <a href="../Manual/index.html" class="">手册</a>
+                </li>
+                <li class="menu-item">
+                  <a href="../ScriptReference/index.html" class="selected">脚本 API</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="more">
+            <div class="filler">
+            </div>
+            <ul>
+              <li>
+                <a href="https://unity3d.com/">
+                unity3d.com
+              </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="toolbar">
+        <div class="content">
+          <div class="version-switcher">
+            <div class="current toggle" data-target=".version-list">
+              <div class="version-number">
+                <div class="d-inline-block">
+          Version:
+          <b>2022.3</b></div>
+                <div class="d-inline-block arrow">
+                </div>
+              </div>
+            </div>
+            <div class="version-list" style="display:none;">
+              <ul class="versions">
+                <li class="supported">
+                  <a class="docs_version_url_2023.2" href="/cn/2023.2/ScriptReference/Overlays.Overlay.html">2023.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2023.1" href="/cn/2023.1/ScriptReference/Overlays.Overlay.html">2023.1</a>
+                </li>
+                <li class="supported">
+                  <a class="docs_version_url_2022.3" href="/cn/2022.3/ScriptReference/Overlays.Overlay.html">2022.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2022.2" href="/cn/2022.2/ScriptReference/Overlays.Overlay.html">2022.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2022.1" href="/cn/2022.1/ScriptReference/Overlays.Overlay.html">2022.1</a>
+                </li>
+                <li class="supported">
+                  <a class="docs_version_url_2021.3" href="/cn/2021.3/ScriptReference/Overlays.Overlay.html">2021.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2021.2" href="/cn/2021.2/ScriptReference/Overlays.Overlay.html">2021.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2021.1" href="/cn/2021.1/ScriptReference/Overlays.Overlay.html">2021.1</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2020.3" href="/cn/2020.3/ScriptReference/Overlays.Overlay.html">2020.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2020.2" href="/cn/2020.2/ScriptReference/Overlays.Overlay.html">2020.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2020.1" href="/cn/2020.1/ScriptReference/Overlays.Overlay.html">2020.1</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2019.4" href="/cn/2019.4/ScriptReference/Overlays.Overlay.html">2019.4</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2019.3" href="/cn/2019.3/ScriptReference/Overlays.Overlay.html">2019.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2019.2" href="/cn/2019.2/ScriptReference/Overlays.Overlay.html">2019.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2019.1" href="/cn/2019.1/ScriptReference/Overlays.Overlay.html">2019.1</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2018.4" href="/cn/2018.4/ScriptReference/Overlays.Overlay.html">2018.4</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2018.3" href="/cn/2018.3/ScriptReference/Overlays.Overlay.html">2018.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2018.2" href="/cn/2018.2/ScriptReference/Overlays.Overlay.html">2018.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2018.1" href="/cn/2018.1/ScriptReference/Overlays.Overlay.html">2018.1</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2017.4" href="/cn/2017.4/ScriptReference/Overlays.Overlay.html">2017.4</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2017.3" href="/cn/2017.3/ScriptReference/Overlays.Overlay.html">2017.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2017.2" href="/cn/2017.2/ScriptReference/Overlays.Overlay.html">2017.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2017.1" href="/cn/2017.1/ScriptReference/Overlays.Overlay.html">2017.1</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_560" href="/cn/560/ScriptReference/Overlays.Overlay.html">5.6</a>
+                </li>
+                <div class="versionsWithThisPage" style="display:none;">
+                  <li>
+                    <p>包含此页的版本：</p>
+                  </li>
+                </div>
+                <div class="versionsWithoutThisPage" style="display:none;">
+                  <li>
+                    <p>不含此页的版本：</p>
+                  </li>
+                </div>
+              </ul>
+              <ul class="description">
+                <li>
+                  <div class="supported-box">
+                  </div>受支持</li>
+                <li>
+                  <div class="legacy-box">
+                  </div>旧版</li>
+              </ul>
+            </div>
+          </div>
+          <ul class="nav-menu-items">
+            <li class="menu-item">
+              <a href="../Manual/index.html" class="">手册</a>
+            </li>
+            <li class="menu-item">
+              <a href="../ScriptReference/index.html" class="selected">脚本 API</a>
+            </li>
+          </ul>
+          <div class="lang-switcher">
+            <div class="current toggle" data-target=".lang-list">
+              <div class="lbl">语言:
+        <span class="b">中文</span></div>
+              <div class="arrow">
+              </div>
+            </div>
+            <div class="lang-list" style="display:none;">
+              <ul>
+                <li>
+                  <a data-lang="en" href="/2022.3/Documentation/ScriptReference/Overlays.Overlay.html">English</a>
+                </li>
+                <li>
+                  <a data-lang="cn" href="/cn/2022.3/ScriptReference/Overlays.Overlay.html">中文</a>
+                </li>
+                <li>
+                  <a data-lang="ja" href="/ja/2022.3/ScriptReference/Overlays.Overlay.html">日本語</a>
+                </li>
+                <li>
+                  <a data-lang="kr" href="/kr/2022.3/ScriptReference/Overlays.Overlay.html">한국어</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="master-wrapper" class="master-wrapper clear">
+      <div id="sidebar" class="sidebar hidden">
+        <div class="sidebar-wrap">
+          <div class="content">
+            <div class="sidebar-menu">
+              <div class="toc">
+                <h2>脚本 API</h2>
+                <div class="version-switcher">
+                  <div class="current toggle" data-target=".version-list">
+                    <div class="version-number">
+                      <div class="d-inline-block">
+          Version:
+          <b>2022.3</b></div>
+                      <div class="d-inline-block arrow">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="version-list" style="display:none;">
+                    <ul class="versions">
+                      <li class="supported">
+                        <a class="docs_version_url_2023.2" href="/cn/2023.2/ScriptReference/Overlays.Overlay.html">2023.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2023.1" href="/cn/2023.1/ScriptReference/Overlays.Overlay.html">2023.1</a>
+                      </li>
+                      <li class="supported">
+                        <a class="docs_version_url_2022.3" href="/cn/2022.3/ScriptReference/Overlays.Overlay.html">2022.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2022.2" href="/cn/2022.2/ScriptReference/Overlays.Overlay.html">2022.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2022.1" href="/cn/2022.1/ScriptReference/Overlays.Overlay.html">2022.1</a>
+                      </li>
+                      <li class="supported">
+                        <a class="docs_version_url_2021.3" href="/cn/2021.3/ScriptReference/Overlays.Overlay.html">2021.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2021.2" href="/cn/2021.2/ScriptReference/Overlays.Overlay.html">2021.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2021.1" href="/cn/2021.1/ScriptReference/Overlays.Overlay.html">2021.1</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2020.3" href="/cn/2020.3/ScriptReference/Overlays.Overlay.html">2020.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2020.2" href="/cn/2020.2/ScriptReference/Overlays.Overlay.html">2020.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2020.1" href="/cn/2020.1/ScriptReference/Overlays.Overlay.html">2020.1</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2019.4" href="/cn/2019.4/ScriptReference/Overlays.Overlay.html">2019.4</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2019.3" href="/cn/2019.3/ScriptReference/Overlays.Overlay.html">2019.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2019.2" href="/cn/2019.2/ScriptReference/Overlays.Overlay.html">2019.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2019.1" href="/cn/2019.1/ScriptReference/Overlays.Overlay.html">2019.1</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2018.4" href="/cn/2018.4/ScriptReference/Overlays.Overlay.html">2018.4</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2018.3" href="/cn/2018.3/ScriptReference/Overlays.Overlay.html">2018.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2018.2" href="/cn/2018.2/ScriptReference/Overlays.Overlay.html">2018.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2018.1" href="/cn/2018.1/ScriptReference/Overlays.Overlay.html">2018.1</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2017.4" href="/cn/2017.4/ScriptReference/Overlays.Overlay.html">2017.4</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2017.3" href="/cn/2017.3/ScriptReference/Overlays.Overlay.html">2017.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2017.2" href="/cn/2017.2/ScriptReference/Overlays.Overlay.html">2017.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2017.1" href="/cn/2017.1/ScriptReference/Overlays.Overlay.html">2017.1</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_560" href="/cn/560/ScriptReference/Overlays.Overlay.html">5.6</a>
+                      </li>
+                      <div class="versionsWithThisPage" style="display:none;">
+                        <li>
+                          <p>包含此页的版本：</p>
+                        </li>
+                      </div>
+                      <div class="versionsWithoutThisPage" style="display:none;">
+                        <li>
+                          <p>不含此页的版本：</p>
+                        </li>
+                      </div>
+                    </ul>
+                    <ul class="description">
+                      <li>
+                        <div class="supported-box">
+                        </div>受支持</li>
+                      <li>
+                        <div class="legacy-box">
+                        </div>旧版</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="clear">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="content-wrap" class="content-wrap opened-sidebar">
+        <div class="content-block">
+          <div class="content">
+            <div class="section">
+              <div class="mb20 clear" id="">
+                <h1 class="heading inherit">Overlay</h1>
+                <div class="clear">
+                </div>
+                <p class="cl mb0 left mr10">class in UnityEditor.Overlays</p>
+                <div class="clear">
+                </div>
+                <a href="" class="switch-link gray-btn sbtn left hide">切换到手册</a>
+                <div class="clear">
+                </div>
+              </div>
+              <div class="subsection">
+                <div class="signature">
+                  <div class="signature-CS sig-block">
+                    <span style="color:red;">
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="subsection">
+                <h2>描述</h2>
+                <p>Overlays are persistent and customizable panels and toolbars that are available within Editor Windows. Use Overlays to expose actions and tool options in a convenient and user-controllable way.</p>
+              </div>
+              <div class="subsection">
+                <p>
+        This is the base class that all overlays inherit from. To create an overlay, return a UnityEngine.UIElements.VisualElement.<br /><br />The simplest way to display an overlay is to use <a href="Overlays.OverlayAttribute.html">OverlayAttribute</a> and register a target <a href="EditorWindow.html">EditorWindow</a>.
+      </p>
+              </div>
+              <div class="subsection">
+        <pre class="codeExampleCS">using <a href="UnityEditor.html">UnityEditor</a>;
+using UnityEditor.Overlays;
+using UnityEngine.UIElements;<br /><br />// Specifying `<a href="Overlays.OverlayAttribute-editorWindowType.html">OverlayAttribute.editorWindowType</a>` tells the <a href="Overlays.OverlayCanvas.html">OverlayCanvas</a> to always show this <a href="Overlays.Overlay.html">Overlay</a> in the menu.
+[<a href="Overlays.Overlay.html">Overlay</a>(typeof(<a href="SceneView.html">SceneView</a>), "<a href="Selection.html">Selection</a> Count")]
+class SelectionCount : <a href="Overlays.Overlay.html">Overlay</a>
+{
+    Label m_Label;<br /><br />    public override VisualElement CreatePanelContent()
+    {
+        <a href="Selection-selectionChanged.html">Selection.selectionChanged</a> += () =&gt;
+        {
+            if (m_Label != null)
+                m_Label.text = $"<a href="Selection.html">Selection</a> Count {<a href="Selection-count.html">Selection.count</a>}";
+        };<br /><br />        return m_Label = new Label($"<a href="Selection.html">Selection</a> Count {<a href="Selection-count.html">Selection.count</a>}");
+    }
+}</pre>
+      </div>
+              <div class="subsection">
+                <p>
+        Overlays can be used in any <a href="EditorWindow.html">EditorWindow</a> that implements <a href="Overlays.ISupportsOverlays.html">ISupportsOverlays</a>. You can use <a href="Overlays.OverlayCanvas.Add.html">OverlayCanvas.Add</a> and <a href="Overlays.OverlayCanvas.Remove.html">OverlayCanvas.Remove</a> to add and remove overlays from the Overlays menu.
+      </p>
+              </div>
+              <div class="subsection">
+        <pre class="codeExampleCS">using <a href="Rendering.VirtualTexturing.System.html">System</a>;
+using <a href="UnityEditor.html">UnityEditor</a>;
+using UnityEditor.Overlays;
+using UnityEngine;
+using UnityEngine.UIElements;<br /><br />public class OverlayWindowExample : <a href="EditorWindow.html">EditorWindow</a>, <a href="Overlays.ISupportsOverlays.html">ISupportsOverlays</a>
+{
+    bool m_ShowOverlay;
+    InstanceOverlay m_Overlay;
+    
+    // InstanceOverlay is not registered as a persistent <a href="Overlays.Overlay.html">Overlay</a>, and must be instantiated through code. In contrast, 
+    // PersistentOverlay is registered with a target window type and will be available at any time.
+    // All <a href="Overlays.OverlayAttribute.html">OverlayAttribute</a> properties are optional. Here we specify that when this <a href="Overlays.Overlay.html">Overlay</a> is added to a window for the 
+    // first time, it should be visible by default. If `defaultDisplay` is set to it's default value of false, the 
+    // <a href="Overlays.Overlay.html">Overlay</a> will be available in the <a href="Overlays.Overlay.html">Overlay</a> <a href="Menu.html">Menu</a> when added to a window, but not visible.
+    [<a href="Overlays.Overlay.html">Overlay</a>(defaultDisplay = true)]
+    class InstanceOverlay : <a href="Overlays.Overlay.html">Overlay</a>
+    {
+        OverlayWindowExample m_Window;
+        public InstanceOverlay(OverlayWindowExample win) =&gt; m_Window = win;
+        public override VisualElement CreatePanelContent() =&gt; new Label() { text = $"Hello from {m_Window.name}!" };
+    }<br /><br />    // Persistent overlays are always available in the <a href="Overlays.Overlay.html">Overlay</a> <a href="Menu.html">Menu</a>. An <a href="Overlays.Overlay.html">Overlay</a> is made persistent by assigning the 
+    // `editorWindowType` property in `<a href="Overlays.OverlayAttribute.html">OverlayAttribute</a>`.
+    [<a href="Overlays.Overlay.html">Overlay</a>(typeof(OverlayWindowExample), "Persistent <a href="Overlays.Overlay.html">Overlay</a>", defaultDisplay = true)]
+    class PersistentOverlay : <a href="Overlays.Overlay.html">Overlay</a>
+    {
+        public override VisualElement CreatePanelContent() =&gt; new Label() { text = "Hello, I'm always available!" };
+    }<br /><br />    [<a href="MenuItem.html">MenuItem</a>("Window/<a href="Overlays.Overlay.html">Overlay</a> Window")]
+    static void Init() =&gt; GetWindow&lt;OverlayWindowExample&gt;();<br /><br />    void OnEnable() =&gt; m_Overlay = new InstanceOverlay(this);<br /><br />    void OnGUI()
+    {
+        <a href="EditorGUI.BeginChangeCheck.html">EditorGUI.BeginChangeCheck</a>();
+        m_ShowOverlay = <a href="EditorGUILayout.Toggle.html">EditorGUILayout.Toggle</a>("Show <a href="Overlays.Overlay.html">Overlay</a>", m_ShowOverlay);
+        if (<a href="EditorGUI.EndChangeCheck.html">EditorGUI.EndChangeCheck</a>())
+        {
+            if (m_ShowOverlay)
+                overlayCanvas.Add(m_Overlay);
+            else
+                overlayCanvas.Remove(m_Overlay);
+        }
+    }
+}</pre>
+      </div>
+              <div class="subsection">
+                <p>
+        Overlays can be shown in the active <a href="SceneView.html">SceneView</a> through <a href="SceneView.AddOverlayToActiveView.html">SceneView.AddOverlayToActiveView</a> and <a href="SceneView.RemoveOverlayFromActiveView.html">SceneView.RemoveOverlayFromActiveView</a>. This is useful for <a href="EditorTools.EditorTool.html">EditorTool</a>s that need to show UI.
+      </p>
+              </div>
+              <div class="subsection">
+        <pre class="codeExampleCS">using System.Linq;
+using UnityEngine;
+using <a href="UnityEditor.html">UnityEditor</a>;
+using UnityEditor.EditorTools;
+using UnityEditor.Overlays;
+using UnityEngine.UIElements;<br /><br />// A simple tool that moves the selected transforms using an <a href="Overlays.Overlay.html">Overlay</a> interface.
+[<a href="EditorTools.EditorTool.html">EditorTool</a>("Offset", typeof(<a href="Transform.html">Transform</a>))]
+public class OffsetTool : <a href="EditorTools.EditorTool.html">EditorTool</a>
+{
+    // By default, Overlays added to the canvas are not shown. Setting the `defaultDisplay` property ensures that the
+    // first time this <a href="Overlays.Overlay.html">Overlay</a> is added to a canvas it will be visible.
+    [<a href="Overlays.Overlay.html">Overlay</a>(defaultDisplay = true)]
+    class OffsetToolOverlay : <a href="Overlays.Overlay.html">Overlay</a>, <a href="Overlays.ITransientOverlay.html">ITransientOverlay</a>
+    {
+        <a href="Transform.html">Transform</a>[] selection;<br /><br />        public OffsetToolOverlay(<a href="Transform.html">Transform</a>[] targets) =&gt; selection = targets;<br /><br />        public override VisualElement CreatePanelContent()
+        {
+            var root = new VisualElement();
+            root.Add(new Button(() =&gt; Move(<a href="Vector3-right.html">Vector3.right</a>)) { text = "Move Right" });
+            root.Add(new Button(() =&gt; Move(<a href="Vector3-up.html">Vector3.up</a>)) { text = "Move Up" });
+            root.Add(new Button(() =&gt; Move(<a href="Vector3-forward.html">Vector3.forward</a>)) { text = "Move Forward" });
+            return root;
+        }<br /><br />        void Move(<a href="Vector3.html">Vector3</a> direction)
+        {
+            <a href="Undo.RecordObjects.html">Undo.RecordObjects</a>(selection, "Move <a href="Selection.html">Selection</a>");
+            foreach (var transform in selection)
+                transform.position += direction;
+        }<br /><br />        // Use the visible property to hide or show this instance from within the class.
+        public bool visible =&gt; true;
+    }<br /><br />    OffsetToolOverlay m_Overlay;<br /><br />    public override void OnActivated()
+    {
+        <a href="SceneView.AddOverlayToActiveView.html">SceneView.AddOverlayToActiveView</a>(m_Overlay = new OffsetToolOverlay(targets.Select(x =&gt; x as <a href="Transform.html">Transform</a>).ToArray()));
+    }<br /><br />    public override void OnWillBeDeactivated()
+    {
+        <a href="SceneView.RemoveOverlayFromActiveView.html">SceneView.RemoveOverlayFromActiveView</a>(m_Overlay);
+    }
+}
+</pre>
+      </div>
+              <div class="subsection">
+                <p>
+        To create an Overlay that is dockable in a toolbar, see <a href="Overlays.ToolbarOverlay.html">ToolbarOverlay</a>.
+      </p>
+              </div>
+              <div class="subsection">
+                <h2>静态变量</h2>
+                <table class="list">
+      <tr><td class="lbl"><a href="Overlays.Overlay-ussClassName.html">ussClassName</a></td><td class="desc">此类型元素的 USS 类名称。</td></tr>
+    </table>
+              </div>
+              <div class="subsection">
+                <h2>变量</h2>
+                <table class="list">
+      <tr><td class="lbl"><a href="Overlays.Overlay-collapsed.html">collapsed</a></td><td class="desc">Defines whether the overlay is in collapsed form.</td></tr>
+      <tr><td class="lbl"><a href="Overlays.Overlay-collapsedIcon.html">collapsedIcon</a></td><td class="desc">Defines a custom icon to use when that overlay is in collapsed form.</td></tr>
+      <tr><td class="lbl"><a href="Overlays.Overlay-containerWindow.html">containerWindow</a></td><td class="desc">EditorWindow the overlay is contained within.</td></tr>
+      <tr><td class="lbl"><a href="Overlays.Overlay-displayed.html">displayed</a></td><td class="desc">Shows or hides the overlay.</td></tr>
+      <tr><td class="lbl"><a href="Overlays.Overlay-displayName.html">displayName</a></td><td class="desc">Name of overlay used as title.</td></tr>
+      <tr><td class="lbl"><a href="Overlays.Overlay-floating.html">floating</a></td><td class="desc">Returns true if overlay is floating, returns false if overlay is docked in a corner or in a toolbar.</td></tr>
+      <tr><td class="lbl"><a href="Overlays.Overlay-floatingPosition.html">floatingPosition</a></td><td class="desc">Local position of closest overlay corner to closest dockposition when floating.</td></tr>
+      <tr><td class="lbl"><a href="Overlays.Overlay-id.html">id</a></td><td class="desc">Overlay unique ID.</td></tr>
+      <tr><td class="lbl"><a href="Overlays.Overlay-isInToolbar.html">isInToolbar</a></td><td class="desc">Returns true if overlay is docked in a toolbar.</td></tr>
+      <tr><td class="lbl"><a href="Overlays.Overlay-layout.html">layout</a></td><td class="desc">Describes the presentation mode for an Overlay.</td></tr>
+      <tr><td class="lbl"><a href="Overlays.Overlay-maxSize.html">maxSize</a></td><td class="desc">Maximum size of the Overlay.</td></tr>
+      <tr><td class="lbl"><a href="Overlays.Overlay-minSize.html">minSize</a></td><td class="desc">Minimum size of the Overlay.</td></tr>
+      <tr><td class="lbl"><a href="Overlays.Overlay-size.html">size</a></td><td class="desc">Size of the Overlay.</td></tr>
+    </table>
+              </div>
+              <div class="subsection">
+                <h2>公共函数</h2>
+                <table class="list">
+      <tr><td class="lbl"><a href="Overlays.Overlay.Close.html">Close</a></td><td class="desc">Remove the Overlay from its OverlayCanvas.</td></tr>
+      <tr><td class="lbl"><a href="Overlays.Overlay.CreateContent.html">CreateContent</a></td><td class="desc">Create a new VisualElement containing the contents of this Overlay.</td></tr>
+      <tr><td class="lbl"><a href="Overlays.Overlay.CreatePanelContent.html">CreatePanelContent</a></td><td class="desc">Implement this method to return your visual element content.</td></tr>
+      <tr><td class="lbl"><a href="Overlays.Overlay.OnCreated.html">OnCreated</a></td><td class="desc">OnCreated is invoked when an Overlay is instantiated in an Overlay Canvas.</td></tr>
+      <tr><td class="lbl"><a href="Overlays.Overlay.OnWillBeDestroyed.html">OnWillBeDestroyed</a></td><td class="desc">Called when an Overlay is about to be destroyed.</td></tr>
+      <tr><td class="lbl"><a href="Overlays.Overlay.Undock.html">Undock</a></td><td class="desc">If this Overlay is currently in a toolbar, it will be removed and return to a floating state.</td></tr>
+    </table>
+              </div>
+              <div class="subsection">
+                <h2>Events</h2>
+                <table class="list">
+      <tr><td class="lbl"><a href="Overlays.Overlay-collapsedChanged.html">collapsedChanged</a></td><td class="desc">Invoked when Overlay.collapsed value is changed.</td></tr>
+      <tr><td class="lbl"><a href="Overlays.Overlay-displayedChanged.html">displayedChanged</a></td><td class="desc">This callback is invoked when the Overlay.displayed value has been changed.</td></tr>
+      <tr><td class="lbl"><a href="Overlays.Overlay-floatingChanged.html">floatingChanged</a></td><td class="desc">Called when the value of floating has changed.</td></tr>
+      <tr><td class="lbl"><a href="Overlays.Overlay-floatingPositionChanged.html">floatingPositionChanged</a></td><td class="desc">This event is invoked when Overlay.floatingPosition is changed.</td></tr>
+      <tr><td class="lbl"><a href="Overlays.Overlay-layoutChanged.html">layoutChanged</a></td><td class="desc">Subscribe to this event to be notified when the Overlay.Layout property is modified.</td></tr>
+    </table>
+              </div>
+            </div>
+            <div class="section">
+              <div id="_content">
+              </div>
+            </div>
+            <div class="footer-wrapper">
+              <div class="footer clear">
+                <div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+                <div class="menu">
+                  <a href="https://learn.unity.com/">教程</a>
+                  <a href="https://answers.unity3d.com">社区答案</a>
+                  <a href="https://support.unity3d.com/hc/en-us">知识库</a>
+                  <a href="https://forum.unity3d.com">论坛</a>
+                  <a href="https://unity3d.com/asset-store">Asset Store</a>
+                  <a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a>
+                  <a href="https://unity.com/legal">法律条款</a>
+                  <a href="https://unity.com/legal/privacy-policy">隐私政策</a>
+                  <a href="https://unity.com/legal/cookie-policy">Cookie</a>
+                  <a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a>
+                  <div id="ot-sdk-btn-container">
+                    <a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

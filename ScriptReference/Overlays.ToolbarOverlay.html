@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-cn">
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:title" content="Overlays.ToolbarOverlay - Unity 脚本 API" />
+    <title>Overlays.ToolbarOverlay - Unity 脚本 API</title>
+    <meta name="description" content="&#xA;        ToolbarOverlay is an implementation of Overlay that provides a base for Overlays that can be placed in horizontal or vertical toolbars." />
+    <meta property="og:description" content="&#xA;        ToolbarOverlay is an implementation of Overlay that provides a base for Overlays that can be placed in horizontal or vertical toolbars." />
+    <meta name="author" content="Unity Technologies" />
+    <link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico" />
+    <link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png" />
+    <meta name="msapplication-TileColor" content="#222c37" />
+    <meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png" />
+    <script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true">
+    </script>
+    <script type="text/javascript">function OptanonWrapper() {}</script>
+    <script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script>
+    <script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script>
+    <script>
+      var docs_type = 'ScriptReference';
+      var lang = 'cn';
+      var page = 'Overlays.ToolbarOverlay';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script>
+    <script type="text/javascript" src="../StaticFiles/js/jquery.js">
+    </script>
+    <script type="text/javascript" src="../StaticFiles/js/core.js">
+    </script>
+    <script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js">
+    </script>
+    <script type="text/javascript" src="docdata/toc.js">
+    </script>
+    <script type="text/javascript" src="">
+    </script>
+    <script type="text/javascript" src="../StaticFiles/js/custom.js">
+    </script>
+    <script src="/StaticFilesConfig/feedback/feedback.js">
+    </script>
+    <link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css" />
+    <link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css" />
+    <link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/ScriptReference/Overlays.ToolbarOverlay.html" />
+    <link rel="alternate" href="https://docs.unity3d.com/en/2022.3/ScriptReference/Overlays.ToolbarOverlay.html" hreflang="en" />
+    <link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/ScriptReference/Overlays.ToolbarOverlay.html" hreflang="zh" />
+    <link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/ScriptReference/Overlays.ToolbarOverlay.html" hreflang="ja" />
+    <link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/ScriptReference/Overlays.ToolbarOverlay.html" hreflang="ko" />
+    <link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Overlays.ToolbarOverlay.html" hreflang="x-default" />
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <div id="header" class="header">
+        <div class="content">
+          <div class="spacer">
+            <div class="menu">
+              <div id="nav-open" for="nav-input">
+                <span>
+                </span>
+              </div>
+              <div class="logo">
+                <a href="./index.html">
+                </a>
+              </div>
+              <div class="search-form">
+                <form action="30_search.html" method="get" class="apisearch">
+                  <input type="text" name="q" placeholder="搜索脚本..." autosave="Unity Reference" results="5" class="sbox field" id="q">
+                  </input>
+                  <input type="submit" class="submit">
+                  </input>
+                </form>
+              </div>
+              <ul class="menu-items">
+                <li class="menu-item">
+                  <a href="../Manual/index.html" class="">手册</a>
+                </li>
+                <li class="menu-item">
+                  <a href="../ScriptReference/index.html" class="selected">脚本 API</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="more">
+            <div class="filler">
+            </div>
+            <ul>
+              <li>
+                <a href="https://unity3d.com/">
+                unity3d.com
+              </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="toolbar">
+        <div class="content">
+          <div class="version-switcher">
+            <div class="current toggle" data-target=".version-list">
+              <div class="version-number">
+                <div class="d-inline-block">
+          Version:
+          <b>2022.3</b></div>
+                <div class="d-inline-block arrow">
+                </div>
+              </div>
+            </div>
+            <div class="version-list" style="display:none;">
+              <ul class="versions">
+                <li class="supported">
+                  <a class="docs_version_url_2023.2" href="/cn/2023.2/ScriptReference/Overlays.ToolbarOverlay.html">2023.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2023.1" href="/cn/2023.1/ScriptReference/Overlays.ToolbarOverlay.html">2023.1</a>
+                </li>
+                <li class="supported">
+                  <a class="docs_version_url_2022.3" href="/cn/2022.3/ScriptReference/Overlays.ToolbarOverlay.html">2022.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2022.2" href="/cn/2022.2/ScriptReference/Overlays.ToolbarOverlay.html">2022.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2022.1" href="/cn/2022.1/ScriptReference/Overlays.ToolbarOverlay.html">2022.1</a>
+                </li>
+                <li class="supported">
+                  <a class="docs_version_url_2021.3" href="/cn/2021.3/ScriptReference/Overlays.ToolbarOverlay.html">2021.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2021.2" href="/cn/2021.2/ScriptReference/Overlays.ToolbarOverlay.html">2021.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2021.1" href="/cn/2021.1/ScriptReference/Overlays.ToolbarOverlay.html">2021.1</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2020.3" href="/cn/2020.3/ScriptReference/Overlays.ToolbarOverlay.html">2020.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2020.2" href="/cn/2020.2/ScriptReference/Overlays.ToolbarOverlay.html">2020.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2020.1" href="/cn/2020.1/ScriptReference/Overlays.ToolbarOverlay.html">2020.1</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2019.4" href="/cn/2019.4/ScriptReference/Overlays.ToolbarOverlay.html">2019.4</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2019.3" href="/cn/2019.3/ScriptReference/Overlays.ToolbarOverlay.html">2019.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2019.2" href="/cn/2019.2/ScriptReference/Overlays.ToolbarOverlay.html">2019.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2019.1" href="/cn/2019.1/ScriptReference/Overlays.ToolbarOverlay.html">2019.1</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2018.4" href="/cn/2018.4/ScriptReference/Overlays.ToolbarOverlay.html">2018.4</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2018.3" href="/cn/2018.3/ScriptReference/Overlays.ToolbarOverlay.html">2018.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2018.2" href="/cn/2018.2/ScriptReference/Overlays.ToolbarOverlay.html">2018.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2018.1" href="/cn/2018.1/ScriptReference/Overlays.ToolbarOverlay.html">2018.1</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2017.4" href="/cn/2017.4/ScriptReference/Overlays.ToolbarOverlay.html">2017.4</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2017.3" href="/cn/2017.3/ScriptReference/Overlays.ToolbarOverlay.html">2017.3</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2017.2" href="/cn/2017.2/ScriptReference/Overlays.ToolbarOverlay.html">2017.2</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_2017.1" href="/cn/2017.1/ScriptReference/Overlays.ToolbarOverlay.html">2017.1</a>
+                </li>
+                <li class="">
+                  <a class="docs_version_url_560" href="/cn/560/ScriptReference/Overlays.ToolbarOverlay.html">5.6</a>
+                </li>
+                <div class="versionsWithThisPage" style="display:none;">
+                  <li>
+                    <p>包含此页的版本：</p>
+                  </li>
+                </div>
+                <div class="versionsWithoutThisPage" style="display:none;">
+                  <li>
+                    <p>不含此页的版本：</p>
+                  </li>
+                </div>
+              </ul>
+              <ul class="description">
+                <li>
+                  <div class="supported-box">
+                  </div>受支持</li>
+                <li>
+                  <div class="legacy-box">
+                  </div>旧版</li>
+              </ul>
+            </div>
+          </div>
+          <ul class="nav-menu-items">
+            <li class="menu-item">
+              <a href="../Manual/index.html" class="">手册</a>
+            </li>
+            <li class="menu-item">
+              <a href="../ScriptReference/index.html" class="selected">脚本 API</a>
+            </li>
+          </ul>
+          <div class="lang-switcher">
+            <div class="current toggle" data-target=".lang-list">
+              <div class="lbl">语言:
+        <span class="b">中文</span></div>
+              <div class="arrow">
+              </div>
+            </div>
+            <div class="lang-list" style="display:none;">
+              <ul>
+                <li>
+                  <a data-lang="en" href="/2022.3/Documentation/ScriptReference/Overlays.ToolbarOverlay.html">English</a>
+                </li>
+                <li>
+                  <a data-lang="cn" href="/cn/2022.3/ScriptReference/Overlays.ToolbarOverlay.html">中文</a>
+                </li>
+                <li>
+                  <a data-lang="ja" href="/ja/2022.3/ScriptReference/Overlays.ToolbarOverlay.html">日本語</a>
+                </li>
+                <li>
+                  <a data-lang="kr" href="/kr/2022.3/ScriptReference/Overlays.ToolbarOverlay.html">한국어</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="master-wrapper" class="master-wrapper clear">
+      <div id="sidebar" class="sidebar hidden">
+        <div class="sidebar-wrap">
+          <div class="content">
+            <div class="sidebar-menu">
+              <div class="toc">
+                <h2>脚本 API</h2>
+                <div class="version-switcher">
+                  <div class="current toggle" data-target=".version-list">
+                    <div class="version-number">
+                      <div class="d-inline-block">
+          Version:
+          <b>2022.3</b></div>
+                      <div class="d-inline-block arrow">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="version-list" style="display:none;">
+                    <ul class="versions">
+                      <li class="supported">
+                        <a class="docs_version_url_2023.2" href="/cn/2023.2/ScriptReference/Overlays.ToolbarOverlay.html">2023.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2023.1" href="/cn/2023.1/ScriptReference/Overlays.ToolbarOverlay.html">2023.1</a>
+                      </li>
+                      <li class="supported">
+                        <a class="docs_version_url_2022.3" href="/cn/2022.3/ScriptReference/Overlays.ToolbarOverlay.html">2022.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2022.2" href="/cn/2022.2/ScriptReference/Overlays.ToolbarOverlay.html">2022.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2022.1" href="/cn/2022.1/ScriptReference/Overlays.ToolbarOverlay.html">2022.1</a>
+                      </li>
+                      <li class="supported">
+                        <a class="docs_version_url_2021.3" href="/cn/2021.3/ScriptReference/Overlays.ToolbarOverlay.html">2021.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2021.2" href="/cn/2021.2/ScriptReference/Overlays.ToolbarOverlay.html">2021.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2021.1" href="/cn/2021.1/ScriptReference/Overlays.ToolbarOverlay.html">2021.1</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2020.3" href="/cn/2020.3/ScriptReference/Overlays.ToolbarOverlay.html">2020.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2020.2" href="/cn/2020.2/ScriptReference/Overlays.ToolbarOverlay.html">2020.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2020.1" href="/cn/2020.1/ScriptReference/Overlays.ToolbarOverlay.html">2020.1</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2019.4" href="/cn/2019.4/ScriptReference/Overlays.ToolbarOverlay.html">2019.4</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2019.3" href="/cn/2019.3/ScriptReference/Overlays.ToolbarOverlay.html">2019.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2019.2" href="/cn/2019.2/ScriptReference/Overlays.ToolbarOverlay.html">2019.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2019.1" href="/cn/2019.1/ScriptReference/Overlays.ToolbarOverlay.html">2019.1</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2018.4" href="/cn/2018.4/ScriptReference/Overlays.ToolbarOverlay.html">2018.4</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2018.3" href="/cn/2018.3/ScriptReference/Overlays.ToolbarOverlay.html">2018.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2018.2" href="/cn/2018.2/ScriptReference/Overlays.ToolbarOverlay.html">2018.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2018.1" href="/cn/2018.1/ScriptReference/Overlays.ToolbarOverlay.html">2018.1</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2017.4" href="/cn/2017.4/ScriptReference/Overlays.ToolbarOverlay.html">2017.4</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2017.3" href="/cn/2017.3/ScriptReference/Overlays.ToolbarOverlay.html">2017.3</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2017.2" href="/cn/2017.2/ScriptReference/Overlays.ToolbarOverlay.html">2017.2</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_2017.1" href="/cn/2017.1/ScriptReference/Overlays.ToolbarOverlay.html">2017.1</a>
+                      </li>
+                      <li class="">
+                        <a class="docs_version_url_560" href="/cn/560/ScriptReference/Overlays.ToolbarOverlay.html">5.6</a>
+                      </li>
+                      <div class="versionsWithThisPage" style="display:none;">
+                        <li>
+                          <p>包含此页的版本：</p>
+                        </li>
+                      </div>
+                      <div class="versionsWithoutThisPage" style="display:none;">
+                        <li>
+                          <p>不含此页的版本：</p>
+                        </li>
+                      </div>
+                    </ul>
+                    <ul class="description">
+                      <li>
+                        <div class="supported-box">
+                        </div>受支持</li>
+                      <li>
+                        <div class="legacy-box">
+                        </div>旧版</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="clear">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="content-wrap" class="content-wrap opened-sidebar">
+        <div class="content-block">
+          <div class="content">
+            <div class="section">
+              <div class="mb20 clear" id="">
+                <h1 class="heading inherit">ToolbarOverlay</h1>
+                <div class="clear">
+                </div>
+                <p class="cl mb0 left mr10">class in UnityEditor.Overlays</p>
+                <p class="cl mb0 left mr10">/</p>
+                <p class="cl mb0 left">继承自：<a href="Overlays.Overlay.html" class="cl">Overlays.Overlay</a></p>
+                <br />
+                <p class="cl mb0 left">实现接口：<a href="Overlays.ICreateToolbar.html" class="cl">ICreateToolbar</a></p>
+                <div class="clear">
+                </div>
+                <a href="" class="switch-link gray-btn sbtn left hide">切换到手册</a>
+                <div class="clear">
+                </div>
+              </div>
+              <div class="subsection">
+                <div class="signature">
+                  <div class="signature-CS sig-block">
+                    <span style="color:red;">
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="subsection">
+                <h2>描述</h2>
+                <p>
+        <a href="Overlays.ToolbarOverlay.html">ToolbarOverlay</a> is an implementation of <a href="Overlays.Overlay.html">Overlay</a> that provides a base for Overlays that can be placed in horizontal or vertical toolbars.</p>
+              </div>
+              <div class="subsection">
+                <p>
+        The constructor for <a href="Overlays.ToolbarOverlay.html">ToolbarOverlay</a> accepts a list of IDs corresponding to UnityEditor.Toolbars.EditorToolbarElement::id.<br /><br />Toolbars are composed of collections of UnityEditor.Toolbars.EditorToolbarElement. In this way it is very simple to reuse elements to create customized toolbars.<br /><br />Toolbar overlays require specific styling, so in most cases it is preferable to inherit one of the predefined EditorToolbar types when creating Visual Elements. If custom UI is required, it is valid to inherit any UnityEngine.UIElements.VisualElement type and provide styling yourself.
+      </p>
+              </div>
+              <div class="subsection">
+        <pre class="codeExampleCS">using <a href="UnityEditor.html">UnityEditor</a>;
+using UnityEditor.Overlays;
+using UnityEditor.Toolbars;
+using UnityEngine;
+
+// [EditorToolbarElement(Identifier, EditorWindowType)] is used to register toolbar elements for use in <a href="Overlays.ToolbarOverlay.html">ToolbarOverlay</a>
+// implementations.
+[EditorToolbarElement(id, typeof(<a href="SceneView.html">SceneView</a>))]
+class CreateCubes : <a href="Toolbars.EditorToolbarButton.html">EditorToolbarButton</a>, <a href="Toolbars.IAccessContainerWindow.html">IAccessContainerWindow</a>
+{
+    // This ID is used to populate toolbar elements.
+    public const string id = "ExampleToolbar/Button";
+
+    // <a href="Toolbars.IAccessContainerWindow.html">IAccessContainerWindow</a> provides a way for toolbar elements to access the `<a href="EditorWindow.html">EditorWindow</a>` in which they exist.
+    // Here we use `containerWindow` to focus the camera on our newly instantiated objects after creation.
+    public <a href="EditorWindow.html">EditorWindow</a> containerWindow { get; set; }
+
+    // As this is ultimately just a VisualElement, it is appropriate to place initialization logic in the constructor.
+    // In this method you can also register to any additional events as required. Here we will just set up the basics:
+    // a tooltip, icon, and action.
+    public CreateCubes()
+    {
+        // A toolbar element can be either text, icon, or a combination of the two. Keep in mind that if a toolbar is
+        // docked horizontally the text will be clipped, so usually it's a good idea to specify an icon.
+        text = "Create Cubes";
+        icon = <a href="AssetDatabase.LoadAssetAtPath.html">AssetDatabase.LoadAssetAtPath</a>&lt;<a href="Texture2D.html">Texture2D</a>&gt;("Assets/CreateCubesIcon.png");
+
+        tooltip = "Instantiate some cubes in the scene.";
+        clicked += OnClick;
+    }
+
+    // This method will be invoked when the `CreateCubes` button is clicked.
+    void OnClick()
+    {
+        var parent = new <a href="GameObject.html">GameObject</a>("Cubes").transform;
+
+        // When writing editor tools don't forget to be a good citizen and implement <a href="Undo.html">Undo</a>!
+        <a href="Undo.RegisterCreatedObjectUndo.html">Undo.RegisterCreatedObjectUndo</a>(parent.gameObject, "Create Cubes in Sphere");
+
+        for (int i = 0; i &lt; 50; i++)
+        {
+            var cube = <a href="GameObject.CreatePrimitive.html">GameObject.CreatePrimitive</a>(<a href="PrimitiveType.Cube.html">PrimitiveType.Cube</a>).transform;
+
+            <a href="Undo.RegisterCreatedObjectUndo.html">Undo.RegisterCreatedObjectUndo</a>(cube.gameObject, "Create Cubes in Sphere");
+            cube.position = <a href="Random-insideUnitSphere.html">Random.insideUnitSphere</a> * 25;
+            cube.rotation = <a href="Quaternion.LookRotation.html">Quaternion.LookRotation</a>(<a href="Random-onUnitSphere.html">Random.onUnitSphere</a>);
+
+            <a href="Undo.SetTransformParent.html">Undo.SetTransformParent</a>(cube, parent, "Create Cubes in Sphere");
+            cube.SetParent(parent);
+        }
+
+        <a href="Selection-activeTransform.html">Selection.activeTransform</a> = parent;
+
+        if (containerWindow is <a href="SceneView.html">SceneView</a> view)
+            view.FrameSelected();
+    }
+}
+
+// Same as above, except this time we'll create a toggle + dropdown toolbar item.
+[EditorToolbarElement(id, typeof(<a href="SceneView.html">SceneView</a>))]
+class DropdownToggleExample : <a href="Toolbars.EditorToolbarDropdownToggle.html">EditorToolbarDropdownToggle</a>, <a href="Toolbars.IAccessContainerWindow.html">IAccessContainerWindow</a>
+{
+    public const string id = "ExampleToolbar/DropdownToggle";
+
+    // This property is specified by <a href="Toolbars.IAccessContainerWindow.html">IAccessContainerWindow</a> and is used to access the <a href="Overlays.Overlay.html">Overlay</a>'s <a href="EditorWindow.html">EditorWindow</a>.
+    public <a href="EditorWindow.html">EditorWindow</a> containerWindow { get; set; }
+    static int colorIndex = 0;
+    static readonly <a href="Color.html">Color</a>[] colors = new <a href="Color.html">Color</a>[] { <a href="Color-red.html">Color.red</a>, <a href="Color-green.html">Color.green</a>, <a href="Color-cyan.html">Color.cyan</a> };
+
+    DropdownToggleExample()
+    {
+        text = "<a href="Color.html">Color</a> Bar";
+        tooltip = "<a href="Display.html">Display</a> a color swatch in the top left of the scene view. Toggle on or off, and open the dropdown" +
+            "to change the color.";
+
+        // When the dropdown is opened, ShowColorMenu is invoked and we can create a popup menu.
+        dropdownClicked += ShowColorMenu;
+
+        // Subscribe to the <a href="SceneManagement.Scene.html">Scene</a> View OnGUI callback so that we can draw our color swatch.
+        <a href="SceneView-duringSceneGui.html">SceneView.duringSceneGui</a> += DrawColorSwatch;
+    }
+
+    void DrawColorSwatch(<a href="SceneView.html">SceneView</a> view)
+    {
+        // Test that this callback is for the <a href="SceneManagement.Scene.html">Scene</a> View that we're interested in, and also check if the toggle is on
+        // or off (value).
+        if (view != containerWindow || !value)
+            return;
+
+        <a href="Handles.BeginGUI.html">Handles.BeginGUI</a>();
+        <a href="GUI-color.html">GUI.color</a> = colors[colorIndex];
+        <a href="GUI.DrawTexture.html">GUI.DrawTexture</a>(new <a href="Rect.html">Rect</a>(8, 8, 120, 24), <a href="Texture2D-whiteTexture.html">Texture2D.whiteTexture</a>);
+        <a href="GUI-color.html">GUI.color</a> = <a href="Color-white.html">Color.white</a>;
+        <a href="Handles.EndGUI.html">Handles.EndGUI</a>();
+    }
+
+    // When the dropdown button is clicked, this method will create a popup menu at the mouse cursor position.
+    void ShowColorMenu()
+    {
+        var menu = new <a href="GenericMenu.html">GenericMenu</a>();
+        menu.AddItem(new <a href="GUIContent.html">GUIContent</a>("Red"), colorIndex == 0, () =&gt; colorIndex = 0);
+        menu.AddItem(new <a href="GUIContent.html">GUIContent</a>("Green"), colorIndex == 1, () =&gt; colorIndex = 1);
+        menu.AddItem(new <a href="GUIContent.html">GUIContent</a>("Blue"), colorIndex == 2, () =&gt; colorIndex = 2);
+        menu.ShowAsContext();
+    }
+}
+
+// All Overlays must be tagged with the <a href="Overlays.OverlayAttribute.html">OverlayAttribute</a>
+[<a href="Overlays.Overlay.html">Overlay</a>(typeof(<a href="SceneView.html">SceneView</a>), "Placement <a href="Tools.html">Tools</a>")]
+// <a href="IconAttribute.html">IconAttribute</a> provides a way to define an icon for when an <a href="Overlays.Overlay.html">Overlay</a> is in collapsed form. If not provided, the first
+// two letters of the <a href="Overlays.Overlay.html">Overlay</a> name will be used.
+[Icon("Assets/PlacementToolsIcon.png")]
+// Toolbar overlays must inherit `<a href="Overlays.ToolbarOverlay.html">ToolbarOverlay</a>` and implement a parameter-less constructor. The contents of a toolbar
+// are populated with string IDs, which are passed to the base constructor. IDs are defined by
+// <a href="Toolbars.EditorToolbarElementAttribute.html">EditorToolbarElementAttribute</a>.
+public class EditorToolbarExample : <a href="Overlays.ToolbarOverlay.html">ToolbarOverlay</a>
+{
+    // <a href="Overlays.ToolbarOverlay.html">ToolbarOverlay</a> implements a parameterless constructor, passing 2 <a href="Toolbars.EditorToolbarElementAttribute.html">EditorToolbarElementAttribute</a> IDs. This will
+    // create a toolbar overlay with buttons for the CreateCubes and DropdownToggleExample examples.
+    // This is the only code required to implement a toolbar overlay. Unlike panel overlays, the contents are defined
+    // as standalone pieces that will be collected to form a strip of elements.
+    EditorToolbarExample() : base(
+        CreateCubes.id,
+        DropdownToggleExample.id)
+    {}
+}
+</pre>
+      </div>
+              <div class="subsection">
+                <h2>变量</h2>
+                <table class="list">
+      <tr><td class="lbl"><a href="Overlays.ToolbarOverlay-toolbarElements.html">toolbarElements</a></td><td class="desc">Use toolbarElements to specify the contents of this Overlay.</td></tr>
+    </table>
+              </div>
+              <div class="subsection">
+                <h2>公共函数</h2>
+                <table class="list">
+      <tr><td class="lbl"><a href="Overlays.ToolbarOverlay.CreatePanelContent.html">CreatePanelContent</a></td><td class="desc">Creates the root VisualElement of the ToolbarOverlay's content in panel layout.</td></tr>
+    </table>
+              </div>
+              <div class="subsection">
+                <h2>继承的成员</h2>
+      <div class="subsection"><h2>静态变量</h2><table class="list">
+        <tr><td class="lbl"><a href="Overlays.Overlay-ussClassName.html">ussClassName</a></td><td class="desc">此类型元素的 USS 类名称。</td></tr>
+      </table></div>
+      <div class="subsection"><h2>变量</h2><table class="list">
+        <tr><td class="lbl"><a href="Overlays.Overlay-collapsed.html">collapsed</a></td><td class="desc">Defines whether the overlay is in collapsed form.</td></tr>
+        <tr><td class="lbl"><a href="Overlays.Overlay-collapsedIcon.html">collapsedIcon</a></td><td class="desc">Defines a custom icon to use when that overlay is in collapsed form.</td></tr>
+        <tr><td class="lbl"><a href="Overlays.Overlay-containerWindow.html">containerWindow</a></td><td class="desc">EditorWindow the overlay is contained within.</td></tr>
+        <tr><td class="lbl"><a href="Overlays.Overlay-displayed.html">displayed</a></td><td class="desc">Shows or hides the overlay.</td></tr>
+        <tr><td class="lbl"><a href="Overlays.Overlay-displayName.html">displayName</a></td><td class="desc">Name of overlay used as title.</td></tr>
+        <tr><td class="lbl"><a href="Overlays.Overlay-floating.html">floating</a></td><td class="desc">Returns true if overlay is floating, returns false if overlay is docked in a corner or in a toolbar.</td></tr>
+        <tr><td class="lbl"><a href="Overlays.Overlay-floatingPosition.html">floatingPosition</a></td><td class="desc">Local position of closest overlay corner to closest dockposition when floating.</td></tr>
+        <tr><td class="lbl"><a href="Overlays.Overlay-id.html">id</a></td><td class="desc">Overlay unique ID.</td></tr>
+        <tr><td class="lbl"><a href="Overlays.Overlay-isInToolbar.html">isInToolbar</a></td><td class="desc">Returns true if overlay is docked in a toolbar.</td></tr>
+        <tr><td class="lbl"><a href="Overlays.Overlay-layout.html">layout</a></td><td class="desc">Describes the presentation mode for an Overlay.</td></tr>
+        <tr><td class="lbl"><a href="Overlays.Overlay-maxSize.html">maxSize</a></td><td class="desc">Maximum size of the Overlay.</td></tr>
+        <tr><td class="lbl"><a href="Overlays.Overlay-minSize.html">minSize</a></td><td class="desc">Minimum size of the Overlay.</td></tr>
+        <tr><td class="lbl"><a href="Overlays.Overlay-size.html">size</a></td><td class="desc">Size of the Overlay.</td></tr>
+      </table></div>
+      
+      
+      
+      <div class="subsection"><h2>公共函数</h2><table class="list">
+        <tr><td class="lbl"><a href="Overlays.Overlay.Close.html">Close</a></td><td class="desc">Remove the Overlay from its OverlayCanvas.</td></tr>
+        <tr><td class="lbl"><a href="Overlays.Overlay.CreateContent.html">CreateContent</a></td><td class="desc">Create a new VisualElement containing the contents of this Overlay.</td></tr>
+        <tr><td class="lbl"><a href="Overlays.Overlay.OnCreated.html">OnCreated</a></td><td class="desc">OnCreated is invoked when an Overlay is instantiated in an Overlay Canvas.</td></tr>
+        <tr><td class="lbl"><a href="Overlays.Overlay.OnWillBeDestroyed.html">OnWillBeDestroyed</a></td><td class="desc">Called when an Overlay is about to be destroyed.</td></tr>
+        <tr><td class="lbl"><a href="Overlays.Overlay.Undock.html">Undock</a></td><td class="desc">If this Overlay is currently in a toolbar, it will be removed and return to a floating state.</td></tr>
+      </table></div>
+      
+      
+      
+      
+      <div class="subsection"><h2>Events</h2><table class="list">
+        <tr><td class="lbl"><a href="Overlays.Overlay-collapsedChanged.html">collapsedChanged</a></td><td class="desc">Invoked when Overlay.collapsed value is changed.</td></tr>
+        <tr><td class="lbl"><a href="Overlays.Overlay-displayedChanged.html">displayedChanged</a></td><td class="desc">This callback is invoked when the Overlay.displayed value has been changed.</td></tr>
+        <tr><td class="lbl"><a href="Overlays.Overlay-floatingChanged.html">floatingChanged</a></td><td class="desc">Called when the value of floating has changed.</td></tr>
+        <tr><td class="lbl"><a href="Overlays.Overlay-floatingPositionChanged.html">floatingPositionChanged</a></td><td class="desc">This event is invoked when Overlay.floatingPosition is changed.</td></tr>
+        <tr><td class="lbl"><a href="Overlays.Overlay-layoutChanged.html">layoutChanged</a></td><td class="desc">Subscribe to this event to be notified when the Overlay.Layout property is modified.</td></tr>
+      </table></div>
+      
+    </div>
+            </div>
+            <div class="section">
+              <div id="_content">
+              </div>
+            </div>
+            <div class="footer-wrapper">
+              <div class="footer clear">
+                <div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+                <div class="menu">
+                  <a href="https://learn.unity.com/">教程</a>
+                  <a href="https://answers.unity3d.com">社区答案</a>
+                  <a href="https://support.unity3d.com/hc/en-us">知识库</a>
+                  <a href="https://forum.unity3d.com">论坛</a>
+                  <a href="https://unity3d.com/asset-store">Asset Store</a>
+                  <a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a>
+                  <a href="https://unity.com/legal">法律条款</a>
+                  <a href="https://unity.com/legal/privacy-policy">隐私政策</a>
+                  <a href="https://unity.com/legal/cookie-policy">Cookie</a>
+                  <a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a>
+                  <div id="ot-sdk-btn-container">
+                    <a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

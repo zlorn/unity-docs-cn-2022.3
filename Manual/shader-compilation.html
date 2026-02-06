@@ -1,0 +1,301 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="着色器编译 - Unity 手册">
+<title>着色器编译 - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="每次构建项目时，Unity 编辑器都会编译构建所需的所有着色器：针对每个所需的图形 API 编译每个所需的着色器变体。">
+<meta property="og:description" content="每次构建项目时，Unity 编辑器都会编译构建所需的所有着色器：针对每个所需的图形 API 编译每个所需的着色器变体。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'shader-compilation';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/shader-compilation.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/shader-compilation.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/shader-compilation.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/shader-compilation.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/shader-compilation.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/shader-compilation.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/shader-compilation.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/shader-compilation.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/shader-compilation.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/shader-compilation.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/shader-compilation.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/shader-compilation.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/shader-compilation.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/shader-compilation.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/shader-compilation.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/shader-compilation.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/shader-compilation.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/shader-compilation.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/shader-compilation.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/shader-compilation.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/shader-compilation.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/shader-compilation.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/shader-compilation.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/shader-compilation.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/shader-compilation.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/shader-compilation.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/shader-compilation.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/shader-compilation.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/shader-compilation.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/shader-compilation.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/shader-compilation.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/shader-compilation.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/shader-compilation.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/shader-compilation.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/shader-compilation.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/shader-compilation.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/shader-compilation.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/shader-compilation.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/shader-compilation.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/shader-compilation.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/shader-compilation.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/shader-compilation.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/shader-compilation.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/shader-compilation.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/shader-compilation.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/shader-compilation.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/shader-compilation.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/shader-compilation.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/shader-compilation.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/shader-compilation.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/shader-compilation.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/shader-compilation.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/shader-compilation.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/shader-compilation.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/shader-compilation.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/shader-compilation.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/shader-compilation.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/shader-compilation.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="Shaders.html">着色器</a></li>
+<li><a href="ShadersOverview.html">着色器核心概念</a></li>
+<li>着色器编译</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="class-Shader.html"></a></span><div class="tip">着色器资源</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="AsynchronousShaderCompilation.html"></a></span><div class="tip">异步着色器编译</div>
+</div>
+</div></div>
+<h1>着色器编译</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<h2>概述</h2>
+
+<p>每次构建项目时，Unity 编辑器都会编译构建所需的所有着色器：针对每个所需的图形 API 编译每个所需的着色器变体。</p>
+
+<p>当您在 Unity 编辑器中工作时，编辑器不会提前编译所有内容。这是因为为每个图形 API 编译每个变体可能需要很长时间。</p>
+
+<p>相反，Unity 编辑器会这样做：</p>
+
+<ul>
+<li>当导入一个着色器资源时，会执行一些最小的处理（例如表面着色器生成）。</li>
+<li>当需要显示着色器变体时，它会检查 <code>Library/ShaderCache</code> 文件夹。</li>
+<li>如果找到使用相同源代码的先前编译的着色器变体，则会使用该着色器变体。</li>
+<li>如果没有找到匹配项，则编译所需的着色器变体并将结果保存到缓存中。
+
+<ul>
+<li>
+<strong>注意：</strong>如果您启用<a href="AsynchronousShaderCompilation.html">异步着色器编译</a>，它在后台执行此操作并同时显示占位着色器。</li>
+</ul>
+</li>
+</ul>
+
+<p>着色器编译使用名为 <code>UnityShaderCompiler</code> 的进程。可启动多个 <code>UnityShaderCompiler</code> 编译器进程（通常在机器中每个 CPU 核心对应一个），这样在播放器构建时就可以并行完成着色器编译。当编辑器不编译着色器时，编译器进程不执行任何操作，也不消耗计算机资源。</p>
+
+<p>如果有许多经常更改的着色器，着色器缓存文件夹可能会变得非常大。删除此文件夹是安全的；只会导致 Unity 重新编译着色器变体。</p>
+
+<p>在播放器构建时，所有“尚未编译”的着色器变体都将被编译，因此即使编辑器不会使用这些着色器变体，它们也会存在于游戏数据中。</p>
+
+<h2>不同的着色器编译器</h2>
+
+<p>不同平台使用不同的着色器编译器来编译<a href="SL-ShaderPrograms.html">着色器程序</a>，如下所述：</p>
+
+<ul>
+<li>使用 DirectX 的平台会使用 Microsoft 的 FXC HLSL 编译器。</li>
+<li>使用 OpenGL (Core &amp; ES) 的平台会使用 Microsoft 的 FXC HLSL 编译器，然后使用 <a href="https://github.com/Unity-Technologies/HLSLcc">HLSLcc</a> 将字节代码转换为 GLSL。</li>
+<li>使用 Metal 的平台会使用 Microsoft 的 FXC HLSL 编译器，然后使用 <a href="https://github.com/Unity-Technologies/HLSLcc">HLSLcc</a> 将字节代码转换为 Metal。</li>
+<li>使用 Vulkan 的平台会使用 Microsoft 的 FXC HLSL 编译器，然后使用 <a href="https://github.com/Unity-Technologies/HLSLcc">HLSLcc</a> 将字节代码转换为 SPIR-V。</li>
+<li>其他平台（如游戏主机平台）使用其各自的编译器。</li>
+<li>
+<a href="SL-SurfaceShaders.html">表面着色器</a>使用 HLSL 和 <a href="https://icculus.org/mojoshader/">MojoShader</a> 来完成代码生成分析步骤。</li>
+</ul>
+
+<p>使用 <a href="SL-PragmaDirectives.html">pragma 指令</a>可以配置各种着色器编译器设置。</p>
+
+<p><a name="preprocessor"></a></p>
+
+<p><a name="caching-shader-preprocessor"></a></p>
+
+<h2>缓存着色器预处理器</h2>
+
+<p>着色器编译涉及几个步骤。首先，需要进行预处理。在此步骤中，一个名为<strong>预处理器</strong>的程序为编译器准备着色器源代码。</p>
+
+<p>In previous versions of Unity, the Editor used the preprocessor provided by the shader compiler for the current platform. Now, Unity uses its own preprocessor, also called the Caching Shader Preprocessor.</p>
+
+<p>The Caching Shader Preprocessor is optimized for faster shader import and compilation. It works by caching intermediate preprocessing data, so the Editor only needs to parse include files when their contents change, which makes compiling multiple variants of the same shader more efficient.</p>
+
+<p>有关缓存着色器预处理器和以前行为之间差异的详细信息，请参阅 Unity 论坛：<a href="https://forum.unity.com/threads/new-shader-preprocessor.790328/">新着色器预处理器 (New shader preprocessor)</a>。</p>
+
+<h2>AssetBundles and shaders</h2>
+
+<p>If you use <a href="AssetBundlesIntro.html">AssetBundles</a>, Unity might compile duplicate shaders if you reference one shader in two or more objects. For example:</p>
+
+<ul>
+<li>A material in an AssetBundle and a material in a built scene reference the same shader.</li>
+<li>Multiple AssetBundles contain materials that reference the same shader outside an AssetBundle.</li>
+</ul>
+
+<p>This can increase the memory and storage space shaders use, and break <a href="DrawCallBatching.html">draw call batching</a>.</p>
+
+<p>To avoid this, you can use the following approaches:</p>
+
+<ul>
+<li>Load an AssetBundle that contains all your shaders first, then load and instantiate AssetBundle assets that reference the shaders. See <a href="AssetBundles-Dependencies.html">AssetBundle Dependencies</a> for more information.</li>
+<li>Structure your AssetBundles to minimise duplication. See <a href="AssetBundles-Troubleshooting.html#asset-duplication">Asset Duplication</a> for more information.</li>
+</ul>
+
+<p>You can add materials and <a href="shader-variant-collections.html">shader variant collections</a> to an AssetBundle to specify which shader variants to include.</p>
+
+<p>If you create a single AssetBundle, some shaders might stay in memory even if they’re no longer needed, because you cannot partially unload an AssetBundle. You can avoid this by creating a separate AssetBundle for each group of shaders you use together, for example a ‘forest’ AssetBundle and a ‘desert’ AssetBundle. See <a href="AssetBundles-Native.html#managing-loaded-assetbundles">Managing loaded AssetBundles</a>, or <a href="https://docs.unity3d.com/Packages/com.unity.addressables@1.21/manual/MemoryManagement.html#understanding-when-memory-is-cleared">Memory management in the Addressables system</a> if you use Addressables.</p>
+
+<p>You can use the <a href="AssetBundles-Browser.html">Asset Bundle Browser</a> to check which assets in AssetBundles depend on other assets, and find out if any assets are duplicated. </p>
+
+<h2>构建时剥离</h2>
+
+<p>While building the game, Unity can detect that some of the internal shader variants are not used by the game, and exclude (“strip”) them from build data. For more information, see <a href="shader-variants.html">Shader variants</a>.</p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="class-Shader.html"></a></span><div class="tip">着色器资源</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="AsynchronousShaderCompilation.html"></a></span><div class="tip">异步着色器编译</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

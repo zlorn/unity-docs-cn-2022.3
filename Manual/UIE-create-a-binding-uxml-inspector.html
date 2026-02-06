@@ -1,0 +1,404 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Create a binding with the Inspector - Unity 手册">
+<title>Create a binding with the Inspector - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/uie_bind_inspector.png">
+<meta name="description" content="Version: 2021.3+">
+<meta property="og:description" content="Version: 2021.3+">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'UIE-create-a-binding-uxml-inspector';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/UIE-create-a-binding-uxml-inspector.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/UIE-create-a-binding-uxml-inspector.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/UIE-create-a-binding-uxml-inspector.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/UIE-create-a-binding-uxml-inspector.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/UIE-create-a-binding-uxml-inspector.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/UIE-create-a-binding-uxml-inspector.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIE-create-a-binding-uxml-inspector.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIE-create-a-binding-uxml-inspector.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIE-create-a-binding-uxml-inspector.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIE-create-a-binding-uxml-inspector.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-create-a-binding-uxml-inspector.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-create-a-binding-uxml-inspector.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-create-a-binding-uxml-inspector.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-create-a-binding-uxml-inspector.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-create-a-binding-uxml-inspector.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-create-a-binding-uxml-inspector.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-create-a-binding-uxml-inspector.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-create-a-binding-uxml-inspector.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-create-a-binding-uxml-inspector.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-create-a-binding-uxml-inspector.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-create-a-binding-uxml-inspector.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-create-a-binding-uxml-inspector.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-create-a-binding-uxml-inspector.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-create-a-binding-uxml-inspector.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-create-a-binding-uxml-inspector.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-create-a-binding-uxml-inspector.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-create-a-binding-uxml-inspector.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-create-a-binding-uxml-inspector.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-create-a-binding-uxml-inspector.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-create-a-binding-uxml-inspector.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/UIE-create-a-binding-uxml-inspector.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/UIE-create-a-binding-uxml-inspector.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/UIE-create-a-binding-uxml-inspector.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/UIE-create-a-binding-uxml-inspector.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIE-create-a-binding-uxml-inspector.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIE-create-a-binding-uxml-inspector.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIE-create-a-binding-uxml-inspector.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIE-create-a-binding-uxml-inspector.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-create-a-binding-uxml-inspector.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-create-a-binding-uxml-inspector.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-create-a-binding-uxml-inspector.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-create-a-binding-uxml-inspector.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-create-a-binding-uxml-inspector.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-create-a-binding-uxml-inspector.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-create-a-binding-uxml-inspector.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-create-a-binding-uxml-inspector.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-create-a-binding-uxml-inspector.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-create-a-binding-uxml-inspector.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-create-a-binding-uxml-inspector.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-create-a-binding-uxml-inspector.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-create-a-binding-uxml-inspector.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-create-a-binding-uxml-inspector.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-create-a-binding-uxml-inspector.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-create-a-binding-uxml-inspector.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-create-a-binding-uxml-inspector.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-create-a-binding-uxml-inspector.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-create-a-binding-uxml-inspector.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-create-a-binding-uxml-inspector.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UIToolkits.html">Create user interfaces (UI)</a></li>
+<li><a href="UIElements.html">UI 工具包</a></li>
+<li><a href="UIE-support-for-editor-ui.html">Support for Editor UI</a></li>
+<li><a href="UIE-Binding.html">SerializedObject data binding</a></li>
+<li><a href="UIE-binding-examples.html">Binding examples</a></li>
+<li>Create a binding with the Inspector</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-create-a-binding-uxml-bind.html"></a></span><div class="tip">Bind with UXML and C# script</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-bind-to-nested-properties.html"></a></span><div class="tip">Bind to nested properties</div>
+</div>
+</div></div>
+<h1>Create a binding with the Inspector</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p><strong>Version</strong>: 2021.3+</p>
+
+<p>The example demonstrates how to create bindings among a custom Inspector, a custom Editor, and serialized objects. </p>
+
+<h2>Example overview</h2>
+
+<p>This example creates the following:</p>
+
+<ul>
+<li>A custom Inspector UI component with two fields that bind to a GameObject’s name and the scale of a USS transform.</li>
+<li>A custom Editor window that creates the same bindings inside an <code>InspectorElement</code>.</li>
+</ul>
+
+<figure>
+<img src="../uploads/Main/uie_bind_inspector.png" alt="">
+</figure>
+
+<p>You can find the completed files that this example creates in this <a href="https://github.com/Unity-Technologies/ui-toolkit-manual-code-examples/tree/master/create-a-binding-inspector">GitHub repository</a>.</p>
+
+<h2>先决条件</h2>
+
+<p>This guide is for developers familiar with the Unity Editor, UI Toolkit, and C# scripting. Before you start, get familiar with the following:</p>
+
+<ul>
+<li><a href="UIE-VisualTree.html">Visual Tree</a></li>
+<li><a href="UIE-UXML.html">UXML</a></li>
+<li><a href="UIE-USS.html">USS</a></li>
+<li><a href="../ScriptReference/Editor.CreateInspectorGUI.html"><code>CreateInspectorGUI</code></a></li>
+<li><a href="../ScriptReference/UIElements.InspectorElement.html"><code>InspectorElement</code></a></li>
+</ul>
+
+<h2>Define the custom Inspector component</h2>
+
+<p>Define a custom Inspector UI class called <code>TankScript</code>, style it with USS, and set the visual elements and the binding path in UXML. </p>
+
+<ol>
+<li><p>In your Project window, create a folder named <code>create-a-binding-inspector</code> to store all your files.</p></li>
+<li>
+<p>Create a C# script named <code>TankScript.cs</code> and replace its content with the following:</p>
+
+<pre><code class="lang-csharp">using UnityEngine;
+
+[ExecuteInEditMode]
+public class TankScript : MonoBehaviour
+{
+    public string tankName = "Tank";
+    public float tankSize = 1;
+
+    private void Update()
+    {
+        gameObject.name = tankName;
+        gameObject.transform.localScale = new Vector3(tankSize, tankSize, tankSize);
+    }
+}
+</code></pre>
+</li>
+<li><p>In the <strong>create-a-binding-inspector</strong> folder, create a folder named <code>Editor</code>.</p></li>
+<li>
+<p>In the <strong>Editor</strong> folder, create a USS file named <code>tank_inspector_styles.uss</code> and replace its contents with the following:</p>
+
+<pre><code class="lang-css">.container {
+    background-color: rgb(80, 80, 80);
+    flex-direction: column;
+}
+Label {
+    background-color: rgb(80, 80, 80);
+}
+TextField:hover {
+    background-color: rgb(255, 255, 0);
+}
+FloatField {
+    background-color: rgb(0, 0, 255);
+}
+</code></pre>
+</li>
+<li>
+<p>Create a UXML file named <code>tank_inspector_uxml.uxml</code> and replace its contents with the following:</p>
+
+<pre><code class="lang-xml">&lt;UXML xmlns="UnityEngine.UIElements" xmlns:ue="UnityEditor.UIElements"&gt;
+    &lt;Style src="tank_inspector_styles.uss" /&gt;
+    &lt;VisualElement name="row" class="container"&gt;
+        &lt;Label text="Tank Script - Custom Inspector" /&gt;
+        &lt;ue:PropertyField binding-path="tankName" name="tank-name-field" /&gt;
+        &lt;ue:PropertyField binding-path="tankSize" name="tank-size-field" /&gt;
+    &lt;/VisualElement&gt;
+&lt;/UXML&gt;
+</code></pre>
+</li>
+</ol>
+
+<h2>Create the Inspector UI with binding</h2>
+
+<p>Create a C# script to register the custom Inspector for <code>TankScript</code>. You don’t need to call the <code>Bind()</code> method as binding in the Inspector window is implicit.</p>
+
+<ol>
+<li>
+<p>Create a C# script named <code>TankEditor.cs</code> and replace its contents with the following:</p>
+
+<pre><code class="lang-cs">using UnityEditor;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+[CustomEditor(typeof(TankScript))]
+public class TankEditor : Editor
+{
+    [SerializeField]
+    VisualTreeAsset visualTree;
+
+    public override VisualElement CreateInspectorGUI()
+    {
+        var uxmlVE = visualTree.CloneTree();
+        return uxmlVE;
+    }
+}
+</code></pre>
+</li>
+<li><p>In the Project window, select <code>TankEditor.cs</code>.</p></li>
+<li><p>Drag <code>tank_inspector_uxml.uxml</code> to <strong>Visual Tree</strong> in the Inspector.</p></li>
+<li><p>Drag <code>tank_inspector_styles.uss</code> to <strong>Style Sheet</strong> in the Inspector.</p></li>
+</ol>
+
+<h2>Test the first binding</h2>
+
+<ol>
+<li>In Unity, add an empty GameObject to a scene.</li>
+<li>Select the GameObject and drag <code>TankScript.cs</code> to <strong>Add Component</strong> in the Inspector. This generates the <strong>Tank Script</strong> component in the Inspector.</li>
+<li>In <strong>Tank Script</strong>, you can change the name of the Tank in the <strong>Tank Name</strong> box, and change the Transform scale value in the <strong>Tank Size</strong> box.</li>
+</ol>
+
+<h2>Bind with <code>InspectorElement</code>
+</h2>
+
+<p>Create a custom Editor window with two fields that bind to the <code>TankScript</code> object. Create a C# script that calls the <a href="../ScriptReference/UIElements.InspectorElement-ctor.html"><code>InspectorElement</code> constructor</a>. The <a href="../ScriptReference/UIElements.InspectorElement.html"><code>InspectorElement</code></a> creates the UI and automatically binds the UI to objects.</p>
+
+<ol>
+<li>
+<p>Create a C# file named <code>SimpleBindingExampleInspectorElement.cs</code> and replace its contents with the following:</p>
+
+<pre><code class="lang-cs">using UnityEditor;
+using UnityEngine;
+using UnityEditor.UIElements;
+    
+namespace UIToolkitExamples
+{
+    public class SimpleBindingExampleInspectorElement : EditorWindow
+    {
+        [MenuItem("Window/UIToolkitExamples/Simple Binding Example Inspector Element")]
+        public static void ShowDefaultWindow()
+        {
+            var wnd = GetWindow&lt;SimpleBindingExampleInspectorElement&gt;();
+            wnd.titleContent = new GUIContent("Simple Binding with Inspector Element");
+        }
+    
+        TankScript m_Tank;
+        public void OnEnable()
+        {
+            m_Tank = FindObjectOfType&lt;TankScript&gt;();
+            if (m_Tank == null)
+                return;
+    
+            var inspector = new InspectorElement(m_Tank);
+            rootVisualElement.Add(inspector);
+        }
+    }
+}
+</code></pre>
+</li>
+</ol>
+
+<h2>Test the second binding</h2>
+
+<ol>
+<li>In Unity, select <strong>Window</strong> &gt; <strong>UIToolkitExamples</strong> &gt; <strong>Simple Binding Example Inspector Element</strong>.</li>
+<li>In the Editor window, if you change the values in the fields, the values in the Inspector change, and vice versa.</li>
+</ol>
+
+<h2>其他资源</h2>
+
+<ul>
+<li><a href="UIE-Binding.html">SerializedObject data binding</a></li>
+<li><a href="UIE-bindable-elements.html">Bindable elements</a></li>
+<li><a href="UIE-binding-data-type-conversion.html">Binding data type conversion</a></li>
+<li><a href="UIE-binding-implementation-details.html">Implementation details</a></li>
+<li><a href="UIE-binding-examples.html">Binding examples</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-create-a-binding-uxml-bind.html"></a></span><div class="tip">Bind with UXML and C# script</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-bind-to-nested-properties.html"></a></span><div class="tip">Bind to nested properties</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

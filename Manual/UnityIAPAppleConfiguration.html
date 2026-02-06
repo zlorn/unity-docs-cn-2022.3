@@ -1,0 +1,385 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="针对 Apple App Store 和 Mac App Store 进行配置 - Unity 手册">
+<title>针对 Apple App Store 和 Mac App Store 进行配置 - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/IAPAppleImage0.png">
+<meta name="description" content="本指南介绍如何建立 Unity 游戏与应用内购 (IAP) 商店进行交互所需的数字记录和关系。本指南针对的是 Unity IAP 购买 API。">
+<meta property="og:description" content="本指南介绍如何建立 Unity 游戏与应用内购 (IAP) 商店进行交互所需的数字记录和关系。本指南针对的是 Unity IAP 购买 API。">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'UnityIAPAppleConfiguration';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/UnityIAPAppleConfiguration.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/UnityIAPAppleConfiguration.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/UnityIAPAppleConfiguration.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/UnityIAPAppleConfiguration.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/UnityIAPAppleConfiguration.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/UnityIAPAppleConfiguration.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UnityIAPAppleConfiguration.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UnityIAPAppleConfiguration.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UnityIAPAppleConfiguration.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UnityIAPAppleConfiguration.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UnityIAPAppleConfiguration.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UnityIAPAppleConfiguration.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UnityIAPAppleConfiguration.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UnityIAPAppleConfiguration.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UnityIAPAppleConfiguration.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UnityIAPAppleConfiguration.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UnityIAPAppleConfiguration.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UnityIAPAppleConfiguration.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UnityIAPAppleConfiguration.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UnityIAPAppleConfiguration.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UnityIAPAppleConfiguration.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UnityIAPAppleConfiguration.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UnityIAPAppleConfiguration.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UnityIAPAppleConfiguration.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UnityIAPAppleConfiguration.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UnityIAPAppleConfiguration.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UnityIAPAppleConfiguration.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UnityIAPAppleConfiguration.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UnityIAPAppleConfiguration.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UnityIAPAppleConfiguration.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/UnityIAPAppleConfiguration.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/UnityIAPAppleConfiguration.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/UnityIAPAppleConfiguration.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/UnityIAPAppleConfiguration.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UnityIAPAppleConfiguration.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UnityIAPAppleConfiguration.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UnityIAPAppleConfiguration.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UnityIAPAppleConfiguration.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UnityIAPAppleConfiguration.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UnityIAPAppleConfiguration.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UnityIAPAppleConfiguration.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UnityIAPAppleConfiguration.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UnityIAPAppleConfiguration.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UnityIAPAppleConfiguration.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UnityIAPAppleConfiguration.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UnityIAPAppleConfiguration.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UnityIAPAppleConfiguration.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UnityIAPAppleConfiguration.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UnityIAPAppleConfiguration.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UnityIAPAppleConfiguration.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UnityIAPAppleConfiguration.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UnityIAPAppleConfiguration.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UnityIAPAppleConfiguration.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UnityIAPAppleConfiguration.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UnityIAPAppleConfiguration.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UnityIAPAppleConfiguration.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UnityIAPAppleConfiguration.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UnityIAPAppleConfiguration.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UnityServices.html">Unity 服务</a></li>
+<li><a href="UnityIAP.html">﻿Unity IAP</a></li>
+<li><a href="UnityIAPSettingUp.html">Setting up Unity IAP</a></li>
+<li>针对 Apple App Store 和 Mac App Store 进行配置</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UnityIAPSettingUp.html"></a></span><div class="tip">Setting up Unity IAP</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UnityIAPGoogleConfiguration.html"></a></span><div class="tip">针对 Google Play 应用商店进行配置</div>
+</div>
+</div></div>
+<h1>针对 Apple App Store 和 Mac App Store 进行配置</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<h2>简介</h2>
+
+<p>本指南介绍如何建立 Unity 游戏与应用内购 (IAP) 商店进行交互所需的数字记录和关系。本指南针对的是 <a href="UnityIAP.html">Unity IAP</a> 购买 API。</p>
+
+<p>应用内购 (IAP) 是通过资金交易购买数字商品的过程。一个平台的应用商店会允许购买代表数字商品的产品。这些商品有一个标识符（通常是字符串数据类型）。商品的类型可表示其耐用性：_订阅<em>、</em>消耗品_（可以多次购买）以及_非消耗品_（只能购买一次）是最常见的类型。</p>
+
+<h2>Apple App Store</h2>
+
+<h3>准备开始</h3>
+
+<ol>
+<li><p>Write a game implementing Unity IAP. Refer to <a href="UnityIAPInitialization.html">Unity IAP Initialization</a>.</p></li>
+<li>
+<p>准备好游戏的商品标识符以便稍后在 iTunes Connect 中使用。</p>
+
+<figure>
+<img src="../uploads/Main/IAPAppleImage0.png" alt="">
+</figure>
+</li>
+</ol>
+
+<h3>注册应用程序</h3>
+
+<ol>
+<li><p>在 <a href="https://developer.apple.com/account">Apple Developer Center</a> 中，导航至相应的标识符 (Identifiers) 部分。</p></li>
+<li>
+<p>添加新的 App ID 以便向 Apple 创建基本应用程序实体。</p>
+
+<p><strong>NOTE:</strong> Use an Explicit App ID. You cannot use Wildcard App IDs (com.example.*) for applications that use In-App Purchases. </p>
+
+<p><strong>注意：</strong>在 Developer Center 中创建 App ID 后，即可在 iTunes Connect 中使用此 App ID。</p>
+
+<figure>
+<img src="../uploads/Main/IAPAppleImage1.png" alt="">
+</figure>
+</li>
+<li>
+<p>导航至 <a href="https://itunesconnect.apple.com">iTunes Connect</a>，然后创建一个应用程序，从而建立应用商店与您的游戏之间的关系。</p>
+
+<figure>
+<img src="../uploads/Main/IAPAppleImage2.png" alt="">
+</figure>
+</li>
+<li>
+<p>将新创建的 App ID 用作该应用的 Bundle ID。</p>
+
+<figure>
+<img src="../uploads/Main/IAPAppleImage3.png" alt="">
+</figure>
+</li>
+</ol>
+
+<h3>添加 IAP</h3>
+
+<ol>
+<li>
+<p>选择 <strong>Features</strong>，然后使用加号 (“+”) 按钮添加新的应用内购 (In-App Purchase)。</p>
+
+<figure>
+<img src="../uploads/Main/IAPAppleImage4.png" alt="">
+</figure>
+</li>
+<li>
+<p>选择<a href="UnityIAPDefiningProducts.html">商品类型</a>。</p>
+
+<figure>
+<img src="../uploads/Main/IAPAppleImage5.jpg" alt="">
+</figure>
+</li>
+<li>
+<p>指定商品标识符 (Product Identifier)，并根据要求填写其他字段。</p>
+
+<p><strong>Note</strong>: The “Product ID” here is the same identifier used in the game source code, added to the Unity IAP ConfigurationBuilder instance by using <strong>AddProduct()</strong> or <strong>AddProducts()</strong>. </p>
+
+<p><strong>Note</strong>: When targeting multiple Apple device groups (for example, shipping on both iOS and Mac) Apple requires usage of different, unique product identifiers for each distinct device group. Use Unity IAP’s Purchasing.IDs class and define a one-to-many mapping Product IDs to the store-specific identifiers, and pass that mapping in when initializing IAP. </p>
+
+<figure>
+<img src="../uploads/Main/IAPAppleImage6.jpg" alt="">
+</figure>
+</li>
+<li>
+<p>结果：</p>
+
+<figure>
+<img src="../uploads/Main/IAPAppleImage7.png" alt="">
+</figure>
+</li>
+</ol>
+
+<h3>测试 IAP</h3>
+
+<ol>
+<li>
+<p>Create <strong>Sandbox Testers</strong> using iTunes Connect for use on your test device’s iTunes Account. To do this, go to <strong>iTunes Connect &gt; Users and Roles</strong>, and choose the plus (“+”) button. You must review <a href="https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/SettingUpUserAccounts.html#/apple_ref/doc/uid/TP40011225-CH25-SW9">Apple’s Sandbox Tester documentation</a> as there are several additional important usage notes, and you must use a real email address to create Testers. </p>
+
+<p><strong>Note</strong>: For more information, refer to the <a href="UnityIAPiOSMAS.html">iOS and Mac App Store guides</a>. </p>
+
+<p><strong>Tip</strong>: To simplify managing the email address, use an email service capable of sub-addressing (emailaccount+subaddress@example.com) such as Gmail, iCloud, and Outlook.com. This allows one email account to receive email for multiple sub-addresses. </p>
+
+<figure>
+<img src="../uploads/Main/IAPAppleImage8.png" alt="">
+</figure>
+</li>
+<li>
+<p>Complete the user creation wizard. </p>
+
+<figure>
+<img src="../uploads/Main/IAPAppleImage9.png" alt="">
+</figure>
+</li>
+<li>
+<p>Build the Xcode project for your game by using Unity.</p>
+
+<p><strong>Note</strong>: Ensure the Bundle Identifier in Unity (<strong>Edit</strong> &gt; <strong>Project Settings</strong>, then select the <strong>Other Settings</strong> category, and navigate to the <strong>Bundle Identifier</strong> section) matches that used in iTunes Connect.</p>
+</li>
+<li>
+<p>In your game’s Xcode project, ensure the Team (Project Navigator &gt; your game Target &gt; General &gt; Identity &gt; Team) is set to that of your Apple Developer account.</p>
+
+<figure>
+<img src="../uploads/Main/IAPAppleImage10.png" alt="">
+</figure>
+</li>
+</ol>
+
+<h4>对于 iOS</h4>
+
+<ol>
+<li>
+<p>使用目标 iOS 设备来注销任何现有的 Apple ID 帐户。稍后仅在应用程序提示时再以沙盒测试者 (Sandbox Tester) 身份登录。任何后续购买都通过 Apple 沙盒 (Apple Sandbox) 而不是生产商店 (Production Store) 进行。</p>
+
+<figure>
+<img src="../uploads/Main/IAPAppleImage11.png" alt="">
+</figure>
+</li>
+<li><p>Build and run the game on your iOS device. <code>UnityPurchasing.Initialize()</code> succeeds if everything has been correctly configured. </p></li>
+<li>
+<p>在设备上通过游戏内进行购买来测试 IAP 是否成功。此过程会显示一个经过修改的购买对话框，其中说明正在沙盒环境中进行此购买。系统提示您购买时，请使用 Sandbox User Tester 密码。</p>
+
+<p><strong>Warning</strong>: If the indicator is not present, then an account is charged real money for the product.</p>
+
+<figure>
+<img src="../uploads/Main/IAPAppleImage12.png" alt="">
+</figure>
+</li>
+</ol>
+
+<h4>对于 Mac</h4>
+
+<ol>
+<li><p>发布到 Mac 台式机时，请在 Unity 的 Mac <strong>Player</strong> 设置中选择 <strong>Mac App Store Validation</strong>。</p></li>
+<li><p>After you have built your App, update its <code>info.plist</code> file with your bundle identifier and version strings. Right-click the .app file and select <strong>Show Package Contents</strong>, locate the <code>info.plist</code> file and update the <code>CFBundleIdentifier</code> string to your application’s bundle identifier.</p></li>
+<li>
+<p>对应用程序进行签名、打包和安装操作。从 OSX 终端运行以下命令（填写相应的 “your.app” 和 “your.pkg”）。</p>
+
+<p><strong>Tip</strong>: To sign the bundle, you might first need to remove the Contents.meta file if it exists: <code>your.app/Contents/Plugins/unitypurchasing.bundle/Contents.meta</code></p>
+
+<ol>
+<li><p><code>codesign -f --deep -s "3rd Party Mac Developer Application: " your.app/Contents/Plugins/unitypurchasing.bundle</code></p></li>
+<li><p><code>codesign -f --deep -s "3rd Party Mac Developer Application: " your.app</code></p></li>
+<li><p><code>productbuild --component your.app /Applications --sign "3rd Party Mac Developer Installer: " your.pkg</code></p></li>
+</ol>
+</li>
+<li><p>To install the package correctly, delete the unpackaged .app file before you run the newly created package and install it.</p></li>
+<li><p>从 <em>Applications</em> 文件夹启动该应用程序。首次启动应用程序时，系统会提示输入您的 iTunes 帐户详细信息（稍后可以使用该帐户在沙盒环境中进行购买测试）。</p></li>
+</ol>
+
+<p>For more information on Apple App Store testing and signing, refer to <a href="UnityIAPiOSMAS.html">iOS and Mac Extended Functionality</a> and <a href="macos-building.html">Building your macOS application</a>. </p>
+<!-- area:monetization -->
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UnityIAPSettingUp.html"></a></span><div class="tip">Setting up Unity IAP</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UnityIAPGoogleConfiguration.html"></a></span><div class="tip">针对 Google Play 应用商店进行配置</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

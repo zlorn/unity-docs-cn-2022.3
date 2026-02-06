@@ -1,0 +1,423 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Bind a custom control to custom data type - Unity 手册">
+<title>Bind a custom control to custom data type - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/uie_bind_custom_data_type.png">
+<meta name="description" content="Version: 2021.3+">
+<meta property="og:description" content="Version: 2021.3+">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'UIE-bind-to-custom-data-type';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/UIE-bind-to-custom-data-type.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/UIE-bind-to-custom-data-type.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/UIE-bind-to-custom-data-type.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/UIE-bind-to-custom-data-type.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/UIE-bind-to-custom-data-type.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/UIE-bind-to-custom-data-type.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIE-bind-to-custom-data-type.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIE-bind-to-custom-data-type.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIE-bind-to-custom-data-type.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIE-bind-to-custom-data-type.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-bind-to-custom-data-type.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-bind-to-custom-data-type.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-bind-to-custom-data-type.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-bind-to-custom-data-type.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-bind-to-custom-data-type.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-bind-to-custom-data-type.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-bind-to-custom-data-type.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-bind-to-custom-data-type.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-bind-to-custom-data-type.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-bind-to-custom-data-type.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-bind-to-custom-data-type.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-bind-to-custom-data-type.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-bind-to-custom-data-type.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-bind-to-custom-data-type.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-bind-to-custom-data-type.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-bind-to-custom-data-type.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-bind-to-custom-data-type.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-bind-to-custom-data-type.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-bind-to-custom-data-type.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-bind-to-custom-data-type.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/UIE-bind-to-custom-data-type.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/UIE-bind-to-custom-data-type.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/UIE-bind-to-custom-data-type.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/UIE-bind-to-custom-data-type.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/UIE-bind-to-custom-data-type.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/UIE-bind-to-custom-data-type.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/UIE-bind-to-custom-data-type.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/UIE-bind-to-custom-data-type.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/UIE-bind-to-custom-data-type.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/UIE-bind-to-custom-data-type.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/UIE-bind-to-custom-data-type.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/UIE-bind-to-custom-data-type.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/UIE-bind-to-custom-data-type.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/UIE-bind-to-custom-data-type.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/UIE-bind-to-custom-data-type.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/UIE-bind-to-custom-data-type.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/UIE-bind-to-custom-data-type.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/UIE-bind-to-custom-data-type.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/UIE-bind-to-custom-data-type.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/UIE-bind-to-custom-data-type.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/UIE-bind-to-custom-data-type.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/UIE-bind-to-custom-data-type.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/UIE-bind-to-custom-data-type.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/UIE-bind-to-custom-data-type.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/UIE-bind-to-custom-data-type.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/UIE-bind-to-custom-data-type.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/UIE-bind-to-custom-data-type.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/UIE-bind-to-custom-data-type.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UIToolkits.html">Create user interfaces (UI)</a></li>
+<li><a href="UIElements.html">UI 工具包</a></li>
+<li><a href="UIE-support-for-editor-ui.html">Support for Editor UI</a></li>
+<li><a href="UIE-Binding.html">SerializedObject data binding</a></li>
+<li><a href="UIE-binding-examples.html">Binding examples</a></li>
+<li>Bind a custom control to custom data type</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-bind-custom-control.html"></a></span><div class="tip">Bind a custom control </div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-ViewData.html"></a></span><div class="tip">View data persistence</div>
+</div>
+</div></div>
+<h1>Bind a custom control to custom data type</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p><strong>Version</strong>: 2021.3+</p>
+
+<p>This example demonstrates how to bind custom controls to custom data types.</p>
+
+<h2>Example overview</h2>
+
+<p>This example creates a custom data type and a custom control based on three built-in controls. It binds the custom control to the custom data type. The drawer converts between Celsius and Fahrenheit.</p>
+
+<figure>
+<img src="../uploads/Main/uie_bind_custom_data_type.png" alt="">
+</figure>
+
+<p>You can find the completed files that this example creates in this <a href="https://github.com/Unity-Technologies/ui-toolkit-manual-code-examples/tree/master/bind-custom-data-type">GitHub repository</a>.</p>
+
+<h2>先决条件</h2>
+
+<p>This guide is for developers familiar with the Unity Editor, UI Toolkit, and C# scripting. Before you start, get familiar with the following:</p>
+
+<ul>
+<li><a href="UIE-UXML.html">UXML</a></li>
+<li><a href="../ScriptReference/UIElements.PropertyField.html"><code>PropertyField</code></a></li>
+</ul>
+
+<h2>Create a custom data type</h2>
+
+<p>Create a custom data type <code>Temperature</code>, and use it as a serialized property.</p>
+
+<ol>
+<li><p>Create a Unity project with any template.</p></li>
+<li><p>Create a folder named <code>bind-custom-data-type</code> to store all the files.</p></li>
+<li>
+<p>Create a C# script named <code>Temperature.cs</code> and replace its contents with the following:</p>
+
+<pre><code class="lang-csharp">using System;
+
+namespace UIToolkitExamples
+{
+    public enum TemperatureUnit
+    {
+        Celsius,
+        Farenheit
+    }
+
+    [Serializable]
+    public struct Temperature
+    {
+        public double value;
+        public TemperatureUnit unit;
+    }
+}
+</code></pre>
+</li>
+<li>
+<p>Create a C# script named <code>PlanetScript.cs</code> and replace its contents with the following:</p>
+
+<pre><code class="lang-csharp">using UnityEngine;
+
+namespace UIToolkitExamples
+{
+    public class PlanetScript : MonoBehaviour
+    {
+        public Temperature coreTemperature;
+    }
+}
+</code></pre>
+</li>
+</ol>
+
+<h2>Create a custom control</h2>
+
+<p>Create a custom Editor for <code>Planet</code> and a custom Property Drawer for <code>Temperature</code>.</p>
+
+<p>In the custom Property Drawer, implement a button that converts temperature between Fahrenheit and Celsius by writing to properties of <a href="../ScriptReference/SerializedProperty.html"><code>SerializedProperty</code></a> (use <a href="../ScriptReference/SerializedProperty-doubleValue.html"><code>doubleValue</code></a> and <a href="../ScriptReference/SerializedProperty-enumValueIndex.html"><code>enumValueIndex</code></a>) and then calling <a href="../ScriptReference/SerializedObject.ApplyModifiedProperties.html"><code>SerializedObject.ApplyModifiedProperties()</code></a>.</p>
+
+<p>The custom Property Draweris is considered as a custom control. It’s a built-in control that behaves in a custom way.</p>
+
+<ol>
+<li><p>Create a folder named <code>Editor</code>.</p></li>
+<li>
+<p>In the <strong>Editor</strong> folder, create a C# script named <code>PlanetEditor.cs</code> and replace its contents with the following:</p>
+
+<pre><code class="lang-csharp">using UnityEditor;
+using UnityEngine.UIElements;
+using UnityEditor.UIElements;
+
+namespace UIToolkitExamples
+{
+    [CustomEditor(typeof(PlanetScript))]
+    public class PlanetEditor : Editor
+    {
+        public override VisualElement CreateInspectorGUI()
+        {
+            return new PropertyField(serializedObject.FindProperty("coreTemperature"));
+        }
+    }
+}
+</code></pre>
+</li>
+<li>
+<p>In the <strong>Editor</strong> folder, create a C# script named <code>TemperatureDrawer.cs</code> and replace its contents with the following:</p>
+
+<pre><code class="lang-csharp">using UnityEditor;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+namespace UIToolkitExamples
+{
+    [CustomPropertyDrawer(typeof(Temperature))]
+    public class TemperatureDrawer : PropertyDrawer
+    {
+        public override VisualElement CreatePropertyGUI(SerializedProperty property)
+        {
+            var asset = Resources.Load&lt;VisualTreeAsset&gt;("temperature_drawer");
+            var drawer = asset.Instantiate(property.propertyPath);
+
+            drawer.Q&lt;Label&gt;().text = property.displayName;
+
+            // Don't allow conversion when you've selected multiple objects in the Inspector
+            if (!property.serializedObject.isEditingMultipleObjects)
+            {
+                drawer.Q&lt;Button&gt;().RegisterCallback&lt;ClickEvent, SerializedProperty&gt;(Convert, property);
+            }
+
+            return drawer;
+        }
+
+        static void Convert(ClickEvent evt, SerializedProperty property)
+        {
+            var valueProperty = property.FindPropertyRelative("value");
+            var unitProperty = property.FindPropertyRelative("unit");
+
+            // F -&gt; C
+            if (unitProperty.enumValueIndex == (int)TemperatureUnit.Farenheit)
+            {
+                valueProperty.doubleValue -= 32;
+                valueProperty.doubleValue *= 5.0d / 9.0d;
+                unitProperty.enumValueIndex = (int)TemperatureUnit.Celsius;
+            }
+            else // C -&gt; F
+            {
+                valueProperty.doubleValue *= 9.0d / 5.0d;
+                valueProperty.doubleValue += 32;
+                unitProperty.enumValueIndex = (int)TemperatureUnit.Farenheit;
+            }
+
+            // Important: Because you are bypassing the binding system, you must save the modified SerializedObject
+            property.serializedObject.ApplyModifiedProperties();
+        }
+    }
+}
+</code></pre>
+</li>
+</ol>
+
+<h2>Set the binding</h2>
+
+<p>Create a UXML file with the following:</p>
+
+<ul>
+<li>A DoubleField</li>
+<li>An EnumField</li>
+<li>A Button</li>
+</ul>
+
+<p>Set the <code>binding-path</code> of the two fields to <code>value</code> and <code>unit</code> of the <code>Temperature</code> property. </p>
+
+<ol>
+<li><p>In the <strong>Editor</strong> folder, create a folder named <code>Resources</code>.</p></li>
+<li>
+<p>In the <strong>Resources</strong> folder, create a UI Document named <code>temperature_drawer.uxml</code> and replace its contents with the following:</p>
+
+<pre><code class="lang-xml">&lt;ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False"&gt;
+    &lt;ui:VisualElement class="unity-base-field"&gt;
+        &lt;ui:Label class="unity-base-field__label" /&gt;
+        &lt;ui:VisualElement class="unity-base-field__input" style="flex-direction: row;"&gt;
+            &lt;uie:DoubleField binding-path="value" /&gt;
+            &lt;uie:EnumField binding-path="unit" /&gt;
+            &lt;ui:Button text="Convert" /&gt;
+        &lt;/ui:VisualElement&gt;
+    &lt;/ui:VisualElement&gt;
+&lt;/ui:UXML&gt;
+</code></pre>
+</li>
+</ol>
+
+<h2>Test the binding</h2>
+
+<ol>
+<li>Create an empty GameObject in a scene.</li>
+<li>In the Hierarchy, select the GameObject.</li>
+<li>Drag <strong>PlanetScript.cs</strong> to the Inspector. This adds a <strong>Planet Script</strong> component to the GameObject.</li>
+<li>Enter a number in the <strong>Temperature</strong> field and select a unit from the dropdown.</li>
+<li>Select the <strong>Convert</strong> button to convert between units. If you make changes in the Inspector UI, the <code>Temperature</code> property of the custom contol changes.</li>
+</ol>
+
+<h2>其他资源</h2>
+
+<ul>
+<li><a href="UIE-Binding.html">SerializedObject data binding</a></li>
+<li><a href="UIE-bindable-elements.html">Bindable elements</a></li>
+<li><a href="UIE-binding-data-type-conversion.html">Binding data type conversion</a></li>
+<li><a href="UIE-binding-implementation-details.html">Implementation details</a></li>
+<li><a href="UIE-binding-examples.html">Binding examples</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIE-bind-custom-control.html"></a></span><div class="tip">Bind a custom control </div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIE-ViewData.html"></a></span><div class="tip">View data persistence</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

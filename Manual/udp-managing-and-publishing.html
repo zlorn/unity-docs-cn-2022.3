@@ -1,0 +1,571 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="在 UDP 控制台上管理和发布游戏 - Unity 手册">
+<title>在 UDP 控制台上管理和发布游戏 - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="Once you’ve built your game in the Unity Editor, the UDP console needs to repack it with each store’s SDK before you can publish your game to the supported stores.
+To upload your build to the UDP Console, follow these steps.
+Note: The UDP console only accepts APKs or AABs that have a UDP implementation.">
+<meta property="og:description" content="Once you’ve built your game in the Unity Editor, the UDP console needs to repack it with each store’s SDK before you can publish your game to the supported stores.
+To upload your build to the UDP Console, follow these steps.
+Note: The UDP console only accepts APKs or AABs that have a UDP implementation.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'udp-managing-and-publishing';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/udp-managing-and-publishing.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/udp-managing-and-publishing.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/udp-managing-and-publishing.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/udp-managing-and-publishing.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/udp-managing-and-publishing.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/udp-managing-and-publishing.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/udp-managing-and-publishing.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/udp-managing-and-publishing.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/udp-managing-and-publishing.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/udp-managing-and-publishing.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/udp-managing-and-publishing.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/udp-managing-and-publishing.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/udp-managing-and-publishing.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/udp-managing-and-publishing.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/udp-managing-and-publishing.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/udp-managing-and-publishing.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/udp-managing-and-publishing.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/udp-managing-and-publishing.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/udp-managing-and-publishing.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/udp-managing-and-publishing.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/udp-managing-and-publishing.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/udp-managing-and-publishing.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/udp-managing-and-publishing.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/udp-managing-and-publishing.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/udp-managing-and-publishing.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/udp-managing-and-publishing.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/udp-managing-and-publishing.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/udp-managing-and-publishing.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/udp-managing-and-publishing.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/udp-managing-and-publishing.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/udp-managing-and-publishing.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/udp-managing-and-publishing.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/udp-managing-and-publishing.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/udp-managing-and-publishing.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/udp-managing-and-publishing.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/udp-managing-and-publishing.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/udp-managing-and-publishing.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/udp-managing-and-publishing.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/udp-managing-and-publishing.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/udp-managing-and-publishing.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/udp-managing-and-publishing.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/udp-managing-and-publishing.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/udp-managing-and-publishing.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/udp-managing-and-publishing.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/udp-managing-and-publishing.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/udp-managing-and-publishing.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/udp-managing-and-publishing.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/udp-managing-and-publishing.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/udp-managing-and-publishing.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/udp-managing-and-publishing.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/udp-managing-and-publishing.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/udp-managing-and-publishing.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/udp-managing-and-publishing.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/udp-managing-and-publishing.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/udp-managing-and-publishing.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/udp-managing-and-publishing.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/udp-managing-and-publishing.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/udp-managing-and-publishing.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="UnityServices.html">Unity 服务</a></li>
+<li><a href="udp.html">Unity 分发平台</a></li>
+<li>在 UDP 控制台上管理和发布游戏</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="udp-sandbox-testing.html"></a></span><div class="tip">在 UDP 沙盒中测试游戏</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="udp-service-interoperability.html"></a></span><div class="tip">Using UDP with other services</div>
+</div>
+</div></div>
+<h1>在 UDP 控制台上管理和发布游戏</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<h2>将游戏上传到 UDP 控制台</h2>
+
+<p>Once you’ve built your game in the Unity Editor, the UDP console needs to repack it with each store’s SDK before you can publish your game to the supported stores.
+To upload your build to the UDP Console, follow these steps.
+<strong>Note</strong>: The UDP console only accepts APKs or AABs that have a UDP implementation. </p>
+
+<ol>
+<li>在 UDP 控制台上的<strong>我的游戏</strong>中选择你的项目。</li>
+<li>在“游戏信息”选项卡中，找到<strong>二进制文件</strong>部分。
+
+<ul>
+<li>Select <strong>Upload APK</strong> and upload the APK file (and OBB files, if any) of your game.</li>
+<li>To upload AAB files, select <strong>Convert from AAB file</strong> and upload the file.</li>
+</ul>
+</li>
+</ol>
+
+<p>还可以通过以下方式将游戏部署到 UDP 控制台：</p>
+
+<ul>
+<li><a href="#api-upload">Using the UDP API</a></li>
+<li>
+<a href="udp-service-interoperability.html#upload">将 APK 上传到 CloudBuild</a>，然后从那里部署到 UDP</li>
+<li>
+<a href="udp-service-interoperability.html#build">使用 CloudBuild 构建你的游戏</a>，然后从那里部署到 UDP</li>
+</ul>
+
+<p><a name="api-upload"></a></p>
+
+<h3>Uploading your game to the UDP console using the UDP API</h3>
+
+<p>You can only use the <a href="udp-api.html">UDP API</a> to upload binary files for the draft version of your game. If there is no draft version of your game, UDP creates one based on the latest version of your game. If the upload process is successful, UDP returns the “upload success” message with status code 200. If the upload process is unsuccessful, UDP returns an error message with a non–2xx status code.</p>
+
+<p>You can upload either:</p>
+
+<ul>
+<li>An APK file, a main OBB file (optional) and a patch OBB file (optional).<br>This overwrites any existing AAB file in the UDP console.</li>
+<li>An AAB file.<br>This overwrites any existing APK or OBB file in the UDP console.</li>
+</ul>
+
+<p>You can only upload one binary file at a time; you can’t specify multiple binary files for a command. If you upload the same type of binary file multiple times, the most recent file overrides the previous one.</p>
+
+<h4>Prerequisites</h4>
+
+<p>To use the UDP API, you need:</p>
+
+<ul>
+<li>A valid authentication token from the UDP console.<br>To generate an authentication token in the UDP console, go to the Developer API page and select <strong>New Token</strong>.</li>
+<li>A tool to send HTTPS POST messages. Unity recommends using <a href="https://curl.se/">curl</a>.</li>
+</ul>
+
+<h4>Uploading binary files</h4>
+
+<p>To upload binary files to the UDP console using the UDP API, use the HTTP POST method, and set the <code>Content-Type</code> to <code>multipart/form-data</code>. For information on the supported API parameters, see <a href="udp-api.html">UDP API</a>.</p>
+
+<h4>Uploading APK files</h4>
+
+<p>To upload an APK file, specify the path to your APK file in the POST method with the form key <code>uploadFile</code>.</p>
+
+<p>Example:</p>
+
+<pre><code>$ curl -XPOST -F 'whatsNew="example"' -F 'useGoogleService=false'  -F 'uploadFile=@/path/to/your/APK/example.apk' 
+https://distribute.dashboard.unity.com/developer/api/upload/12369536319506/1d1a4cxq774MzPKwsiHgXA?token=NWQxMWIzZmYyNjk0Njc2NGYwMDU0ZTA3ZTk3YjA2ZDA=
+</code></pre>
+
+<h4>Uploading AAB files</h4>
+
+<p>To upload an AAB file, specify the path to your AAB file with the form key <code>uploadFile</code>.</p>
+
+<p>Example:</p>
+
+<pre><code>$ curl -XPOST -F 'whatsNew="example"' -F 'useGoogleService=true  -F 'uploadFile=@/path/to/your/AAB/example.aab' 
+https://distribute.dashboard.unity.com/developer/api/upload/12369536319506/1d1a4cxq774MzPKwsiHgXA?token=NWQxMWIzZmYyNjk0Njc2NGYwMDU0ZTA3ZTk3YjA2ZDA=
+</code></pre>
+
+<h4>Uploading OBB files</h4>
+
+<p>To upload an OBB file:</p>
+
+<ol>
+<li>Specify the path to your OBB file with the form key <code>uploadFile</code>.</li>
+<li>Specify the OBB type. Set the query parameter key <code>obbType</code> to <code>mainObb</code> or <code>patchObb</code>.</li>
+</ol>
+
+<p>Example main OBB file upload:</p>
+
+<pre><code>$ curl -XPOST -F 'uploadFile=@/path/to/your/OBB/exampleMain.obb'
+https://distribute.dashboard.unity.com/developer/api/upload/12369536319506/1d1a4cxq774MzPKwsiHgXA?token=NWQxMWIzZmYyNjk0Njc2NGYwMDU0ZTA3ZTk3YjA2ZDA=&amp;obbType=mainObb
+</code></pre>
+
+<p>Example patch OBB file upload:</p>
+
+<pre><code>$ curl -XPOST -F 'uploadFile=@/path/to/your/OBB/examplePatch.obb'
+https://distribute.dashboard.unity.com/developer/api/upload/12369536319506/1d1a4cxq774MzPKwsiHgXA?token=NWQxMWIzZmYyNjk0Njc2NGYwMDU0ZTA3ZTk3YjA2ZDA=&amp;obbType=patchObb
+</code></pre>
+
+<h2>完成游戏信息</h2>
+
+<p>在 UDP 控制台上将游戏发布到商店之前，请按照下列步骤操作：</p>
+
+<ol>
+<li>
+<a href="udp-distribution.html#edit">编辑游戏信息</a>，包括：
+
+<ol>
+<li>检查“沙盒测试”部分，以确保测试成功。</li>
+<li>上传应用签名私钥</li>
+<li>指出你的广告使用情况。</li>
+<li>设置付费价格（如果适用）。</li>
+<li>将游戏信息本地化为其他语言（如果适用）。</li>
+<li>完成你的 IAP 商品。</li>
+</ol>
+</li>
+<li>
+<a href="#release">发布游戏修订版</a>。</li>
+</ol>
+
+<p>然后，你可以继续发布游戏。</p>
+
+<p><a name="release"></a></p>
+
+<h3>发布修订版</h3>
+
+<p>为了能够将游戏发布到商店，你需要发布游戏。
+保存修订草案并准备发布时：</p>
+
+<ol>
+<li>在“游戏信息”页面中，选择<strong>发布</strong>。<br>此时会打开一个窗口以输入发布信息。</li>
+<li>在<strong>发行说明</strong>和<strong>发布标签</strong>字段中输入相应信息以跟踪你的修订版。</li>
+<li>选择<strong>发布</strong>。</li>
+</ol>
+
+<p>修订版是指游戏的发行版本。这样就可以始终存储对应用商店提交内容的更改记录。</p>
+
+<p>修订版的关键组成元素包括：</p>
+
+<ul>
+<li>游戏构建文件（APK 文件）</li>
+<li>IAP 目录</li>
+<li>游戏元数据</li>
+</ul>
+
+<p>如果更改这些元素之一，那么商店提交内容也会更改，并且你必须创建一个新的修订版。修订系统是增量系统（每次 +1），由 UDP 进行管理。无法创建自定义修订号。发布新修订版时，请使用修订说明和标签来帮助你跟踪修订版。</p>
+
+<p><strong>注意</strong>：如果一个修订草案已保存在 UDP 控制台上但未发布，则你将无法从编辑器中推送使修订号增加的更改。</p>
+
+<h3>编辑修订版</h3>
+
+<p>要覆盖现有修订草案，请执行以下操作：</p>
+
+<ol>
+<li>选择要编辑的现有修订版。新的草案将继承此修订版的所有游戏信息数据。</li>
+<li>选择<strong>编辑</strong>以进行更改。</li>
+<li>保存你的更改以创建修订草案。</li>
+<li>要使该草案成为最新修订版，请选择<strong>发布</strong>。
+
+<ol>
+<li>输入发行说明和发布标签以跟踪你的修订版。<br>修订号在已发布的最高修订版之上递增 1。此修订版将成为最新的修订草案</li>
+</ol>
+</li>
+</ol>
+
+<p><a name="publish"></a></p>
+
+<h2>将游戏发布到商店</h2>
+
+<p>应使用<strong>发布</strong>面板将游戏发布到商店。只能将已发布的修订版发布到商店。</p>
+
+<p>对于要将游戏提交到的每个商店，请执行以下步骤：</p>
+
+<ol>
+<li>
+<a href="#sign-up">向商店注册</a>。</li>
+<li>
+<a href="#register">向商店注册游戏</a>。</li>
+<li>
+<a href="#select-target">将游戏提交到商店</a>。</li>
+<li>
+<a href="udp-reference.html#advanced">设置高级设置</a>。</li>
+<li>
+<a href="#company">添加公司信息</a>。</li>
+<li>完成所有商店的设置后，选择<strong>发布</strong>。</li>
+</ol>
+
+<p>如需发布到特定商店的帮助，请参阅 UDP 控制台中的<strong>文档</strong> &gt; <strong>合作伙伴商店指南</strong>。</p>
+
+<p>发布游戏后，你可以在<a href="udp-reference.html#reporting">“报告”控制面板</a>中监控游戏表现。</p>
+
+<p><a name="sign-up"></a></p>
+
+<h3>向商店注册</h3>
+
+<p>为了能够将游戏发布到商店，你需要拥有商店的帐户。</p>
+
+<p>要创建商店的帐户，请执行以下操作：</p>
+
+<ol>
+<li>在 Publish 页面中，选择“注册到 &lt;商店名称&gt;”。<br>对于某些商店，可能会将你重定向到 UDP 控制台外部，以便完成商店的注册过程。</li>
+<li>遵循商店的注册流程。</li>
+</ol>
+
+<p>向商店注册后，你可以在商店中<a href="#register">注册游戏</a>。</p>
+
+<p><strong>注意</strong>：只有组织所有者 (Organization Owner) 和管理员 (Manager) 可以向商店注册。请参阅<a href="udp.html#permissions">与组织相关的权限</a>以了解更多详细信息。</p>
+
+<p>商店帐户是基于每个 Unity 组织 (Unity Organization) 的。通过 UDP 发布的任何游戏都将附加到你执行发布的组织。如果你在其他组织下访问 UDP 控制台，则需要再次注册并创建另一个帐户。有关如何注册到各个商店的更多信息，请参阅 UDP 控制台中的<strong>文档</strong> &gt; <strong>合作伙伴商店指南</strong>。</p>
+
+<p><a name="register"></a></p>
+
+<h3>向商店注册游戏</h3>
+
+<p>向商店注册后，你可以在商店中注册游戏。</p>
+
+<ol>
+<li>在“注册”页面中，选择“将你的游戏注册到 &lt;商店名称&gt;”。</li>
+<li>确认要在商店中注册的包名称，然后选择<strong>注册</strong>。在注册游戏时，一些商店要求提供其他信息。</li>
+</ol>
+
+<p>在商店中注册游戏后，无法再更改在该商店中的包名称。</p>
+
+<p>If you use UDP to generate the <a href="udp-reference.html#app-sign">App signing</a> private key, UDP generates a store-specific key to sign the repacked build. This may also affect third-party services integrated in your game. The store-specific certificate is available in the <strong>Advanced</strong> section when your game has been repacked.</p>
+
+<p>如果以这种方式为重新打包的构建版本签名，则会使游戏更容易出现 Google Play 保护警告。</p>
+
+<p><a name="select-target"></a></p>
+
+<h3>将游戏提交到商店</h3>
+
+<p>在“发布”选项卡中，选择给定商店的<a href="udp-reference.html#target">目标步骤</a>。</p>
+
+<ol>
+<li>如果是首次将游戏发布到商店，请选中该商店的复选框。</li>
+<li>选择<strong>提交到商店</strong>。<br>UDP 会重新打包游戏并将游戏提交到商店。</li>
+</ol>
+
+<p>UDP 为你发布到的每个商店创建一个单独的构建版本，其中仅包含特定于商店的 SDK。
+每个特定于商店的构建版本都使用特定于游戏和每个商店的 UDP 证书进行签名。可从每个商店的“高级”部分中查找和检索证书。</p>
+
+<p>此外，如果适用，UDP 将在包名称中添加特定于商店的后缀。如果这是必需的，UDP 控制台将在<a href="#register">注册</a>步骤中显示此信息。</p>
+
+<p><strong>注意</strong>：如果需要，可以在“发布”页面中配置：</p>
+
+<ul>
+<li>要将游戏发布到的国家/地区</li>
+<li>游戏的高级设置</li>
+</ul>
+
+<h4>向不同的商店提交不同的修订版</h4>
+
+<p>只能将最新发布的修订版提交到商店。如果你打算向不同的商店提交不同的修订版，Unity 会建议你使用发布标签和发行说明来标识你的修订版。</p>
+
+<p>示例：你要为 StoreA 提交一个修订版，并为 StoresBCD 提交另一个修订版。</p>
+
+<ol>
+<li>为 StoreA 创建你的修订版（例如，修订版 1）。发布修订版 1 时，请写下清晰的发行说明并为 <strong>StoreA</strong> 发行版添加标签。
+
+<ol>
+<li>将修订版 1 提交到 StoreA。</li>
+</ol>
+</li>
+<li>为 StoresBCD 创建新的修订版。该修订草案最终将成为修订版 2。发布修订版 2 时，请写下清晰的发行说明并为 <strong>StoresBCD</strong> 发行版添加标签。</li>
+<li>将修订版 2 提交到 StoresBCD。</li>
+<li>当需要向 StoreA 提交新的发布时，可以基于先前向该商店提交的内容来进行提交。你的发布标签将显示修订版 1 是具有 <strong>StoreA</strong> 标签的最新修订版。</li>
+<li>选择修订版 1，然后进行编辑。这将在修订版 1 的基础上创建修订草案。进行发布时，它将成为修订版 3（因为修订版 2 已经发布）。</li>
+<li>发布修订版 3 时，请继续使用 StoreA 标签。将修订版 3 提交到 StoreA。</li>
+</ol>
+
+<h4>重新打包游戏</h4>
+
+<p>如果你以前曾将游戏提交到某个商店，你可以重新打包游戏而无需上传新的 IAP 目录。这时会使用最近提交的 IAP 目录。</p>
+
+<ol>
+<li>要重新打包而不上传新的 IAP 目录，请选中该商店的复选框。</li>
+<li>选择<strong>重新打包游戏</strong>。</li>
+</ol>
+
+<p>在将重新打包的构建版本提交到商店之前，请从“状态”选项卡下载 APK 并对其进行测试，以确保你的应用内购可以在商店的商业环境中正常工作。</p>
+
+<p><strong>Note</strong>: Changes you’ve made in the Advanced settings for a store are not overridden if you submit a new version of your game.</p>
+
+<p><a name="company"></a></p>
+
+<h3>添加公司信息</h3>
+
+<p>要将游戏发布到 UDP 商店，你需要创建公司信息简介。游戏在应用商店中列出的“关于开发者”(About the developer) 部分会显示此信息。此操作只需执行一次。</p>
+
+<ol>
+<li>On the UDP console, select <strong>Settings</strong> &gt; <strong>Company Info</strong>.</li>
+<li>输入并保存你的公司信息。</li>
+</ol>
+
+<h3>发布游戏</h3>
+
+<p>完成上述所有步骤后，即可发布游戏。</p>
+
+<ol>
+<li>在“发布”选项卡中，选择要将此游戏修订版提交到的每个商店。</li>
+<li>选择<strong>发布</strong>。</li>
+</ol>
+
+<p>只有游戏的最新发行版本才会进入为每个商店选择的目标步骤。</p>
+
+<p>如果你的提交有任何问题，这些问题将显示在“<a href="udp-reference.html#detail">细节</a>”部分。</p>
+
+<p>对于仅与 UDP 部分集成的商店，你必须在商店自己的开发者控制台上完成提交。为此，请选择提交的修订版旁边的<strong>转到商店</strong>。工具提示中会说明仍需要执行哪些步骤。点击链接，然后在商店的控制台上完成提交。</p>
+
+<p><a name="archive"></a></p>
+
+<h2>游戏存档</h2>
+
+<p>在 UDP 控制台上不再需要某个游戏时，可以将该游戏存档。</p>
+
+<p>要将游戏存档，请执行以下操作：</p>
+
+<ol>
+<li>找到<strong>我的游戏</strong>面板。</li>
+<li>选择游戏筛选条件。默认情况下，你可以看到所有活动状态的游戏。</li>
+<li>将鼠标光标悬停在游戏上以显示<strong>更多</strong>菜单 (⋮)。</li>
+<li>选择<strong>存档</strong>。</li>
+</ol>
+
+<p>将游戏存档后，你可以恢复游戏或从 UDP 控制台删除游戏。</p>
+
+<h2>删除游戏</h2>
+
+<p>要删除 UDP 控制台上不再需要的游戏，请执行以下操作：</p>
+
+<ol>
+<li>按步骤<a href="#archive">将游戏存档</a>。</li>
+<li>将鼠标光标悬停在游戏上以显示<strong>更多</strong>菜单 (⋮)。
+
+<ol>
+<li>选择<strong>删除</strong>。</li>
+</ol>
+</li>
+</ol>
+
+<p><strong>注意</strong>：此操作会从 UDP 控制台的“我的游戏”选项卡中永久移除游戏，并从“报告”控制面板中移除游戏的所有数据。</p>
+
+<p><a name="restore"></a></p>
+
+<h3>恢复存档的游戏</h3>
+
+<p>要恢复存档的游戏，请执行以下操作：</p>
+
+<ol>
+<li>找到<strong>我的游戏</strong>面板。</li>
+<li>Select the <strong>archived</strong> filter in the selection criteria.</li>
+<li>On the game you want to restore, select the <strong>More</strong> menu (⋮).</li>
+<li>选择<strong>恢复</strong>。</li>
+</ol>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="udp-sandbox-testing.html"></a></span><div class="tip">在 UDP 沙盒中测试游戏</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="udp-service-interoperability.html"></a></span><div class="tip">Using UDP with other services</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

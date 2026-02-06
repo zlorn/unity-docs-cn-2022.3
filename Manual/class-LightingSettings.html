@@ -1,0 +1,488 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="光照设置资源 - Unity 手册">
+<title>光照设置资源 - Unity 手册</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="description" content="A Lighting Settings Asset represents a saved instance of the LightingSettings class, which stores data for the Baked Global Illumination and the Enlighten Realtime Global Illumination systems. The Unity Editor uses this data when it precomputes lighting data for a Scene that uses one or both of these systems.">
+<meta property="og:description" content="A Lighting Settings Asset represents a saved instance of the LightingSettings class, which stores data for the Baked Global Illumination and the Enlighten Realtime Global Illumination systems. The Unity Editor uses this data when it precomputes lighting data for a Scene that uses one or both of these systems.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'class-LightingSettings';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/class-LightingSettings.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/class-LightingSettings.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/class-LightingSettings.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/class-LightingSettings.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/class-LightingSettings.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/class-LightingSettings.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/class-LightingSettings.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/class-LightingSettings.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/class-LightingSettings.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/class-LightingSettings.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/class-LightingSettings.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/class-LightingSettings.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/class-LightingSettings.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/class-LightingSettings.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/class-LightingSettings.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/class-LightingSettings.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/class-LightingSettings.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/class-LightingSettings.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/class-LightingSettings.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/class-LightingSettings.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/class-LightingSettings.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/class-LightingSettings.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/class-LightingSettings.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/class-LightingSettings.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/class-LightingSettings.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/class-LightingSettings.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/class-LightingSettings.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/class-LightingSettings.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/class-LightingSettings.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/class-LightingSettings.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/class-LightingSettings.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/class-LightingSettings.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/class-LightingSettings.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/class-LightingSettings.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/class-LightingSettings.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/class-LightingSettings.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/class-LightingSettings.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/class-LightingSettings.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/class-LightingSettings.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/class-LightingSettings.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/class-LightingSettings.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/class-LightingSettings.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/class-LightingSettings.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/class-LightingSettings.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/class-LightingSettings.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/class-LightingSettings.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/class-LightingSettings.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/class-LightingSettings.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/class-LightingSettings.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/class-LightingSettings.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/class-LightingSettings.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/class-LightingSettings.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/class-LightingSettings.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/class-LightingSettings.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/class-LightingSettings.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/class-LightingSettings.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/class-LightingSettings.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/class-LightingSettings.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="LightingOverview.html">光照</a></li>
+<li>光照设置资源</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="lighting-window.html"></a></span><div class="tip">Lighting 窗口</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="lighting-mode.html"></a></span><div class="tip">光照模式</div>
+</div>
+</div></div>
+<h1>光照设置资源</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>A Lighting Settings Asset represents a saved instance of the <a href="../ScriptReference/LightingSettings.html">LightingSettings</a> class, which stores data for the Baked Global Illumination and the Enlighten Realtime Global Illumination systems. The Unity Editor uses this data when it precomputes lighting data for a Scene that uses one or both of these systems.</p>
+
+<p>您可以为多个场景指定相同的光照设置资源或 <code>LightingSettings</code> 类的实例，这使得跨多个场景共享全局光照系统设置变得容易。</p>
+
+<h2>创建光照设置资源</h2>
+
+<p>有两种方法可以在 Unity 编辑器中创建光照设置资源。</p>
+
+<p>要从项目视图创建光照设置资源：</p>
+
+<ol>
+<li>在项目视图中，单击添加 (+) 按钮，或者打开上下文菜单并导航至 <strong>Create</strong>。</li>
+<li>单击 <strong>Lighting Settings</strong>。Unity 会在项目视图中创建新的光照设置资源。</li>
+</ol>
+
+<p>要从 Lighting 窗口创建并自动指定光照设置资源：</p>
+
+<ol>
+<li>打开 Lighting 窗口（菜单：<strong>Window &gt; Rendering &gt; Lighting</strong>）。</li>
+<li>打开 <strong>Scene</strong> 选项卡。</li>
+<li>单击 <strong>New Lighting Asset</strong>。Unity 会在项目视图中创建一个新的光照设置资源，并立即将其指定给活动场景。</li>
+</ol>
+
+<p>您还可以从脚本创建光照设置资源。为此，请创建一个 LightingSettings 类的实例并将其保存到磁盘，或将其指定给场景并保存该场景。有关更多信息和代码示例，请参阅 <a href="../ScriptReference/LightingSettings.html">LightingSettings API 文档</a>。</p>
+
+<h2>将光照设置资源指定给场景</h2>
+
+<p>要在 Unity 编辑器中为场景指定光照设置资源：</p>
+
+<ol>
+<li>打开要为其指定光照设置资源的场景。</li>
+<li>如果您打开了多个场景，请确保您要为其指定光照设置资源的场景是<a href="MultiSceneEditing.html">活动场景</a>。</li>
+<li>打开 Lighting 窗口（菜单：<strong>Window &gt; Rendering &gt; Lighting</strong>）。</li>
+<li>打开 <strong>Scene</strong> 选项卡。</li>
+<li>将光照设置资源拖到 <strong>Lighting Settings</strong> 字段，或单击 <strong>Lighting Settings</strong> 字段右侧的图标，并从列表中选择光照设置资源。</li>
+</ol>
+
+<p>您还可以从脚本将光照设置资源指定给活动场景。为此，请加载光照设置资源以获取 <code>LightingSettings</code> 类的实例，然后使用"Lightmapping.lightingSettings<code>API 将该</code>LightingSettings` 实例指定给活动场景。有关更多信息和代码示例，请参阅 <a href="../ScriptReference/LightingSettings.html">LightingSettings API 文档</a>。</p>
+
+<h2>查看和编辑光照设置资源的属性</h2>
+
+<p>您可以在 Unity 编辑器中的两个位置查看和编辑光照设置资源的属性：</p>
+
+<p><em>在项目视图中，如果您选择一个光照设置资源，您可以在 Inspector 中查看和编辑其属性。
+</em> 如果活动场景具有为其指定的光照设置资源，您可以在 Lighting 窗口的 Scene 选项卡中查看和编辑该光照设置资源的属性。</p>
+
+<p>您还可以从脚本读取或写入光照设置资源的属性。为此，请加载光照设置资源以获取 <code>LightingSettings</code> 类的实例，并访问其属性。有关更多信息和代码示例，请参阅 <a href="../ScriptReference/LightingSettings.html">LightingSettings API 文档</a>。</p>
+
+<p><a name="DefaultLightingSettings"></a></p>
+
+<h2>默认 LightingSettings 数据</h2>
+
+<p>当场景没有为其制定的光照设置资源时，Unity 会为该场景使用默认的 <code>LightingSettings</code> 对象。默认的 <code>LightingSettings</code> 对象是一个 <code>LightingSettings</code> 类的内部只读实例。</p>
+
+<p>您不能对使用默认 <code>LightingSettings</code> 的场景的 <code>LightingSettings</code> 数据进行任何更改，但 Unity 可以使用其设置执行烘焙。</p>
+
+<p>要更改场景的 <code>LightingSettings</code> 数据，您必须使用 Unity 编辑器创建和指定光照设置资源，或使用脚本创建、配置和指定一个 <code>LightingSettings</code> 对象。有关更多信息和代码示例，请参阅 <a href="../ScriptReference/LightingSettings.html">LightingSettings API 文档</a>。</p>
+
+<p>Unity automatically generates an <a href="../ScriptReference/RenderSettings-ambientProbe.html">ambient probe</a> and a <a href="../ScriptReference/ReflectionProbe-defaultTexture.html">default Reflection Probe</a> to ensure that environment lighting affects your scene and the GameObjects in it by default. To learn more about this functionality, see <a href="using-skymanager.html">SkyManager</a>.</p>
+
+<h2>属性</h2>
+
+<p>当您在 Inspector 或 Lighting 窗口中查看光照设置资源时，可查看或编辑的属性分为以下部分：</p>
+
+<ul>
+<li><a href="#RealtimeLighting">Realtime Lighting</a></li>
+<li><a href="#MixedLighting">Mixed Lighting</a></li>
+<li><a href="#LightmappingSettings">Lightmapping Settings</a></li>
+<li><a href="#AutoGeneration">Auto Generation</a></li>
+</ul>
+
+<p><a name="RealtimeLighting"></a></p>
+
+<h3>Realtime Lighting</h3>
+
+<p>This section contains <a href="https://docs.unity3d.com/Manual/lighting-window.html">settings</a> related to the <a href="realtime-gi-using-enlighten.html">Enlighten Realtime Global Illumination system</a>.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>实时全局光照</strong></td>
+	<td style="text-align:left;">Enable this property to use the Enlighten Realtime Global Illumination system in Scenes that use this Lighting Settings Asset.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Realtime Environment Lighting</strong></td>
+	<td style="text-align:left;">Enable this property to use the Enlighten Realtime Global Illumination system to calculate and update ambient light in real-time. <br><br>This property is only available when both Enlighten <strong>Realtime Global Illumination</strong> and <strong>Baked Global Illumination</strong> are enabled in the Scene.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Indirect Resolution</strong></td>
+	<td style="text-align:left;">Specifies the number of texels per unit to use for realtime lightmaps. Increasing this value improves lightmap quality, but also increases render time.<br><br>This property is only available if you enable <strong>Realtime Global Illumination</strong>.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="MixedLighting"> </a> </p>
+
+<h3>Mixed Lighting</h3>
+
+<p>在使用光照设置资源的场景中，此部分包含的设置会影响<a href="LightMode-Baked.html">烘焙光源</a>和<a href="LightMode-Mixed.html">混合光源</a>的行为。</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2">属性：</th>
+	<th style="text-align:left;">功能：</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>烘焙全局光照</strong></td>
+	<td style="text-align:left;">启用此设置后，Unity 将为使用此光照设置资源的场景启用烘焙全局光照系统。禁用此设置时，Unity 会为使用此光照设置资源的场景禁用烘焙全局光照系统。<br><br>当烘焙全局光照系统启用时，Unity 将场景中的烘焙光源仅用于光照贴图，而混合光源的行为取决于 <strong>Lighting Mode</strong> 设置。禁用烘焙全局光照系统后，Unity 会强制场景中的所有烘焙光源和混合光源的行为就像实时光源一样。</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Lighting Mode</strong></td>
+	<td style="text-align:left;">指定 Unity 将哪个 <a href="lighting-mode.html">Lighting Mode</a> 用于场景中使用此光照设置资源的所有混合光源。<br><br>当您更改 Lighting Mode 时，您需要为使用此光照设置资源的场景重新烘焙光照数据。</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Baked Indirect</strong></td>
+	<td style="text-align:left;">Use <a href="LightMode-Mixed-BakedIndirect.html">Baked Indirect Lighting Mode</a> for all Mixed Lights in the Scenes that use this Lighting Settings Asset.<br><br>In Baked Indirect Lighting Mode, Mixed Lights provide real-time direct lighting and Unity bakes indirect light into lightmaps and Light Probes. Real-time shadow maps provide shadows.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Shadowmask</strong></td>
+	<td style="text-align:left;">Use <a href="LightMode-Mixed-Shadowmask.html">Shadowmask Lighting Mode</a> for all Mixed Lights in the Scenes that use this Lighting Settings Asset.<br><br>In Shadowmask Lighting Mode Mixed Lights provide real-time direct lighting while indirect light is baked into lightmaps and probes. This mode combines real-time and baked shadows.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Subtractive</strong></td>
+	<td style="text-align:left;">Use <a href="LightMode-Mixed-Subtractive.html">Subtractive Lighting Mode</a> for all Mixed Lights in the Scenes that use this Lighting Settings Asset.<br><br>In Subtractive Lighting Mode Mixed Lights provide baked direct and indirect lighting for static objects. Dynamic objects receive real-time direct lighting and cast shadows using the Directional Light.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="LightmappingSettings"> </a> </p>
+
+<h3>Lightmapping Settings</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>功能</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Lightmap Resolution</strong></td>
+	<td style="text-align:left;">Specifies the number of texels per unit to use for lightmaps. Increasing this value improves lightmap quality, but also increases bake times. Note that doubling this value causes the number of texels to quadruple because it determines both the height and width of the lightmap. See the <strong>Occupied texels</strong> count in the statistics area of the Lighting window.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Lightmap Padding</strong></td>
+	<td style="text-align:left;">Determines the separation (in texel units) between separate shapes in the baked lightmap. The default is 2.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Max Lightmap Size</strong></td>
+	<td style="text-align:left;">Specifies the size (in pixels) of the full lightmap texture, which incorporates a separate region for each included GameObject. The default value is 1024.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Lightmap compression</strong></td>
+	<td style="text-align:left;">The level of compression the Editor uses for lightmaps. <br> - None: Does not compress lightmaps. <br> - Low Quality: This may use less memory and storage than Normal Quality, but can also introduce visual artifacts. <br> - Normal Quality: This is a good trade-off between memory usage and visual quality. <br> - High Quality: Requires more memory and storage than Normal Quality, but provides better visual results.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Ambient Occlusion</strong></td>
+	<td style="text-align:left;">Controls the relative brightness of surfaces in <a href="LightingBakedAmbientOcclusion.html">baked ambient occlusion</a>. This only applies to the indirect lighting calculated by the lightmapper you are using to bake your lighting. Enabled by default. If Ambient Occlusion is enabled, it exposes three settings: Max Distance, Indirect Contribution, and Direct Contribution. For all three settings, higher values indicate a greater contrast between occluded and fully lit areas.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Max Distance</strong></td>
+	<td style="text-align:left;">Specifies how far the lighting system casts rays in order to determine whether or not to apply occlusion to an object. A higher value produces longer rays and contributes more shadows to the lightmap, while a lower value produces shorter rays that contribute shadows only when objects are very close to one another. A value of 0 casts an infinitely long ray that has no maximum distance. The default value is 1.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Indirect Contribution</strong></td>
+	<td style="text-align:left;">Scales the brightness of indirect ambient light bounced and emitted from objects in the final lightmap. This is a value between 0 and 10. The default value is 1. Values less than 1 reduce the intensity, while values greater than 1 increase it.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Direct Contribution</strong></td>
+	<td style="text-align:left;">Scales the brightness of direct light. This is a value between 0 and 10. The default value is 0. The higher this value is, the greater the contrast the Editor applies to the direct lighting.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Directional Mode</strong></td>
+	<td style="text-align:left;">Enables the lightmap to store information about the characteristics of the dominant incoming light at each point on an object’s surface. See <a href="LightmappingDirectional.html">Directional Lightmapping</a> for more information. The default mode is <strong>Directional</strong>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Directional</strong></td>
+	<td style="text-align:left;">In <strong>Directional</strong> mode, , Unity generates a second lightmap to store the dominant direction of incoming light. This makes it possible for diffuse normal mapped materials to work with the global illumination system. Shaders sample both lightmap textures during rendering. As a result, directional mode requires about twice as much video memory as non-directional mode for the additional lightmap data. Generating the additional directionality texture has an impact on baking performance. Directional lightmaps cannot be decoded on SM2.0 hardware or when using GLES2.0.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Non-directional</strong></td>
+	<td style="text-align:left;">
+<strong>Non-directional</strong> mode lightmaps only include a single texture. As a result, they require less video memory and less storage than directional lightmaps, and are faster to decode in shaders. These optimizations reduce visual quality.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Indirect Intensity</strong></td>
+	<td style="text-align:left;">Determines the brightness of indirect light stored in real-time and baked lightmaps. This is a value between 0 and 5. A value above 1 increases the intensity of indirect light while a value of less than 1 reduces indirect light intensity. The default value is 1.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Albedo Boost</strong></td>
+	<td style="text-align:left;">Specifies the amount of light Unity bounces between surfaces. This value is between 1 and 10. Increasing this value pulls the albedo value towards white for indirect light computation. The default value of 1 is physically accurate.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Lightmap Parameters</strong></td>
+	<td style="text-align:left;">A Lightmap Parameters Asset stores values for settings relevant to Baked Global Illumination. The Editor provides several default Lightmap Parameters Assets to choose from, but you can also create your own lightmap parameters file using the <strong>Create New</strong> option. See <a href="class-LightmapParameters.html">Lightmap Parameters</a> for more information. The default value is <strong>Default-Medium</strong>. The options are Default-Medium, Default-HighResolution, Default-LowResolution, and Default-VeryLowResolution.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Some settings are specific to certain lightmapper backends. To see these settings, visit the page for the relevant lightmapper:</p>
+
+<ul>
+<li>
+<a href="progressive-lightmapper.html">Progressive CPU Lightmapper</a>; also includes settings for the Progressive GPU Lightmapper</li>
+<li><a href="GI-Enlighten.html">Enlighten Baked Global Illumination</a></li>
+</ul>
+
+<p>However, Enlighten Baked Global Illumination is deprecated and no longer visible in the user interface by default. See <a href="GI-Enlighten.html">Lightmapping using Enlighten Baked Global Illumination</a> for more information.</p>
+
+<p><a name="AutoGeneration"> </a></p>
+
+<h3>Auto Generation</h3>
+
+<p>当您在 Inspector 中查看光照设置资源时，此属性位于 Inspector 的顶部。当您在 Lighting 窗口中查看光照设置资源时，此属性位于 Lighting 窗口的底部，在 <strong>Generate Lighting</strong> 按钮附近。 </p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>属性</strong></th>
+	<th style="text-align:left;"><strong>功能：</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Auto Generate</strong></td>
+	<td style="text-align:left;">If <strong>Auto Generate</strong> is enabled, Unity precomputes lighting data automatically when you make changes to the Scene.<br><br>This data includes lightmaps for the Baked Global Illumination system, data for the Enlighten Realtime Global Illumination system, Light Probes, and Reflection Probes. <br><br>Unity usually begins the bake a few seconds after you make a change to the Scene. If <strong>Auto Generate</strong> is disabled, you must manually invoke a bake yourself, using the <strong>Generate Lighting</strong> button in the Lighting window, or the <a href="../ScriptReference/Lightmapping.Bake.html">Lightmapping.Bake</a> or <a href="../ScriptReference/Lightmapping.BakeAsync.html">Lightmapping.BakeAsync</a> APIs.<br><br>Note that when you precompute lighting data using <strong>Auto Generate</strong>, the precomputed lighting data is not stored as Assets in your Project. It is instead stored in memory, and serialized as part of the Scene. Note: From Unity Editor version 2022.2, <strong>Auto Generate</strong> mode is unavailable when the <a href="https://docs.unity3d.com/Packages/com.unity.entities@latest/">Entities</a> package is installed. This is because when you generate lighting in a project where you have installed the Entities package, the Unity Editor opens all loaded subscenes, which may slow down Editor performance.</td>
+</tr>
+</tbody>
+</table>
+
+<p>*<span class="page-history">光照设置资源添加于 <a href="https://docs.unity3d.com/2020.1/Documentation/Manual/30_search.html?q=newin20201">2020.1</a><span class="search-words"> NewIn20201</span></span></p>
+<!-- area:graphics -->
+
+<p><span class="search-words">LightingSettings</span></p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="lighting-window.html"></a></span><div class="tip">Lighting 窗口</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="lighting-mode.html"></a></span><div class="tip">光照模式</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

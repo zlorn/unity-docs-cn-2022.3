@@ -1,0 +1,348 @@
+<!DOCTYPE html><html class="no-js" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="GPU 实例化 - Unity 手册">
+<title>GPU 实例化 - Unity 手册</title>
+<meta property="og:image" content="https://docs.unity3d.com/cn/2022.3/uploads/Main/enable-gpu-instancing-inspector.png">
+<meta name="description" content="GPU instancing is a draw call optimization method that renders multiple copies of a mesh with the same material in a single draw call. Each copy of the mesh is called an instance. This is useful for drawing things that appear multiple times in a scene, for example, trees or bushes.">
+<meta property="og:description" content="GPU instancing is a draw call optimization method that renders multiple copies of a mesh with the same material in a single draw call. Each copy of the mesh is called an instance. This is useful for drawing things that appear multiple times in a scene, for example, trees or bushes.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFiles/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFiles/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFiles/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: '', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><script>
+      var docs_type = 'Manual';
+      var lang = 'cn';
+      var page = 'GPUInstancing';
+      if(!page) page = 'index';
+      var version = '2022.3';
+      var docs_versions = [{version: '2023.2',version_string: '2023.2',supported: true},{version: '2023.1',version_string: '2023.1',supported: false},{version: '2022.3',version_string: '2022.3',supported: true},{version: '2022.2',version_string: '2022.2',supported: false},{version: '2022.1',version_string: '2022.1',supported: false},{version: '2021.3',version_string: '2021.3',supported: true},{version: '2021.2',version_string: '2021.2',supported: false},{version: '2021.1',version_string: '2021.1',supported: false},{version: '2020.3',version_string: '2020.3',supported: false},{version: '2020.2',version_string: '2020.2',supported: false},{version: '2020.1',version_string: '2020.1',supported: false},{version: '2019.4',version_string: '2019.4',supported: false},{version: '2019.3',version_string: '2019.3',supported: false},{version: '2019.2',version_string: '2019.2',supported: false},{version: '2019.1',version_string: '2019.1',supported: false},{version: '2018.4',version_string: '2018.4',supported: false},{version: '2018.3',version_string: '2018.3',supported: false},{version: '2018.2',version_string: '2018.2',supported: false},{version: '2018.1',version_string: '2018.1',supported: false},{version: '2017.4',version_string: '2017.4',supported: false},{version: '2017.3',version_string: '2017.3',supported: false},{version: '2017.2',version_string: '2017.2',supported: false},{version: '2017.1',version_string: '2017.1',supported: false},{version: '5.6',version_string: '560',supported: false},];</script><script type="text/javascript" src="../StaticFiles/js/jquery.js"></script><script type="text/javascript" src="../StaticFiles/js/core.js"></script><script type="text/javascript" src="../StaticFiles/js/jquery.sidebar.min.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src=""></script><script type="text/javascript" src="../StaticFiles/js/custom.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css">
+<link rel="stylesheet" type="text/css" href="../StaticFiles/css/custom.css">
+<link rel="canonical" href="https://docs.unity3d.com/cn/2022.3/Manual/GPUInstancing.html">
+<link rel="alternate" href="https://docs.unity3d.com/en/2022.3/Manual/GPUInstancing.html" hreflang="en">
+<link rel="alternate" href="https://docs.unity3d.com/cn/2022.3/Manual/GPUInstancing.html" hreflang="zh">
+<link rel="alternate" href="https://docs.unity3d.com/ja/2022.3/Manual/GPUInstancing.html" hreflang="ja">
+<link rel="alternate" href="https://docs.unity3d.com/kr/2022.3/Manual/GPUInstancing.html" hreflang="ko">
+<link rel="alternate" href="https://docs.unity3d.com/2022.3/Documentation/Manual/GPUInstancing.html" hreflang="x-default">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="./index.html"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="搜索手册..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul class="menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity3d.com/">
+                unity3d.com
+              </a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/GPUInstancing.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/GPUInstancing.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/GPUInstancing.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/GPUInstancing.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/GPUInstancing.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/GPUInstancing.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/GPUInstancing.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/GPUInstancing.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/GPUInstancing.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/GPUInstancing.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/GPUInstancing.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/GPUInstancing.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/GPUInstancing.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/GPUInstancing.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/GPUInstancing.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/GPUInstancing.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/GPUInstancing.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/GPUInstancing.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/GPUInstancing.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/GPUInstancing.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/GPUInstancing.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/GPUInstancing.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/GPUInstancing.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/GPUInstancing.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<ul class="nav-menu-items">
+<li class="menu-item"><a href="../Manual/index.html" class="selected">手册</a></li>
+<li class="menu-item"><a href="../ScriptReference/index.html" class="">脚本 API</a></li>
+</ul>
+<div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">语言:
+        <span class="b">中文</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a data-lang="en" href="/2022.3/Documentation/Manual/GPUInstancing.html">English</a></li>
+<li><a data-lang="cn" href="/cn/2022.3/Manual/GPUInstancing.html">中文</a></li>
+<li><a data-lang="ja" href="/ja/2022.3/Manual/GPUInstancing.html">日本語</a></li>
+<li><a data-lang="kr" href="/kr/2022.3/Manual/GPUInstancing.html">한국어</a></li>
+</ul></div>
+</div>
+</div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar hidden"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc">
+<h2>手册</h2>
+<div class="version-switcher">
+<div class="current toggle" data-target=".version-list"><div class="version-number">
+<div class="d-inline-block">
+          Version:
+          <b>2022.3</b>
+</div>
+<div class="d-inline-block arrow"></div>
+</div></div>
+<div class="version-list" style="display:none;">
+<ul class="versions">
+<li class="supported"><a class="docs_version_url_2023.2" href="/cn/2023.2/Manual/GPUInstancing.html">2023.2</a></li>
+<li class=""><a class="docs_version_url_2023.1" href="/cn/2023.1/Manual/GPUInstancing.html">2023.1</a></li>
+<li class="supported"><a class="docs_version_url_2022.3" href="/cn/2022.3/Manual/GPUInstancing.html">2022.3</a></li>
+<li class=""><a class="docs_version_url_2022.2" href="/cn/2022.2/Manual/GPUInstancing.html">2022.2</a></li>
+<li class=""><a class="docs_version_url_2022.1" href="/cn/2022.1/Manual/GPUInstancing.html">2022.1</a></li>
+<li class="supported"><a class="docs_version_url_2021.3" href="/cn/2021.3/Manual/GPUInstancing.html">2021.3</a></li>
+<li class=""><a class="docs_version_url_2021.2" href="/cn/2021.2/Manual/GPUInstancing.html">2021.2</a></li>
+<li class=""><a class="docs_version_url_2021.1" href="/cn/2021.1/Manual/GPUInstancing.html">2021.1</a></li>
+<li class=""><a class="docs_version_url_2020.3" href="/cn/2020.3/Manual/GPUInstancing.html">2020.3</a></li>
+<li class=""><a class="docs_version_url_2020.2" href="/cn/2020.2/Manual/GPUInstancing.html">2020.2</a></li>
+<li class=""><a class="docs_version_url_2020.1" href="/cn/2020.1/Manual/GPUInstancing.html">2020.1</a></li>
+<li class=""><a class="docs_version_url_2019.4" href="/cn/2019.4/Manual/GPUInstancing.html">2019.4</a></li>
+<li class=""><a class="docs_version_url_2019.3" href="/cn/2019.3/Manual/GPUInstancing.html">2019.3</a></li>
+<li class=""><a class="docs_version_url_2019.2" href="/cn/2019.2/Manual/GPUInstancing.html">2019.2</a></li>
+<li class=""><a class="docs_version_url_2019.1" href="/cn/2019.1/Manual/GPUInstancing.html">2019.1</a></li>
+<li class=""><a class="docs_version_url_2018.4" href="/cn/2018.4/Manual/GPUInstancing.html">2018.4</a></li>
+<li class=""><a class="docs_version_url_2018.3" href="/cn/2018.3/Manual/GPUInstancing.html">2018.3</a></li>
+<li class=""><a class="docs_version_url_2018.2" href="/cn/2018.2/Manual/GPUInstancing.html">2018.2</a></li>
+<li class=""><a class="docs_version_url_2018.1" href="/cn/2018.1/Manual/GPUInstancing.html">2018.1</a></li>
+<li class=""><a class="docs_version_url_2017.4" href="/cn/2017.4/Manual/GPUInstancing.html">2017.4</a></li>
+<li class=""><a class="docs_version_url_2017.3" href="/cn/2017.3/Manual/GPUInstancing.html">2017.3</a></li>
+<li class=""><a class="docs_version_url_2017.2" href="/cn/2017.2/Manual/GPUInstancing.html">2017.2</a></li>
+<li class=""><a class="docs_version_url_2017.1" href="/cn/2017.1/Manual/GPUInstancing.html">2017.1</a></li>
+<li class=""><a class="docs_version_url_560" href="/cn/560/Manual/GPUInstancing.html">5.6</a></li>
+<div class="versionsWithThisPage" style="display:none;"><li><p>包含此页的版本：</p></li></div>
+<div class="versionsWithoutThisPage" style="display:none;"><li><p>不含此页的版本：</p></li></div>
+</ul>
+<ul class="description">
+<li>
+<div class="supported-box"></div>受支持</li>
+<li>
+<div class="legacy-box"></div>旧版</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap opened-sidebar"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManual.html">Unity User Manual 2022.3 (LTS)</a></li>
+<li><a href="Graphics.html">图形</a></li>
+<li><a href="graphics-performance-profiling.html">Graphics performance and profiling</a></li>
+<li><a href="optimizing-draw-calls.html">Optimizing draw calls</a></li>
+<li>GPU 实例化</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="optimizing-draw-calls.html"></a></span><div class="tip">Optimizing draw calls</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="gpu-instancing-shader.html"></a></span><div class="tip">Creating shaders that support GPU instancing</div>
+</div>
+</div></div>
+<!--  see https://unity3d.atlassian.net/browse/UNI-3131 -->
+
+<h1>GPU 实例化</h1>
+
+<p>GPU instancing is a <a href="optimizing-draw-calls.html">draw call optimization</a> method that renders multiple copies of a mesh with the same material in a single draw call. Each copy of the mesh is called an instance. This is useful for drawing things that appear multiple times in a scene, for example, trees or bushes.</p>
+
+<p>GPU instancing renders identical meshes in the same draw call. To add variation and reduce the appearance of repetition, each instance can have different properties, such as <strong>Color</strong> or <strong>Scale</strong>. Draw calls that render multiple instances appear in the <a href="FrameDebugger.html">Frame Debugger</a> as <strong>Render Mesh (instanced)</strong>.</p>
+
+<p><a name="requirements-and-compatibility"></a></p>
+
+<h2>Requirements and compatibility</h2>
+
+<p>This section includes information about the platform, render pipeline, and SRP Batcher compatibility of GPU instancing.</p>
+
+<h3>Platform compatibility</h3>
+
+<p>GPU instancing is available on every platform except WebGL 1.0.</p>
+
+<h3>Render pipeline compatibility</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>功能</strong></th>
+	<th style="text-align:left;"><strong>内置渲染管线</strong></th>
+	<th style="text-align:left;"><strong>通用渲染管线 (URP)</strong></th>
+	<th style="text-align:left;"><strong>高清渲染管线 (HDRP)</strong></th>
+	<th style="text-align:left;"><strong>Custom Scriptable Render Pipeline (SRP)</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>GPU instancing</strong></td>
+	<td style="text-align:left;">是</td>
+	<td style="text-align:left;">是 (1)</td>
+	<td style="text-align:left;">是 (1)</td>
+	<td style="text-align:left;">是 (1)</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>注意</strong>：</p>
+
+<ol>
+<li>Only if the shader isn’t compatible with the <a href="SRPBatcher.html">SRP Batcher</a>.</li>
+</ol>
+
+<p><a name="srp-batcher"></a></p>
+
+<h3>SRP Batcher</h3>
+
+<p>GPU instancing isn’t compatible with the <a href="SRPBatcher.html">SRP Batcher</a>. The SRP Batcher takes priority over GPU instancing. If a GameObject is compatible with the SRP Batcher, Unity uses the SRP Batcher to render it, not GPU instancing. For more information about optimization method priority, see <a href="optimizing-draw-calls.html#optimization-priority">Optimization priority</a>.</p>
+
+<p>If your project uses the SRP Batcher and you want to use GPU instancing for a GameObject, you can do one of the following:</p>
+
+<ul>
+<li>Use <a href="../ScriptReference/Graphics.RenderMeshInstanced.html">Graphics.RenderMeshInstanced</a>. This API bypasses the use of GameObjects and uses the specified parameters to directly draw a mesh on screen.</li>
+<li>Manually remove SRP Batcher compatibility. For information on how to do this, see <a href="SRPBatcher.html#intentionally-removing-compatibility">Intentionally removing compatibility</a>.</li>
+</ul>
+
+<h2>Using GPU instancing</h2>
+
+<p>Unity uses GPU instancing for GameObjects that share the same mesh and material. To instance a mesh and material:</p>
+
+<ul>
+<li>The material’s <a href="Shaders.html">shader</a> must support GPU instancing. Unity’s <a href="shader-StandardShader.html">Standard Shader</a> supports GPU instancing, as do all <a href="SL-SurfaceShaders.html">surface shaders</a>. To add GPU instancing support to any other shader, see <a href="gpu-instancing-shader.html">Creating shaders that support GPU instancing</a>.</li>
+<li>The mesh must come from one of the following sources, grouped by behavior:
+
+<ul>
+<li>A <a href="class-MeshRenderer.html">MeshRenderer</a> component or a <a href="../ScriptReference/Graphics.RenderMesh.html">Graphics.RenderMesh</a> call.
+ <br>Behavior: Unity adds these meshes to a list and then checks to see which meshes it can instance.
+ <br>Unity does not support GPU instancing for <a href="class-SkinnedMeshRenderer.html">SkinnedMeshRenderers</a> or MeshRenderer components attached to GameObjects that are SRP Batcher compatible. For more information, see <a href="#srp-batcher">SRP Batcher compatibility</a>.</li>
+<li>A <a href="../ScriptReference/Graphics.RenderMeshInstanced.html">Graphics.RenderMeshInstanced</a> or <a href="../ScriptReference/Graphics.RenderMeshIndirect.html">Graphics.RenderMeshIndirect</a> call. These methods render the same mesh multiple times using the same shader. Each call to these methods issues a separate draw call. Unity does not merge these draw calls.</li>
+</ul>
+</li>
+</ul>
+
+<p>To use GPU instancing for a material, select the <strong>Enable GPU Instancing</strong> option in the Inspector.</p>
+
+<figure>
+<img src="../uploads/Main/enable-gpu-instancing-inspector.png" alt="The Enable GPU Instancing option as it appears in the material Inspector.">
+<figcaption>The Enable GPU Instancing option as it appears in the material Inspector.</figcaption>
+</figure>
+
+<h3>Lighting</h3>
+
+<p>GPU instancing supports Unity’s <a href="Lightmappers.html">Baked Global Illumination system</a>. Unity Standard Shaders and surface shaders support GPU instancing and Unity’s Baked Global Illumination system by default.</p>
+
+<p>Each GPU instance supports global illumination from one of the following sources:</p>
+
+<ul>
+<li>Any number of <a href="LightProbes.html">Light Probes</a>.</li>
+<li>One <a href="Lightmapping.html">lightmap</a>.
+ <br><strong>Note</strong>: An instance can use multiple atlas regions in the lightmap.</li>
+<li>One <a href="class-LightProbeProxyVolume.html">Light Probe Proxy Volume</a>(LPPV) component.
+ <br><strong>Note</strong>: You must bake the LPPV for the space volume that contains all the instances.</li>
+</ul>
+
+<p>GPU instancing automatically works with:</p>
+
+<ul>
+<li>Dynamic <a href="class-MeshRenderer.html">Mesh Renderers</a> affected by Light Probes.</li>
+<li>Static Mesh Renderers you bake to the same lightmap texture. A Mesh Renderer is static in this context if it includes <strong>Contribute GI</strong> in its <a href="StaticObjects.html">Static Editor Flags</a>.</li>
+</ul>
+
+<p>To enable Light Probe rendering for <code>Graphics.RenderMeshInstanced</code>, provide a <a href="../ScriptReference/MaterialPropertyBlock.html">MaterialPropertyBlock</a> that includes the Probe data. For more information and code examples, see <a href="../ScriptReference/LightProbes.CalculateInterpolatedLightAndOcclusionProbes.html">LightProbes.CalculateInterpolatedLightAndOcclusionProbes</a>.</p>
+
+<p>Alternatively, you can pass an LPPV component reference and <a href="../ScriptReference/Rendering.LightProbeUsage.UseProxyVolume.html">LightProbeUsage.UseProxyVolume</a> to <code>Graphics.RenderMeshInstanced</code>. When you do this, all instances sample the volume for the <a href="LightProbes-TechnicalInformation.html">L0 and L1 bands</a> of the Light Probe data. If you want to supplement L2 data and occlusion data, use a <code>MaterialPropertyBlock</code>. For more information, see <a href="LightProbes-TechnicalInformation.html">Light Probes: Technical Information</a>.</p>
+
+<p><a name="performance-implications"></a></p>
+
+<h2>Performance implications</h2>
+
+<p>Meshes that have a low number of vertices can’t be processed efficiently using GPU instancing because the GPU can’t distribute the work in a way that fully uses the GPU’s resources. This processing inefficiency can have a detrimental effect on performance. The threshold at which inefficiencies begin depends on the GPU, but as a general rule, don’t use GPU instancing for meshes that have fewer than 256 vertices.</p>
+
+<p>If you want to render a mesh with a low number of vertices many times, best practice is to create a single buffer that contains all the mesh information and use that to draw the meshes.</p>
+
+<hr>
+
+<ul>
+<li><p><span class="page-edit">2017–10–24 页面已修订</span></p></li>
+<li><p><span class="page-history">在 5.6 版中增加了 Enable Instancing 复选框指南、DrawMeshInstancedIndirect 和 #pragma multi-compile</span></p></li>
+<li><p><span class="page-history">在 <a href="https://docs.unity3d.com/2017.3/Documentation/Manual/30_search.html?q=newin20173">2017.3</a> 版中增加了针对 GPU 实例化的着色器预热 <span class="search-words">NewIn20173</span></span></p></li>
+<li><p><span class="page-history">在 <a href="https://docs.unity3d.com/2018.1/Documentation/Manual/30_search.html?q=newin20181">2018.1</a> 版中增加了 GPU 实例化的全局光照 (GI) 支持 <span class="search-words">NewIn20181</span></span></p></li>
+</ul>
+<!-- area:graphics -->
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="optimizing-draw-calls.html"></a></span><div class="tip">Optimizing draw calls</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="gpu-instancing-shader.html"></a></span><div class="tip">Creating shaders that support GPU instancing</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2022 Unity Technologies. Publication 2022.3</div>
+<div class="menu">
+<a href="https://learn.unity.com/">教程</a><a href="https://answers.unity3d.com">社区答案</a><a href="https://support.unity3d.com/hc/en-us">知识库</a><a href="https://forum.unity3d.com">论坛</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">商标和使用条款</a><a href="https://unity.com/legal">法律条款</a><a href="https://unity.com/legal/privacy-policy">隐私政策</a><a href="https://unity.com/legal/cookie-policy">Cookie</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">不要出售或分享我的个人信息</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>
